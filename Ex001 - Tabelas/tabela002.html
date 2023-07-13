@@ -14,16 +14,31 @@
             border-collapse: collapse;
         }
 
+        caption {
+            font-size: 1.8rem;
+            font-weight: bold;
+            padding: 10px;
+            background-color:rgba(47, 113, 236, 0.699);
+            border: 2px solid black;
+        }
+
         thead, tfoot {
-            background-color: cadetblue;
+            background-color: rgb(56, 138, 141);
             color: antiquewhite;
+        }
+
+        tbody > tr:nth-child(2n) {
+            background-color: gray;
         }
 
         th, td {
             border: 1px solid black;
             text-align: center;
             padding: 10px;
-            width: 250px;
+        }
+
+        .th-percent {
+            width: 90px;
         }
     </style>
 </head>
@@ -32,6 +47,7 @@
     
     <!-- ANATOMIA DE TABELAS GRANDES 
         TABLE
+            CAPTION
             THEAD
                 TR, TD, TH
             TBODY
@@ -41,11 +57,12 @@
     -->
 
     <table>
+        <caption>População das Unidades Federativas</caption>
         <thead>
             <tr>
-                <th>Estado</th>
-                <th>População</th>
-                <th>% da população total</th>
+                <th scope="col">Estado</th>
+                <th scope="col">População</th>
+                <th scope="col" class="th-percent">% do total</th>
             </tr>
         </thead>
         <tbody>
@@ -187,7 +204,7 @@
         </tbody>
         <tfoot>
             <tr>
-                <td>Total de habitantes</td>
+                <th scope="row">Total de habitantes</th>
                 <td><strong>203 062 512</strong></td>
                 <td><strong>100%</strong></td>
             </tr>
