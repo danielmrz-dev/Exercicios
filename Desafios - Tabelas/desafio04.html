@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boletim</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        table {
+            margin-left: 15px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            text-align: center;
+            font-size: 0.8em;
+            border-collapse: collapse;
+        }
+
+        caption {
+            font-size: 1.2rem;
+            font-weight: bold;
+            padding: 10px;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+        }
+
+        .t1 {
+            background-color: rgb(82, 82, 82);
+            color: white;
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+<body>
+    <table>
+        <caption>Boletim Escolar</caption>
+        <thead>
+            <tr>
+                <th rowspan="2" class="t1" scope="col">Area</th>
+                <th rowspan="2" class="t1" scope="col">Disciplina</th>
+                <th colspan="2" class="t1" scope="colgroup">Notas</th>
+                <th rowspan="2" class="t1" scope="col">Média</th>
+            </tr>
+            <tr>
+                <th class="t1" scope="col">Nota 1</th>
+                <th class="t1" scope="col">Nota 2</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th rowspan="4" scope="rowgroup">Exatas</th>
+                <td>Matemática</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+            </tr>
+            <tr>
+                <td>Física</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+            </tr>
+            <tr>
+                <td>Física</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+            </tr>
+            <tr>
+                <td>Física</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+            </tr>
+            <tr>
+                <th colspan="4" scope="row" class="t1">Média das Exatas</th>
+                <td class="t1">8</td>
+            </tr>
+            <th rowspan="2" scope="rowgroup">Humanas</th>
+            <td>História</td>
+            <td>8</td>
+            <td>8</td>
+            <td>8</td>
+            <tr>
+                <td>Geografia</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+            </tr>
+            <tr>
+                <th colspan="4" scope="row" class="t1">Média das Humanas</th>
+                <td class="t1">8</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
