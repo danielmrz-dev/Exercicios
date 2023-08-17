@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste de formulário</title>
+</head>
+<body>
+    <h1>Teste de formulários</h1>
+    <fieldset>
+        <legend>Cor, Range e File</legend>
+
+        <form action="cadastro.php" method="post">
+            <p>
+                <label for="icor">Cor</label>
+                <input type="color" name="cor" id="icor" value="#ffffff">
+            </p>
+            <p>
+                <label for="inivel">Nível de satisfação:</label>
+                <input type="range" name="nivel" id="inivel" min="0" max="10" value="1">
+            </p>
+            <p>
+                <label for="ifoto">Foto do perfil:</label>
+                <input type="file" name="foto" id="ifoto">
+
+            </p>
+            <p>
+                <input type="submit" value="Enviar">
+                <input type="reset" value="Limpar">
+            </p>
+    </fieldset>
+    </form>
+</body>
+</html>
