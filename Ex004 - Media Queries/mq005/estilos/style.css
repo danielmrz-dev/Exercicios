@@ -1,6 +1,100 @@
 @charset "UTF-8";
 
+* {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
 html, body {
     background-color: antiquewhite;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+
+header {
+    background-color: cadetblue;
+}
+
+header > h1 {
+    padding: 10px;
+    text-align: center;
+}
+
+menu {
+    display: none;
+}
+
+i#burguer {
+    display: block;
+    background-color: rgb(54, 54, 54);
+    color: white;
+    text-align: center;
+    padding: 8px;
+    cursor: pointer;
+}
+
+i#burguer:hover {
+    background-color: white;
+    color: black;
+}
+
+
+menu > ul {
+    list-style-type: none;
+}
+
+menu > ul > li > a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    background-color: rgb(80, 79, 79);
+    color: white;
+    text-align: center;
+    border-top: 1px solid grey;
+}
+
+menu > ul > li > a:hover {
+    background-color: rgb(156, 156, 156);
+}
+
+main {
+    width: 90vw;
+    background-color: white;
+    margin: auto;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+article > h2 {
+    padding-bottom: 10px;
+}
+
+article > p {
+    text-align: justify;
+    margin-bottom: 20px;
+    text-indent: 20px;
+    font-size: .9rem;
+}
+
+@media screen and (min-width: 768px) {
+    i#burguer {
+        display: none;
+    }
+
+    menu {
+        display: block;
+    }
+    
+    menu > ul > li {
+        display: inline-block;
+        width: 130px;
+    }
+
+    menu > ul {
+        text-align: center;
+    }
+
+    main {
+        max-width: 680px;
+    }
 }
