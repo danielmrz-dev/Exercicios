@@ -1,0 +1,80 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800&display=swap');
+
+:root {
+    --cor-01: #167BF7;
+    --cor-02:;
+    --fonte-01: 'Inter';
+    --fonte-02:;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: white;
+    font-family: var(--fonte-01);
+}
+
+.background {
+    width: 100%;
+    background: black url('imagens/Background.png') left center no-repeat scroll;
+}
+
+.section01 {
+    padding: 125px 0 125px 0;
+    margin-left: 54px;
+    width: 588px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.section01 > h2 {
+    padding: 0 0 10px 0;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 34px;
+    text-align: center;
+}
+
+.section01 > img {
+    padding: 11px 0 20px;
+}
+
+.botoes {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin: 10px 0;
+}
+
+.section01 > div.botoes > a {
+    text-decoration: none;
+    color: white;
+    border-radius: 8px;
+    padding: 16px;
+    width: 512px;
+    text-align: center;
+}
+
+div.botoes > a.azul {
+    background-color: var(--cor-01);
+    border: 1px solid black;
+}
+
+div.botoes > a.transparente {
+    border: 1px solid white;
+}
+
+.section01 > p {
+    font-size: 12px;
+}
+
+
+
