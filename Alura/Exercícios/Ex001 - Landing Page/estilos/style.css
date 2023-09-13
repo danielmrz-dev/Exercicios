@@ -30,7 +30,7 @@ header > nav {
 }
 
 header > nav > a {
-    font-size: 24px;
+    font-size: 1.5rem;
     font-family: var(--font-montserrat), sans-serif;
     text-decoration: none;
     font-weight: 600;
@@ -47,7 +47,7 @@ body {
 }
 
 main {
-    display: flex;
+    display: flex; 
     padding: 5% 8% 8%;
     align-items: flex-start;
     justify-content: space-around;
@@ -55,21 +55,20 @@ main {
 }
 
 main > img {
-    width: 388px;
-    height: 450px;
+    width: 45%;
 }
 
 section {
     display: flex;
     flex-direction: column;
     gap: 30px;
-    width: 480px;
+    width: 50%;
 }
 
 section > h1 {
     color: white;
     font-family: var(--font-krona), sans-serif;
-    font-size: 28px;
+    font-size: 1.75rem;
     font-weight: 400;
     line-height: 45px;
 }
@@ -81,7 +80,7 @@ strong {
 section > p {
     color: var(--color-white);
     font-family: var(--font-montserrat), sans-serif;
-    font-size: 16px;
+    font-size: 1rem;
     line-height: 25px;
 }
 
@@ -120,10 +119,10 @@ section > div.links > a {
     color: var(--color-white);
     text-decoration: none;
     font-family: var(--font-montserrat), sans-serif;
-    font-size: 20px;
+    font-size: 1.25rem;
     font-weight: bold;
     text-align: center;
-    width: 400px;
+    width: 90%;
     height: 60px;
     border-radius: 15px;
 }
@@ -151,4 +150,49 @@ footer a:hover {
     color: var(--color-hover-2);
 }
 
+@media screen and (max-width: 768px) {
+    header > nav {
+        justify-content: center;
+        padding-top: 5%;
+        gap: 30px;
+    }
+
+    header > nav > a {
+        font-size: 3.8vw;
+    }
+
+    main {
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 50px;
+    }
+
+    main > img {
+        padding: 5% 0 0;
+        width: 60%;
+    }
+
+    section {
+        width: auto;
+        padding: 0 3%;
+        justify-content: center;
+    }
+
+    section > h1 {
+        font-size: 1.3rem;
+        line-height: 32px;
+    }
+
+    section > ul > li {
+        font-size: .8rem;
+    }
+
+    footer > p {
+        font-size: .8rem;
+    }
+
+
+
+
+}
 
