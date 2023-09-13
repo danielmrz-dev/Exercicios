@@ -7,9 +7,9 @@
 :root {
     --color-white: #ffffff;
     --color-black: #000000;
-    --color-blue: #22D4FD;
-    --color-hover: #646464;
-    --color-hover-2: #103f85;
+    --color-blue: #E61F0A;
+    --color-hover: #355969;
+    --color-hover-2: #109B85;
     --font-montserrat: 'Montserrat';
     --font-krona: 'Krona One';
 }
@@ -38,7 +38,7 @@ header > nav > a {
 }
 
 header > nav > a:hover {
-    color: var(--color-white);
+    color: var(--color-hover-2);
 }
 
 body {
@@ -56,6 +56,8 @@ main {
 
 main > img {
     width: 45%;
+    border-radius: 5%;
+    box-shadow: 5px -5px 8px #E61F0A;
 }
 
 section {
@@ -168,7 +170,7 @@ footer a:hover {
     }
 
     main > img {
-        padding: 5% 0 0;
+        margin: 5% 0 0;
         width: 60%;
     }
 
