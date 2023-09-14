@@ -4,6 +4,7 @@
 
 :root {
     --cor-01: #167BF7;
+    --cor-02: #00030C;
     --fonte-01: 'Inter';
 }
 
@@ -14,17 +15,24 @@
 }
 
 body {
+    background-color: var(--cor-02);
     color: white;
     font-family: var(--fonte-01);
 }
 
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+}
+
 .background {
     width: 100%;
-    background: black url('imagens/Background.png') left center no-repeat scroll;
+    background: var(--cor-02) url('imagens/Background.png') left center no-repeat scroll;
 }
 
 .section01 {
-    padding: 125px 0 125px 0;
+    padding: 125px 0 50px 0;
     margin-left: 54px;
     width: 588px;
     display: flex;
@@ -61,18 +69,62 @@ body {
     text-align: center;
 }
 
-div.botoes > a.azul {
+.botoes > a.azul {
     background-color: var(--cor-01);
-    border: 1px solid black;
+    border: 1px solid var(--cor-01);
 }
 
-div.botoes > a.transparente {
+.botoes > a.transparente {
     border: 1px solid white;
 }
 
 .section01 > p {
     font-size: 12px;
 }
+
+.section02, .section03, .section04 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 70px;
+}
+
+.section02 > div.texto {
+    width: 588px;
+}
+
+.section02 > div.texto > h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.section02 > div.texto > p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.section03 > div {
+    width: 588px;
+}
+
+.section03 > div > p {
+    font-size: 16px;
+    line-height: 24px;
+    padding-bottom: 30px;
+}
+
+.section03 > div > a {
+    text-decoration: none;
+    color: white;
+    background-color: var(--cor-01);
+    padding: 16px;
+    border-radius: 8px;
+}
+
+
+
+
 
 
 
