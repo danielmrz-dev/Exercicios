@@ -5,6 +5,7 @@
 :root {
     --cor-01: #167BF7;
     --cor-02: #00030C;
+    --cor-03: #084085;
     --fonte-01: 'Inter';
 }
 
@@ -165,6 +166,14 @@ footer > div.links > a {
     color: white;
 }
 
+div.background > .section01 > .botoes > .azul:hover,
+div.background > .section01 > .botoes > .transparente:hover,
+.section03 > .div03 > a:hover {
+    background-color: var(--cor-03);
+    color: white;
+}
+
+
 footer > p {
     padding: 0 120px 60px;
     font-size: 14px;
@@ -172,6 +181,96 @@ footer > p {
     text-align: center;
 }
 
+footer > .links > a:hover {
+    color: var(--cor-01);
+}
+
+
+
+@media screen and (max-width: 1200px) {
+    main {
+        align-items: center;
+    }
+    .background {
+        margin: auto;
+        height: auto;
+        background: var(--cor-02);
+    }
+
+    .section01 {
+        margin: 0;
+        width: 450px;
+        padding: 80px 0 0 0;
+    }
+    
+    .section01 > h2 {
+        font-size: 24px;
+    }
+
+    .section01 > div.botoes > a {
+        padding: 16px;
+        width: 350px;
+        text-align: center;
+    }
+
+    .section02 > div.div02,
+    .section03 > div,
+    .section04 > div.div04 {
+        width: 450px;
+    }
+
+    main img {
+        width: 60%;
+    }
+
+    .section02,
+    .section03,
+    .section04 {
+        text-align: center;
+        margin: auto;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .div02 > h1,
+    .div04 > h1 {
+        font-size: 30px;
+    }
+
+    .section05 > h1 {
+        font-size: 22px;
+    }
+
+    .section03 {
+        flex-direction: column-reverse;
+    }
+
+    .div05 {
+        flex-direction: column;
+    }
+
+    .links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    footer {
+        padding-top: 90px;
+    }
+
+    footer > img {
+        padding-bottom: 30px;
+    }
+
+    footer > div.links {
+        margin: 10px 0 40px;
+    }
+
+    footer > div.links > a {
+        padding: 0;
+    }
+
+}
 
 
 
