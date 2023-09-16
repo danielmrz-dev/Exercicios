@@ -26,9 +26,14 @@ main {
     gap: 70px;
 }
 
+main h1 {
+    font-size: 48px;
+}
+
 .background {
-    width: 100%;
-    background: var(--cor-02) url('imagens/Background.png') left center no-repeat scroll;
+    height: 100vh;
+    background: var(--cor-02) url('imagens/Background.png') right center no-repeat;
+    background-size: contain;
 }
 
 .section01 {
@@ -80,38 +85,38 @@ main {
 
 .section01 > p {
     font-size: 12px;
+    font-weight: 100;
     text-align: center;
 }
 
-.section02, .section03, .section04 {
+.section02,
+.section03,
+.section04 {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 70px;
 }
 
-.section02 > div.div02 {
+.section02 > div.div02,
+.section03 > div,
+.section04 > div.div04 {
     width: 588px;
 }
 
 .section02 > div.div02 > h1 {
-    font-size: 48px;
     margin-bottom: 10px;
 }
 
-.section02 > div.div02 > p {
+.section02 > div.div02 > p,
+.section03 > div > p,
+.div04 > p  {
     font-size: 16px;
     font-weight: 400;
     line-height: 24px;
 }
 
-.section03 > div {
-    width: 588px;
-}
-
 .section03 > div > p {
-    font-size: 16px;
-    line-height: 24px;
     padding-bottom: 30px;
 }
 
@@ -122,18 +127,6 @@ main {
     padding: 16px;
     border-radius: 8px;
 }
-.section04 > div.div04 {
-    width: 588px;
-}
-
-.div04 > h1 {
-    font-size: 48px;
-}
-
-.div04 > p {
-    font-size: 16px;
-    line-height: 24px;
-}
 
 .section05 {
     margin-top: 50px;
@@ -142,10 +135,6 @@ main {
     justify-content: center;
     text-align: center;
     gap: 40px;
-}
-
-.section05 > h1 {
-    font-size: 48px;
 }
 
 .section05 > div.div05 {
@@ -177,7 +166,7 @@ footer > div.links > a {
 }
 
 footer > p {
-    padding: 0 120px 100px;
+    padding: 0 120px 60px;
     font-size: 14px;
     font-weight: 100;
     text-align: center;
