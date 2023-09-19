@@ -112,7 +112,6 @@ main h1 {
 .section02 > div.div02 > p,
 .section03 > div > p,
 .div04 > p  {
-    font-size: 16px;
     font-weight: 400;
     line-height: 24px;
 }
@@ -188,6 +187,10 @@ footer > .links > a:hover {
 
 
 @media screen and (max-width: 1200px) {
+    body {
+        width: 100vw;
+    }
+
     main {
         align-items: center;
     }
@@ -271,6 +274,70 @@ footer > .links > a:hover {
     }
 
 }
+
+@media screen and (max-width: 768px) {
+    .section01 {
+        margin: 0;
+        width: 400px;
+        padding: 80px 0 0 0;
+    }
+    
+    .section01 > h2 {
+        font-size: 20px;
+        line-height: 24px;
+    }
+
+    .section01 > div.botoes > a {
+        width: 250px;
+        font-size: 12px;
+    }
+
+    .section01 > p {
+        font-size: 10px;
+    }
+
+    .section02 > div.div02,
+    .section03 > div,
+    .section04 > div.div04 {
+        width: 400px;
+    }
+
+    main img {
+        width: 40%;
+    }
+
+    .div02 > h1,
+    .div04 > h1 {
+        font-size: 25px;
+    }
+
+    .section05 > h1 {
+        font-size: 20px;
+    }
+
+    .section02 > .div02 > p,
+    .section03 > .div03 > p,
+    .div04 > p {
+        display: inline-block;
+        width: 350px;
+        font-size: 13px;
+    }
+
+    footer > div.links > a {
+        font-size: 12px;
+    }
+
+    footer > p {
+        font-size: 10px;
+        font-weight: 100;
+        text-align: center;
+    }
+    
+
+
+
+}
+
 
 
 
