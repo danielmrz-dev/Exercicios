@@ -50,12 +50,17 @@ header.cabecalho {
     display: none;
     position: absolute;
     top: 100%;
+    left: 0;
     background-color: var(--cor-branco);
     font-family: 'Poppins';
 }
 
 .botao-menu:checked~.lista-menu {
     display: block;
+}
+
+.botao-menu {
+    display: none;
 }
 
 .lista-menu-titulo,
@@ -74,4 +79,72 @@ header.cabecalho {
     color: var(--cor-azul-claro);
     text-transform: uppercase;
 }
+
+.banner {
+    background-image: linear-gradient(to right, var(--cor-azul-escuro), var(--cor-azul-claro));
+    height: 215px;
+    text-align: center;
+    font-family: 'Poppins';
+    color: var(--cor-branco);
+    padding: 2.5em 2em;
+}
+
+.banner > h2 {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 27px;
+    padding: 0 0 8px 0;
+}
+
+.banner > p {
+    display: flex;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    padding: 0 0 24px 0;
+}
+
+.banner-pesquisa {
+    background-color: transparent;
+    border: 1px solid var(--cor-branco);
+    color: var(--cor-branco);
+    border-radius: 24px;
+    padding: .8em;
+    width: 100%;
+    text-align: center;
+}
+
+.banner-pesquisa::placeholder {
+    color: var(--cor-branco);
+    font-size: 14px;
+    background: url('imagens/Lupa.svg') no-repeat;
+    background-position: 1em;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
