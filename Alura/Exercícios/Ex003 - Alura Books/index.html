@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
     <title>Alura Books</title>
 </head>
 <body>
@@ -45,7 +45,40 @@
         <h2>Já sabe por onde começar?</h2>
         <p>Encontre em nossa estante o que precisa para o seu desenvolvimento!</p>
         <input type="search" name="pesquisa" id="ipesquisa" class="banner-pesquisa" placeholder="Qual será sua próxima leitura?">
-        
     </section>
+    <section class="carrossel">
+        
+        <h2 class="carrossel-titulo">Últimos lançamentos</h2>
+        
+        
+        <div class="swiper">
+            
+            <div class="swiper-pagination"></div>
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="imagens/ApacheKafka.svg" alt="Livro Apache Kafka e Spring Boot"></div>
+                <div class="swiper-slide"><img src="imagens/Guia Front-end.svg" alt="Livro Guia Front-end da AluraBooks"></div>
+                <div class="swiper-slide"><img src="imagens/Portugol.svg" alt="Livro Portugol da AluraBooks"></div>
+                <div class="swiper-slide"><img src="imagens/Javascript.svg" alt="Livro sobre JavaScript da AluraBooks"></div>
+                <div class="swiper-slide"><img src="imagens/Liderança.svg" alt="Livro sobre Liderança da AluraBooks"></div>
+            </div>
+            
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>     
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+    <script>
+        const swiper = new Swiper('.swiper', {
+            slidesPerView: 3,
+            spaceBetween: 10,
+            pagination: {
+                el: '.swiper-pagination',
+                type: 'bullets',
+            },
+        });
+    </script>
+
 </body>
 </html>

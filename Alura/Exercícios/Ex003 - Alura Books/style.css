@@ -121,7 +121,29 @@ header.cabecalho {
     background-position: 1em;
 }
 
+.carrossel-titulo {
+    background-color: var(--cor-branco);
+    font-size: 1.2em;
+    font-weight: 700;
+    padding: 20px;
+    text-align: center;
+    color: var(--cor-amarelo);
+    text-transform: uppercase;
+    font-family: var(--fonte-poppins);
+}
 
+.swiper-slide img {
+    width: 100%;
+}
+
+.swiper > .swiper-button-prev,
+.swiper > .swiper-button-next {
+    display: none;
+}
+
+.swiper-pagination {
+    position: initial;
+}
 
 
 
