@@ -16,6 +16,7 @@
     --cor-azul-claro: #326589;
     --cor-azul-escuro: #002F52;
     --cor-amarelo: #EB9B00;
+    --cor-borda: #858585;
 
     --fonte-poppins: 'Poppins';
 }
@@ -232,6 +233,52 @@ header.cabecalho {
     font-size: 14px;
     background-color: var(--cor-amarelo);
     padding: 16px 24px;
+}
+
+.contato {
+    font-family: var(--fonte-poppins);
+    background-color: var(--cor-branco);
+    padding: 1.5em;
+}
+
+.contato-titulo {
+    color: var(--cor-azul-escuro);
+    font-size: 1.2em;
+    font-weight: 500;
+    padding-bottom: .8em;
+}
+
+.contato-paragrafo {
+    color: var(--cor-azul-escuro);
+    font-size: 1.2em;
+    font-weight: 300;
+    padding-bottom: .8em;
+}
+
+.contato-pesquisa {
+    background: transparent;
+    border: 1px solid var(--cor-azul-escuro);
+    color: var(--cor-azul-escuro);
+    border-radius: 24px;
+    padding: .8em;
+    width: 100%;
+}
+
+.contato-pesquisa::placeholder {
+    background: url('imagens/Email.svg') no-repeat;
+    color: var(--cor-azul-escuro);
+    font-size: 1.2em;
+    font-weight: 400;
+    background-position: 1em;
+    padding-left: 3em;
+}
+
+.footer-titulo2 {
+    font-family: var(--fonte-poppins);
+    font-weight: 400;
+    padding: 1.5em;
+    background-color: var(--cor-cinza-claro);
+    border-top: 1px solid var(--cor-borda);
 }
 
 
