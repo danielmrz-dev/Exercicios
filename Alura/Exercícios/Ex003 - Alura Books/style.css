@@ -13,6 +13,7 @@
     --cor-branco: #FFFFFF;
     --cor-preto: #000000;
     --cor-cinza-claro: #EBECEE;
+    --cor-cinza-escuro: #474646;
     --cor-azul-claro: #326589;
     --cor-azul-escuro: #002F52;
     --cor-amarelo: #EB9B00;
@@ -273,12 +274,60 @@ header.cabecalho {
     padding-left: 3em;
 }
 
-.footer-titulo2 {
+.rodape {
+    display: flex;
+    font-family: var(--fonte-poppins);
+    gap: 0px;
+}
+
+.rodape-titulo {
     font-family: var(--fonte-poppins);
     font-weight: 400;
     padding: 1.5em;
     background-color: var(--cor-cinza-claro);
-    border-top: 1px solid var(--cor-borda);
+}
+
+.rodape-links {
+    display: none;
+}
+
+
+@media screen and (min-width: 1024px) {
+    
+    .rodape {
+        justify-content: space-evenly;
+    }
+    
+    .rodape-links {
+        display: flex;
+        flex-direction: column;
+        padding: 1.5em 0;
+    }
+    
+    .rodape-lista {
+        padding: 1.5em 0;
+    }
+    
+    .rodape-lista-item {
+        padding: .5em 0 ;
+    }
+    
+    .rodape-links-titulo {
+        font-size: 14px;
+        font-weight: 400;
+        color: var(--cor-borda);
+        text-transform: uppercase;
+    }
+    
+    .rodape-lista-item > a {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 400;
+        color: var(--cor-cinza-escuro);
+    }
 }
 
 
