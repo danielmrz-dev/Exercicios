@@ -34,16 +34,45 @@
                 </li>
             </ul>
             <img src="imagens/Logo.svg" alt="Logotipo Alura Books">
+            <h1 class="cabecalho-titulo"><strong>Alura</strong>Books</h1>
         </div>
+
+        <ul class="opcoes">
+            <input type="checkbox" id="menu" class="botao-menu">
+            <label for="menu">
+                <li class="opcoes-item">Categorias</li>
+            </label>
+                <ul class="lista-menu">
+                    <li class="lista-menu-titulo">Categorias</li>
+                    <li class="lista-menu-item">
+                        <a href="#">Programação</a>
+                    </li>
+                    <li class="lista-menu-item">
+                        <a href="#">Front-End</a>
+                    </li>
+                    <li class="lista-menu-item">
+                        <a href="#">Infraestrutura</a>
+                    </li>
+                    <li class="lista-menu-item">
+                        <a href="#">Business</a>
+                    </li>
+                    <li class="lista-menu-item">
+                        <a href="#">Design & UX</a>
+                    </li>
+                </ul>
+                <li class="opcoes-item">Favoritos</li>
+                <li class="opcoes-item">Minha Estante</li>
+        </ul>
+
         <div class="icones2">
-            <a href="#"><img src="imagens/Favoritos.svg" alt="Icone de favoritos"></a>
+            <a href="#" id="fav"><img src="imagens/Favoritos.svg" alt="Icone de favoritos"></a>
             <a href="#"><img src="imagens/Compras.svg" alt="Icone de compras"></a>
             <a href="#"><img src="imagens/Usuario.svg" alt="Icone de usuário"></a>
         </div>
     </header>
     <section class="banner">
         <h2>Já sabe por onde começar?</h2>
-        <p>Encontre em nossa estante o que precisa para o seu desenvolvimento!</p>
+        <p class="banner-paragrafo">Encontre em nossa estante o que precisa para o seu desenvolvimento!</p>
         <input type="search" name="pesquisa" id="ipesquisa" class="banner-pesquisa" placeholder="Qual será sua próxima leitura?">
     </section>
     <section class="carrossel">
