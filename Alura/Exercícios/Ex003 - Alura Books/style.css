@@ -39,15 +39,24 @@ header.cabecalho {
 .menu-hamburguer {
     width: 36px;
     height: 24px;
-    background-image: url('imagens/Menu.svg');
+    background: url('imagens/Menu.svg') center center no-repeat;
     display: inline-block;
+}
+
+.botao-menu:checked~.container-label > .menu-hamburguer {
+    background: url('imagens/Menu\ Aberto.svg') center center no-repeat;
+    
+}
+
+.botao-menu:checked~.container-label {
+    background: var(--cor-azul-escuro);
 }
 
 .icones1, .icones2 {
     margin: 18px 24px;
     display: flex;
     align-items: center;
-    gap: 24px;
+    gap: 20px;
 }
 
 .lista-menu {
@@ -478,14 +487,24 @@ header.cabecalho {
 }
 
 @media screen and (min-width: 1728px) {
+    .cabecalho {
+        padding: 0 2em;
+    }
+
+    .opcoes {
+        margin-right: auto;
+        padding-left: 1em;
+    }
+
     .icones2 > a > p {
         display: block;
+        margin-right: 15px;
     }
 
     .icones2 > a {
         display: flex;
         align-items: center;
-        gap: 15px;
+        gap: 12px;
         text-decoration: none;
         font-family: var(--fonte-poppins);
         font-size: 1.3em;
@@ -493,7 +512,63 @@ header.cabecalho {
     }
 
     .lista-menu {
-        left: 32.5%;
+        left: 18.5%;
+    }
+
+    .carrossel-container {
+        display: flex;
+        align-items: center;   
+    }
+
+    .swiper-slide img {
+        width: 85%;
+    }
+
+    .carrossel-titulo {
+        font-size: 2em;
+    }
+
+    .swiper {
+        width: 40%;
+    }
+
+    div.swiper.swiper-initialized.swiper-horizontal.swiper-backface-hidden {
+        margin-right: .5em;
+    }
+
+    .card {
+        margin: 1em auto 3em 1em;
+    }
+
+    .banner2 > h3 {
+        font-size: 1.8em;
+    }
+
+    .banner2 > ul {
+        margin: 0 auto 2em;
+        max-width: 800px;
+    }
+
+    .banner2 > ul > li {
+        margin-bottom: .5em;
+    }
+
+    .contato {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2em 20em;
+    }
+    
+    .contato-pesquisa {
+        width: 60%;
+        border-radius: 40px;
+        padding: 1.5em;
+    }
+
+    .rodape-lista-item {
+        padding-left: 1.5em;
+        border-left: 1px solid var(--cor-cinza-escuro);
     }
 }
 
