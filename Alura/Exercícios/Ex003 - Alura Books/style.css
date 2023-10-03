@@ -301,6 +301,10 @@ header.cabecalho {
     display: none;
 }
 
+.icones2 > a > p {
+    display: none;
+}
+
 
 @media screen and (min-width: 1024px) {
 
@@ -474,8 +478,23 @@ header.cabecalho {
 }
 
 @media screen and (min-width: 1728px) {
-    
+    .icones2 > a > p {
+        display: block;
+    }
 
+    .icones2 > a {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        text-decoration: none;
+        font-family: var(--fonte-poppins);
+        font-size: 1.3em;
+        color: var(--cor-preto);
+    }
+
+    .lista-menu {
+        left: 32.5%;
+    }
 }
 
 
