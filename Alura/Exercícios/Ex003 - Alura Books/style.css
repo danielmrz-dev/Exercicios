@@ -278,7 +278,6 @@ header.cabecalho {
 .rodape {
     display: flex;
     font-family: var(--fonte-poppins);
-    gap: 0px;
 }
 
 .rodape-titulo {
@@ -297,11 +296,16 @@ header.cabecalho {
     display: none;
 }
 
+#sacola,
+#perfil {
+    display: none;
+}
+
 
 @media screen and (min-width: 1024px) {
 
     header.cabecalho {
-        justify-content: space-around;
+        justify-content: space-between;
     }
 
     .cabecalho-titulo {
@@ -321,12 +325,11 @@ header.cabecalho {
     .lista-menu {
         top: 88%;
         left: 34%;
-        overflow:auto;
     }
 
     .lista-menu-titulo,
     .lista-menu-item {    
-        width: 200px;
+        width: auto;
 }
 
     .lista-menu-titulo {
@@ -338,7 +341,8 @@ header.cabecalho {
     }
 
     .opcoes-item:hover,
-    .lista-menu-item:hover {
+    .lista-menu-item:hover,
+    .lista-menu-item a:hover {
         background-image: linear-gradient(to right, var(--cor-azul-escuro), var(--cor-azul-claro));
         color: var(--cor-branco);
     }
@@ -356,21 +360,85 @@ header.cabecalho {
         text-transform: uppercase;
     }
 
+    .banner > h2 {
+        font-size: 2.2em;
+    }
+
+    .banner > p {
+        padding: 1em 0 1.5em;
+    }
+
     .banner-pesquisa {
         max-width: 500px;
     }
 
     .swiper-slide img {
-        width: 100%;
+        margin-bottom: 2em;
+        width: 90%;
+    }
+
+    .carrossel-titulo {
+        font-size: 2em;
+    }
+
+    .swiper {
+        width: 80%;
+    }
+
+    .swiper > .swiper-button-prev,
+    .swiper > .swiper-button-next {
+        display: block;
+        color: var(--cor-azul-escuro);
     }
 
     .card {
         margin: 1.5em auto;
         max-width: 588px;
     }
+
+    .banner2 > ul > li > a {
+        font-size: 24px;
+        font-weight: 500;
+    }
+
+    .contato {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2em 5em;
+    }
+
+    .contato-descricao {
+        padding: 0;
+    }
+    
+    .contato-titulo {
+        font-size: 1.5em;
+        padding: .5em 2em .5em 0;
+    }
+    
+    .contato-paragrafo {
+        font-size: 1.5em;
+        padding: .5em 2em .5em 0;
+    }
+    
+    .contato-pesquisa {
+        width: 50%;
+        border-radius: 40px;
+        padding: 1em;
+    }
+
+    .contato-pesquisa::placeholder {
+        font-size: 1.4em;
+    }
     
     .rodape {
-        justify-content: space-evenly;
+        margin-right: 3%;
+        justify-content: space-around;
+    }
+
+    .rodape-titulo {
+        font-size: 1.3em;
     }
     
     .rodape-links {
@@ -405,7 +473,10 @@ header.cabecalho {
     }
 }
 
+@media screen and (min-width: 1728px) {
+    
 
+}
 
 
 
