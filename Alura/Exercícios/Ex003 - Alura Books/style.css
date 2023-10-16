@@ -44,8 +44,7 @@ header.cabecalho {
 }
 
 .botao-menu:checked~.container-label > .menu-hamburguer {
-    background: url('imagens/Menu\ Aberto.svg') center center no-repeat;
-    
+    background: url('imagens/Menu\ Aberto.svg') center center no-repeat;    
 }
 
 .botao-menu:checked~.container-label {
