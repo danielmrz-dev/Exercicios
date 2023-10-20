@@ -70,8 +70,29 @@ main {
     gap: 3px;
 }
 
-.elemento2:nth-child(2), .elemento3:nth-child(2), .elemento6:nth-child(2), .elemento7:nth-child(2)  {
+.elemento2:nth-child(2), .elemento3:nth-child(2) {
     margin-right: auto;
 }
+
+.linha6 > p, .linha7 > p {
+    font-size: .8em;
+    margin: auto;
+}
+
+
+/* .linha6 > img {
+    top: 338px;
+    left: 348px;
+    position: absolute;
+    height: 140px;
+    width: 12px;
+}
+
+.linha7 > img {
+    top: 405px;
+    left: 340px;
+    position: absolute;
+    height: 130px;
+} */
 
 
