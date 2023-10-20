@@ -1,0 +1,77 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Tilt Neon';
+}
+
+:root {
+    --verde: #96CD30;
+    --azul: #2793E0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    text-align: center;
+    margin: 1em 0 0 0;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    width: 950px;
+    margin: auto;
+    gap: 3px;
+}
+
+/* LINHA 1 */
+
+.linha1 {
+    display: flex;
+    justify-content: space-between;
+    gap: 3px;
+}
+
+.elemento1, .elemento2, .elemento3, .elemento4, .elemento5, .elemento6, .elemento7, .elemento8, .elemento9 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--verde);
+    padding: .1em .4em;
+    height: 50px;
+    width: 50px;
+    border-radius: 5px;
+}
+
+.numero-atomico {
+    font-size: .6em;
+    align-self: flex-start;
+}
+
+.sigla-elemento {
+    font-size: 1.2em;
+}
+
+.elemento1:nth-child(2) {
+    background-color: var(--azul);
+}
+
+/* LINHA 2 */
+
+.linha2, .linha3, .linha4, .linha5, .linha6, .linha7, .linha8, .linha9 {
+    display: flex;
+    justify-content: flex-end;
+    gap: 3px;
+}
+
+.elemento2:nth-child(2), .elemento3:nth-child(2), .elemento6:nth-child(2), .elemento7:nth-child(2)  {
+    margin-right: auto;
+}
+
+
