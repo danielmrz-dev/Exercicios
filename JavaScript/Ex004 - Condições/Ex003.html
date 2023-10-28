@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radar de Velocidade</title>
+</head>
+<body>
+    <h1>Radar de velocidade</h1>
+    <label for="vel">Sua velocidade é de </label>
+    <input type="number" name="vel" id="vel"> Km/h.
+
+    <input type="button" value="Verificar" onclick="verificar()">
+
+    <div class="res"></div>
+
+    <script>
+        function verificar() {
+            var txtvel = document.getElementById('vel')
+            var vel = Number(txtvel.value)
+            var res = document.querySelector('div.res')
+
+            res.innerHTML = `Sua velocidade é de <strong>${vel}</strong> km/h. <br>`
+
+            if (vel > 60) {
+                res.innerHTML += 'Desse jeito você será <strong>MULTADO</strong>!! Diminua a velocidade!'
+            } else {
+                res.innerHTML += 'Muito bem! Continue assim!'
+            }
+
+
+        }
+
+    </script>
+</body>
+</html>
