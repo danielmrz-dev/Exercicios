@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Detector de horário</title>
+</head>
+<body>
+    <h1 class="title">Hora do dia</h1>
+    <section class="principal">
+        <h2 class="texto">Agora são X horas</h2>
+        <img src="imagens/manha.jpg" alt="Imagem do horário do dia" class="img">
+    </section>
+    <div class="github">Desenvolvido por <a href="https://github.com/danielmrz-dev">danielmrz-dev</a>.
+    </div>
+
+
+    <script>
+        var agora = new Date()
+        hora = agora.getHours()
+        var texto = document.querySelector('h2.texto')
+        var principal = document.querySelector('section.principal')
+        var img = document.querySelector('img.img')
+        var titulo = document.querySelector('h1.title')
+        var github = document.querySelector('div.github')
+
+        if (hora < 12) {
+            texto.innerHTML = `Bom dia! Agora são ${hora} horas.`
+            document.body.style.background = '#F28322'
+            principal.style.background = '#F2B56B'
+        }   else if (hora < 18) {
+                texto.innerHTML = `Boa tarde! Agora são ${hora} horas.`
+                principal.style.background = '#A4B3BF'
+                document.body.style.background = '#659DBF'
+        }       else {
+                    texto.innerHTML = `Boa noite! Agora são ${hora} horas.`
+                    texto.style.color = 'white'                    
+                    principal.style.background = '#022859'
+                    document.body.style.background = '#022873'
+                    titulo.style.color = 'white'
+                    github.style.color = 'white'        
+        }
+    </script>
+</body>
+</html>
