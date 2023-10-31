@@ -10,28 +10,23 @@
     <h1 class="title">Verificador de idade</h1>
     <section class="principal">
         <div class="forms">
-            Ano de nascimento: <input type="number" name="nasc" id="nasc">
+            Ano de nascimento: <input type="number" name="nasc" id="nasc"> <br>
             Sexo:
-            <input type="radio" name="sexo" id="masc" value="M" class="sexo">
-            <label for="sexo">Masculino</label>
-            <input type="radio" name="sexo" id="fem" value="F" class="sexo">
-            <label for="sexo">Feminino</label>
+            <input type="radio" name="gen" id="masc">
+            <label for="masc">Masculino</label>
+
+            <input type="radio" name="gen" id="fem">
+            <label for="fem">Feminino</label>
             
-            <input type="radio" name="sexo" id="nbin" value="NB" class="sexo">
-            <label for="sexo">Não binário</label> <br>
-            <input type="button" value="Verificar" class="botao">
+            <input type="button" value="Verificar" class="botao" onclick="verificar()">
         </div>
 
-        <h2 class="res">Pessoa de X idade</h2>
-
-        <img src="imagens/mulher.jpg" alt="Imagem de uma pessoa" class="img">
+        <h2 class="res">Preencha os dados acima para obter o resultado.</h2>
 
     </section>
     <div class="github">Desenvolvido por <a href="https://github.com/danielmrz-dev">danielmrz-dev</a>.
     </div>
 
-    <script>
-
-    </script>
+    <script src="Ex011.js"></script>
 </body>
 </html>

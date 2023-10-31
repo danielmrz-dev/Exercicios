@@ -24,7 +24,7 @@ body {
     justify-content: center;
     align-items: center;
     background-color: white;
-    padding: 2em;
+    padding: 1.5em;
     margin: 1em auto;
     box-shadow: 2px 2px 5px black;
     border-radius: 10px;
@@ -33,6 +33,7 @@ body {
 
 #nasc {
     margin: 0 auto 1em;
+    width: 150px;
 }
 
 .botao {
@@ -44,11 +45,13 @@ body {
 }
 
 .res {
-    padding: .5em 0;
-    font-size: 1em;
+    padding: .5em 0 0;
+    font-size: .9em;
+    text-align: center;
 }
 
-.img {
+.img, #foto {
+    margin: 1em 0 0 0;
     width: 200px;
     border-radius: 50%;
 }
