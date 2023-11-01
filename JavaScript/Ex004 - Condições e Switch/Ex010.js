@@ -19,10 +19,10 @@ if (hora < 12) {
         img.src = 'imagens/tarde.jpg'
 }       else {
             texto.innerHTML = `Boa noite! Agora são ${hora}:${minuto}.`
-            texto.style.color = 'white'                    
+            texto.style.color = '#ffffff'                    
             principal.style.background = '#022859'
             document.body.style.background = '#022873'
             img.src = 'imagens/noite.jpg'
-            titulo.style.color = 'white'
-            github.style.color = 'white'        
+            titulo.style.color = '#ffffff'
+            github.style.color = '#ffffff'        
 }

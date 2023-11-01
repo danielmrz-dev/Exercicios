@@ -15,25 +15,33 @@ body {
     justify-content: center;
     align-items: center;
     font-family: 'Roboto';
-    background-color: white;
+    background-color: rgb(245, 203, 141);
 }
 
 .principal {
-    background-color: white;
-    padding: 2em;
+    background-color: #ffffff;
+    padding: 1em 2em;
     margin: 1em auto;
     text-align: center;
     box-shadow: 2px 2px 5px black;
     border-radius: 10px;
-    width: 400px;
+    width: 300px;
 }
 
-.principal > h2 {
-    margin-bottom: 1em;
+.forms {
+    margin: .5em 0;
+    width: 120px;
+    text-align: center;
 }
 
-.img {
-    border-radius: 50%;
+.res {
+    margin: 1em auto 0;
+}
+
+.botao {
+    padding: .5em;
+    margin: .5em auto 0;
+    width: 150px;
 }
 
 .github > a {
