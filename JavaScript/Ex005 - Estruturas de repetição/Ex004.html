@@ -3,30 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Ex011.css">
-    <title>Verificador de idade</title>
+    <link rel="stylesheet" href="Ex004.css">
+    <title>Gerador de tabuada</title>
 </head>
 <body>
-    <h1 class="title">Verificador de idade</h1>
+    <h1 class="title">Gerador de tabuada</h1>
     <section class="principal">
         <div class="forms">
-            Ano de nascimento: <input type="number" name="nasc" id="nasc" min="1900" placeholder="    Ex: 1900"> <br>
-            Sexo:
-            <input type="radio" name="gen" id="masc">
-            <label for="masc">Masculino</label>
+            Número: <input type="number" name="numero" id="numero"> <br>
 
-            <input type="radio" name="gen" id="fem">
-            <label for="fem">Feminino</label>
-            
-            <input type="button" value="Verificar" class="botao" onclick="verificar()">
+            <input type="button" value="Gerar tabuada" class="botao" onclick="tabuada()">
         </div>
 
-        <h2 class="res">Preencha os dados acima para obter o resultado.</h2>
+        <h2 class="res">
+            <select name="tab" id="tab" size="10"></select>
+        </h2>
         
     </section>
     <div class="github">Desenvolvido por <a href="https://github.com/danielmrz-dev" target="_blank">danielmrz-dev</a>.
     </div>
 
-    <script src="Ex011.js"></script>
+    <script src="Ex004.js"></script>
 </body>
 </html>
