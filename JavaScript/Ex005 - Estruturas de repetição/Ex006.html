@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Ex006.css">
+    <title>Calculadora de idade</title>
+</head>
+<body>
+    <h1 class="title">Age Calculator</h1>
+    <main>
+        <section class="forms">
+            <div class="divisor">
+                <label for="dia">DAY</label>
+                <input type="number" name="dia" id="dia" min="0" max="31" class="number">
+                <p class="erro">Mensagem de erro</p>
+            </div>
+            <div class="divisor">
+                <label for="dia">MONTH</label>
+                <input type="number" name="mes" id="mes" min="0" max="12" class="number">
+                <p class="erro">Mensagem de erro</p>
+            </div>
+            <div class="divisor">
+                <label for="dia">YEAR</label>
+                <input type="number" name="ano" id="ano" min="1920" max="2023" class="number">
+                <p class="erro">Mensagem de erro</p>
+            </div>
+        </section>
+
+        <br>
+
+        <input type="button" value="Calcular" class="botao" onclick="calcular()">
+
+
+        <section class="res">
+            <h2><strong class="years">--</strong>years</h2>
+            <h2><strong class="months">--</strong>months</h2>
+            <h2><strong class="days">--</strong>days</h2>
+        </section>
+    </main>
+    <script src="Ex006.js"></script>
+</body>
+</html>
