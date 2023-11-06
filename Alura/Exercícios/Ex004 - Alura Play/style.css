@@ -172,9 +172,23 @@ input#pesquisa {
 }
 
 @media screen and (min-width: 834px) {
+    
     .barra-de-pesquisa {
-        display: flex;
-        
+        display: flex;        
+    }
+
+    .menu {
+        left: 0;
+        top: 84px;
+        height: auto;
+        width: 85px;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 30px;        
+    }
+
+    .principal {
+        position:
     }
 }
 
