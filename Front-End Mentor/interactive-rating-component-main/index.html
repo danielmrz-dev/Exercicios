@@ -10,8 +10,8 @@
 
 <body>
 
-<main class="principal">
-  
+<main class="principal">  
+
     <section class="section01">
 
       <img src="images/icon-star.svg" alt="Star">
@@ -24,14 +24,15 @@
       </p>
 
       <div class="numbers">
-        <div class="number">1</div>        
-        <div class="number">2</div>
-        <div class="number">3</div>
-        <div class="number">4</div>
-        <div class="number">5</div>
-
+        <div class="number" id="nota1" onclick="clicar1()">1</div>
+        <div class="number" id="nota2" onclick="clicar2()">2</div>
+        <div class="number" id="nota3" onclick="clicar3()">3</div>
+        <div class="number" id="nota4" onclick="clicar4()">4</div>
+        <div class="number" id="nota5" onclick="clicar5()">5</div>
       </div>
-      <input type="submit" value="Submit" class="botao">
+
+      <input type="submit" value="Submit" class="botao" onclick="enviarnota()">
+
     </section>
     
     <section class="section02">
@@ -40,11 +41,15 @@
       We appreciate you taking the time to give a rating. If you ever need more support,
       don’t hesitate to get in touch!
     </section>
+
 </main>
 
   <footer class="rodape">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="https://github.com/danielmrz-dev" target="_blank">danielmrz-dev</a>.
   </footer>
+
+  <script src="index.js"></script>
+
 </body>
 </html>

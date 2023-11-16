@@ -90,12 +90,9 @@ body {
 }
 
 .number:hover {
-    background-color: var(--Medium-Grey);
-    color: var(--White);
-}
-
-.number:active {
     background-color: var(--Orange);
+    color: var(--White);
+    cursor: pointer;
 }
 
 .botao {
@@ -112,6 +109,7 @@ body {
 .botao:hover {
     background-color: var(--White);
     color: var(--Orange);
+    cursor: pointer;
 }
 
 .rodape {
@@ -122,4 +120,8 @@ body {
 .rodape > a {
     text-decoration: none;
     color: var(--Orange);
+}
+
+.rodape > a:hover {
+    text-decoration: underline;
 }
