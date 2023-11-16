@@ -16,19 +16,28 @@
 
       <img src="images/icon-star.svg" alt="Star">
 
-      <h1>How did we do?</h1>
+      <h1 class="title">How did we do?</h1>
 
-      <p>
+      <p class="text">
         Please let us know how we did with your support request. All feedback is appreciated
         to help us improve our offering!
       </p>
 
       <div class="numbers">
-        <div class="number" id="nota1" onclick="clicar1()">1</div>
-        <div class="number" id="nota2" onclick="clicar2()">2</div>
-        <div class="number" id="nota3" onclick="clicar3()">3</div>
-        <div class="number" id="nota4" onclick="clicar4()">4</div>
-        <div class="number" id="nota5" onclick="clicar5()">5</div>
+        <label for="nota1" class="number" id="nota01">1</label>
+        <input type="radio" name="number" id="nota1" class="test" onclick="clicar1()">
+
+        <label for="nota2" class="number" id="nota02">2</label>
+        <input type="radio" name="number" id="nota2" class="test" onclick="clicar2()">
+        
+        <label for="nota3" class="number" id="nota03">3</label>
+        <input type="radio" name="number" id="nota3" class="test" onclick="clicar3()">
+        
+        <label for="nota4" class="number" id="nota04">4</label>
+        <input type="radio" name="number" id="nota4" class="test" onclick="clicar4()">
+        
+        <label for="nota5" class="number" id="nota05">5</label>
+        <input type="radio" name="number" id="nota5" class="test" onclick="clicar5()">
       </div>
 
       <input type="submit" value="Submit" class="botao" onclick="enviarnota()">
@@ -36,10 +45,13 @@
     </section>
     
     <section class="section02">
-      You selected <!-- Add rating here --> out of 5
-      Thank you!
-      We appreciate you taking the time to give a rating. If you ever need more support,
-      don’t hesitate to get in touch!
+      <img src="images/illustration-thank-you.svg" alt="Thank you illustration">
+      <h3>You selected <span id="rate">0</span> out of 5</h3>
+      <h1 class="title">Thank you!</h1>
+      <p class="text">
+        We appreciate you taking the time to give a rating. If you ever need more support,
+        don't hesitate to get in touch!
+      </p>
     </section>
 
 </main>
