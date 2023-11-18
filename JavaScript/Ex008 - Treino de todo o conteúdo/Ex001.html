@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Ex001.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <title>Analisador de números</title>
+
+</head>
+<body>
+    <header class="cabeçalho">
+        <h1 class="cabeçalho-título">Analisador de números</h1>
+    </header>
+    <main class="principal">
+        <section class="principal-seção">
+            <div class="principal-seção-div01">
+                Número (entre 0 e 100):
+                <input type="number" name="numero" id="numero" min="0" max="100" placeholder="0">
+                <input type="submit" value="Adicionar" class="adicionar" onclick="adicionar()">
+            </div>
+            <div class="principal-seção-div02">
+                <select name="tabela" id="tabela" size="10">
+                                        
+                </select>
+                <input type="submit" value="Finalizar" onclick="finalizar()" id="finalizar">
+            </div>
+            <div class="analise">
+                
+            </div>
+        </section>                
+    </main>
+    <footer class="rodapé">
+        <p>Desenvolvido por <a href="https://github.com/danielmrz-dev" target="_blank">danielmrz-dev</a>.</p>
+    </footer>
+    <script src="Ex001.js"></script>
+</body>
+</html>
