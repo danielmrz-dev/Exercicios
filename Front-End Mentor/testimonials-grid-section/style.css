@@ -28,11 +28,14 @@
     margin: 1.5em;
     padding: 1.5em 1.8em;
     border-radius: 10px;
+    box-shadow: 8px 8px 20px var(--Light-gray);
 }
 
 .tw-cardtop-grid {
     display: grid;
+    height: 35px;
     grid-template-columns: 50px 1fr;
+    grid-template-rows: 1fr 1fr;
     align-items: center;
 }
 
@@ -76,20 +79,20 @@
 .tw-title {
     color: var(--White);
     font-size: 1.3em;
-    font-weight: 500;
+    font-weight: 400;
 }
 
 .tw-title-black {
     color: var(--black);
     font-size: 1.3em;
-    font-weight: 500;
+    font-weight: 400;
 }
 
 .tw-testimonial {
     color: var(--White);
     opacity: 70%;
-    font-size: .8em;
-    font-weight: 500;
+    font-size: .85em;
+    font-weight: 300;
     line-height: 20px;
     padding-bottom: .5em;
 }
@@ -97,8 +100,8 @@
 .tw-testimonial-black {
     color: var(--black);
     opacity: 70%;
-    font-size: .8em;
-    font-weight: 500;
+    font-size: .85em;
+    font-weight: 300;
     line-height: 20px;
     padding-bottom: .5em;
 }
@@ -109,9 +112,14 @@ body {
     background-color: var(--Bg-color);
 }
 
+.principal {
+    border-radius: 20px;
+    margin: 0 auto;
+}
+
 .card01 {
     background: url('images/bg-pattern-quotation.svg') var(--Moderate-violet) top right no-repeat;
-    background-position-x: 90%;
+    background-position-x: 85%;
 }
 
 .card02 {
@@ -126,23 +134,40 @@ body {
     background-color: var(--Black);
 }
 
-@media screen and (min-width: 768px) {
+.rodape {
+    font-size: 1em;
+    text-align: center;
+    padding-bottom: 1em;
+}
+
+.rodape a {
+    text-decoration: none;
+    color: var(--Moderate-violet);
+}
+
+.rodape a:hover {
+    text-decoration: underline;
+    color: var(--Dark-Blue);
+}
+
+@media screen and (min-width: 1180px) {
 
     body {
+        height: 100vh;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: center;        
+        align-items: center;                
     }
 
     .principal {
         display: grid;
-        grid-template-columns: repeat(4, 20%);  
-        margin-right: auto;      
+        grid-template-columns: repeat(4, 25%);
+        width: 1120px;
     }
 
     .tw-card {
-        margin: .7em;
+        margin: .8em;
     }
 
     .card01 {
@@ -163,5 +188,9 @@ body {
 
     .card05 {
         grid-area: 1 / 4 / 3 / 5;
+    }
+
+    .rodape {
+        padding-bottom: 0;
     }
 }
