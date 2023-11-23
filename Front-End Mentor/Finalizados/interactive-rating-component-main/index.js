@@ -1,12 +1,8 @@
-let nota01 = document.getElementById('nota01')
+let notas = [];
 
-let nota02 = document.getElementById('nota02')
-
-let nota03 = document.getElementById('nota03')
-
-let nota04 = document.getElementById('nota04')
-
-let nota05 = document.getElementById('nota05')
+for (let i = 1; i <= 5; i++) {
+    notas.push(document.getElementById(`nota${i}`));
+}
 
 let section01 = document.querySelector('section.section01')
 let section02 = document.querySelector('section.section02')
@@ -128,3 +124,5 @@ function enviarnota() {
         rate.innerHTML = '5'
 }
 }
+
+
