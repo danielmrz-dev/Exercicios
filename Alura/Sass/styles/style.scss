@@ -1,0 +1,35 @@
+$cor-principal: gray;
+$cor-secundaria: yellow;
+
+@mixin reset {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+* {
+    @include reset()
+}
+
+@mixin cor-e-texto($background-color, $text-color) {
+    width: 50%;
+    background-color: $background-color;
+    .texto {
+        margin-top: 40%;
+        text-align: center;
+        font-size: 150px;
+        color: $text-color;
+    }
+}
+
+.container {
+    height: 100vh;
+    display: flex;
+    .left {
+        @include cor-e-texto($cor-principal, $cor-secundaria);
+    }
+
+    .right {
+        @include cor-e-texto($cor-secundaria, $cor-principal)
+    }
+    }
