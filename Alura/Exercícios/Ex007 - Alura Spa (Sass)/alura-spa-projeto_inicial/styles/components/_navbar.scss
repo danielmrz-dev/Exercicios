@@ -1,0 +1,18 @@
+nav {
+    text-align: center;
+    ul {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        padding: 1rem;
+
+        li {
+            a {
+                text-decoration: none;
+                text-transform: uppercase;
+                color: black;
+                font-weight: bold;
+            }
+        }
+    }
+}
