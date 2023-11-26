@@ -14,6 +14,51 @@ nav ul {
 nav ul li a {
   text-decoration: none;
   text-transform: uppercase;
-  color: black;
+  color: #B4BDFF;
   font-weight: bold;
+}
+nav ul li a:hover {
+  border-bottom: 2px solid #FFE3BB;
+}
+
+.banner {
+  background: url(../imagens/banner.jpeg) 27% center no-repeat;
+  min-height: 350px;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.9;
+}
+.banner .inner-banner {
+  padding: 3rem;
+  background-color: #FFE3BB;
+  opacity: 0.9;
+  border-radius: 45px;
+}
+.banner .inner-banner h1 {
+  font-size: 3rem;
+  color: #83A2FF;
+}
+.banner .inner-banner h2 {
+  font-size: 1.5rem;
+  color: #B4BDFF;
+}
+
+#servicos {
+  margin: 80px;
+}
+#servicos h3 {
+  font-size: 1.2rem;
+  color: #B4BDFF;
+  text-transform: uppercase;
+  font-weight: 400;
+  text-align: center;
+  margin: 1rem;
+}
+#servicos h4 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 80px;
+  font-weight: 300;
 }/*# sourceMappingURL=style.css.map */
