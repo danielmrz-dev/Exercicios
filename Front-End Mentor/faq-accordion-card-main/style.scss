@@ -23,7 +23,6 @@ $Bg-gradient: linear-gradient(to top, $Soft-blue, $Soft-violet);
 $White: #fff;
 $Black: #000;
 
-$font-size: 12px;
 $Kumbh-Sans: "Kumbh Sans", sans-serif;
 
 // Mixins
@@ -49,77 +48,108 @@ $Kumbh-Sans: "Kumbh Sans", sans-serif;
 body {
     background: $Bg-gradient no-repeat;
     background-size: cover;
-
-    .principal {
+    @media (min-width: 600px) {
+        height: 100vh;
         display: flex;
         flex-direction: column;
-		justify-content: center;
-        background-color: $White;
-        border-radius: 20px;
-        padding: 1.5em;
-        margin: 8em 1.5em 1em;
-		max-width: 500px;
-		@media (min-width: 550px) {
-			margin: 8em auto 1em;			
-		}
-		@media (min-width: 1440px) {
-			flex-direction: row;
-			max-width: 1000px;
-		}
-        .text {
-        padding-bottom: 1.2em;
-		}
-        .imagens {
-        display: flex;
-        flex-direction: column;
+        justify-content: center;
         align-items: center;
-        height: 110px;
-        }
-        .img-shadow {
-        margin: auto;
-        width: 250px;
-        }
-        .image {
-        width: 250px;
-        transform: translateY(-220px);
-        }
-        .titulo {
-        padding: 0.7em;
-        text-align: center;
-        }
-        .questions {
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-        .border-bottom {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            padding: 1em 0;
-            border-bottom: 1px solid $Border;
-            .arrow-down {
-            display: flex;
-            align-items: baseline;
-            justify-content: space-between;
-            &:hover {
-                cursor: pointer;
-                color: $Soft-red;
-            }
-			img {
-				transform: rotateX(0deg)
-			}
-            }
-        }
-
-        .question {
-            @include question;
-        }
-
-        .answer {
-            @include answer;
-        }
+            
         }
     }
+    .principal {
+        background-color: $White;
+        border-radius: 20px;
+        padding: 0 1.5em 1.5em 1.5em;
+        margin: 8em 1.5em 0;
+		max-width: 550px;
+
+        @media (min-width: 600px) {
+            width: 550px;                        
+            }
+        @media (min-width: 1200px) {
+            padding: 0;
+            height: 515px;
+            min-width: 900px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+        }
+
+        }     
+        .text {
+            padding-bottom: 1.2em;
+		}
+        .imagens {
+            height: 90px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: url('images/bg-pattern-mobile.svg') no-repeat;
+            background-size: 230px;
+            background-position: center -10px;
+
+            @media (min-width: 1200px) {
+                height: 100%;
+                width: 100%;
+                background: url('images/bg-pattern-desktop.svg') no-repeat;
+                background-size: 1000px;
+                background-position: -650px -310px;
+            }        
+            .image-mobile {                
+                width: 230px;
+                transform: translate(0, -105px);    
+                @media (min-width: 1200px) {
+                    display: none;
+                }
+            }
+            .image-desktop {
+                display: none;
+                @media (min-width: 1200px) {
+                    display: block;
+                    width: 440px;
+                    transform: translate(-63px, -120px); 
+                }
+            }
+        }       
+        
+        .titulo {
+            padding: 0.7em;
+            text-align: center;
+        }
+        .questions {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            .border-bottom {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                padding: 1em 0;
+                border-bottom: 1px solid $Border;
+                .arrow-down {
+                    display: flex;
+                    align-items: baseline;
+                    justify-content: space-between;
+                    &:hover {
+                        cursor: pointer;
+                        color: $Soft-red;
+                    }
+                    img {
+                        transform: rotateX(0deg)
+                    }
+                }
+            }
+
+            .question {
+                @include question;
+            }
+
+            .answer {
+                @include answer;
+            }
+        }
+    
 
 	.footer {
 		color: $Light-grayish-blue;
@@ -134,4 +164,3 @@ body {
 			}
 		}
 	}
-}
