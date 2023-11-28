@@ -63,17 +63,20 @@ body {
         padding: 0 1.5em 1.5em 1.5em;
         margin: 8em 1.5em 0;
 		max-width: 550px;
+        box-shadow: 0 10px 30px $Very-dark-grayish-blue;
 
         @media (min-width: 600px) {
             width: 550px;                        
             }
         @media (min-width: 1200px) {
+            margin: 1.5em;
             padding: 0;
-            height: 515px;
+            height: 500px;
             min-width: 900px;
             display: grid;
             grid-template-columns: 1fr 1fr;
             align-items: center;
+            overflow-x: hidden;
         }
 
         }     
@@ -94,7 +97,7 @@ body {
                 width: 100%;
                 background: url('images/bg-pattern-desktop.svg') no-repeat;
                 background-size: 1000px;
-                background-position: -650px -310px;
+                background-position: -610px -310px;
             }        
             .image-mobile {                
                 width: 230px;
@@ -107,8 +110,16 @@ body {
                 display: none;
                 @media (min-width: 1200px) {
                     display: block;
-                    width: 440px;
-                    transform: translate(-63px, -120px); 
+                    width: 460px;
+                    transform: translate(-70px, 80px);
+                }
+            }
+            .box {
+                display: none;
+                @media (min-width: 1200px) {
+                    display: block;
+                    position: fixed;
+                    transform: translate(-230px, 200px);
                 }
             }
         }       
@@ -116,11 +127,18 @@ body {
         .titulo {
             padding: 0.7em;
             text-align: center;
+            @media (min-width: 1200px) {
+                text-align: start;
+                padding: .7em 0;
+            }
         }
         .questions {
             display: flex;
             flex-direction: column;
             gap: 15px;
+            @media (min-width: 1200px) {
+                max-width: 340px;
+            }
             .border-bottom {
                 display: flex;
                 flex-direction: column;
@@ -155,7 +173,7 @@ body {
 		color: $Light-grayish-blue;
 		font-size: .8em;
 		text-align: center;
-		padding: 1.5em;
+		padding: 0 0 1.5em 0;
 		a {
 			text-decoration: none;
 			color: $Soft-red;
