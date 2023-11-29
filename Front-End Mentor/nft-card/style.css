@@ -96,12 +96,21 @@ body .card .profile .profile-pic {
   border: 1px solid #ffffff;
   border-radius: 50%;
 }
+body .card .profile .profile-pic:hover {
+  scale: 1.2;
+  cursor: pointer;
+  border: 2px solid #00fff7;
+  rotate: 360deg;
+  transition: linear 0.5s;
+}
 body .card .profile .creation {
   font-weight: 300;
   color: #8bacda;
 }
 body .card .profile .creation .name {
   color: #ffffff;
+  font-weight: 300;
+  text-decoration: none;
 }
 body .card .profile .creation .name:hover {
   color: #00fff7;

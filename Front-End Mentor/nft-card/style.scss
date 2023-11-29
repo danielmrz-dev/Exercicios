@@ -112,12 +112,21 @@ body {
                 width: 35px;
                 border: 1px solid $White;
                 border-radius: 50%;
+                &:hover {
+                    scale: 1.2;
+                    cursor: pointer;
+                    border: 2px solid $Cyan;
+                    rotate: 360deg;
+                    transition: linear .5s ;
+                }
             }
             .creation {
                 font-weight: 300;
                 color: $Soft-blue;
                 .name {
                     color: $White;
+                    font-weight: 300;
+                    text-decoration: none;
                     &:hover {
                         color: $Cyan;
                         cursor: pointer;
