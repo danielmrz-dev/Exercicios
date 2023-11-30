@@ -2,11 +2,12 @@
 
 //Variables
 
-$Very-Dark-Magenta: #4f214f;
-$Soft-Pink: #ee68a4;
-$Dark-Grayish-Magenta: #937b92;
-$Light-Grayish-Magenta: #f7f2f7;
-$White: #fff;
+$Very-Dark-Magenta: #025259;
+$Soft-Pink: #F29325;
+$Dark-Grayish-Magenta: #007172; 
+$Hover-green: #20b5b799; 
+$Light-Grayish-Magenta: #F4E2DE;
+$White: #D94F04;
 
 $League-Spartan: 'League Spartan';
 
@@ -24,10 +25,19 @@ $League-Spartan: 'League Spartan';
     background-color: $Light-Grayish-Magenta;
     display: grid;
     gap: .7em;
+    align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 1em;
+    padding: 1.5em;
     border-radius: 10px;
+    cursor: pointer;
+    &:hover {
+        transition: all 1s ease;
+        scale: 1.05;
+        transform: rotateX(360deg);
+        box-shadow: 0 0 15px $Very-Dark-Magenta;
+        border-radius: 30px;
+    }
 }
 
 @mixin card {
@@ -37,16 +47,28 @@ $League-Spartan: 'League Spartan';
     color: $White;
     padding: 2.1em;
     border-radius: 10px;
+    box-shadow: inset 0 0 0 0 $Hover-green;
+    transition: color .5s ease-in-out, box-shadow .5s ease-in-out;
+    cursor: pointer;
+    &:hover {
+        box-shadow: inset 350px 0 0 0 $Hover-green;
+        color: #D94F04;
+    }
 }
 
 body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background: url('images/bg-pattern-top-mobile.svg') center top no-repeat;
-    @media (min-width:800px) {
+    @media (min-width: 1000px) {
+        background: 
+        url('images/bg-pattern-top-desktop.svg') no-repeat, 
+        url('images/bg-pattern-bottom-desktop.svg') no-repeat;
+        background-position: -10vh -30vw, 30vh -10vw;
+        background-size: cover;
         height: 100vh;
-        display: flex;
-        flex-direction: column;
         justify-content: center;
-        align-items: center;
     }
     .principal {
         display: grid;
@@ -54,27 +76,28 @@ body {
         margin: 3em 1.1em;
         padding: .3em;
         max-width: 800px;
-        @media (min-width: 800px) {
-            grid-template-columns: 1fr 400px;
-            grid-template-rows: 230px 280px;
-            margin: 0;
+        @media (min-width: 1000px) {
+            max-width: 1100px;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            margin: 1em;
+            row-gap: 3em;
         }
         .section01 {
             display: grid;
             gap: 1.6em;
-            @media (min-width: 800px) {
+            @media (min-width: 1000px) {
                 grid-area: 1 / 1 / 2 / 2;
-                padding-right: 3em;
                 align-items: center;
-                gap: 0;
+                padding-right: 2em;
             }
             .title {
                 text-align: center;
-                font-size: 2.2em;
+                font-size: 3.4em;
                 font-weight: 800;
                 color: $Very-Dark-Magenta;
                 padding: 0 1em 0;
-                @media (min-width: 800px) {
+                @media (min-width: 1000px) {
                     text-align: start;
                     padding: 0;
                 }
@@ -82,10 +105,11 @@ body {
             .description {
                 color: $Dark-Grayish-Magenta;
                 font-size: 1.1em;
-                font-weight: 500;
+                font-weight: 600;
                 text-align: center;
-                line-height: 20px;
-                @media (min-width:800px) {
+                line-height: 25px;
+                @media (min-width: 1000px) {
+                    padding-right: 1em;
                     text-align: start;
                 }
             }
@@ -93,59 +117,65 @@ body {
         .section02 {
             display: grid;
             gap: 1em;
-            @media (min-width: 800px) {
+            @media (min-width: 1000px) {
                 grid-area: 1 / 2 / 2 / 3;
-                grid-template-columns: repeat(9, 40px);
-                grid-template-rows: repeat(3, 76.66px);
-                gap: 0;
+                grid-template-columns: repeat(3, 40px);
+                grid-template-rows: 10px repeat(3, 70px) 0;
+                row-gap: .1em;
+                align-items: end;
             }
-            .rating {                
+            .rating01, .rating02, .rating03 {                
                 @include ratings;
                 .stars {
                     display: flex;
                     justify-content: center;
                     gap: 8px;
-                    &:nth-child(3) {
-                        grid-area: 2 / 3 / 2 / 10;
-                        // continuar aqui
-                    }
                     img {
-                        @media (min-width:800px) {
-                            height: 15px;
+                        @media (min-width: 1000px) {
+                            height: 17px;
                         }
                     }
                 }
                 .rated {
                     font-size: 1.1em;
-                    color: $Very-Dark-Magenta;
-                    @media (min-width:800px) {
-                        font-size: 1em;
-                    }
+                    color: $Very-Dark-Magenta;                    
                 }
-                @media (min-width:800px) {
-                    height: 60px;
-                    width: 400px;
+                @media (min-width: 1000px) {
+                    grid-area: 2 / 1;
+                    height: 57px;
+                    width: 440px;
                     display: flex;
                     align-items: center;
-                    padding: 0 1.5em;
+                    padding: 0 2em;
                     justify-content: flex-start;
                     gap: 1.5em;
                 }
             }
+            .rating02 {
+                @media (min-width: 1000px) {
+                    grid-area: 3 / 2;
+                }
+            }
+            .rating03 {
+                @media (min-width: 1000px) {
+                    grid-area: 4 / 3;
+                }
+            }            
         }
         .section03{
             display: grid;
             gap: 1em;
-            @media (min-width: 800px) {
-                grid-template-columns: 1fr 1fr 1fr;
-                grid-template-rows: 1fr;
+            @media (min-width: 1000px) {
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-rows: 0 0 0 1fr;
                 grid-area: 2 / 1 / 3 / 4;
+                column-gap: 1.3em;
             }
-            .card {
+            .card01, .card02, .card03 {
                 @include card;
                 .profile {
                     display: grid;
-                    grid-template-columns: 25% 1fr;
+                    grid-template-columns: 60px 1fr;
                     align-items: center;
                     img {
                         grid-area: 1 / 1 / 3 / 2;
@@ -168,7 +198,37 @@ body {
                     opacity: .9;
                     line-height: 22px;
                     font-weight: 500;
+                    @media (min-width: 1000px) {
+                        font-size: 1.034em;
+                        font-weight: 400;
+                    }
                 }
+            }
+            .card01 {
+                @media (min-width: 1000px) {
+                    grid-area: 1 / 1 / 5;                    
+                }
+            }
+            .card02 {
+                @media (min-width: 1000px) {
+                    grid-area: 2 / 2 / 6;                    
+                }                
+            }
+            .card03 {
+                @media (min-width: 1000px) {
+                    grid-area: 3 / 3 / 7;                    
+                }                
+            }
+        }
+    }
+    .footer {
+        font-size: 1em;
+        a {
+            text-decoration: none;
+            color: $Soft-Pink;
+            &:hover {
+                color: $Very-Dark-Magenta;
+                text-decoration: underline;
             }
         }
     }
