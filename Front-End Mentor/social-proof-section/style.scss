@@ -107,6 +107,7 @@ body {
                     gap: 8px;
                     &:nth-child(3) {
                         grid-area: 2 / 3 / 2 / 10;
+                        // continuar aqui
                     }
                     img {
                         @media (min-width:800px) {
