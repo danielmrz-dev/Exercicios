@@ -1,0 +1,168 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "League Spartan";
+}
+
+body {
+  background: url("images/bg-pattern-top-mobile.svg") center top no-repeat;
+}
+@media (min-width: 800px) {
+  body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+body .principal {
+  display: grid;
+  gap: 2em;
+  margin: 3em 1.1em;
+  padding: 0.3em;
+  max-width: 800px;
+}
+@media (min-width: 800px) {
+  body .principal {
+    grid-template-columns: 1fr 400px;
+    grid-template-rows: 230px 280px;
+    margin: 0;
+  }
+}
+body .principal .section01 {
+  display: grid;
+  gap: 1.6em;
+}
+@media (min-width: 800px) {
+  body .principal .section01 {
+    grid-area: 1/1/2/2;
+    padding-right: 3em;
+    align-items: center;
+    gap: 0;
+  }
+}
+body .principal .section01 .title {
+  text-align: center;
+  font-size: 2.2em;
+  font-weight: 800;
+  color: #4f214f;
+  padding: 0 1em 0;
+}
+@media (min-width: 800px) {
+  body .principal .section01 .title {
+    text-align: start;
+    padding: 0;
+  }
+}
+body .principal .section01 .description {
+  color: #937b92;
+  font-size: 1.1em;
+  font-weight: 500;
+  text-align: center;
+  line-height: 20px;
+}
+@media (min-width: 800px) {
+  body .principal .section01 .description {
+    text-align: start;
+  }
+}
+body .principal .section02 {
+  display: grid;
+  gap: 1em;
+}
+@media (min-width: 800px) {
+  body .principal .section02 {
+    grid-area: 1/2/2/3;
+    grid-template-columns: repeat(9, 40px);
+    grid-template-rows: repeat(3, 76.66px);
+    gap: 0;
+  }
+}
+body .principal .section02 .rating {
+  background-color: #f7f2f7;
+  display: grid;
+  gap: 0.7em;
+  justify-content: center;
+  text-align: center;
+  padding: 1em;
+  border-radius: 10px;
+}
+body .principal .section02 .rating .stars {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+body .principal .section02 .rating .stars:nth-child(3) {
+  grid-area: 2/3/2/10;
+}
+@media (min-width: 800px) {
+  body .principal .section02 .rating .stars img {
+    height: 15px;
+  }
+}
+body .principal .section02 .rating .rated {
+  font-size: 1.1em;
+  color: #4f214f;
+}
+@media (min-width: 800px) {
+  body .principal .section02 .rating .rated {
+    font-size: 1em;
+  }
+}
+@media (min-width: 800px) {
+  body .principal .section02 .rating {
+    height: 60px;
+    width: 400px;
+    display: flex;
+    align-items: center;
+    padding: 0 1.5em;
+    justify-content: flex-start;
+    gap: 1.5em;
+  }
+}
+body .principal .section03 {
+  display: grid;
+  gap: 1em;
+}
+@media (min-width: 800px) {
+  body .principal .section03 {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-area: 2/1/3/4;
+  }
+}
+body .principal .section03 .card {
+  display: grid;
+  gap: 1.2em;
+  background-color: #4f214f;
+  color: #fff;
+  padding: 2.1em;
+  border-radius: 10px;
+}
+body .principal .section03 .card .profile {
+  display: grid;
+  grid-template-columns: 25% 1fr;
+  align-items: center;
+}
+body .principal .section03 .card .profile img {
+  grid-area: 1/1/3/2;
+  width: 40px;
+  border-radius: 50%;
+  border: 2px solid #ee68a4;
+}
+body .principal .section03 .card .profile .name {
+  grid-area: 1/2/2/3;
+  font-size: 1em;
+}
+body .principal .section03 .card .profile .verified {
+  grid-area: 2/2/3/3;
+  color: #ee68a4;
+}
+body .principal .section03 .card .testimonial {
+  color: #f7f2f7;
+  opacity: 0.9;
+  line-height: 22px;
+  font-weight: 500;
+}/*# sourceMappingURL=style.css.map */

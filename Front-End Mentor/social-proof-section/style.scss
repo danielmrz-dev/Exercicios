@@ -1,0 +1,174 @@
+@charset "UTF-8";
+
+//Variables
+
+$Very-Dark-Magenta: #4f214f;
+$Soft-Pink: #ee68a4;
+$Dark-Grayish-Magenta: #937b92;
+$Light-Grayish-Magenta: #f7f2f7;
+$White: #fff;
+
+$League-Spartan: 'League Spartan';
+
+// Reset
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: $League-Spartan;
+}
+
+// Mixins
+@mixin ratings {
+    background-color: $Light-Grayish-Magenta;
+    display: grid;
+    gap: .7em;
+    justify-content: center;
+    text-align: center;
+    padding: 1em;
+    border-radius: 10px;
+}
+
+@mixin card {
+    display: grid;
+    gap: 1.2em;
+    background-color: $Very-Dark-Magenta;
+    color: $White;
+    padding: 2.1em;
+    border-radius: 10px;
+}
+
+body {
+    background: url('images/bg-pattern-top-mobile.svg') center top no-repeat;
+    @media (min-width:800px) {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .principal {
+        display: grid;
+        gap: 2em;
+        margin: 3em 1.1em;
+        padding: .3em;
+        max-width: 800px;
+        @media (min-width: 800px) {
+            grid-template-columns: 1fr 400px;
+            grid-template-rows: 230px 280px;
+            margin: 0;
+        }
+        .section01 {
+            display: grid;
+            gap: 1.6em;
+            @media (min-width: 800px) {
+                grid-area: 1 / 1 / 2 / 2;
+                padding-right: 3em;
+                align-items: center;
+                gap: 0;
+            }
+            .title {
+                text-align: center;
+                font-size: 2.2em;
+                font-weight: 800;
+                color: $Very-Dark-Magenta;
+                padding: 0 1em 0;
+                @media (min-width: 800px) {
+                    text-align: start;
+                    padding: 0;
+                }
+            }
+            .description {
+                color: $Dark-Grayish-Magenta;
+                font-size: 1.1em;
+                font-weight: 500;
+                text-align: center;
+                line-height: 20px;
+                @media (min-width:800px) {
+                    text-align: start;
+                }
+            }
+        }
+        .section02 {
+            display: grid;
+            gap: 1em;
+            @media (min-width: 800px) {
+                grid-area: 1 / 2 / 2 / 3;
+                grid-template-columns: repeat(9, 40px);
+                grid-template-rows: repeat(3, 76.66px);
+                gap: 0;
+            }
+            .rating {                
+                @include ratings;
+                .stars {
+                    display: flex;
+                    justify-content: center;
+                    gap: 8px;
+                    &:nth-child(3) {
+                        grid-area: 2 / 3 / 2 / 10;
+                    }
+                    img {
+                        @media (min-width:800px) {
+                            height: 15px;
+                        }
+                    }
+                }
+                .rated {
+                    font-size: 1.1em;
+                    color: $Very-Dark-Magenta;
+                    @media (min-width:800px) {
+                        font-size: 1em;
+                    }
+                }
+                @media (min-width:800px) {
+                    height: 60px;
+                    width: 400px;
+                    display: flex;
+                    align-items: center;
+                    padding: 0 1.5em;
+                    justify-content: flex-start;
+                    gap: 1.5em;
+                }
+            }
+        }
+        .section03{
+            display: grid;
+            gap: 1em;
+            @media (min-width: 800px) {
+                grid-template-columns: 1fr 1fr 1fr;
+                grid-template-rows: 1fr;
+                grid-area: 2 / 1 / 3 / 4;
+            }
+            .card {
+                @include card;
+                .profile {
+                    display: grid;
+                    grid-template-columns: 25% 1fr;
+                    align-items: center;
+                    img {
+                        grid-area: 1 / 1 / 3 / 2;
+                        width: 40px;
+                        border-radius: 50%;
+                        border: 2px solid $Soft-Pink;
+                    }
+                    .name {
+                        grid-area: 1 / 2 / 2 / 3;
+                        font-size: 1em;
+                    }
+                    .verified {
+                        grid-area: 2 / 2 / 3 / 3;
+                        color: $Soft-Pink;
+                    }
+        
+                }
+                .testimonial {
+                    color: $Light-Grayish-Magenta;
+                    opacity: .9;
+                    line-height: 22px;
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+}
