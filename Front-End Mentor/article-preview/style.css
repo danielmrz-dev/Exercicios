@@ -4,4 +4,74 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Manrope", sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(to top, #e7eef6, #ecf2f8);
+}
+body .card {
+  margin: 1.5rem;
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+}
+body .card .img {
+  height: 200px;
+  background: url("images/drawers.jpg") center center no-repeat;
+  background-size: cover;
+}
+body .card .words {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  padding: 2.2rem 2.2rem 1.5rem 2.2rem;
+}
+body .card .words .title {
+  color: #48556a;
+  font-size: 1rem;
+  font-weight: 800;
+  line-height: 25px;
+}
+body .card .words .text {
+  color: #6e7f96;
+  font-size: 0.8rem;
+  font-weight: 600;
+  line-height: 20px;
+  padding: 0 0 1rem 0;
+}
+body .card .profile {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+body .card .profile .michelle {
+  width: 40px;
+  border-radius: 50%;
+  border: 2px solid #48556a;
+}
+body .card .profile .name-date {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.1rem;
+  margin-right: auto;
+}
+body .card .profile .name-date .name {
+  color: #48556a;
+  font-size: 0.8rem;
+  font-weight: 900;
+}
+body .card .profile .name-date .date {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #9eafc2;
+}
+body .card .profile .share {
+  background-color: #e7eef6;
+  width: 30px;
+  padding: 0.5em;
+  border-radius: 50%;
 }/*# sourceMappingURL=style.css.map */

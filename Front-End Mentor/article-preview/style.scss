@@ -4,10 +4,12 @@
 
 // Variables
 
-$Very-Dark-Grayish-Blue: hsl(217, 19%, 35%);
-$Desaturated-Dark-Blue: hsl(214, 17%, 51%);
-$Grayish-Blue: hsl(212, 23%, 69%);
-$Light-Grayish-Blue: hsl(210, 46%, 95%);
+$Very-Dark-Grayish-Blue: #48556a;
+$Body-bg: #e7eef6;
+$Desaturated-Dark-Blue: #6e7f96;
+$Grayish-Blue: #9eafc2;
+$Light-Grayish-Blue: #ecf2f8;
+$White: #fff;
 
 $Manrope: 'Manrope', sans-serif;
 
@@ -18,5 +20,75 @@ $Manrope: 'Manrope', sans-serif;
     padding: 0;
     box-sizing: border-box;
     font-family: $Manrope;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(to top, $Body-bg, $Light-Grayish-Blue);
+    .card {
+        margin: 1.5rem;
+        background-color: $White;
+        border-radius: 10px;
+        overflow: hidden;
+        .img {
+            height: 200px;
+            background: url('images/drawers.jpg') center center no-repeat;
+            background-size: cover;
+        }
+        .words {
+            display: flex;
+            flex-direction: column;
+            gap: .8rem;
+            padding: 2.2rem 2.2rem 1.5rem 2.2rem;
+            .title {
+                color: $Very-Dark-Grayish-Blue;
+                font-size: 1rem;
+                font-weight: 800;
+                line-height: 25px;
+            }
+            .text {
+                color: $Desaturated-Dark-Blue;
+                font-size: .8rem;
+                font-weight: 600;
+                line-height: 20px;
+                padding: 0 0 1rem 0;
+            }
+        }
+        .profile {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            .michelle {
+                width: 40px;
+                border-radius: 50%;
+                border: 2px solid $Very-Dark-Grayish-Blue;
+            }
+            .name-date {
+                display: flex;
+                flex-direction: column;
+                row-gap: .1rem;
+                margin-right: auto;
+                .name {
+                    color: $Very-Dark-Grayish-Blue;
+                    font-size: .8rem;
+                    font-weight: 900;
+                }
+                .date {
+                    font-size: .8rem;
+                    font-weight: 600;
+                    color: $Grayish-Blue;
+                }
+            }
+            .share {
+                background-color: $Body-bg;
+                width: 30px;
+                padding: .5em;
+                border-radius: 50%;
+            }
+        }
+    }
 }
 
