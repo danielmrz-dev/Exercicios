@@ -28,7 +28,7 @@ body .card .words {
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
-  padding: 2.2rem 2.2rem 1.5rem 2.2rem;
+  padding: 2.2rem 2.2rem 0.5rem 2.2rem;
 }
 body .card .words .title {
   color: #48556a;
@@ -44,9 +44,10 @@ body .card .words .text {
   padding: 0 0 1rem 0;
 }
 body .card .profile {
-  display: flex;
+  display: none;
   align-items: center;
   gap: 15px;
+  padding-bottom: 1rem;
 }
 body .card .profile .michelle {
   width: 40px;
@@ -74,4 +75,25 @@ body .card .profile .share {
   width: 30px;
   padding: 0.5em;
   border-radius: 50%;
+}
+body .card .share-options {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+  background: #48556a;
+  padding: 1.3rem 2rem;
+}
+body .card .share-options .share-h3 {
+  font-size: 0.8rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  color: #9eafc2;
+}
+body .card .share-options .sharing {
+  background-color: #9eafc2;
+  padding: 0.5rem;
+  width: 30px;
+  border-radius: 50%;
+  margin-left: auto;
 }/*# sourceMappingURL=style.css.map */

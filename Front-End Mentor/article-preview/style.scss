@@ -42,7 +42,7 @@ body {
             display: flex;
             flex-direction: column;
             gap: .8rem;
-            padding: 2.2rem 2.2rem 1.5rem 2.2rem;
+            padding: 2.2rem 2.2rem .5rem 2.2rem;
             .title {
                 color: $Very-Dark-Grayish-Blue;
                 font-size: 1rem;
@@ -58,9 +58,10 @@ body {
             }
         }
         .profile {
-            display: flex;
+            display: none; //flex
             align-items: center;
             gap: 15px;
+            padding-bottom: 1rem;
             .michelle {
                 width: 40px;
                 border-radius: 50%;
@@ -87,6 +88,27 @@ body {
                 width: 30px;
                 padding: .5em;
                 border-radius: 50%;
+            }
+        }
+        .share-options {
+            display: flex;
+            align-items: center;
+            gap: 17px;
+            background: $Very-Dark-Grayish-Blue;
+            padding: 1.3rem 2rem;
+            .share-h3 {
+                font-size: .8rem;
+                font-weight: 400;
+                text-transform: uppercase;
+                letter-spacing: 4px;
+                color: $Grayish-Blue;
+            }
+            .sharing {
+                background-color: $Grayish-Blue;
+                padding: .5rem;
+                width: 30px;
+                border-radius: 50%;
+                margin-left: auto;
             }
         }
     }
