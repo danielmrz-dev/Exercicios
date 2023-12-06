@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de IMC</title>
+</head>
+<body>
+    <h1>Olá, essa é a calculadora de IMC!</h1>
+    Clique no botão abaixo para começar!
+
+    <script>
+        function pulaLinha() {
+            document.write('<br>');            
+            document.write('<br>');            
+        }
+
+        function mostra(frase) {
+            document.write(frase);
+            pulaLinha();
+        }
+
+        function calculaIMC(peso, altura) {
+            const imc = peso / (altura*altura)            
+            mostra(`O IMC calculado é de ${imc.toFixed(1)}.`)
+        }
+
+        const nome1 = 'Daniel'
+        const peso1 = 80
+        const altura1 = 1.90
+        calculaIMC(peso1, altura1);
+
+        const nome2 = 'Ana'
+        const peso2 = 70
+        const altura2 = 1.67
+        calculaIMC(peso2, altura2);       
+
+    </script>
+</body>
+</html>
