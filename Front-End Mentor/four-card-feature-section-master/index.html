@@ -32,44 +32,50 @@
 </script>
 
 </head>
-<body class="bg-lightgray flex flex-col">
+<body class="bg-lightgray flex flex-col font-poppins md:h-screen md:justify-center md:items-center">
   
-	<h1 class="">Reliable, efficient delivery</h1>
-	<h2 class="font-poppins text-2xl">Powered by Technology</h2>
+	<main class="principal m-8 p-2 flex flex-col gap-1 place-items-center md:m-2">
+    <h1 class="text-2xl font-extralight text-center md:text-3xl">Reliable, efficient delivery</h1>
+    <h2 class="text-2xl font-semibold text-center md:text-3xl">Powered by Technology</h2>
+    <p class="text-sm font-normal text-grayish text-center py-5 md:max-w-md">
+        Our Artificial Intelligence powered tools use millions of project data points
+        to ensure that your project is successful
+      </p>
 
-	<p class="">
-    Our Artificial Intelligence powered tools use millions of project data points
-    to ensure that your project is successful
-  </p>
+    <div class="flex flex-col gap-5 mt-10 md:grid grid-cols-3 md:gap-8 md:mt-3">
 
-	<div class="cards">
-    <div class="card">
-      <h2 class="">Supervisor</h2>
-      <p class="">Monitors activity to identify project roadblocks</p>
-      <img src="" alt="" class="">
-    </div>
-    <div class="card">
-      <h2 class="">Team Builder</h2>
-      <p class="">Scans our talent network to create the optimal team for your project</p>
-      <img src="" alt="" class="">
-    </div>
-    <div class="card">
-      <h2 class="">Karma</h2>
-      <p class="">Regularly evaluates our talent to ensure quality</p>
-      <img src="" alt="" class="">
-    </div>
-    <div class="card">
-      <h2 class="">Calculator</h2>
-      <p class="">Uses data from past projects to provide better delivery estimates</p>
-      <img src="" alt="" class="">
-    </div>
-  </div>
+        <div class="bg-white p-8 flex flex-col gap-2 border-t-solid border-t-4 border-t-cyan rounded-md shadow-xl md:max-w-xs col-start-1 md:translate-y-1/2 md:p-7 cursor-pointer transition ease-in-out delay-50 hover:scale-105 hover:bg-lightgray duration-300">
+          <h2 class="text-xl font-medium">Supervisor</h2>
+          <p class="text-xs text-grayish leading-5 pb-3 font-medium">Monitors activity to identify project roadblocks</p>
+          <img src="images/icon-supervisor.svg" alt="icon-supervisor" class="w-12.1 self-end md:w-12">
+        </div>
+
+        <div class="bg-white p-8 flex flex-col gap-2 border-t-solid border-t-4 border-t-red rounded-md shadow-xl md:max-w-xs col-start-2 md:p-7 cursor-pointer transition ease-in-out delay-50 hover:scale-105 hover:bg-lightgray duration-300">
+          <h2 class="text-xl font-medium">Team Builder</h2>
+          <p class="text-xs text-grayish leading-5 pb-3 font-medium">Scans our talent network to create the optimal team for your project</p>
+          <img src="images/icon-team-builder.svg" alt="icon-team-builder" class="w-12.1 self-end md:w-12">
+        </div>
+
+        <div class="bg-white p-8 flex flex-col gap-2 border-t-solid border-t-4 border-t-orange rounded-md shadow-xl md:max-w-xs col-start-2 md:p-7 cursor-pointer transition ease-in-out delay-50 hover:scale-105 hover:bg-lightgray duration-300">
+          <h2 class="text-xl font-medium">Karma</h2>
+          <p class="text-xs text-grayish leading-5 pb-3 font-medium">Regularly evaluates our talent to ensure quality</p>
+          <img src="images/icon-karma.svg" alt="icon-karma" class="w-12.1 self-end md:w-12">
+        </div>
+
+        <div class="bg-white p-8 flex flex-col gap-2 border-t-solid border-t-4 border-t-blue rounded-md shadow-xl md:max-w-xs col-start-3 md:-translate-y-32 md:p-7 cursor-pointer transition ease-in-out delay-50 hover:scale-105 hover:bg-lightgray duration-300">
+          <h2 class="text-xl font-medium">Calculator</h2>
+          <p class="text-xs text-grayish leading-5 pb-3 font-medium">Uses data from past projects to provide better delivery estimates</p>
+          <img src="images/icon-calculator.svg" alt="icon-calculator" class="w-12.1 self-end md:w-12">
+        </div>
+
+      </div>
+  </main>
 
   
-  <footer>
+  <footer class="text-center text-xs md:hidden">
     <p class="attribution">
       Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-      Coded by <a href="#">Your Name Here</a>.
+      Coded by <a href="https://github.com/danielmrz-dev" target="_blank">danielmrz-dev</a>.
     </p>
   </footer>
 </body>
