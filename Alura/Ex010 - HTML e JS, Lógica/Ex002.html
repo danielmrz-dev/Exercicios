@@ -4,36 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora de IMC</title>
+    <style>
+        .retornar {
+            display: none;
+        }
+    </style>
 </head>
 <body>
     <h1>Olá, essa é a calculadora de IMC!</h1>
-    Clique no botão abaixo para começar!
+    <button onclick="comecar()">Começar</button>
+    <button class="retornar" onclick="retornar()">Retornar</button>
 
     <script>
-        function pulaLinha() {
-            document.write('<br>');            
-            document.write('<br>');            
+        function comecar() {
+            function pulaLinha() {
+                document.write('<br>');            
+                document.write('<br>');            
+            }
+    
+            function mostra(frase) {
+                document.write(frase);
+                pulaLinha();
+            }
+    
+            function calculaIMC(peso, altura) {
+                return peso / (altura*altura)
+            }
+    
+            const nome = prompt('Qual é o seu nome?')
+            const peso = prompt(`Olá, ${nome}! Qual é o seu peso?`)
+            const altura = prompt('Qual é a sua altura?')
+            const imc = calculaIMC(peso, altura);
+            
+            mostra(`${nome}, o seu IMC é ${imc.toFixed(2)}.`)
+            if (imc <= 18.5) {
+                mostra(`De acordo com a OMS, este IMC representa que você está <strong>ABAIXO DO PESO</strong>.`)
+            } else if (imc >= 18.6 && imc <= 24.9){
+                mostra(`De acordo com a OMS, este IMC representa que você está com o <strong>PESO IDEAL</strong>.`)
+            } else if (imc >= 25 && imc <= 29.9) {
+                mostra(`De acordo com a OMS, este IMC representa que você está <strong>LEVEMENTE ACIMA DO PESO</strong>.`)
+            } else if (imc >= 30 && imc <= 34.9) {
+                mostra(`De acordo com a OMS, este IMC representa que você está com <strong>OBESIDADE GRAU I</strong>.`)
+            } else if (imc >= 35 && imc <= 39.9) {
+                mostra(`De acordo com a OMS, este IMC representa que você está com <strong>OBESIDADE GRAU II (Severa)</strong>.`)
+            } else if (imc >= 40) {
+                mostra(`De acordo com a OMS, este IMC representa que você está com <strong>OBESIDADE GRAU III ou OBESIDADE MÓRBIDA</strong>.`)
+            }           
         }
-
-        function mostra(frase) {
-            document.write(frase);
-            pulaLinha();
-        }
-
-        function calculaIMC(peso, altura) {
-            const imc = peso / (altura*altura)            
-            mostra(`O IMC calculado é de ${imc.toFixed(1)}.`)
-        }
-
-        const nome1 = 'Daniel'
-        const peso1 = 80
-        const altura1 = 1.90
-        calculaIMC(peso1, altura1);
-
-        const nome2 = 'Ana'
-        const peso2 = 70
-        const altura2 = 1.67
-        calculaIMC(peso2, altura2);       
 
     </script>
 </body>

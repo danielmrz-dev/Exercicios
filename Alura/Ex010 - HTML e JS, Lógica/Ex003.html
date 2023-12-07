@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculador de pontos</title>
+</head>
+<body>
+    <h1>Olá, esse é o calculador de pontos do seu time!</h1>
+    <button onclick="comecar()">Começar</button>
+
+    <script>
+        function comecar() {
+            function pulaLinha() {
+                document.write('<br>');            
+                document.write('<br>');            
+            }
+    
+            function mostra(frase) {
+                document.write(frase);
+                pulaLinha();
+            }
+
+            function calculaPontos(vitorias, empates) {
+                return (vitorias*3) + empates
+            }
+            
+            const vit = parseInt(prompt(`Quantas vitórias o seu time teve?`));
+            const emp = parseInt(prompt(`Quantos empates o seu time teve?`));
+            const pontos = calculaPontos(vit, emp);
+            
+            mostra(`O seu time acumulou ${pontos} pontos!`);
+            if (pontos < 30) {
+                mostra(`A campanha do seu time nessa temporada é <strong>pior</strong> do que o ano passado!`);                
+            } else if (pontos == 30) {
+                mostra(`A campanha do seu time nessa temporada é <strong>igual</strong> ao ano passado!`);                                
+            } else if (pontos > 30) {
+                mostra(`A campanha do seu time nessa temporada é <strong>melhor</strong> do que o ano passado!`);                
+            }
+
+        }
+    </script>
+</body>
+</html>

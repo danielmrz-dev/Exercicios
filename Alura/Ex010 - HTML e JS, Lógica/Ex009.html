@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esse é o adivinhador!</title>
+</head>
+<body>
+    <h1>Exercicio</h1>
+    <input type="text" name="" id="">
+    <button onclick="comparar()">Comparar</button>
+
+    <script>
+        const segredo = 10
+        const input = document.querySelector('input')
+        input.focus();
+
+        function comparar() {
+        
+        if (input.value == segredo) {
+            alert('Verdadeiro!')
+        } else {
+            alert('Falso!')            
+        }
+        input.value = '';
+        input.focus();
+        }
+
+
+    </script>
+</body>
+</html>

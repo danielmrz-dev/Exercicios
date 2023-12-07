@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ano de Copa</title>
+</head>
+<body>
+    <h1>Quais anos teve Copa?</h1>
+    <button onclick="comecar()">Começar</button>
+
+    <script>
+        
+        function comecar() {
+            function pulaLinha() {
+                document.write('<br>');            
+                document.write('<br>');            
+            }
+            
+            function mostra(frase) {
+                document.write(frase);
+                pulaLinha();
+            }
+
+            let anoCopa = 1930;
+            let data = new Date();
+            let anoAtual = data.getFullYear()
+            
+            for (let i = anoCopa; i < anoAtual ; i = i + 4) {
+                mostra(`Teve Copa em ${i}`);                
+            }
+        }
+    </script>
+</body>
+</html>
