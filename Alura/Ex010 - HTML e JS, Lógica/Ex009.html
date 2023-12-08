@@ -11,17 +11,37 @@
     <button onclick="comparar()">Comparar</button>
 
     <script>
-        const segredo = 10
+
+        function geraNumero() {
+            return Math.round(Math.random() * 10)
+        }
+
+        function sorteiaNumeros(quantidade) {
+            let segredos = [];
+            let contador = 1;
+
+            while (contador < quantidade) {
+                segredos.push(geraNumero());  
+                contador++        
+            }
+            return segredos;            
+        }
+
+        const segredos = sorteiaNumeros(10);
+
         const input = document.querySelector('input')
         input.focus();
 
         function comparar() {
-        
-        if (input.value == segredo) {
-            alert('Verdadeiro!')
-        } else {
-            alert('Falso!')            
-        }
+
+        for (let pos = 0; pos < segredos.length; pos++) {
+            if (input.value == segredos[pos]) {
+                alert(`Verdadeiro! O número era ${segredos[pos]}!`)
+                break;
+            } else {
+                alert(`'Falso! O número era ${segredos[pos]}!`)            
+            }
+        }         
         input.value = '';
         input.focus();
         }
