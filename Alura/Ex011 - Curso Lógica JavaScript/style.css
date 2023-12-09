@@ -86,3 +86,23 @@ h2 {
     font-size: 32px;
     font-weight: 400;
 }
+
+input {
+    margin: .9rem 0;
+    padding: 10px;
+    color: #01080E;
+    font-weight: bold;
+}
+
+button {
+    margin: 0 .5rem;
+    padding: 10px;
+    background-color: #1875E8;
+    border: 2px solid white;
+}
+
+button:hover {
+    scale: 1.1;
+    cursor: pointer;
+    transition: all 20ms ease-in-out 20ms;
+}
