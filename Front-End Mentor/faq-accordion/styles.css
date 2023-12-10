@@ -8,23 +8,23 @@
 body {
   background: #f3e6fa url("assets/images/background-pattern-mobile.svg") top center no-repeat;
 }
-body .container .star-img {
+body backg .container .star-img {
   width: 25px;
 }
-body .container .faq-text {
+body backg .container .faq-text {
   font-size: 2rem;
   font-weight: 800;
 }
-body .container .question .question-text {
+body backg .container .question .question-text {
   line-height: 18px;
 }
-body .container .question .label .plus-img {
+body backg .container .question .label .plus-img {
   min-width: 30px;
 }
-body .container .question .label:hover {
+body backg .container .question .label:hover {
   cursor: pointer;
 }
-body .container .answer {
+body backg .container .answer {
   color: #8c6991;
   font-size: 0.85rem;
   font-weight: 500;
