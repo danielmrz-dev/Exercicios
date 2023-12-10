@@ -21,7 +21,6 @@ $Work-Sans: 'Work Sans', sans-serif;
 
 body {
     background: $Bg-pink url('assets/images/background-pattern-mobile.svg') top center no-repeat;
-    background-size: cover;
     .container {
         .star-img {
             width: 25px;
@@ -46,6 +45,8 @@ body {
         .answer {
             color: $Grayish-purple;
             font-size: .85rem;
+            font-weight: 500;
+            opacity: .8;
         }
 
     }

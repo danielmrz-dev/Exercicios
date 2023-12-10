@@ -7,7 +7,6 @@
 
 body {
   background: #f3e6fa url("assets/images/background-pattern-mobile.svg") top center no-repeat;
-  background-size: cover;
 }
 body .container .star-img {
   width: 25px;
@@ -28,4 +27,6 @@ body .container .question .label:hover {
 body .container .answer {
   color: #8c6991;
   font-size: 0.85rem;
+  font-weight: 500;
+  opacity: 0.8;
 }/*# sourceMappingURL=styles.css.map */
