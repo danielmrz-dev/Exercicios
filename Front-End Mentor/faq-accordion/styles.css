@@ -1,0 +1,31 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Work Sans", sans-serif;
+}
+
+body {
+  background: #f3e6fa url("assets/images/background-pattern-mobile.svg") top center no-repeat;
+  background-size: cover;
+}
+body .container .star-img {
+  width: 25px;
+}
+body .container .faq-text {
+  font-size: 2rem;
+  font-weight: 800;
+}
+body .container .question .question-text {
+  line-height: 18px;
+}
+body .container .question .label .plus-img {
+  min-width: 30px;
+}
+body .container .question .label:hover {
+  cursor: pointer;
+}
+body .container .answer {
+  color: #8c6991;
+  font-size: 0.85rem;
+}/*# sourceMappingURL=styles.css.map */
