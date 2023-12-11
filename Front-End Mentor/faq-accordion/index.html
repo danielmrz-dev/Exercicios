@@ -11,14 +11,14 @@
 </head>
 <body class="flex flex-col sm:h-screen sm:items-center sm:justify-center">
 
-  <main class="container bg-white rounded-lg w-auto mx-7 mt-20 mb-4 p-5">
+  <main class="container bg-white rounded-lg w-auto mx-7 mt-20 mb-4 p-5 sm:p-10">
 
     <div class="faq flex gap-6 pb-3">
       <img class="star-img" src="assets/images/icon-star.svg" alt="icon-star">
       <h1 class="faq-text">FAQs</h1>
     </div>
 
-    <div class="question flex items-center justify-between gap-10 pb-3">
+    <div class="question flex items-center justify-between gap-5 pb-3">
       
       <h2 class="question-text font-bold">What is Frontend Mentor, and how will it help me?</h2>
       
@@ -28,7 +28,7 @@
       <input type="checkbox" name="plus" id="plus1" class="hidden">
 
     </div>
-    <p class="answer">
+    <p class="answer" id="answer1">
       Frontend Mentor offers realistic coding challenges to help developers improve their
       frontend coding skills with projects in HTML, CSS, and JavaScript. It's suitable for
       all levels and ideal for portfolio building.
@@ -36,7 +36,7 @@
 
     <hr class="mb-5 mt-2">
 
-    <div class="question flex items-center justify-between gap-10 pb-3">
+    <div class="question flex items-center justify-between gap-5 pb-3">
       <h2 class="question-text font-bold">Is Frontend Mentor free?</h2>
 
       <label for="plus2" class="label">
@@ -45,14 +45,14 @@
       <input type="checkbox" name="plus" id="plus2" class="hidden">
 
     </div>
-    <p class="answer">
+    <p class="answer" id="answer2">
       Yes, Frontend Mentor offers both free and premium coding challenges, with the free
       option providing access to a range of projects suitable for all skill levels.
     </p>
 
     <hr class="mb-5 mt-2">
     
-    <div class="question flex items-center justify-between gap-8 pb-3">
+    <div class="question flex items-center justify-between gap-5 pb-3">
       <h2 class="question-text font-bold">Can I use Frontend Mentor projects in my portfolio?</h2>
 
       <label for="plus3" class="label">
@@ -61,21 +61,21 @@
       <input type="checkbox" name="plus" id="plus3" class="hidden">
 
     </div>
-    <p class="answer">
+    <p class="answer" id="answer3">
       Yes, you can use projects completed on Frontend Mentor in your portfolio. It's an excellent
       way to showcase your skills to potential employers!
     </p>
     
     <hr class="mb-5 mt-2">
     
-    <div class="question flex items-center justify-between gap-10">
+    <div class="question flex items-center justify-between gap-5 pb-3">
       <h2 class="question-text font-bold">How can I get help if I'm stuck on a challenge?</h2>
       <label for="plus4" class="label">
         <img src="assets/images/icon-plus.svg" alt="icon-plus" class="plus-img">
       </label>
       <input type="checkbox" name="plus" id="plus4" class="hidden">
     </div>
-    <p class="answer">
+    <p class="answer" id="answer4">
       The best place to get help is inside Frontend Mentor's Discord community. There's a help
       channel where you can ask questions and seek support from other community members.
     </p>
@@ -86,5 +86,8 @@
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="https://github.com/danielmrz-dev" target="_blank">danielmrz-dev</a>.
   </footer>
+
+  <script src="index.js"></script>
+
 </body>
 </html>
