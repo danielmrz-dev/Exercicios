@@ -11,22 +11,21 @@
 </head>
 <body class="flex flex-col sm:h-screen sm:items-center sm:justify-center">
 
-  <main class="container bg-white rounded-lg w-auto mx-7 mt-20 mb-4 p-5 sm:p-10">
+  <main class="container bg-white rounded-lg w-auto mx-7 mt-20 p-5 sm:p-10">
 
     <div class="faq flex gap-6 pb-3">
       <img class="star-img" src="assets/images/icon-star.svg" alt="icon-star">
       <h1 class="faq-text">FAQs</h1>
     </div>
 
-    <div class="question flex items-center justify-between gap-5 pb-3">
+    <div class="question gap-5 pb-3">      
       
-      <h2 class="question-text font-bold">What is Frontend Mentor, and how will it help me?</h2>
-      
-      <label for="plus1" class="label">
-        <img src="assets/images/icon-plus.svg" alt="icon-plus" class="plus-img">
+      <label for="plus1" class="label1 flex items-center justify-between" onclick="mostrar(0, 0, 'assets/images/icon-minus.svg', '90px')">
+        <h2 class="question-text font-bold">What is Frontend Mentor, and how will it help me?</h2>
+        <img src="assets/images/icon-plus.svg" alt="icon-plus" class="plus-img" id="img-plus1">
       </label>
       <input type="checkbox" name="plus" id="plus1" class="hidden">
-
+      
     </div>
     <p class="answer" id="answer1">
       Frontend Mentor offers realistic coding challenges to help developers improve their
@@ -36,11 +35,11 @@
 
     <hr class="mb-5 mt-2">
 
-    <div class="question flex items-center justify-between gap-5 pb-3">
-      <h2 class="question-text font-bold">Is Frontend Mentor free?</h2>
-
-      <label for="plus2" class="label">
-        <img src="assets/images/icon-plus.svg" alt="icon-plus" class="plus-img">
+    <div class="question gap-5 pb-3">
+      
+      <label for="plus2" class="label2 flex items-center justify-between" onclick="mostrar(1, 1, 'assets/images/icon-minus.svg', '90px')">
+        <h2 class="question-text font-bold">Is Frontend Mentor free?</h2>
+        <img src="assets/images/icon-plus.svg" alt="icon-plus" class="plus-img" id="img-plus2">
       </label>
       <input type="checkbox" name="plus" id="plus2" class="hidden">
 
@@ -52,11 +51,11 @@
 
     <hr class="mb-5 mt-2">
     
-    <div class="question flex items-center justify-between gap-5 pb-3">
-      <h2 class="question-text font-bold">Can I use Frontend Mentor projects in my portfolio?</h2>
-
-      <label for="plus3" class="label">
-        <img src="assets/images/icon-plus.svg" alt="icon-plus" class="plus-img">
+    <div class="question gap-5 pb-3">
+      
+      <label for="plus3" class="label3 flex items-center justify-between" onclick="mostrar(2, 2, 'assets/images/icon-minus.svg', '90px')">
+        <h2 class="question-text font-bold">Can I use Frontend Mentor projects in my portfolio?</h2>
+        <img src="assets/images/icon-plus.svg" alt="icon-plus" class="plus-img" id="img-plus3">
       </label>
       <input type="checkbox" name="plus" id="plus3" class="hidden">
 
@@ -68,10 +67,10 @@
     
     <hr class="mb-5 mt-2">
     
-    <div class="question flex items-center justify-between gap-5 pb-3">
-      <h2 class="question-text font-bold">How can I get help if I'm stuck on a challenge?</h2>
-      <label for="plus4" class="label">
-        <img src="assets/images/icon-plus.svg" alt="icon-plus" class="plus-img">
+    <div class="question gap-5 pb-3">
+      <label for="plus4" class="label4 flex items-center justify-between" onclick="mostrar(3, 3, 'assets/images/icon-minus.svg', '90px')">
+        <h2 class="question-text font-bold">How can I get help if I'm stuck on a challenge?</h2>
+        <img src="assets/images/icon-plus.svg" alt="icon-plus" class="plus-img" id="img-plus4">
       </label>
       <input type="checkbox" name="plus" id="plus4" class="hidden">
     </div>

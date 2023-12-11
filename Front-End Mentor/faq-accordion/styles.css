@@ -15,6 +15,7 @@ body {
 @media (min-width: 640px) {
   body {
     background-image: url("assets/images/background-pattern-desktop.svg");
+    background-position: 0 -10vh;
   }
 }
 body .container {
@@ -46,10 +47,16 @@ body .container .question .question-text {
   line-height: 18px;
   width: 85%;
 }
-body .container .question .label .plus-img {
+body .container .question .label1 .plus-img,
+body .container .question .label2 .plus-img,
+body .container .question .label3 .plus-img,
+body .container .question .label4 .plus-img {
   min-width: 25px;
 }
-body .container .question .label:hover {
+body .container .question .label1:hover,
+body .container .question .label2:hover,
+body .container .question .label3:hover,
+body .container .question .label4:hover {
   cursor: pointer;
 }
 body .container .question:hover {
@@ -61,8 +68,20 @@ body .container .answer {
   font-size: 0.9rem;
   font-weight: 500;
   opacity: 0.8;
-}
-body .container .answer:nth-child(6), body .container .answer:nth-child(9), body .container .answer:nth-child(12) {
   height: 0;
   overflow: hidden;
+  transition: 0.3s ease-in-out;
+}
+body .attribution {
+  font-size: 0.8rem;
+  text-align: center;
+  color: #8c6991;
+}
+body .attribution a {
+  color: #2f1533;
+  font-weight: 600;
+}
+body .attribution a:hover {
+  text-decoration: underline;
+  color: #d17cff;
 }/*# sourceMappingURL=styles.css.map */

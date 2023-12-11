@@ -28,6 +28,7 @@ body {
     background-size: contain;
     @media (min-width: 640px) {
         background-image: url('assets/images/background-pattern-desktop.svg');
+        background-position: 0 -10vh;
     }
     .container {
         max-width: 570px;
@@ -52,7 +53,10 @@ body {
                 line-height: 18px;
                 width: 85%;
             }
-            .label {
+            .label1,
+            .label2,
+            .label3,
+            .label4 {
                 .plus-img {
                     min-width: 25px;
                 }
@@ -70,13 +74,22 @@ body {
             font-size: .9rem;
             font-weight: 500;
             opacity: .8;
-            &:nth-child(6),
-            &:nth-child(9),
-            &:nth-child(12) {
-                height: 0;
-                overflow: hidden;
+            height: 0;
+            overflow: hidden;            
+            transition: .3s ease-in-out;
+        }
+    }
+    .attribution {
+        font-size: .8rem;
+        text-align: center;
+        color: $Grayish-purple;
+        a {
+            color: #2f1533;
+            font-weight: 600;
+            &:hover {
+                text-decoration: underline;
+                color: $Hover-pink;
             }
         }
     }
 }
-
