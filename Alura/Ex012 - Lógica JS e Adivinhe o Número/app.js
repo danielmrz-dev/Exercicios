@@ -1,3 +1,4 @@
+let listaDeNumerosSorteados = [];
 let numeroSecreto = gerarAleatorio();
 let limite = 100;
 
@@ -10,7 +11,19 @@ exibirTextoNaTela('h1', 'Jogo do Número Secreto');
 exibirTextoNaTela('p', `Escolha um número entre 1 e ${limite}:`);
 
 function gerarAleatorio() {
-    return parseInt(Math.random() * 100 + 1);     
+    let numeroEscolhido =  parseInt(Math.random() * 100 + 1);     
+    let qtdeDeElementosNaLista = listaDeNumerosSorteados.length;
+
+    if (qtdeDeElementosNaLista == 100) {
+        listaDeNumerosSorteados = [];
+    }
+
+    if (listaDeNumerosSorteados.includes(numeroEscolhido)) {
+        gerarAleatorio();
+    } else {
+        listaDeNumerosSorteados.push(numeroEscolhido);
+        return numeroEscolhido;
+    }
 }
 
 function limparCampo() {
@@ -45,15 +58,16 @@ function verificarChute() {
         let mensagemAcertou = `Você descobriu o número secreto com ${tentativas} ${palavraTentativa}!`
         exibirTextoNaTela('p', mensagemAcertou);
         document.getElementById('reiniciar').removeAttribute('disabled')
-
+        
     } else {
+        let palavraTentativa = tentativas > 1 ? 'tentativas' : 'tentativa';
         if (chute > numeroSecreto) {
             exibirTextoNaTela('h1', 'Você errou!');
-            let mensagemMenor = `${tentativas} tentativas feitas. Tente um número MENOR!`
+            let mensagemMenor = `${tentativas} ${palavraTentativa} feitas. Tente um número MENOR!`
             exibirTextoNaTela('p', mensagemMenor);
         } else {
             exibirTextoNaTela('h1', 'Você errou!');
-            let mensagemMaior = `${tentativas} tentativas feitas. Tente um número MAIOR!`
+            let mensagemMaior = `${tentativas} ${palavraTentativa} feitas. Tente um número MAIOR!`
             exibirTextoNaTela('p', mensagemMaior);           
         }
     } tentativas++
