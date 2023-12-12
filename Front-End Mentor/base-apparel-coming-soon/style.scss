@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+// Variables
+
+$Josefin-Sans: 'Josefin Sans', sans-serif;
+$Gradient-one: linear-gradient(135deg, #ffffff, #fff5f5);
+$Gradient-two: linear-gradient(135deg, #f8bfbf, #ee8c8c);
+$Desaturated-Red: #ce9797;
+$Soft-Red: #f96262;
+$Dark-Grayish-Red: #413a3a;
+
+// Reset
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: $Josefin-Sans;
+}
+
+
+// Style
+body {
+    background: $Gradient-one;
+    display: grid;
+    @media (min-width: 768px) {
+        background: url('images/bg-pattern-desktop.svg');
+        background-size: cover;
+        background-position: -30vw;
+        height: 100vh;
+        grid-template-columns: 1fr 1fr;
+    }    
+    .logo {
+        margin: 1.7rem;
+        @media (min-width: 768px) {
+            padding: 4rem 6rem 0;
+        }
+        img {
+            width: 100px;
+            @media (min-width: 768px) {
+                width: 160px;
+            }
+        }
+    }
+    .hero {
+        background: url('images/hero-mobile.jpg') no-repeat;
+        background-size: cover;
+        height: 42vh;
+        @media (min-width: 768px) {
+            background: url('images/hero-desktop.jpg') no-repeat;
+            background-size: contain;
+            grid-area: 1 / 2 / 3 / 3;
+            height: 100%;
+        }  
+    }
+    .container {
+        margin: 1.7rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 1.2rem;
+        @media (min-width: 768px) {
+        }  
+        // continuar aqui !!!!!!!!!!!!!!!!
+        .title {
+            color: $Desaturated-Red;
+            font-weight: 300;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 7px;
+            line-height: 35px;
+            padding: .8rem 0;
+            strong {
+                color: $Dark-Grayish-Red;
+                font-weight: 600;
+            }
+        }
+        .message {
+            text-align: center;
+            font-size: .8rem;
+            color: $Desaturated-Red;
+            line-height: 20px;
+        }
+        .subscribe {
+            width: 100%;
+            padding: 1rem 0;   
+            display: flex;
+            position: relative;         
+            input {
+                width: 100%;
+                padding: 1rem 1.5rem;
+                border-radius: 30px;
+                border: 1px solid $Desaturated-Red;
+                background-color: transparent;
+                position: absolute;
+                top: 16px;
+                &::placeholder {
+                    color: $Desaturated-Red;
+                    opacity: .5;
+                }
+            }
+            button {
+                width: 70px;
+                background: $Gradient-two;
+                padding: .7rem 1.5rem;
+                border-radius: 30px;
+                border: none;
+                margin-left: auto;
+                box-shadow: 0 1px 5px $Desaturated-Red;
+                z-index: 1;
+            }
+        }
+    }
+    footer {
+        display: none;
+    }
+}

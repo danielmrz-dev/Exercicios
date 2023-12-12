@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #ffffff, #fff5f5);
+  display: grid;
+}
+@media (min-width: 768px) {
+  body {
+    background: url("images/bg-pattern-desktop.svg");
+    background-size: cover;
+    background-position: -30vw;
+    height: 100vh;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+body .logo {
+  margin: 1.7rem;
+}
+@media (min-width: 768px) {
+  body .logo {
+    padding: 4rem 6rem 0;
+  }
+}
+body .logo img {
+  width: 100px;
+}
+@media (min-width: 768px) {
+  body .logo img {
+    width: 160px;
+  }
+}
+body .hero {
+  background: url("images/hero-mobile.jpg") no-repeat;
+  background-size: cover;
+  height: 42vh;
+}
+@media (min-width: 768px) {
+  body .hero {
+    background: url("images/hero-desktop.jpg") no-repeat;
+    background-size: contain;
+    grid-area: 1/2/3/3;
+    height: 100%;
+  }
+}
+body .container {
+  margin: 1.7rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.2rem;
+}
+body .container .title {
+  color: #ce9797;
+  font-weight: 300;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 7px;
+  line-height: 35px;
+  padding: 0.8rem 0;
+}
+body .container .title strong {
+  color: #413a3a;
+  font-weight: 600;
+}
+body .container .message {
+  text-align: center;
+  font-size: 0.8rem;
+  color: #ce9797;
+  line-height: 20px;
+}
+body .container .subscribe {
+  width: 100%;
+  padding: 1rem 0;
+  display: flex;
+  position: relative;
+}
+body .container .subscribe input {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  border-radius: 30px;
+  border: 1px solid #ce9797;
+  background-color: transparent;
+  position: absolute;
+  top: 16px;
+}
+body .container .subscribe input::-moz-placeholder {
+  color: #ce9797;
+  opacity: 0.5;
+}
+body .container .subscribe input::placeholder {
+  color: #ce9797;
+  opacity: 0.5;
+}
+body .container .subscribe button {
+  width: 70px;
+  background: linear-gradient(135deg, #f8bfbf, #ee8c8c);
+  padding: 0.7rem 1.5rem;
+  border-radius: 30px;
+  border: none;
+  margin-left: auto;
+  box-shadow: 0 1px 5px #ce9797;
+  z-index: 1;
+}
+body footer {
+  display: none;
+}/*# sourceMappingURL=style.css.map */
