@@ -16,15 +16,17 @@ body {
     background-size: cover;
     background-position: -30vw;
     height: 100vh;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 8% 50% 1fr;
+    grid-template-rows: 18% 1fr;
   }
 }
 body .logo {
-  margin: 1.7rem;
+  margin: 1.7rem 0 1.7rem 3rem;
 }
 @media (min-width: 768px) {
   body .logo {
-    padding: 4rem 6rem 0;
+    padding-top: 2.5rem;
+    grid-area: 1/2;
   }
 }
 body .logo img {
@@ -43,8 +45,8 @@ body .hero {
 @media (min-width: 768px) {
   body .hero {
     background: url("images/hero-desktop.jpg") no-repeat;
-    background-size: contain;
-    grid-area: 1/2/3/3;
+    background-size: cover;
+    grid-area: 1/3/3/4;
     height: 100%;
   }
 }
@@ -55,14 +57,28 @@ body .container {
   align-items: center;
   padding: 1.2rem;
 }
+@media (min-width: 768px) {
+  body .container {
+    width: 70%;
+    align-items: flex-start;
+    grid-area: 2/2;
+  }
+}
 body .container .title {
   color: #ce9797;
   font-weight: 300;
   text-align: center;
   text-transform: uppercase;
-  letter-spacing: 7px;
+  letter-spacing: 15px;
   line-height: 35px;
   padding: 0.8rem 0;
+}
+@media (min-width: 768px) {
+  body .container .title {
+    font-size: 4rem;
+    line-height: 80px;
+    text-align: start;
+  }
 }
 body .container .title strong {
   color: #413a3a;
@@ -74,9 +90,17 @@ body .container .message {
   color: #ce9797;
   line-height: 20px;
 }
+@media (min-width: 768px) {
+  body .container .message {
+    font-size: 1rem;
+    line-height: 30px;
+    text-align: start;
+    padding: 1rem 0 1.5rem 0;
+  }
+}
 body .container .subscribe {
   width: 100%;
-  padding: 1rem 0;
+  padding: 1rem 0 0;
   display: flex;
   position: relative;
 }
@@ -87,7 +111,7 @@ body .container .subscribe input {
   border: 1px solid #ce9797;
   background-color: transparent;
   position: absolute;
-  top: 16px;
+  top: 15.5px;
 }
 body .container .subscribe input::-moz-placeholder {
   color: #ce9797;
@@ -97,15 +121,58 @@ body .container .subscribe input::placeholder {
   color: #ce9797;
   opacity: 0.5;
 }
+@media (min-width: 768px) {
+  body .container .subscribe input::-moz-placeholder {
+    font-size: 1.1rem;
+  }
+  body .container .subscribe input::placeholder {
+    font-size: 1.1rem;
+  }
+}
+body .container .subscribe input:focus {
+  outline: none;
+}
+@media (min-width: 768px) {
+  body .container .subscribe input {
+    padding: 1.2rem 2rem;
+  }
+}
+body .container .subscribe img#icon-error {
+  align-self: center;
+  margin: 0 0 0 auto;
+  opacity: 0;
+}
 body .container .subscribe button {
   width: 70px;
   background: linear-gradient(135deg, #f8bfbf, #ee8c8c);
   padding: 0.7rem 1.5rem;
   border-radius: 30px;
   border: none;
-  margin-left: auto;
-  box-shadow: 0 1px 5px #ce9797;
+  margin-left: 10px;
+  box-shadow: 0 1px 15px #ce9797;
   z-index: 1;
+  cursor: pointer;
+}
+body .container .subscribe button:hover {
+  transition: linear 0.1s ease;
+  scale: 1.05;
+  background: #f8cfcf;
+}
+@media (min-width: 768px) {
+  body .container .subscribe button {
+    height: 52px;
+    padding: 1rem 3rem;
+    margin-left: 15px;
+    display: flex;
+    justify-content: center;
+  }
+}
+body .container .valid-email {
+  align-self: flex-start;
+  color: #f96262;
+  font-size: 0.9rem;
+  padding: 0.7rem 0 0 2rem;
+  display: none;
 }
 body footer {
   display: none;
