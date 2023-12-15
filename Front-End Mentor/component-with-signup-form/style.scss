@@ -4,12 +4,12 @@
 
 // Variables
 
-$Red: #ff7a7a;
-$Green: #38cc8c;
-$Hover-Green: #72e6b4;
-$Green-Shadow: #20714e8f;
-$Blue: #6055a5;
-$Hover-Blue: #7e72c9;
+$Blue-Green: #29B4D1;
+$Green: #0DDF84;
+$Hover-Green: #00b164;
+$Green-Shadow: #04372136;
+$Blue: #536CDB;
+$Hover-Blue: #1d36a5;
 $Grayish-Blue: #b9b6d3;
 $Shadow: #80808047;
 $White: #fff;
@@ -27,12 +27,12 @@ $Poppins: 'Poppins', sans-serif;
 // Style
 
 body {
-    background: $Red url('images/bg-intro-mobile.png') center center no-repeat;
+    background: $Blue-Green url('images/bg-intro-mobile.png') center center no-repeat;
     background-size: cover;
     display: grid;
     justify-content: center;
     @media (min-width: 900px) {
-        background: $Red url('images/bg-intro-desktop.png');
+        background: $Blue-Green url('images/bg-intro-desktop.png');
         height: 100vh;
         align-items: center;           
     }
@@ -87,10 +87,10 @@ body {
             padding: .8rem 3rem;
             border-radius: 10px;
             box-shadow: 0 10px 0 $Shadow;
+            transition: .2s;
             &:hover {
                 background-color: $Hover-Blue;
                 scale: 1.02;
-                transition: all .1s ease-in-out;
             }
             @media (min-width: 900px) {
                 grid-area: 1 / 2;
@@ -133,7 +133,7 @@ body {
                         display: none;
                         font-size: .7rem;
                         font-style: italic;
-                        color: $Red;
+                        color: $Blue-Green;
                         text-align: end;
                         margin: .2rem;                        
                     }
@@ -157,10 +157,10 @@ body {
                     text-transform: uppercase;
                     font-weight: 500;
                     box-shadow: 0 4px 0 $Green-Shadow;
+                    transition: .2s;
                     &:hover {
                         background-color: $Hover-Green;
                         scale: 1.02;
-                        transition: all .1s ease-in-out;
                     }
                 }
                 .terms {
@@ -170,10 +170,10 @@ body {
                     line-height: 20px;
                     font-size: .7rem;
                     strong {
-                        color: $Red;
+                        color: $Blue-Green;
                         &:hover {
                             cursor: pointer;
-                            border-bottom: 2px solid $Red;
+                            border-bottom: 2px solid $Blue-Green;
                             
                         }
                     }
