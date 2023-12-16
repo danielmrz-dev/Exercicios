@@ -1,0 +1,62 @@
+* {
+  font-family: "Libre Franklin", sans-serif;
+}
+
+body .container {
+  margin: 1.5rem;
+  padding: 4rem;
+  gap: 60px;
+}
+body .container .container-img {
+  width: 20%;
+  margin: auto;
+}
+body .container .container-text {
+  gap: 20px;
+}
+body .container .container-text .container-title {
+  font-size: 2.5rem;
+  color: #969696;
+  text-align: center;
+  font-weight: 300;
+}
+body .container .container-text .container-title strong {
+  color: #151f29;
+  font-weight: 800;
+}
+body .container .container-text .container-subscribe {
+  text-align: center;
+  font-size: 1.5rem;
+}
+body .container .container-form {
+  gap: 20px;
+}
+body .container .container-form .container-input, body .container .container-form .notify {
+  border: 1px solid #4f7df3;
+  border-radius: 40px;
+  width: 100%;
+  margin: auto;
+  padding: 1.4rem 3rem;
+}
+body .container .container-form .container-input::-moz-placeholder, body .container .container-form .notify::-moz-placeholder {
+  color: #4f7df3;
+  font-size: 1.2rem;
+  opacity: 0.5;
+}
+body .container .container-form .container-input::placeholder, body .container .container-form .notify::placeholder {
+  color: #4f7df3;
+  font-size: 1.2rem;
+  opacity: 0.5;
+}
+body .container .container-form .notify {
+  background-color: #4f7df3;
+  padding: 1.2rem;
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: 500;
+  box-shadow: 0 5px 15px rgba(79, 125, 243, 0.6745098039);
+}
+body .container .container-dashboard {
+  margin: 1rem 0;
+  width: 100%;
+}/*# sourceMappingURL=style.css.map */
