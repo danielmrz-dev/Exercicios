@@ -48,6 +48,13 @@ body .container .container-form .container-input::placeholder, body .container .
   font-size: 1.2rem;
   opacity: 0.5;
 }
+body .container .container-form .error-msg {
+  text-align: center;
+  font-size: 1.2rem;
+  font-style: italic;
+  color: #ff5263;
+  transform: translateY(-12px);
+}
 body .container .container-form .notify {
   background-color: #4f7df3;
   padding: 1.2rem;
