@@ -26,18 +26,20 @@
       <div class="container-form grid">
         <input type="email" name="" id="email" class="container-input" placeholder="Your email address...">
         <p class="error-msg">Please provide a valid email</p>
-        <button class="notify">Notify Me</button>
+        <button class="notify" onclick="notify()">Notify Me</button>
       </div>
 
       <img src="images/illustration-dashboard.png" alt="illustration-dashboard" class="container-dashboard">
 
-      <div class="icons flex">      
-        <img src="images/facebook.svg" alt="facebook icon">
-        <img src="images/twitter.svg" alt="twitter icon">
-        <img src="images/instagram.svg" alt="instagram icon">
+      <div class="icons flex flex-col gap-10">      
+        <div class="icons-imgs flex gap-6 justify-center">
+          <div class="social-media-icon"></div>
+          <div class="social-media-icon"></div>
+          <div class="social-media-icon"></div>
+        </div>
+        <p class="copy">&copy; Copyright Ping. All rights reserved.</p>
       </div>
 
-      &copy; Copyright Ping. All rights reserved.
   </main>
 
   <footer>
@@ -46,5 +48,6 @@
       Coded by <a href="https://github.com/danielmrz-dev" target="_blank">danielmrz-dev</a>.
     </p>
   </footer>
+  <script src="index.js"></script>
 </body>
 </html>

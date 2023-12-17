@@ -3,7 +3,7 @@
 // Variables
 
 $Blue: #4f7df3;
-$Blue-shadow: #4f7df3ac;
+$Blue-shadow: #4f7df351;
 $Pale-Blue: #c2d3ff;
 $Light-Red: #ff5263;
 $Gray: #969696;
@@ -20,17 +20,29 @@ body {
         margin: 1.5rem;
         padding: 4rem;
         gap: 60px;
+        @media (min-width: 900px) {
+            max-width: 60vw;
+        }
         .container-img {
             width: 20%;
             margin: auto;
+            @media (min-width: 900px) {
+                width: 13%;
+            }
         }
         .container-text {
             gap: 20px;
+            @media (min-width: 900px) {
+                gap: 10px;
+            }
             .container-title {
                 font-size: 2.5rem;
                 color: $Gray;
                 text-align: center;
                 font-weight: 300;
+                @media (min-width: 900px) {
+                    font-size: 3rem;
+                }
                 strong {
                     color: $Very-Dark-Blue;
                     font-weight: 800;
@@ -38,17 +50,20 @@ body {
             }
             .container-subscribe {
                 text-align: center;
-                font-size: 1.5rem;
+                font-size: 1.5rem;                
             }
         }
         .container-form {
             gap: 20px;
+            @media (min-width: 900px) {
+                grid-template-columns: 65% 1fr;
+            }
             .container-input, .notify {
                 border: 1px solid $Blue;
                 border-radius: 40px;
                 width: 100%;
                 margin: auto;
-                padding: 1.4rem 3rem;
+                padding: 1.4rem 3rem;                            
                 &::placeholder{
                     color: $Blue;
                     font-size: 1.2rem;
@@ -56,12 +71,15 @@ body {
                 }
             }
             .error-msg {
-                // display: none;
+                display: none;
                 text-align: center;
                 font-size: 1.2rem;
                 font-style: italic;
                 color: $Light-Red;
                 transform: translateY(-12px);
+                @media (min-width: 900px) {
+                    grid-area: 2 / 1;
+                }
             }
             .notify {
                 background-color: $Blue;
@@ -69,12 +87,86 @@ body {
                 color: $White;
                 font-size: 1.4rem;
                 font-weight: 500;
-                box-shadow: 0 5px 15px $Blue-shadow;
+                box-shadow: 0 5px 25px $Blue-shadow;
+                transition: .2s;
+                @media (min-width: 900px) {
+                    white-space: nowrap;
+                }
+                &:hover {
+                    cursor: pointer;
+                    scale: 1.03;
+                }
             }
         }
         .container-dashboard {
             margin: 1rem 0;
             width: 100%;
+        }
+        .icons {
+            margin: 3rem 0 0 0;
+            @media (min-width: 900px) {
+                margin: 0;
+            }
+            .icons-imgs {
+                .social-media-icon{
+                    height: 45px;
+                    width: 45px;
+                    border: 1px solid $Blue-shadow;
+                    padding: 15px;                    
+                    border-radius: 50%;
+                    transition: .2s;
+                    &:nth-child(1) {
+                        background: url('images/facebook-f.svg')center center no-repeat;
+                        background-size: 30%;
+                        &:hover {
+                            cursor: pointer;
+                            scale: 1.1;                            
+                            background: $Blue url('images/facebook-white.svg') center center no-repeat;
+                            background-size: 30%;
+                        }                        
+                    }
+                    &:nth-child(2) {
+                        background: url('images/twitter.svg')center center no-repeat;
+                        background-size: 40%;
+                        &:hover {
+                            cursor: pointer;
+                            scale: 1.1;                            
+                            background: $Blue url('images/twitter-white.svg') center center no-repeat;
+                            background-size: 40%;
+                        }    
+                    }
+                    &:nth-child(3) {
+                        background: url('images/instagram.svg')center center no-repeat;
+                        background-size: 40%;
+                        &:hover {
+                            cursor: pointer;
+                            scale: 1.1;                            
+                            background: $Blue url('images/instagram-white.svg') center center no-repeat;
+                            background-size: 40%;
+                        }     
+                    }                    
+                }
+            }
+            .copy {
+                text-align: center;
+                color: $Gray;
+                font-size: 1.2rem;
+            }
+        }
+    }
+    footer {
+        margin: 1rem 0;
+        @media (min-width: 900px) {
+            margin: 0 0 2rem 0;
+        }
+        a {
+            color: $Light-Red;
+            font-weight: 600;
+            transition: .2s;
+            &:hover {
+                text-decoration: underline;
+                color: $Blue;
+            }
         }
     }
 }
