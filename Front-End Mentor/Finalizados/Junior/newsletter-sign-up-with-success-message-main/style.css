@@ -18,7 +18,7 @@ body .container {
   body .container {
     display: flex;
     flex-direction: row-reverse;
-    gap: 30px;
+    gap: 40px;
     background-color: #ffffff;
     max-width: 900px;
     padding: 2rem;
@@ -28,9 +28,6 @@ body .container {
 body .container .bg-img {
   display: block;
 }
-body .container .bg-img img {
-  width: 100%;
-}
 body .container .text {
   display: grid;
   gap: 10px;
@@ -38,7 +35,8 @@ body .container .text {
 }
 @media (min-width: 900px) {
   body .container .text {
-    gap: 0;
+    padding: 2rem;
+    gap: 0px;
   }
 }
 body .container .text .title {
