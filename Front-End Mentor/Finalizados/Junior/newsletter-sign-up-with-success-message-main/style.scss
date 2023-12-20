@@ -34,7 +34,7 @@ body {
             border-radius: 40px;
         }
         .bg-img {
-            display: none; // Nenhum
+            display: none; // Nenhum // Usar block no JS
             img {
                 width: 100%;
                 @media (min-width: 900px) {
