@@ -16,17 +16,29 @@ body .container {
 }
 @media (min-width: 900px) {
   body .container {
-    display: flex;
-    flex-direction: row-reverse;
+    grid-template-columns: 50% 1fr;
     gap: 40px;
     background-color: #ffffff;
     max-width: 900px;
-    padding: 2rem;
+    padding: 1.5rem;
     border-radius: 40px;
   }
 }
 body .container .bg-img {
   display: block;
+}
+body .container .bg-img img {
+  width: 100%;
+}
+@media (min-width: 900px) {
+  body .container .bg-img img {
+    border-radius: 20px;
+  }
+}
+@media (min-width: 900px) {
+  body .container .bg-img {
+    grid-area: 1/2;
+  }
 }
 body .container .text {
   display: grid;
@@ -35,7 +47,7 @@ body .container .text {
 }
 @media (min-width: 900px) {
   body .container .text {
-    padding: 2rem;
+    padding: 3rem 2rem;
     gap: 0px;
   }
 }

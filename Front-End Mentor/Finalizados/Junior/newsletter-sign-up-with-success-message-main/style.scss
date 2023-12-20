@@ -26,26 +26,32 @@ body {
     .container {
         display: grid;
         @media (min-width: 900px) {
-            display: flex;
-            flex-direction: row-reverse;
+            grid-template-columns: 50% 1fr;
             gap: 40px;
             background-color: $White;
             max-width: 900px;
-            padding: 2rem;
+            padding: 1.5rem;
             border-radius: 40px;
         }
         .bg-img {
             display: block; // Nenhum
             img {
-                // width: 100%;
+                width: 100%;
+                @media (min-width: 900px) {
+                    border-radius: 20px;
+                }
             }
+            @media (min-width: 900px) {
+                grid-area: 1 / 2;
+            }
+
         }        
         .text {
             display: grid; // Grid
             gap: 10px;
             padding: 1.5rem;
             @media (min-width: 900px) {
-                padding: 2rem;
+                padding: 3rem 2rem;
                 gap: 0px;
             }
             .title {
