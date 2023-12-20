@@ -26,6 +26,8 @@ function validarEmail() {
 function dismiss() {
     success.style.display = 'none';
     main.style.display = '';
+    errorMsg.style.display = '';
+    email.style.background = '';
     email.value = '';
     email.focus();
 }
