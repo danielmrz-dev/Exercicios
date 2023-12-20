@@ -26,7 +26,7 @@ body {
     .container {
         display: grid;
         @media (min-width: 900px) {
-            grid-template-columns: 50% 1fr;
+            grid-template-columns: 50% 1fr; //continuar aqui
             gap: 40px;
             background-color: $White;
             max-width: 900px;
@@ -34,7 +34,7 @@ body {
             border-radius: 40px;
         }
         .bg-img {
-            display: block; // Nenhum
+            display: none; // Nenhum
             img {
                 width: 100%;
                 @media (min-width: 900px) {
@@ -42,12 +42,12 @@ body {
                 }
             }
             @media (min-width: 900px) {
-                grid-area: 1 / 2;
+                // grid-area: 1 / 2;
             }
 
         }        
         .text {
-            display: grid; // Grid
+            display: none; // Grid
             gap: 10px;
             padding: 1.5rem;
             @media (min-width: 900px) {
@@ -108,9 +108,14 @@ body {
         }
         .success-message {
             height: 100vh;
-            display: none; //Grid
+            display: grid; //Grid
             place-items: center;
             padding: 1.5rem;
+            @media (min-width: 900px) {
+                height: auto;
+                
+            }   
+
             .message {
                 display: grid;
                 gap: 25px;
