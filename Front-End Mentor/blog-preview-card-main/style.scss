@@ -1,0 +1,83 @@
+@charset "UTF-8";
+
+// Variables
+
+$Yellow: #f4d04e;
+$White: #ffffff;
+$Grey: #808080;
+$Grey-op: #808080c9;
+$Black: #121212;
+$Figtree: 'Figtree', sans-serif;
+
+body {
+    font-family: $Figtree;
+    background-color: $Yellow;
+    .container {
+        border: 1.6px solid $Black;
+        box-shadow: 7px 7px 0 $Black;
+        @media (min-width: 400px) {
+            max-width: 370px;            
+        }
+        .illustration {            
+            background: url('assets/images/illustration-article.svg') center center no-repeat;
+            background-size: cover;
+            height: 200px;
+        }
+        .little-box {
+            width: fit-content;
+            background-color: $Yellow;
+            font-size: .8rem;
+            padding: .3rem .7rem;
+            transition: .2s;
+            @media (min-width: 400px) {
+                font-size: 1rem;                
+            }
+            &:hover {
+                scale: 1.05;
+                cursor: pointer;
+            }
+        }
+        .date {
+            font-size: .7rem;
+            @media (min-width: 400px) {
+                font-size: .9rem;                
+            }
+        }
+        .title {
+            font-size: 1.25rem;
+            @media (min-width: 400px) {
+                font-size: 1.5rem;                
+            }
+            &:hover {
+                color: $Yellow;
+                cursor: pointer;
+            }
+        }
+        .description {
+            color: $Grey-op;
+            font-size: .85rem;
+            @media (min-width: 400px) {
+                font-size: 1rem;                
+            }
+        }
+        .profile {
+            grid-template-columns: 40px 1fr;
+            img {
+                height: 40px;
+                width: 40px;
+                border: 2px solid $Yellow;
+                transition: .2s;
+                &:hover {
+                    scale: 1.1;
+                    cursor: pointer;
+                }
+            }
+            .name {
+                &:hover {
+                    color: $Yellow;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
