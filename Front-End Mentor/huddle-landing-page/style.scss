@@ -244,17 +244,34 @@ body {
         color: $White;
         display: grid;
         gap: 10px;
+        @media (min-width: 900px) {
+            grid-template-columns: 35% 20% 20% 25%;
+            padding: 0 11rem 2rem;
+            gap: 25px;
+        }
         .space {
             height: 130px;
+            @media (min-width: 900px) {
+                grid-area: 1 / 1 / 2 / 5;
+            }
         }
         .white-logo {
             padding: 0 0 0 .3rem;
             width: 200px;
+            @media (min-width: 900px) {
+                width: 250px;
+                grid-area: 2 / 1 / 3 / 3;
+                transform: translateX(-25px);
+            }
         }
         .contact {
             display: grid;
             padding: 1.5rem;
             gap: 20px;
+            @media (min-width: 900px) {
+                grid-area: 3 / 1 / 4 / 2;
+                padding: 0;
+            }
             .contact-item {
                 display: flex;
                 align-items: center;
@@ -274,6 +291,21 @@ body {
             flex-direction: column;
             padding: 0 1.5rem;
             gap: 10px;
+            @media (min-width: 900px) {
+                gap: 20px;
+            }
+            &:nth-child(4) {
+                @media (min-width: 900px) {
+                    grid-area: 3 / 2 / 4 / 3;
+                    justify-self: center;
+                }                
+            }
+            &:nth-child(5) {
+                @media (min-width: 900px) {
+                    grid-area: 3 / 3 / 4 / 4;
+                    justify-self: center;
+                }                
+            }
             .link {
                 color: $White;
                 text-decoration: none;
@@ -283,6 +315,10 @@ body {
             display: flex;
             justify-content: center;
             gap: 12px;
+            @media (min-width: 900px) {
+                grid-area: 3 / 4 / 4 / 5;
+                align-self: flex-start;
+            }
             .social-media-icon {
                 width: 35px;
                 height: 35px;
@@ -290,6 +326,9 @@ body {
                 border-radius: 50%;
                 padding: .5rem;
                 margin: 2.5rem 0 0;
+                @media (min-width: 900px) {
+                    margin: 0;
+                }
             }
         }
         .copyright {
@@ -297,6 +336,9 @@ body {
             text-align: center;
             font-size: .7rem;
             padding: 1rem 0;
+            @media (min-width: 900px) {
+                grid-area: 4 / 4 / 5;
+            }
         }
     }
     .attribution {
