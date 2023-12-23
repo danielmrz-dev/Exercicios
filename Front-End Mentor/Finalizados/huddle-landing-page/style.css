@@ -41,12 +41,17 @@ body .main-content .header img {
 }
 body .main-content .header .header-button {
   text-decoration: none;
+  color: #00252e;
   font-size: 0.7rem;
   font-weight: 800;
   background-color: #fff;
   padding: 0.4rem 1.5rem;
   box-shadow: 2px 2px 10px rgba(128, 141, 153, 0.1450980392);
   border-radius: 30px;
+  transition: 0.2s;
+}
+body .main-content .header .header-button:hover {
+  scale: 1.1;
 }
 @media (min-width: 900px) {
   body .main-content .header .header-button {
@@ -108,6 +113,10 @@ body .main-content .section01 .section01-button {
   padding: 0.7rem 1rem;
   border-radius: 30px;
   width: 80%;
+  transition: 0.2s;
+}
+body .main-content .section01 .section01-button:hover {
+  scale: 1.1;
 }
 @media (min-width: 900px) {
   body .main-content .section01 .section01-button {
@@ -211,6 +220,7 @@ body .section05 {
   border-radius: 15px;
   background-color: #fff;
   transform: translateY(100px);
+  z-index: 2;
 }
 @media (min-width: 900px) {
   body .section05 {
@@ -242,6 +252,10 @@ body .section05 .section05-button {
   margin: auto;
   border-radius: 30px;
   width: 60%;
+  transition: 0.2s;
+}
+body .section05 .section05-button:hover {
+  scale: 1.1;
 }
 @media (min-width: 900px) {
   body .section05 .section05-button {
@@ -252,7 +266,7 @@ body .section05 .section05-button {
   }
 }
 body .footer {
-  z-index: -1;
+  z-index: 1;
   background-color: #00252e;
   color: #fff;
   display: grid;
@@ -313,6 +327,8 @@ body .footer .useful-links {
   flex-direction: column;
   padding: 0 1.5rem;
   gap: 10px;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 @media (min-width: 900px) {
   body .footer .useful-links {
@@ -331,9 +347,14 @@ body .footer .useful-links {
     justify-self: center;
   }
 }
-body .footer .useful-links .link {
+body .footer .useful-links a.link {
   color: #fff;
   text-decoration: none;
+  transition: 0.1s;
+}
+body .footer .useful-links a.link:hover {
+  text-decoration: underline;
+  color: #ff52bf;
 }
 body .footer .social-media {
   display: flex;
@@ -353,6 +374,12 @@ body .footer .social-media .social-media-icon {
   border-radius: 50%;
   padding: 0.5rem;
   margin: 2.5rem 0 0;
+  transition: 0.2s;
+}
+body .footer .social-media .social-media-icon:hover {
+  scale: 1.1;
+  cursor: pointer;
+  background-color: #808d99;
 }
 @media (min-width: 900px) {
   body .footer .social-media .social-media-icon {

@@ -27,7 +27,7 @@ $Open-Sans: 'Open Sans', sans-serif;
 
 body {
     display: grid;
-    gap: 20px; // Problem here, fix it
+    gap: 20px;
     font-family: $Open-Sans;
     img {
         width: 100px;
@@ -53,12 +53,17 @@ body {
             }
             .header-button {
                 text-decoration: none;
+                color: $Very-Dark-Cyan;
                 font-size: .7rem;
                 font-weight: 800;
                 background-color: $White;
                 padding: .4rem 1.5rem;
                 box-shadow: 2px 2px 10px $Gray-shadow;
                 border-radius: 30px;
+                transition: .2s;
+                &:hover {
+                    scale: 1.1;
+                }
                 @media (min-width: 900px) {
                     font-size: 1.2rem;
                     padding: 1rem 4rem;
@@ -111,6 +116,10 @@ body {
                 padding: .7rem 1rem;
                 border-radius: 30px;
                 width: 80%;
+                transition: .2s;
+                &:hover {
+                    scale: 1.1;
+                }
                 @media (min-width: 900px) {
                     grid-area: 3 / 1;
                     align-self: flex-start;
@@ -204,6 +213,7 @@ body {
         border-radius: 15px;
         background-color: $White;
         transform: translateY(100px);
+        z-index: 2;
         @media (min-width: 900px) {
             padding: 3.5rem 1.5rem;
             margin: auto;
@@ -230,6 +240,10 @@ body {
             margin: auto;
             border-radius: 30px;
             width: 60%;
+            transition: .2s;
+            &:hover {
+                scale: 1.1;
+            }
             @media (min-width: 900px) {
                 font-size: 1.2rem;
                 padding: 1.5rem;
@@ -239,7 +253,7 @@ body {
         }
     }
     .footer {
-        z-index: -1;
+        z-index: 1;
         background-color: $Very-Dark-Cyan;
         color: $White;
         display: grid;
@@ -291,6 +305,7 @@ body {
             flex-direction: column;
             padding: 0 1.5rem;
             gap: 10px;
+            width: fit-content;
             @media (min-width: 900px) {
                 gap: 20px;
             }
@@ -306,9 +321,14 @@ body {
                     justify-self: center;
                 }                
             }
-            .link {
+            a.link {
                 color: $White;
                 text-decoration: none;
+                transition: .1s;
+                &:hover {
+                    text-decoration: underline;
+                    color: $Pink;
+                }  
             }
         }
         .social-media {
@@ -326,9 +346,15 @@ body {
                 border-radius: 50%;
                 padding: .5rem;
                 margin: 2.5rem 0 0;
+                transition: .2s;
+                &:hover {
+                    scale: 1.1;
+                    cursor: pointer;
+                    background-color: $Grayish-Blue;
+                }
                 @media (min-width: 900px) {
                     margin: 0;
-                }
+                }  
             }
         }
         .copyright {
