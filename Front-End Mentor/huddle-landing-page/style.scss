@@ -27,7 +27,7 @@ $Open-Sans: 'Open Sans', sans-serif;
 
 body {
     display: grid;
-    gap: 20px;
+    gap: 20px; // Problem here, fix it
     font-family: $Open-Sans;
     img {
         width: 100px;
