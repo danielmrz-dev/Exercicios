@@ -1,3 +1,66 @@
+body {
+  background: #1d2c67 url("images/bg-mobile.png") no-repeat;
+  background-size: cover;
+}
+body .container {
+  max-width: 325px;
+}
+body .container .images {
+  background-color: #1d2c67;
+  border-radius: 10px 100px 10px 10px;
+}
+body .container .images .logo {
+  width: 140px;
+}
+body .container .images .icons .icon {
+  background-color: #0c122c;
+  border-radius: 10px;
+  width: 48px;
+  height: 45px;
+  padding: 0.8rem;
+}
+body .container .text {
+  font-family: "Raleway", sans-serif;
+  background-color: #1d2c67;
+  color: #dddbff;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-radius: 10px;
+  position: relative;
+}
+body .container .text .main-text {
+  font-weight: 200;
+  text-align: center;
+  font-size: 0.9rem;
+}
+body .container .text .main-text strong {
+  font-weight: 700;
+}
+body .container .text .progress-bar {
+  width: auto;
+}
+body .container .text .gbs {
+  font-size: 0.8rem;
+  font-weight: 700;
+  transform: translateY(-5px);
+}
+body .container .text .gb-left {
+  text-align: center;
+  align-self: center;
+  color: #0c122c;
+  background-color: #fff;
+  padding: 0.5rem 1.2rem;
+  width: -moz-fit-content;
+  width: fit-content;
+  position: absolute;
+  top: 110px;
+  border-radius: 10px;
+}
+body .container .text .gb-left strong {
+  font-size: 2rem;
+}
+
 .bubble {
   position: relative;
   width: 190px;

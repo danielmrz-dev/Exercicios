@@ -4,10 +4,87 @@
 
 $Gradient: linear-gradient(to right, #ffa399, #ff4d97);
 $Pale-Blue: #dddbff;
+$White: #fff;
 $Grayish-Blue: #848794;
 $Dark-Blue: #1d2c67;
 $Very-Dark-Blue: #0c122c;
 $Raleway: 'Raleway', sans-serif;
+
+body {
+    background: $Dark-Blue url('images/bg-mobile.png') no-repeat;
+    background-size: cover;
+    .container {
+        max-width: 325px;
+        .images {
+            background-color: $Dark-Blue;
+            border-radius: 10px 100px 10px 10px;
+            .logo {
+                width: 140px;                
+            }
+            .icons {
+                .icon {
+                    background-color: $Very-Dark-Blue;
+                    border-radius: 10px;
+                    width: 48px;
+                    height: 45px;
+                    padding: .8rem;
+                }
+            }
+        }
+        .text {
+            font-family: $Raleway;
+            background-color: $Dark-Blue;
+            color: $Pale-Blue;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            border-radius: 10px;
+            position: relative;
+            .main-text {
+                font-weight: 200;
+                text-align: center;
+                font-size: .9rem;
+                strong {
+                    font-weight: 700;
+                }
+            }
+            .progress-bar {                
+                width: auto; // arrumar estilo do range aqui
+            }
+            .gbs {
+                font-size: .8rem;
+                font-weight: 700;
+                transform: translateY(-5px);
+            }
+            .gb-left {
+                text-align: center;
+                align-self: center;
+                color: $Very-Dark-Blue;
+                background-color: $White;
+                padding: .5rem 1.2rem;
+                width: fit-content;
+                position: absolute;
+                top: 110px;
+                border-radius: 10px;
+                strong {
+                    font-size: 2rem;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 .bubble {
     position: relative;

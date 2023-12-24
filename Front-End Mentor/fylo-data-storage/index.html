@@ -7,19 +7,35 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="style.css">
   <title>Frontend Mentor | Fylo data storage component</title>
 </head>
-<body>
+<body class="h-screen flex flex-col items-center justify-center mx-7">
 
-  You’ve used 815 GB of your storage
+  <main class="container flex flex-col gap-4">
+    <section class="images flex flex-col gap-8 p-10">
+      <img src="images/logo.svg" alt="Fylo logo" class="logo">
+      <div class="icons flex gap-4">
+        <img src="images/icon-document.svg" alt="icon-document" class="icon">
+        <img src="images/icon-folder.svg" alt="icon-folder" class="icon">
+        <img src="images/icon-upload.svg" alt="icon-upload" class="icon">
+      </div>
+    </section>
+    <section class="text p-8">
+      <h1 class="main-text">You’ve used <strong>815 GB</strong> of your storage</h1>
+      <input type="range" name="range" id="bar" class="progress-bar">
+      <div class="gbs flex justify-between">
+        <p class="min-gb">0 GB</p>
+        <p class="max-gb">1000 GB</p>
+      </div>
+      
+      <div class="gb-left"><strong>185</strong> GB Left</div>
 
-  185 GB Left
+    </section>
+  </main>
   
-  0 GB
-  1000 GB
-  
-  <div class="attribution">
+  <div class="attribution hidden">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
   </div>
