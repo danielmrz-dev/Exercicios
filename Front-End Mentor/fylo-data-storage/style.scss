@@ -57,17 +57,25 @@ body {
                 transform: translateY(-5px);
             }
             .gb-left {
-                text-align: center;
+                display: flex;
+                align-items: center;
+                gap: 10px;
                 align-self: center;
-                color: $Very-Dark-Blue;
                 background-color: $White;
-                padding: .5rem 1.2rem;
-                width: fit-content;
+                padding: .3rem 1.5rem;
                 position: absolute;
                 top: 110px;
                 border-radius: 10px;
+                text-transform: uppercase;
                 strong {
-                    font-size: 2rem;
+                    color: $Very-Dark-Blue;
+                    font-weight: 700;
+                    font-size: 2.5rem;
+                }
+                p {
+                    font-size: .8rem;
+                    color: $Grayish-Blue;
+                    font-weight: 700;
                 }
             }
         }
