@@ -44,6 +44,7 @@ body .container .text .gbs {
   font-size: 0.8rem;
   font-weight: 700;
   transform: translateY(-5px);
+  padding-bottom: 0.5rem;
 }
 body .container .text .gb-left {
   display: flex;
