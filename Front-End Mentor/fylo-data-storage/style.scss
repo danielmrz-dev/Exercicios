@@ -3,6 +3,8 @@
 // Variables
 
 $Gradient: linear-gradient(to right, #ffa399, #ff4d97);
+$Yellow: #ffa399;
+$Orange: #ff4d97;
 $Pale-Blue: #dddbff;
 $White: #fff;
 $Grayish-Blue: #848794;
@@ -15,9 +17,17 @@ body {
     background-size: cover;
     .container {
         max-width: 325px;
+        @media (min-width: 900px) {
+            flex-direction: row;
+            max-width: 1000px;
+            gap: 25px;
+        }
         .images {
             background-color: $Dark-Blue;
             border-radius: 10px 100px 10px 10px;
+            @media (min-width: 900px) {
+                width: 55%;
+            }
             .logo {
                 width: 140px;                
             }
@@ -40,6 +50,9 @@ body {
             gap: 10px;
             border-radius: 10px;
             position: relative;
+            @media (min-width: 900px) {
+                width: 100%;
+            }
             .main-text {
                 font-weight: 200;
                 text-align: center;
@@ -47,12 +60,34 @@ body {
                 strong {
                     font-weight: 700;
                 }
+                @media (min-width: 900px) {
+                    text-align: start;
+                }
             }
             .progress-bar {                
-                width: auto; // arrumar estilo do range aqui
                 appearance: none;
                 border-radius: 10px;
                 height: 15px;
+                width: 100%;
+                background: $Very-Dark-Blue;
+                overflow: hidden;
+                &::-webkit-slider-runnable-track {
+                    appearance: none;
+                    height: 14px;
+                    color: #ff4d97;
+                    border-radius: 10px;
+                }
+                &::-webkit-slider-thumb {
+                    appearance: none;
+                    width: 14px;
+                    height: 14px;
+                    border-radius: 50%;
+                    background-color: $White;
+                    cursor: pointer;
+                    box-shadow: -255px 0 25px 120px $Yellow,
+                                -110px 0 25px 105px $Orange;
+
+                }
             }
             .gbs {
                 font-size: .8rem;
@@ -71,6 +106,9 @@ body {
                 top: 110px;
                 border-radius: 10px;
                 text-transform: uppercase;
+                @media (min-width: 900px) {
+                    top: -30px;
+                }
                 strong {
                     color: $Very-Dark-Blue;
                     font-weight: 700;

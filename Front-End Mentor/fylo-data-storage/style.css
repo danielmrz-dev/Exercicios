@@ -5,9 +5,21 @@ body {
 body .container {
   max-width: 325px;
 }
+@media (min-width: 900px) {
+  body .container {
+    flex-direction: row;
+    max-width: 1000px;
+    gap: 25px;
+  }
+}
 body .container .images {
   background-color: #1d2c67;
   border-radius: 10px 100px 10px 10px;
+}
+@media (min-width: 900px) {
+  body .container .images {
+    width: 55%;
+  }
 }
 body .container .images .logo {
   width: 140px;
@@ -29,6 +41,11 @@ body .container .text {
   border-radius: 10px;
   position: relative;
 }
+@media (min-width: 900px) {
+  body .container .text {
+    width: 100%;
+  }
+}
 body .container .text .main-text {
   font-weight: 200;
   text-align: center;
@@ -37,13 +54,37 @@ body .container .text .main-text {
 body .container .text .main-text strong {
   font-weight: 700;
 }
+@media (min-width: 900px) {
+  body .container .text .main-text {
+    text-align: start;
+  }
+}
 body .container .text .progress-bar {
-  width: auto;
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
   border-radius: 10px;
   height: 15px;
+  width: 100%;
+  background: #0c122c;
+  overflow: hidden;
+}
+body .container .text .progress-bar::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
+          appearance: none;
+  height: 14px;
+  color: #ff4d97;
+  border-radius: 10px;
+}
+body .container .text .progress-bar::-webkit-slider-thumb {
+  -webkit-appearance: none;
+          appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: #fff;
+  cursor: pointer;
+  box-shadow: -255px 0 25px 120px #ffa399, -110px 0 25px 105px #ff4d97;
 }
 body .container .text .gbs {
   font-size: 0.8rem;
@@ -62,6 +103,11 @@ body .container .text .gb-left {
   top: 110px;
   border-radius: 10px;
   text-transform: uppercase;
+}
+@media (min-width: 900px) {
+  body .container .text .gb-left {
+    top: -30px;
+  }
 }
 body .container .text .gb-left strong {
   color: #0c122c;
