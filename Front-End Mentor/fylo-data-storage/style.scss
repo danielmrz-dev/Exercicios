@@ -50,6 +50,9 @@ body {
             }
             .progress-bar {                
                 width: auto; // arrumar estilo do range aqui
+                appearance: none;
+                border-radius: 10px;
+                height: 15px;
             }
             .gbs {
                 font-size: .8rem;

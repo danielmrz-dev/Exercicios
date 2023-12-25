@@ -39,6 +39,11 @@ body .container .text .main-text strong {
 }
 body .container .text .progress-bar {
   width: auto;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border-radius: 10px;
+  height: 15px;
 }
 body .container .text .gbs {
   font-size: 0.8rem;
