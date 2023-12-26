@@ -16,10 +16,9 @@ body {
     background: $Dark-Blue url('images/bg-mobile.png') no-repeat;
     background-size: cover;
     @media (min-width: 900px) {
-        background: $Dark-Blue url('images/bg-desktop.png') no-repeat;
+        background: $Very-Dark-Blue url('images/bg-desktop.png') bottom center no-repeat;
         background-size: contain; // continuar aqui
-        background-position: 0 50vh;
-        
+        background-position: 0 50vh;        
     }
     .container {
         max-width: 325px;
@@ -32,7 +31,7 @@ body {
             background-color: $Dark-Blue;
             border-radius: 10px 100px 10px 10px;
             @media (min-width: 900px) {
-                width: 65%;
+                width: 60%;
             }
             .logo {
                 width: 140px;                
@@ -124,8 +123,8 @@ body {
                 border-radius: 10px;
                 text-transform: uppercase;
                 @media (min-width: 900px) {
-                    top: -35px;
-                    right: 30px;
+                    top: -45px;
+                    right: 35px;
                     z-index: 0;
                     &::after {
                         content: '';
@@ -137,7 +136,7 @@ body {
                         width: 0;
                         z-index: 1;
                         bottom: -25px;
-                        right: -7px;
+                        right: -8px;
                         rotate: -21deg;
                     }
                 }

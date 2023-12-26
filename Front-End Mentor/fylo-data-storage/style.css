@@ -4,7 +4,7 @@ body {
 }
 @media (min-width: 900px) {
   body {
-    background: #1d2c67 url("images/bg-desktop.png") no-repeat;
+    background: #0c122c url("images/bg-desktop.png") bottom center no-repeat;
     background-size: contain;
     background-position: 0 50vh;
   }
@@ -25,7 +25,7 @@ body .container .images {
 }
 @media (min-width: 900px) {
   body .container .images {
-    width: 65%;
+    width: 60%;
   }
 }
 body .container .images .logo {
@@ -128,8 +128,8 @@ body .container .text .gb-left {
 }
 @media (min-width: 900px) {
   body .container .text .gb-left {
-    top: -35px;
-    right: 30px;
+    top: -45px;
+    right: 35px;
     z-index: 0;
   }
   body .container .text .gb-left::after {
@@ -142,7 +142,7 @@ body .container .text .gb-left {
     width: 0;
     z-index: 1;
     bottom: -25px;
-    right: -7px;
+    right: -8px;
     rotate: -21deg;
   }
 }
