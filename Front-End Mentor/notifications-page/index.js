@@ -9,9 +9,13 @@ for (let i = 0; i <= 3; i++) {
 }
 
 function markAsRead(card, redDot) {
-    number.innerHTML -= '1'
-    cards[card].style.background = 'white';    
-    redDots[redDot].classList.add('hide-after');
+    if (number.innerHTML > 0) {
+        number.innerHTML -= '1'
+        cards[card].style.background = 'white';    
+        redDots[redDot].classList.add('hide-after');
+    } else {
+        number.innerHTML = '0';    
+    }
 }
 
 function markAllAsRead() {
