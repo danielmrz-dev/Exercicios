@@ -1,0 +1,148 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+body {
+  display: grid;
+  gap: 50px;
+  max-width: 640px;
+}
+@media (min-width: 768px) {
+  body {
+    min-height: 100vh;
+    align-items: center;
+    margin: auto;
+    background-color: #f9fafe;
+  }
+}
+body .container {
+  display: grid;
+  gap: 10px;
+  padding: 1rem;
+}
+@media (min-width: 768px) {
+  body .container {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 1.5rem;
+  }
+}
+body .container .header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.8rem;
+}
+body .container .header .title {
+  font-size: 1.3rem;
+  font-weight: 800;
+  display: flex;
+  gap: 10px;
+}
+body .container .header .title .number {
+  font-size: 1rem;
+  background-color: #0a317b;
+  color: #ffffff;
+  padding: 0.15rem 0.8rem;
+  border-radius: 8px;
+}
+body .container .header .mark-all {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #5e6778;
+}
+body .container .header .mark-all:hover {
+  cursor: pointer;
+  color: #1a57c9;
+}
+body .container .card {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 50px 1fr;
+  gap: 2px 5px;
+  padding: 1rem;
+  font-size: 0.5rem;
+  border-radius: 10px;
+}
+body .container .card:nth-child(2), body .container .card:nth-child(3), body .container .card:nth-child(4) {
+  cursor: pointer;
+  background-color: #f7fafd;
+}
+body .container .card img {
+  align-self: flex-start;
+  justify-self: center;
+  width: 40px;
+  grid-area: 1/1/3/2;
+}
+body .container .card .notification {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #5e6778;
+  position: relative;
+}
+body .container .card .new::after {
+  content: attr(data-content);
+  position: absolute;
+  transform: translate(5px, 6px);
+  border: 4px solid #f65351;
+  border-radius: 50%;
+  opacity: 0.9;
+}
+body .container .card .hide-after::after {
+  display: none;
+}
+body .container .card .name {
+  color: #1c202b;
+  font-weight: 800;
+}
+body .container .card .name:hover {
+  cursor: pointer;
+  color: #1a57c9;
+}
+body .container .card .date {
+  color: #939dae;
+  font-size: 0.9rem;
+  font-weight: 600;
+  grid-area: 2/2;
+}
+body .container .card .chess-club {
+  color: #0a317b;
+  font-weight: 900;
+}
+body .container .card .chess-club:hover {
+  cursor: pointer;
+  color: #1a57c9;
+}
+body .container .card .private-msg {
+  grid-area: 3/2;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #5e6778;
+  border: 1px solid rgba(147, 157, 174, 0.3568627451);
+  border-radius: 5px;
+  padding: 1rem;
+  margin-top: 0.5rem;
+  transition: 0.2s;
+}
+body .container .card .private-msg:hover {
+  cursor: pointer;
+  background-color: #e5effa;
+}
+body .container .card .image-chess {
+  grid-area: 1/3/3;
+  transition: 0.2s;
+}
+body .container .card .image-chess:hover {
+  scale: 1.1;
+  cursor: pointer;
+}
+body .container .card .highlight:hover {
+  cursor: pointer;
+  color: #1a57c9;
+}
+body .attribution {
+  display: none;
+}/*# sourceMappingURL=style.css.map */
