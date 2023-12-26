@@ -17,9 +17,10 @@ body {
     background-size: cover;
     @media (min-width: 900px) {
         background: $Very-Dark-Blue url('images/bg-desktop.png') bottom center no-repeat;
-        background-size: contain; // continuar aqui
-        background-position: 0 50vh;        
-    }
+        background-size: contain;
+        background-position: 0 50vh;
+    }        
+    
     .container {
         max-width: 325px;
         @media (min-width: 900px) {
@@ -43,6 +44,12 @@ body {
                     width: 48px;
                     height: 45px;
                     padding: .8rem;
+                    transition: .2s;
+                    &:hover {
+                        scale: 1.1;
+                        cursor: pointer;
+                        background-color: $Pale-Blue;
+                    }
                 }
             }
         }
