@@ -11,6 +11,95 @@ $Light-Pink: #ff8fd8;
 $Light-Red: #ff4242;
 $Very-Dark-Cyan: #00252e;
 $Very-Pale-Blue: #f5faff;
+$White: #fff;
+$Grey: #808080;
 
 $Poppins: 'Poppins', sans-serif;
 $Open-Sans: 'Open Sans', sans-serif;
+
+body {
+    font-family: $Poppins;
+    .header {
+        .header-img {
+            height: 18px;
+        }
+        .header-button {
+            font-size: .7rem;
+            color: $Pink;
+            border: 1px solid $Pink;
+            border-radius: 25px;
+            text-transform: capitalize;
+        }
+    }
+    .container {
+        .container-text-n-button {
+            .container-title {
+                font-size: 1.6rem;
+            }
+            .container-paragraph {
+                font-family: $Open-Sans;
+                font-size: .9rem;
+            }
+            .container-button {
+                background-color: $Pink;
+                color: $White;
+                font-size: .7rem;
+                letter-spacing: 1px;
+            }
+        }
+        .section {
+            .section-container {
+                font-family: $Open-Sans;
+                .section-numbers {
+                    font-size: 3.5rem;
+                }
+                .section-text {
+                    color: $Grey;
+                }
+            }
+        }
+        .cards {
+            .bg-section-top-mobile-1,
+            .bg-section-top-mobile-2 {
+                margin-bottom: -2.5rem;
+            }
+            .bg-section-bottom-mobile-1,
+            .bg-section-bottom-mobile-2 {
+                margin-top: -2.5rem;                
+            }
+            .card {
+                &:nth-child(2),
+                &:nth-child(6) {
+                    background-color: $Very-Pale-Blue;
+                }
+                .card-title-n-text {
+                    .card-title {
+                        font-size: 1.3rem;
+                    }
+                    .card-text {
+                        font-family: $Open-Sans;
+                        font-size: .9rem;
+                    }
+                }
+            }
+        }
+        .cta {
+            .cta-title {
+                font-size: 1.5rem;
+            }
+            .cta-button {
+                background-color: $Pink;
+                color: $White;
+                font-size: .7rem;
+                letter-spacing: 1px;               
+            }
+        }
+    }
+    .bg-footer-top-mobile {
+        margin-bottom: -1px;
+    }
+    .footer {
+        background-color: $Very-Dark-Cyan;
+        color: $White;
+    }
+}
