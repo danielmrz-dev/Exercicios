@@ -142,30 +142,47 @@ body {
         background-color: $Very-Dark-Cyan;
         color: $White;
         @media (min-width: 768px) {
-            grid-template-columns: 45% 45%;
+            grid-template-columns: 42% 42%;
             gap: 50px;
         }  
         .footer-newsletter {
             @media (min-width: 768px) {
                 grid-area: 1 / 2;
+                grid-template-columns: 60% 1fr;
+                grid-template-rows: auto auto 1fr;
+                gap: 15px 30px;
             }  
             .newsletter-title {
                 font-size: 1.2rem;
                 text-transform: uppercase;
+                @media (min-width: 768px) {
+                    grid-area: 1 / 1;
+                }  
             }
             .newsletter-text {
                 font-family: $Open-Sans;
                 font-size: .9rem;
                 font-weight: 500;
                 line-height: 25px;
+                @media (min-width: 768px) {
+                    grid-area: 2 / 1;
+                }  
             }
             .newsletter-input {
                 border-radius: 5px;
+                @media (min-width: 768px) {
+                    grid-area: 3 / 1;
+                    height: fit-content;
+                }  
             }
             .newsletter-button {
                 font-family: $Open-Sans;
                 background-color: $Pink;
                 border-radius: 5px;
+                @media (min-width: 768px) {
+                    grid-area: 3 / 2;
+                    height: fit-content;
+                }  
             }
         }
         .footer-contact-info {
