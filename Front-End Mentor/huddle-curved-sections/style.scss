@@ -22,6 +22,9 @@ body {
     .header {
         .header-img {
             height: 18px;
+            @media (min-width: 768px) {
+                height: 40px;
+            }
         }
         .header-button {
             font-size: .7rem;
@@ -29,32 +32,54 @@ body {
             border: 1px solid $Pink;
             border-radius: 25px;
             text-transform: capitalize;
+            @media (min-width: 768px) {
+                font-size: 1rem;                
+            }
         }
     }
     .container {
         .container-text-n-button {
             .container-title {
                 font-size: 1.6rem;
+                @media (min-width: 768px) {
+                    font-size: 3rem;
+                }
             }
             .container-paragraph {
                 font-family: $Open-Sans;
                 font-size: .9rem;
+                @media (min-width: 768px) {
+                    font-size: 1.3rem;
+                }
+
             }
             .container-button {
                 background-color: $Pink;
                 color: $White;
                 font-size: .7rem;
                 letter-spacing: 1px;
+                @media (min-width: 768px) {
+                    font-size: 1.2rem;
+                }
             }
         }
         .section {
+            @media (min-width: 768px) {
+                grid-template-columns: 45% 45%;
+            }
             .section-container {
                 font-family: $Open-Sans;
                 .section-numbers {
                     font-size: 3.5rem;
+                    @media (min-width: 768px) {
+                        font-size: 6rem;
+                    }
                 }
                 .section-text {
                     color: $Grey;
+                    @media (min-width: 768px) {
+                        font-size: 1.6rem;
+                    }
                 }
             }
         }
@@ -75,23 +100,38 @@ body {
                 .card-title-n-text {
                     .card-title {
                         font-size: 1.3rem;
+                        @media (min-width: 768px) {
+                            font-size: 2.5rem;
+                        }
                     }
                     .card-text {
                         font-family: $Open-Sans;
-                        font-size: .9rem;
+                        font-size: .8rem;
+                        @media (min-width: 768px) {
+                            font-size: 1rem;
+                        }
                     }
+                }
+                @media (min-width: 768px) {
+                    grid-template-columns: 45% 45%;
                 }
             }
         }
         .cta {
             .cta-title {
                 font-size: 1.5rem;
+                @media (min-width: 768px) {
+                    font-size: 2.5rem;
+                }
             }
             .cta-button {
                 background-color: $Pink;
                 color: $White;
                 font-size: .7rem;
-                letter-spacing: 1px;               
+                letter-spacing: 1px;      
+                @media (min-width: 768px) {
+                    font-size: 1.2rem;
+                }         
             }
         }
     }
@@ -101,5 +141,56 @@ body {
     .footer {
         background-color: $Very-Dark-Cyan;
         color: $White;
+        @media (min-width: 768px) {
+            grid-template-columns: 45% 45%;
+            gap: 50px;
+        }  
+        .footer-newsletter {
+            @media (min-width: 768px) {
+                grid-area: 1 / 2;
+            }  
+            .newsletter-title {
+                font-size: 1.2rem;
+                text-transform: uppercase;
+            }
+            .newsletter-text {
+                font-family: $Open-Sans;
+                font-size: .9rem;
+                font-weight: 500;
+                line-height: 25px;
+            }
+            .newsletter-input {
+                border-radius: 5px;
+            }
+            .newsletter-button {
+                font-family: $Open-Sans;
+                background-color: $Pink;
+                border-radius: 5px;
+            }
+        }
+        .footer-contact-info {
+            .footer-logo {
+                transform: translateX(-18px);
+            }
+            .contact-info-text {
+                font-family: $Open-Sans;
+                font-size: .85rem;
+                line-height: 25px;
+            }
+            .contact-info-div {
+                .contact-info {
+                    font-family: $Open-Sans;
+                    font-size: .9rem;
+                }
+            }
+            .social-media {
+                .social-media-icon {
+                    &:nth-child(1),
+                    &:nth-child(3) {
+                        background-color: $White;
+                    }
+                }
+            }
+        }
     }
 }
