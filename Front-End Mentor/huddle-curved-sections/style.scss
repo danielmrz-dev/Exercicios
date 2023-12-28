@@ -32,6 +32,10 @@ body {
             border: 1px solid $Pink;
             border-radius: 25px;
             text-transform: capitalize;
+            transition: .2s;
+            &:hover {
+                scale: 1.1;
+            }
             @media (min-width: 768px) {
                 font-size: 1rem;                
             }
@@ -58,6 +62,10 @@ body {
                 color: $White;
                 font-size: .7rem;
                 letter-spacing: 1px;
+                transition: .2s;
+                &:hover {
+                    scale: 1.1;
+                }
                 @media (min-width: 768px) {
                     font-size: 1.2rem;
                 }
@@ -129,6 +137,10 @@ body {
                 color: $White;
                 font-size: .7rem;
                 letter-spacing: 1px;      
+                transition: .2s;
+                &:hover {
+                    scale: 1.1;
+                }
                 @media (min-width: 768px) {
                     font-size: 1.2rem;
                 }         
@@ -142,13 +154,14 @@ body {
         background-color: $Very-Dark-Cyan;
         color: $White;
         @media (min-width: 768px) {
-            grid-template-columns: 42% 42%;
+            grid-template-columns: 3% 30% 1fr 38% 3%;
             gap: 50px;
         }  
         .footer-newsletter {
+            position: relative;
             @media (min-width: 768px) {
-                grid-area: 1 / 2;
-                grid-template-columns: 60% 1fr;
+                grid-area: 1 / 4;
+                grid-template-columns: 63% 1fr;
                 grid-template-rows: auto auto 1fr;
                 gap: 15px 30px;
             }  
@@ -157,6 +170,7 @@ body {
                 text-transform: uppercase;
                 @media (min-width: 768px) {
                     grid-area: 1 / 1;
+                    font-size: 1.5rem;
                 }  
             }
             .newsletter-text {
@@ -170,15 +184,21 @@ body {
             }
             .newsletter-input {
                 border-radius: 5px;
+                color: $Very-Dark-Cyan;
                 @media (min-width: 768px) {
                     grid-area: 3 / 1;
                     height: fit-content;
                 }  
             }
+
             .newsletter-button {
                 font-family: $Open-Sans;
                 background-color: $Pink;
                 border-radius: 5px;
+                transition: .2s;
+                &:hover {
+                    scale: 1.1;
+                }
                 @media (min-width: 768px) {
                     grid-area: 3 / 2;
                     height: fit-content;
@@ -186,22 +206,39 @@ body {
             }
         }
         .footer-contact-info {
+            @media (min-width: 768px) {
+                grid-area: 1 / 2;
+            } 
             .footer-logo {
                 transform: translateX(-18px);
+                @media (min-width: 768px) {
+                    transform: translate(-23px, -15px);
+                } 
             }
             .contact-info-text {
                 font-family: $Open-Sans;
                 font-size: .85rem;
                 line-height: 25px;
+                @media (min-width: 768px) {
+                    font-size: 1rem;
+                } 
             }
             .contact-info-div {
                 .contact-info {
                     font-family: $Open-Sans;
                     font-size: .9rem;
+                    @media (min-width: 768px) {
+                        font-size: 1.2rem;
+                    } 
                 }
             }
             .social-media {
                 .social-media-icon {
+                    transition: .2s;
+                    &:hover {
+                        cursor: pointer;
+                        scale: 1.2;
+                    }
                     &:nth-child(1),
                     &:nth-child(3) {
                         background-color: $White;

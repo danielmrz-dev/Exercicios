@@ -100,20 +100,20 @@
   </main>
   
   <img src="images/bg-footer-top-mobile.svg" alt="bg-footer-top-mobile" class="bg-footer-top-mobile w-full mt-16 md:mt-0">
-  <footer class="footer pt-16 pb-10 px-8 grid md:justify-center">
+  <footer class="footer pt-16 pb-10 px-8 grid md:justify-center md:pb-24">
     <div class="footer-newsletter grid gap-4">
       <h4 class="newsletter-title font-medium">Newsletter</h4>
       <p class="newsletter-text">
         To recieve tips on how to grow your community, sign up to our weekly newsletter. We’ll never
         send you spam or pass on your email address
       </p>
-      <input type="email" name="" id="email" class="newsletter-input p-3 mt-4">
-      <button class="newsletter-button justify-self-end w-1/2 py-3 font-semibold md:justify-self-start md:mt-4 md:w-full">Subscribe</button>
+      <input type="email" name="" id="email" placeholder="example@email.com" class="newsletter-input p-3 mt-4">
+      <button onclick="subscribe()" class="newsletter-button justify-self-end w-1/2 py-3 font-semibold md:justify-self-start md:mt-4 md:w-full">Subscribe</button>
     </div>
     
-    <div class="footer-contact-info mt-20 md:mt-0">
-      <img src="images/white-logo.png" alt="white-logo" class="footer-logo w-56">
-      <p class="contact-info-text font-medium pb-5">
+    <div class="footer-contact-info mt-20 md:mt-0 md:pr-24">
+      <img src="images/white-logo.png" alt="white-logo" class="footer-logo w-56 md: w-72">
+      <p class="contact-info-text font-medium pb-5 md:font-light">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nulla quam, hendrerit lacinia
         vestibulum a, ultrices quis sem.
       </p>
@@ -128,10 +128,10 @@
         <p class="contact-info font-light">example@huddle.com</p>
       </div>
 
-      <div class="social-media flex gap-3 mt-14">
-        <img src="images/facebook.svg" alt="facebook-icon" class="social-media-icon p-1 h-7 w-7 rounded">
-        <img src="images/instagram-white.svg" alt="instagram-icon" class="social-media-icon h-7 w-7 rounded">
-        <img src="images/x-twitter.svg" alt="x-twitter-icon" class="social-media-icon p-1 h-7 w-7 rounded">
+      <div class="social-media flex gap-3 mt-14 md:mt-20 md:gap-7">
+        <img src="images/facebook.svg" alt="facebook-icon" class="social-media-icon p-1 h-7 w-7 rounded md:h-10 md:w-10">
+        <img src="images/instagram-white.svg" alt="instagram-icon" class="social-media-icon h-7 w-7 rounded md:h-10 md:w-10">
+        <img src="images/x-twitter.svg" alt="x-twitter-icon" class="social-media-icon p-1 h-7 w-7 rounded md:h-10 md:w-10">
       </div>
     </div>
   </footer>
@@ -141,5 +141,6 @@
       Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
       Coded by <a href="#">Your Name Here</a>.
   </div>
+  <script src="index.js"></script>
 </body>
 </html>
