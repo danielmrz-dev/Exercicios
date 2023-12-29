@@ -45,6 +45,18 @@ function calculateAge() {
     validateMonth();
     validateYear();    
     if (diaNascimento.value != 0 && mesNascimento.value != 0 && anoNascimento.value != 0) {
+        if (mesAtual <= mesNascimento.value && diaAtual < diaNascimento.value) {
+            ageYears.innerHTML = (anoAtual - anoNascimento.value) - 1;
+        } else {
+            ageYears.innerHTML = anoAtual - anoNascimento.value;
+        }
+
+        if (diaAtual < diaNascimento.value) {
+            ageMonths.innerHTML = mesNascimento.value - 1;
+        } else {
+            ageMonths.innerHTML = 12 - mesNascimento.value;
+        }
+
         let numeroDeDias = '';
         switch (parseInt(mesNascimento.value)) {
             case 2:
@@ -68,12 +80,7 @@ function calculateAge() {
             default:
                 break;
         }
-        if (mesAtual <= mesNascimento.value) {
-            ageYears.innerHTML = (anoAtual - anoNascimento.value) - 1;
-        } else {
-            ageYears.innerHTML = anoAtual - anoNascimento.value;
-        }
-        ageMonths.innerHTML = 12 - mesNascimento.value;
-        ageDays.innerHTML = numeroDeDias - diaNascimento.value;        
+        
+        ageDays.innerHTML = numeroDeDias - diaNascimento.value;  
     }
 }
