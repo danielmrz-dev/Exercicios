@@ -11,148 +11,69 @@ const erroDia = document.getElementById('error-Day');
 const erroMes = document.getElementById('error-Month');
 const erroAno = document.getElementById('error-Year');
 
+const ageYears = document.querySelector('.age-years')
+const ageMonths = document.querySelector('.age-months')
+const ageDays = document.querySelector('.age-days')
+
 function validateDay() {
-    if (diaNascimento.value == 0) {
+    if (diaNascimento.value == 0 || diaNascimento.value > 31) {
         erroDia.style.opacity = '1';
+        erroDia.style.transition = '.2s';
     } else {
         erroDia.style.opacity = '0';
     }
 }
 function validateMonth() {
-    if (mesNascimento.value == 0) {
+    if (mesNascimento.value == 0 || mesNascimento.value > 12) {
         erroMes.style.opacity = '1';
+        erroMes.style.transition = '.2s';
     } else {
         erroMes.style.opacity = '0';
     }
 }
 function validateYear() {
-    if (anoNascimento.value == 0) {
+    if (anoNascimento.value == 0 || anoNascimento.value > anoAtual) {
         erroAno.style.opacity = '1';
+        erroAno.style.transition = '.2s';
     } else {
         erroAno.style.opacity = '0';
     }
 }
 
-
 function calculateAge() {
     validateDay();
     validateMonth();
     validateYear();    
+    if (diaNascimento.value != 0 && mesNascimento.value != 0 && anoNascimento.value != 0) {
+        let numeroDeDias = '';
+        switch (parseInt(mesNascimento.value)) {
+            case 2:
+                numeroDeDias = 28;
+                break;
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
+                numeroDeDias = 31;
+                break;
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+                numeroDeDias = 30;
+                break;
+            default:
+                break;
+        }
+        if (mesAtual <= mesNascimento.value) {
+            ageYears.innerHTML = (anoAtual - anoNascimento.value) - 1;
+        } else {
+            ageYears.innerHTML = anoAtual - anoNascimento.value;
+        }
+        ageMonths.innerHTML = 12 - mesNascimento.value;
+        ageDays.innerHTML = numeroDeDias - diaNascimento.value;        
+    }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// switch (mesAtual) {
-//     case 0:
-//         mesAtual = 'Janeiro'
-//         break;
-//     case 1:
-//         mesAtual = 'Fevereiro'
-//         break;
-//     case 2:
-//         mesAtual = 'Março'
-//         break;
-//     case 3:
-//         mesAtual = 'Abril'
-//         break;
-//     case 4:
-//         mesAtual = 'Maio'
-//         break;
-//     case 5:
-//         mesAtual = 'Junho'
-//         break;
-//     case 6:
-//         mesAtual = 'Julho'
-//         break;
-//     case 7:
-//         mesAtual = 'Agosto'
-//         break;
-//     case 8:
-//         mesAtual = 'Setembro'
-//         break;
-//     case 9:
-//         mesAtual = 'Outubto'
-//         break;
-//     case 10:
-//         mesAtual = 'Novembro'
-//         break;
-//     case 11:
-//         mesAtual = 'Dezembro'
-//         break;
-//     default:
-//         break;
-// }
-
-// const meses = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];
-
-
-// let numeroDeDias = '';
-// switch (meses) {
-//     case 'Fevereiro':
-//         numeroDeDias = 28;
-//     case 'Janeiro':
-//     case 'Março':
-//     case 'Maio':
-//     case 'Julho':
-//     case 'Agosto':
-//     case 'Outubro':
-//     case 'Dezembro':
-//         numeroDeDias = 31;
-//         break;
-//     case 'Abril':
-//     case 'Junho':
-//     case 'Setembro':
-//     case 'Novembro':
-//         numeroDeDias = 30;
-//         break;
-//     default:
-//         break;
-// }
-
-// alert(`O mês de ${meses} tem ${numeroDeDias} dias.`);

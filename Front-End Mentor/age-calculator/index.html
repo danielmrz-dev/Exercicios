@@ -15,20 +15,20 @@
 
       <div class="day">
         <h2 class="text-day">Day</h2>
-        <input type="text" class="input-day w-20 p-2.5 sm:w-5/6 sm:py-3 sm:px-5" placeholder="DD"></input>
+        <input type="number" min="1" max="31" class="input-day w-20 p-2.5 sm:w-5/6 sm:py-3 sm:px-5" placeholder="DD"></input>
         <p class="error-msg" id="error-Day">Must be a valid day</p>
       </div>      
       
       <div class="month">
         <h2 class="text-month">Month</h2>
-        <input type="text" class="input-month w-20 p-2.5 sm:w-5/6 sm:py-3 sm:px-5" placeholder="MM"></input>
+        <input type="number" min="1" max="12" class="input-month w-20 p-2.5 sm:w-5/6 sm:py-3 sm:px-5" placeholder="MM"></input>
         <p class="error-msg" id="error-Month">Must be a valid month</p>
         
       </div>
       
       <div class="year">
         <h2 class="text-year">Year</h2>
-        <input type="text" class="input-year w-20 p-2.5 sm:w-5/6 sm:py-3 sm:px-5" placeholder="YYYY"></input>
+        <input type="number" min="1900" max="2024" class="input-year w-20 p-2.5 sm:w-5/6 sm:py-3 sm:px-5" placeholder="YYYY"></input>
         <p class="error-msg" id="error-Year">Must be a valid year</p>
         
       </div>
