@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
+  <title>Frontend Mentor | Age calculator app</title>
+</head>
+<body class="min-h-screen flex justify-center items-center m-5 sm:m-0">
+
+  <main class="container px-5 py-12 shadow-lg flex flex-col justify-center sm:px-14">
+    <form action="" class="birth-date grid justify-center">
+
+      <div class="day">
+        <h2 class="text-day">Day</h2>
+        <input type="text" class="input-day w-20 p-2.5 sm:w-5/6 sm:py-3 sm:px-5" placeholder="DD"></input>
+        <p class="error-msg" id="error-Day">Must be a valid day</p>
+      </div>      
+      
+      <div class="month">
+        <h2 class="text-month">Month</h2>
+        <input type="text" class="input-month w-20 p-2.5 sm:w-5/6 sm:py-3 sm:px-5" placeholder="MM"></input>
+        <p class="error-msg" id="error-Month">Must be a valid month</p>
+        
+      </div>
+      
+      <div class="year">
+        <h2 class="text-year">Year</h2>
+        <input type="text" class="input-year w-20 p-2.5 sm:w-5/6 sm:py-3 sm:px-5" placeholder="YYYY"></input>
+        <p class="error-msg" id="error-Year">Must be a valid year</p>
+        
+      </div>
+
+    </form>
+    <div class="button flex items-center my-16 sm:mb-12 sm:mt-5">
+      <hr>
+      <button class="calculate" onclick="calculateAge()"><img src="assets/images/icon-arrow.svg" alt="icon-arrow"></button>
+    </div>
+    <div class="result">
+      <h2 class="age flex items-center gap-2"><strong class="age-years">--</strong> years</h2>
+      <h2 class="age flex items-center gap-2"><strong class="age-months">--</strong> months</h2>
+      <h2 class="age flex items-center gap-2"><strong class="age-days">--</strong> days</h2>
+    </div>
+  </main>
+  
+  <div class="attribution hidden">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+  <script src="index.js"></script>
+</body>
+</html>

@@ -1,0 +1,120 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+body {
+  background-color: #f0f0f0;
+  font-family: "Poppins", sans-serif;
+}
+body .container {
+  background-color: #ffffff;
+  border-radius: 30px 30px 90px 30px;
+}
+@media (min-width: 640px) {
+  body .container {
+    max-width: 820px;
+    border-radius: 30px 30px 220px 30px;
+  }
+}
+body .container .birth-date {
+  grid-template-columns: repeat(3, 33.3%);
+}
+@media (min-width: 640px) {
+  body .container .birth-date {
+    grid-template-columns: repeat(3, 26%) 1fr;
+  }
+}
+body .container .birth-date .day, body .container .birth-date .year, body .container .birth-date .month {
+  display: grid;
+  justify-content: center;
+  gap: 3px;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 3px;
+  color: #716f6f;
+}
+@media (min-width: 640px) {
+  body .container .birth-date .day, body .container .birth-date .year, body .container .birth-date .month {
+    justify-content: flex-start;
+    font-size: 0.9rem;
+    gap: 10px;
+  }
+}
+body .container .birth-date .day .input-day, body .container .birth-date .year .input-day, body .container .birth-date .year .input-year, body .container .birth-date .month .input-day, body .container .birth-date .month .input-month {
+  font-size: 1.2rem;
+  border: 1px solid #dbdbdb;
+  border-radius: 8px;
+  color: #141414;
+}
+@media (min-width: 640px) {
+  body .container .birth-date .day .input-day, body .container .birth-date .year .input-day, body .container .birth-date .year .input-year, body .container .birth-date .month .input-day, body .container .birth-date .month .input-month {
+    font-size: 2rem;
+  }
+}
+body .container .birth-date .day .error-msg, body .container .birth-date .year .error-msg, body .container .birth-date .month .error-msg {
+  opacity: 0;
+  text-align: center;
+  font-weight: 500;
+  color: #ff5757;
+  font-size: 0.45rem;
+  letter-spacing: 0;
+  text-transform: none;
+}
+@media (min-width: 640px) {
+  body .container .birth-date .day .error-msg, body .container .birth-date .year .error-msg, body .container .birth-date .month .error-msg {
+    font-size: 0.8rem;
+    text-align: start;
+    transform: translate(5px, -5px);
+  }
+}
+body .container .button {
+  position: relative;
+}
+body .container .button hr {
+  border: 1px solid #dbdbdb;
+  width: 100%;
+}
+body .container .button .calculate {
+  height: 70px;
+  width: 70px;
+  background-color: #854dff;
+  border-radius: 50%;
+  padding: 1.2rem;
+  position: absolute;
+  right: 38%;
+  transition: 0.2s;
+}
+body .container .button .calculate:hover {
+  cursor: pointer;
+  scale: 1.1;
+  background-color: #ff5757;
+}
+@media (min-width: 640px) {
+  body .container .button .calculate {
+    right: 0;
+    height: 90px;
+    width: 90px;
+    padding: 1.5rem;
+  }
+}
+body .container .result .age {
+  font-size: 3.2rem;
+  font-weight: 900;
+  font-style: italic;
+  line-height: 4rem;
+}
+@media (min-width: 640px) {
+  body .container .result .age {
+    line-height: 7rem;
+    font-size: 6.2rem;
+    font-weight: 800;
+  }
+}
+body .container .result .age strong {
+  color: #854dff;
+  font-size: 4rem;
+  font-weight: 800;
+}
+@media (min-width: 640px) {
+  body .container .result .age strong {
+    font-size: 6rem;
+  }
+}/*# sourceMappingURL=style.css.map */
