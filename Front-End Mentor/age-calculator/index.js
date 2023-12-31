@@ -24,16 +24,16 @@ function validateDay() {
         erroDia.innerHTML = 'This field is required';
         erroDia.style.opacity = '1';
         erroDia.style.transition = '.2s';
-        textDay.style.color = '#ff5757';
+        textDay.style.color = '#F25D07';
         textDay.style.transition = '.2s';
-        diaNascimento.style.border = '1px solid #ff5757'
+        diaNascimento.style.border = '1px solid #F25D07'
     } else  if (diaNascimento.value > 31){
         erroDia.innerHTML = 'Must be a valid day';
         erroDia.style.opacity = '1';
         erroDia.style.transition = '.2s';
-        textDay.style.color = '#ff5757';
+        textDay.style.color = '#F25D07';
         textDay.style.transition = '.2s';
-        diaNascimento.style.border = '1px solid #ff5757';        
+        diaNascimento.style.border = '1px solid #F25D07';        
     } else {
         erroDia.style.opacity = '0';
         textDay.style.color = '#716f6f';
@@ -46,16 +46,16 @@ function validateMonth() {
         erroMes.innerHTML = 'This field is required';
         erroMes.style.opacity = '1';
         erroMes.style.transition = '.2s';
-        textMonth.style.color = '#ff5757';
+        textMonth.style.color = '#F25D07';
         textMonth.style.transition = '.2s';
-        mesNascimento.style.border = '1px solid #ff5757'
+        mesNascimento.style.border = '1px solid #F25D07'
     } else if (mesNascimento.value > 12){
         erroMes.innerHTML = 'Must be a valid month';
         erroMes.style.opacity = '1';
         erroMes.style.transition = '.2s';
-        textMonth.style.color = '#ff5757';
+        textMonth.style.color = '#F25D07';
         textMonth.style.transition = '.2s';
-        mesNascimento.style.border = '1px solid #ff5757'; 
+        mesNascimento.style.border = '1px solid #F25D07'; 
     } else {
         erroMes.style.opacity = '0';        
         textMonth.style.color = '#716f6f';
@@ -68,16 +68,16 @@ function validateYear() {
         erroAno.innerHTML = 'This field is required';
         erroAno.style.opacity = '1';
         erroAno.style.transition = '.2s';
-        textYear.style.color = '#ff5757';
+        textYear.style.color = '#F25D07';
         textYear.style.transition = '.2s';
-        anoNascimento.style.border = '1px solid #ff5757';
+        anoNascimento.style.border = '1px solid #F25D07';
     } else if (anoNascimento.value > anoAtual){
         erroAno.innerHTML = 'Must be a valid year';
         erroAno.style.opacity = '1';
         erroAno.style.transition = '.2s';
-        textYear.style.color = '#ff5757';
+        textYear.style.color = '#F25D07';
         textYear.style.transition = '.2s';
-        anoNascimento.style.border = '1px solid #ff5757'
+        anoNascimento.style.border = '1px solid #F25D07'
     } else {
         erroAno.style.opacity = '0';
         textYear.style.color = '#716f6f';
@@ -137,9 +137,9 @@ function calculateAge() {
         erroDia.innerHTML = 'Must be a valid day';
         erroDia.style.opacity = '1';
         erroDia.style.transition = '.2s';
-        textDay.style.color = '#ff5757';
+        textDay.style.color = '#F25D07';
         textDay.style.transition = '.2s';
-        diaNascimento.style.border = '1px solid #ff5757';
+        diaNascimento.style.border = '1px solid #F25D07';
         ageDays.innerHTML = '--'
         ageMonths.innerHTML = '--'
         ageYears.innerHTML = '--'
@@ -149,9 +149,9 @@ function calculateAge() {
         erroDia.innerHTML = 'Must be a valid day';
         erroDia.style.opacity = '1';
         erroDia.style.transition = '.2s';
-        textDay.style.color = '#ff5757';
+        textDay.style.color = '#F25D07';
         textDay.style.transition = '.2s';
-        diaNascimento.style.border = '1px solid #ff5757';
+        diaNascimento.style.border = '1px solid #F25D07';
         ageDays.innerHTML = '--'
         ageMonths.innerHTML = '--'
         ageYears.innerHTML = '--'
@@ -161,9 +161,9 @@ function calculateAge() {
         erroDia.innerHTML = 'Must be a valid day';
         erroDia.style.opacity = '1';
         erroDia.style.transition = '.2s';
-        textDay.style.color = '#ff5757';
+        textDay.style.color = '#F25D07';
         textDay.style.transition = '.2s';
-        diaNascimento.style.border = '1px solid #ff5757';
+        diaNascimento.style.border = '1px solid #F25D07';
         ageDays.innerHTML = '--'
         ageMonths.innerHTML = '--'
         ageYears.innerHTML = '--'
@@ -173,9 +173,9 @@ function calculateAge() {
         erroDia.innerHTML = 'Must be a valid day';
         erroDia.style.opacity = '1';
         erroDia.style.transition = '.2s';
-        textDay.style.color = '#ff5757';
+        textDay.style.color = '#F25D07';
         textDay.style.transition = '.2s';
-        diaNascimento.style.border = '1px solid #ff5757';
+        diaNascimento.style.border = '1px solid #F25D07';
         ageDays.innerHTML = '--'
         ageMonths.innerHTML = '--'
         ageYears.innerHTML = '--'
@@ -185,9 +185,9 @@ function calculateAge() {
         erroDia.innerHTML = 'Must be a valid day';
         erroDia.style.opacity = '1';
         erroDia.style.transition = '.2s';
-        textDay.style.color = '#ff5757';
+        textDay.style.color = '#F25D07';
         textDay.style.transition = '.2s';
-        diaNascimento.style.border = '1px solid #ff5757';
+        diaNascimento.style.border = '1px solid #F25D07';
         ageDays.innerHTML = '--'
         ageMonths.innerHTML = '--'
         ageYears.innerHTML = '--'
@@ -306,29 +306,3 @@ function countToDays() { // FINISHED
         }, interval);            
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
