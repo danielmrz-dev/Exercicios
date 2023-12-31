@@ -92,18 +92,14 @@ function calculateAge() {
     if (diaNascimento.value != 0 && mesNascimento.value != 0 && anoNascimento.value != 0) {
         if (mesAtual <= mesNascimento.value && diaAtual < diaNascimento.value) {
             ageYears.innerHTML = (anoAtual - anoNascimento.value) - 1;
-            // countToYear();
         } else {
             ageYears.innerHTML = anoAtual - anoNascimento.value;
-            // countToYear();
         }
 
         if (diaAtual < diaNascimento.value) {
             ageMonths.innerHTML = mesNascimento.value - 1;
-            // countToMonth();
         } else {
             ageMonths.innerHTML = 12 - mesNascimento.value;
-            // countToMonth();
         }
 
         let numeroDeDias = '';
@@ -130,7 +126,6 @@ function calculateAge() {
                 break;
         }
         ageDays.innerHTML = numeroDeDias - diaNascimento.value;
-        // countToDay();
     }
     if (erroDia.style.opacity == '1' || erroMes.style.opacity == '1' || erroAno.style.opacity == '1') {
         ageDays.innerHTML = '--'
@@ -198,55 +193,119 @@ function calculateAge() {
         ageYears.innerHTML = '--'
         diaNascimento.focus();
     }
+    countToYear();
+    countToMonth();
+    countToDays();
 }
 
-// function countToYear() {
-//     let from = 0;
-//     let to = '';
-//     if (parseInt(anoNascimento.value) > anoAtual) {
-//         ageYears.innerHTML = '--';
-//     } else if (parseInt(anoNascimento.value) == anoAtual) {
-//         ageYears.innerHTML = 0;        
-//     } else if ((diaNascimento.value > 28 && mesNascimento.value == 2) || (diaNascimento.value == 31 && mesNascimento.value == 4) || (diaNascimento.value == 31 && mesNascimento.value == 6) || (diaNascimento.value == 31 && mesNascimento.value == 9) || (diaNascimento.value == 31 && mesNascimento.value == 11)) {
-//         ageYears.innerHTML = '--';
-//     } else {
-//         to = anoAtual - parseInt(anoNascimento.value);        
-//         let step = 1;
-//         let interval = 30;
+function countToYear() { // FINISHED
+    if ((diaNascimento.value > 28 && mesNascimento.value == 2) || (diaNascimento.value == 31 && mesNascimento.value == 4) || (diaNascimento.value == 31 && mesNascimento.value == 6) || (diaNascimento.value == 31 && mesNascimento.value == 9) || (diaNascimento.value == 31 && mesNascimento.value == 11) || (erroDia.style.opacity == '1' || erroMes.style.opacity == '1' || erroAno.style.opacity == '1')) {
+        ageYears.innerHTML = '--';
+    } else {
+        let from = 0;
+        let to = '';
+        
+        if (mesAtual <= mesNascimento.value && diaAtual < diaNascimento.value) {
+            to = (anoAtual - anoNascimento.value) - 1;
+        } else {
+            to = anoAtual - anoNascimento.value;
+        }
     
-//         let counter = setInterval(function() {
-//             from += step;
-//             ageYears.innerHTML = from;
-//             if (from == to) {
-//                 clearInterval(counter);
-//             }
-//         }, interval);    
-//     }
-// }
-
-
-
-
-// function countToMonth() {
-//     let from = 0;
-//     let to = '';
-//     let step = 1;
-//     let interval = 30;
+        let step = 1;
+        let interval = 30;
+        let counter = setInterval(function() {
+            if (from >= to) {
+                clearInterval(counter);
+                return;
+            }
     
-//     if (mesNascimento.value > 12) {
-//         to = 0;
-//     } else {
-//         to = mesAtual - parseInt(mesNascimento.value);      
-//     }
+            from += step;
+            ageYears.innerHTML = from;
+            if (from === to) {
+                clearInterval(counter);
+            }
+        }, interval);            
+    }
+}
+
+function countToMonth() { // FINISHED
+    if ((diaNascimento.value > 28 && mesNascimento.value == 2) || (diaNascimento.value == 31 && mesNascimento.value == 4) || (diaNascimento.value == 31 && mesNascimento.value == 6) || (diaNascimento.value == 31 && mesNascimento.value == 9) || (diaNascimento.value == 31 && mesNascimento.value == 11) || (erroDia.style.opacity == '1' || erroMes.style.opacity == '1' || erroAno.style.opacity == '1')) {
+        ageMonths.innerHTML = '--';
+    } else {
+        let from = 0;
+        let to = '';
+        
+        if (diaAtual < diaNascimento.value) {
+            to = mesNascimento.value - 1;
+        } else {
+            to = 12 - mesNascimento.value;
+        }
     
-//     let counter = setInterval(function() {
-//         from += step;
-//         ageMonths.innerHTML = from;
-//         if (from == to) {
-//             clearInterval(counter);
-//         }
-//     }, interval);    
-// }
+        let step = 1;
+        let interval = 30;
+        let counter = setInterval(function() {
+            if (from >= to) {
+                clearInterval(counter);
+                return;
+            }
+    
+            from += step;
+            ageMonths.innerHTML = from;
+            if (from === to) {
+                clearInterval(counter);
+            }
+        }, interval);            
+    }
+}
+
+function countToDays() { // FINISHED
+    if ((diaNascimento.value > 28 && mesNascimento.value == 2) || (diaNascimento.value == 31 && mesNascimento.value == 4) || (diaNascimento.value == 31 && mesNascimento.value == 6) || (diaNascimento.value == 31 && mesNascimento.value == 9) || (diaNascimento.value == 31 && mesNascimento.value == 11) || (erroDia.style.opacity == '1' || erroMes.style.opacity == '1' || erroAno.style.opacity == '1')) {
+        ageDays.innerHTML = '--';
+    } else {
+        let from = 0;
+        let to = '';
+        
+        let numeroDeDias = '';
+        switch (parseInt(mesNascimento.value)) {
+            case 2:
+                numeroDeDias = 28;
+                break;
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
+                numeroDeDias = 31;
+                break;
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+                numeroDeDias = 30;
+                break;
+            default:
+                break;
+        }
+        to = numeroDeDias - diaNascimento.value;
+    
+        let step = 1;
+        let interval = 30;
+        let counter = setInterval(function() {
+            if (from >= to) {
+                clearInterval(counter);
+                return;
+            }
+    
+            from += step;
+            ageDays.innerHTML = from;
+            if (from === to) {
+                clearInterval(counter);
+            }
+        }, interval);            
+    }
+}
 
 
 
@@ -254,4 +313,22 @@ function calculateAge() {
 
 
 
-// else if ((diaNascimento.value > 28 && mesNascimento.value == 2) || (diaNascimento.value == 31 && mesNascimento.value == 4) || (diaNascimento.value == 31 && mesNascimento.value == 6) || (diaNascimento.value == 31 && mesNascimento.value == 9) || (diaNascimento.value == 31 && mesNascimento.value == 11))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
