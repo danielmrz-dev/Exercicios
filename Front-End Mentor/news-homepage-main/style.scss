@@ -1,14 +1,12 @@
 @charset "UTF-8";
 
-// Variables
-
-$Soft-orange: #e9ab53;
-$Soft-red: #f15e50;
-$Off-white: #fffdfa;
-$Grayish-blue: #c5c6ce;
-$Dark-grayish-blue: #5d5f79;
-$Very-dark-blue: #00001a;
-$Inter: 'Inter', sans-serif;
+@use 'components/header';
+@use 'components/container';
+@use 'components/variables';
+@use 'components/aside';
+@use 'components/articles';
+@use 'components/footer';
+@use 'components/media';
 
 // Reset
 
@@ -16,6 +14,12 @@ $Inter: 'Inter', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: $Inter;
+    font-family: variables.$Inter;
 }
 
+body {
+    margin: 1.5rem 1rem 3rem;
+    background-color: variables.$Off-white;
+    display: grid;
+    gap: 1.25rem;
+}

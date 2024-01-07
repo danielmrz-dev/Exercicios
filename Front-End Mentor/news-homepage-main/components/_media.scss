@@ -1,0 +1,25 @@
+@media (min-width: 768px) {
+    body {
+        min-height: 100vh;
+        justify-content: center;
+        align-items: center;
+        .header {
+            max-width: 1000px;
+        }
+        .container {
+            max-width: 1000px;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: auto auto auto;
+            picture {
+                grid-area: 1 / 1 / 2 / 3;
+            }
+        }
+        .aside {
+            grid-area: 1 / 3 / 3 / 4;
+            margin: 0;
+        }
+        .title {
+            grid-area: 2 / 1 / 3 / 2;
+        }
+    }
+}
