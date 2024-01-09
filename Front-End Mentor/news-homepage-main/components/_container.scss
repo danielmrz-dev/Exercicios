@@ -32,6 +32,11 @@
             color: variables.$Off-white;
             text-transform: uppercase;
             letter-spacing: 5px;
+            transition: .2s;
+            &:hover {
+                cursor: pointer;
+                scale: 1.1;
+            }
         }
     }
 }

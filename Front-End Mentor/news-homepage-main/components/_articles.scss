@@ -7,6 +7,11 @@
         display: grid;
         grid-template-columns: auto 1fr;
         column-gap: 1.5rem;
+        transition: .1s;
+        &:hover {
+            cursor: pointer;
+            scale: 1.01;
+        }
         img {
             height: 135px;
             grid-area: 1 / 1 / 4 / 2;
