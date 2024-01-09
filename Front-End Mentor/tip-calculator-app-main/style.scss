@@ -1,0 +1,155 @@
+@charset "UTF-8";
+
+@use 'media';
+@use 'variables';
+
+// Mixins 
+@mixin buttons {
+    background-color: variables.$Very-dark-cyan;
+    color: variables.$White;
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding: .3rem;
+    border-radius: 5px;
+    width: 100%;
+}
+
+@mixin forms {
+    background-color: variables.$Very-light-grayish-cyan;
+    padding: .5rem 1rem;
+    text-align: end;
+    border-radius: 5px;
+    color: variables.$Very-dark-cyan;
+    font-size: 1.2rem;
+    font-weight: 800;
+    width: 100%;
+}
+
+body {
+    background-color: variables.$Light-grayish-cyan;
+    font-family: variables.$Space-mono;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .logo {
+        margin: 3rem 0;
+    }
+    .container {
+        background-color: variables.$White;
+        border-radius: 20px 20px 0 0;
+        padding: 2rem;
+        .form {
+            display: flex;
+            flex-direction: column;
+            gap: .2rem;
+            position: relative;
+            .titles {
+                color: variables.$Dark-grayish-cyan;
+                font-weight: 700;
+            }
+            .dolar-icon {
+                position: absolute;
+                width: 12px;
+                top: 38px;
+                left: 15px;
+            }
+            .form-bill {
+                @include forms;
+                &::placeholder {
+                    transform: translateY(2px);
+                    text-align: start;
+                    font-size: 1.5rem;
+                }
+            }
+        }
+        .tip-percentage {
+            display: grid;
+            gap: 1rem;
+            margin: 1.5rem 0;
+            .select-tip {
+                color: variables.$Dark-grayish-cyan;
+                font-weight: 700;
+                grid-area: 1 / 1;
+            }
+            .grid-numbers {
+                display: grid;
+                grid-template-columns: 49% 49%;
+                gap: .8rem;
+                .percent {
+                    @include buttons;
+                }
+                .custom-percent {
+                    @include forms;
+                    &::placeholder {
+                        font-size: 1.5rem;
+                        color: variables.$Very-dark-cyan;
+                        font-weight: 700;
+                        opacity: .6;
+                        transform: translateY(2px);
+                    }
+                }
+            }
+        }
+        .form-two {
+            display: flex;
+            flex-direction: column;
+            gap: .2rem;
+            position: relative;
+            margin: 0 0 1.5rem 0;
+            .form-people {
+                color: variables.$Dark-grayish-cyan;
+                font-weight: 700;
+            }
+            .person-icon {
+                position: absolute;
+                width: 15px;
+                top: 38px;
+                left: 15px;
+            }
+            .number-people {
+                @include forms;                
+            }
+        }
+        .result {
+            margin: 1rem 0;
+            background-color: variables.$Very-dark-cyan;
+            display: grid;
+            gap: 1.2rem;
+            color: variables.$Very-light-grayish-cyan;
+            border-radius: 10px;
+            padding: 1.5rem;
+            .result-container {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                .result-text1 {
+                    font-size: 1rem;
+                    font-weight: 700;
+                }
+                .result-text2 {
+                    font-size: .8rem;
+                    font-weight: 700;
+                    grid-column-start: 1;
+                    color: variables.$Grayish-cyan;
+                }
+                .result-numbers {
+                    grid-area: 1 / 2 / 3 / 4;
+                    align-self: center;
+                    font-size: 1.8rem;
+                    font-weight: 700;
+                    color: variables.$Strong-cyan;
+                    text-align: end;
+                }
+            }
+            .reset {
+                background-color: variables.$Strong-cyan;
+                color: variables.$Very-dark-cyan;
+                font-size: 1.2rem;
+                text-transform: uppercase;
+                padding: .5rem;
+                margin-top: 1rem;
+                border-radius: 5px;
+            }
+        }
+    }
+}

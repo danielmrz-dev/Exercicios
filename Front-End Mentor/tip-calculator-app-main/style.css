@@ -1,0 +1,194 @@
+@media screen and (min-width: 768px) {
+  body {
+    min-height: 100vh;
+  }
+  body .logo {
+    margin: 1rem 0;
+  }
+  body .container {
+    max-width: 900px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    -moz-column-gap: 2rem;
+         column-gap: 2rem;
+  }
+  body .container .form {
+    grid-area: 1/1;
+  }
+  body .container .tip-percentage {
+    grid-area: 2/1;
+  }
+  body .container .form-two {
+    grid-area: 3/1;
+  }
+  body .container .result {
+    grid-area: 1/2/4;
+  }
+}
+body {
+  background-color: #c5e4e7;
+  font-family: "Space Mono", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+body .logo {
+  margin: 3rem 0;
+}
+body .container {
+  background-color: #ffffff;
+  border-radius: 20px 20px 0 0;
+  padding: 2rem;
+}
+body .container .form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  position: relative;
+}
+body .container .form .titles {
+  color: #5e7a7d;
+  font-weight: 700;
+}
+body .container .form .dolar-icon {
+  position: absolute;
+  width: 12px;
+  top: 38px;
+  left: 15px;
+}
+body .container .form .form-bill {
+  background-color: #f4fafa;
+  padding: 0.5rem 1rem;
+  text-align: end;
+  border-radius: 5px;
+  color: #00494d;
+  font-size: 1.2rem;
+  font-weight: 800;
+  width: 100%;
+}
+body .container .form .form-bill::-moz-placeholder {
+  transform: translateY(2px);
+  text-align: start;
+  font-size: 1.5rem;
+}
+body .container .form .form-bill::placeholder {
+  transform: translateY(2px);
+  text-align: start;
+  font-size: 1.5rem;
+}
+body .container .tip-percentage {
+  display: grid;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+body .container .tip-percentage .select-tip {
+  color: #5e7a7d;
+  font-weight: 700;
+  grid-area: 1/1;
+}
+body .container .tip-percentage .grid-numbers {
+  display: grid;
+  grid-template-columns: 49% 49%;
+  gap: 0.8rem;
+}
+body .container .tip-percentage .grid-numbers .percent {
+  background-color: #00494d;
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 700;
+  padding: 0.3rem;
+  border-radius: 5px;
+  width: 100%;
+}
+body .container .tip-percentage .grid-numbers .custom-percent {
+  background-color: #f4fafa;
+  padding: 0.5rem 1rem;
+  text-align: end;
+  border-radius: 5px;
+  color: #00494d;
+  font-size: 1.2rem;
+  font-weight: 800;
+  width: 100%;
+}
+body .container .tip-percentage .grid-numbers .custom-percent::-moz-placeholder {
+  font-size: 1.5rem;
+  color: #00494d;
+  font-weight: 700;
+  opacity: 0.6;
+  transform: translateY(2px);
+}
+body .container .tip-percentage .grid-numbers .custom-percent::placeholder {
+  font-size: 1.5rem;
+  color: #00494d;
+  font-weight: 700;
+  opacity: 0.6;
+  transform: translateY(2px);
+}
+body .container .form-two {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  position: relative;
+  margin: 0 0 1.5rem 0;
+}
+body .container .form-two .form-people {
+  color: #5e7a7d;
+  font-weight: 700;
+}
+body .container .form-two .person-icon {
+  position: absolute;
+  width: 15px;
+  top: 38px;
+  left: 15px;
+}
+body .container .form-two .number-people {
+  background-color: #f4fafa;
+  padding: 0.5rem 1rem;
+  text-align: end;
+  border-radius: 5px;
+  color: #00494d;
+  font-size: 1.2rem;
+  font-weight: 800;
+  width: 100%;
+}
+body .container .result {
+  margin: 1rem 0;
+  background-color: #00494d;
+  display: grid;
+  gap: 1.2rem;
+  color: #f4fafa;
+  border-radius: 10px;
+  padding: 1.5rem;
+}
+body .container .result .result-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+body .container .result .result-container .result-text1 {
+  font-size: 1rem;
+  font-weight: 700;
+}
+body .container .result .result-container .result-text2 {
+  font-size: 0.8rem;
+  font-weight: 700;
+  grid-column-start: 1;
+  color: #7f9c9f;
+}
+body .container .result .result-container .result-numbers {
+  grid-area: 1/2/3/4;
+  align-self: center;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #26c0ab;
+  text-align: end;
+}
+body .container .result .reset {
+  background-color: #26c0ab;
+  color: #00494d;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  padding: 0.5rem;
+  margin-top: 1rem;
+  border-radius: 5px;
+}/*# sourceMappingURL=style.css.map */
