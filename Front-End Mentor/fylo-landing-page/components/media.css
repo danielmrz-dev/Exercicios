@@ -1,0 +1,180 @@
+@media screen and (min-width: 768px) {
+    
+    /* HEADER */
+
+    .header {
+        margin: 2.5rem 5rem;
+    }
+    
+    .header-logo {
+        width: 180px;
+    }
+    
+    .nav-bar {
+        display: flex;
+        gap: 3rem;
+    }
+    
+    .nav-bar-item {
+        font-size: 1.2rem;
+        font-weight: 600;
+    }
+    
+    /* FIM DO HEADER */
+
+    /* MAIN */
+
+    .container {
+        gap: 3rem;
+    }
+
+    .main-section {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: .5fr repeat(3, auto) 1fr;
+        text-align: start;
+        margin: 0 5rem;
+        gap: 1.5rem;
+    }
+
+    .main-section picture {
+        grid-area: 1 / 2 / 6;
+    }
+
+    .illustration {
+        max-width: 100%;
+    }
+
+    .main-title {
+        font-family: var(--Raleway);
+        font-size: 2.6rem;
+        font-weight: 700;
+        line-height: 55px;
+        grid-area: 2 / 1;
+    }
+
+    .main-paragraph {
+        font-size: 1.2rem;
+        font-weight: 500;
+        padding: 0;
+        grid-area: 3 / 1;
+    }
+
+    .main-section-form {
+        flex-direction: row;
+        grid-area: 4 / 1;
+    }
+
+    .main-email-input {
+        padding: 1rem;
+        width: 55%;
+    }
+
+    .main-button {
+        font-weight: 600;
+        padding: .7rem;
+        width: 35%;
+    }
+
+    /* FIM DO MAIN */
+
+    /* SECTION */
+
+    .curved-top {
+        margin: 6.5rem 0 -3.3rem 0;
+    }
+    
+    .section02 {
+        grid-template-columns: 55% 1fr;
+        padding: 5rem;
+    }
+
+    .illustration-2 {
+        grid-area: 1 / 2 / 5;
+    }
+    
+    .section02-title {
+        text-align: start;
+        grid-area: 1 / 1;
+        font-size: 2.6rem;
+    }
+
+    /* CONTINUAR AQUI */
+    
+    .section02-paragraph {
+        grid-area: 2 / 1;
+        max-width: 70%;
+        /* font-size: .9rem; */
+        /* font-family: var(--Open-Sans); */
+        /* color: var(--Desaturated-Blue); */
+    }
+    
+    .link {
+        grid-area: 3 / 1;
+        margin: 0;
+        /* display: flex; */
+        /* flex-direction: row-reverse; */
+        /* align-items: center; */
+        /* gap: 5px; */
+        /* width: fit-content; */
+        /* margin: auto; */
+        /* color: var(--Moderate-Cyan); */
+        /* text-decoration: none; */
+        /* border-bottom: 1px solid var(--Moderate-Cyan); */
+        /* font-family: var(--Open-Sans); */
+        /* font-size: .8rem; */
+    }
+    
+    .icon-arrow {
+        /* width: 17px; */
+        /* height: 17px; */
+    }
+    
+    .section02-testimonial {
+        grid-area: 4 / 1;
+        margin: 1rem 0 3.5rem 0;
+        max-width: 60%;
+        
+        /* display: grid; */
+        /* gap: .8rem; */
+        /* background-color: var(--White); */
+        /* border-radius: 5px; */
+        /* box-shadow: 0 0 10px var(--Shadow); */
+    }
+    
+    .quote-icon {
+        /* width: 13px; */
+    }
+    
+    .testimonial {
+        /* font-size: .65rem; */
+        /* font-family: var(--Open-Sans); */
+        /* font-weight: 500; */
+        /* line-height: 18px; */
+    }
+    
+    .profile {
+        /* display: grid; */
+        /* grid-template-columns: 40px 1fr; */
+        /* align-items: center; */
+    }
+    
+    .profile-picture {
+        /* width: 28px; */
+        /* border-radius: 50%; */
+        /* grid-area: 1 / 1 / 3 / 2; */
+    }
+    
+    .name {
+        /* font-family: var(--Open-Sans); */
+        /* font-size: .6rem; */
+        /* letter-spacing: 1px; */
+        /* align-self: flex-end; */
+    }
+    
+    .job-position {
+        /* font-size: .6rem; */
+        /* align-self: flex-start; */
+    }
+
+    /* FIM DA SECTION */
+}
