@@ -1,0 +1,26 @@
+/* Início Header */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 1.5rem;
+}
+
+.header-logo {
+    width: 80px;
+}
+
+.nav-bar {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-bar-item {
+    text-decoration: none;
+    font-size: .8rem;
+    color: var(--Desaturated-Blue);
+    font-weight: 500;
+}
+
+/* Fim do Header */
