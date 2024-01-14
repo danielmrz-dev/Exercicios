@@ -55,5 +55,11 @@
     padding: .7rem;
     border-radius: 3px;
     border: none;
-    box-shadow: 0 0 3px var(--Bg-curved-top);
+    box-shadow: 0 0 3px var(--Desaturated-Blue);
+    transition:.3s;
+}
+
+.main-button:hover {
+    scale: 1.02;
+    cursor: pointer;
 }

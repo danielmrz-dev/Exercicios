@@ -21,6 +21,11 @@
     font-size: .8rem;
     color: var(--Desaturated-Blue);
     font-weight: 500;
+    transition: .3s;
+}
+
+.nav-bar-item:hover {
+    scale: 1.2;
 }
 
 /* Fim do Header */

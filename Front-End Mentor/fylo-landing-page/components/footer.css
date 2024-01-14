@@ -1,19 +1,18 @@
 .footer {
     background-color: var(--Very-Dark-Blue);
     display: grid;
-    gap: 2rem;
+    gap: 2.2rem;
     color: var(--Light-Grayish-Blue);
     padding: 4rem 2.5rem 3rem;
 }
 
-.footer-contact-info {
-    display: grid;
-    gap: 1.5rem;
-    margin-bottom: .5rem;
-}
-
 .logo-white {
     width: 180px;
+}
+
+.footer-contact-info {
+    display: grid;
+    margin-bottom: .5rem;
 }
 
 .contact-info {
@@ -41,6 +40,14 @@
 .footer-links a {
     color: var(--Light-Grayish-Blue);
     text-decoration: none;
+    transition: .3s;
+    width: fit-content;
+}
+
+.footer-links a:hover {
+    scale: 1.1;
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 .social-media {
@@ -56,4 +63,10 @@
     border: 1px solid var(--Light-Grayish-Blue);
     border-radius: 50%;
     padding: .4rem;
+    transition: .2s;
+}
+
+.social-media img:hover {
+    scale: 1.2;
+    cursor: pointer;
 }

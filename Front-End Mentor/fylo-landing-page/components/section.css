@@ -33,6 +33,12 @@
     border-bottom: 1px solid var(--Moderate-Cyan);
     font-family: var(--Open-Sans);
     font-size: .8rem;
+    transition: .3s;
+}
+
+.link:hover {
+    scale: 1.05;
+    cursor: pointer;
 }
 
 .icon-arrow {
