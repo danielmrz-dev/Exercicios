@@ -1,0 +1,77 @@
+body {
+  background-color: #202a3c;
+  margin: 1.5rem;
+  font-family: "Raleway", sans-serif;
+  color: #ffffff;
+}
+body .header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+body .header__img {
+  width: 90px;
+}
+body .header__nav {
+  display: flex;
+  gap: 1rem;
+}
+body .header__link {
+  font-size: 0.75rem;
+  font-weight: 300;
+}
+body .container {
+  display: grid;
+  text-align: center;
+}
+body .container .section-one {
+  display: grid;
+  gap: 1rem;
+  margin: 3rem 1rem;
+}
+body .container .section-one__img {
+  margin: 0 auto 1rem;
+  width: 100%;
+}
+body .container .section-one__title {
+  font-size: 1.45rem;
+  font-weight: 700;
+}
+body .container .section-one__paragraph {
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 300;
+}
+body .container .section-one__button {
+  background-color: #339ecc;
+  font-size: 0.9rem;
+  font-weight: 700;
+  width: 70%;
+  margin: 1rem auto;
+  padding: 0.8rem 0;
+  border-radius: 30px;
+}
+body .container .section-two {
+  display: grid;
+  gap: 2rem;
+  margin: 3.5rem 0;
+  padding: 1rem;
+}
+body .container .section-two__containers {
+  display: grid;
+  margin-bottom: 4rem;
+}
+body .container .section-two__icon {
+  width: 60px;
+  margin: 0 auto 1.5rem;
+}
+body .container .section-two__titles {
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+body .container .section-two__paragraphs {
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 300;
+}/*# sourceMappingURL=style.css.map */

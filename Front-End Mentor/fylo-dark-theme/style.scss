@@ -1,5 +1,7 @@
 @charset "UTF-8";
 
+// @use 'components/header';
+
 $Dark-Blue: #1c2431;
 $Dark-Blue-two: #181f2a;
 $Dark-Blue-three: #0b1523;
@@ -12,3 +14,81 @@ $White: #ffffff;
 $Raleway: 'Raleway', sans-serif;
 $Open-Sans: 'Open Sans', sans-serif;
 
+body {
+    background-color: $Dark-Blue-four;
+    margin: 1.5rem;
+    font-family: $Raleway;
+    color: $White;
+    .header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        &__img {
+            width: 90px;
+        }
+        &__nav {
+            display: flex;
+            gap: 1rem;
+        }
+        &__link {
+            font-size: .75rem;
+            font-weight: 300;
+        }
+    }
+    .container {
+        display: grid;
+        text-align: center;
+        .section-one {
+            display: grid;
+            gap: 1rem;
+            margin: 3rem 1rem;
+            &__img {
+                margin: 0 auto 1rem;
+                width: 100%;
+            }
+            &__title {
+                font-size: 1.45rem;
+                font-weight: 700;
+            }
+            &__paragraph {
+                font-family: $Open-Sans;
+                font-size: .9rem;
+                font-weight: 300;
+                // padding: 0 1rem;
+            }
+            &__button {
+                background-color: $Blue;
+                font-size: .9rem;
+                font-weight: 700;
+                width: 70%;
+                margin: 1rem auto;
+                padding: .8rem 0;
+                border-radius: 30px;
+            }
+        }
+        .section-two {
+            display: grid;
+            gap: 2rem;
+            margin: 3.5rem 0;
+            padding: 1rem;
+            &__containers {
+                display: grid;
+                margin-bottom: 4rem;
+            }
+            &__icon {
+                width: 60px;
+                margin: 0 auto 1.5rem;
+            }
+            &__titles {
+                margin: .5rem 0;
+                font-size: 1.1rem;
+                font-weight: 700;
+            }
+            &__paragraphs {
+                font-family: $Open-Sans;
+                font-size: .9rem;
+                font-weight: 300;
+            }
+        }
+    }
+}
