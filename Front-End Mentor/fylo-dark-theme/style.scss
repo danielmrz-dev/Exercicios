@@ -6,6 +6,7 @@ $Dark-Blue: #1c2431;
 $Dark-Blue-two: #181f2a;
 $Dark-Blue-three: #0b1523;
 $Dark-Blue-four: #202a3c;
+$Grayish-Blue: #202f48;
 $Cyan: #65e2d9;
 $Blue: #339ecc;
 $Light-Red: #ff4242;
@@ -15,7 +16,7 @@ $Raleway: 'Raleway', sans-serif;
 $Open-Sans: 'Open Sans', sans-serif;
 
 body {
-    background-color: $Dark-Blue-four;
+    background-color: $Dark-Blue-two;
     margin: 1.5rem;
     font-family: $Raleway;
     color: $White;
@@ -68,9 +69,9 @@ body {
         }
         .section-two {
             display: grid;
-            gap: 2rem;
+            gap: 1rem;
             margin: 3.5rem 0;
-            padding: 1rem;
+            padding: .9rem;
             &__containers {
                 display: grid;
                 margin-bottom: 4rem;
@@ -86,7 +87,83 @@ body {
             }
             &__paragraphs {
                 font-family: $Open-Sans;
-                font-size: .9rem;
+                font-size: .85rem;
+                font-weight: 300;
+            }
+        }
+        .section-three {
+            display: grid;
+            gap: 1rem;
+            padding: .8rem;
+            &__title {
+                font-size: 1.1rem;
+                font-weight: 700;
+            }
+            &__paragraphs {
+                font-family: $Open-Sans;
+                font-size: .8rem;
+                text-align: start;
+            }
+            &__link {
+                display: flex;
+                align-items: center;
+                gap: .2rem;
+                color: $Cyan;
+                border-bottom: 1px solid $Cyan;
+                width: fit-content;
+                font-size: .75rem;
+                & img {
+                    width: 18px;
+                    height: 18px;
+                }
+            }
+        }
+        .testimonials {
+            margin: 9rem 1.5rem;
+            display: grid;
+            gap: 1.5rem;
+            position: relative;
+            font-family: $Open-Sans;
+            &__quote-img {
+                position: absolute;
+                top: -16px;
+                left: 5px;
+                width: 20px;
+            }
+            &__container {
+                display: grid;
+                gap: 1rem;
+                background-color: $Grayish-Blue;
+                padding: 1.5rem;
+                border-radius: 5px;
+            }
+            &__testimonial {
+                text-align: start;
+                font-size: .65rem;
+                line-height: 18px;
+                font-weight: 300;
+            }
+            &__profile {
+                display: grid;
+                grid-template-columns: 35px 1fr;
+                letter-spacing: 1px;
+                font-size: .55rem;
+                & img {
+                    width: 25px;
+                    border-radius: 50%;
+                    grid-area: 1 / 1 / 3;
+                }
+            }
+            &__name {
+                grid-area: 1 / 2;
+                text-align: start;
+                align-self: flex-end;
+                font-weight: 800;
+            }
+            &__job-position {
+                grid: 2 / 2;
+                text-align: start;
+                align-self: flex-start;
                 font-weight: 300;
             }
         }
