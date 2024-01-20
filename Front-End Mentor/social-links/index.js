@@ -11,7 +11,7 @@ const profilePicture = document.querySelector('.card__img');
 
 checkbox.addEventListener('change', () => {
     if (checkbox.checked) {
-        background.classList.add('bg-White');
+        background.classList.add('bg-White', 'ease-in', 'duration-200');
         title.classList.add('text-OffBlack');
         card.classList.add('bg-Silver');
         region.classList.add('text-DarkGreen');     
@@ -22,7 +22,7 @@ checkbox.addEventListener('change', () => {
             links[i].classList.add('hover:bg-DarkGreen', 'bg-Platinum', 'text-OffBlack', 'hover:text-White');            
         }   
     } else {
-        background.classList.remove('bg-White');     
+        background.classList.remove('bg-White', 'ease-in', 'duration-200');     
         title.classList.remove('text-OffBlack');        
         card.classList.remove('bg-Silver');        
         region.classList.remove('text-DarkGreen');   
