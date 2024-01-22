@@ -1,0 +1,125 @@
+@use 'variables';
+
+.footer {
+    display: grid;
+    gap: 2rem;
+    font-family: variables.$Open-Sans;
+    background-color: variables.$Dark-Blue-three;
+    padding-top: 14rem;
+    padding-bottom: 2.5rem;
+    &__logo {
+        padding: 0 2rem;
+    }
+    &__paragraph {
+        font-weight: 300;
+        display: flex;
+        align-items: start;
+        gap: 1rem;
+        padding: 0 2rem;
+        &::before {
+            content: url('./images/icon-location.svg');
+            transform: translateY(7px);
+        }
+    }
+    &__contact-info {
+        display: grid;
+        gap: 1rem;
+        margin-bottom: 2rem;
+        padding: 0 2rem;
+    }
+    &__phone {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        &::before {
+            content: url('./images/icon-phone.svg');
+            transform: translateY(4px);
+        }
+    }
+    &__email {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        &::before {
+            content: url('./images/icon-email.svg');
+            transform: translateY(4px);
+        }
+    }
+    &__links {
+        display: grid;
+        gap: .8rem;
+        margin: .5rem 0;
+        padding: 0 2rem;
+    }
+    &__link {
+        width: fit-content;
+        transition: scale .2s ease;
+        &:hover {
+            scale: 1.1;
+            text-decoration: underline;
+        }
+    }
+    &__social-media {
+        display: flex;
+        justify-content: center;
+        gap: .7rem;
+    }
+    &__icons {
+        margin: 2rem 0 0;
+        width: 32px;
+        height: 32px;
+        border: 1px solid variables.$White;
+        padding: .5rem;
+        border-radius: 50%;
+        transition: scale .2s ease;
+        &:hover {
+            scale: 1.1;
+            cursor: pointer;
+        }
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .footer {
+        grid-template-columns: repeat(5, auto);
+        grid-template-rows: repeat(2, auto);
+        padding: 14rem 5rem 4rem;
+        &__logo {
+            padding: 0 1rem;
+            grid-area: 1 / 1;
+        }
+        &__paragraph {
+            grid-area: 2 / 1;
+            font-size: 1.1rem;
+            padding: 0;
+        }
+        &__contact-info {
+            grid-area: 2 / 2;
+            grid-template-rows: repeat(2, min-content) ;
+            margin-bottom: 0;
+            padding: 0 4rem;
+        }
+        &__links {
+            gap: .8rem;
+            margin: 0;
+            padding: 0 2rem;
+            &:nth-child(4) {
+                grid-area: 2 / 3;
+            }
+            &:nth-child(5) {
+                grid-area: 2 / 4;
+            }
+            &__link {
+                width: fit-content;
+                transition: scale .2s ease;
+            }
+        }
+        &__social-media {
+            grid-area: 2 / 5;
+            padding: 0 1rem;
+        }
+        &__icons {
+            margin: 0;
+        }
+    }
+}

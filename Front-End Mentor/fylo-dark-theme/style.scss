@@ -2,225 +2,29 @@
 
 // @tailwind base;
 
-// @use 'components/header';
-
-$Dark-Blue: #1c2431;
-$Dark-Blue-two: #181f2a;
-$Dark-Blue-three: #0b1523;
-$Dark-Blue-four: #202a3c;
-$Grayish-Blue: #202f48;
-$Cyan: #65e2d9;
-$Blue: #339ecc;
-$Light-Red: #ff4242;
-$White: #ffffff;
-
-$Raleway: 'Raleway', sans-serif;
-$Open-Sans: 'Open Sans', sans-serif;
+@use 'components/header';
+@use 'components/section-one';
+@use 'components/section-two';
+@use 'components/section-three';
+@use 'components/testimonials';
+@use 'components/call-to-action';
+@use 'components/footer';
+@use 'components/variables';
 
 body {
-    background-color: $Dark-Blue-two;
-    margin: 1.5rem;
-    font-family: $Raleway;
-    color: $White;
-    .header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        &__img {
-            width: 90px;
-        }
-        &__nav {
-            display: flex;
-            gap: 1rem;
-        }
-        &__link {
-            font-size: .75rem;
-            font-weight: 300;
-        }
+    background: variables.$Dark-Blue;
+    font-family: variables.$Raleway;
+    color: variables.$White;    
+    display: grid;
+    @media screen and (min-width: 1024px) {
+        display: grid;
     }
     .container {
         display: grid;
         text-align: center;
-        .section-one {
-            display: grid;
-            gap: 1rem;
-            margin: 3rem 1rem;
-            &__img {
-                margin: 0 auto 1rem;
-                width: 100%;
-            }
-            &__title {
-                font-size: 1.45rem;
-                font-weight: 700;
-            }
-            &__paragraph {
-                font-family: $Open-Sans;
-                font-size: .9rem;
-                font-weight: 300;
-                // padding: 0 1rem;
-            }
-            &__button {
-                background-color: $Blue;
-                font-size: .9rem;
-                font-weight: 700;
-                width: 70%;
-                margin: 1rem auto;
-                padding: .8rem 0;
-                border-radius: 30px;
-            }
-        }
-        .section-two {
-            display: grid;
-            gap: 1rem;
-            margin: 3.5rem 0;
-            padding: .9rem;
-            &__containers {
-                display: grid;
-                margin-bottom: 4rem;
-            }
-            &__icon {
-                width: 60px;
-                margin: 0 auto 1.5rem;
-            }
-            &__titles {
-                margin: .5rem 0;
-                font-size: 1.1rem;
-                font-weight: 700;
-            }
-            &__paragraphs {
-                font-family: $Open-Sans;
-                font-size: .85rem;
-                font-weight: 300;
-            }
-        }
-        .section-three {
-            display: grid;
-            gap: 1rem;
-            padding: .8rem;
-            &__title {
-                font-size: 1.1rem;
-                font-weight: 700;
-            }
-            &__paragraphs {
-                font-family: $Open-Sans;
-                font-size: .8rem;
-                text-align: start;
-            }
-            &__link {
-                display: flex;
-                align-items: center;
-                gap: .2rem;
-                color: $Cyan;
-                border-bottom: 1px solid $Cyan;
-                width: fit-content;
-                font-size: .75rem;
-                & img {
-                    width: 18px;
-                    height: 18px;
-                }
-            }
-        }
-        .testimonials {
-            margin: 9rem 1.5rem;
-            display: grid;
-            gap: 1.5rem;
-            position: relative;
-            font-family: $Open-Sans;
-            &__quote-img {
-                position: absolute;
-                top: -16px;
-                left: 5px;
-                width: 20px;
-            }
-            &__container {
-                display: grid;
-                gap: 1rem;
-                background-color: $Grayish-Blue;
-                padding: 1.5rem;
-                border-radius: 5px;
-            }
-            &__testimonial {
-                text-align: start;
-                font-size: .65rem;
-                line-height: 18px;
-                font-weight: 300;
-            }
-            &__profile {
-                display: grid;
-                grid-template-columns: 35px 1fr;
-                letter-spacing: 1px;
-                font-size: .55rem;
-                & img {
-                    width: 25px;
-                    border-radius: 50%;
-                    grid-area: 1 / 1 / 3;
-                }
-            }
-            &__name {
-                grid-area: 1 / 2;
-                text-align: start;
-                align-self: flex-end;
-                font-weight: 800;
-            }
-            &__job-position {
-                grid: 2 / 2;
-                text-align: start;
-                align-self: flex-start;
-                font-weight: 300;
-            }
-        }
-        .call-to-action {
-            background-color: $Grayish-Blue;
-            padding: 2rem;
-            margin: 1rem 0;
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            border-radius: 10px;
-            &__title {
-                font-size: 1.1rem;
-                font-weight: 600;
-            }
-            &__text {
-                font-family: $Open-Sans;
-                font-size: .85rem;
-                font-weight: 300;
-            }
-            &__form {
-                display: grid;
-                gap: 1rem;
-                margin-top: 1rem;
-            }
-            &__input {
-                border-radius: 30px;
-                padding: .7rem 1.5rem;
-                color: $Dark-Blue-three;
-                &::placeholder {
-                    font-size: .8rem
-                }
-            }
-            &__button {
-                background-color: $Blue;
-                border-radius: 30px;
-                padding: .7rem;
-                font-size: .9rem;
-                font-weight: 600;
-            }
-        }
-    }
-    .footer {
-        display: grid;
-        gap: 2rem;
-        padding: .5rem;
-        font-family: $Open-Sans;
-        // &__logo {
-
-        // }
-        &__paragraph {
-            font-weight: 300;
-            &::before {
-                content: url('');
-            }
+        justify-self: center;
+        @media screen and (min-width: 1024px) {
+            justify-self: center;
         }
     }
 }
