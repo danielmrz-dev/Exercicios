@@ -58,6 +58,9 @@
             scale: 1.1;
             text-decoration: underline;
         }
+        &:active {
+            color: variables.$Blue;
+        }
     }
     &__social-media {
         display: flex;

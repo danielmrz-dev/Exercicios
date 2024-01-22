@@ -30,6 +30,9 @@
         &::placeholder {
             font-size: .8rem
         }
+        &:focus {
+            outline: 3px solid variables.$Blue;
+        }
     }
     &__button {
         background-color: variables.$Blue;
@@ -42,6 +45,9 @@
             scale: 1.1;
             cursor: pointer;
         }
+    }
+    .active {
+        outline: 3px solid red;
     }
 }
 
