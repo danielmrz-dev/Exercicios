@@ -1,5 +1,7 @@
 @charset "UTF-8";
 
+@tailwind base;
+
 // @use 'components/header';
 
 $Dark-Blue: #1c2431;
@@ -165,6 +167,43 @@ body {
                 text-align: start;
                 align-self: flex-start;
                 font-weight: 300;
+            }
+        }
+        .call-to-action {
+            background-color: $Grayish-Blue;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            border-radius: 10px;
+            &__title {
+                font-size: 1.1rem;
+                font-weight: 600;
+            }
+            &__text {
+                font-family: $Open-Sans;
+                font-size: .85rem;
+                font-weight: 300;
+            }
+            &__form {
+                display: grid;
+                gap: 1rem;
+                margin-top: 1rem;
+            }
+            &__input {
+                border-radius: 30px;
+                padding: .7rem 1.5rem;
+                color: $Dark-Blue-three;
+                &::placeholder {
+                    font-size: .8rem
+                }
+            }
+            &__button {
+                background-color: $Blue;
+                border-radius: 30px;
+                padding: .7rem;
+                font-size: .9rem;
+                font-weight: 600;
             }
         }
     }
