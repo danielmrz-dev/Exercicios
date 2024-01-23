@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+@use 'components/variables';
+@use 'components/header';
+@use 'components/followers';
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+body {
+    background: variables.$White;
+    font-family: variables.$Inter;
+}

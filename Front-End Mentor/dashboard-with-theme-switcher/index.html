@@ -6,72 +6,140 @@
   <meta name="description" content="A Social Media Dashboard with a Theme Switcher Button">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">  
   <title>Frontend Mentor | Dashboard with Theme Switcher</title>
+  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  Social Media Dashboard
-  Total Followers: 23,004
-
-  Dark Mode
+  <header class="header">
+    <h1 class="header__title">Social Media Dashboard</h1>
+    <span class="header__followers">Total Followers: 23,004</span>
+    <div class="header__dark-mode">
+      Dark Mode
+      <label class="switch">
+        <input type="checkbox" unchecked>
+        <span class="slider round"></span>
+      </label>
+    </div>
+  </header>
 
   
 
-  @nathanf
-  1987
-  Followers
-  12 Today
+  <main class="container">
+    <section class="followers">
 
-  @nathanf
-  1044
-  Followers
-  99 Today
+      <div class="followers__containers">
+        <a href="#" class="followers__social-media">
+          <img src="images/icon-facebook.svg" alt="icon-facebook">
+          @nathanf
+        </a>
+        <div class="followers__number-and-text">
+          <strong class="followers__number">1987</strong>
+          <span class="followers__text">Followers</span>
+        </div>
+        <span class="followers__today-numbers">12 Today</span>
+      </div>
 
-  @realnathanf
-  11k
-  Followers
-  1099 Today
+      <div class="followers__containers">
+        <a href="#" class="followers__social-media">
+          <img src="images/icon-twitter.svg" alt="icon-twitter">
+          @nathanf
+        </a>
+        <div class="followers__number-and-text">
+          <strong class="followers__number">1044</strong>
+          <span class="followers__text">Followers</span>
+        </div>
+        <span class="followers__today-numbers">99 Today</span>
+      </div>
 
-  Nathan F.
-  8239
-  Subscribers
-  144 Today
+      <div class="followers__containers">
+        <a href="#" class="followers__social-media">
+          <img src="images/icon-instagram.svg" alt="icon-instagram">
+          @realnathanf
+        </a>
+        <div class="followers__number-and-text">
+          <strong class="followers__number">11k</strong>
+          <span class="followers__text">Followers</span>
+        </div>
+        <span class="followers__today-numbers">1099 Today</span>
+      </div>
 
+      <div class="followers__containers">
+        <a href="#" class="followers__social-media">
+          <img src="images/icon-youtube.svg" alt="icon-youtube">
+          Nathan F.
+        </a>
+        <div class="followers__number-and-text">
+          <strong class="followers__number">8239</strong>
+          <span class="followers__text">Subscribers</span>
+        </div>
+        <span class="followers__today-numbers">144 Today</span>
+      </div>
 
+    </section>
 
-  Overview - Today
+    <section class="overview">
+      <h2 class="overview__title">Overview - Today</h2>
+      
+      <div class="overview__containers">
+        <h3 class="overview__subtitles">Page Views</h3>
+        <strong class="overview__numbers">87</strong>
+        <img src="images/icon-facebook.svg" alt="icon-facebook">
+        <span class="overview__percent">3%</span>
+      </div>
 
-  Page Views
-  87
-  3%
+      <div class="overview__containers">
+        <h3 class="overview__subtitles">Likes</h3>
+        <strong class="overview__numbers">52</strong>
+        <img src="images/icon-facebook.svg" alt="icon-facebook">
+        <span class="overview__percent">2%</span>
+      </div>
 
-  Likes
-  52
-  2%
+      <div class="overview__containers">
+        <h3 class="overview__subtitles">Likes</h3>
+        <strong class="overview__numbers">5462</strong>
+        <img src="images/icon-instagram.svg" alt="icon-instagram">
+        <span class="overview__percent">2257%</span>
+      </div>
 
-  Likes
-  5462
-  2257%
+      <div class="overview__containers">
+        <h3 class="overview__subtitles">Profile Views</h3>
+        <strong class="overview__numbers">52k</strong>
+        <img src="images/icon-instagram.svg" alt="icon-instagram">
+        <span class="overview__percent">1375%</span>
+      </div>
 
-  Profile Views
-  52k
-  1375%
+      <div class="overview__containers">
+        <h3 class="overview__subtitles">Retweets</h3>
+        <strong class="overview__numbers">117</strong>
+        <img src="images/icon-twitter.svg" alt="icon-twitter">
+        <span class="overview__percent">303%</span>
+      </div>
 
-  Retweets
-  117
-  303%
+      <div class="overview__containers">
+        <h3 class="overview__subtitles">Likes</h3>
+        <strong class="overview__numbers">507</strong>
+        <img src="images/icon-twitter.svg" alt="icon-twitter">
+        <span class="overview__percent">553%</span>
+      </div>
 
-  Likes
-  507
-  553%
+      <div class="overview__containers">
+        <h3 class="overview__subtitles">Likes</h3>
+        <strong class="overview__numbers">107</strong>
+        <img src="images/icon-youtube.svg" alt="icon-youtube">
+        <span class="overview__percent">19%</span>
+      </div>
 
-  Likes
-  107
-  19%
+      <div class="overview__containers">
+        <h3 class="overview__subtitles">Total Views</h3>
+        <strong class="overview__numbers">1407</strong>
+        <img src="images/icon-youtube.svg" alt="icon-youtube">
+        <span class="overview__percent">12%</span>
+      </div>
 
-  Total Views
-  1407
-  12%
+    </section>
+
+  </main>
   
   <!-- <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 

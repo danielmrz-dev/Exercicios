@@ -1,0 +1,52 @@
+@use 'variables';
+
+.followers {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    &__containers {
+        display: grid;
+        justify-content: center;
+        background-color: variables.$Light-Grayish-Blue;
+        margin: 0 1.5rem;
+        border-radius: 5px;
+        gap: 10px;
+        border-top: 4px solid variables.$Facebook;
+        &:nth-child(2) {
+            border-top: 4px solid variables.$Twitter;            
+        }
+        &:nth-child(3) {
+                        
+            border-top-width: 4px;
+            border-style: solid;
+            border-image: linear-gradient(to right, darkblue, darkorchid) 1;
+        }
+        &:nth-child(4) {
+            border-top: 4px solid variables.$YouTube;            
+        }
+    }
+    &__social-media {
+        margin: auto;
+        display: flex;
+        gap: .5rem;
+        align-items: center;
+        font-size: .8rem;
+        font-weight: 600;
+    }
+    &__number-and-text {
+        display: flex;
+        flex-direction: column;
+    }
+    &__number {
+        font-size: 3rem;
+        font-weight: 700;
+        line-height: normal;
+    }
+    &__text {
+        font-size: .8rem;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+    }
+}
+
