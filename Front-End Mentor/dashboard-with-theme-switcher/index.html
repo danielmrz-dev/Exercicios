@@ -8,24 +8,26 @@
   <title>Frontend Mentor | Dashboard with Theme Switcher</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="style.css">
+  <script src="index.js" defer></script>
 </head>
 <body>
 
   <header class="header">
-    <h1 class="header__title">Social Media Dashboard</h1>
-    <span class="header__followers">Total Followers: 23,004</span>
-    <div class="header__dark-mode">
-      Dark Mode
-      <label class="switch">
-        <input type="checkbox" unchecked>
-        <span class="slider round"></span>
-      </label>
+    <div class="header__container">
+      <h1 class="header__title">Social Media Dashboard</h1>
+      <span class="header__followers">Total Followers: 23,004</span>
+      <div class="header__dark-mode">
+        Dark Mode
+        <label class="switch">
+          <input type="checkbox" unchecked class="checkbox">
+          <span class="slider round"></span>
+        </label>
+      </div>
     </div>
   </header>
 
-  
-
   <main class="container">
+    
     <section class="followers">
 
       <div class="followers__containers">
@@ -73,7 +75,7 @@
           <strong class="followers__number">8239</strong>
           <span class="followers__text">Subscribers</span>
         </div>
-        <span class="followers__today-numbers">144 Today</span>
+        <span class="followers__today-numbers down">144 Today</span>
       </div>
 
     </section>
@@ -81,60 +83,55 @@
     <section class="overview">
       <h2 class="overview__title">Overview - Today</h2>
       
-      <div class="overview__containers">
-        <h3 class="overview__subtitles">Page Views</h3>
-        <strong class="overview__numbers">87</strong>
-        <img src="images/icon-facebook.svg" alt="icon-facebook">
-        <span class="overview__percent">3%</span>
-      </div>
-
-      <div class="overview__containers">
-        <h3 class="overview__subtitles">Likes</h3>
-        <strong class="overview__numbers">52</strong>
-        <img src="images/icon-facebook.svg" alt="icon-facebook">
-        <span class="overview__percent">2%</span>
-      </div>
-
-      <div class="overview__containers">
-        <h3 class="overview__subtitles">Likes</h3>
-        <strong class="overview__numbers">5462</strong>
-        <img src="images/icon-instagram.svg" alt="icon-instagram">
-        <span class="overview__percent">2257%</span>
-      </div>
-
-      <div class="overview__containers">
-        <h3 class="overview__subtitles">Profile Views</h3>
-        <strong class="overview__numbers">52k</strong>
-        <img src="images/icon-instagram.svg" alt="icon-instagram">
-        <span class="overview__percent">1375%</span>
-      </div>
-
-      <div class="overview__containers">
-        <h3 class="overview__subtitles">Retweets</h3>
-        <strong class="overview__numbers">117</strong>
-        <img src="images/icon-twitter.svg" alt="icon-twitter">
-        <span class="overview__percent">303%</span>
-      </div>
-
-      <div class="overview__containers">
-        <h3 class="overview__subtitles">Likes</h3>
-        <strong class="overview__numbers">507</strong>
-        <img src="images/icon-twitter.svg" alt="icon-twitter">
-        <span class="overview__percent">553%</span>
-      </div>
-
-      <div class="overview__containers">
-        <h3 class="overview__subtitles">Likes</h3>
-        <strong class="overview__numbers">107</strong>
-        <img src="images/icon-youtube.svg" alt="icon-youtube">
-        <span class="overview__percent">19%</span>
-      </div>
-
-      <div class="overview__containers">
-        <h3 class="overview__subtitles">Total Views</h3>
-        <strong class="overview__numbers">1407</strong>
-        <img src="images/icon-youtube.svg" alt="icon-youtube">
-        <span class="overview__percent">12%</span>
+      <div class="overview__grid">
+        <div class="overview__containers">
+          <h3 class="overview__subtitles">Page Views</h3>
+          <strong class="overview__numbers">87</strong>
+          <img src="images/icon-facebook.svg" alt="icon-facebook">
+          <span class="overview__percent green">3%</span>
+        </div>
+        <div class="overview__containers">
+          <h3 class="overview__subtitles">Likes</h3>
+          <strong class="overview__numbers">52</strong>
+          <img src="images/icon-facebook.svg" alt="icon-facebook">
+          <span class="overview__percent red">2%</span>
+        </div>
+        <div class="overview__containers">
+          <h3 class="overview__subtitles">Likes</h3>
+          <strong class="overview__numbers">5462</strong>
+          <img src="images/icon-instagram.svg" alt="icon-instagram">
+          <span class="overview__percent green">2257%</span>
+        </div>
+        <div class="overview__containers">
+          <h3 class="overview__subtitles">Profile Views</h3>
+          <strong class="overview__numbers">52k</strong>
+          <img src="images/icon-instagram.svg" alt="icon-instagram">
+          <span class="overview__percent green">1375%</span>
+        </div>
+        <div class="overview__containers">
+          <h3 class="overview__subtitles">Retweets</h3>
+          <strong class="overview__numbers">117</strong>
+          <img src="images/icon-twitter.svg" alt="icon-twitter">
+          <span class="overview__percent green">303%</span>
+        </div>
+        <div class="overview__containers">
+          <h3 class="overview__subtitles">Likes</h3>
+          <strong class="overview__numbers">507</strong>
+          <img src="images/icon-twitter.svg" alt="icon-twitter">
+          <span class="overview__percent green">553%</span>
+        </div>
+        <div class="overview__containers">
+          <h3 class="overview__subtitles">Likes</h3>
+          <strong class="overview__numbers">107</strong>
+          <img src="images/icon-youtube.svg" alt="icon-youtube">
+          <span class="overview__percent red">19%</span>
+        </div>
+        <div class="overview__containers">
+          <h3 class="overview__subtitles">Total Views</h3>
+          <strong class="overview__numbers">1407</strong>
+          <img src="images/icon-youtube.svg" alt="icon-youtube">
+          <span class="overview__percent red">12%</span>
+        </div>
       </div>
 
     </section>

@@ -3,10 +3,38 @@
 @use 'components/variables';
 @use 'components/header';
 @use 'components/followers';
+@use 'components/overview';
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 body {
     background: variables.$White;
     font-family: variables.$Inter;
+    .container {
+        margin: auto;
+        transform: translateY(-3rem);
+        display: grid;
+        gap: 2rem;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    body {
+        min-height: 100vh;
+        .container {
+            max-width: 1250px;
+            transform: translateY(-6.5rem);
+            display: grid;
+            gap: 2.5rem;
+        }
+    }
+}
+
+.active-texts {
+    color: variables.$White;
+    transition: .2s;
+}
+
+.active-bg {
+    background-color: variables.$Dark-Desaturated-Blue;
 }

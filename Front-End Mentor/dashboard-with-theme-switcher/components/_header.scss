@@ -3,11 +3,13 @@
 
 .header {
     background-color: variables.$OffWhite;
+    padding-bottom: 3.5rem;
     border-radius: 0 0 20px 20px;
-    display: grid;
-    padding: 1.5rem;
-    line-height: 27px;
-    padding-bottom: 6rem;
+    &__container {
+        display: grid;
+        padding: 1.5rem;
+        line-height: 27px;
+    }
     &__title {
         font-size: 1.5rem;
         font-weight: 700;
@@ -15,6 +17,7 @@
     &__followers {
         font-size: .9rem;
         font-weight: 700;
+        color: variables.$Dark-Grayish-Blue;
         &::after {
             content: '';
             display: block;
@@ -27,6 +30,9 @@
     &__dark-mode {
         display: flex;
         justify-content: space-between;
+        color: variables.$Dark-Grayish-Blue;
+        font-size: .9rem;
+        font-weight: 700;
         .switch {
             position: relative;
             display: inline-block;
@@ -48,7 +54,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background-color: #ccc;
+            background-color: rgb(182, 182, 210);
             -webkit-transition: .4s;
             transition: .4s;
         }
@@ -82,6 +88,38 @@
         
         .slider.round:before {
             border-radius: 50%;
+        }
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .header {
+        // display: grid;
+        // align-items: center;
+        // justify-content: space-between;
+        padding: 1rem 2.5rem 7.5rem;
+        &__container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            justify-content: center;
+            max-width: 1170px;
+            margin: auto;
+        }
+        &__title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            grid-area: 1 / 1;
+        }
+        &__followers {
+            &::after {
+                display: none;
+            }
+        }
+        &__dark-mode {
+            grid-area: 1 / 2 / 3;
+            justify-content: flex-end;
+            align-items: center;
+            gap: .75rem;
         }
     }
 }
