@@ -5,6 +5,7 @@
     background-color: variables.$OffWhite;
     padding-bottom: 3.5rem;
     border-radius: 0 0 20px 20px;
+    transition: background-color .2s;
     &__container {
         display: grid;
         padding: 1.5rem;
@@ -17,7 +18,8 @@
     &__followers {
         font-size: .9rem;
         font-weight: 700;
-        color: variables.$Dark-Grayish-Blue;
+        color: variables.$Desaturated-Blue;
+        transition: color .2s;
         &::after {
             content: '';
             display: block;
@@ -30,9 +32,10 @@
     &__dark-mode {
         display: flex;
         justify-content: space-between;
-        color: variables.$Dark-Grayish-Blue;
+        color: variables.$Desaturated-Blue;
         font-size: .9rem;
         font-weight: 700;
+        transition: color .2s;
         .switch {
             position: relative;
             display: inline-block;

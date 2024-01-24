@@ -13,6 +13,7 @@
         border-radius: 5px;
         gap: 1rem;
         border-top: 4px solid variables.$Facebook;
+        transition: background-color .2s;
         &:nth-child(2) {
             border-top: 4px solid variables.$Twitter;            
         }
@@ -30,6 +31,10 @@
                 z-index: 0;
                 border-radius: 5px;
                 background-color: variables.$Light-Grayish-Blue;
+                transition: background-color .2s;
+            }
+            .hide-after::after {
+                display: none;
             }
         }
         &:nth-child(4) {
@@ -44,7 +49,8 @@
         align-items: center;
         font-size: .8rem;
         font-weight: 700;
-        color: variables.$Dark-Grayish-Blue;
+        color: variables.$Desaturated-Blue;
+        transition: color .2s;
     }
     &__number-and-text {
         z-index: 2;
@@ -63,7 +69,8 @@
         text-align: center;
         text-transform: uppercase;
         letter-spacing: 6px;
-        color: variables.$Dark-Grayish-Blue;
+        color: variables.$Desaturated-Blue;
+        transition: color .2s;
     }
     &__today-numbers {
         z-index: 2;

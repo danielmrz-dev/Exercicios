@@ -8,7 +8,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 body {
-    background: variables.$White;
+    background-color: variables.$White;
+    transition: background-color .2s;
     font-family: variables.$Inter;
     .container {
         margin: auto;
@@ -32,9 +33,13 @@ body {
 
 .active-texts {
     color: variables.$White;
-    transition: .2s;
 }
 
 .active-bg {
+    background-color: variables.$Very-Dark-Blue-two;
+    color: variables.$White;
+}
+
+.active-bg-two {
     background-color: variables.$Dark-Desaturated-Blue;
 }

@@ -8,6 +8,7 @@
         font-size: 1.5rem;
         font-weight: 700;
         color: variables.$Dark-Grayish-Blue;
+        transition: color .2s;
         margin-bottom: .25rem;
     }
     &__grid {
@@ -19,6 +20,7 @@
         grid-template-columns: repeat(2, 1fr);
         align-items: center;
         background-color: variables.$Light-Grayish-Blue;
+        transition: background-color .2s;
         padding: 1.5rem 1.5rem 1rem 1.5rem;
         gap: 1rem;
         border-radius: 5px;
@@ -27,7 +29,8 @@
         grid-area: 1 / 1;
         font-size: .8rem;
         font-weight: 700;
-        color: variables.$Dark-Grayish-Blue;
+        color: variables.$Desaturated-Blue;
+        transition: color .2s;
     }
     img {
         justify-self: end;
@@ -70,20 +73,11 @@
             grid-template-columns: repeat(4, 1fr);
             gap: 1.5rem;
         }
-        &__containers {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            align-items: center;
-            background-color: variables.$Light-Grayish-Blue;
-            padding: 1.5rem 1.5rem 1rem 1.5rem;
-            gap: 1rem;
-            border-radius: 5px;
-        }
         &__subtitles {
             grid-area: 1 / 1;
             font-size: .8rem;
             font-weight: 700;
-            color: variables.$Dark-Grayish-Blue;
+            color: variables.$Desaturated-Blue;
         }
         img {
             justify-self: end;
