@@ -131,24 +131,19 @@
   border: 0;
   background: linear-gradient(to right, #fdc468, #df4996);
   position: relative;
-  z-index: 2;
-}
-.followers__containers:nth-child(3)::after {
-  content: "";
-  height: 98.5%;
-  width: 100%;
-  position: absolute;
-  top: 4px;
-  z-index: 0;
-  border-radius: 5px;
-  background-color: #f0f2fa;
-  transition: background-color 0.2s;
-}
-.followers__containers:nth-child(3) .hide-after::after {
-  display: none;
 }
 .followers__containers:nth-child(4) {
   border-top: 4px solid #c4032a;
+}
+.followers__bg {
+  position: absolute;
+  background-color: #f0f2fa;
+  width: 100%;
+  height: 98%;
+  top: 2.2%;
+  border-radius: 5px;
+  z-index: 0;
+  transition: background-color 0.2s;
 }
 .followers__social-media {
   z-index: 2;
@@ -358,6 +353,7 @@ body .container {
 .active-bg {
   background-color: #1f212e;
   color: #ffffff;
+  z-index: 0;
 }
 
 .active-bg-two {

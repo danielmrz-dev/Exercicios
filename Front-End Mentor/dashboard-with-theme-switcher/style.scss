@@ -38,6 +38,7 @@ body {
 .active-bg {
     background-color: variables.$Very-Dark-Blue-two;
     color: variables.$White;
+    z-index: 0;
 }
 
 .active-bg-two {
