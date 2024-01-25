@@ -51,13 +51,34 @@ body {
 body .header__menu {
   position: relative;
 }
+body .header .darkened-bg {
+  opacity: 1;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 9999px;
+  height: 9999px;
+  background-color: rgba(0, 0, 0, 0.338);
+}
 body .header__navbar {
+  opacity: 1;
+  z-index: 2;
   position: absolute;
+  top: -23px;
   right: -12px;
   background-color: white;
   width: 65vw;
-  height: 100vh;
-  padding: 1.5rem;
+  height: 9999px;
+  padding: 1.5rem 1rem 1.5rem 1.5rem;
+  transition: opacity 150ms ease-in-out, width 150ms ease-in-out, height 150ms ease-in-out;
+  pointer-events: none;
+}
+body .header .header__btn-close {
+  display: block;
+  margin-left: auto;
+}
+body .header .header__close-icon {
+  cursor: pointer;
 }
 body .header__links {
   max-width: -moz-fit-content;
