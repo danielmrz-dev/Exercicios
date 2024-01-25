@@ -1,0 +1,43 @@
+@use 'variables';
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    &__content {
+        display: grid;
+        padding: 0 .5rem;
+    }
+    &__title {
+        font-size: 2.25rem;
+        font-weight: 800;
+        text-align: center;
+    }
+    &__paragraph {
+        text-align: center;
+        color: variables.$Medium-Gray;
+        font-weight: 500;
+    }
+    &__button {
+        margin: 1.5rem auto;
+        background-color: variables.$Almost-Black;
+        color: variables.$Almost-White;
+        width: fit-content;
+        padding: .7rem 1.5rem;
+        border-radius: 15px;
+        font-weight: 600;
+        font-size: 1rem;
+    }
+    &__companies {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    &__companies-logo {
+        width: 75px;
+        margin: .8rem 0;
+        &:nth-child(2) {
+            padding: .8rem;
+        }
+    }
+}

@@ -1,0 +1,54 @@
+@charset "UTF-8";
+
+@use 'components/variables';
+@use 'components/container';
+
+* {
+    font-family: variables.$Epilogue;
+}
+
+body {
+    margin-bottom: 3rem;
+    .header {
+        &__menu {
+            position: relative;
+        }
+
+        &__navbar {
+            position: absolute;
+            right: -12px;
+            background-color: white;
+            width: 65vw;
+            height: 100vh;
+            padding: 1.5rem;            
+        }
+        &__links {
+            max-width: fit-content;
+            margin: 1rem 0;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+        }
+
+        // Menu Features
+
+        // End Menu Features
+
+        &__login-register {
+            max-width: 250px;
+            display: grid;
+            gap: .5rem;
+            font-size: .9rem;
+            font-weight: 500;
+        }
+        &__login {
+            text-align: center;
+        }
+        &__register {
+            border: 2px solid variables.$Almost-Black;
+            border-radius: 12px;
+            padding: .5rem;
+        }
+    }
+}

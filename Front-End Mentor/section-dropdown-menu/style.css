@@ -1,0 +1,85 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.container__content {
+  display: grid;
+  padding: 0 0.5rem;
+}
+.container__title {
+  font-size: 2.25rem;
+  font-weight: 800;
+  text-align: center;
+}
+.container__paragraph {
+  text-align: center;
+  color: #696969;
+  font-weight: 500;
+}
+.container__button {
+  margin: 1.5rem auto;
+  background-color: #141414;
+  color: #fafafa;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0.7rem 1.5rem;
+  border-radius: 15px;
+  font-weight: 600;
+  font-size: 1rem;
+}
+.container__companies {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.container__companies-logo {
+  width: 75px;
+  margin: 0.8rem 0;
+}
+.container__companies-logo:nth-child(2) {
+  padding: 0.8rem;
+}
+
+* {
+  font-family: "Epilogue", sans-serif;
+}
+
+body {
+  margin-bottom: 3rem;
+}
+body .header__menu {
+  position: relative;
+}
+body .header__navbar {
+  position: absolute;
+  right: -12px;
+  background-color: white;
+  width: 65vw;
+  height: 100vh;
+  padding: 1.5rem;
+}
+body .header__links {
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  margin: 1rem 0;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+body .header__login-register {
+  max-width: 250px;
+  display: grid;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+body .header__login {
+  text-align: center;
+}
+body .header__register {
+  border: 2px solid #141414;
+  border-radius: 12px;
+  padding: 0.5rem;
+}/*# sourceMappingURL=style.css.map */
