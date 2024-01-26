@@ -26,13 +26,6 @@ darkenedBg.addEventListener('click', () => {
     sideMenu.classList.remove('active-menu');
 });
 
-// quando clicar fora, fechar os menus
-
-
-
-
-
-
 featuresMenu.addEventListener('click', () => {
     featuresLinks.classList.toggle('active-link');
     links.forEach(element => {
