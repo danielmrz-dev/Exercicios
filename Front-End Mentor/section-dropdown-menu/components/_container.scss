@@ -46,9 +46,9 @@
     .container {
         flex-direction: row-reverse;
         align-items: center;
-        padding: 0;
-        margin: 2rem;
-        // max-width: 1100px;
+        gap: 3rem;
+        padding: 3rem;
+        margin: auto;
         &__picture {
             width: 100%;
         }
@@ -64,32 +64,26 @@
             align-self: flex-start;
             line-height: normal;
             font-weight: 700;
+            padding-right: 2rem;
         }
         &__paragraph {
             text-align: start;
             font-size: 1.25rem;
             font-weight: 500;
+            padding-right: 2rem;
             
         }
         &__button {
-            margin: 1.5rem auto;
-            background-color: variables.$Almost-Black;
-            color: variables.$Almost-White;
-            width: fit-content;
-            padding: .7rem 1.5rem;
-            border-radius: 15px;
-            font-weight: 600;
-            font-size: 1rem;
+            margin: 1.5rem auto 1.5rem 0 ;
+            padding: 1rem 1.5rem;
+            font-size: 1.25rem;
         }
-        &__companies {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-        }
+        
         &__companies-logo {
-            width: 75px;
-            margin: .8rem 0;
+            width: 100px;
+            margin-top: auto;
             &:nth-child(2) {
+                margin-top: auto;
                 padding: .8rem;
             }
         }
