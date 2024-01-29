@@ -11,5 +11,20 @@ $Very-dark-blue: #0f1424;
 $Dark-blue: #1c1f4a;
 $Desaturated-blue: #6f76c8;
 $Pale-Blue: #bdc1ff;
+$White: #fff;
 
 $Rubik: 'Rubik', sans-serif;
+
+body {
+    background-color: $Very-dark-blue;
+    color: $White;
+    .dashboard {
+        &__profile-container {
+            background-color: $Dark-blue;
+        }
+        &__profile-user {
+            background-color: $Blue;
+
+        }
+    }
+}
