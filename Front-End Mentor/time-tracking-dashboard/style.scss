@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 $Blue: #5847eb;
-$Light-red: #ff8c66;
+$Light-orange: #ff8c66;
 $Soft-blue: #56c2e6;
 $Light-red: #ff5c7c;
 $Lime-green: #4acf81;
@@ -15,16 +15,80 @@ $White: #fff;
 
 $Rubik: 'Rubik', sans-serif;
 
+@mixin background($color, $image) {
+    background: $color url($image) no-repeat;
+    background-position: top -10px right 20px;
+    background-size: 75px;
+    z-index: -1; 
+}
+
 body {
     background-color: $Very-dark-blue;
     color: $White;
+    font-family: $Rubik;
     .dashboard {
         &__profile-container {
             background-color: $Dark-blue;
         }
         &__profile-user {
             background-color: $Blue;
-
+            grid-template-columns: 85px 1fr;
+        }
+        &__profile-picture {
+            border: 3px solid $White;
+            border-radius: 50%;
+        }
+        &__span {
+            font-size: .9rem;
+            color: $Pale-Blue;
+        }
+        &__name {
+            font-size: 1.5rem;
+            font-weight: 300;
+        }
+        &__frequency {
+            p {
+                font-size: 1.1rem;
+                font-weight: 400;
+                color: $Desaturated-blue;
+            }
+        }
+        // &__analysis-container {
+        //     height: auto;
+        // }
+        &__analysis-bg-work {
+            @include background($Light-orange, 'images/icon-work.svg')
+        }
+        &__analysis-bg-play {
+            @include background($Soft-blue, 'images/icon-play.svg')
+        }
+        &__analysis-bg-study {
+            @include background($Light-red, 'images/icon-study.svg')
+        }
+        &__analysis-bg-exercise {
+            @include background($Lime-green, 'images/icon-exercise.svg')
+        }
+        &__analysis-bg-social {
+            @include background($Violet, 'images/icon-social.svg')
+        }
+        &__analysis-bg-selfcare {
+            @include background($Soft-orange, 'images/icon-self-care.svg')
+        }
+        &__analysis {
+            background-color: $Dark-blue;
+        }
+        &__category {
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+        &__hours {
+            font-size: 2rem;
+            font-weight: 200;
+        }
+        &__last-week {
+            color: $Pale-Blue;
+            font-size: .9rem;
+            font-weight: 400;
         }
     }
 }
