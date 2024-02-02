@@ -66,7 +66,8 @@ body {
             @include background($Light-red, 'images/icon-study.svg')
         }
         &__analysis-bg-exercise {
-            @include background($Lime-green, 'images/icon-exercise.svg')
+            @include background($Lime-green, 'images/icon-exercise.svg');
+            background-position: top 0px right 20px;
         }
         &__analysis-bg-social {
             @include background($Violet, 'images/icon-social.svg')
@@ -89,6 +90,39 @@ body {
             color: $Pale-Blue;
             font-size: .9rem;
             font-weight: 400;
+        }
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    body {
+        .dashboard {            
+            &__profile-user {
+                grid-template-columns: 1fr;
+            }            
+            &__name {
+                font-size: 2.5rem;
+                line-height: normal;
+            }
+            &__analysis {
+                max-height: 85%;
+                padding: 1.75rem;
+                grid-template-rows: auto auto 10px;
+            }
+            &__category {
+                font-size: 1.2rem;
+                font-weight: 500;
+            }
+            &__hours {
+                font-size: 3.5rem;
+                padding-top: 1rem;
+            }
+            &__last-week {
+                grid-area: 3 / 1 / 4 / 3;
+                justify-self: flex-start;
+                font-size: 1rem;
+                padding: 0 0 .5rem 0;
+            }
         }
     }
 }
