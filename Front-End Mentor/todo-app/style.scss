@@ -48,9 +48,6 @@ body {
     background: $Very-Light-Gray url('images/bg-mobile-light.jpg') no-repeat;
     background-size: contain;
     .main {
-        // &__header {
-            
-        // }
         &__title {
             text-transform: uppercase;
             letter-spacing: 10px;
@@ -58,9 +55,6 @@ body {
             font-weight: 700;
             color: $Very-Light-Gray;
         }
-        // &__container {
-            
-        // }
         &__circle {
             @include checkbox-appearance();
             left: 15px;
