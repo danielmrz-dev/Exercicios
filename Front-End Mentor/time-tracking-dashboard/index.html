@@ -18,9 +18,9 @@
   <main class="dashboard grid gap-6 lg:grid-cols-4 lg:max-w-[1100px] lg:gap-7">
     <div class="dashboard__profile-container rounded-2xl grid row-start-1 row-end-3">
       <div class="dashboard__profile-user p-8 rounded-2xl grid grid-cols-2 items-center">
-        <img src="images/image-jeremy.png" alt="profile picture" class="dashboard__profile-picture w-[68px] row-start-1 row-end-3 lg:w-[85px]">
+        <img src="images/daniel-avatar.png" alt="profile picture" class="dashboard__profile-picture w-[68px] row-start-1 row-end-3 lg:w-[85px]">
         <span class="dashboard__span self-end lg:pt-9">Report for</span>
-        <h1 class="dashboard__name self-start lg:pb-9">Jeremy Robson</h1>
+        <h1 class="dashboard__name self-start lg:pb-9">Daniel Mariz</h1>
       </div>
       <div class="dashboard__frequency flex justify-around p-5 lg:flex-col lg:gap-4 lg:p-7">
         <p class="dashboard__timeframe daily">Daily</p>
@@ -36,15 +36,10 @@
       <div class="dashboard__analysis grid grid-cols-2 items-center p-6 rounded-2xl self-end">
         <h2 class="dashboard__category">Work</h2>
         <img src="images/icon-ellipsis.svg" alt="" class="justify-self-end">
-
-        <h3 class="dashboard__hours hidden">5hrs</h3> <!-- daily -->
-        <p class="dashboard__last-week justify-self-end lg:justify-self-start hidden">Last week - 7hrs </p><!-- daily -->
         
-        <h3 class="dashboard__hours thirty">32hrs</h3> <!-- weekly -->
-        <p class="dashboard__last-week justify-self-end">Last week - 36hrs</p> <!-- weekly -->
+        <h3 class="dashboard__hours thirty"><span class="dynamic-hours">32</span>hrs</h3>
+        <p class="dashboard__last-week justify-self-end">Previous - <span class="dynamic-previous">36</span>hrs</p>
 
-        <h3 class="dashboard__hours hidden">103hrs</h3> <!-- monthly -->
-        <p class="dashboard__last-week justify-self-end hidden">Last week - 128hr</p> <!-- monthly -->
       </div>
 
     </div>
@@ -57,14 +52,8 @@
         <h2 class="dashboard__category">Play</h2>
         <img src="images/icon-ellipsis.svg" alt="" class="justify-self-end">
 
-        <h3 class="dashboard__hours hidden">1hr</h3> <!-- daily -->
-        <p class="dashboard__last-week justify-self-end hidden">Last week - 2hrs </p><!-- daily -->
-
-        <h3 class="dashboard__hours">10hrs</h3> <!-- weekly -->
-        <p class="dashboard__last-week justify-self-end">Last week - 8hrs </p><!-- weekly -->
-
-        <h3 class="dashboard__hours hidden">23hrs</h3> <!-- monthly -->
-        <p class="dashboard__last-week justify-self-end hidden">Last week - 29hrs</p> <!-- monthly -->
+        <h3 class="dashboard__hours"><span class="dynamic-hours">10</span>hrs</h3>
+        <p class="dashboard__last-week justify-self-end">Previous - <span class="dynamic-previous">8</span>hrs</p>
 
       </div>
     </div>
@@ -77,14 +66,8 @@
         <h2 class="dashboard__category">Study</h2>
         <img src="images/icon-ellipsis.svg" alt="" class="justify-self-end">
 
-        <h3 class="dashboard__hours hidden">0hrs</h3> <!-- daily -->
-        <p class="dashboard__last-week justify-self-end hidden">Last week - 1hr</p> <!-- daily -->
-
-        <h3 class="dashboard__hours ">4hrs</h3> <!-- weekly -->
-        <p class="dashboard__last-week justify-self-end ">Last week - 7hrs </p><!-- weekly -->
-
-        <h3 class="dashboard__hours hidden">13hrs</h3> <!-- monthly -->
-        <p class="dashboard__last-week justify-self-end hidden">Last week - 19hrs</p> <!-- monthly -->
+        <h3 class="dashboard__hours "><span class="dynamic-hours">4</span>hrs</h3>
+        <p class="dashboard__last-week justify-self-end ">Previous - <span class="dynamic-previous">7</span>hrs</p>
 
       </div>
     </div>
@@ -97,14 +80,8 @@
         <h2 class="dashboard__category">Exercise</h2>
         <img src="images/icon-ellipsis.svg" alt="" class="justify-self-end">
 
-        <h3 class="dashboard__hours hidden">1hr</h3> <!-- daily -->
-        <p class="dashboard__last-week justify-self-end hidden">Last week - 1hr</p> <!-- daily -->
-
-        <h3 class="dashboard__hours">4hrs</h3> <!-- weekly -->
-        <p class="dashboard__last-week justify-self-end">Last week - 5hrs </p><!-- weekly -->
-
-        <h3 class="dashboard__hours hidden">11hrs</h3> <!-- monthly -->
-        <p class="dashboard__last-week justify-self-end hidden">Last week - 18hrs</p> <!-- monthly -->
+        <h3 class="dashboard__hours"><span class="dynamic-hours">4</span>hrs</h3>
+        <p class="dashboard__last-week justify-self-end">Previous - <span class="dynamic-previous">5</span>hrs</p>
 
       </div>
     </div>
@@ -117,14 +94,8 @@
         <h2 class="dashboard__category">Social</h2>
         <img src="images/icon-ellipsis.svg" alt="" class="justify-self-end">
 
-        <h3 class="dashboard__hours hidden">1hr</h3> <!-- daily -->
-        <p class="dashboard__last-week justify-self-end hidden">Last week - 3hrs </p><!-- daily -->
-
-        <h3 class="dashboard__hours">5hrs</h3> <!-- weekly -->
-        <p class="dashboard__last-week justify-self-end">Last week - 10hrs</p> <!-- weekly -->
-
-        <h3 class="dashboard__hours hidden">21hrs</h3> <!-- monthly -->
-        <p class="dashboard__last-week justify-self-end hidden">Last week - 23hrs</p> <!-- monthly -->
+        <h3 class="dashboard__hours"><span class="dynamic-hours">5</span>hrs</h3>
+        <p class="dashboard__last-week justify-self-end">Previous - <span class="dynamic-previous">10</span>hrs</p>
 
       </div>
     </div>
@@ -137,14 +108,8 @@
         <h2 class="dashboard__category">Self Care</h2>
         <img src="images/icon-ellipsis.svg" alt="" class="justify-self-end">
 
-        <h3 class="dashboard__hours hidden">0hrs</h3> <!-- daily -->
-        <p class="dashboard__last-week justify-self-end hidden">Last week - 1hr</p> <!-- daily -->
-
-        <h3 class="dashboard__hours">2hrs</h3> <!-- weekly -->
-        <p class="dashboard__last-week justify-self-end">Last week - 2hrs </p><!-- weekly -->
-
-        <h3 class="dashboard__hours hidden">7hrs</h3> <!-- monthly -->
-        <p class="dashboard__last-week justify-self-end hidden">Last week - 11hrs</p> <!-- monthly -->
+        <h3 class="dashboard__hours"><span class="dynamic-hours">2</span>hrs</h3>
+        <p class="dashboard__last-week justify-self-end">Previous - <span class="dynamic-previous">2</span>hrs</p>
 
       </div>
     </div>

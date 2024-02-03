@@ -1,24 +1,29 @@
 const timeframe = document.querySelectorAll(".dashboard__timeframe");
-// let hours = document.querySelectorAll(".dashboard__hours");
-const lastWeek = document.querySelectorAll(".dashboard__last-week");
+let hours = document.querySelectorAll(".dynamic-hours");
+let previous = document.querySelectorAll(".dynamic-previous");
 
-function toggleActive(elemento) {
+timeframe[1].classList.add("active");
+getData("weekly");
+
+function handleClick(index, period) {
     timeframe.forEach((e) => e.classList.remove("active"));
-    elemento.classList.add("active");
+    timeframe[index].classList.add("active");
+    getData(period);
 }
 
-timeframe.forEach((elemento) => {
-    elemento.addEventListener("click", () => {
-        toggleActive(elemento);
-    });
-});
+timeframe[0].addEventListener("click", () => handleClick(0, "daily"));
+timeframe[1].addEventListener("click", () => handleClick(1, "weekly"));
+timeframe[2].addEventListener("click", () => handleClick(2, "monthly"));
 
-fetch("data.json")
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function (dados) {
-        let hours = document.querySelector(".thirty");
-        let out = dados[0].title;
-        hours.innerHTML = out;        
-    });
+function getData(timeframe) {
+    fetch("data.json")
+        .then((response) => response.json())
+        .then((data) => {
+            for (let i = 0; i < data.length; i++) {
+                let outHours = data[i].timeframes[timeframe].current;
+                let outPrevious = data[i].timeframes[timeframe].previous;
+                hours[i].innerHTML = outHours;
+                previous[i].innerHTML = outPrevious;
+            }
+        });
+}
