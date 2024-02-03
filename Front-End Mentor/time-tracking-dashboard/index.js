@@ -19,9 +19,6 @@ fetch("data.json")
     })
     .then(function (dados) {
         let hours = document.querySelector(".thirty");
-        let out = "";
-        for (let dado of dados) {
-            out = `${dado.title}`;
-        }
-        hours.innerHTML = out;
+        let out = dados[0].title;
+        hours.innerHTML = out;        
     });
