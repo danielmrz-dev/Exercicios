@@ -8,24 +8,95 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="style.css">
   <title>Frontend Mentor | Todo app</title>
 </head>
 <body>
 
-  Todo
+<main class="main mx-5 my-10">
+  
+    <header class="main__header flex justify-between items-center">
+      <h1 class="main__title">Todo</h1>
+      <img src="images/icon-moon.svg" alt="" class="main__mode-icon w-[20px]">
+    </header>
 
-  <!-- Add dynamic number --> items left
+    <div class="main__container grid gap-5 my-6">
+      <form class="main__form relative flex items-center">
+        <input type="checkbox" name="todo-checkbox" id="todo-checkbox" class="main__circle absolute">
+        <input type="text" name="new-todo" id="new-todo" placeholder="Create new todo..." class="main__input w-full rounded p-4">
+      </form>
 
-  All
-  Active 
-  Completed
+      <div class="main__todo-list shadow-md rounded">
 
-  Clear Completed
+        <div class="main__todo-list-item flex items-center justify-between p-4">
+          <input type="checkbox" name="todo-checkbox" id="todo-checkbox" class="main__todo-list-checkbox">
+          <p class="main__todo-list-item-description mr-auto pl-3">
+            Complete online Javascript course
+          </p>
+          <img src="images/icon-cross.svg" alt="">
+        </div>
 
-  Drag and drop to reorder list
+        <div class="main__todo-list-item flex items-center justify-between p-4">
+          <input type="checkbox" name="todo-checkbox" id="todo-checkbox" class="main__todo-list-checkbox">
+          <p class="main__todo-list-item-description mr-auto pl-3">
+            Jog around park 3x
+          </p>
+          <img src="images/icon-cross.svg" alt="">
+        </div>
+        
+        <div class="main__todo-list-item flex items-center justify-between p-4">
+          <input type="checkbox" name="todo-checkbox" id="todo-checkbox" class="main__todo-list-checkbox">
+          <p class="main__todo-list-item-description mr-auto pl-3">
+            10 minutes meditation
+          </p>
+          <img src="images/icon-cross.svg" alt="">
+        </div>
 
-  <div class="attribution">
+        <div class="main__todo-list-item flex items-center justify-between p-4">
+          <input type="checkbox" name="todo-checkbox" id="todo-checkbox" class="main__todo-list-checkbox">
+          <p class="main__todo-list-item-description mr-auto pl-3">
+            Read for an hour
+          </p>
+          <img src="images/icon-cross.svg" alt="">
+        </div>
+
+        <div class="main__todo-list-item flex items-center justify-between p-4">
+          <input type="checkbox" name="todo-checkbox" id="todo-checkbox" class="main__todo-list-checkbox">
+          <p class="main__todo-list-item-description mr-auto pl-3">
+            Pick up groceries
+          </p>
+          <img src="images/icon-cross.svg" alt="">
+        </div>
+
+        <div class="main__todo-list-item flex items-center justify-between p-4">
+          <input type="checkbox" name="todo-checkbox" id="todo-checkbox" class="main__todo-list-checkbox">
+          <p class="main__todo-list-item-description mr-auto pl-3">
+            Complete Todo App on Frontend Mentor
+          </p>
+          <img src="images/icon-cross.svg" alt="">
+        </div>
+        
+        <div class="main__todo-left-n-clear flex justify-between p-4">
+          <p class="main__todo-left"><span class="main__todo-left-number">5 </span>items left</p>
+          <p class="main__todo-clear">Clear Completed</p>
+        </div>
+
+      </div>
+
+    </div>
+  
+    <div class="main__all-active-completed flex justify-center gap-4 p-4 rounded shadow-md">
+      <span class="main__all">All</span>
+      <span class="main__active">Active</span>
+      <span class="main__completed">Completed</span>
+    </div>
+  
+  
+    <p class="main__drag-n-drop text-center my-7">Drag and drop to reorder list</p>
+</main>
+
+  <div class="attribution hidden">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
   </div>
