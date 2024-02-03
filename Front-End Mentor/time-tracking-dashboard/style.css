@@ -22,10 +22,17 @@ body .dashboard__name {
   font-size: 1.5rem;
   font-weight: 300;
 }
-body .dashboard__frequency p {
+body .dashboard__timeframe {
   font-size: 1.1rem;
   font-weight: 400;
   color: #6f76c8;
+  transition: color 0.1s ease-in-out;
+}
+body .dashboard__timeframe:hover {
+  cursor: pointer;
+}
+body .dashboard .active {
+  color: white;
 }
 body .dashboard__analysis-bg-work {
   background: #ff8c66 url("images/icon-work.svg") no-repeat;

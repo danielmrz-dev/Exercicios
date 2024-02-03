@@ -46,16 +46,19 @@ body {
             font-size: 1.5rem;
             font-weight: 300;
         }
-        &__frequency {
-            p {
-                font-size: 1.1rem;
-                font-weight: 400;
-                color: $Desaturated-blue;
+
+        &__timeframe {
+            font-size: 1.1rem;
+            font-weight: 400;
+            color: $Desaturated-blue;
+            transition: color .1s ease-in-out;
+            &:hover {
+                cursor: pointer;
             }
         }
-        // &__analysis-container {
-        //     height: auto;
-        // }
+        .active {
+            color: white;
+        }
         &__analysis-bg-work {
             @include background($Light-orange, 'images/icon-work.svg')
         }
@@ -94,6 +97,8 @@ body {
     }
 }
 
+
+
 @media screen and (min-width: 1024px) {
     body {
         .dashboard {            
@@ -126,3 +131,4 @@ body {
         }
     }
 }
+
