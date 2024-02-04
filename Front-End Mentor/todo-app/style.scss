@@ -103,3 +103,67 @@ body {
         }
     }
 }
+
+@media screen and (min-width: 560px) {
+    body {
+        background: $Very-Light-Gray url('images/bg-desktop-light.jpg') no-repeat;
+        background-size: contain;
+        .main {
+            min-width: 530px;
+            margin: auto;
+            position: relative;
+            display: grid;
+            &__container {
+                gap: 1.5rem;
+                margin-bottom: 0;
+            }
+            
+            &__title {
+                font-size: 2.5rem;
+                letter-spacing: 15px;
+            }
+            &__mode-icon{
+                width: auto;
+            }
+            &__circle {
+                @include checkbox-appearance();
+                width: 25px;
+                height: 25px;
+                left: 15px;
+            }
+            &__input {
+                font-size: 1.1rem;
+                padding: 1.25rem 3.5rem;
+            }
+            &__todo-list-item {
+                padding: 1.25rem;
+                font-size: 1.1rem;
+            }
+            &__todo-list-item-description {
+                padding-left: 1rem;
+            }
+            &__todo-list-checkbox {
+                @include checkbox-appearance();
+                width: 25px;
+                height: 25px;
+            }         
+            &__todo-left-n-clear {
+                background-color: $White;
+                color: $Grey;
+                font-size: .9rem;
+                padding: 1rem 1.3rem;
+            }
+            &__all-active-completed {
+                position: absolute;
+                justify-self: center;
+                bottom: 4.65rem;
+                font-size: .9rem;            
+                background-color: transparent;
+                box-shadow: none;
+            }
+            &__drag-n-drop {
+                margin: 1rem 0;
+            }
+        }
+    }
+}

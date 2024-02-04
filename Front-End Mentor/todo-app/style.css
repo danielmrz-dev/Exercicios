@@ -79,4 +79,85 @@ body .main__drag-n-drop {
   color: #adadad;
   font-size: 0.8rem;
   font-weight: 600;
+}
+
+@media screen and (min-width: 560px) {
+  body {
+    background: #fafafa url("images/bg-desktop-light.jpg") no-repeat;
+    background-size: contain;
+  }
+  body .main {
+    min-width: 530px;
+    margin: auto;
+    position: relative;
+    display: grid;
+  }
+  body .main__container {
+    gap: 1.5rem;
+    margin-bottom: 0;
+  }
+  body .main__title {
+    font-size: 2.5rem;
+    letter-spacing: 15px;
+  }
+  body .main__mode-icon {
+    width: auto;
+  }
+  body .main__circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    vertical-align: middle;
+    border: 1px solid #ddd;
+    -moz-appearance: none;
+         appearance: none;
+    -webkit-appearance: none;
+    outline: none;
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+    left: 15px;
+  }
+  body .main__input {
+    font-size: 1.1rem;
+    padding: 1.25rem 3.5rem;
+  }
+  body .main__todo-list-item {
+    padding: 1.25rem;
+    font-size: 1.1rem;
+  }
+  body .main__todo-list-item-description {
+    padding-left: 1rem;
+  }
+  body .main__todo-list-checkbox {
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    vertical-align: middle;
+    border: 1px solid #ddd;
+    -moz-appearance: none;
+         appearance: none;
+    -webkit-appearance: none;
+    outline: none;
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+  }
+  body .main__todo-left-n-clear {
+    background-color: #fff;
+    color: #adadad;
+    font-size: 0.9rem;
+    padding: 1rem 1.3rem;
+  }
+  body .main__all-active-completed {
+    position: absolute;
+    justify-self: center;
+    bottom: 4.65rem;
+    font-size: 0.9rem;
+    background-color: transparent;
+    box-shadow: none;
+  }
+  body .main__drag-n-drop {
+    margin: 1rem 0;
+  }
 }/*# sourceMappingURL=style.css.map */
