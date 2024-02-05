@@ -63,6 +63,16 @@ body {
             font-size: .8rem;
             padding-left: 2.75rem;
         }
+        &__add-new-task {
+            background-color: $Very-Dark-Grayish-Blue;
+            color: $White;
+            padding: .85rem;   
+            cursor: pointer;
+            transition: background-color .1s ease-in-out;
+            &:hover {
+                background-color: $Very-Dark-Blue;
+            }
+        }
         &__todo-list {
             overflow: hidden;
         }
@@ -141,14 +151,16 @@ body {
                 font-size: 1.1rem;
                 padding: 1.25rem 3.5rem;
             }
+            &__add-new-task {
+                padding: 1.31rem;     
+            }
             &__todo-list-item {
                 padding: 1.25rem;
                 font-size: 1.1rem;
                 &:hover >.main__icon-cross {
                     display: block;
                 }
-            }
-            
+            } 
             &__icon-cross {
                 cursor: pointer;
                 display: none;

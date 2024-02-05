@@ -33,6 +33,16 @@ body .main__input {
   font-size: 0.8rem;
   padding-left: 2.75rem;
 }
+body .main__add-new-task {
+  background-color: #393a4c;
+  color: #fff;
+  padding: 0.85rem;
+  cursor: pointer;
+  transition: background-color 0.1s ease-in-out;
+}
+body .main__add-new-task:hover {
+  background-color: #161722;
+}
 body .main__todo-list {
   overflow: hidden;
 }
@@ -125,6 +135,9 @@ body .main__drag-n-drop {
   body .main__input {
     font-size: 1.1rem;
     padding: 1.25rem 3.5rem;
+  }
+  body .main__add-new-task {
+    padding: 1.31rem;
   }
   body .main__todo-list-item {
     padding: 1.25rem;
