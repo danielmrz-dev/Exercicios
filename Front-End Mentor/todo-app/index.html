@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="style.css">
+  <script src="index.js" defer></script>
   <title>Frontend Mentor | Todo app</title>
 </head>
 <body class="grid min-h-screen items-center">
@@ -29,54 +30,61 @@
 
       <div class="main__todo-list shadow-md rounded">
 
-        <div class="main__todo-list-item flex items-center justify-between p-4">
-          <input type="checkbox" name="todo-checkbox" id="todo-checkbox" class="main__todo-list-checkbox">
-          <label for="todo-checkbox" id="todo-checkbox" class="main__todo-list-item-description mr-auto pl-3">
+        <div class="main__todo-list-item flex items-center justify-start p-4">
+          <label class="main__todo-list-item-description mr-auto flex items-center gap-4">
+            <input type="checkbox" name="todo-checkbox" id="todo-checkbox" class="main__todo-list-checkbox">
             Complete online Javascript course
           </label>
 
-          <img src="images/icon-cross.svg" alt="">
+          <img src="images/icon-cross.svg" alt="" class="main__icon-cross">
         </div>
 
-        <div class="main__todo-list-item flex items-center justify-between p-4">
-          <input type="checkbox" name="todo-checkbox" class="main__todo-list-checkbox">
-          <p class="main__todo-list-item-description mr-auto pl-3">
+        <div class="main__todo-list-item flex items-center justify-start p-4">
+          <label class="main__todo-list-item-description mr-auto flex items-center gap-4">
+            <input type="checkbox" name="todo-checkbox" id="" class="main__todo-list-checkbox">
             Jog around park 3x
-          </p>
-          <img src="images/icon-cross.svg" alt="">
+          </label>
+
+          <img src="images/icon-cross.svg" alt="" class="main__icon-cross">
         </div>
-        
-        <div class="main__todo-list-item flex items-center justify-between p-4">
-          <input type="checkbox" name="todo-checkbox"  class="main__todo-list-checkbox">
-          <p class="main__todo-list-item-description mr-auto pl-3">
+
+        <div class="main__todo-list-item flex items-center justify-start p-4">
+          <label class="main__todo-list-item-description mr-auto flex items-center gap-4">
+            <input type="checkbox" name="todo-checkbox" id="" class="main__todo-list-checkbox">
             10 minutes meditation
-          </p>
-          <img src="images/icon-cross.svg" alt="">
+          </label>
+
+          <img src="images/icon-cross.svg" alt="" class="main__icon-cross">
         </div>
 
-        <div class="main__todo-list-item flex items-center justify-between p-4">
-          <input type="checkbox" name="todo-checkbox" class="main__todo-list-checkbox">
-          <p class="main__todo-list-item-description mr-auto pl-3">
+        <div class="main__todo-list-item flex items-center justify-start p-4">
+          <label class="main__todo-list-item-description mr-auto flex items-center gap-4">
+            <input type="checkbox" name="todo-checkbox" id="" class="main__todo-list-checkbox">
             Read for an hour
-          </p>
-          <img src="images/icon-cross.svg" alt="">
+          </label>
+
+          <img src="images/icon-cross.svg" alt="" class="main__icon-cross">
         </div>
 
-        <div class="main__todo-list-item flex items-center justify-between p-4">
-          <input type="checkbox" name="todo-checkbox" class="main__todo-list-checkbox">
-          <p class="main__todo-list-item-description mr-auto pl-3">
+        <div class="main__todo-list-item flex items-center justify-start p-4">
+          <label class="main__todo-list-item-description mr-auto flex items-center gap-4">
+            <input type="checkbox" name="todo-checkbox" id="" class="main__todo-list-checkbox">
             Pick up groceries
-          </p>
-          <img src="images/icon-cross.svg" alt="">
+          </label>
+
+          <img src="images/icon-cross.svg" alt="" class="main__icon-cross">
         </div>
 
-        <div class="main__todo-list-item flex items-center justify-between p-4">
-          <input type="checkbox" name="todo-checkbox" class="main__todo-list-checkbox">
-          <p class="main__todo-list-item-description mr-auto pl-3">
-            Complete Todo App on Frontend Mentor
-          </p>
-          <img src="images/icon-cross.svg" alt="">
+        <div class="main__todo-list-item flex items-center justify-start p-4">
+          <label class="main__todo-list-item-description mr-auto flex items-center gap-4">
+            <input type="checkbox" name="todo-checkbox" id="" class="main__todo-list-checkbox">
+            Complete Todo App on Front End Mentor
+          </label>
+
+          <img src="images/icon-cross.svg" alt="" class="main__icon-cross">
         </div>
+
+        
         
         <div class="main__todo-left-n-clear flex justify-between p-4">
           <p class="main__todo-left"><span class="main__todo-left-number">5 </span>items left</p>

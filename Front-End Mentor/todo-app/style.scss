@@ -42,40 +42,6 @@ $Josefin-Sans: 'Josefin Sans', sans-serif;
     -webkit-appearance: none;
     outline: none;
     cursor: pointer;
-    &:hover {
-        display: block;
-        &::after, &::before {
-            display: block;
-        }
-    }
-    &::after {
-        content: '';
-        background-color: $White;
-        width: 18px;
-        height: 18px;
-        border-radius: 50%;
-        display: none;
-        transform: translate(.1px, -20.1px);
-        @media screen and (min-width: 560px) {
-            width: 23px;
-            height: 23px;
-            transform: translate(0px, -24.8px);
-            
-        }
-    }
-    &::before {
-        content: '';
-        background-image: $Check-Background;
-        width: 20px;
-        height: 20px;
-        border-radius: 50%;
-        display: none;
-        transform: translate(-.8px, -1px);
-        @media screen and (min-width: 560px) {
-            width: 25px;
-            height: 25px;            
-        }
-    }
 }
 
 body {
@@ -108,21 +74,22 @@ body {
         &__todo-list-checkbox {
             @include checkbox-appearance();
             transform: translateY(-1px);
+            position: relative;
             &:checked {
                 background-image: url('images/icon-check.svg'), $Check-Background;
                 background-size: 10px, contain;
                 background-repeat: no-repeat, no-repeat;
                 background-position: center, center;
             }
-            &:checked +.main__todo-list-item-description {
-                color: $Grey;
-                text-decoration: line-through;                    
-            }
         }         
         &__todo-list-item-description {
             &:hover {
                 cursor: pointer;
             }
+        }
+        .line-through {
+            text-decoration: line-through;
+            color: $Grey;
         }
         &__todo-left-n-clear {
             background-color: $White;
@@ -177,9 +144,14 @@ body {
             &__todo-list-item {
                 padding: 1.25rem;
                 font-size: 1.1rem;
+                &:hover >.main__icon-cross {
+                    display: block;
+                }
             }
-            &__todo-list-item-description {
-                padding-left: 1rem;
+            
+            &__icon-cross {
+                cursor: pointer;
+                display: none;
             }
             &__todo-list-checkbox {
                 @include checkbox-appearance();
