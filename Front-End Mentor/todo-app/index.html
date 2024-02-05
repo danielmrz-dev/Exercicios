@@ -23,7 +23,7 @@
 
     <div class="main__container grid gap-5 my-6">
       <form class="main__form relative flex items-center">
-        <input type="checkbox" name="todo-checkbox" id="todo-checkbox" class="main__circle absolute">
+        <input type="checkbox" name="todo-checkbox" class="main__circle absolute">
         <input type="text" name="new-todo" id="new-todo" placeholder="Create new todo..." class="main__input w-full rounded p-4">
       </form>
 
@@ -31,14 +31,15 @@
 
         <div class="main__todo-list-item flex items-center justify-between p-4">
           <input type="checkbox" name="todo-checkbox" id="todo-checkbox" class="main__todo-list-checkbox">
-          <p class="main__todo-list-item-description mr-auto pl-3">
+          <label for="todo-checkbox" id="todo-checkbox" class="main__todo-list-item-description mr-auto pl-3">
             Complete online Javascript course
-          </p>
+          </label>
+
           <img src="images/icon-cross.svg" alt="">
         </div>
 
         <div class="main__todo-list-item flex items-center justify-between p-4">
-          <input type="checkbox" name="todo-checkbox" id="todo-checkbox" class="main__todo-list-checkbox">
+          <input type="checkbox" name="todo-checkbox" class="main__todo-list-checkbox">
           <p class="main__todo-list-item-description mr-auto pl-3">
             Jog around park 3x
           </p>
@@ -46,7 +47,7 @@
         </div>
         
         <div class="main__todo-list-item flex items-center justify-between p-4">
-          <input type="checkbox" name="todo-checkbox" id="todo-checkbox" class="main__todo-list-checkbox">
+          <input type="checkbox" name="todo-checkbox"  class="main__todo-list-checkbox">
           <p class="main__todo-list-item-description mr-auto pl-3">
             10 minutes meditation
           </p>
@@ -54,7 +55,7 @@
         </div>
 
         <div class="main__todo-list-item flex items-center justify-between p-4">
-          <input type="checkbox" name="todo-checkbox" id="todo-checkbox" class="main__todo-list-checkbox">
+          <input type="checkbox" name="todo-checkbox" class="main__todo-list-checkbox">
           <p class="main__todo-list-item-description mr-auto pl-3">
             Read for an hour
           </p>
@@ -62,7 +63,7 @@
         </div>
 
         <div class="main__todo-list-item flex items-center justify-between p-4">
-          <input type="checkbox" name="todo-checkbox" id="todo-checkbox" class="main__todo-list-checkbox">
+          <input type="checkbox" name="todo-checkbox" class="main__todo-list-checkbox">
           <p class="main__todo-list-item-description mr-auto pl-3">
             Pick up groceries
           </p>
@@ -70,7 +71,7 @@
         </div>
 
         <div class="main__todo-list-item flex items-center justify-between p-4">
-          <input type="checkbox" name="todo-checkbox" id="todo-checkbox" class="main__todo-list-checkbox">
+          <input type="checkbox" name="todo-checkbox" class="main__todo-list-checkbox">
           <p class="main__todo-list-item-description mr-auto pl-3">
             Complete Todo App on Frontend Mentor
           </p>
