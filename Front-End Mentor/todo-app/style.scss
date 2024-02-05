@@ -101,6 +101,19 @@ body {
             text-decoration: line-through;
             color: $Grey;
         }
+        .new-container {
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            padding: 1.25rem 1.25rem 1.25rem 1rem;
+        }
+        .new-description {
+            margin-right: auto;
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+            padding-left: 1rem;
+        }
         &__todo-left-n-clear {
             background-color: $White;
             color: $Grey;
@@ -150,6 +163,9 @@ body {
             &__input {
                 font-size: 1.1rem;
                 padding: 1.25rem 3.5rem;
+            }
+            .new-container {
+                padding: 1.25rem;
             }
             &__add-new-task {
                 padding: 1.31rem;     

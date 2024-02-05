@@ -78,6 +78,19 @@ body .main .line-through {
   text-decoration: line-through;
   color: #adadad;
 }
+body .main .new-container {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  padding: 1.25rem 1.25rem 1.25rem 1rem;
+}
+body .main .new-description {
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding-left: 1rem;
+}
 body .main__todo-left-n-clear {
   background-color: #fff;
   color: #adadad;
@@ -135,6 +148,9 @@ body .main__drag-n-drop {
   body .main__input {
     font-size: 1.1rem;
     padding: 1.25rem 3.5rem;
+  }
+  body .main .new-container {
+    padding: 1.25rem;
   }
   body .main__add-new-task {
     padding: 1.31rem;
