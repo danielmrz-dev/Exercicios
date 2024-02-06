@@ -91,8 +91,12 @@ body {
                 background-repeat: no-repeat, no-repeat;
                 background-position: center, center;
             }
+            &:checked +.main__todo-list-item-description {
+                text-decoration: line-through;
+                color: $Grey;
+            }
         }         
-        &__todo-list-item-description {
+        &__todo-list-item-label {
             &:hover {
                 cursor: pointer;
             }
@@ -104,15 +108,17 @@ body {
         .new-container {
             display: flex;
             align-items: center;
-            justify-content: start;
+            justify-content: space-between;
             padding: 1.25rem 1.25rem 1.25rem 1rem;
         }
-        .new-description {
-            margin-right: auto;
+        .new-label {
             display: flex;
+            justify-content: space-between;
             align-items: center;
             gap: 1.25rem;
-            padding-left: 1rem;
+        }
+        .new-description {
+            margin-right: auto;            
         }
         &__todo-left-n-clear {
             background-color: $White;
@@ -130,6 +136,22 @@ body {
             font-size: .8rem;
             font-weight: 600;
         }
+    }
+}
+
+.grey-container {
+    background-color: $Very-Dark-Grayish-Blue;
+    @media screen and (min-width: 560px) {
+        background-color: $Very-Dark-Grayish-Blue;
+    }
+
+}
+.dark-bg {
+    background: $Very-Dark-Desaturated-Blue url('images/bg-mobile-dark.jpg') no-repeat;
+    background-size: contain;
+    @media screen and (min-width: 560px) {
+        background: $Very-Dark-Desaturated-Blue url('images/bg-desktop-dark.jpg') no-repeat;
+        background-size: contain;
     }
 }
 

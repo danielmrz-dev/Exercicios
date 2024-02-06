@@ -71,7 +71,11 @@ body .main__todo-list-checkbox:checked {
   background-repeat: no-repeat, no-repeat;
   background-position: center, center;
 }
-body .main__todo-list-item-description:hover {
+body .main__todo-list-checkbox:checked + .main__todo-list-item-description {
+  text-decoration: line-through;
+  color: #adadad;
+}
+body .main__todo-list-item-label:hover {
   cursor: pointer;
 }
 body .main .line-through {
@@ -81,15 +85,17 @@ body .main .line-through {
 body .main .new-container {
   display: flex;
   align-items: center;
-  justify-content: start;
+  justify-content: space-between;
   padding: 1.25rem 1.25rem 1.25rem 1rem;
+}
+body .main .new-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.25rem;
 }
 body .main .new-description {
   margin-right: auto;
-  display: flex;
-  align-items: center;
-  gap: 1.25rem;
-  padding-left: 1rem;
 }
 body .main__todo-left-n-clear {
   background-color: #fff;
@@ -106,6 +112,26 @@ body .main__drag-n-drop {
   color: #adadad;
   font-size: 0.8rem;
   font-weight: 600;
+}
+
+.grey-container {
+  background-color: #393a4c;
+}
+@media screen and (min-width: 560px) {
+  .grey-container {
+    background-color: #393a4c;
+  }
+}
+
+.dark-bg {
+  background: #25273c url("images/bg-mobile-dark.jpg") no-repeat;
+  background-size: contain;
+}
+@media screen and (min-width: 560px) {
+  .dark-bg {
+    background: #25273c url("images/bg-desktop-dark.jpg") no-repeat;
+    background-size: contain;
+  }
 }
 
 @media screen and (min-width: 560px) {
