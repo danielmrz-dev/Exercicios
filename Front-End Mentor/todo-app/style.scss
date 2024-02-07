@@ -64,7 +64,7 @@ body {
             padding-left: 2.75rem;
         }
         &__add-new-task {
-            background-color: $Very-Dark-Grayish-Blue;
+            background-color: #2c2f51;
             color: $White;
             padding: .85rem;   
             cursor: pointer;
@@ -80,6 +80,19 @@ body {
             background-color: $White;
             font-size: .8rem;
             border-bottom: 1px solid $Light-Grayish-Blue-hover;
+            transition: background-color .2s ease-in-out,
+                        color .2s ease-in-out,
+                        font-weight .2s ease-in-out,
+                        border .2s ease-in-out;
+        }
+        .grey-container {
+            background-color: #2c2f51;
+            color: $Very-Light-Grayish-Blue;
+            font-weight: 400;
+            border-bottom: 1px solid rgba(100, 100, 100, 0.436);
+            // @media screen and (min-width: 560px) {
+            //     background-color: $Very-Dark-Grayish-Blue;
+            // }
         }
         &__todo-list-checkbox {
             @include checkbox-appearance();
@@ -144,8 +157,8 @@ body {
     @media screen and (min-width: 560px) {
         background-color: $Very-Dark-Grayish-Blue;
     }
-
 }
+
 .dark-bg {
     background: $Very-Dark-Desaturated-Blue url('images/bg-mobile-dark.jpg') no-repeat;
     background-size: contain;

@@ -4,6 +4,11 @@ const addTaskBtn = document.querySelector(".main__add-new-task");
 const TaskInput = document.querySelector(".main__input");
 const tasksContainer = document.querySelector(".main__todo-list");
 const lastDiv = document.querySelector(".main__todo-left-n-clear");
+const toggleModeBtn = document.querySelector('.main__mode-icon');
+const darkModeCheckbox = document.querySelector('#sun-moon');
+const title = document.querySelector('.main__title');
+const background = document.querySelector('body');
+const allActiveCompleted = document.querySelector('.main__all-active-completed');
 
 const listItem = document.querySelector(".main__todo-list-item");
 const deleteTaskBtn = document.querySelector(".main__icon-cross");
@@ -57,18 +62,19 @@ function addTaskElement(task) {
     const newTaskContainer = document.createElement("div");
     newTaskContainer.classList.add("main__todo-list-item", "new-container");
 
+    
     const newTaskCheckbox = document.createElement("input");
     newTaskCheckbox.type = "checkbox";
     newTaskCheckbox.classList.add("main__todo-list-checkbox", "-order-1");
-
+    
     const newTaskLabel = document.createElement("label");
     newTaskLabel.classList.add("main__todo-list-item-label", "new-label");
-
+    
     const newTaskDescription = document.createElement("p");
     newTaskDescription.classList.add(
         "new-description",
         "main__todo-list-item-description"
-    );
+        );
     newTaskDescription.textContent = task.description;
 
     const newTaskCrossBtn = document.createElement("img");
@@ -76,34 +82,55 @@ function addTaskElement(task) {
     newTaskCrossBtn.setAttribute("src", "images/icon-cross.svg");
 
     lastDiv.parentNode.insertBefore(newTaskContainer, lastDiv);
-
+    
     newTaskLabel.append(newTaskCheckbox);
     newTaskLabel.append(newTaskDescription);
     newTaskContainer.append(newTaskLabel);
     newTaskContainer.append(newTaskCrossBtn);
 
+    darkModeCheckbox.addEventListener('change', () => {
+        if (darkModeCheckbox.checked) {
+            toggleModeBtn.setAttribute('src', 'images/icon-sun.svg')
+            background.classList.add('dark-bg');
+            TaskInput.classList.add('grey-container')
+            listItem.classList.add('grey-container')
+            lastDiv.classList.add('grey-container')
+            allActiveCompleted.classList.add('grey-container')
+            newTaskContainer.classList.add('grey-container')
+        } else {
+            toggleModeBtn.setAttribute('src', 'images/icon-moon.svg')
+            background.classList.remove('dark-bg');
+            TaskInput.classList.remove('grey-container')
+            listItem.classList.remove('grey-container')
+            lastDiv.classList.remove('grey-container')
+            allActiveCompleted.classList.remove('grey-container')
+            newTaskContainer.classList.remove('grey-container')
+        }    
+    })
+ 
+    
     TaskInput.value = "";
     TaskInput.focus();
     return newTaskLabel;
 }
 
-const toggleModeBtn = document.querySelector('.main__mode-icon');
-const darkModeCheckbox = document.querySelector('#sun-moon');
-const title = document.querySelector('.main__title');
-const background = document.querySelector('body');
 
-darkModeCheckbox.addEventListener('change', () => {
-    if (darkModeCheckbox.checked) {
-        toggleModeBtn.setAttribute('src', 'images/icon-sun.svg')
-        background.classList.add('dark-bg');
-        TaskInput.classList.add('grey-container')
-        lastDiv.classList.add('grey-container')
-    } else {
-        toggleModeBtn.setAttribute('src', 'images/icon-moon.svg')
-        background.classList.remove('dark-bg');
-        TaskInput.classList.remove('grey-container')
-        lastDiv.classList.remove('grey-container')
-    }    
-})
+// darkModeCheckbox.addEventListener('change', () => {
+//     if (darkModeCheckbox.checked) {
+//         toggleModeBtn.setAttribute('src', 'images/icon-sun.svg')
+//         background.classList.add('dark-bg');
+//         TaskInput.classList.add('grey-container')
+//         listItem.classList.add('grey-container')
+//         lastDiv.classList.add('grey-container')
+//         allActiveCompleted.classList.add('grey-container')
+//     } else {
+//         toggleModeBtn.setAttribute('src', 'images/icon-moon.svg')
+//         background.classList.remove('dark-bg');
+//         TaskInput.classList.remove('grey-container')
+//         listItem.classList.remove('grey-container')
+//         lastDiv.classList.add('grey-container')
+//         allActiveCompleted.classList.remove('grey-container')
+//     }    
+// })
 
 
