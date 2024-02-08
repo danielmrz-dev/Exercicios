@@ -96,7 +96,7 @@ hr {
 input[type='range'] {
     width: 85%;
     justify-self: center;
-    background: linear-gradient(90deg, var(--Strong-Cyan) 60%, var(--Light-Grayish-Blue-two) 60%);
+    background: linear-gradient(90deg, var(--Strong-Cyan) 30%, var(--Light-Grayish-Blue-two) 30%);
     border-radius: 5px;
 }
 
