@@ -23,6 +23,11 @@ h1 {
     font-size: 5em;
 }
 
+h2 {
+    font-size: 4em;
+    font-weight: bolder;
+}
+
 h3 {
     font-size: 2em;
     margin-top: 20px;
