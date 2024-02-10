@@ -5,7 +5,75 @@ $Very-Dark-Blue: #242942;
 $Dark-Grayish-Blue: #5b5f71;
 $Grayish-Blue: #a0a1ac;
 $Light-Grayish-Blue: #eef3f6;
+$White: #fff;
 
 $Barlow: 'Barlow', sans-serif;
 $Barlow-Condensed: 'Barlow Condensed', sans-serif;
 
+body {
+    font-family: $Barlow;
+    // .grey-curved-bg {
+    //     background-color: $Light-Grayish-Blue;
+    //     left: 50px;
+    //     border-radius: 50px;
+    //     opacity: 1;
+    //     z-index: -1;
+    // }
+    .main {
+        &__illustration {
+            height: 240px;
+            background: url('images/illustration-devices.svg') left center no-repeat;
+            background-position: 5px;
+            background-size: cover;
+        }
+        &__header {
+            font-family: $Barlow-Condensed;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            color: $Grayish-Blue;
+            font-weight: 500;
+        }
+        &__header-new {
+            background-color: $Very-Dark-Blue;
+            color: $Light-Grayish-Blue;
+            padding: 0 .6rem;
+            letter-spacing: normal;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+        &__title {
+            font-family: $Barlow-Condensed;
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            line-height: 40px;
+            font-weight: 700;
+        }
+        &__paragraph {
+            font-size: 1.15rem;
+            font-weight: 500;
+            line-height: 25px;
+            color: $Dark-Grayish-Blue;
+        }
+        &__button {
+            font-family: $Barlow-Condensed;
+            font-size: .9rem;
+            text-transform: uppercase;
+            background-color: $Red;
+            color: $White;
+            font-weight: 600;
+            letter-spacing: 1px;
+            padding: .6rem 1.35rem;
+            border-radius: 5px;
+            white-space: nowrap;
+        }
+        &__button-complement {
+            font-size: .9rem;
+            font-family: $Barlow-Condensed;
+            letter-spacing: 3px;
+            font-weight: 500;
+            color: $Grayish-Blue;
+            white-space: nowrap;
+            text-transform: uppercase;
+        }
+    }
+}

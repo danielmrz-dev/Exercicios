@@ -1,0 +1,58 @@
+body {
+  font-family: "Barlow", sans-serif;
+}
+body .main__illustration {
+  height: 240px;
+  background: url("images/illustration-devices.svg") left center no-repeat;
+  background-position: 5px;
+  background-size: cover;
+}
+body .main__header {
+  font-family: "Barlow Condensed", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  color: #a0a1ac;
+  font-weight: 500;
+}
+body .main__header-new {
+  background-color: #242942;
+  color: #eef3f6;
+  padding: 0 0.6rem;
+  letter-spacing: normal;
+  border-radius: 20px;
+  font-weight: 600;
+}
+body .main__title {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  line-height: 40px;
+  font-weight: 700;
+}
+body .main__paragraph {
+  font-size: 1.15rem;
+  font-weight: 500;
+  line-height: 25px;
+  color: #5b5f71;
+}
+body .main__button {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  background-color: #ff5c5c;
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 1px;
+  padding: 0.6rem 1.35rem;
+  border-radius: 5px;
+  white-space: nowrap;
+}
+body .main__button-complement {
+  font-size: 0.9rem;
+  font-family: "Barlow Condensed", sans-serif;
+  letter-spacing: 3px;
+  font-weight: 500;
+  color: #a0a1ac;
+  white-space: nowrap;
+  text-transform: uppercase;
+}/*# sourceMappingURL=style.css.map */
