@@ -11,26 +11,32 @@
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="style.css">  
+  <script src="index.js" defer></script>
   <title>Frontend Mentor | Project tracking intro component</title>  
 </head>
-<body class="grid gap-5">
+<body class="grid gap-5 relative">
 
-  <div class="grey-curved-bg h-[400px] w-full absolute"></div>
-  
-  <header class="header flex items-center justify-between mx-7 my-8">
+  <div class="grey-curved-bg h-[400px] w-1/2 absolute"></div>
+
+  <header class="header flex items-center justify-between mx-7 my-8 relative">
     <img src="images/logo.svg" alt="logo" class="header__logo w-[25px]">
     <nav class="header__nav">
-      <img src="images/icon-hamburger.svg" alt="" class="header__nav-menu-icon cursor-pointer">
-      <ul class="header__nav-menu hidden">
-        <li class="header__nav-menu-item">Product</li>
-        <li class="header__nav-menu-item">Features</li>
-        <li class="header__nav-menu-item">Pricing</li>
-        <li class="header__nav-menu-item">Login</li>
+      <label for="hamburguer-menu" class="header__icon-label">
+        <img src="images/icon-hamburger.svg" alt="" class="header__nav-menu-icon cursor-pointer">
+      </label>
+      <input type="checkbox" name="hamburguer-menu" id="hamburguer-menu" class="header__hamburguer-menu hidden">
+
+      <ul class="header__nav-menu absolute">
+        <li class="header__nav-menu-item cursor-pointer">Product</li>
+        <li class="header__nav-menu-item cursor-pointer">Features</li>
+        <li class="header__nav-menu-item cursor-pointer">Pricing</li>
+        <hr>
+        <li class="header__nav-menu-item cursor-pointer">Login</li>
       </ul>
     </nav>
   </header>
 
-  <main class="main grid gap-5">
+  <main class="main grid gap-[5rem]">
     <div class="main__illustration"></div>
     <div class="main__content mx-7 grid gap-4">
       <p class="main__header flex items-center gap-3"><span class="main__header-new">New</span> Monograph Dashboard</p>

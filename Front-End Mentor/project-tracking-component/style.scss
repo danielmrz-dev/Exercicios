@@ -12,13 +12,43 @@ $Barlow-Condensed: 'Barlow Condensed', sans-serif;
 
 body {
     font-family: $Barlow;
-    // .grey-curved-bg {
-    //     background-color: $Light-Grayish-Blue;
-    //     left: 50px;
-    //     border-radius: 50px;
-    //     opacity: 1;
-    //     z-index: -1;
-    // }
+    .grey-curved-bg {
+        background-color: $Light-Grayish-Blue;
+        border-radius: 0 0 0 50px;
+        right: 0;
+        opacity: .8;
+        z-index: -1;
+    }
+    .header {
+        &__nav-menu {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            text-transform: uppercase;
+            font-weight: 800;
+            font-family: $Barlow-Condensed;
+            gap: 1rem;
+            font-size: 1.25rem;
+            letter-spacing: 2px;
+            right: 0;
+            background-color: $White;
+            margin: 1.5rem 0;
+            width: 100%;
+            padding: 1rem;
+            box-shadow: 2px 2px 10px $Grayish-Blue;
+            border-radius: 5px;
+            hr {
+                background-color: $Grayish-Blue;
+                width: 100%;
+            }
+        }
+        &__nav-menu-item:nth-child(5) {
+            color: $Grayish-Blue;
+        }
+        &__hamburguer-menu:checked +.header__nav-menu {
+            display: flex;
+        }
+    }
     .main {
         &__illustration {
             height: 240px;
@@ -74,6 +104,98 @@ body {
             color: $Grayish-Blue;
             white-space: nowrap;
             text-transform: uppercase;
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    body {
+        .grey-curved-bg {
+            z-index: -1;
+        }
+        .header {
+            position: static;
+            &__nav-menu {
+                display: flex;
+                flex-direction: row;
+                position: static;
+                right: none;
+                align-items: center;
+                text-transform: uppercase;
+                background-color: transparent;
+                box-shadow: none;
+                hr {
+                    display: none;
+                }
+            }
+            &__icon-label {
+                display: none;
+            }
+            &__nav-menu-item:nth-child(5) {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+            }
+            &__nav-menu-item:nth-child(5)::before {
+                content: url('images/icon-close.svg'); //mudar pra uma bolinha
+            }
+        }
+        .main {
+            grid-template-columns: 1fr 1fr;
+            &__illustration {
+                grid-area: 1 / 2;
+                height: 100%;
+                background-size: contain;
+            }
+            &__header {
+                font-family: $Barlow-Condensed;
+                text-transform: uppercase;
+                letter-spacing: 5px;
+                color: $Grayish-Blue;
+                font-weight: 500;
+            }
+            &__header-new {
+                background-color: $Very-Dark-Blue;
+                color: $Light-Grayish-Blue;
+                padding: 0 .6rem;
+                letter-spacing: normal;
+                border-radius: 20px;
+                font-weight: 600;
+            }
+            &__title {
+                font-family: $Barlow-Condensed;
+                font-size: 2.5rem;
+                text-transform: uppercase;
+                line-height: 40px;
+                font-weight: 700;
+            }
+            &__paragraph {
+                font-size: 1.15rem;
+                font-weight: 500;
+                line-height: 25px;
+                color: $Dark-Grayish-Blue;
+            }
+            &__button {
+                font-family: $Barlow-Condensed;
+                font-size: .9rem;
+                text-transform: uppercase;
+                background-color: $Red;
+                color: $White;
+                font-weight: 600;
+                letter-spacing: 1px;
+                padding: .6rem 1.35rem;
+                border-radius: 5px;
+                white-space: nowrap;
+            }
+            &__button-complement {
+                font-size: .9rem;
+                font-family: $Barlow-Condensed;
+                letter-spacing: 3px;
+                font-weight: 500;
+                color: $Grayish-Blue;
+                white-space: nowrap;
+                text-transform: uppercase;
+            }
         }
     }
 }
