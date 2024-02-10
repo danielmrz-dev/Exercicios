@@ -16,10 +16,10 @@
 </head>
 <body class="grid gap-5 relative">
 
-  <div class="grey-curved-bg h-[400px] w-1/2 absolute"></div>
+  <div class="grey-curved-bg h-[400px] w-1/2 absolute md:h-[430px]"></div>
 
   <header class="header flex items-center justify-between mx-7 my-8 relative">
-    <img src="images/logo.svg" alt="logo" class="header__logo w-[25px]">
+    <img src="images/logo.svg" alt="logo" class="header__logo w-[25px] md:w-[30px]">
     <nav class="header__nav">
       <label for="hamburguer-menu" class="header__icon-label">
         <img src="images/icon-hamburger.svg" alt="" class="header__nav-menu-icon cursor-pointer">
@@ -30,19 +30,20 @@
         <li class="header__nav-menu-item cursor-pointer">Product</li>
         <li class="header__nav-menu-item cursor-pointer">Features</li>
         <li class="header__nav-menu-item cursor-pointer">Pricing</li>
+        <span class="dot"></span>
         <hr>
         <li class="header__nav-menu-item cursor-pointer">Login</li>
       </ul>
     </nav>
   </header>
 
-  <main class="main grid gap-[5rem]">
+  <main class="main grid gap-[5rem] justify-center md:gap-0">
     <div class="main__illustration"></div>
     <div class="main__content mx-7 grid gap-4">
       <p class="main__header flex items-center gap-3"><span class="main__header-new">New</span> Monograph Dashboard</p>
       <h1 class="main__title">Powerful insights <br> into your team</h1>
       <p class="main__paragraph">Project planning and time tracking <br> for agile teams</p>
-      <div class="main__button-container flex items-center justify-between gap-3 my-2">
+      <div class="main__button-container flex items-center gap-5 my-2 md:justify-start md:gap-5 md:my-4">
         <button class="main__button">Schedule a demo</button>
         <span class="main__button-complement">to see a preview</span>
       </div>

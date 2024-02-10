@@ -30,7 +30,13 @@ body .header__nav-menu hr {
   background-color: #a0a1ac;
   width: 100%;
 }
-body .header__nav-menu-item:nth-child(5) {
+body .header__nav-menu-item {
+  transition: scale 0.2s ease-in-out;
+}
+body .header__nav-menu-item:hover {
+  scale: 1.1;
+}
+body .header__nav-menu-item:nth-child(6) {
   color: #a0a1ac;
 }
 body .header__hamburguer-menu:checked + .header__nav-menu {
@@ -70,6 +76,9 @@ body .main__paragraph {
   line-height: 25px;
   color: #5b5f71;
 }
+body .main br {
+  display: none;
+}
 body .main__button {
   font-family: "Barlow Condensed", sans-serif;
   font-size: 0.9rem;
@@ -81,6 +90,10 @@ body .main__button {
   padding: 0.6rem 1.35rem;
   border-radius: 5px;
   white-space: nowrap;
+  transition: scale 0.2s ease-in-out;
+}
+body .main__button:hover {
+  scale: 1.05;
 }
 body .main__button-complement {
   font-size: 0.9rem;
@@ -93,10 +106,14 @@ body .main__button-complement {
 }
 
 @media screen and (min-width: 768px) {
+  body {
+    min-height: 100vh;
+  }
   body .grey-curved-bg {
     z-index: -1;
   }
   body .header {
+    margin: 0rem 9rem;
     position: static;
   }
   body .header__nav-menu {
@@ -108,6 +125,10 @@ body .main__button-complement {
     text-transform: uppercase;
     background-color: transparent;
     box-shadow: none;
+    gap: 3rem;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0;
   }
   body .header__nav-menu hr {
     display: none;
@@ -115,69 +136,51 @@ body .main__button-complement {
   body .header__icon-label {
     display: none;
   }
-  body .header__nav-menu-item:nth-child(5) {
+  body .header__nav-menu-item:nth-child(6) {
     display: flex;
     align-items: center;
     gap: 1rem;
+    color: #a0a1ac;
   }
-  body .header__nav-menu-item:nth-child(5)::before {
-    content: url("images/icon-close.svg");
+  body .header .dot::after {
+    content: "";
+    display: block;
+    height: 6px;
+    width: 6px;
+    border-radius: 50%;
+    background-color: #a0a1ac;
   }
   body .main {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1.2fr;
+    margin-left: 7rem;
   }
   body .main__illustration {
     grid-area: 1/2;
     height: 100%;
-    background-size: contain;
+    background-size: cover;
   }
-  body .main__header {
-    font-family: "Barlow Condensed", sans-serif;
-    text-transform: uppercase;
-    letter-spacing: 5px;
-    color: #a0a1ac;
-    font-weight: 500;
-  }
-  body .main__header-new {
-    background-color: #242942;
-    color: #eef3f6;
-    padding: 0 0.6rem;
-    letter-spacing: normal;
-    border-radius: 20px;
-    font-weight: 600;
+  body .main__content {
+    padding: 3rem 0;
   }
   body .main__title {
-    font-family: "Barlow Condensed", sans-serif;
-    font-size: 2.5rem;
-    text-transform: uppercase;
-    line-height: 40px;
+    font-size: 4rem;
+    line-height: 65px;
     font-weight: 700;
   }
   body .main__paragraph {
-    font-size: 1.15rem;
-    font-weight: 500;
-    line-height: 25px;
-    color: #5b5f71;
+    margin: 0;
+    font-size: 1.25rem;
+  }
+  body .main br {
+    display: block;
   }
   body .main__button {
-    font-family: "Barlow Condensed", sans-serif;
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    background-color: #ff5c5c;
-    color: #fff;
-    font-weight: 600;
-    letter-spacing: 1px;
-    padding: 0.6rem 1.35rem;
-    border-radius: 5px;
-    white-space: nowrap;
+    font-size: 1rem;
+    padding: 0.8rem 2.5rem;
   }
   body .main__button-complement {
-    font-size: 0.9rem;
-    font-family: "Barlow Condensed", sans-serif;
-    letter-spacing: 3px;
-    font-weight: 500;
+    font-size: 1rem;
+    letter-spacing: 6px;
     color: #a0a1ac;
-    white-space: nowrap;
-    text-transform: uppercase;
   }
 }/*# sourceMappingURL=style.css.map */
