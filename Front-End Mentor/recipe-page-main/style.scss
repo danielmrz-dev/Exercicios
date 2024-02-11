@@ -17,28 +17,247 @@ $Outfit: 'Outfit', sans-serif;
     padding: 0;
     box-sizing: border-box;
     font-family: $Outfit;
-    list-style-position: inside;
+    list-style-position: outside;
 }
 
 body {
     .recipe {
         &__main-img {
             width: 100%;
-            object-fit: cover;
         }
-    }
-    .recipe__content {
-        padding: 1rem;
+        ul, ol {
+            display: grid;
+            gap: .75rem;
+            margin-left: 1rem;
+            padding: 1rem .5rem;
+            li {
+                padding: 0 0 0 1rem;
+            }
+        }
+        hr {
+            background-color: $Wenge-Brown;
+            opacity: .3;
+        }
+        .recipe__content {
+            padding: 2rem;
+            display: grid;
+            gap: 1.25rem;
+        }
         &__title {
             font-family: $Young-Serif;
-            font-weight: 400;
+            font-weight: 500;
+            font-size: 2.25rem;
+            color: $Dark-Charcoal;
             line-height: 35px;
+        }
+        &__description {
+            color: $Wenge-Brown;
+            font-weight: 500;
+            line-height: 22px;
+        }
+        &__preparation-time {
+            background-color: $Rose-White;
+            display: grid;
+            gap: .5rem;
+            padding: 1rem 1.5rem 1.5rem;
+            margin: 1rem 0 .5rem;
+            border-radius: 10px;
+            color: $Wenge-Brown;
+            ul {
+                padding: .5rem 0 0 .5rem;
+                li::marker {
+                    font-size: .7rem;
+                    padding: 1rem;
+                }
+            }
+        }
+        &__preparation-time-title {
+            font-size: 1.25rem;
+            font-family: $Outfit;
+            font-weight: 700;
+            color: $Dark-Raspberry;
         }
         &__subheading {
             font-family: $Young-Serif;
+            color: $Nutmeg;
+            font-size: 1.75rem;
+            font-weight: 400;            
+        }
+        &__ingredients {
+            ul {
+                li {
+                    color: $Wenge-Brown;
+                    font-weight: 500;
+                }
+                padding: 1rem 0 1rem .5rem;
+                li::marker {
+                    font-size: .7rem;
+                    padding: 1rem;
+                }
+            }
+        }
+        &__instructions {
+            ol {
+                padding: 1rem 0 1rem .5rem;
+                li {
+                    color: $Wenge-Brown;
+                    font-weight: 500;
+                    line-height: 22px;
+                }
+                li::marker {
+                    font-size: 1rem;
+                    font-weight: 700;
+                    color: $Nutmeg;
+                }
+            }
+        }
+        &__nutrition {
+            display: grid;
+            gap: 1rem;
+            color: $Wenge-Brown;
+            font-weight: 500;
+        }
+        &__nutrition-table-description {
+            line-height: 22px;
+        }
+        &__nutrition-table {
+            tbody {
+                tr {
+                    display: grid;
+                    grid-template-columns: 35% 35%;
+                    gap: 1rem;
+                    justify-content: center;
+                    padding: .75rem 1rem;
+                    border-bottom: 1px solid $Light-Grey;
+                    &:last-child {
+                        border: none;
+                    }
+                }
+            }
+        }
+        &__nutrition-numbers {
+            font-weight: 700;
+            color: $Dark-Raspberry;
         }
     }
     .attribution {
         display: none;
+    }
+}
+
+@media screen and (min-width: 560px) {
+    body {
+        min-height: 100vh;
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        background-color: $Eggshell;
+        .recipe {
+            background-color: $White;
+            max-width: 740px;
+            border-radius: 30px;
+            padding: 2.5rem;
+            &__main-img {
+                border-radius: 15px;
+            }
+            .recipe__content {
+                padding: 2rem .5rem;
+                gap: 2rem;
+            }
+            &__title {
+                font-size: 2.5rem;
+            }
+            &__description {
+                font-size: .9rem;
+                line-height: 30px;
+            }
+            &__preparation-time {
+                background-color: $Rose-White;
+                display: grid;
+                gap: .5rem;
+                padding: 1rem 1.5rem 1.5rem;
+                margin: 1rem 0 .5rem;
+                border-radius: 10px;
+                color: $Wenge-Brown;
+                ul {
+                    padding: .5rem 0 0 .5rem;
+                    li::marker {
+                        font-size: .7rem;
+                        padding: 1rem;
+                    }
+                }
+            }
+            &__preparation-time-title {
+                font-size: 1.25rem;
+                font-family: $Outfit;
+                font-weight: 700;
+                color: $Dark-Raspberry;
+            }
+            &__subheading {
+                font-family: $Young-Serif;
+                color: $Nutmeg;
+                font-size: 1.75rem;
+                font-weight: 400;            
+            }
+            &__ingredients {
+                ul {
+                    li {
+                        color: $Wenge-Brown;
+                        font-weight: 500;
+                    }
+                    padding: 1rem 0 1rem .5rem;
+                    li::marker {
+                        font-size: .7rem;
+                        padding: 1rem;
+                    }
+                }
+            }
+            &__instructions {
+                ol {
+                    padding: 1rem 0 1rem .5rem;
+                    li {
+                        color: $Wenge-Brown;
+                        font-weight: 500;
+                        line-height: 22px;
+                    }
+                    li::marker {
+                        font-size: 1rem;
+                        font-weight: 700;
+                        color: $Nutmeg;
+                    }
+                }
+            }
+            &__nutrition {
+                display: grid;
+                gap: 1rem;
+                color: $Wenge-Brown;
+                font-weight: 500;
+            }
+            &__nutrition-table-description {
+                line-height: 22px;
+            }
+            &__nutrition-table {
+                tbody {
+                    tr {
+                        display: grid;
+                        grid-template-columns: 35% 35%;
+                        gap: 1rem;
+                        justify-content: center;
+                        padding: .75rem 1rem;
+                        border-bottom: 1px solid $Light-Grey;
+                        &:last-child {
+                            border: none;
+                        }
+                    }
+                }
+            }
+            &__nutrition-numbers {
+                font-weight: 700;
+                color: $Dark-Raspberry;
+            }
+        }
+        .attribution {
+            display: none;
+        }
     }
 }
