@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Outfit", sans-serif;
+  list-style-position: inside;
+}
+
+body .recipe__main-img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+body .recipe__content {
+  padding: 1rem;
+}
+body .recipe__content__title {
+  font-family: "Young Serif", sans-serif;
+  font-weight: 400;
+  line-height: 35px;
+}
+body .recipe__content__subheading {
+  font-family: "Young Serif", sans-serif;
+}
+body .attribution {
+  display: none;
+}/*# sourceMappingURL=style.css.map */

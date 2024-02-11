@@ -1,0 +1,44 @@
+@charset "UTF-8";
+
+$Nutmeg: #854632;
+$Dark-Raspberry: #7b284f;
+$White: #ffffff;
+$Rose-White: #fff5fa;
+$Eggshell: #f3e6d8;
+$Light-Grey: #e4ded8;
+$Wenge-Brown: #5f574e;
+$Dark-Charcoal: #302d2c;
+
+$Young-Serif: 'Young Serif', sans-serif;
+$Outfit: 'Outfit', sans-serif;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: $Outfit;
+    list-style-position: inside;
+}
+
+body {
+    .recipe {
+        &__main-img {
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+    .recipe__content {
+        padding: 1rem;
+        &__title {
+            font-family: $Young-Serif;
+            font-weight: 400;
+            line-height: 35px;
+        }
+        &__subheading {
+            font-family: $Young-Serif;
+        }
+    }
+    .attribution {
+        display: none;
+    }
+}
