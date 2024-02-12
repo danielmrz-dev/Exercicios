@@ -153,77 +153,53 @@ body {
         align-items: center;
         background-color: $Eggshell;
         .recipe {
+            margin: 7.5rem 0;
             background-color: $White;
             max-width: 740px;
             border-radius: 30px;
-            padding: 2.5rem;
+            padding: 2.5rem 2.5rem 1.5rem 2.5rem;
             &__main-img {
                 border-radius: 15px;
             }
+            hr {
+                margin: .3rem 0;
+                opacity: .1;
+            }
             .recipe__content {
-                padding: 2rem .5rem;
-                gap: 2rem;
+                padding: 2rem .5rem 0;
+                gap: 1rem;
             }
             &__title {
                 font-size: 2.5rem;
+                font-weight: 500;
             }
             &__description {
-                font-size: .9rem;
-                line-height: 30px;
+                line-height: 25px;
             }
             &__preparation-time {
-                background-color: $Rose-White;
-                display: grid;
-                gap: .5rem;
-                padding: 1rem 1.5rem 1.5rem;
-                margin: 1rem 0 .5rem;
-                border-radius: 10px;
-                color: $Wenge-Brown;
-                ul {
-                    padding: .5rem 0 0 .5rem;
-                    li::marker {
-                        font-size: .7rem;
-                        padding: 1rem;
-                    }
-                }
+                padding: 1.5rem 1.5rem 2rem;
             }
             &__preparation-time-title {
                 font-size: 1.25rem;
-                font-family: $Outfit;
-                font-weight: 700;
-                color: $Dark-Raspberry;
-            }
-            &__subheading {
-                font-family: $Young-Serif;
-                color: $Nutmeg;
-                font-size: 1.75rem;
-                font-weight: 400;            
             }
             &__ingredients {
                 ul {
                     li {
-                        color: $Wenge-Brown;
-                        font-weight: 500;
-                    }
-                    padding: 1rem 0 1rem .5rem;
-                    li::marker {
-                        font-size: .7rem;
-                        padding: 1rem;
+                        font-size: 1rem;
                     }
                 }
             }
             &__instructions {
                 ol {
+                    display: grid;
+                    gap: .6rem;
                     padding: 1rem 0 1rem .5rem;
                     li {
-                        color: $Wenge-Brown;
-                        font-weight: 500;
+                        font-size: 1rem;
                         line-height: 22px;
                     }
                     li::marker {
                         font-size: 1rem;
-                        font-weight: 700;
-                        color: $Nutmeg;
                     }
                 }
             }
@@ -233,31 +209,20 @@ body {
                 color: $Wenge-Brown;
                 font-weight: 500;
             }
-            &__nutrition-table-description {
-                line-height: 22px;
-            }
+
             &__nutrition-table {
                 tbody {
                     tr {
-                        display: grid;
-                        grid-template-columns: 35% 35%;
-                        gap: 1rem;
-                        justify-content: center;
+                        grid-template-columns: 1fr 1fr;
                         padding: .75rem 1rem;
                         border-bottom: 1px solid $Light-Grey;
-                        &:last-child {
-                            border: none;
+                        td {
+                            text-align: start;
+                            padding-left: 1rem;
                         }
                     }
                 }
             }
-            &__nutrition-numbers {
-                font-weight: 700;
-                color: $Dark-Raspberry;
-            }
-        }
-        .attribution {
-            display: none;
         }
     }
 }
