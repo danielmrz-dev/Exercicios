@@ -1,0 +1,74 @@
+@charset "UTF-8";
+
+$Linear-gradient: #6448fe to #600594;
+$Red: #ff5252;
+$White: #ffffff;
+$Light-grayish-violet: #dedddf;
+$Dark-grayish-violet: #8e8593;
+$Very-dark-violet: #21092f;
+
+$Space-Grotesk: 'Space Grotesk', sans-serif;
+
+body {
+    background: url('images/bg-main-mobile.png') center top no-repeat;
+    background-size: contain;
+    font-family: $Space-Grotesk;
+    .cards {
+        padding: 2rem 1.25rem;
+        &__front-back {
+            display: flex;
+            flex-direction: column;
+        }
+        &__front {
+            order: 1;
+            position: relative;
+            transform: translateY(-65px);
+        }
+        &__front-information::before,
+        &__front-information::after {
+            content: '';
+            width: 30px;
+            height: 30px;
+            display: block;
+            background-color: #dedddf;
+            border-radius: 50%;
+            position: absolute;
+            top: -25px;
+        }
+        
+        &__front-information {
+            position: absolute;
+            bottom: 0;
+            color: $Light-grayish-violet;
+            padding: 1.25rem;
+        }
+        &__front-number {
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            white-space: nowrap;
+            padding: .75rem 0;
+        }
+        &__name-and-expdate {
+            display: flex;
+            justify-content: space-between;
+            text-transform: uppercase;
+            font-size: .6rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+        &__back {
+            align-self: flex-end;
+            position: relative;
+        }
+        &__back-number {
+            position: absolute;
+            top: 65px;
+            right: 32px;
+            color: $Light-grayish-violet;
+            font-size: .65rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+    }
+}

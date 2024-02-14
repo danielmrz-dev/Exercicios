@@ -1,0 +1,61 @@
+body {
+  background: url("images/bg-main-mobile.png") center top no-repeat;
+  background-size: contain;
+  font-family: "Space Grotesk", sans-serif;
+}
+body .cards {
+  padding: 2rem 1.25rem;
+}
+body .cards__front-back {
+  display: flex;
+  flex-direction: column;
+}
+body .cards__front {
+  order: 1;
+  position: relative;
+  transform: translateY(-65px);
+}
+body .cards__front-information::before, body .cards__front-information::after {
+  content: "";
+  width: 30px;
+  height: 30px;
+  display: block;
+  background-color: #dedddf;
+  border-radius: 50%;
+  position: absolute;
+  top: -25px;
+}
+body .cards__front-information {
+  position: absolute;
+  bottom: 0;
+  color: #dedddf;
+  padding: 1.25rem;
+}
+body .cards__front-number {
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  white-space: nowrap;
+  padding: 0.75rem 0;
+}
+body .cards__name-and-expdate {
+  display: flex;
+  justify-content: space-between;
+  text-transform: uppercase;
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+body .cards__back {
+  align-self: flex-end;
+  position: relative;
+}
+body .cards__back-number {
+  position: absolute;
+  top: 65px;
+  right: 32px;
+  color: #dedddf;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}/*# sourceMappingURL=style.css.map */

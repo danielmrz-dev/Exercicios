@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Interactive Credit Card Form">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="index.js" defer></script>
+
+  <title>Frontend Mentor | Interactive card details form</title>
+</head>
+<body>
+
+  <main class="cards">
+
+    <section class="cards__front-back">
+
+      <div class="cards__front w-[280px]">
+        <img src="images/bg-card-front.png" alt="" class="cards__front-img">
+        <div class="cards__front-information w-full">
+          <h1 class="cards__front-number">0000 0000 0000 0000</h1>
+          <div class="cards__name-and-expdate">
+            <h2 class="cards__name">Jane Appleseed</h2>
+            <span class="cards__exp-date">00/00</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="cards__back w-[280px]">
+        <img src="images/bg-card-back.png" alt="">        
+        <span class="cards__back-number">000</span>
+      </div>
+
+    </section>
+
+    <form class="cards__form hidden">
+      Cardholder Name
+      e.g. Jane Appleseed 
+      Card Number
+      e.g. 1234 5678 9123 0000 
+      Exp. Date (MM/YY)
+      MM
+      YY
+      CVC
+      e.g. 123
+      Confirm
+    </form>
+    <!-- Completed state start -->
+    <div class="cards__thank-you hidden">
+      Thank you!
+      We've added your  card details
+      Continue
+    </div>
+  </main>
+  
+  <div class="attribution hidden">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+</body>
+</html>
