@@ -9,20 +9,30 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
   <script src="index.js" defer></script>
   <title>Frontend Mentor | Advice generator app</title>
 
 </head>
-<body>
+<body class="min-h-screen flex flex-col justify-center items-center mx-5">
   
-<main class="advice">
+<main class="advice rounded-xl pt-10 pb-14 px-6 flex flex-col items-center gap-4 relative">
   
-    Advice #<!-- Advice ID goes here -->
+    <h1 class="advice__id">Advice #<span class="advice__number">117</span> </h1>
   
-    "<!-- Advice text goes here -->"
+    <p class="advice__text py-2">"It's easy to sit up and take notice, what's difficult is getting up and taking action."</p>
+
+    <picture>
+      <source media="(min-width: 560px)" srcset="images/pattern-divider-desktop.svg" type="image/svg+xml">
+      <img src="images/pattern-divider-mobile.svg" alt="" class="">
+    </picture>
+    
+    <button class="advice__dice-container absolute">
+      <img src="images/icon-dice.svg" alt="dice icon" class="advice__dice-icon">
+    </button>
 </main>
   
-  <div class="attribution">
+  <div class="attribution hidden">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
   </div>
