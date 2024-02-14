@@ -15,6 +15,7 @@ body {
     font-family: $Space-Grotesk;
     .cards {
         padding: 2rem 1.25rem;
+        max-width: 370px;
         &__front-back {
             display: flex;
             flex-direction: column;
@@ -22,20 +23,8 @@ body {
         &__front {
             order: 1;
             position: relative;
-            transform: translateY(-65px);
-        }
-        &__front-information::before,
-        &__front-information::after {
-            content: '';
-            width: 30px;
-            height: 30px;
-            display: block;
-            background-color: #dedddf;
-            border-radius: 50%;
-            position: absolute;
-            top: -25px;
-        }
-        
+            transform: translateY(-66px);
+        }        
         &__front-information {
             position: absolute;
             bottom: 0;

@@ -5,6 +5,7 @@ body {
 }
 body .cards {
   padding: 2rem 1.25rem;
+  max-width: 370px;
 }
 body .cards__front-back {
   display: flex;
@@ -13,17 +14,7 @@ body .cards__front-back {
 body .cards__front {
   order: 1;
   position: relative;
-  transform: translateY(-65px);
-}
-body .cards__front-information::before, body .cards__front-information::after {
-  content: "";
-  width: 30px;
-  height: 30px;
-  display: block;
-  background-color: #dedddf;
-  border-radius: 50%;
-  position: absolute;
-  top: -25px;
+  transform: translateY(-66px);
 }
 body .cards__front-information {
   position: absolute;
