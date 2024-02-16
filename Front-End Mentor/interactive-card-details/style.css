@@ -25,6 +25,9 @@ body .cards__empty-alert {
   opacity: 0;
   transition: opacity 0.2s ease;
 }
+body .cards .active-error {
+  opacity: 1;
+}
 body .cards__front-back {
   display: flex;
   flex-direction: column;
@@ -244,5 +247,8 @@ body .cards__button {
   }
   body .cards__label-text {
     font-size: 0.8rem;
+  }
+  body .cards__button {
+    font-size: 1.25rem;
   }
 }/*# sourceMappingURL=style.css.map */
