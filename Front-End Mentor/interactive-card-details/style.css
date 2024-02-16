@@ -97,6 +97,9 @@ body .cards__form {
   flex-direction: column;
   text-transform: uppercase;
 }
+body .cards .active-error-input {
+  border: 1px solid #ff5252;
+}
 body .cards input {
   border: 1px solid #dedddf;
   border-radius: 10px;

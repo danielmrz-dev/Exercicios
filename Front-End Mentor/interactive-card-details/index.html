@@ -47,8 +47,8 @@
       </label>
       <label for="card-number">
         <span class="cards__label-text">Card Number</span>
-        <input type="number" name="card-number" class="w-full" id="card-number" placeholder="e.g. 1234 5678 9123 0000">
-        <span class="cards__empty-alert" id="empty-card-number">Wrong format, numbers only</span>
+        <input type="text" name="card-number" class="w-full" id="card-number" placeholder="e.g. 1234 5678 9123 0000" minlength="19" maxlength="19">
+        <span class="cards__empty-alert" id="empty-card-number">You need to type all the 16 numbers</span>
       </label>
       
       <div class="cards__expdate-and-cvv">
@@ -58,8 +58,8 @@
         <label for="" class="cards__cvv-label w-full">
           <span class="cards__label-text">CVC</span>
         </label>
-        <input type="number" name="exp-date-month" id="exp-date-month" placeholder="MM" class="">
-        <input type="number" name="exp-date-year" id="exp-date-year" placeholder="YY" class="">
+        <input type="number" name="exp-date-month" id="exp-date-month" placeholder="MM" class="" min="1" max="12">
+        <input type="number" name="exp-date-year" id="exp-date-year" placeholder="YY" class="" min="24" max="99">
         <input type="number" name="cvv" id="cvv" placeholder="e.g. 123" class="">
         <span class="cards__empty-alert pt-[.1rem]" id="empty-month">Can't be blank</span>
         <span class="cards__empty-alert pt-[.1rem]" id="empty-cvv">Can't be blank</span>

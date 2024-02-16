@@ -104,6 +104,9 @@ body {
             flex-direction: column;
             text-transform: uppercase;
         }
+        .active-error-input {
+            border: 1px solid $Red;
+        }
         input {
             border: 1px solid $Light-grayish-violet;
             border-radius: 10px;
