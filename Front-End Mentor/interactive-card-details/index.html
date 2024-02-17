@@ -27,7 +27,7 @@
           <h1 class="cards__front-number">0000 0000 0000 0000</h1>
           <div class="cards__name-and-expdate w-full">
             <h2 class="cards__name">Jane Appleseed</h2>
-            <span class="cards__exp-date">00/00</span>
+            <span class="cards__exp-date"><span id="MM">00</span>/<span id="YY">00</span></span>
           </div>
         </div>
       </div>
@@ -67,11 +67,14 @@
 
       <button class="cards__button block">Confirm</button>
     </form>
-    <!-- Completed state start -->
-    <div class="cards__thank-you hidden">
-      Thank you!
-      We've added your card details
-      Continue
+    
+    <div class="cards__thank-you">
+      <img src="images/icon-complete.svg" alt="icon-complete">
+      <div class="cards__ty-and-details grid gap-2">
+        <h2 class="cards__ty">Thank you!</h2>
+        <p class="cards__details-added">We've added your card details</p>
+      </div>
+      <button class="cards__continue">Continue</button>
     </div>
   </main>
   

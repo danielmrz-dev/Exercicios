@@ -93,7 +93,7 @@ body .cards__back-number {
   letter-spacing: 1px;
 }
 body .cards__form {
-  display: flex;
+  display: none;
   flex-direction: column;
   text-transform: uppercase;
 }
@@ -166,6 +166,34 @@ body .cards__button {
   font-weight: 600;
   margin: 0.5rem 0;
 }
+body .cards__thank-you {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+body .cards__thank-you img {
+  width: 70px;
+}
+body .cards__ty {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+body .cards__details-added {
+  color: #8e8593;
+  font-weight: 600;
+}
+body .cards__continue {
+  background-color: #21092f;
+  color: #ffffff;
+  width: 100%;
+  padding: 0.75rem;
+  margin: 1.5rem 0;
+  border-radius: 10px;
+}
 
 @media screen and (min-width: 1024px) {
   body {
@@ -227,7 +255,7 @@ body .cards__button {
   }
   body .cards__form {
     max-width: 400px;
-    display: flex;
+    display: none;
     flex-direction: column;
     gap: 0.5rem;
     text-transform: uppercase;
@@ -253,5 +281,19 @@ body .cards__button {
   }
   body .cards__button {
     font-size: 1.25rem;
+  }
+  body .cards__thank-you {
+    width: 100%;
+    gap: 2rem;
+  }
+  body .cards__ty {
+    font-size: 1.75rem;
+  }
+  body .cards__details-added {
+    font-size: 1.25rem;
+  }
+  body .cards__continue {
+    padding: 1rem 9rem;
+    margin: 1rem 0;
   }
 }/*# sourceMappingURL=style.css.map */

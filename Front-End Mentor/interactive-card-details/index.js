@@ -12,6 +12,9 @@ const emptyCardholder = document.querySelector("#empty-cardholder");
 const emptyCardNumber = document.querySelector("#empty-card-number");
 const emptyMonth = document.querySelector("#empty-month");
 const emptyCvv = document.querySelector("#empty-cvv");
+const form = document.querySelector('.cards__form');
+const mm = document.querySelector('#MM');
+const yy = document.querySelector('#YY');
 
 
 nameInput.focus();
@@ -48,6 +51,7 @@ monthInput.addEventListener('input', () => {
     if (monthInput.value > maxMonth) {
         monthInput.value = monthInput.value.slice(0, maxMonth)
     } 
+    mm.innerHTML = monthInput.value
 })
 
 yearInput.addEventListener('input', () => {
@@ -55,6 +59,7 @@ yearInput.addEventListener('input', () => {
     if (yearInput.value > maxYear) {
         yearInput.value = yearInput.value.slice(0, maxYear)
     }
+    yy.innerHTML = yearInput.value
 })
 
 cvcInput.addEventListener("input", () => {
@@ -62,6 +67,7 @@ cvcInput.addEventListener("input", () => {
     if (cvcInput.value.length > maxLength) {
         cvcInput.value = cvcInput.value.slice(0, maxLength);
     }
+    cvcOnCard.innerHTML = cvcInput.value
 });
 
 function validate() {
@@ -107,11 +113,18 @@ function validate() {
     if (cvcInput.value == 0) {
         emptyCvv.classList.add('active-error');
         cvcInput.classList.add('active-error-input');
+    } else if (cvcInput.value.length < 3) {
+        emptyCvv.classList.add('active-error');
+        emptyCvv.innerHTML = 'Invalid CVC'
+        cvcInput.classList.add('active-error-input');        
     } else {
         emptyCvv.classList.remove('active-error');
-        cvcInput.classList.remove('active-error-input');
+        cvcInput.classList.remove('active-error-input');   
     }
     
+    if (!nameInput.classList.contains('active-error-input') && !cardNumberInput.classList.contains('active-error-input') && !monthInput.classList.contains('active-error-input') && !yearInput.classList.contains('active-error-input') && !cvcInput.classList.contains('active-error-input')) {
+        form.style.display = 'none';
+    }
 }
 
 confirmBtn.addEventListener('click', (e) => {
