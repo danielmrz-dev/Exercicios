@@ -93,7 +93,7 @@ body .cards__back-number {
   letter-spacing: 1px;
 }
 body .cards__form {
-  display: none;
+  display: flex;
   flex-direction: column;
   text-transform: uppercase;
 }
@@ -167,7 +167,7 @@ body .cards__button {
   margin: 0.5rem 0;
 }
 body .cards__thank-you {
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: center;
   gap: 1.5rem;
@@ -255,7 +255,7 @@ body .cards__continue {
   }
   body .cards__form {
     max-width: 400px;
-    display: none;
+    display: flex;
     flex-direction: column;
     gap: 0.5rem;
     text-transform: uppercase;
