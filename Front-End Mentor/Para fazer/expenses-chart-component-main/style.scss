@@ -1,0 +1,70 @@
+@charset "UTF-8";
+
+$Soft-red: #ec775f;
+$Cyan: #76b5bc;
+$Dark-brown: #382314;
+$Medium-brown: #93867b;
+$Cream: #f8e9dd;
+$Very-pale-orange: #fffaf5;
+$DM-Sans:'DM Sans', sans-serif;
+
+body {
+    background-color: $Cream;
+    font-family: $DM-Sans;
+    .header {
+        background-color: $Soft-red;
+        color: $Very-pale-orange;
+        &__title {
+            font-weight: 400;
+            color: $Cream;
+        }
+        &__value {
+            font-size: 1.55rem;
+            font-weight: 600;
+        }
+    }
+    .chart {
+        background-color: $Very-pale-orange;
+        &__chart {
+            width: 100%;
+            height: 150px;
+        }
+        &__title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: $Dark-brown;
+        }
+        &__day {
+            color: $Medium-brown;
+            font-size: .75rem;
+            font-weight: 500;
+        }
+        hr {
+            height: 2px;
+            border: 1px solid $Cream;
+        }
+        &__total-numbers {
+            grid-template-rows: 42% 42%;
+        }
+        &__total-text {
+            color: $Medium-brown;
+        }
+        &__total-value {
+            font-size: 1.9rem;
+            font-weight: 700;
+            color: $Dark-brown;
+        }
+        &__total-percentage {
+            color: $Dark-brown;
+            font-weight: 800;
+        }
+        &__last-month {
+            color: $Medium-brown;
+            font-size: .9rem;
+            font-weight: 500;
+        }
+    }
+
+}
+
+
