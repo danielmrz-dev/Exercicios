@@ -12,46 +12,96 @@ const plugin = {
     },
 };
 
-let labelsX = [];
+const api = fetch("data.json")
+    .then((res) => res.json())
+    .then((items) => {
+        let data = [];
+        let labels = [];
+        items.forEach((item) => {
+            data.push(item.amount);
+            labels.push(item.day);
+        });
+        const maxValue = Math.max(...data);
+        let backgroundColors = data.map((value) => {
+            if (value === maxValue) {
+                return "#76b5bc";
+            } else {
+                return "#ec775f";
+            }
+        });
 
-new Chart(ctx, {
+        new Chart(ctx, {
+            type: "bar",
+            data: {
+                labels: labels,
+                datasets: [
+                    {
+                        label: "",
+                        data: data,
+                        borderWidth: 0,
+                        borderRadius: 3,
+                        borderSkipped: false,
+                        backgroundColor: backgroundColors,
+                        hoverBackgroundColor: [
+                            "#f6b0a2",
+                            "#f6b0a2",
+                            "#a0dae0",
+                            "#f6b0a2",
+                            "#f6b0a2",
+                            "#f6b0a2",
+                            "#f6b0a2",
+                        ],
+                    },
+                ],
+            },
+            options: {
+                barPercentage: 0.95,
+                onHover: function (event, elements) {
+                    var chart = this;
+                    if (elements && elements.length) {
+                        chart.canvas.style.cursor = "pointer";
+                    } else {
+                        chart.canvas.style.cursor = "default";
+                    }
+                },
+                plugins: {
+                    customCanvasBackgroundColor: {
+                        color: "transparent",
+                    },
+                    legend: false,
+                    tooltip: {
+                        displayColors: false,
+                        callbacks: {
+                            title: function() {
+                                return ''; 
+                            },
+                            label: function(context) {
+                                let label = context.dataset.label || '';
+                                if (label) {
+                                    label += ': ';
+                                }
+                                label += '$' + context.formattedValue;
+                                return label;
+                            }
+                        }
+                    },
+                },
+                scales: {
+                    y: {
+                        display: false,
+                        beginAtZero: true,
+                        grid: {
+                            display: false,
+                        },
+                    },
+                    x: {
+                        grid: {
+                            display: false,
+                        },
+                    },
+                },
 
-    type: "bar",
-    data: {
-        labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange", "Teste"],
-        datasets: [
-            {
-                label: "",
-                data: [12, 1, 3, 5, 2, 3, 7],
-                borderWidth: 0,
-                borderRadius: 3,
-                borderSkipped: false,
-                backgroundColor: '#ec775f',
             },
-        ],
-    },
-    options: {
-        plugins: {
-            customCanvasBackgroundColor: {
-                color: "transparent",
-            },
-            legend: false,
-        },
-        scales: {
-            y: {
-                display: false,
-                beginAtZero: true,
-                grid: {
-                    display: false,
-                },
-            },
-            x: {
-                display: false,
-                grid: {
-                    display: false,
-                },
-            },
-        },
-    },
-    plugins: [plugin],
-});
+            plugins: [plugin],
+        });
+    });
