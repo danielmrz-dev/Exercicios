@@ -69,7 +69,7 @@ body .chart__last-month {
     font-weight: 600;
   }
   body .chart {
-    max-width: 550px;
+    min-width: 550px;
     background-color: #fffaf5;
   }
   body .chart__title {

@@ -80,7 +80,7 @@ body {
             }
         }
         .chart {
-            max-width: 550px;
+            min-width: 550px;
             background-color: $Very-pale-orange;
             &__title {
                 font-size: 1.5rem;
