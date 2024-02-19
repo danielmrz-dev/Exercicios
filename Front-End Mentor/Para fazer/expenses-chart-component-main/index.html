@@ -14,19 +14,19 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <title>Frontend Mentor | Expenses chart component</title>
 </head>
-<body class="min-h-screen flex flex-col justify-center m-4 gap-4">
+<body class="min-h-screen flex flex-col justify-center m-4 gap-4 sm:gap-6">
 
-  <header class="header flex justify-between items-center rounded-lg p-5">
+  <header class="header flex justify-between items-center rounded-lg p-5 sm:rounded-3xl sm:py-6 sm:px-8 sm:min-w-[540px]">
     <div class="header__text">
       <h1 class="header__title">My balance</h1>
       <strong class="header__value">$921.48</strong>
     </div>
-    <img src="images/logo.svg" alt="logo" class="w-[60px]">
+    <img src="images/logo.svg" alt="logo" class="w-[60px] sm: w-[75px]">
   </header>
 
-  <main class="chart p-5 rounded-lg">
+  <main class="chart p-5 rounded-lg sm:rounded-3xl sm:px-9 sm:py-7 sm:min-w-[540px]">
     <h2 class="chart__title">Spending - Last 7 days</h2>
-    <canvas class="chart__chart mt-5" width="606" height="400" style="display: block; box-sizing: border-box; height: 151px; width: 303px; cursor: pointer;">
+    <canvas class="chart__chart mt-5 sm:mt-0 sm:pt-9" height="150">
 
     </canvas>
 

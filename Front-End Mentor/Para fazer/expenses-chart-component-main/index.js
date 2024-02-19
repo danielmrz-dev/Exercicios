@@ -72,18 +72,21 @@ const api = fetch("data.json")
                     tooltip: {
                         displayColors: false,
                         callbacks: {
-                            title: function() {
-                                return ''; 
+                            title: function () {
+                                return "";
                             },
-                            label: function(context) {
-                                let label = context.dataset.label || '';
+                            label: function (context) {
+                                let label = context.dataset.label || "";
                                 if (label) {
-                                    label += ': ';
+                                    label += ": ";
                                 }
-                                label += '$' + context.formattedValue;
+                                label += "$" + context.formattedValue;
                                 return label;
-                            }
-                        }
+                            },
+                        },
+                        bodyFont: {
+                            size: 20,
+                        },
                     },
                 },
                 scales: {
@@ -98,9 +101,15 @@ const api = fetch("data.json")
                         grid: {
                             display: false,
                         },
+                        ticks: {
+                            font: {
+                                family: "DM Sans",
+                                size: 14, 
+                                bodyColor: "#fff",
+                            },
+                        },
                     },
                 },
-
             },
             plugins: [plugin],
         });
