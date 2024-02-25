@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --Desaturated-Dark-Cyan: #5ba4a4;
+    --Light-Grayish-Cyan-Bg: #effafa;
+    --Light-Grayish-Cyan: #eef6f6;
+    --Dark-Grayish-Cyan: #7b8e8e;
+    --Very-Dark-Grayish-Cyan: #2c3a3a;
+
+    --League-Spartan: 'League Spartan', sans-serif;
+}
+
+body {
+    font-family: var(--League-Spartan);
+    background: url('../images/bg-header-mobile.svg') no-repeat;
+    background-size: contain;
+}
