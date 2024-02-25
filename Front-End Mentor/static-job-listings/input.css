@@ -1,0 +1,41 @@
+:root {
+    --Desaturated-Dark-Cyan: #5ba4a4;
+    --Light-Grayish-Cyan-Bg: #effafa;
+    --Light-Grayish-Cyan: #eef6f6;
+    --Dark-Grayish-Cyan: #7b8e8e;
+    --Very-Dark-Grayish-Cyan: #2c3a3a;
+    --White: #fff;
+
+    --League-Spartan: 'League Spartan', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--League-Spartan);
+    background: var(--Light-Grayish-Cyan) url('../images/bg-header-mobile.svg') no-repeat;
+    background-size: contain;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+}
+
+.jobs {
+    margin: 0 1rem;
+}
+
+.job {
+    background-color: var(--White);
+    padding: 1.75rem 1.5rem;
+}
+
+
+.attribution {
+    display: none;
+}
