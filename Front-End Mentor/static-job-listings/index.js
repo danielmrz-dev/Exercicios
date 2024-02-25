@@ -1,4 +1,6 @@
 const jobsContainer = document.querySelector('.jobs');
+const filterElement = document.querySelector('.filter-element');
+const jobTags = document.querySelectorAll('.job__tag');
 const jobs = [];
 
 trazerApi();
@@ -50,7 +52,4 @@ function mostrarJobs(jobsList) {
         </div>
         `
         });
-    }   
-
-    
-    
+}
