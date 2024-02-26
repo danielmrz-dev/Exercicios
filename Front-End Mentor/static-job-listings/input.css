@@ -34,7 +34,9 @@ body {
 .filter {
     background-color: var(--White);
     filter: drop-shadow(5px 5px 10px var(--Dark-Grayish-Cyan-Shadow));
+    visibility: hidden;
     display: flex; /* flex */
+    flex-direction: row-reverse;
     align-items: center;
     gap: .5rem;
     flex-wrap: wrap;
@@ -44,6 +46,10 @@ body {
     padding: 1rem;
     border-radius: 5px;
     z-index: 2;
+}
+
+.active-filter {
+    visibility: visible;
 }
 
 .filtered-tag {
