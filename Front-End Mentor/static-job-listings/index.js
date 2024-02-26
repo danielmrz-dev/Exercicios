@@ -1,7 +1,9 @@
 const jobsContainer = document.querySelector(".jobs");
 const filterElement = document.querySelector(".filter-element");
 const filterContainer = document.querySelector(".filter");
-const jobs = [];
+const filterRemoveIcon = document.querySelectorAll(".filter-remove-icon");
+const filterClear = document.querySelector(".filter__clear");
+let jobs = [];
 
 trazerApi();
 
@@ -9,6 +11,7 @@ async function trazerApi() {
     const api = await fetch("data.json");
     const DadosDaApi = await api.json();
     mostrarJobs(DadosDaApi);
+    jobs = DadosDaApi;
     filtrar();
 }
 
@@ -67,21 +70,22 @@ function mostrarJobs(jobsList) {
     });
 }
 
+const filteredTags = [];
 function filtrar() {
     const jobTags = document.querySelectorAll(".job__tag");
-    jobTags.forEach(tag => {
-        tag.addEventListener('click', () => {
-            filterContainer.classList.add('active-filter');
+    jobTags.forEach((tag) => {
+        tag.addEventListener("click", () => {
             const tagText = tag.innerText;
-            if (condition) {
-                
+            if (!filteredTags.includes(tagText)) {
+                filteredTags.push(tagText);
+                filterContainer.classList.add("active-filter");
+                filterContainer.innerHTML += `
+                <span class="filtered-tag">
+                    <p class="filtered-tag-text">${tagText}</p> 
+                    <img src="images/icon-remove.svg" alt="icon-remove" class="filter-remove-icon">
+                </span>
+                `;
             }
-            filterContainer.innerHTML += `
-            <span class="filtered-tag">
-                <p class="filtered-tag-text">${tag.innerText}</p> 
-                <img src="images/icon-remove.svg" alt="icon-remove" class="filter-remove-icon">
-            </span>
-            `
-        })
-    })
+        });
+    });
 }
