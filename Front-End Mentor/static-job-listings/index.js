@@ -3,6 +3,8 @@ const filterElement = document.querySelector(".filter-element");
 const filterContainer = document.querySelector(".filter");
 const filterRemoveIcon = document.querySelectorAll(".filter-remove-icon");
 const filterClear = document.querySelector(".filter__clear");
+const elementTag = document.querySelector(".filtered-tag");
+
 let jobs = [];
 
 trazerApi();
@@ -24,7 +26,7 @@ function mostrarJobs(jobsList) {
             job.featured == true
                 ? '<span class="job__featured">Featured</span>'
                 : "";
-        let border = job.featured == true ? ".active-border" : "";
+        let border = job.featured == true ? "active-border" : "";
 
         let languagesTags = job.languages
             .map(
@@ -81,11 +83,34 @@ function filtrar() {
                 filterContainer.classList.add("active-filter");
                 filterContainer.innerHTML += `
                 <span class="filtered-tag">
-                    <p class="filtered-tag-text">${tagText}</p> 
-                    <img src="images/icon-remove.svg" alt="icon-remove" class="filter-remove-icon">
+                <p class="filtered-tag-text">${tagText}</p>
+                <img src="images/icon-remove.svg" alt="icon-remove" class="filter-remove-icon">
                 </span>
                 `;
             }
+            const filteredJobs = jobs.filter((job) => {
+                return filteredTags.every((tag) => {
+                    return (
+                        job.role === tag ||
+                        job.level === tag ||
+                        job.languages.includes(tag) ||
+                        job.tools.includes(tag)
+                    );
+                });
+            });
+            mostrarJobs(filteredJobs);
         });
     });
 }
+
+filterContainer.addEventListener("click", (event) => {
+    if (event.target.classList.contains("filter-remove-icon")) {
+        const removedTag = event.target.previousElementSibling.innerText;
+        const tagIndex = filteredTags.indexOf(removedTag);
+        if (tagIndex !== -1) {
+            filteredTags.splice(tagIndex, 1);
+            mostrarJobsFiltrados();
+            event.target.parentElement.remove(); // Remover o elemento pai (a tag filtrada)
+        }
+    }
+});
