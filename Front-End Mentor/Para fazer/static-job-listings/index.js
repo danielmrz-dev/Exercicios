@@ -74,6 +74,7 @@ function mostrarJobs(jobsList) {
 
 const filteredTags = [];
 function filtrar() {
+    let allFilteredJobs = [];
     const jobTags = document.querySelectorAll(".job__tag");
     jobTags.forEach((tag) => {
         tag.addEventListener("click", () => {
@@ -88,17 +89,19 @@ function filtrar() {
                 </span>
                 `;
             }
-            const filteredJobs = jobs.filter((job) => {
-                return filteredTags.every((tag) => {
-                    return (
-                        job.role === tag ||
-                        job.level === tag ||
-                        job.languages.includes(tag) ||
-                        job.tools.includes(tag)
-                    );
-                });
-            });
-            mostrarJobs(filteredJobs);
+            // const filteredJobs = jobs.filter((job) => {
+            //     return filteredTags.every((tag) => {
+            //         return (
+            //             job.role === tag ||
+            //             job.level === tag ||
+            //             job.languages.includes(tag) ||
+            //             job.tools.includes(tag)
+            //         );
+            //     });
+            // });
+            // allFilteredJobs.push(filteredJobs);
+            // console.log(allFilteredJobs);
+            // allFilteredJobs.forEach(job => mostrarJobs(job))
         });
     });
 }
