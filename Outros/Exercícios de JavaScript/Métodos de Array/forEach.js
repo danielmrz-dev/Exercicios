@@ -71,5 +71,7 @@ pessoas.forEach((pessoa) => {
 
 console.log(pessoas)
 
+
+
 // ForEach aplica uma instrução ou um conjunto de instruções a todos os itens do array
 
