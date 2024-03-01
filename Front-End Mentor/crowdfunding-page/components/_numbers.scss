@@ -1,0 +1,38 @@
+@use 'variables';
+
+.numbers {
+    background-color: variables.$White;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 2.5rem 1.5rem;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px variables.$Shadow;
+    &__backed, &__total-backers, &__days-left {
+        font-size: 2rem;
+        font-weight: 700;
+    }
+    &__text {
+        font-size: .85rem;
+        font-weight: 400;
+        color: variables.$Dark-gray;
+    }
+    hr {
+        width: 4.5rem;
+        opacity: .3;
+    }
+    &__progress-bar {
+        margin-top: 1rem;
+        background-color: variables.$Shadow;
+        height: 12px;
+        width: 100%;
+        border-radius: 10px;
+        .green-part {
+            background-color: variables.$Moderate-cyan;
+            height: 12px;
+            width: 75%;
+            border-radius: 10px;
+        }
+    }
+}

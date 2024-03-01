@@ -1,0 +1,48 @@
+@use 'variables';
+
+.mastercratf {
+    background-color: variables.$White;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 3.25rem 1rem 2.5rem;
+    position: relative;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px variables.$Shadow;
+    &__logo {
+        position: absolute;
+        top: -30px;
+    }
+    &__title {
+        font-size: 1.25rem;
+        font-weight: 800;
+        line-height: 23px;
+    }
+    &__paragraph {
+        color: variables.$Dark-gray;
+        font-size: .9rem;
+        opacity: .8;
+        font-weight: 500;
+        line-height: 24px;
+    }
+    &__buttons {
+        margin-top: .5rem;
+        display: flex;
+        gap: .5rem;
+    }
+    &__button, .mastercraft__bookmark {
+        border: none;
+    }
+    &__button {
+        color: variables.$White;
+        background-color: variables.$Moderate-cyan;
+        font-family: variables.$Commissioner;
+        font-weight: 600;
+        font-size: 1rem;
+        padding: 0 2.5rem;
+        border-radius: 30px;
+    }    
+}

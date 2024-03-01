@@ -1,0 +1,103 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main {
+  margin: 12.2rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.mastercratf {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 3.25rem 1rem 2.5rem;
+  position: relative;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.0431372549);
+}
+.mastercratf__logo {
+  position: absolute;
+  top: -30px;
+}
+.mastercratf__title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  line-height: 23px;
+}
+.mastercratf__paragraph {
+  color: #7a7a7a;
+  font-size: 0.9rem;
+  opacity: 0.8;
+  font-weight: 500;
+  line-height: 24px;
+}
+.mastercratf__buttons {
+  margin-top: 0.5rem;
+  display: flex;
+  gap: 0.5rem;
+}
+.mastercratf__button, .mastercratf .mastercraft__bookmark {
+  border: none;
+}
+.mastercratf__button {
+  color: #fff;
+  background-color: #3cb4ac;
+  font-family: "Commissioner", sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0 2.5rem;
+  border-radius: 30px;
+}
+
+.numbers {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 2.5rem 1.5rem;
+  border-radius: 10px;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.0431372549);
+}
+.numbers__backed, .numbers__total-backers, .numbers__days-left {
+  font-size: 2rem;
+  font-weight: 700;
+}
+.numbers__text {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: #7a7a7a;
+}
+.numbers hr {
+  width: 4.5rem;
+  opacity: 0.3;
+}
+.numbers__progress-bar {
+  margin-top: 1rem;
+  background-color: rgba(0, 0, 0, 0.0431372549);
+  height: 12px;
+  width: 100%;
+  border-radius: 10px;
+}
+.numbers__progress-bar .green-part {
+  background-color: #3cb4ac;
+  height: 12px;
+  width: 75%;
+  border-radius: 10px;
+}
+
+body {
+  font-family: "Commissioner", sans-serif;
+  background: #FAFAFA url("images/image-hero-mobile.jpg") top center no-repeat;
+  background-size: contain;
+  margin: 2rem 1.5rem;
+}/*# sourceMappingURL=style.css.map */
