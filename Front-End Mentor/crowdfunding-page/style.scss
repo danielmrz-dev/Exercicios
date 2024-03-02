@@ -6,11 +6,12 @@
 @use 'components/mastercraft';
 @use 'components/numbers';
 @use 'components/about';
+@use 'components/modal';
 
 body {
     font-family: variables.$Commissioner;
     background: variables.$OffWhite-Bg url('images/image-hero-mobile.jpg') top center no-repeat;
     background-size: contain;
-    margin: 2rem 1.5rem;
+    position: relative;
 }
 
