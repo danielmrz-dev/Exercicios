@@ -177,8 +177,7 @@
   height: 103%;
   background-color: rgba(0, 0, 0, 0.266);
   display: flex;
-  justify-content: center;
-  align-items: center;
+  padding: 8rem 0;
 }
 .modal__header {
   display: flex;
@@ -186,11 +185,14 @@
   align-items: center;
 }
 .modal__default {
+  height: -moz-fit-content;
+  height: fit-content;
   background-color: #fff;
   margin: 0rem 1.5rem;
   padding: 2rem 1.5rem;
   border-radius: 8px;
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 1.5rem;
 }
 .modal__title {
@@ -215,6 +217,9 @@
 .modal__pledges label {
   font-size: 0.85rem;
   font-weight: 800;
+}
+.modal__pledges:nth-child(6) {
+  opacity: 0.3;
 }
 .modal__header-grid-first, .modal__header-grid {
   display: grid;
