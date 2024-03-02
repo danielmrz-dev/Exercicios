@@ -95,6 +95,81 @@
   border-radius: 10px;
 }
 
+.about {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 2.5rem 1.5rem;
+  border-radius: 10px;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.0431372549);
+}
+.about__title {
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+.about__paragraph {
+  font-size: 0.9rem;
+  font-weight: 500;
+  opacity: 0.8;
+  color: #7a7a7a;
+  line-height: 24px;
+}
+.about__editions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  border: 2px solid rgba(0, 0, 0, 0.0862745098);
+  border-radius: 10px;
+  padding: 1.5rem;
+}
+.about__editions:last-child {
+  opacity: 0.3;
+}
+.about__editions-title {
+  font-size: 0.85rem;
+  font-weight: 800;
+}
+.about__editions-pledge {
+  color: #3cb4ac;
+  font-size: 0.87rem;
+  font-weight: 600;
+}
+.about__editions-paragraph {
+  padding: 0.75rem 0;
+  font-size: 0.9rem;
+  font-weight: 500;
+  opacity: 0.8;
+  color: #7a7a7a;
+  line-height: 24px;
+}
+.about__editions-left {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #7a7a7a;
+  margin: 0.5rem 0 0.8rem;
+}
+.about__editions-left strong {
+  color: #000000;
+  font-size: 2rem;
+  font-weight: 800;
+}
+.about__editions-button {
+  color: #fff;
+  background-color: #3cb4ac;
+  font-family: "Commissioner", sans-serif;
+  border: none;
+  font-weight: 600;
+  font-size: 0.85rem;
+  padding: 1rem;
+  border-radius: 30px;
+  width: 70%;
+}
+.about .out-of-stock {
+  background-color: #7a7a7a;
+}
+
 body {
   font-family: "Commissioner", sans-serif;
   background: #FAFAFA url("images/image-hero-mobile.jpg") top center no-repeat;
