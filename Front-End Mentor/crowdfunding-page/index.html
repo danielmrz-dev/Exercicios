@@ -136,9 +136,13 @@
         </p>
         <div class="modal__pledges-left"><strong>101</strong> left</div>
         <!-- Selected pledge start -->
-        Enter your pledge
-        $25
-        Continue
+        <div class="modal__enter-pledge">
+          <p class="modal__enter-pledge-text">Enter your pledge</p>
+          <div class="modal__pledge-inputs">
+            <input type="number" name="pledge-value" id="pledge-value-input" class="modal__pledge-value-input" min="25" value="25">
+            <button class="modal__confirm-pledge">Continue</button>
+          </div>
+        </div>
       </div>
       <!-- Selected pledge end -->
       <div class="modal__pledges">

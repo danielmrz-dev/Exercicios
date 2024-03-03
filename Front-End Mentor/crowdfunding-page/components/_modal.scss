@@ -88,5 +88,42 @@
     &__pledges-text {
         @extend .modal__paragraph;
     }
+    &__pledges-left {
+        color: variables.$Dark-gray;
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+        font-size: .9rem;
+        strong {
+            color: variables.$Black;
+            font-size: 1.15rem;
+            font-weight: 700;
+        }
+    }
+    &__enter-pledge {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        border-top: 1px solid variables.$Dark-gray;
+    }
+    &__enter-pledge-text {
+        grid-area: 1 / 1 / 2 / 3;
+        justify-self: center;
+        @extend .modal__paragraph;
+    }
+    &__pledge-inputs {
+        display: grid;
+        grid-template-columns: 40% 60%;
+        gap: .5rem;
+    }
+    &__pledge-value-input {
+        padding: 1rem;
+        border-radius: 30px;
+    }
+    &__confirm-pledge {
+        padding: 1rem 0;
+        border-radius: 30px;
+        border: none;
+    }
 
 }

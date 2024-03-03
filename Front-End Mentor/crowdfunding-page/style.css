@@ -199,7 +199,7 @@
   font-size: 1.15rem;
   font-weight: 800;
 }
-.modal__paragraph, .modal__pledges-text {
+.modal__paragraph, .modal__enter-pledge-text, .modal__pledges-text {
   font-size: 0.9rem;
   font-weight: 500;
   opacity: 0.8;
@@ -255,6 +255,43 @@
   font-size: 0.85rem;
   font-weight: 700;
 }
+.modal__pledges-left {
+  color: #7a7a7a;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
+.modal__pledges-left strong {
+  color: #000000;
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+.modal__enter-pledge {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  border-top: 1px solid #7a7a7a;
+}
+.modal__enter-pledge-text {
+  grid-area: 1/1/2/3;
+  justify-self: center;
+}
+.modal__pledge-inputs {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  gap: 0.5rem;
+}
+.modal__pledge-value-input {
+  padding: 1rem;
+  border-radius: 30px;
+}
+.modal__confirm-pledge {
+  padding: 1rem 0;
+  border-radius: 30px;
+  border: none;
+}
+
 body {
   font-family: "Commissioner", sans-serif;
   background: #FAFAFA url("images/image-hero-mobile.jpg") top center no-repeat;
