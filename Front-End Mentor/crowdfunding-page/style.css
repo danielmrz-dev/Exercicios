@@ -38,6 +38,34 @@
   border: none;
 }
 
+@media screen and (min-width: 768px) {
+  .header {
+    margin: 2.5rem auto;
+    display: flex;
+    max-width: 80%;
+  }
+  .header label {
+    display: none;
+  }
+  .header__menu {
+    position: static;
+    background-color: transparent;
+    display: flex;
+    width: -moz-fit-content;
+    width: fit-content;
+    box-shadow: none;
+  }
+  .header__menu hr {
+    display: none;
+  }
+  .header__menu-link {
+    border-bottom: none;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #fff;
+    padding: 1rem;
+  }
+}
 .main {
   margin: 12rem 1.5rem 2rem;
   display: flex;
@@ -45,6 +73,12 @@
   gap: 2rem;
 }
 
+@media screen and (min-width: 768px) {
+  .main {
+    max-width: 700px;
+    margin: 14rem auto 2rem;
+  }
+}
 .mastercratf {
   background-color: #fff;
   display: flex;
@@ -91,7 +125,36 @@
   padding: 0 2.5rem;
   border-radius: 30px;
 }
+.mastercratf__bookmark-text {
+  display: none;
+}
 
+@media screen and (min-width: 768px) {
+  .mastercratf br {
+    display: none;
+  }
+  .mastercratf__title {
+    font-size: 1.75rem;
+    font-weight: 700;
+  }
+  .mastercratf__paragraph {
+    font-size: 1rem;
+  }
+  .mastercratf__buttons {
+    margin-top: 0.5rem;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+  }
+  .mastercratf__buttons div {
+    position: relative;
+  }
+  .mastercratf__bookmark-text {
+    display: block;
+    position: absolute;
+    top: 0;
+  }
+}
 .numbers {
   background-color: #fff;
   display: flex;
@@ -397,4 +460,11 @@ body {
   background: #FAFAFA url("images/image-hero-mobile.jpg") top center no-repeat;
   background-size: contain;
   position: relative;
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    background: #FAFAFA url("images/image-hero-desktop.jpg") top center no-repeat;
+    background-size: contain;
+  }
 }/*# sourceMappingURL=style.css.map */

@@ -42,5 +42,32 @@
             border: none;
         }
     }
+}
 
+@media screen and (min-width: 768px) {
+    .header {
+        margin: 2.5rem auto;
+        display: flex;
+        max-width: 80%;
+        label {
+            display: none;
+        }
+        &__menu {
+            position: static;
+            background-color: transparent;
+            display: flex;
+            width: fit-content;
+            box-shadow: none;
+            hr {
+                display: none;
+            }
+        }
+        &__menu-link {
+            border-bottom: none;
+            font-size: 1rem;
+            font-weight: 500;
+            color: variables.$White;
+            padding: 1rem;
+        }
+    }
 }

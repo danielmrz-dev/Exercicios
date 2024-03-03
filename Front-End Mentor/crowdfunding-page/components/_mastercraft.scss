@@ -45,4 +45,36 @@
         padding: 0 2.5rem;
         border-radius: 30px;
     }    
+    &__bookmark-text {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .mastercratf {
+        br {
+            display: none;
+        }
+        &__title {
+            font-size: 1.75rem;
+            font-weight: 700;
+        }
+        &__paragraph {
+            font-size: 1rem;
+        }
+        &__buttons {
+            margin-top: .5rem;
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            div {
+                position: relative;
+            }
+        }
+        &__bookmark-text {
+            display: block;
+            position: absolute;
+            top: 0;
+        }            
+    }
 }
