@@ -16,10 +16,17 @@
 <body>
   <header class="header">
     <img src="images/logo.svg" alt="logo">
-    <img src="images/icon-hamburger.svg">
-    <!-- About
-    Discover
-    Get Started -->
+    <label for="menu">
+      <img src="images/icon-hamburger.svg">
+    </label>
+    <input type="checkbox" name="menu" id="menu" class="header__menu-checkbox">
+    <nav class="header__menu">
+      <a href="#" class="header__menu-link">About</a>
+      <hr>
+      <a href="#" class="header__menu-link">Discover</a>
+      <hr>
+      <a href="#" class="header__menu-link">Get Started</a>
+    </nav>
   </header>
   <main class="main">
 
@@ -135,11 +142,16 @@
           you’ll be added to a special Backer member list.
         </p>
         <div class="modal__pledges-left"><strong>101</strong> left</div>
+
         <!-- Selected pledge start -->
         <div class="modal__enter-pledge">
+          <hr>
           <p class="modal__enter-pledge-text">Enter your pledge</p>
           <div class="modal__pledge-inputs">
-            <input type="number" name="pledge-value" id="pledge-value-input" class="modal__pledge-value-input" min="25" value="25">
+            <div>
+              <span class="modal__pledge-inputs-money-icon">$</span>
+              <input type="number" name="pledge-value" id="pledge-value-input" class="modal__pledge-value-input" min="25" value="25" maxlength="3">
+            </div>
             <button class="modal__confirm-pledge">Continue</button>
           </div>
         </div>
@@ -157,14 +169,22 @@
         </p>
         <div class="modal__pledges-left"><strong>64</strong> left</div>
         <!-- Selected pledge start -->
-        Enter your pledge
-        $75
-        Continue
+        <div class="modal__enter-pledge">
+          <hr>
+          <p class="modal__enter-pledge-text">Enter your pledge</p>
+          <div class="modal__pledge-inputs">
+            <div>
+              <span class="modal__pledge-inputs-money-icon">$</span>
+              <input type="number" name="pledge-value" id="pledge-value-input" class="modal__pledge-value-input" min="75" value="75" maxlength="3">
+            </div>
+            <button class="modal__confirm-pledge">Continue</button>
+          </div>
+        </div>
       </div>
       <!-- Selected pledge end -->
       <div class="modal__pledges">
         <div class="modal__header-grid">
-          <input type="radio" name="pledge-type" id="mahogany">
+          <input type="radio" name="pledge-type" id="mahogany" disabled>
           <label for="mahogany">Mahogany Special Edition</label>
           <span class="modal__pledge-value">Pledge $200 or more</span>
         </div>
@@ -177,21 +197,17 @@
     </section>
   </div>
 
-  <!-- Selected pledge  start -->
-  <!-- Enter your pledge
-  $200
-  Continue -->
-  <!-- Selected pledge end -->
+  <div class="ty">
+    <section class="thank-you">
+      <img src="images/icon-check.svg" alt="">
+      <h3 class="thank-you__title">Thanks for your support!</h3>
+      <p class="thank-you__paragraph">
+        Your pledge brings us one step closer to sharing Mastercraft Bamboo Monitor Riser worldwide. You will get
+        an email once our campaign is completed.
+      </p>
+      <button class="thank-you__button">Got it!</button>
+    </section>    
+  </div>
 
-  <!-- Selection modal end -->
-
-  <!-- Success modal start -->
-
-  <!-- Thanks for your support!
-  Your pledge brings us one step closer to sharing Mastercraft Bamboo Monitor Riser worldwide. You will get
-  an email once our campaign is completed.
-  Got it! -->
-
-  <!-- Success modal end -->
 </body>
 </html>

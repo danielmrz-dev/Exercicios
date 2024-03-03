@@ -7,6 +7,7 @@
 @use 'components/numbers';
 @use 'components/about';
 @use 'components/modal';
+@use 'components/modal-completed';
 
 body {
     font-family: variables.$Commissioner;

@@ -1,0 +1,41 @@
+@use 'variables';
+@use 'modal';
+
+.ty {
+    position: absolute;
+    top: -35px;
+    height: 103%;
+    background-color: rgba(0, 0, 0, 0.266);
+    display: none; // flex
+    padding: 8rem 0;
+    .thank-you {
+        height: fit-content;
+        background-color: variables.$White;
+        margin: 1rem 1.5rem;
+        padding: 2rem 1.5rem;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 1.5rem;
+        &__title {
+            font-size: 1.15rem;
+            font-weight: 800;
+        }
+        &__paragraph {
+            text-align: center;
+            @extend .modal__paragraph;
+            line-height: 24px;
+        }
+        &__button {
+            padding: 1rem 2.25rem;
+            margin: .5rem 0;
+            border-radius: 30px;
+            border: none;
+            background-color: variables.$Moderate-cyan;
+            color: variables.$White;
+            font-weight: 700;
+            font-family: variables.$Commissioner;
+        }
+    }
+}

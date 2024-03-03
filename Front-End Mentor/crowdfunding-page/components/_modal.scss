@@ -5,13 +5,15 @@
     top: -35px;
     height: 103%;
     background-color: rgba(0, 0, 0, 0.266);
-    display: flex; // flex
+    display: none; // flex
     padding: 8rem 0;
+
     &__header {
         display: flex;
         justify-content: space-between;
         align-items: center;
     }
+
     &__default {
         height: fit-content;
         background-color: variables.$White;
@@ -20,12 +22,14 @@
         border-radius: 8px;
         display: flex;
         flex-direction: column;
-        gap: 1.5rem;        
+        gap: 1.5rem;
     }
+
     &__title {
         font-size: 1.15rem;
         font-weight: 800;
     }
+
     &__paragraph {
         font-size: .9rem;
         font-weight: 500;
@@ -33,6 +37,7 @@
         color: variables.$Dark-gray;
         line-height: 22px;
     }
+
     &__pledges {
         border: 2px solid variables.$Border;
         border-radius: 8px;
@@ -40,90 +45,140 @@
         display: flex;
         flex-direction: column;
         gap: 1.75rem;
+
         label {
             font-size: .85rem;
             font-weight: 800;
         }
+
         &:nth-child(6) {
             opacity: .3;
         }
     }
+
+    .border-active {
+        border: 2px solid variables.$Moderate-cyan;
+    }
+
     &__header-grid-first {
         display: grid;
         align-items: center;
         grid-template-columns: auto 1fr;
         gap: .5rem .75rem;
+
         input {
             grid-area: 1 / 1 / 2 / 2;
             -webkit-appearance: none;
             -moz-appearance: none;
             appearance: none;
-            width: 22px; 
+            width: 22px;
             height: 22px;
             border-radius: 50%;
             outline: none;
             border: 1px solid variables.$Border-two;
             opacity: 1;
             cursor: pointer;
+
             &:checked {
                 background-color: variables.$Moderate-cyan;
                 box-shadow: inset 0px 0px 0px 4px white;
             }
         }
+
         span {
-            grid-area: 2 / 2;            
+            grid-area: 2 / 2;
         }
     }
+
     &__header-grid {
         @extend .modal__header-grid-first;
+
         input {
             grid-area: 1 / 1 / 3 / 2;
         }
     }
+
     &__pledge-value {
         color: variables.$Moderate-cyan;
         font-size: .85rem;
         font-weight: 700;
     }
+
     &__pledges-text {
         @extend .modal__paragraph;
     }
+
     &__pledges-left {
         color: variables.$Dark-gray;
         display: flex;
         align-items: center;
         gap: .5rem;
         font-size: .9rem;
+
         strong {
             color: variables.$Black;
             font-size: 1.15rem;
             font-weight: 700;
         }
     }
+
     &__enter-pledge {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
+        hr {
+            width: calc(100% + 3rem);
+            transform: translateX(-1.52rem);
+            border-color: variables.$Dark-gray;
+            opacity: .2;
+            margin-top: 0;
+        }
+
+        display: none; // flex
+        flex-direction: column;
+        align-items: center;
         gap: 1rem;
-        border-top: 1px solid variables.$Dark-gray;
     }
+
     &__enter-pledge-text {
-        grid-area: 1 / 1 / 2 / 3;
-        justify-self: center;
         @extend .modal__paragraph;
     }
+
     &__pledge-inputs {
-        display: grid;
-        grid-template-columns: 40% 60%;
-        gap: .5rem;
+        display: flex;
+        gap: 1rem;
+        justify-content: space-between;
+
+        div {
+            width: fit-content;
+            position: relative;
+
+            span {
+                position: absolute;
+                top: 16px;
+                left: 20px;
+                color: variables.$Dark-gray;
+                font-weight: 700;
+                opacity: .5;
+            }
+        }
     }
+
     &__pledge-value-input {
-        padding: 1rem;
-        border-radius: 30px;
-    }
-    &__confirm-pledge {
+        font-family: variables.$Commissioner;
+        width: 100%;
         padding: 1rem 0;
+        text-align: center;
+        border-radius: 30px;
+        border: 1px solid variables.$Border;
+        font-weight: 700;
+    }
+
+    &__confirm-pledge {
+        padding: 1rem 1.8rem;
         border-radius: 30px;
         border: none;
+        background-color: variables.$Moderate-cyan;
+        color: variables.$White;
+        font-weight: 700;
+        font-family: variables.$Commissioner;
     }
 
 }
