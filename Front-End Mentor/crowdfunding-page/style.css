@@ -75,7 +75,7 @@
 
 @media screen and (min-width: 768px) {
   .main {
-    max-width: 700px;
+    max-width: 730px;
     margin: 14rem auto 2rem;
   }
 }
@@ -130,6 +130,10 @@
 }
 
 @media screen and (min-width: 768px) {
+  .mastercratf {
+    padding: 3.75rem 1rem 2.5rem;
+    gap: 1.35rem;
+  }
   .mastercratf br {
     display: none;
   }
@@ -141,20 +145,23 @@
     font-size: 1rem;
   }
   .mastercratf__buttons {
-    margin-top: 0.5rem;
+    margin-top: 0.75rem;
     display: flex;
-    width: 100%;
+    justify-content: space-between;
+    width: 90%;
   }
   .mastercratf__buttons div {
-    position: relative;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    border-radius: 30px;
+    background-color: rgba(0, 0, 0, 0.0862745098);
   }
   .mastercratf__bookmark-text {
-    display: block;
-    position: absolute;
-    top: 5px;
-    left: 50px;
-    background-color: #7a7a7a;
-    padding: 1rem;
+    display: inline-block;
+    padding: 1rem 1.5rem 1.2rem 0.75rem;
+    font-weight: 700;
+    color: #7a7a7a;
   }
 }
 .numbers {

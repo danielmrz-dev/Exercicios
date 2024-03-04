@@ -52,6 +52,8 @@
 
 @media screen and (min-width: 768px) {
     .mastercratf {
+        padding: 3.75rem 1rem 2.5rem;
+        gap: 1.35rem;
         br {
             display: none;
         }
@@ -63,21 +65,24 @@
             font-size: 1rem;
         }
         &__buttons {
-            margin-top: .5rem;
+            margin-top: .75rem;
             display: flex;
-            width: 100%;
+            justify-content: space-between;
+            width: 90%;
             
             div {
-                position: relative;
+                display: flex;
+                flex-direction: row-reverse;
+                align-items: center;
+                border-radius: 30px;
+                background-color: variables.$Border;
             }
         }
         &__bookmark-text {
-            display: block;
-            position: absolute;
-            top: 5px;
-            left: 50px;
-            background-color: variables.$Dark-gray;
-            padding: 1rem;
+            display: inline-block;
+            padding: 1rem 1.5rem 1.2rem .75rem;
+            font-weight: 700;
+            color: variables.$Dark-gray;
         }            
     }
 }
