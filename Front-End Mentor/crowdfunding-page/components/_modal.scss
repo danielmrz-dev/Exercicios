@@ -169,6 +169,11 @@
         border-radius: 30px;
         border: 1px solid variables.$Border;
         font-weight: 700;
+        &::-webkit-inner-spin-button,
+        &::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;            
+        }
     }
 
     &__confirm-pledge {
@@ -188,14 +193,18 @@
         top: -45px;
         height: 103%;
         width: 100%;
-        display: flex; // flex
+        display: none; // flex
         justify-content: center;
         padding: 11rem 0;
+        z-index: 2;
         
         &__header {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            img {
+                width: 20px;
+            }
         }
         &__default {
             max-width: 640px;
@@ -212,7 +221,7 @@
         }
     
         &__pledges {
-            padding: 2rem 1.5rem;
+            padding: 2rem 1.5rem 1.5rem;
             display: grid;
             grid-template-columns: 45px 1fr 1fr 1fr;
             gap: 1rem 0;    
@@ -229,6 +238,7 @@
             font-size: 1rem;
         }    
         &__pledges-text {
+            font-size: .95rem;
             grid-area: 2 / 2 / 3 / 5;
             line-height: 30px;
         }
@@ -243,7 +253,7 @@
         }
         &__enter-pledge {   
             grid-area: 3 / 1 / 4 / 5;
-            display: grid; //grid
+            display: none; //grid
             grid-template-columns: 1fr 1fr;
             align-items: center;
             hr {
@@ -263,21 +273,12 @@
                 transform: translateX(60px);
             }
         }
-    
         &__pledge-value-input {
             width: 65%;
             justify-self: end;
-        }
-    
+        }    
         &__confirm-pledge {
-            padding: 1rem 1.8rem;
-            border-radius: 30px;
-            border: none;
-            background-color: variables.$Moderate-cyan;
-            color: variables.$White;
-            font-weight: 700;
-            font-family: variables.$Commissioner;
+            font-weight: 600;
         }
-    
     }
 }

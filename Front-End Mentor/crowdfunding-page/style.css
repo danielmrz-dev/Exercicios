@@ -26,6 +26,9 @@
   display: none;
   opacity: 0.4;
 }
+.header__menu-label:hover {
+  cursor: pointer;
+}
 .header__menu-link {
   text-decoration: none;
   border-bottom: 1px solid rgba(0, 0, 0, 0.0862745098);
@@ -33,9 +36,16 @@
   font-weight: 700;
   color: #000000;
   padding: 1.5rem;
+  transition: color 0.2s ease-in-out, -webkit-text-decoration 0.2s ease-in-out;
+  transition: color 0.2s ease-in-out, text-decoration 0.2s ease-in-out;
+  transition: color 0.2s ease-in-out, text-decoration 0.2s ease-in-out, -webkit-text-decoration 0.2s ease-in-out;
 }
 .header__menu-link:nth-child(5) {
   border: none;
+}
+.header__menu-link:hover {
+  cursor: pointer;
+  color: #3cb4ac;
 }
 
 @media screen and (min-width: 768px) {
@@ -64,6 +74,13 @@
     font-weight: 500;
     color: #fff;
     padding: 1rem;
+    transition: color 0.2s ease-in-out, -webkit-text-decoration 0.2s ease-in-out;
+    transition: color 0.2s ease-in-out, text-decoration 0.2s ease-in-out;
+    transition: color 0.2s ease-in-out, text-decoration 0.2s ease-in-out, -webkit-text-decoration 0.2s ease-in-out;
+  }
+  .header__menu-link:hover {
+    cursor: pointer;
+    color: #3cb4ac;
   }
 }
 .main {
@@ -496,6 +513,10 @@
   border: 1px solid rgba(0, 0, 0, 0.0862745098);
   font-weight: 700;
 }
+.modal__pledge-value-input::-webkit-inner-spin-button, .modal__pledge-value-input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 .modal__confirm-pledge {
   padding: 1rem 1.8rem;
   border-radius: 30px;
@@ -511,14 +532,18 @@
     top: -45px;
     height: 103%;
     width: 100%;
-    display: flex;
+    display: none;
     justify-content: center;
     padding: 11rem 0;
+    z-index: 2;
   }
   .modal__header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+  .modal__header img {
+    width: 20px;
   }
   .modal__default {
     max-width: 640px;
@@ -532,7 +557,7 @@
     font-size: 1rem;
   }
   .modal__pledges {
-    padding: 2rem 1.5rem;
+    padding: 2rem 1.5rem 1.5rem;
     display: grid;
     grid-template-columns: 45px 1fr 1fr 1fr;
     gap: 1rem 0;
@@ -549,6 +574,7 @@
     font-size: 1rem;
   }
   .modal__pledges-text {
+    font-size: 0.95rem;
     grid-area: 2/2/3/5;
     line-height: 30px;
   }
@@ -562,7 +588,7 @@
   }
   .modal__enter-pledge {
     grid-area: 3/1/4/5;
-    display: grid;
+    display: none;
     grid-template-columns: 1fr 1fr;
     align-items: center;
   }
@@ -585,13 +611,7 @@
     justify-self: end;
   }
   .modal__confirm-pledge {
-    padding: 1rem 1.8rem;
-    border-radius: 30px;
-    border: none;
-    background-color: #3cb4ac;
-    color: #fff;
-    font-weight: 700;
-    font-family: "Commissioner", sans-serif;
+    font-weight: 600;
   }
 }
 .ty {
@@ -633,6 +653,45 @@
   font-family: "Commissioner", sans-serif;
 }
 
+@media screen and (min-width: 768px) {
+  .ty {
+    position: fixed;
+    top: -40px;
+    height: 105%;
+    width: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0;
+    z-index: 2;
+  }
+  .ty .thank-you {
+    max-width: 480px;
+    padding: 3rem;
+    gap: 1.5rem;
+  }
+  .ty .thank-you img {
+    width: 90px;
+    margin-bottom: 1.5rem;
+  }
+  .ty .thank-you__title {
+    font-size: 1.55rem;
+  }
+  .ty .thank-you__paragraph {
+    font-size: 1.05rem;
+    line-height: 30px;
+  }
+  .ty .thank-you__button {
+    padding: 1rem 2.25rem;
+    margin: 0.5rem 0;
+    border-radius: 30px;
+    border: none;
+    background-color: #3cb4ac;
+    color: #fff;
+    font-weight: 700;
+    font-family: "Commissioner", sans-serif;
+  }
+}
 body {
   font-family: "Commissioner", sans-serif;
   background: #FAFAFA url("images/image-hero-mobile.jpg") top center no-repeat;

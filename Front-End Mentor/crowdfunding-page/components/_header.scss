@@ -30,6 +30,9 @@
             opacity: .4;
         }
     }
+    &__menu-label:hover {
+        cursor: pointer;
+    }
     &__menu-link {
         text-decoration: none;
         border-bottom: 1px solid variables.$Border;
@@ -37,9 +40,13 @@
         font-weight: 700;
         color: variables.$Black;
         padding: 1.5rem;
-
+        transition: color .2s ease-in-out, text-decoration .2s ease-in-out;
         &:nth-child(5) {
             border: none;
+        }
+        &:hover {
+            cursor: pointer;
+            color: variables.$Moderate-cyan;
         }
     }
 }
@@ -68,6 +75,11 @@
             font-weight: 500;
             color: variables.$White;
             padding: 1rem;
+            transition: color .2s ease-in-out, text-decoration .2s ease-in-out;
+            &:hover {
+                cursor: pointer;
+                color: variables.$Moderate-cyan;
+            }
         }
     }
 }
