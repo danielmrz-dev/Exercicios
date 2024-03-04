@@ -182,3 +182,102 @@
     }
 
 }
+
+@media screen and (min-width: 768px) {
+    .modal {
+        top: -45px;
+        height: 103%;
+        width: 100%;
+        display: flex; // flex
+        justify-content: center;
+        padding: 11rem 0;
+        
+        &__header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        &__default {
+            max-width: 640px;
+            padding: 3rem;
+        }
+    
+        &__title {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+    
+        &__paragraph {
+            font-size: 1rem;
+        }
+    
+        &__pledges {
+            padding: 2rem 1.5rem;
+            display: grid;
+            grid-template-columns: 45px 1fr 1fr 1fr;
+            gap: 1rem 0;    
+            label {
+                font-size: 1.1rem;
+            }
+        }   
+        &__header-grid-first {
+            grid-area: 1 / 1 / 2 / 4;
+            display: flex;
+            gap: 1rem;
+        }    
+        &__pledge-value {
+            font-size: 1rem;
+        }    
+        &__pledges-text {
+            grid-area: 2 / 2 / 3 / 5;
+            line-height: 30px;
+        }
+    
+        &__pledges-left {
+            grid-area: 1 / 4;
+            justify-self: flex-end;
+            font-size: 1rem;    
+            strong {
+                font-size: 1.2rem;
+            }
+        }
+        &__enter-pledge {   
+            grid-area: 3 / 1 / 4 / 5;
+            display: grid; //grid
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            hr {
+                grid-area: 1 / 1 / 2 / 3;
+            }
+        }
+    
+        &__enter-pledge-text {
+            grid-area: 2 / 1;
+        }
+    
+        &__pledge-inputs {
+            grid: 2 / 3;
+            display: flex;
+            div {
+                width: 100%;
+                transform: translateX(60px);
+            }
+        }
+    
+        &__pledge-value-input {
+            width: 65%;
+            justify-self: end;
+        }
+    
+        &__confirm-pledge {
+            padding: 1rem 1.8rem;
+            border-radius: 30px;
+            border: none;
+            background-color: variables.$Moderate-cyan;
+            color: variables.$White;
+            font-weight: 700;
+            font-family: variables.$Commissioner;
+        }
+    
+    }
+}

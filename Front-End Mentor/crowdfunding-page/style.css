@@ -76,7 +76,7 @@
 @media screen and (min-width: 768px) {
   .main {
     max-width: 730px;
-    margin: 14rem auto 2rem;
+    margin: 14rem auto 7rem;
   }
 }
 .mastercratf {
@@ -152,7 +152,6 @@
   }
   .mastercratf__buttons div {
     display: flex;
-    flex-direction: row-reverse;
     align-items: center;
     border-radius: 30px;
     background-color: rgba(0, 0, 0, 0.0862745098);
@@ -173,6 +172,10 @@
   padding: 2.5rem 1.5rem;
   border-radius: 10px;
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.0431372549);
+}
+.numbers__text-container {
+  display: grid;
+  gap: 1rem;
 }
 .numbers__backed, .numbers__total-backers, .numbers__days-left {
   font-size: 2rem;
@@ -201,6 +204,44 @@
   border-radius: 10px;
 }
 
+@media screen and (min-width: 768px) {
+  .numbers {
+    display: grid;
+    grid-template-columns: 23.5% 7% 23.5% 7% 23.5%;
+    padding: 2.5rem 2.5rem 3rem;
+  }
+  .numbers__text-container {
+    display: grid;
+    gap: 1rem;
+  }
+  .numbers__backed, .numbers__total-backers, .numbers__days-left {
+    font-size: 2.1rem;
+  }
+  .numbers__text {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #7a7a7a;
+  }
+  .numbers hr {
+    height: 60px;
+    margin-right: 2rem;
+    width: 0;
+  }
+  .numbers__progress-bar {
+    grid-area: 2/1/3/6;
+    margin-top: 1rem;
+    background-color: rgba(0, 0, 0, 0.0431372549);
+    height: 12px;
+    width: 100%;
+    border-radius: 10px;
+  }
+  .numbers__progress-bar .green-part {
+    background-color: #3cb4ac;
+    height: 12px;
+    width: 75%;
+    border-radius: 10px;
+  }
+}
 .about {
   background-color: #fff;
   display: flex;
@@ -276,6 +317,46 @@
   background-color: #7a7a7a;
 }
 
+@media screen and (min-width: 768px) {
+  .about {
+    padding: 3rem;
+  }
+  .about__title {
+    font-size: 1.35rem;
+  }
+  .about__paragraph {
+    font-size: 1rem;
+    line-height: 30px;
+  }
+  .about__editions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 2rem;
+  }
+  .about__editions-title {
+    font-size: 1.25rem;
+  }
+  .about__editions-pledge {
+    font-size: 1rem;
+    justify-self: flex-end;
+  }
+  .about__editions-paragraph {
+    grid-area: 2/1/3/3;
+    padding: 0.75rem 0;
+    font-size: 1rem;
+    line-height: 30px;
+  }
+  .about__editions-button {
+    justify-self: flex-end;
+    font-size: 0.85rem;
+    padding: 1rem;
+    border-radius: 30px;
+    width: 55%;
+  }
+  .about .out-of-stock {
+    background-color: #7a7a7a;
+  }
+}
 .modal {
   position: absolute;
   top: -35px;
@@ -425,6 +506,94 @@
   font-family: "Commissioner", sans-serif;
 }
 
+@media screen and (min-width: 768px) {
+  .modal {
+    top: -45px;
+    height: 103%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 11rem 0;
+  }
+  .modal__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .modal__default {
+    max-width: 640px;
+    padding: 3rem;
+  }
+  .modal__title {
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+  .modal__paragraph, .ty .thank-you__paragraph, .modal__pledges-text, .modal__enter-pledge-text {
+    font-size: 1rem;
+  }
+  .modal__pledges {
+    padding: 2rem 1.5rem;
+    display: grid;
+    grid-template-columns: 45px 1fr 1fr 1fr;
+    gap: 1rem 0;
+  }
+  .modal__pledges label {
+    font-size: 1.1rem;
+  }
+  .modal__header-grid-first, .modal__header-grid {
+    grid-area: 1/1/2/4;
+    display: flex;
+    gap: 1rem;
+  }
+  .modal__pledge-value {
+    font-size: 1rem;
+  }
+  .modal__pledges-text {
+    grid-area: 2/2/3/5;
+    line-height: 30px;
+  }
+  .modal__pledges-left {
+    grid-area: 1/4;
+    justify-self: flex-end;
+    font-size: 1rem;
+  }
+  .modal__pledges-left strong {
+    font-size: 1.2rem;
+  }
+  .modal__enter-pledge {
+    grid-area: 3/1/4/5;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+  .modal__enter-pledge hr {
+    grid-area: 1/1/2/3;
+  }
+  .modal__enter-pledge-text {
+    grid-area: 2/1;
+  }
+  .modal__pledge-inputs {
+    grid: 2/3;
+    display: flex;
+  }
+  .modal__pledge-inputs div {
+    width: 100%;
+    transform: translateX(60px);
+  }
+  .modal__pledge-value-input {
+    width: 65%;
+    justify-self: end;
+  }
+  .modal__confirm-pledge {
+    padding: 1rem 1.8rem;
+    border-radius: 30px;
+    border: none;
+    background-color: #3cb4ac;
+    color: #fff;
+    font-weight: 700;
+    font-family: "Commissioner", sans-serif;
+  }
+}
 .ty {
   position: absolute;
   top: -35px;
