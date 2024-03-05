@@ -130,6 +130,10 @@
   display: flex;
   gap: 0.5rem;
 }
+.mastercratf__buttons div:hover > img {
+  opacity: 0.7;
+  cursor: pointer;
+}
 .mastercratf__button, .mastercratf .mastercraft__bookmark {
   border: none;
 }
@@ -141,6 +145,11 @@
   font-size: 1rem;
   padding: 0 2.5rem;
   border-radius: 30px;
+  transition: background-color 0.2s ease;
+}
+.mastercratf__button:hover {
+  background-color: #147b74;
+  cursor: pointer;
 }
 .mastercratf__bookmark-text {
   display: none;
@@ -172,9 +181,17 @@
     align-items: center;
     border-radius: 30px;
     background-color: rgba(0, 0, 0, 0.0862745098);
+    transition: background-color 0.2s ease;
+  }
+  .mastercratf__buttons div:hover > img {
+    opacity: 0.7;
+  }
+  .mastercratf__buttons div:hover {
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.2078431373);
   }
   .mastercratf__bookmark-text {
-    display: inline-block;
+    display: block;
     padding: 1rem 1.5rem 1.2rem 0.75rem;
     font-weight: 700;
     color: #7a7a7a;
@@ -329,9 +346,15 @@
   padding: 1rem;
   border-radius: 30px;
   width: 70%;
+  transition: background-color 0.2s ease;
+}
+.about__editions-button:hover {
+  background-color: #147b74;
+  cursor: pointer;
 }
 .about .out-of-stock {
   background-color: #7a7a7a;
+  cursor: not-allowed;
 }
 
 @media screen and (min-width: 768px) {
@@ -420,9 +443,19 @@
 .modal__pledges label {
   font-size: 0.85rem;
   font-weight: 800;
+  transition: color 0.2s ease;
+}
+.modal__pledges label:hover {
+  color: #3cb4ac;
+  cursor: pointer;
 }
 .modal__pledges:nth-child(6) {
   opacity: 0.3;
+  cursor: not-allowed;
+}
+.modal__pledges:nth-child(6) .mahogany {
+  color: black;
+  cursor: not-allowed;
 }
 .modal .border-active {
   border: 2px solid #3cb4ac;
@@ -651,6 +684,11 @@
   color: #fff;
   font-weight: 700;
   font-family: "Commissioner", sans-serif;
+  transition: background-color 0.2s ease;
+}
+.ty .thank-you__button:hover {
+  background-color: #147b74;
+  cursor: pointer;
 }
 
 @media screen and (min-width: 768px) {

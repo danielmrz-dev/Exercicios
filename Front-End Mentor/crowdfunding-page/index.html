@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@100..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="reset.css">
   <link rel="stylesheet" href="style.css">
+  <script src="index.js" defer></script>
   <title>Frontend Mentor | Crowdfunding product page</title>
 
 </head>
@@ -17,7 +18,7 @@
   <header class="header">
     <img src="images/logo.svg" alt="logo">
     <label for="menu" class="header__menu-label">
-      <img src="images/icon-hamburger.svg">
+      <img src="images/icon-hamburger.svg" class="header__menu-icon">
     </label>
     <input type="checkbox" name="menu" id="menu" class="header__menu-checkbox">
     <nav class="header__menu">
@@ -38,7 +39,7 @@
         <button class="mastercratf__button">Back this project</button>
         
         <div>
-          <img src="images/icon-bookmark.svg" alt="icon-bookmark">
+          <img src="images/icon-bookmark.svg" alt="icon-bookmark" class="bookmark-icon">
           <span class="mastercratf__bookmark-text">Bookmark</span>
         </div>
       </div>
@@ -195,7 +196,7 @@
       <div class="modal__pledges">
         <div class="modal__header-grid">
           <input type="radio" name="pledge-type" id="mahogany" disabled>
-          <label for="mahogany">Mahogany Special Edition</label>
+          <label for="mahogany" class="mahogany">Mahogany Special Edition</label>
           <span class="modal__pledge-value">Pledge $200 or more</span>
         </div>
         <p class="modal__pledges-text">
