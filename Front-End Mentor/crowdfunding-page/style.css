@@ -87,7 +87,7 @@
   margin: 12rem 1.5rem 2rem;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.5rem;
 }
 
 @media screen and (min-width: 768px) {
@@ -160,7 +160,7 @@
   display: none;
 }
 .mastercratf .bookmark-active {
-  color: #3cb4ac;
+  color: #147b74;
 }
 
 @media screen and (min-width: 768px) {
@@ -214,6 +214,7 @@
   padding: 2.5rem 1.5rem;
   border-radius: 10px;
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.0431372549);
+  text-align: center;
 }
 .numbers__text-container {
   display: grid;
@@ -242,7 +243,6 @@
 .numbers__progress-bar .green-part {
   background-color: #3cb4ac;
   height: 12px;
-  width: 75%;
   border-radius: 10px;
 }
 
@@ -251,6 +251,7 @@
     display: grid;
     grid-template-columns: 23.5% 7% 23.5% 7% 23.5%;
     padding: 2.5rem 2.5rem 3rem;
+    text-align: start;
   }
   .numbers__text-container {
     display: grid;
@@ -280,7 +281,6 @@
   .numbers__progress-bar .green-part {
     background-color: #3cb4ac;
     height: 12px;
-    width: 75%;
     border-radius: 10px;
   }
 }
@@ -410,7 +410,7 @@
   top: -35px;
   height: 103%;
   background-color: rgba(0, 0, 0, 0.266);
-  display: flex;
+  display: none;
   padding: 8rem 0;
 }
 .modal__header {
@@ -561,6 +561,9 @@
   -webkit-appearance: none;
   margin: 0;
 }
+.modal__pledge-value-input:focus {
+  outline: 2px solid #3cb4ac;
+}
 .modal__confirm-pledge {
   padding: 1rem 1.8rem;
   border-radius: 30px;
@@ -608,7 +611,7 @@
   .modal__pledges {
     padding: 2rem 1.5rem 1.5rem;
     display: grid;
-    grid-template-columns: 45px 1fr 1fr 1fr;
+    grid-template-columns: 45px 1.5fr 1fr 1fr;
     gap: 1rem 0;
   }
   .modal__pledges label {

@@ -5,7 +5,7 @@
     top: -35px;
     height: 103%;
     background-color: rgba(0, 0, 0, 0.266);
-    display: flex; // flex
+    display: none; // flex
     padding: 8rem 0;
     &__header {
         display: flex;
@@ -185,6 +185,9 @@
             -webkit-appearance: none;
             margin: 0;            
         }
+        &:focus {
+            outline: 2px solid variables.$Moderate-cyan;
+        }
     }
 
     &__confirm-pledge {
@@ -239,7 +242,7 @@
         &__pledges {
             padding: 2rem 1.5rem 1.5rem;
             display: grid;
-            grid-template-columns: 45px 1fr 1fr 1fr;
+            grid-template-columns: 45px 1.5fr 1fr 1fr;
             gap: 1rem 0;    
             label {
                 font-size: 1.1rem;
