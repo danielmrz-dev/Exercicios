@@ -130,11 +130,16 @@
   display: flex;
   gap: 0.5rem;
 }
+.mastercratf__buttons div {
+  background-color: #3cb4ac;
+  display: flex;
+  border-radius: 50%;
+}
 .mastercratf__buttons div:hover > img {
-  opacity: 0.7;
   cursor: pointer;
 }
-.mastercratf__button, .mastercratf .mastercraft__bookmark {
+.mastercratf__button,
+.mastercratf .mastercraft__bookmark {
   border: none;
 }
 .mastercratf__button {
@@ -153,6 +158,9 @@
 }
 .mastercratf__bookmark-text {
   display: none;
+}
+.mastercratf .bookmark-active {
+  color: #3cb4ac;
 }
 
 @media screen and (min-width: 768px) {
@@ -402,13 +410,16 @@
   top: -35px;
   height: 103%;
   background-color: rgba(0, 0, 0, 0.266);
-  display: none;
+  display: flex;
   padding: 8rem 0;
 }
 .modal__header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.modal__close-modal {
+  cursor: pointer;
 }
 .modal__default {
   height: -moz-fit-content;
