@@ -73,7 +73,11 @@ bambooStandbtn.addEventListener("click", () => {
     enterPledge.forEach((form) => {
         form.style.display = "none";
     });
-    enterPledge[1].style.display = "flex";
+    if (window.matchMedia("(min-width: 768px)").matches) {
+        enterPledge[1].style.display = "grid";
+    } else {
+        enterPledge[1].style.display = "flex";
+    }
 });
 
 blackEditionBtn.addEventListener("click", () => {
@@ -86,7 +90,11 @@ blackEditionBtn.addEventListener("click", () => {
     enterPledge.forEach((form) => {
         form.style.display = "none";
     });
-    enterPledge[2].style.display = "flex";
+    if (window.matchMedia("(min-width: 768px)").matches) {
+        enterPledge[2].style.display = "grid";
+    } else {
+        enterPledge[2].style.display = "flex";
+    }
 });
 
 noRewardCheckbox.addEventListener("change", () => {
