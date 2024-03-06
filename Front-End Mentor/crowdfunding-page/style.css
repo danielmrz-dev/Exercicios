@@ -569,6 +569,11 @@
   color: #fff;
   font-weight: 700;
   font-family: "Commissioner", sans-serif;
+  transition: background-color 0.2s ease;
+}
+.modal__confirm-pledge:hover {
+  background-color: #147b74;
+  cursor: pointer;
 }
 
 @media screen and (min-width: 768px) {
@@ -659,7 +664,7 @@
   }
 }
 .ty {
-  position: absolute;
+  position: fixed;
   top: -35px;
   height: 103%;
   background-color: rgba(0, 0, 0, 0.266);
