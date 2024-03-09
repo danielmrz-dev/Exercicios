@@ -11,6 +11,8 @@ camposDoFormulario.forEach((campo) => {
 // blur é quando o foco é tirado do elemento
 
 function verificaCampo(campo) {
+    let mensagem = "";
+    campo.setCustomValidity("");
     if ((campo.name = "cpf" && campo.value.length >= 11)) {
         ehUmCPF(campo);
     }
@@ -18,7 +20,32 @@ function verificaCampo(campo) {
     if ((campo.name = "aniversario" && campo.value != "")) {
         ehMaiorDeIdade(campo);
     }
+
+    tiposDeErros.forEach(erro => {
+        if (campo.validity[erro]) {
+            mensagem = mensagens[campo.name][erro];
+            console.log(mensagem);
+        }
+    });
+
+    const mensagemErro = campo.parentNode.querySelector(".mensagem-erro");
+    const validadorDeInput = campo.checkValidity();
+
+    if (!validadorDeInput) {
+        mensagemErro.textContent = mensagem;
+    } else {
+        mensagemErro.textContent = "";
+    }
 }
+
+
+const tiposDeErros = [
+    "typeMismatch",
+    "customError",
+    "tooShort",
+    "valueMissing",
+    "patternMismatch",
+];
 
 const mensagens = {
     nome: {
@@ -50,3 +77,4 @@ const mensagens = {
         valueMissing: "Você deve aceitar nossos termos antes de continuar.",
     },
 };
+
