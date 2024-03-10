@@ -13,15 +13,15 @@ camposDoFormulario.forEach((campo) => {
 function verificaCampo(campo) {
     let mensagem = "";
     campo.setCustomValidity("");
-    if ((campo.name = "cpf" && campo.value.length >= 11)) {
+    if ((campo.name === "cpf" && campo.value.length >= 11)) {
         ehUmCPF(campo);
     }
 
-    if ((campo.name = "aniversario" && campo.value != "")) {
+    if ((campo.name === "aniversario" && campo.value != "")) {
         ehMaiorDeIdade(campo);
     }
 
-    tiposDeErro.forEach(erro => {
+    tiposDeErro.forEach((erro) => {
         if (campo.validity[erro]) {
             mensagem = mensagens[campo.name][erro];
             console.log(mensagem);
@@ -37,7 +37,6 @@ function verificaCampo(campo) {
         mensagemErro.textContent = "";
     }
 }
-
 
 const tiposDeErro = [
     "valueMissing",
@@ -77,4 +76,3 @@ const mensagens = {
         valueMissing: "Você deve aceitar nossos termos antes de continuar.",
     },
 };
-
