@@ -21,7 +21,7 @@ function verificaCampo(campo) {
         ehMaiorDeIdade(campo);
     }
 
-    tiposDeErros.forEach(erro => {
+    tiposDeErro.forEach(erro => {
         if (campo.validity[erro]) {
             mensagem = mensagens[campo.name][erro];
             console.log(mensagem);
@@ -39,12 +39,12 @@ function verificaCampo(campo) {
 }
 
 
-const tiposDeErros = [
-    "typeMismatch",
-    "customError",
-    "tooShort",
+const tiposDeErro = [
     "valueMissing",
+    "typeMismatch",
     "patternMismatch",
+    "tooShort",
+    "customError",
 ];
 
 const mensagens = {
