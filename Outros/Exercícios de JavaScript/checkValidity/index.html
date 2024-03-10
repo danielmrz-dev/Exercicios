@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <script src="https://cdn.tailwindcss.com"></script>  
+  <title>Frontend Mentor | Intro component with sign up form</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <main class="container">
+    <section class="text">
+      <h1 class="text-title">Learn to code by watching others</h1>
+      <p class="text-paragraph">
+        See how experienced developers solve problems in real-time. Watching scripted tutorials is great,
+        but understanding how developers think is invaluable.
+      </p>
+    </section>
+
+    <button class="free-trial"><strong>Try it free 7 days</strong> then $20/mo. thereafter</button>
+
+    <section class="form-n-buttons">
+      <form action="" method="post" class="form">
+
+        <div class="teste">
+          <input type="text" class="form-data" id="form1" autocomplete="given-name" placeholder="First Name"></input>
+          <p class="validation-msg" id="msg1">First name cannot be empty</p>
+          <img src="images/icon-error.svg" alt="icon-error" class="icon-error" id="iconError1">
+        </div>
+        <div class="teste">
+          <input type="text" class="form-data" id="form2" autocomplete="family-name" placeholder="Last Name"></input>
+          <p class="validation-msg" id="msg2">Last name cannot be empty</p>
+          <img src="images/icon-error.svg" alt="icon-error" class="icon-error" id="iconError2">
+        </div>
+        <div class="teste">
+          <input type="email" class="form-data" id="form3" autocomplete="email" placeholder="Email Address"></input>
+          <p class="validation-msg" id="msg3">Looks like this is not a valid email</p>
+          <img src="images/icon-error.svg" alt="icon-error" class="icon-error" id="iconError3">
+        </div>
+        <div class="teste">
+          <input type="password" class="form-data" id="form4" autocomplete="new-password" placeholder="Password"></input>
+          <p class="validation-msg" id="msg4">Password cannot be empty</p>
+          <img src="images/icon-error.svg" alt="icon-error" class="icon-error" id="iconError4">
+        </div>
+
+      </form>
+        <button class="submit" onclick="validar()">Claim your free trial</button>
+        <p class="terms">By clicking the button, you are agreeing to our <strong>Terms and Services</strong></p>
+    </section>
+
+  </main>  
+  <footer>
+    <p class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="https://github.com/danielmrz-dev" target="_blank">danielmrz-dev</a>.
+    </p>
+  </footer>
+  <script src="index.js"></script>
+</body>
+</html>
