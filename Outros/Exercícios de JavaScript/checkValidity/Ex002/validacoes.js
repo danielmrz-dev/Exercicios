@@ -24,9 +24,14 @@ function validaNome() {
     tiposDeErro.forEach((erro) => {
         if (input.validity[erro]) {
             mensagem = mensagens[input.name][erro];            
-            mensagemDeErro.innerText = mensagem
         }
-    })    
-}
+    })
+    
+    const validadorDeInput = input.checkValidity();
 
-console.log({} === {});
+    if (!validadorDeInput) {
+        mensagemDeErro.innerText = mensagem        
+    } else {
+        mensagemDeErro.innerText = "";        
+    }
+}
