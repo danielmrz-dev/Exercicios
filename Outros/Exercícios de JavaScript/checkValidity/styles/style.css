@@ -135,7 +135,7 @@ body .container .form-n-buttons .form .teste .form-data::placeholder {
   font-weight: 600;
 }
 body .container .form-n-buttons .form .teste .validation-msg {
-  display: none;
+  display: block;
   font-size: 0.7rem;
   font-style: italic;
   color: #29B4D1;

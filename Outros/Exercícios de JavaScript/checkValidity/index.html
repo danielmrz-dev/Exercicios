@@ -7,7 +7,8 @@
   <script src="https://cdn.tailwindcss.com"></script>  
   <title>Frontend Mentor | Intro component with sign up form</title>
   <link rel="stylesheet" href="./styles/style.css">
-  <script src="js/script.js" defer></script>
+  <script type="module" src="js/script.js" defer></script>
+  <script type="module" src="js/validaCPF.js" defer></script>
 </head>
 <body>
 
@@ -28,7 +29,7 @@
         <div class="teste">
 
           <input type="text" class="form-data" name="nome"  placeholder="Nome Completo" required minlength="3" maxlength="40"></input>
-          <p class="validation-msg" id="msg1"></p>
+          <p class="validation-msg"></p>
           <img src="images/icon-error.svg" alt="icon-error" class="icon-error" id="iconError1">
 
         </div>
@@ -36,7 +37,7 @@
         <div class="teste">
 
           <input type="date" class="form-data" name="aniversario" placeholder="Data de Nascimento" required></input>
-          <p class="validation-msg" id="msg2"></p>
+          <p class="validation-msg"></p>
           <img src="images/icon-error.svg" alt="icon-error" class="icon-error" id="iconError2">
 
         </div>
@@ -44,7 +45,7 @@
         <div class="teste">
 
           <input type="text" class="form-data" name="cpf" placeholder="CPF" required minlength="11" maxlength="14" pattern="\d{3}\.?\d{3}\.?\d{3}-?\d{2}"></input>
-          <p class="validation-msg" id="msg2"></p>
+          <p class="validation-msg"></p>
           <img src="images/icon-error.svg" alt="icon-error" class="icon-error" id="iconError2">
 
         </div>
@@ -52,14 +53,14 @@
         <div class="teste">
 
           <input type="email" class="form-data" name="email" placeholder="Email" required></input>
-          <p class="validation-msg" id="msg3"></p>
+          <p class="validation-msg"></p>
           <img src="images/icon-error.svg" alt="icon-error" class="icon-error" id="iconError3">
 
         </div>
         <div class="teste">
 
           <input type="password" class="form-data" name="senha" placeholder="Senha" required ></input>
-          <p class="validation-msg" id="msg4"></p>
+          <p class="validation-msg"></p>
           <img src="images/icon-error.svg" alt="icon-error" class="icon-error" id="iconError4">
 
         </div>
