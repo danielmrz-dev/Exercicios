@@ -4,14 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Validações com CheckValidity</title>
-    <script src="validacoes.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="validacoes.js" defer></script>
+    <script type="module" src="valida-nome.js" defer></script>
 </head>
 <body>
     <h1 class="titulo">Validações</h1>
-    <form>
-        <input type="text" name="nome" id="nome" minlength="3" maxlength="15" required>
-        <div class="mensagem-de-erro"></div>
-        <button type="submit">Submit</button>
-    </form>
+    <fieldset>
+        <legend>Formulário de cadastro</legend>
+        <form>
+            <div>
+                <input type="text" name="nome" id="nome" minlength="3" maxlength="15" required placeholder="Nome">
+                <div class="mensagem-de-erro">Mensagem de erro</div>
+            </div>
+            <div>
+                <input type="text" name="rg" id="rg" minlength="8" maxlength="14" required placeholder="RG">
+                <div class="mensagem-de-erro">Mensagem de erro</div>
+            </div>
+            <div>
+                <input type="text" name="cpf" id="cpf" minlength="11" maxlength="14" required placeholder="CPF">
+                <div class="mensagem-de-erro">Mensagem de erro</div>
+            </div>
+            <div>
+                <input type="date" name="aniversario" id="aniversario" required>
+                <div class="mensagem-de-erro">Mensagem de erro</div>
+            </div>
+
+            <button type="submit">Submit</button>
+        </form>
+    </fieldset>
 </body>
 </html>

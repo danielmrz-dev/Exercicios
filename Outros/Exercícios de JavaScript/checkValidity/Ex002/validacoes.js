@@ -1,12 +1,14 @@
-const titulo = document.querySelector(".titulo")
-const input = document.querySelector("#nome")
+import validaNome from "./valida-nome.js"
+
+const input = document.querySelectorAll("input")
 const mensagemDeErro = document.querySelector(".mensagem-de-erro")
+const submitBtn = document.querySelector("button")
 
 const mensagens = {
     nome: {
-        tooShort: "Digite mais caracteres",
-        tooLong: "Digite menos caracteres",
-        valueMissing: "Digite algo",
+        tooShort: "Nome muito curto!",
+        tooLong: "Nome muito longo!",
+        valueMissing: "O campo nome não pode ficar vazio!",
     },
 }
 
@@ -16,22 +18,24 @@ const tiposDeErro = [
     "valueMissing"
 ]
 
-input.addEventListener("blur", () => validaNome())
-input.addEventListener("invalid", (evento) => evento.preventDefault())
 
-function validaNome() {
-    let mensagem = "";
-    tiposDeErro.forEach((erro) => {
-        if (input.validity[erro]) {
-            mensagem = mensagens[input.name][erro];            
-        }
-    })
+
+// input.addEventListener("blur", () => validaNome())
+// input.addEventListener("invalid", (evento) => evento.preventDefault())
+
+// function validaNome() {
+//     let mensagem = "";
+//     tiposDeErro.forEach((erro) => {
+//         if (input.validity[erro]) {
+//             mensagem = mensagens[input.name][erro];            
+//         }
+//     })
     
-    const validadorDeInput = input.checkValidity();
+//     const validadorDeInput = input.checkValidity();
 
-    if (!validadorDeInput) {
-        mensagemDeErro.innerText = mensagem        
-    } else {
-        mensagemDeErro.innerText = "";        
-    }
-}
+//     if (!validadorDeInput) {
+//         mensagemDeErro.innerText = mensagem        
+//     } else {
+//         mensagemDeErro.innerText = "";        
+//     }
+// }
