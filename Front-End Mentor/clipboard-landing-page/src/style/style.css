@@ -1,3 +1,17 @@
+@font-face {
+  font-family: "BaiJamjuree";
+  src: url("../../assets/fonts/BaiJamjuree-Regular.ttf") format("truetype");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "BaiJamjuree";
+  src: url("../../assets/fonts/BaiJamjuree-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+}
 @tailwind base;
 @tailwind components;
-@tailwind utilities;/*# sourceMappingURL=style.css.map */
+@tailwind utilities;
+body {
+  font-family: "BaiJamjuree", sans-serif;
+  font-weight: 400;
+}/*# sourceMappingURL=style.css.map */

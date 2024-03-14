@@ -1,3 +1,10 @@
+@use 'components/variables';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+    font-family: variables.$BaiJamjuree;
+    font-weight: 400;
+}
