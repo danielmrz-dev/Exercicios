@@ -1,17 +1,24 @@
 @font-face {
-  font-family: "BaiJamjuree";
-  src: url("../../assets/fonts/BaiJamjuree-Regular.ttf") format("truetype");
-  font-weight: 400;
+    font-family: "BaiJamjuree";
+    src: url("../../assets/fonts/BaiJamjuree-Regular.ttf") format("truetype");
+    font-weight: 400;
 }
+
 @font-face {
-  font-family: "BaiJamjuree";
-  src: url("../../assets/fonts/BaiJamjuree-SemiBold.ttf") format("truetype");
-  font-weight: 600;
+    font-family: "BaiJamjuree";
+    src: url("../../assets/fonts/BaiJamjuree-SemiBold.ttf") format("truetype");
+    font-weight: 600;
 }
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+
+:root {
+    --Strong-Cyan: #26baa4;
+    --Light-Blue: #6173ff;
+    --Dark-Grayish-Blue: #4c545d;
+    --Grayish-Blue: #9fabb2;
+    --BaiJamjuree: "BaiJamjuree", sans-serif;
+}
+
 body {
-  font-family: "BaiJamjuree", sans-serif;
-  font-weight: 400;
-}/*# sourceMappingURL=style.css.map */
+    font-family: "BaiJamjuree", sans-serif;
+    background: url('../../assets/images/bg-header-mobile.png') center top no-repeat;
+}
