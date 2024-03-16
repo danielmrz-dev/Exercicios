@@ -10,15 +10,85 @@
     font-weight: 600;
 }
 
+@font-face {
+    font-family: "BaiJamjuree";
+    src: url("../../assets/fonts/BaiJamjuree-Bold.ttf") format("truetype");
+    font-weight: 800;
+}
+
 :root {
     --Strong-Cyan: #26baa4;
+    --Strong-Cyan-shadow: #1b8f7ec4;
     --Light-Blue: #6173ff;
+    --Light-Blue-shadow: #3e4dbec4;
     --Dark-Grayish-Blue: #4c545d;
     --Grayish-Blue: #9fabb2;
+    --White: #ffffff;
     --BaiJamjuree: "BaiJamjuree", sans-serif;
 }
 
 body {
     font-family: "BaiJamjuree", sans-serif;
     background: url('../../assets/images/bg-header-mobile.png') center top no-repeat;
+}
+
+.section-one__paragraph,
+.mid-section__text,
+.section-two__text,
+.section-three__text,
+.clipboard__text {
+    color: var(--Grayish-Blue);
+    font-size: .96rem;
+    line-height: 25px;
+}
+
+.section-one__button-ios,
+.clipboard__button-ios,
+.clipboard__button-mac,
+.section-one__button-mac {
+    background-color: var(--Strong-Cyan);
+    color: var(--White);
+    box-shadow: 0px 3px 0 var(--Strong-Cyan-shadow),
+                0px 3px 15px var(--Strong-Cyan-shadow);
+    font-size: 1.1rem;
+    padding: .8rem;
+    
+}
+
+.section-one__button-mac, .clipboard__button-mac {
+    background-color: var(--Light-Blue);
+    box-shadow: 0px 3px 0 var(--Light-Blue-shadow),
+                0px 3px 15px var(--Light-Blue-shadow);
+}
+
+.mid-section {
+    gap: 1rem;
+    margin-top: 4.5rem;
+}
+
+.mid-section__title, .section-two__headings, .clipboard__title {
+    font-size: 1.7rem;
+    line-height: 32px;
+    font-weight: 800;
+}
+
+.section-two {
+    gap: 3.25rem;
+}
+
+.section-two__headings {
+    font-size: 1.5rem;
+}
+
+.section-three__titles {
+    font-size: 1.4rem;
+    font-weight: 800;
+}
+
+.companies img {
+    width: 120px;
+}
+
+.footer {
+    background-color: var(--Grayish-Blue);
 }
