@@ -11,9 +11,9 @@
   <script src="script.js" defer></script>
 </head>
 <body class="mt-[5rem]">
-<main class="main flex flex-col gap-16 justify-center items-center mx-7">
-  
-    <section class="section-one flex flex-col items-center gap-5">
+<main class="main flex flex-col gap-16 justify-center items-center mx-7 md:mx-0 md:pt-[1rem]">
+
+    <section class="section-one flex flex-col items-center gap-5 md:max-w-[800px] md:gap-8">
       <img src="../assets/images/logo.svg" alt="logo" class="my-9">
       <h1 class="section-one__title font-black text-3xl text-center opacity-70">A history of everything you copy</h1>
       <p class="section-one__paragraph text-center px-3">
@@ -21,13 +21,13 @@
         copy. Instantly access your clipboard on all your devices.
       </p>
       
-      <div class="section-one__buttons flex flex-col gap-7 w-full py-7">
+      <div class="section-one__buttons flex flex-col gap-7 w-full py-7 md:flex-row md:max-w-[65%] md:py-4">
         <button class="section-one__button-ios rounded-full tracking-[1px] w-full font-semibold">Download for iOS</button>
         <button class="section-one__button-mac rounded-full tracking-[1px] w-full font-semibold">Download for Mac</button>
       </div>
     </section>
   
-    <section class="mid-section flex flex-col items-center">
+    <section class="mid-section flex flex-col items-center md:max-w-[800px]">
       <h2 class="mid-section__title text-center opacity-70">Keep track of your snippets</h2>
       <p class="mid-section__text text-center">
         Clipboard instantly stores any item you copy in the cloud,
@@ -36,53 +36,53 @@
       </p>
     </section>
 
-    <section class="section-two flex flex-col">
-      <img src="../assets/images/image-computer.png" alt="image-computer">
-      <div class="flex flex-col items-center text-center gap-2">
+    <section class="section-two flex flex-col md:grid md:grid-cols-2 md:items-center">
+      <img src="../assets/images/image-computer.png" alt="image-computer" class="col-start-1 row-start-1 row-end-6 w-full">
+      <div class="flex flex-col items-center text-center gap-2 md:text-start md:items-start row-start-2 md:max-w-[70%]">
         <h3 class="section-two__headings opacity-70">Quick Search</h3>
         <p class="section-two__text">Easily search your snippets by content, category, web address, application, and more.</p>
       </div>
-      <div class="flex flex-col items-center text-center gap-2">
+      <div class="flex flex-col items-center text-center gap-2 md:text-start md:items-start row-start-3 md:max-w-[70%]">
         <h3 class="section-two__headings opacity-70">iCloud Sync</h3>
         <p class="section-two__text">Instantly saves and syncs snippets across all your devices.</p>
       </div>
-      <div class="flex flex-col items-center text-center gap-2">
+      <div class="flex flex-col items-center text-center gap-2 md:text-start md:items-start row-start-4 md:max-w-[70%]">
         <h3 class="section-two__headings opacity-70">Complete History</h3>
         <p class="section-two__text">Retrieve any snippets from the first moment you started using the app.</p>
       </div>
     </section>
   
-    <section class="mid-section flex flex-col items-center">
-      <h2 class="mid-section__title text-center opacity-70">Access Clipboard anywhere</h2>
-      <p class="mid-section__text text-center">
+    <section class="mid-section flex flex-col items-center pt-12 md:max-w-[900px]">
+      <h2 class="mid-section__title text-center opacity-70 ">Access Clipboard anywhere</h2>
+      <p class="mid-section__text text-center md:px-14">
         Whether you’re on the go, or at your computer, you can access all your Clipboard
         snippets in a few simple clicks.
       </p>
-      <img src="../assets/images/image-devices.png" alt="image-devices" class="pt-10 pb-24">
+      <img src="../assets/images/image-devices.png" alt="image-devices" class="pt-10 pb-24 md:py-14">
       <h2 class="mid-section__title text-center opacity-70">Supercharge your workflow</h2>    
       <p class="mid-section__text text-center">We’ve got the tools to boost your productivity.</p>
     </section>
   
   
-    <section class="section-three flex flex-col gap-[4rem] mt-6">
-      <div class="section-three__containers flex flex-col items-center text-center gap-5">
-        <img src="../assets/images/icon-blacklist.svg" class="pb-4">
+    <section class="section-three flex flex-col gap-[4rem] mt-6 md:max-w-[1200px] md:mx-auto md:items-start md:mt-2 md:mb-12">
+      <div class="section-three__containers flex flex-col items-center text-center gap-5 max-w-[100%] md:mx-auto">
+        <img src="../assets/images/icon-blacklist.svg" class="pb-4 w-[50px] h-[55px]">
         <h3 class="section-three__titles opacity-70">Create blacklists</h3>
         <p class="section-three__text">Ensure sensitive information never makes its way to your clipboard by excluding certain sources.</p>
       </div>
-      <div class="section-three-containers flex flex-col items-center text-center gap-5">
-        <img src="../assets/images/icon-text.svg" class="pb-4">
+      <div class="section-three-containers flex flex-col items-center text-center gap-5 max-w-[100%] md:mx-auto">
+        <img src="../assets/images/icon-text.svg" class="pb-4 w-[50px] h-[55px]">
         <h3 class="section-three__titles opacity-70">Plain text snippets</h3>
         <p class="section-three__text">Remove unwanted formatting from copied text for a consistent look.</p>
       </div>
-      <div class="section-three-containers flex flex-col items-center text-center gap-5">
-        <img src="../assets/images/icon-preview.svg" class="pb-4">
+      <div class="section-three-containers flex flex-col items-center text-center gap-5 max-w-[100%] md:mx-auto">
+        <img src="../assets/images/icon-preview.svg" class="pb-4 w-[50px] h-[55px]">
         <h3 class="section-three__titles opacity-70">Sneak preview</h3>
         <p class="section-three__text">Quick preview of all snippets on your Clipboard for easy access.</p>
       </div>
     </section>
   
-    <section class="companies flex flex-col items-center gap-16">
+    <section class="companies flex flex-col items-center gap-16 pt-16 md:flex-row md:gap-24">
       <img src="../assets/images/logo-google.png" alt="logo-google">
       <img src="../assets/images/logo-ibm.png" alt="logo-ibm">
       <img src="../assets/images/logo-microsoft.png" alt="logo-microsoft">
@@ -90,29 +90,39 @@
       <img src="../assets/images/logo-vector-graphics.png" alt="logo-vector-graphics">
     </section>
 
-    <section class="clipboard flex flex-col items-center text-center gap-5 py-24">
+    <section class="clipboard flex flex-col items-center text-center gap-5 py-24 md:gap-7 md:max-w-[800px]">
       <h4 class="clipboard__title opacity-70">Clipboard for iOS and Mac OS</h4>
       <p class="clipboard__text">
         Available for free on the App Store. <br> Download for Mac or iOS, sync with iCloud
         and you’re ready to start adding to your clipboard.
       </p>
-      <div class="clipboard__buttons flex flex-col gap-7 w-full py-7">
+      <div class="clipboard__buttons flex flex-col gap-7 w-full py-7  md:flex-row md:max-w-[65%] md:py-4">
         <button class="clipboard__button-ios rounded-full tracking-[1px] w-full font-semibold">Download for iOS</button>
         <button class="clipboard__button-mac rounded-full tracking-[1px] w-full font-semibold">Download for Mac</button>
       </div>
     </section>
   
   </main>
-  <footer class="footer">
-    <img src="../assets/images/logo.svg" alt="logo">
-    <ul class="footer__links">
-      <li class="footer__link">FAQs</li>
-      <li class="footer__link">Contact Us</li>
-      <li class="footer__link">Privacy Policy</li>
-      <li class="footer__link">Press Kit</li>
-      <li class="footer__link">Install Guide</li>
+  <footer class="footer flex flex-col items-center gap-10 text-center p-14 mt-10 md:flex-row md:justify-between">
+    <img src="../assets/images/logo.svg" alt="logo" class="w-[55px]">
+    <ul class="footer__links flex flex-col gap-6 md:grid grid-cols-3 text-start md:gap-y-5 md:gap-x-24 md:mr-auto md:ml-[7.5rem]">
+      <li class="footer__link">
+        <a href="#">FAQs</a>
+      </li>
+      <li class="footer__link col-start-1 row-start-2">
+        <a href="#">Contact Us</a>
+      </li>
+      <li class="footer__link">
+        <a href="#">Privacy Policy</a>
+      </li>
+      <li class="footer__link col-start-2 row-start-2">
+        <a href="#">Press Kit</a>
+      </li>
+      <li class="footer__link">
+        <a href="#">Install Guide</a>
+      </li>
     </ul>
-    <div class="footer__social-media flex gap-5">
+    <div class="footer__social-media flex gap-10 my-1 md:justify-self-end">
       <img src="../assets/images/icon-facebook.svg" alt="icon-facebook">
       <img src="../assets/images/icon-twitter.svg" alt="icon-twitter">
       <img src="../assets/images/icon-instagram.svg" alt="icon-instagram">

@@ -24,12 +24,14 @@
     --Dark-Grayish-Blue: #4c545d;
     --Grayish-Blue: #9fabb2;
     --White: #ffffff;
+    --OffWhite-footer-bg: #e8e8e868;
     --BaiJamjuree: "BaiJamjuree", sans-serif;
 }
 
 body {
     font-family: "BaiJamjuree", sans-serif;
     background: url('../../assets/images/bg-header-mobile.png') center top no-repeat;
+    background-size: contain;
 }
 
 .section-one__paragraph,
@@ -81,7 +83,7 @@ body {
 }
 
 .section-three__titles {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     font-weight: 800;
 }
 
@@ -90,5 +92,90 @@ body {
 }
 
 .footer {
-    background-color: var(--Grayish-Blue);
+    background-color: var(--OffWhite-footer-bg);
+}
+
+.footer__link {
+    font-size: 1.1rem;
+}
+
+@media screen and (min-width: 768px) {
+    body {
+        background: url('../../assets/images/bg-header-desktop.png') center top no-repeat;
+        background-size: contain;
+    }
+
+    .section-one__title {
+        font-size: 3rem;
+    }
+    
+    .section-one__paragraph,
+    .mid-section__text,
+    .clipboard__text {
+        font-size: 1.25rem;
+        line-height: 30px;
+    }
+    
+    .section-one__button-ios,
+    .clipboard__button-ios,
+    .clipboard__button-mac,
+    .section-one__button-mac {
+        padding: 1rem;
+        
+    }
+    
+    .mid-section {
+        gap: 1.75rem;
+        margin-top: 4.5rem;
+    }
+    
+    .mid-section__title, .clipboard__title {
+        font-size: 2.25rem;
+    }
+    
+    .section-two {
+        margin-top: 3rem;
+        grid-template-columns: 1.4fr 1fr;
+        grid-template-rows: 0fr repeat(3, auto) .75fr;
+        gap: 3rem 5rem;
+    }
+
+    .section-two__text {
+        line-height: 32px;
+    }
+
+    .section-two img {
+        transform: translateX(-35px);
+    }
+    
+    .section-three {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 2rem;
+    }
+
+    .section-three__titles {
+        font-size: 1.5rem;
+        font-weight: 800;
+    }
+
+    .section-three__text {
+        font-size: 1.1rem;
+    }
+    
+    .companies img {
+        width: 150px;
+    }
+    
+    br {
+        display: none;
+    }
+
+    .footer {
+        padding: 2.25rem 5rem 2.25rem 7rem;
+    }
+    
+    .footer__link {
+        font-size: 1.1rem;
+    }
 }
