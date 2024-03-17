@@ -8,22 +8,63 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="src/reset.css">
+  <link rel="stylesheet" href="src/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+  <script src="script.js" defer></script>
   <title>Frontend Mentor | Coding Bootcamp Testimonials Slider</title>
 </head>
 <body>
 
-  <main class="swipper">
-    “ I’ve been interested in coding for a while but never taken the jump, until now.
-    I couldn’t recommend this course enough. I’m now in the job of my dreams and so
-    excited about the future. ”
-    Tanya Sinclair
-    UX Engineer
-    “ If you want to lay the best foundation possible I’d recommend taking this course.
-    The depth the instructors go into is incredible. I now feel so confident about
-    starting up as a professional developer. ”
-    John Tarkpor
-    Junior Front-end Developer
+  <main class="main__container">
+
+    <div class="swipper">
+
+      <div class="swipper-wrapper">
+
+        <div class="swipper-slide">
+          <img src="images/image-tanya.jpg" alt="Profile Picture">
+          <p class="testimonial">
+            “ I’ve been interested in coding for a while but never taken the jump, until now.
+            I couldn’t recommend this course enough. I’m now in the job of my dreams and so
+            excited about the future. ”
+          </p>
+          <div class="user-info">
+            <strong class="user-name">Tanya Sinclair</strong>
+            <span class="user-position">UX Engineer</span>
+          </div>
+        </div>
+
+        <div class="swipper-slide">
+          <img src="images/image-tanya.jpg" alt="Profile Picture">
+          <p class="testimonial">
+            “ I’ve been interested in coding for a while but never taken the jump, until now.
+            I couldn’t recommend this course enough. I’m now in the job of my dreams and so
+            excited about the future. ”
+          </p>
+          <div class="user-info">
+            <strong class="user-name">Tanya Sinclair</strong>
+            <span class="user-position">UX Engineer</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="swiper-pagination"></div>
+
+      <!-- If we need navigation buttons -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+
+    </div>
+    <!-- <p class="testimonial">
+      “ If you want to lay the best foundation possible I’d recommend taking this course.
+      The depth the instructors go into is incredible. I now feel so confident about
+      starting up as a professional developer. ”
+    </p>
+    <strong class="user-name">John Tarkpor</strong>
+    <span class="user-position">Junior Front-end Developer</span> -->
   </main>
   
   <div class="attribution">

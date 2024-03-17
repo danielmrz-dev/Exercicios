@@ -1,0 +1,80 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: 'Inter';
+    src: url('../fonts/Inter-Light.ttf') format('truetype');
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('../fonts/Inter-Medium.ttf') format('truetype');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('../fonts/Inter-Bold.ttf') format('truetype');
+    font-weight: 700;
+}
+
+:root {
+    --Inter: 'Inter', sans-serif;
+    --Dark-Blue: #202046;
+    --Grayish-Blue: #babacf;
+}
+
+body {
+    min-height: 95vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--Inter);
+    background: url('../images/pattern-curve.svg') bottom no-repeat;
+    background-size: 100vw 70px;
+    background-attachment: fixed;
+}
+
+/* .swipper {
+    
+} */
+
+.swipper-slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.25rem;
+    max-width: 325px;
+    text-align: center;
+    line-height: 23px;
+    background: url('../images/pattern-bg.svg') center top no-repeat, url('../images/pattern-quotes.svg') center center no-repeat;
+    background-size: contain, 60px;
+    background-position: center top, center 340px;
+    margin: 1.5rem;
+}
+
+img {
+    width: 250px;
+    border-radius: 5px;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.159);
+    margin: 2rem 0;
+}
+
+.testimonial {
+    margin-top: 2rem;
+    font-size: 1.1rem;
+}
+
+.user-info {
+    display: grid;
+    font-size: .9rem;
+}
+
+.user-position {
+    color: var(--Grayish-Blue);
+}
+
+.attribution {
+    display: none;
+}
