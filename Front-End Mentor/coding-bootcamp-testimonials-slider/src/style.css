@@ -35,7 +35,28 @@ body {
     background-attachment: fixed;
 }
 
+.swiper {
+    position: relative;
+}
 
+.swiper-wrapper {
+    max-width: 350px;
+    display: flex;
+    align-items: center;
+}
+
+.buttons {
+    position: absolute;
+    display: flex;
+    left: 135px;
+    bottom: 210px;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    background-color: white;
+    padding: .5rem;
+}
 
 .swiper-slide {
     display: flex;
@@ -43,14 +64,15 @@ body {
     align-items: center;
     justify-content: center;
     gap: 1.25rem;
-    max-width: 325px;
     text-align: center;
     line-height: 23px;
     background: url('../images/pattern-bg.svg') center top no-repeat, url('../images/pattern-quotes.svg') center center no-repeat;
     background-size: contain, 60px;
     background-position: center top, center 340px;
-    margin: 1.5rem;
 }
+
+
+
 
 img {
     width: 250px;
