@@ -22,10 +22,11 @@
     --Inter: 'Inter', sans-serif;
     --Dark-Blue: #202046;
     --Grayish-Blue: #babacf;
+    --swiper-navigation-size: 20px;
 }
 
 body {
-    min-height: 95vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -48,14 +49,29 @@ body {
 .buttons {
     position: absolute;
     display: flex;
-    left: 135px;
-    bottom: 210px;
+    left: 138px;
+    bottom: 270px;
 }
 
 .swiper-button-next,
 .swiper-button-prev {
     background-color: white;
-    padding: .5rem;
+    padding: .6rem .8rem;
+    color: var(--Grayish-Blue);
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.swiper-button-prev {
+    border-radius: 20px 0 0 20px;
+}
+
+.swiper-button-next {
+    border-radius: 0 20px 20px 0;
 }
 
 .swiper-slide {
@@ -67,12 +83,9 @@ body {
     text-align: center;
     line-height: 23px;
     background: url('../images/pattern-bg.svg') center top no-repeat, url('../images/pattern-quotes.svg') center center no-repeat;
-    background-size: contain, 60px;
+    background-size: 94%, 60px;
     background-position: center top, center 340px;
 }
-
-
-
 
 img {
     width: 250px;
@@ -84,6 +97,8 @@ img {
 .testimonial {
     margin-top: 2rem;
     font-size: 1.1rem;
+    padding: 0 1.25rem;
+    line-height: 24px;
 }
 
 .user-info {
@@ -97,4 +112,57 @@ img {
 
 .attribution {
     display: none;
+}
+
+@media screen and (min-width: 1024px) {
+    .swiper-wrapper {
+        max-width: 1200px;
+    }
+    
+    .buttons {
+        left: 138px;
+        bottom: 270px;
+    }
+    
+    .swiper-button-next:after,
+    .swiper-button-prev:after {
+        font-size: 15px;
+        font-weight: 700;
+    }
+    
+    .swiper-slide {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr auto;
+        background: url('../images/pattern-bg.svg') right right no-repeat, url('../images/pattern-quotes.svg') center center no-repeat;
+        background-size: contain, 100px;
+        background-position: right, left;
+    }
+    
+    img {
+        grid-area: 1 / 2 / 3;
+        width: 525px;
+    }
+    
+    .testimonial {
+        margin-top: 0;
+        font-size: 2rem;
+        padding: 0 1.25rem;
+        line-height: 42px;
+        text-align: start;
+    }
+    
+    .user-info {
+        display: flex;
+        font-size: 1.5rem;
+        gap: 1rem;
+    }
+    
+    .user-position {
+        color: var(--Grayish-Blue);
+    }
+    
+    .attribution {
+        display: none;
+    }
 }
