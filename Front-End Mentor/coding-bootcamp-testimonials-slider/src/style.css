@@ -120,39 +120,59 @@ img {
     }
     
     .buttons {
-        left: 138px;
-        bottom: 270px;
+        left: auto;
+        right: 400px;
+        bottom: 5px;
     }
     
+    .swiper-button-next,
+    .swiper-button-prev {
+        padding: 1.25rem 1.5rem;
+    }
+
     .swiper-button-next:after,
     .swiper-button-prev:after {
-        font-size: 15px;
+        font-size: 20px;
         font-weight: 700;
+    }
+
+    .swiper-button-prev {
+        border-radius: 30px 0 0 30px;
+    }
+    
+    .swiper-button-next {
+        border-radius: 0 30px 30px 0;
     }
     
     .swiper-slide {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr auto;
-        background: url('../images/pattern-bg.svg') right right no-repeat, url('../images/pattern-quotes.svg') center center no-repeat;
-        background-size: contain, 100px;
-        background-position: right, left;
+        grid-template-rows: 3fr 1fr;
+        gap: 2.25rem 0;
+        background: url('../images/pattern-bg.svg') no-repeat, url('../images/pattern-quotes.svg') no-repeat;
+        background-size: contain, 90px;
+        background-position: right, 110px 140px;
     }
     
     img {
         grid-area: 1 / 2 / 3;
-        width: 525px;
+        width: 540px;
     }
     
     .testimonial {
+        align-self: flex-end;
         margin-top: 0;
-        font-size: 2rem;
-        padding: 0 1.25rem;
-        line-height: 42px;
+        font-size: 2.1rem;
+        padding: 0 0;
+        line-height: 45px;
         text-align: start;
+        width: 115%;
+        font-weight: 300;
+        overflow: visible;
     }
     
     .user-info {
+        align-self: flex-start;
         display: flex;
         font-size: 1.5rem;
         gap: 1rem;
