@@ -31,9 +31,8 @@ body {
     justify-content: center;
     align-items: center;
     font-family: var(--Inter);
-    background: url('../images/pattern-curve.svg') bottom no-repeat;
-    background-size: 100vw 70px;
-    background-attachment: fixed;
+    background: url('../images/pattern-curve.svg') bottom left no-repeat;
+    background-size: contain;
 }
 
 .swiper {
@@ -114,17 +113,24 @@ img {
     display: none;
 }
 
-@media screen and (min-width: 1024px) {
-    .swiper-wrapper {
-        max-width: 1200px;
+@media screen and (min-width: 1150px) {
+    body {
+        background: url('../images/pattern-curve.svg') left bottom no-repeat;
     }
-    
+    .swiper {
+        height: 680px;
+    }
+
+    .swiper-wrapper {
+        max-width: 1150px;
+    }
+
     .buttons {
         left: auto;
         right: 400px;
-        bottom: 5px;
+        bottom: 40px;
     }
-    
+
     .swiper-button-next,
     .swiper-button-prev {
         padding: 1.25rem 1.5rem;
@@ -139,49 +145,50 @@ img {
     .swiper-button-prev {
         border-radius: 30px 0 0 30px;
     }
-    
+
     .swiper-button-next {
         border-radius: 0 30px 30px 0;
     }
-    
+
     .swiper-slide {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 3fr 1fr;
+        grid-template-rows: 2.5fr 1fr;
         gap: 2.25rem 0;
         background: url('../images/pattern-bg.svg') no-repeat, url('../images/pattern-quotes.svg') no-repeat;
-        background-size: contain, 90px;
-        background-position: right, 110px 140px;
+        background-size: contain, 120px;
+        background-position: right, 100px 172px;
     }
-    
+
     img {
         grid-area: 1 / 2 / 3;
         width: 540px;
     }
-    
+
     .testimonial {
         align-self: flex-end;
         margin-top: 0;
-        font-size: 2.1rem;
+        font-size: 2.01rem;
         padding: 0 0;
         line-height: 45px;
         text-align: start;
         width: 115%;
         font-weight: 300;
         overflow: visible;
+        text-shadow: 2px 2px 0 white;
     }
-    
+
     .user-info {
         align-self: flex-start;
         display: flex;
-        font-size: 1.5rem;
+        font-size: 1.25rem;
         gap: 1rem;
     }
-    
+
     .user-position {
         color: var(--Grayish-Blue);
     }
-    
+
     .attribution {
         display: none;
     }

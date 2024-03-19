@@ -9,3 +9,14 @@ const swiper = new Swiper(".swiper", {
         prevEl: ".swiper-button-prev",
     },
 });
+
+const nextSlide = document.querySelector(".swiper-button-next");
+const prevSlide = document.querySelector(".swiper-button-prev");
+
+document.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowLeft") {
+        swiper.slidePrev()
+    } else if (e.key === "ArrowRight") {
+        swiper.slideNext()
+    }
+});
