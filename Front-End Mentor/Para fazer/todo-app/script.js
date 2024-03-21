@@ -11,7 +11,7 @@ const background = document.querySelector("body");
 const allActiveCompleted = document.querySelector(
     ".main__all-active-completed"
 );
-const listItem = document.querySelector(".main__todo-list-item");
+const listItem = document.querySelectorAll(".main__todo-list-item");
 const deleteTaskBtn = document.querySelectorAll(".main__icon-cross");
 
 TaskInput.focus();
@@ -49,7 +49,7 @@ function createTaskElement(description) {
     );
     const newTaskContent = `
             <label class="main__todo-list-item-label mr-auto flex items-center gap-4">
-                <input type="checkbox" name="todo-checkbox" id="todo-checkbox" class="main__todo-list-checkbox">
+                <input type="checkbox" name="todo-checkbox" class="main__todo-list-checkbox">
                 <p class="main__todo-list-item-description">${description}</p>
             </label>
             <img src="images/icon-cross.svg" alt="" class="main__icon-cross cursor-pointer">
@@ -65,10 +65,14 @@ function updateTasks() {
 tasksContainer.addEventListener("click", (event) => {
     if (event.target.classList.contains("main__icon-cross")) {
         const parentElement = event.target.closest(".main__todo-list-item");
-        const taskDescription = parentElement.querySelector(".main__todo-list-item-description").innerText;
+        const taskDescription = parentElement.querySelector(
+            ".main__todo-list-item-description"
+        ).innerText;
         let storageTasks = JSON.parse(localStorage.getItem("tasks"));
-        storageTasks = storageTasks.filter(task => task.description !== taskDescription)
-        tasks = storageTasks
+        storageTasks = storageTasks.filter(
+            (task) => task.description !== taskDescription
+        );
+        tasks = storageTasks;
         localStorage.setItem("tasks", JSON.stringify(tasks));
         parentElement.remove();
     }
@@ -81,3 +85,26 @@ function loadTasks() {
     }
 }
 
+const finishedTasks = [];
+
+function getDynamicTasks() {
+    const dynamicTasksList = tasksContainer.querySelectorAll(".main__todo-list-item");
+    dynamicTasksList.forEach(task => {
+        const dynamicInput = task.querySelector("input");
+        dynamicInput.addEventListener("click", () => {
+            if (dynamicInput.checked) {
+                finishedTasks.push(dynamicInput)
+            } else {
+                let index = finishedTasks.indexOf(dynamicInput);
+                if (index !== -1) {
+                    finishedTasks.splice(index, 1);
+                }
+            }
+        })
+    })
+}
+
+
+setTimeout(getDynamicTasks, 350)
+
+// CONTINUAR AQUI, PRECISO FILTRAR AS TAREFAS FINALIZADAS PARA ADICIONÁ-LAS AO BOTÃO COMPLETED QUANDO ELE FOR CLIDADO
