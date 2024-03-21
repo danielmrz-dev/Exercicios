@@ -20,7 +20,7 @@ window.onload = () => {
     loadTasks();
 };
 
-const tasks = [];
+let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 TaskInput.addEventListener("keypress", function (evento) {
     if (evento.key === "Enter" && TaskInput.value.length === 0) {
         alert("Please write a valid task!");
@@ -29,6 +29,7 @@ TaskInput.addEventListener("keypress", function (evento) {
         evento.preventDefault();
         const task = {
             description: TaskInput.value,
+            checked: false,
         };
         createTaskElement(TaskInput.value);
         tasks.push(task);
@@ -64,14 +65,19 @@ function updateTasks() {
 tasksContainer.addEventListener("click", (event) => {
     if (event.target.classList.contains("main__icon-cross")) {
         const parentElement = event.target.closest(".main__todo-list-item");
+        const taskDescription = parentElement.querySelector(".main__todo-list-item-description").innerText;
+        let storageTasks = JSON.parse(localStorage.getItem("tasks"));
+        storageTasks = storageTasks.filter(task => task.description !== taskDescription)
+        tasks = storageTasks
+        localStorage.setItem("tasks", JSON.stringify(tasks));
         parentElement.remove();
-        // updateTasks(); CONTINUAR AQUI, O LOCAL STORAGE É UM ARRAY, PRECISO REMOVER UM ITEM DELE
     }
 });
 
 function loadTasks() {
-    const keptTasks = JSON.parse(localStorage.getItem("tasks"));
+    const keptTasks = JSON.parse(localStorage.getItem("tasks")) || [];
     for (let i = 0; i < keptTasks.length; i++) {
         createTaskElement(keptTasks[i].description);
     }
 }
+
