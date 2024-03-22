@@ -80,3 +80,5 @@ const aposentados = pessoas.filter((pessoa) => {
 })
 console.log(aposentados)
 
+
+

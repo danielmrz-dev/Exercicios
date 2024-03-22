@@ -14,11 +14,13 @@ const allActiveCompleted = document.querySelector(
 const listItem = document.querySelectorAll(".main__todo-list-item");
 const deleteTaskBtn = document.querySelectorAll(".main__icon-cross");
 const completedTasksBtn = document.querySelector(".main__completed");
+const itemsLeft = document.querySelector(".main__todo-left-number");
 
 TaskInput.focus();
 
 window.onload = () => {
     loadTasks();
+    updateNumberOfTasks();
 };
 
 let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
@@ -36,6 +38,7 @@ TaskInput.addEventListener("keypress", function (evento) {
         tasks.push(task);
         updateTasks();
         TaskInput.value = "";
+        updateNumberOfTasks();
     }
 });
 
@@ -76,6 +79,7 @@ tasksContainer.addEventListener("click", (event) => {
         tasks = storageTasks;
         localStorage.setItem("tasks", JSON.stringify(tasks));
         parentElement.remove();
+        updateNumberOfTasks();
     }
 });
 
@@ -86,79 +90,33 @@ function loadTasks() {
     }
 }
 
-const finishedTasks = [];
-
 completedTasksBtn.addEventListener("click", () => {
-    const allTasks = tasksContainer.querySelectorAll(".main__todo-list-item");
-    allTasks.forEach((task) => {
-        const input = task.querySelector("input");
-        input.addEventListener("click", () => {
-            if (input.checked) {
-                finishedTasks.push(input.closest(".main__todo-list-item"));                    
-            } else {
-                let index = finishedTasks.indexOf(input);
-                if (index !== -1) {
-                    finishedTasks.splice(index, 1);
-                }
-            }
-        });
-    });
-    console.log(finishedTasks)
+    const todasTarefas = Array.from(tasksContainer.querySelectorAll(".main__todo-list-item"));
+    const tarefasFiltradas = todasTarefas.filter((tarefa) => tarefa.querySelector("input").checked);
+
+    // CONTINUAR AQUI, MOSTRAR AS TAREFAS FILTRADAS NA TELA
 });
 
+function updateNumberOfTasks() {
+    let numberOfTasks = tasksContainer.querySelectorAll(
+        ".main__todo-list-item"
+    ).length;
+    itemsLeft.innerHTML = `${numberOfTasks} `;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// function getDynamicTasks() {
-//     const dynamicTasksList = tasksContainer.querySelectorAll(".main__todo-list-item");
-//     dynamicTasksList.forEach(task => {
-//         const dynamicInput = task.querySelector("input");
-//         dynamicInput.addEventListener("click", () => {
-//             if (dynamicInput.checked) {
-//                 finishedTasks.push(dynamicInput)
-//             } else {
-//                 let index = finishedTasks.indexOf(dynamicInput);
-//                 if (index !== -1) {
-//                     finishedTasks.splice(index, 1);
-//                 }
+// allTasks.forEach((task) => {
+//     const input = task.querySelector("input");
+//     input.addEventListener("change", () => {
+//         if (input.checked) {
+//             if (!finishedTasks.includes(input.closest(".main__todo-list-item"))) {
+//                 finishedTasks.push(input.closest(".main__todo-list-item"));
 //             }
-//         })
-//     })
-//     console.log(finishedTasks)
-// }
-
-// setTimeout(getDynamicTasks, 350)
-
-// CONTINUAR AQUI, PRECISO FILTRAR AS TAREFAS FINALIZADAS PARA ADICIONÁ-LAS AO BOTÃO COMPLETED QUANDO ELE FOR CLIDADO
+//         } else {
+//             let index = finishedTasks.indexOf(input.closest(".main__todo-list-item"));
+//             if (index !== -1) {
+//                 finishedTasks.splice(index, 1);
+//             }
+//         }
+//     });
+// });
+// console.log(finishedTasks);
