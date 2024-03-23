@@ -93,30 +93,33 @@ function loadTasks() {
 completedTasksBtn.addEventListener("click", () => {
     const todasTarefas = Array.from(tasksContainer.querySelectorAll(".main__todo-list-item"));
     const tarefasFiltradas = todasTarefas.filter((tarefa) => tarefa.querySelector("input").checked);
-
-    // CONTINUAR AQUI, MOSTRAR AS TAREFAS FILTRADAS NA TELA
+    if (!tarefasFiltradas.length == 0) {
+        todasTarefas.forEach(task => task.remove())
+        tarefasFiltradas.forEach(task => {
+            const descricao = task.querySelector(".main__todo-list-item-description").innerText
+            const newTaskContainer = document.createElement("div");
+            newTaskContainer.classList.add(
+                "main__todo-list-item",
+                "flex",
+                "items-center",
+                "justify-between",
+                "p-4"
+            );
+            const newTaskContent = `
+                    <label class="main__todo-list-item-label mr-auto flex items-center gap-4">
+                        <input type="checkbox" name="todo-checkbox" class="main__todo-list-checkbox" checked>
+                        <p class="main__todo-list-item-description">${descricao}</p>
+                    </label>
+                    <img src="images/icon-cross.svg" alt="" class="main__icon-cross cursor-pointer">
+                `;
+            newTaskContainer.innerHTML = newTaskContent;
+            tasksContainer.insertBefore(newTaskContainer, lastDiv);
+            // CONTINUAR AQUI, FAZER O FILTRO PARA AS TAREFAS EM ABERTO.          
+        })
+    }
 });
 
 function updateNumberOfTasks() {
-    let numberOfTasks = tasksContainer.querySelectorAll(
-        ".main__todo-list-item"
-    ).length;
+    let numberOfTasks = tasksContainer.querySelectorAll(".main__todo-list-item").length;
     itemsLeft.innerHTML = `${numberOfTasks} `;
 }
-
-// allTasks.forEach((task) => {
-//     const input = task.querySelector("input");
-//     input.addEventListener("change", () => {
-//         if (input.checked) {
-//             if (!finishedTasks.includes(input.closest(".main__todo-list-item"))) {
-//                 finishedTasks.push(input.closest(".main__todo-list-item"));
-//             }
-//         } else {
-//             let index = finishedTasks.indexOf(input.closest(".main__todo-list-item"));
-//             if (index !== -1) {
-//                 finishedTasks.splice(index, 1);
-//             }
-//         }
-//     });
-// });
-// console.log(finishedTasks);
