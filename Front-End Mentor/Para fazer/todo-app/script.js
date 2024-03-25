@@ -1,6 +1,3 @@
-const checkbox = document.querySelector("#todo-checkbox");
-const checkboxLabel = document.querySelector(".main__todo-list-item-label");
-const addTaskBtn = document.querySelector(".main__add-new-task");
 const TaskInput = document.querySelector(".main__input");
 const tasksContainer = document.querySelector(".main__todo-list");
 const lastDiv = document.querySelector(".main__todo-left-n-clear");
@@ -8,13 +5,14 @@ const toggleModeBtn = document.querySelector(".main__mode-icon");
 const darkModeCheckbox = document.querySelector("#sun-moon");
 const title = document.querySelector(".main__title");
 const background = document.querySelector("body");
-const allActiveCompleted = document.querySelector(
-    ".main__all-active-completed"
-);
+const allActiveCompleted = document.querySelector(".main__all-active-completed");
 const listItem = document.querySelectorAll(".main__todo-list-item");
 const deleteTaskBtn = document.querySelectorAll(".main__icon-cross");
+const allTasksBtn = document.querySelector(".main__all");
+const activeTasksBtn = document.querySelector(".main__active");
 const completedTasksBtn = document.querySelector(".main__completed");
 const itemsLeft = document.querySelector(".main__todo-left-number");
+const clearCompletedBtn = document.querySelector(".main__todo-clear");
 
 TaskInput.focus();
 
@@ -41,6 +39,7 @@ TaskInput.addEventListener("keypress", function (evento) {
         updateNumberOfTasks();
     }
 });
+
 
 function createTaskElement(description) {
     const newTaskContainer = document.createElement("div");
@@ -85,41 +84,139 @@ tasksContainer.addEventListener("click", (event) => {
 
 function loadTasks() {
     const keptTasks = JSON.parse(localStorage.getItem("tasks")) || [];
+    const allTasksDescriptions = []
     for (let i = 0; i < keptTasks.length; i++) {
         createTaskElement(keptTasks[i].description);
     }
+
+    const allTasks = tasksContainer.querySelectorAll(".main__todo-list-item");
+    const completedTasksDescriptions = [];
+    allTasks.forEach((task) => {
+        completedTasksDescriptions.push(
+            task.querySelector(".main__todo-list-item-description").innerText
+        );
+    });
+
+    // keptTasks.forEach((task) => {
+    //     if (task.checked === true && allTasksDescriptions.includes(task.description)) {
+    //         console.log(task.description)
+    //     }
+    // })
+
+    let completedStorageTasks = [];
+    keptTasks.forEach((task) => {
+        completedStorageTasks.push(task.description);
+    });
+
+    const itemsOnBothArrays = completedTasksDescriptions.filter((task) =>
+        completedStorageTasks.includes(task)
+    );
+
+    storageTasks = storageTasks.filter(
+        (task) => !itemsOnBothArrays.includes(task.description)
+    );
 }
 
-completedTasksBtn.addEventListener("click", () => {
-    const todasTarefas = Array.from(tasksContainer.querySelectorAll(".main__todo-list-item"));
-    const tarefasFiltradas = todasTarefas.filter((tarefa) => tarefa.querySelector("input").checked);
-    if (!tarefasFiltradas.length == 0) {
-        todasTarefas.forEach(task => task.remove())
-        tarefasFiltradas.forEach(task => {
-            const descricao = task.querySelector(".main__todo-list-item-description").innerText
-            const newTaskContainer = document.createElement("div");
-            newTaskContainer.classList.add(
-                "main__todo-list-item",
-                "flex",
-                "items-center",
-                "justify-between",
-                "p-4"
-            );
-            const newTaskContent = `
-                    <label class="main__todo-list-item-label mr-auto flex items-center gap-4">
-                        <input type="checkbox" name="todo-checkbox" class="main__todo-list-checkbox" checked>
-                        <p class="main__todo-list-item-description">${descricao}</p>
-                    </label>
-                    <img src="images/icon-cross.svg" alt="" class="main__icon-cross cursor-pointer">
-                `;
-            newTaskContainer.innerHTML = newTaskContent;
-            tasksContainer.insertBefore(newTaskContainer, lastDiv);
-            // CONTINUAR AQUI, FAZER O FILTRO PARA AS TAREFAS EM ABERTO.          
-        })
-    }
+allTasksBtn.addEventListener("click", () => {
+    const allTasks = tasksContainer.querySelectorAll(".main__todo-list-item");
+    allTasks.forEach((task) => {
+        task.style.display = "flex";
+    });
+});
+
+activeTasksBtn.addEventListener("click", () => filterTasks(false));
+completedTasksBtn.addEventListener("click", () => filterTasks(true));
+
+clearCompletedBtn.addEventListener("click", () => {
+    const allTasksArray = Array.from(
+        tasksContainer.querySelectorAll(".main__todo-list-item")
+    );
+    const completedTasks = allTasksArray.filter(
+        (tarefa) => tarefa.querySelector("input").checked === true
+    );
+
+    const completedTasksDescriptions = [];
+    completedTasks.forEach((task) => {
+        completedTasksDescriptions.push(
+            task.querySelector(".main__todo-list-item-description").innerText
+        );
+    });
+
+    let storageTasks = JSON.parse(localStorage.getItem("tasks"));
+    let completedStorageTasks = [];
+    storageTasks.forEach((task) => {
+        completedStorageTasks.push(task.description);
+    });
+
+    const itemsOnBothArrays = completedTasksDescriptions.filter((task) =>
+        completedStorageTasks.includes(task)
+    );
+
+    storageTasks = storageTasks.filter(
+        (task) => !itemsOnBothArrays.includes(task.description)
+    );
+
+    tasks = storageTasks;
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+
+    completedTasks.forEach((task) => task.remove());
+    updateNumberOfTasks();
 });
 
 function updateNumberOfTasks() {
-    let numberOfTasks = tasksContainer.querySelectorAll(".main__todo-list-item").length;
+    let numberOfTasks = tasksContainer.querySelectorAll(
+        ".main__todo-list-item"
+    ).length;
     itemsLeft.innerHTML = `${numberOfTasks} `;
 }
+
+function filterTasks(checkedOrNot) {
+    const allTasks = tasksContainer.querySelectorAll(".main__todo-list-item");
+    const allTasksArray = Array.from(
+        tasksContainer.querySelectorAll(".main__todo-list-item")
+    );
+    const tarefasFiltradas = allTasksArray.filter(
+        (tarefa) => tarefa.querySelector("input").checked === checkedOrNot
+    );
+
+    allTasks.forEach((task) => {
+        task.style.display = "none";
+    });
+    tarefasFiltradas.forEach((task) => {
+        task.style.display = "flex";
+    });
+}
+
+document.addEventListener("click", function(event) {
+    if (event.target.matches(".main__todo-list-checkbox")) {
+        const taskCheckbox = document.querySelectorAll(".main__todo-list-checkbox");
+        taskCheckbox.forEach((checkbox) => {
+            if (checkbox.checked === true) {
+                const checkboxParent = checkbox.closest(".main__todo-list-item")
+                const checkboxDescription = checkboxParent.querySelector(".main__todo-list-item-description").innerText;
+
+                let storageTasks = JSON.parse(localStorage.getItem("tasks"));
+                storageTasks.forEach(task => {
+                    if (task.description === checkboxDescription && task.checked === false) {
+                        task.checked = true
+                    }  
+                    tasks = storageTasks;
+                    localStorage.setItem("tasks", JSON.stringify(tasks));
+                })
+            } else {
+                const checkboxParent = checkbox.closest(".main__todo-list-item")
+                const checkboxDescription = checkboxParent.querySelector(".main__todo-list-item-description").innerText;
+
+                let storageTasks = JSON.parse(localStorage.getItem("tasks"));
+                storageTasks.forEach(task => {
+                    if (task.description === checkboxDescription && task.checked === true) {
+                        task.checked = false
+                    }  
+                    tasks = storageTasks;
+                    localStorage.setItem("tasks", JSON.stringify(tasks));
+                })
+
+            }
+        })
+    }
+});
