@@ -97,24 +97,26 @@ function loadTasks() {
         );
     });
 
+    // CONTINUAR AQUI, FAZER OS ITENS CHECADOS PERMANECEREM NA TELA AO RECARREGAR A PÁGINA
+
     // keptTasks.forEach((task) => {
     //     if (task.checked === true && allTasksDescriptions.includes(task.description)) {
     //         console.log(task.description)
     //     }
     // })
 
-    let completedStorageTasks = [];
-    keptTasks.forEach((task) => {
-        completedStorageTasks.push(task.description);
-    });
+    // let completedStorageTasks = [];
+    // keptTasks.forEach((task) => {
+    //     completedStorageTasks.push(task.description);
+    // });
 
-    const itemsOnBothArrays = completedTasksDescriptions.filter((task) =>
-        completedStorageTasks.includes(task)
-    );
+    // const itemsOnBothArrays = completedTasksDescriptions.filter((task) =>
+    //     completedStorageTasks.includes(task)
+    // );
 
-    storageTasks = storageTasks.filter(
-        (task) => !itemsOnBothArrays.includes(task.description)
-    );
+    // storageTasks = storageTasks.filter(
+    //     (task) => !itemsOnBothArrays.includes(task.description)
+    // );
 }
 
 allTasksBtn.addEventListener("click", () => {
