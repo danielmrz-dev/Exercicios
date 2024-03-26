@@ -33,16 +33,6 @@ body .main__input {
   font-size: 0.8rem;
   padding-left: 2.75rem;
 }
-body .main__add-new-task {
-  background-color: #2c2f51;
-  color: #fff;
-  padding: 0.85rem;
-  cursor: pointer;
-  transition: background-color 0.1s ease-in-out;
-}
-body .main__add-new-task:hover {
-  background-color: #161722;
-}
 body .main__todo-list {
   overflow: hidden;
   background-color: #fff;
@@ -50,7 +40,6 @@ body .main__todo-list {
 body .main__todo-list-item {
   font-size: 0.8rem;
   border-bottom: 1px solid #e4e5f1;
-  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, font-weight 0.2s ease-in-out, border 0.2s ease-in-out;
 }
 body .main .grey-container {
   background-color: #2c2f51;
@@ -120,6 +109,15 @@ body .main__drag-n-drop {
   font-size: 0.8rem;
   font-weight: 600;
 }
+body .attribution {
+  color: #777a92;
+}
+body .attribution a {
+  color: #3a7bfd;
+}
+body .attribution a:hover {
+  text-decoration: underline;
+}
 
 .dark-bg {
   background: #25273c url("images/bg-mobile-dark.jpg") no-repeat;
@@ -136,11 +134,10 @@ body .main__drag-n-drop {
   body {
     background: #fafafa url("images/bg-desktop-light.jpg") no-repeat;
     background-size: contain;
-    margin-top: 4.75rem;
   }
   body .main {
     min-width: 530px;
-    margin: auto;
+    margin: 4.7rem auto 0;
     position: relative;
     display: grid;
   }
@@ -214,12 +211,9 @@ body .main__drag-n-drop {
   body .main__all-active-completed {
     position: absolute;
     justify-self: center;
-    bottom: 3.2rem;
+    bottom: 1.2rem;
     font-size: 0.9rem;
     background-color: transparent;
     box-shadow: none;
-  }
-  body .main__drag-n-drop {
-    margin: 1rem 0;
   }
 }/*# sourceMappingURL=style.css.map */

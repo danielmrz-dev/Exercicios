@@ -223,4 +223,11 @@ darkModeCheckbox.addEventListener("change", () => {
     tasksContainer.classList.toggle("grey-container");
     allActiveCompleted.classList.toggle("grey-container");
     leftAndClearContainer.classList.toggle("grey-container");
+
+    let icon = toggleModeBtn.getAttribute("src");
+    if (icon === "images/icon-moon.svg") {
+        toggleModeBtn.setAttribute("src", "images/icon-sun.svg");
+    } else {
+        toggleModeBtn.setAttribute("src", "images/icon-moon.svg");
+    }
 });
