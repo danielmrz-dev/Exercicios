@@ -5,12 +5,17 @@ const toggleModeBtn = document.querySelector(".main__mode-icon");
 const darkModeCheckbox = document.querySelector("#sun-moon");
 const title = document.querySelector(".main__title");
 const background = document.querySelector("body");
-const allActiveCompleted = document.querySelector(".main__all-active-completed");
+const allActiveCompleted = document.querySelector(
+    ".main__all-active-completed"
+);
 const listItem = document.querySelectorAll(".main__todo-list-item");
 const deleteTaskBtn = document.querySelectorAll(".main__icon-cross");
 const allTasksBtn = document.querySelector(".main__all");
 const activeTasksBtn = document.querySelector(".main__active");
 const completedTasksBtn = document.querySelector(".main__completed");
+const leftAndClearContainer = document.querySelector(
+    ".main__todo-left-n-clear"
+);
 const itemsLeft = document.querySelector(".main__todo-left-number");
 const clearCompletedBtn = document.querySelector(".main__todo-clear");
 
@@ -40,9 +45,8 @@ TaskInput.addEventListener("keypress", function (evento) {
     }
 });
 
-
-function createTaskElement(description) {
-    const newTaskContainer = document.createElement("div");
+function createTaskElement(description, checked = false) {
+    const newTaskContainer = document.createElement("li");
     newTaskContainer.classList.add(
         "main__todo-list-item",
         "flex",
@@ -50,9 +54,12 @@ function createTaskElement(description) {
         "justify-between",
         "p-4"
     );
+    newTaskContainer.setAttribute("draggable", true);
     const newTaskContent = `
             <label class="main__todo-list-item-label mr-auto flex items-center gap-4">
-                <input type="checkbox" name="todo-checkbox" class="main__todo-list-checkbox">
+                <input type="checkbox" name="todo-checkbox" class="main__todo-list-checkbox" ${
+                    checked ? "checked" : ""
+                }>
                 <p class="main__todo-list-item-description">${description}</p>
             </label>
             <img src="images/icon-cross.svg" alt="" class="main__icon-cross cursor-pointer">
@@ -84,39 +91,11 @@ tasksContainer.addEventListener("click", (event) => {
 
 function loadTasks() {
     const keptTasks = JSON.parse(localStorage.getItem("tasks")) || [];
-    const allTasksDescriptions = []
     for (let i = 0; i < keptTasks.length; i++) {
-        createTaskElement(keptTasks[i].description);
+        if (keptTasks[i].checked === true) {
+            createTaskElement(keptTasks[i].description, true);
+        } else createTaskElement(keptTasks[i].description);
     }
-
-    const allTasks = tasksContainer.querySelectorAll(".main__todo-list-item");
-    const completedTasksDescriptions = [];
-    allTasks.forEach((task) => {
-        completedTasksDescriptions.push(
-            task.querySelector(".main__todo-list-item-description").innerText
-        );
-    });
-
-    // CONTINUAR AQUI, FAZER OS ITENS CHECADOS PERMANECEREM NA TELA AO RECARREGAR A PÁGINA
-
-    // keptTasks.forEach((task) => {
-    //     if (task.checked === true && allTasksDescriptions.includes(task.description)) {
-    //         console.log(task.description)
-    //     }
-    // })
-
-    // let completedStorageTasks = [];
-    // keptTasks.forEach((task) => {
-    //     completedStorageTasks.push(task.description);
-    // });
-
-    // const itemsOnBothArrays = completedTasksDescriptions.filter((task) =>
-    //     completedStorageTasks.includes(task)
-    // );
-
-    // storageTasks = storageTasks.filter(
-    //     (task) => !itemsOnBothArrays.includes(task.description)
-    // );
 }
 
 allTasksBtn.addEventListener("click", () => {
@@ -189,36 +168,59 @@ function filterTasks(checkedOrNot) {
     });
 }
 
-document.addEventListener("click", function(event) {
+document.addEventListener("click", function (event) {
     if (event.target.matches(".main__todo-list-checkbox")) {
-        const taskCheckbox = document.querySelectorAll(".main__todo-list-checkbox");
+        const taskCheckbox = document.querySelectorAll(
+            ".main__todo-list-checkbox"
+        );
         taskCheckbox.forEach((checkbox) => {
             if (checkbox.checked === true) {
-                const checkboxParent = checkbox.closest(".main__todo-list-item")
-                const checkboxDescription = checkboxParent.querySelector(".main__todo-list-item-description").innerText;
+                const checkboxParent = checkbox.closest(
+                    ".main__todo-list-item"
+                );
+                const checkboxDescription = checkboxParent.querySelector(
+                    ".main__todo-list-item-description"
+                ).innerText;
 
                 let storageTasks = JSON.parse(localStorage.getItem("tasks"));
-                storageTasks.forEach(task => {
-                    if (task.description === checkboxDescription && task.checked === false) {
-                        task.checked = true
-                    }  
+                storageTasks.forEach((task) => {
+                    if (
+                        task.description === checkboxDescription &&
+                        task.checked === false
+                    ) {
+                        task.checked = true;
+                    }
                     tasks = storageTasks;
                     localStorage.setItem("tasks", JSON.stringify(tasks));
-                })
+                });
             } else {
-                const checkboxParent = checkbox.closest(".main__todo-list-item")
-                const checkboxDescription = checkboxParent.querySelector(".main__todo-list-item-description").innerText;
+                const checkboxParent = checkbox.closest(
+                    ".main__todo-list-item"
+                );
+                const checkboxDescription = checkboxParent.querySelector(
+                    ".main__todo-list-item-description"
+                ).innerText;
 
                 let storageTasks = JSON.parse(localStorage.getItem("tasks"));
-                storageTasks.forEach(task => {
-                    if (task.description === checkboxDescription && task.checked === true) {
-                        task.checked = false
-                    }  
+                storageTasks.forEach((task) => {
+                    if (
+                        task.description === checkboxDescription &&
+                        task.checked === true
+                    ) {
+                        task.checked = false;
+                    }
                     tasks = storageTasks;
                     localStorage.setItem("tasks", JSON.stringify(tasks));
-                })
-
+                });
             }
-        })
+        });
     }
+});
+
+darkModeCheckbox.addEventListener("change", () => {
+    background.classList.toggle("dark-bg");
+    TaskInput.classList.toggle("grey-container");
+    tasksContainer.classList.toggle("grey-container");
+    allActiveCompleted.classList.toggle("grey-container");
+    leftAndClearContainer.classList.toggle("grey-container");
 });
