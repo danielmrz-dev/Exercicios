@@ -118,6 +118,9 @@ body .attribution a {
 body .attribution a:hover {
   text-decoration: underline;
 }
+body .active-tasks {
+  color: #3a7bfd;
+}
 
 .dark-bg {
   background: #25273c url("../images/bg-mobile-dark.jpg") no-repeat;

@@ -31,3 +31,25 @@ darkModeCheckbox.addEventListener("change", () => {
         toggleModeBtn.setAttribute("src", "images/icon-moon.svg");
     }
 });
+
+allTasksBtn.classList.add("active-tasks")
+allTasksBtn.addEventListener("click", () => {
+    allTasksBtn.classList.add("active-tasks")
+    activeTasksBtn.classList.remove("active-tasks")
+    completedTasksBtn.classList.remove("active-tasks")
+});
+
+activeTasksBtn.addEventListener("click", () => {
+    activeTasksBtn.classList.add("active-tasks")
+    allTasksBtn.classList.remove("active-tasks")
+    completedTasksBtn.classList.remove("active-tasks")
+});
+completedTasksBtn.addEventListener("click", () => {
+    completedTasksBtn.classList.add("active-tasks")
+    allTasksBtn.classList.remove("active-tasks")
+    activeTasksBtn.classList.remove("active-tasks")
+});
+
+async function getAPI() {
+    const api = await fetch("")
+}

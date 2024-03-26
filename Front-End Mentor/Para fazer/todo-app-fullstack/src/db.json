@@ -1,0 +1,28 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "descricao": "Finish online Javascript course"
+    },
+    {
+      "id": 2,
+      "descricao": "Jog around park 3x"
+    },
+    {
+      "id": 3,
+      "descricao": "10 minutes meditation"
+    },
+    {
+      "id": 4,
+      "descricao": "Read for 1 hour"
+    },
+    {
+      "id": 5,
+      "descricao": "Pick up groceries"
+    },
+    {
+      "id": 6,
+      "descricao": "Finish Todo App on Frontend Mentor"
+    }
+]
+}
