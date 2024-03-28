@@ -7,6 +7,3 @@ const total =
 
 console.log(`A média é ${total.toFixed(2)}`);
 
-const nome = "Daniel";
-
-// console.log("Meu nome é", nome)
