@@ -14,7 +14,7 @@
 // console.log(calculaMedia(salaCSharp)); 
 
 
-const numeros = [1,2,3,4,5,6,9,7,8,4,1,2,5,6,9,4,4,8,9,6,3]
+const numeros = [1,2,3,4,5,6,9,7,8,4,1,2,5,6,9,4,4,8,9,6,3,25]
 
 const soma = numeros.reduce((acumulador, numero) => acumulador + numero, 0)
 
