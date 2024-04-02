@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A Web Todo List App">
+    <link rel="stylesheet" href="src/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Reddit+Mono:wght@200..900&display=swap" rel="stylesheet">
+    <script src="src/script.js" defer></script>
+    <title>Document</title>
+</head>
+<body>
+    <main class="todo">
+        <h1 class="todo__title">TODO LIST</h1>
+        <div class="todo__header">
+            <div class="todo__input-container">
+                <input type="text" name="" id="" placeholder="Search todo...">
+                <img src="assets/search-icon.png" alt="" id="search-icon">
+            </div>
+            <select name="status" id="select">
+                <option value="all" class="todo__all">All</option>
+                <option value="complete" selected class="todo__ativas">Complete</option>
+                <option value="incomplete" class="todo__completas">Incomplete</option>
+            </select>
+            <button class="todo__toggle-mode"><img src="assets/moon-icon.png" alt=""></button>
+        </div>
+        <ul class="todo__list">
+            <!-- <li class="todo__list-item">
+                <label>
+                    <input type="checkbox" class="todo__item-checkbox">
+                    Tarefa 1
+                </label>
+                <button class="todo__edit-delete" data-editar>
+                    <img src="assets/Frame 6.svg" alt="">
+                </button>
+                <button class="todo__edit-delete" data-deletar>
+                    <img src="assets/trash-icon.svg" alt="">
+                </button>
+            </li> -->
+        </ul>
+        <button class="todo__add-new-task">
+            <img src="assets/plus-icon.png" alt="">
+        </button>
+        <dialog class="todo__modal">
+            <div class="todo__create-new-task">
+                <form name="formNovaTarefa">
+                    <div>
+                        <h2>NOVA TAREFA</h2>
+                        <input type="text" placeholder="Nova tarefa..." id="new-task-decription">
+                    </div>
+                    <span>
+                        <button class="cancel">Cancel</button>
+                        <button class="criar" type="submit">Criar</button>
+                    </span>
+                </form>
+            </div>
+        </dialog>
+    </main>
+</body>
+</html>
