@@ -65,11 +65,7 @@ function mostratItens() {
                 <li class="item-compra is-flex is-justify-content-space-between" data-value="${index}">
                     <div>
                         <input type="checkbox" class="is-clickable" />
-                        <input type="text" class="is-size-5" value="${
-                            item.valor
-                        }" ${
-                index !== Number(itemEditar) ? "disabled" : ""
-            }></input>
+                        <input type="text" class="is-size-5" value="${item.valor}" ${index !== Number(itemEditar) ? "disabled" : ""}></input>
                     </div>
                     <div>
                     ${
