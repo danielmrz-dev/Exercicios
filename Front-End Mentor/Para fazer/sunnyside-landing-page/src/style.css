@@ -7,6 +7,9 @@
   position: absolute;
   width: 100%;
 }
+.header label {
+  cursor: pointer;
+}
 .header__menu {
   font-family: "Barlow", sans-serif;
   font-weight: 600;
@@ -45,12 +48,14 @@
   padding: 1rem 2rem;
   border-radius: 30px;
   text-transform: uppercase;
+  cursor: pointer;
+  transition: scale 0.2s ease;
+}
+.header__menu-link:nth-last-child(1):hover {
+  scale: 1.05;
 }
 .header__menu-checkbox:checked + .header__menu {
   display: flex;
-}
-.header__menu-checkbox:checked ~ .header__menu-label > img {
-  opacity: 0.5;
 }
 
 .section-one {
