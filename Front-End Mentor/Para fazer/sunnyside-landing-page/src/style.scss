@@ -1,10 +1,15 @@
 @charset "UTF-8";
 
 @use "components/variables";
+@use "components/header";
+@use "components/section-one";
+@use "components/grid";
+@use "components/footer";
 
 body {
-    background: url('../images/mobile/image-header.jpg') center top no-repeat;
-    background-size: contain;
+    font-family: variables.$Fraunces;
+    display: grid;
+    position: relative;
 }
 
 

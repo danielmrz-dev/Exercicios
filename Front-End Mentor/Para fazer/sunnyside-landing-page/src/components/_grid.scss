@@ -1,0 +1,147 @@
+@use 'variables';
+
+.grid {
+
+    // Transform your brand and Stand out part
+
+    &__text-one, &__text-two {
+        display: grid;
+        place-items: center;
+        gap: 1rem;
+        padding: 4rem 1.5rem;
+        text-align: center;
+    }
+    &__titles {
+        font-size: 2rem;
+        font-weight: 900;
+        line-height: 40px;
+    }
+    &__paragraphs {
+        font-family: variables.$Barlow;
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: variables.$Dark-grayish-blue;
+        padding: .5rem 0 1.5rem;
+    }
+    &__buttons {
+        font-size: 1rem;
+        font-weight: 900;
+        text-transform: uppercase;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        &::after {
+            position: absolute;
+            content: '';
+            display: block;
+            bottom: 1px;
+            height: 8px;
+            width: 110%;
+            opacity: .3;
+            border-radius: 10px;
+            background-color: variables.$Yellow;
+            z-index: -1;
+        }
+    }
+    .second-btn {
+        &::after {
+            background-color: variables.$Soft-red;
+        }
+    }
+
+    // Cherries and Tangerine part
+
+    &__cherries {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+        text-align: center;
+        padding: 0;
+        position: relative;
+    }
+    &__text-container {
+        position: absolute;
+        bottom: 30px;
+        padding: 1.5rem 1rem;
+        display: grid;
+        gap: 1.5rem;
+    }
+    &__tangerine {
+        @extend .grid__cherries;
+    }
+    &__cherries-title, &__tangerine-title {
+        font-size: 1.7rem;
+        font-weight: 900;
+        color: variables.$Dark-desaturated-cyan;
+    }
+    &__tangerine-title {
+        color: variables.$Dark-blue;
+    }
+    &__cherries-paragraph, &__tangerine-paragraph {
+        font-family: variables.$Barlow;
+        font-size: 1rem;
+        font-weight: 700;
+        color: variables.$Dark-desaturated-cyan;
+    }
+    &__tangerine-paragraph {
+        color: variables.$Dark-blue;
+    }
+
+    // Testimonials
+
+    &__testimonials {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4rem;
+        text-align: center;
+        padding: 4rem 2rem;
+        img {
+            width: 70px;
+            border-radius: 50%;
+            margin: auto;
+        }
+    }
+    &__testimonials-title {
+        color: variables.$Grayish-blue;
+        font-size: 1rem;
+        font-weight: 800;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+    }
+    &__testimonials-testimonial {
+        display: grid;
+        align-items: center;
+        gap: 1rem;
+    }
+    &__testimonial-creator-container {
+        display: grid;
+        line-height: 30px;
+    }
+    &__testimonial {
+        font-family: variables.$Barlow;
+        font-weight: 600;
+        font-size: 1.15rem;
+        color: variables.$Very-dark-grayish-blue;
+        padding: 1rem 0;
+    }
+    &__testimonial-creator-name {
+        font-size: 1.1rem;
+        font-weight: 900;
+    }
+    &__testimonial-creator-position {
+        color: variables.$Grayish-blue;
+        font-family: variables.$Barlow;
+        font-weight: 600;
+        font-size: .9rem;
+    }
+
+    // Four gallery images
+
+    &__gallery {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding-top: 1rem;
+    }
+}

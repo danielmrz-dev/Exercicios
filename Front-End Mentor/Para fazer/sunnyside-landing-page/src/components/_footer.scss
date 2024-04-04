@@ -1,0 +1,33 @@
+@use 'variables';
+
+.footer {
+    background-color: variables.$Cyan-footer-bg;
+    padding: 4rem 1.5rem 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2.25rem;
+    &__logo {
+        width: 170px;
+    }
+    &__links-list {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+    }
+    &__link {
+        font-family: variables.$Barlow;
+        font-weight: 600;
+        font-size: 1.1rem;
+        color: variables.$Dark-moderate-cyan;
+    }
+    &__social-media-links-list {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        margin: 3rem 0 0 0;
+    }
+}
