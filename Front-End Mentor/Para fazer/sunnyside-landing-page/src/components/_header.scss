@@ -61,3 +61,42 @@
         display: flex;
     }
 }
+
+@media screen and (min-width: 768px) {
+    .header {
+        padding: 0rem 2.75rem;
+        &__logo {
+            width: 190px;
+        }
+        label {
+            display: none;
+        }
+        &__menu {
+            font-size: 1.25rem;
+            font-weight: 400;
+            color: variables.$White;
+            background-color: transparent;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 3rem;
+            position: static;
+            width: fit-content;
+            z-index: auto;
+            &::after{
+                display: none;
+            }
+        }
+        &__menu-link {
+            &:nth-last-child(1) {
+                font-size: 1.1rem;
+                background-color: variables.$White;
+                padding: 1.25rem 2rem;
+                border-radius: 40px;
+            }
+            &:hover {
+                background-color: variables.$White-opacity;
+            }
+        }
+    }
+}
