@@ -21,6 +21,7 @@
         font-weight: 600;
         font-size: 1.1rem;
         color: variables.$Dark-moderate-cyan;
+        
     }
     &__social-media-links-list {
         width: 100%;
@@ -29,5 +30,66 @@
         justify-content: center;
         gap: 2rem;
         margin: 3rem 0 0 0;
+    }
+    &__social-media-link {
+        height: 20px;
+        width: 20px;
+        background: url('../../images/icon-facebook.svg') center center no-repeat;
+        transition: background-image .2s ease, scale .2s ease;
+        a {
+            &:hover {
+                opacity: 0;
+            }
+        }
+        &:hover {
+            background: url('../../images/icon-facebook-white.svg') center center no-repeat;
+            scale: 1.2;
+            cursor: pointer;
+        }
+        &:nth-child(2) {
+            background: url('../../images/icon-instagram.svg') center center no-repeat;
+            &:hover {
+                background: url('../../images/icon-instagram-white.svg') center center no-repeat;
+            }
+        }
+        &:nth-child(3) {
+            background: url('../../images/icon-twitter.svg') center center no-repeat;
+            &:hover {
+                background: url('../../images/icon-twitter-white.svg') center center no-repeat;
+            }
+        }
+        &:nth-child(4) {
+            background: url('../../images/icon-pinterest.svg') center center no-repeat;
+            &:hover {
+                background: url('../../images/icon-pinterest-white.svg') center center no-repeat;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .footer {
+        &__links-list {
+            justify-content: center;
+            gap: 3.5rem;
+        }
+        &__link {
+            font-family: variables.$Barlow;
+            font-weight: 600;
+            font-size: 1.15rem;
+            color: variables.$Dark-moderate-cyan;
+            transition: color .2s ease;
+            &:hover {
+                color: variables.$White;
+            }
+        }
+        &__social-media-links-list {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            margin: 3rem 0 0 0;
+        }
     }
 }
