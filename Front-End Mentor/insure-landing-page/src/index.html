@@ -10,33 +10,41 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Karla:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="output.css">
-  
+  <script src="script.js" defer></script>
   <title>Frontend Mentor | Insure landing page</title>
 </head>
 <body class="">
 
-  <header class="flex items-center justify-between p-5">
+  <header class="flex items-center justify-between p-5 relative">
 
     <img src="../images/logo.svg" alt="">
 
-    <label for="menu">
-      <img src="../images/icon-hamburger.svg" alt="">
+    <label for="menu" class="cursor-pointer">
+      <img src="../images/icon-hamburger.svg" alt="" class="menu-icon">
     </label>
 
-    <input type="checkbox" name="" id="menu" class="hidden">
+    <input type="checkbox" id="menu" class="hidden checkbox">
 
-    <ul class="hidden">
-      <li class="">How we work</li>
-      <li class="">Blog</li>
-      <li class="">Account</li>
-      <li class="">View plans</li>
+    <ul class="menu absolute right-0 z-10 top-[72px] bg-Dark-Violet p-10 w-full h-[90vh] text-white mx-auto flex flex-col gap-7 uppercase text-center font-medium tracking-[2px] hidden">
+      <li class="">
+        <a href="#">How we work</a>
+      </li>
+      <li class="">
+        <a href="#">Blog</a>
+      </li>
+      <li class="">
+        <a href="#">Account</a>
+      </li>
+      <li class="">
+        <a href="#" class="block font-semibold border-[2px] border-solid border-white py-[.7rem] px-7 uppercase hover:bg-white hover:text-Dark-Violet">View plans</a>
+      </li>
     </ul>
 
   </header>
   
 
   <main class="">
-    <div class="bg-Dark-Violet text-Very-Light-Gray grid">
+    <section class="bg-Dark-Violet text-Very-Light-Gray grid relative overflow-visible">
       <img src="../images/image-intro-mobile.jpg" alt="A man, a woman and two kids holdind hands" class="w-full">
       <div class="background px-7 py-[5.5rem] grid gap-4 text-center">
         <h1 class="font-dm text-[2.75rem] leading-[50px]">Humanizing your insurance.</h1>
@@ -45,46 +53,147 @@
           and technology to help you find the plan that’s right for you. Ensure you
           and your loved ones are protected.
         </p>
-        <a href="#" class="text-[.8rem] font-semibold tracking-[2px] border-[2px] border-solid border-white w-fit mx-auto mt-4 py-[.6rem] px-7 uppercase">View plans</a>
+        <a href="#" class="text-[.8rem] font-semibold tracking-[2px] border-[2px] border-solid border-white w-fit mx-auto mt-4 py-[.6rem] px-7 uppercase hover:bg-white hover:text-Dark-Violet" aria-label="Learn more about our plans">View plans</a>
+        <img src="../images/bg-pattern-intro-right-mobile.svg" alt="" aria-hidden="true" class="
+        w-[120px] absolute -bottom-[11rem] right-0">
       </div>
-    </div>
-    We’re different
-    Snappy Process
-    Our application process can be completed in minutes, not hours. Don’t get
-    stuck filling in tedious forms.
-    Affordable Prices
-    We don’t want you worrying about high monthly costs. Our prices may be low,
-    but we still offer the best coverage possible.
-    People First
-    Our plans aren’t full of conditions and clauses to prevent payouts. We make
-    sure you’re covered when you need it.
-    Find out more about how we work
-    How we work
+    </section>
+
+    <section class="grid items-center gap-[4rem] text-center px-[1.5rem] py-[8.5rem]">
+      <h2 class="different text-[2.8rem] font-dm font-medium">We’re different</h2>
+      <div class="flex flex-col items-center gap-3">
+        <img src="../images/icon-snappy-process.svg" alt="" class="pb-3">
+        <h3 class="font-dm text-[1.75rem]">Snappy Process</h3>
+        <p class="font-karla text-Dark-Grayish-Violet font-medium">
+          Our application process can be completed in minutes, not hours. Don’t get
+          stuck filling in tedious forms.
+        </p>
+      </div>
+      <div class="flex flex-col items-center gap-3">
+        <img src="../images/icon-affordable-prices.svg" alt="" class="pb-3">
+        <h3 class="font-dm text-[1.75rem]">Affordable Prices</h3>
+        <p class="font-karla text-Dark-Grayish-Violet font-medium">
+          We don’t want you worrying about high monthly costs. Our prices may be low,
+          but we still offer the best coverage possible.
+        </p>
+      </div>
+      <div class="flex flex-col items-center gap-3">
+        <img src="../images/icon-people-first.svg" alt="" class="pb-3">
+        <h3 class="font-dm text-[1.75rem]">People First</h3>
+        <p class="font-karla text-Dark-Grayish-Violet font-medium">
+          Our plans aren’t full of conditions and clauses to prevent payouts. We make
+          sure you’re covered when you need it.
+        </p>
+      </div>
+    </section>
+
+    <section class="background-two text-white bg-Dark-Violet px-5 py-[4.5rem] mx-[1.5rem] grid items-center gap-5 text-center">
+      <h4 class="font-dm text-[2.5rem] leading-[40px]">Find out more about how we work</h4>
+      <a href="#" class="text-[.8rem] font-semibold tracking-[2px] border-[2px] border-solid border-white w-fit mx-auto mt-4 py-[.6rem] px-6 uppercase hover:bg-white hover:text-Dark-Violet" aria-label="Learn more about how we work">How we work</a>
+    </section>
+
   </main>
 
-  <footer>
-    Our company
-    How we work
-    Why Insure?
-    View plans
-    Reviews
-    Help me
-    FAQ
-    Terms of use
-    Privacy policy
-    Cookies
-    Contact
-    Sales
-    Support
-    Live chat
-    Others
-    Careers
-    Press
-    Licenses
+  <footer class="footer mt-[8.5rem] px-[1.5rem] py-[5.5rem] flex flex-col items-center text-center gap-10 bg-Very-Light-Gray">
+    <div class="flex flex-col items-center gap-8">
+      <img src="../images/logo.svg" alt="">
+      <ul class="flex gap-4">
+        <li class="facebook">
+          <a href="#" aria-label="Visit our Facebook Page">
+            <img src="../images/icon-facebook.svg" alt="" class="opacity-0">
+          </a>
+        </li>
+        <li class="twitter">
+          <a href="#" aria-label="Visit our Twitter Page">
+            <img src="../images/icon-twitter.svg" alt="" class="opacity-0">
+          </a>
+        </li>
+        <li class="pinterest">
+          <a href="#" aria-label="Visit our Pinterest Page">
+            <img src="../images/icon-pinterest.svg" alt="" class="opacity-0">
+          </a>
+        </li>
+        <li class="instagram">
+          <a href="#" aria-label="Visit our Instagram Page">
+            <img src="../images/icon-instagram.svg" alt="" class="opacity-0">
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <hr class="w-full">
+
+    <div class="grid gap-6">
+      <h5 class="uppercase text-Dark-Grayish-Violet font-karla font-bold text-[.85rem] tracking-[1px]">Our company</h5>
+      <ul class="grid gap-2">
+        <li class="uppercase text-[.85rem] font-karla font-bold tracking-[1px]">
+          <a href="#" class="hover:underline">How we work</a>
+        </li>
+        <li class="uppercase text-[.85rem] font-karla font-bold tracking-[1px]">
+          <a href="#" class="hover:underline">Why Insure?</a>
+        </li>
+        <li class="uppercase text-[.85rem] font-karla font-bold tracking-[1px]">
+          <a href="#" class="hover:underline">View plans</a>
+        </li>
+        <li class="uppercase text-[.85rem] font-karla font-bold tracking-[1px]">
+          <a href="#" class="hover:underline">Reviews</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="grid gap-6">
+      <h5 class="uppercase text-Dark-Grayish-Violet font-karla font-bold text-[.85rem] tracking-[1px]">Help me</h5>
+      <ul class="grid gap-2">
+        <li class="uppercase text-[.85rem] font-karla font-bold tracking-[1px]">
+          <a href="#" class="hover:underline">FAQ</a>
+        </li>
+        <li class="uppercase text-[.85rem] font-karla font-bold tracking-[1px]">
+          <a href="#" class="hover:underline">Terms of use</a>
+        </li>
+        <li class="uppercase text-[.85rem] font-karla font-bold tracking-[1px]">
+          <a href="#" class="hover:underline">Privacy policy</a>
+        </li>
+        <li class="uppercase text-[.85rem] font-karla font-bold tracking-[1px]">
+          <a href="#" class="hover:underline">Cookies</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="grid gap-6">
+  
+      <h5 class="uppercase text-Dark-Grayish-Violet font-karla font-bold text-[.85rem] tracking-[1px]">Contact</h5>
+      <ul class="grid gap-2">
+        <li class="uppercase text-[.85rem] font-karla font-bold tracking-[1px]">
+          <a href="#" class="hover:underline">Sales</a>
+        </li>
+        <li class="uppercase text-[.85rem] font-karla font-bold tracking-[1px]">
+          <a href="#" class="hover:underline">Support</a>
+        </li>
+        <li class="uppercase text-[.85rem] font-karla font-bold tracking-[1px]">
+          <a href="#" class="hover:underline">Live chat</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="grid gap-6">
+      <h5 class="uppercase text-Dark-Grayish-Violet font-karla font-bold text-[.85rem] tracking-[1px]">Others</h5>
+      <ul class="grid gap-2">
+        <li class="uppercase text-[.85rem] font-karla font-bold tracking-[1px]">
+          <a href="#" class="hover:underline">Careers</a>
+        </li>
+        <li class="uppercase text-[.85rem] font-karla font-bold tracking-[1px]">
+          <a href="#" class="hover:underline">Press</a>
+        </li>
+        <li class="uppercase text-[.85rem] font-karla font-bold tracking-[1px]">
+          <a href="#" class="hover:underline">Licenses</a>
+        </li>
+      </ul>
+    </div>
+
   </footer>
 
   
-  <div class="attribution">
+  <div class="attribution hidden">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
   </div>

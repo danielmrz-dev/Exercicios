@@ -1,4 +1,70 @@
+.checkbox:checked +.menu {
+    display: flex;
+}
+
+.menu {
+    background: url('../images/bg-pattern-mobile-nav.svg') bottom no-repeat;
+    background-size: contain;
+}
+
 .background {
-    background: url('../images/bg-pattern-intro-left-mobile.svg') left top no-repeat;
-    
+    background: url('../images/bg-pattern-intro-left-mobile.svg') left top no-repeat;    
+}
+
+.background-two {
+    background: url('../images/bg-pattern-how-we-work-mobile.svg') right top no-repeat;   
+}
+
+.footer {
+    background: url('../images/bg-pattern-footer-mobile.svg') no-repeat;
+    background-size: contain;
+}
+
+.different::before {
+    content: '';
+    width: 150px;
+    margin: 0 auto 1.75rem;
+    display: block;
+    height: 1.5px;
+    background-color: #b5a4b6;
+}
+
+.facebook {
+    background: url('../images/icon-facebook.svg') center center no-repeat;
+    background-size: contain;
+    transition: background .2s ease, scale .2s ease;
+}
+.facebook:hover {
+    background: url('../images/icon-facebook-black.svg') center center no-repeat;
+    scale: 1.1;
+}
+
+.twitter {
+    background: url('../images/icon-twitter.svg') center center no-repeat;
+    background-size: contain;
+    transition: background .2s ease, scale .2s ease;
+}
+.twitter:hover {
+    background: url('../images/icon-twitter-black.svg') center center no-repeat;
+    scale: 1.1;
+}
+
+.pinterest {
+    background: url('../images/icon-pinterest.svg') center center no-repeat;
+    background-size: contain;
+    transition: background .2s ease, scale .2s ease;
+}
+.pinterest:hover {
+    background: url('../images/icon-pinterest-black.svg') center center no-repeat;
+    scale: 1.1;
+}
+
+.instagram {
+    background: url('../images/icon-instagram.svg') center center no-repeat;
+    background-size: contain;
+    transition: background .2s ease, scale .2s ease;
+}
+.instagram:hover {
+    background: url('../images/icon-instagram-black.svg') center center no-repeat;
+    scale: 1.1;
 }
