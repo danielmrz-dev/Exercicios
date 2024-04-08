@@ -71,7 +71,7 @@
     scale: 1.1;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1024px) {
     .background {
         background: none
     }
@@ -83,5 +83,20 @@
         height: 1.5px;
         background-color: #b5a4b6;
         opacity: .7;
+    }
+    .different::before {
+        content: '';
+        width: 150px;
+        margin: 0 0 2.5rem;
+        display: block;
+        height: 1.5px;
+        background-color: #b5a4b6;
+    }
+    .background-two {
+        background: url('../images/bg-pattern-how-we-work-desktop.svg') right top no-repeat;   
+    }
+    
+    .footer {
+        background: url('../images/bg-pattern-footer-desktop.svg') no-repeat;
     }
 }
