@@ -1,5 +1,7 @@
 .checkbox:checked +.menu {
     display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
 }
 
 .menu {
@@ -67,4 +69,19 @@
 .instagram:hover {
     background: url('../images/icon-instagram-black.svg') center center no-repeat;
     scale: 1.1;
+}
+
+@media screen and (min-width: 768px) {
+    .background {
+        background: none
+    }
+    .title::before {
+        content: '';
+        width: 150px;
+        margin: 0 0 4rem;
+        display: block;
+        height: 1.5px;
+        background-color: #b5a4b6;
+        opacity: .7;
+    }
 }
