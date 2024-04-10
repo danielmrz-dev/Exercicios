@@ -3,14 +3,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 
 @import 'partials/header.css';
+@import 'partials/menu.css';
 @import 'partials/future.css';
+@import 'partials/state.css';
+@import 'partials/free.css';
+@import 'partials/footer.css';
 
 :root {
     --Very-dark-blue: #1f3f5b;
     --White: #ffffff;
     --Grayish-blue: #c8c8cb;
+    --Grayish-blue-opac: #c8c8cb3f;
     --Very-dark-grayish-blue: #4b5862;
     --Very-dark-black-blue: #25252d;
+    --box-shadow: #25252d4a;
     --Light-red: #ff3d54;
     --Light-red-two: #ff525d;
     --Very-light-red: #ff8f70;
@@ -29,4 +35,17 @@
 
 body {
     font-family: var(--Overpass);
+    display: flex;
+    flex-direction: column;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+    padding: 4.75rem 0;
+}
+
+.attribution {
+    display: none;
 }

@@ -1,0 +1,29 @@
+.free {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    text-align: center;
+    padding: 0 1.5rem;
+}
+
+.free img {
+    width: 100%;
+}
+
+.free-text-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.7rem;
+    color: var(--Very-dark-grayish-blue);
+}
+
+.free-title {
+    font-size: 1.75rem;
+    font-weight: 600;
+}
+
+.free-paragraph {
+    font-size: 1.1rem;
+    font-weight: 300;
+    line-height: 28px;
+}

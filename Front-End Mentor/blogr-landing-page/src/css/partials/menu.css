@@ -1,0 +1,89 @@
+#menu {
+    display: none;
+}
+
+.navbar {
+    position: absolute;
+    right: 0;
+    left: 0;
+    margin: auto;
+    top: 125px;
+    width: 87.5%;
+    background-color: var(--White);
+    border-radius: 5px;
+    padding: 2rem 1.5rem;
+    display: flex;
+    /* none */
+    flex-direction: column;
+    text-align: center;
+    gap: 1.85rem;
+    z-index: 1;
+    box-shadow: 4px 4px 15px var(--box-shadow);
+}
+
+.navbar-container {
+    display: flex;
+    flex-direction: column;
+    gap: .75rem;
+}
+
+.title-icon {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    justify-content: center;
+}
+
+.navbar-headings {
+    font-size: 1.1rem;
+    font-weight: 600;
+    display: flex;
+    gap: .5rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar-links {
+    background-color: var(--Grayish-blue-opac);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    padding: 1.75rem 0;
+    margin: .5rem 0;
+    display: none;
+}
+
+.navbar-container:nth-child(3) .navbar-links {
+    display: flex;
+}
+
+
+.navbar-link {
+    color: var(--Very-dark-grayish-blue);
+    font-weight: 600;
+}
+
+hr {
+    background-color:  var(--Very-dark-grayish-blue);
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+}
+
+nav button {
+    font-family: var(--Overpass);
+    background-color: transparent;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.sign-up {
+    background-image: linear-gradient(to right, var(--Very-light-red), var(--Light-red));
+    width: fit-content;
+    padding: .9rem 2.25rem;
+    border-radius: 40px;
+    color: var(--White);
+}

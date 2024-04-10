@@ -13,30 +13,62 @@
   <header class="header">
     <div class="head">
       <img src="images/logo.svg" alt="" aria-label="Blogr Home Page" class="logo">
+
       <label for="menu">
         <img src="images/icon-hamburger.svg" alt="">
       </label>
+
       <input type="checkbox" name="" id="menu">
+
+        
       <nav class="navbar">
-        Product
-        Overview
-        Pricing
-        Marketplace
-        Features
-        Integrations
-        Company
-        About
-        Team
-        Blog
-        Careers
-        Connect
-        Contact
-        Newsletter
-        LinkedIn
       
-        Login
-        Sign Up
+        <div class="navbar-container">
+          <div class="title-icon">
+            <span class="navbar-headings">Product</span>
+            <img src="images/icon-arrow-dark.svg" alt="">
+          </div>
+          <ul class="navbar-links">
+            <li class="navbar-link">Overview</li>
+            <li class="navbar-link">Pricing</li>
+            <li class="navbar-link">Marketplace</li>
+            <li class="navbar-link">Features</li>
+            <li class="navbar-link">Integrations</li>
+          </ul>
+        </div>
+        <div class="navbar-container">
+          <div class="title-icon">
+            <span class="navbar-headings">Company</span>
+            <img src="images/icon-arrow-dark.svg" alt="">
+          </div>
+          <ul class="navbar-links">
+            <li class="navbar-link">About</li>
+            <li class="navbar-link">Team</li>
+            <li class="navbar-link">Blog</li>
+            <li class="navbar-link">Careers</li>
+          </ul>
+        </div>
+        <div class="navbar-container">
+          <div class="title-icon">
+            <span class="navbar-headings">Connect</span>
+            <img src="images/icon-arrow-dark.svg" alt="">
+          </div>
+          <ul class="navbar-links">
+            <li class="navbar-link">Contact</li>
+            <li class="navbar-link">Newsletter</li>
+            <li class="navbar-link">LinkedIn</li>
+          </ul>
+        </div>
+
+        <hr>
+      
+        <div class="buttons">
+          <button class="login">Login</button>
+          <button class="sign-up">Sign Up</button>
+        </div>
+        
       </nav>
+
     </div>
 
     <div class="main-text">
@@ -55,7 +87,7 @@
 
     <section class="future">
       <h2 class="future-title">Designed for the future</h2>
-      <img src="images/illustration-editor-mobile.svg" alt="">
+      <img src="images/illustration-editor-mobile.svg" alt="And Editor Illustration">
 
       <div class="future-text-block">
         <h3 class="future-subtitles">Introducing an extensible editor</h3>
@@ -66,7 +98,7 @@
           change the looks of a blog.
         </p>
       </div>
-      
+
       <div class="future-text-block">
         <h3 class="future-subtitles">Robust content management</h3>
         <p class="future-paragraphs">
@@ -76,40 +108,67 @@
       </div>
     </section>
 
-    State of the Art Infrastructure
-    With reliability and speed in mind, worldwide data centers provide the backbone for ultra-fast connectivity.
-    This ensures your site will load instantly, no matter where your readers are, keeping your site competitive.
-    Free, open, simple
-    Blogr is a free and open source application backed by a large community of helpful developers. It supports
-    features such as code syntax highlighting, RSS feeds, social media integration, third-party commenting tools,
-    and works seamlessly with Google Analytics. The architecture is clean and is relatively easy to learn.
-    Powerful tooling
-    Batteries included. We built a simple and straightforward CLI tool that makes customization and deployment a breeze, but
-    capable of producing even the most complicated sites.
+    <section class="state">
+      <img src="images/illustration-phones.svg" alt="Two smartphones, one of them with Blogr logo" class="state-phones">
+      <h2 class="state-title">State of the Art Infrastructure</h2>
+      <p class="state-paragraph">
+        With reliability and speed in mind, worldwide data centers provide the backbone for ultra-fast connectivity.
+        This ensures your site will load instantly, no matter where your readers are, keeping your site competitive.
+      </p>
+    </section>
+
+    <section class="free">
+      
+      <img src="images/illustration-laptop-mobile.svg" alt="An open laptop">
+
+      <div class="free-text-container">
+
+        <h3 class="free-title">Free, open, simple</h3>
+        <p class="free-paragraph">
+          Blogr is a free and open source application backed by a large community of helpful developers. It supports
+          features such as code syntax highlighting, RSS feeds, social media integration, third-party commenting tools,
+          and works seamlessly with Google Analytics. The architecture is clean and is relatively easy to learn.
+        </p>
+      </div>
+
+      <div class="free-text-container">
+        <h3 class="free-title">Powerful tooling</h3>
+        <p class="free-paragraph">
+          Batteries included. We built a simple and straightforward CLI tool that makes customization and deployment a breeze, but
+          capable of producing even the most complicated sites.
+        </p>
+      </div>
+
+    </section>
   </main>
 
   <footer class="footer">
-    Product
-    Overview
-    Pricing
-    Marketplace
-    Features
-    Integrations
-    Company
-    About
-    Team
-    Blog
-    Careers
-    Connect
-    
-    Contact
-    Newsletter
-    LinkedIn
-  </footer>
 
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+    <img src="images/logo.svg" alt="" aria-label="Blogr Home Page">
+    
+    <ul>
+      <h4>Product</h4>
+      <li>Overview</li>
+      <li>Pricing</li>
+      <li>Marketplace</li>
+      <li>Features</li>
+      <li>Integrations</li>
+    </ul>
+    
+    <ul>
+      <h4>Company</h4>
+      <li>About</li>
+      <li>Team</li>
+      <li>Blog</li>
+      <li>Careers</li>
+    </ul>
+
+    <ul>
+      <h4>Connect</h4>
+      <li>Contact</li>
+      <li>Newsletter</li>
+      <li>LinkedIn</li>
+    </ul>
+  </footer>
 </body>
 </html>

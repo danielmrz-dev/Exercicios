@@ -1,0 +1,34 @@
+.footer {
+    background-color: var(--Very-dark-gray-blue);
+    border-radius: 0 105px 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 3rem;
+    padding: 4.5rem 0;
+    color: var(--White);
+}
+
+.footer img {
+    padding-bottom: 2.25rem;
+}
+
+.footer ul {
+    display: flex;
+    flex-direction: column;
+    gap: .61rem;
+}
+
+.footer h4 {
+    font-size: 1.1rem;
+    font-family: var(--Ubuntu);
+    font-weight: 500;
+    padding-bottom: 1.25rem;
+}
+
+.footer li {
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: var(--Grayish-blue);
+}

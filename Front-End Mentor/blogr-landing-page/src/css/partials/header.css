@@ -4,6 +4,7 @@
     display: grid;    
     gap: 7rem;
     border-radius: 0 0 0 105px;
+    position: relative;
 }
 
 .logo {
@@ -14,14 +15,6 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-}
-
-.navbar {
-    display: none;
-}
-
-input[type="checkbox"] {
-    display: none;
 }
 
 .main-text {

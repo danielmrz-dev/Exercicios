@@ -1,0 +1,34 @@
+.state {
+    background: url('../../../images/bg-pattern-circles.svg') center top -220px no-repeat, linear-gradient(to bottom, var(--Very-dark-gray-blue), var(--Very-dark-desaturated-blue));
+    background-size: cover; 
+    border-radius: 0 105px 0 105px;
+    margin: 9rem 0 0;
+    padding: 15rem 1.75rem 8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    /* align-items: center; */
+    text-align: center;
+    position: relative;
+    color: var(--White);
+}
+
+.state-phones {
+    position: absolute;
+    margin: auto;
+    top: -180px;
+    left: 0;
+    right: 0;
+}
+
+.state-title {
+    font-size: 2.25rem;
+    font-weight: 500;
+}
+
+.state-paragraph {
+    font-size: .9rem;
+    line-height: 27px;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
