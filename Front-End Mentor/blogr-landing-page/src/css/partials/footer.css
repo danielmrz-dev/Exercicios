@@ -32,3 +32,13 @@
     font-weight: 300;
     color: var(--Grayish-blue);
 }
+
+.footer li a {
+    text-decoration: none;
+    color: var(--Grayish-blue);
+}
+
+.footer li a:hover {
+    text-decoration: underline;
+    color: var(--White);
+}

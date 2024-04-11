@@ -65,9 +65,54 @@
 .button-start {
     background-color: var(--White);
     color: var(--Light-red);
+    transition: background .2s ease, color .2s ease;
+}
+
+.button-start:hover {
+    background-color: var(--White-opac);
+    color: var(--White);
 }
 
 .button-learn {
     color: var(--White);
     border: 1px solid var(--White);
+    transition: background .2s ease, color .2s ease;
+}
+
+.button-learn:hover {
+    background-color: var(--White);
+    color: var(--Very-light-red);
+}
+
+@media screen and (min-width: 768px) {
+    .header {
+        background: url('../../../images/bg-pattern-intro-desktop.svg') left -30vw top -120vh no-repeat, linear-gradient(to right, var(--Very-light-red), var(--Light-red));
+        padding: 3.5rem 10.5rem 9.95rem;
+        gap: 8rem;
+        position: relative;
+    }
+
+    .logo {
+        width: 100px;
+    }
+
+    .head {
+        gap: 2rem;
+    }
+
+    .text-container {
+        gap: 1rem;
+    }
+    
+    .main-title {
+        font-size: 3.75rem;
+    }
+    
+    .main-paragraph {
+        font-size: 1.25rem;
+    }
+    
+    .button-start, .button-learn {
+        font-size: 1.1rem;
+    }
 }

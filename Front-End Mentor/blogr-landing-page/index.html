@@ -15,11 +15,12 @@
     <div class="head">
       <img src="images/logo.svg" alt="" aria-label="Blogr Home Page" class="logo">
 
+      <input type="checkbox" name="" id="menu">
+
       <label for="menu" class="label">
         <img src="images/icon-hamburger.svg" alt="" class="menu-icon">
       </label>
 
-      <input type="checkbox" name="" id="menu">
         
       <nav class="navbar">
       
@@ -27,7 +28,10 @@
           <div class="navbar-container">
             <div class="title-icon">
               <span class="navbar-headings">Product</span>
-              <img src="images/icon-arrow-dark.svg" alt="">
+              <picture>
+                <source media="(min-width: 768px)" srcset="images/icon-arrow-light.svg" type="image/svg+xml">
+                <img src="images/icon-arrow-dark.svg" alt="">
+              </picture>
             </div>
             <ul class="navbar-links">
               <li class="navbar-link">
@@ -50,7 +54,10 @@
           <div class="navbar-container">
             <div class="title-icon">
               <span class="navbar-headings">Company</span>
-              <img src="images/icon-arrow-dark.svg" alt="">
+              <picture>
+                <source media="(min-width: 768px)" srcset="images/icon-arrow-light.svg" type="image/svg+xml">
+                <img src="images/icon-arrow-dark.svg" alt="">
+              </picture>
             </div>
             <ul class="navbar-links">
               <li class="navbar-link">
@@ -70,7 +77,10 @@
           <div class="navbar-container">
             <div class="title-icon">
               <span class="navbar-headings">Connect</span>
-              <img src="images/icon-arrow-dark.svg" alt="">
+              <picture>
+                <source media="(min-width: 768px)" srcset="images/icon-arrow-light.svg" type="image/svg+xml">
+                <img src="images/icon-arrow-dark.svg" alt="">
+              </picture>
             </div>
             <ul class="navbar-links">
               <li class="navbar-link">
@@ -174,26 +184,50 @@
     
     <ul>
       <h4>Product</h4>
-      <li>Overview</li>
-      <li>Pricing</li>
-      <li>Marketplace</li>
-      <li>Features</li>
-      <li>Integrations</li>
+      <li>
+        <a href="#">Overview</a>
+      </li>
+      <li>
+        <a href="#">Pricing</a>
+      </li>
+      <li>
+        <a href="#">Marketplace</a>
+      </li>
+      <li>
+        <a href="#">Features</a>
+      </li>
+      <li>
+        <a href="#">Integrations</a>
+      </li>
     </ul>
     
     <ul>
       <h4>Company</h4>
-      <li>About</li>
-      <li>Team</li>
-      <li>Blog</li>
-      <li>Careers</li>
+      <li>
+        <a href="#">About</a>
+      </li>
+      <li>
+        <a href="#">Team</a>
+      </li>
+      <li>
+        <a href="#">Blog</a>
+      </li>
+      <li>
+        <a href="#">Careers</a>
+      </li>
     </ul>
 
     <ul>
       <h4>Connect</h4>
-      <li>Contact</li>
-      <li>Newsletter</li>
-      <li>LinkedIn</li>
+      <li>
+        <a href="#">Contact</a>
+      </li>
+      <li>
+        <a href="#">Newsletter</a>
+      </li>
+      <li>
+        <a href="#">LinkedIn</a>
+      </li>
     </ul>
   </footer>
 </body>
