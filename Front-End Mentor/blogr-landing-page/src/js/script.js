@@ -13,8 +13,21 @@ checkbox.addEventListener("change", () => {
 });
 
 for (let i = 0; i < menuItems.length; i++) {
-    menuItems[i].addEventListener("click", () => {        
-        menuLinks[i].classList.toggle("opened")
-        menuItems[i].querySelector('img').classList.toggle("spin")
-    })
+    menuItems[i].addEventListener("click", () => {
+        menuLinks[i].classList.toggle("opened");
+        menuItems[i].querySelector("img").classList.toggle("spin");
+    });
 }
+
+document.addEventListener("click", () => {
+    for (let i = 0; i < menuLinks.length; i++) {
+        if (menuLinks[i].classList.contains("opened")) {
+            document.addEventListener("click", (e) => {
+                if (!e.target.classList.contains("navbar-links")) {
+                    menuLinks[i].classList.toggle("opened");
+                    menuItems[i].querySelector("img").classList.toggle("spin");
+                }
+            });
+        }
+    }
+});

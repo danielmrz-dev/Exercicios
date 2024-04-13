@@ -25,14 +25,17 @@
       <nav class="navbar">
       
         <div class="navbar-containers">
-          <div class="navbar-container">
-            <div class="title-icon">
+
+          <div class="navbar-container" data-dropdown>
+
+            <div class="title-icon" data-btn>
               <span class="navbar-headings">Product</span>
               <picture>
-                <source media="(min-width: 768px)" srcset="images/icon-arrow-light.svg" type="image/svg+xml">
+                <source media="(min-width: 1024px)" srcset="images/icon-arrow-light.svg" type="image/svg+xml">
                 <img src="images/icon-arrow-dark.svg" alt="">
               </picture>
             </div>
+
             <ul class="navbar-links">
               <li class="navbar-link">
                 <a href="#">Overview</a>
@@ -51,11 +54,12 @@
               </li>
             </ul>
           </div>
-          <div class="navbar-container">
-            <div class="title-icon">
+
+          <div class="navbar-container" data-dropdown>
+            <div class="title-icon" data-btn>
               <span class="navbar-headings">Company</span>
               <picture>
-                <source media="(min-width: 768px)" srcset="images/icon-arrow-light.svg" type="image/svg+xml">
+                <source media="(min-width: 1024px)" srcset="images/icon-arrow-light.svg" type="image/svg+xml">
                 <img src="images/icon-arrow-dark.svg" alt="">
               </picture>
             </div>
@@ -74,11 +78,12 @@
               </li>
             </ul>
           </div>
-          <div class="navbar-container">
-            <div class="title-icon">
+
+          <div class="navbar-container" data-dropdown>
+            <div class="title-icon" data-btn>
               <span class="navbar-headings">Connect</span>
               <picture>
-                <source media="(min-width: 768px)" srcset="images/icon-arrow-light.svg" type="image/svg+xml">
+                <source media="(min-width: 1024px)" srcset="images/icon-arrow-light.svg" type="image/svg+xml">
                 <img src="images/icon-arrow-dark.svg" alt="">
               </picture>
             </div>
@@ -122,8 +127,12 @@
   <main class="main">
 
     <section class="future">
+
       <h2 class="future-title">Designed for the future</h2>
-      <img src="images/illustration-editor-mobile.svg" alt="And Editor Illustration">
+      <picture>
+        <source media="(min-width: 1024px)" srcset="images/illustration-editor-desktop.svg" type="image/svg+xml">
+        <img src="images/illustration-editor-mobile.svg" alt="And Editor Illustration">
+      </picture>
 
       <div class="future-text-block">
         <h3 class="future-subtitles">Introducing an extensible editor</h3>
@@ -155,7 +164,10 @@
 
     <section class="free">
       
-      <img src="images/illustration-laptop-mobile.svg" alt="An open laptop">
+      <picture>
+        <source media="(min-width: 1024px)" srcset="images/illustration-laptop-desktop.svg" type="image/svg+xml">
+        <img src="images/illustration-laptop-mobile.svg" alt="An open laptop">
+      </picture>
 
       <div class="free-text-container">
 

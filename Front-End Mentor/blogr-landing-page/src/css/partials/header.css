@@ -84,7 +84,7 @@
     color: var(--Very-light-red);
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1024px) {
     .header {
         background: url('../../../images/bg-pattern-intro-desktop.svg') left -30vw top -120vh no-repeat, linear-gradient(to right, var(--Very-light-red), var(--Light-red));
         padding: 3.5rem 10.5rem 9.95rem;

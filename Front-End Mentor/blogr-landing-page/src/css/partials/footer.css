@@ -42,3 +42,33 @@
     text-decoration: underline;
     color: var(--White);
 }
+
+@media screen and (min-width: 1024px) {
+    .footer {
+        display: grid;
+        grid-template-columns: 22% 20% 20% 20%;
+        text-align: start;
+        justify-content: center;
+        gap: 0rem;
+        padding: 4.5rem 3rem;
+    }
+    
+    .footer img {
+        align-self: flex-start;
+    }
+    
+    .footer ul {
+        align-self: flex-start;
+        gap: .8rem;
+        padding-top: .25rem;
+    }
+    
+    .footer h4 {
+        font-size: 1rem;
+        padding-bottom: 1.5rem;
+    }
+    
+    .footer li {
+        font-size: 1rem;
+    }
+}
