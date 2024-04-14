@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+@use 'components/reset';
+@use 'components/variables';
+@use 'components/header';
+@use 'components/interactive';
+@use 'components/grid';
+@use 'components/footer';
+
+* {
+    font-family: variables.$Josefin-Sans;
+}
+
+.main {
+    margin: 6rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+}
+
+.attribution {
+    display: none;
+}

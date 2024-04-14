@@ -1,0 +1,26 @@
+@use 'variables';
+
+.interactive {
+    display: grid;
+    gap: 3rem;
+    // align-items: center;
+    text-align: center;
+    font-family: variables.$Josefin-Sans;
+    &__text {
+        display: flex;
+        flex-direction: column;
+        gap: .9rem;
+        padding: 0 1.5rem;
+    }
+    &__title {
+        text-transform: uppercase;
+        font-size: 2rem;
+        font-weight: 300;
+    }
+    &__paragraph {
+        font-size: .95rem;
+        font-family: variables.$Alata;
+        color: variables.$Very-Dark-Gray;
+        line-height: 25px;
+    }
+}
