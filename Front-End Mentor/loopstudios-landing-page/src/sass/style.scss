@@ -15,9 +15,20 @@
     margin: 6rem 1.5rem;
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 6rem;
 }
 
 .attribution {
     display: none;
+}
+
+@media screen and (min-width: 1024px) {
+    .main {
+        margin: 10rem 10.5rem 12rem;
+        display: flex;
+        flex-direction: column;
+        align-items: normal;
+        gap: 11.5rem;
+    }   
 }

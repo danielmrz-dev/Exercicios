@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Alata&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="src/sass/style.css">  
+  <script src="src/js/script.js" defer></script>
   <title>Frontend Mentor | Loopstudios landing page</title>
 </head>
 <body>
@@ -56,7 +57,10 @@
 
     <section class="interactive">
 
-      <img src="images/mobile/image-interactive.jpg" alt="A man using VR Glasses">
+      <picture>
+        <source media="(min-width: 1024px)" srcset="images/desktop/image-interactive.jpg" type="image/jpg">
+        <img src="images/mobile/image-interactive.jpg" alt="A man using VR Glasses">
+      </picture>
       <div class="interactive__text">
         <h2 class="interactive__title">The leader in interactive VR</h2>
         <p class="interactive__paragraph">
@@ -78,49 +82,73 @@
       <ul class="grid__grid">
         <li class="grid__item">
           <a href="">
-            <img src="images/mobile/image-deep-earth.jpg" alt="Earth seen from space">
+            <picture>
+              <source media="(min-width: 1024px)" srcset="images/desktop/image-deep-earth.jpg" type="image/jpg">
+              <img src="images/mobile/image-deep-earth.jpg" alt="Earth seen from space">
+            </picture>
             <span class="grid__item-text">Deep <br> earth</span>
           </a>
         </li>
         <li class="grid__item">
           <a href="">
-            <img src="images/mobile/image-night-arcade.jpg" alt="Arcade machines">
+            <picture>
+              <source media="(min-width: 1024px)" srcset="images/desktop/image-night-arcade.jpg" type="image/jpg">
+              <img src="images/mobile/image-night-arcade.jpg" alt="Arcade machines">
+            </picture>
             <span class="grid__item-text">Night <br> Arcade</span>
           </a>
         </li>
         <li class="grid__item">
           <a href="">
-            <img src="images/mobile/image-soccer-team.jpg" alt="A soccer player on the field">
+            <picture>
+              <source media="(min-width: 1024px)" srcset="images/desktop/image-soccer-team.jpg" type="image/jpg">
+              <img src="images/mobile/image-soccer-team.jpg" alt="A soccer player on the field">
+            </picture>
             <span class="grid__item-text">Soccer <br> Team VR</span>
           </a>
         </li>
         <li class="grid__item">
           <a href="">
-            <img src="images/mobile/image-grid.jpg" alt="A race car">
+            <picture>
+              <source media="(min-width: 1024px)" srcset="images/desktop/image-grid.jpg" type="image/jpg">
+              <img src="images/mobile/image-grid.jpg" alt="A race car">
+            </picture>
             <span class="grid__item-text">The <br> Grid</span>
           </a>
         </li>
         <li class="grid__item">
           <a href="">
-            <img src="images/mobile/image-from-above.jpg" alt="A curvy road seen from above">
+            <picture>
+              <source media="(min-width: 1024px)" srcset="images/desktop/image-from-above.jpg" type="image/jpg">
+              <img src="images/mobile/image-from-above.jpg" alt="A curvy road seen from above">
+            </picture>
             <span class="grid__item-text">From up <br> above VR</span>
           </a>
         </li>
         <li class="grid__item">
           <a href="">
-            <img src="images/mobile/image-pocket-borealis.jpg" alt="An Aurora Borealis">
+            <picture>
+              <source media="(min-width: 1024px)" srcset="images/desktop/image-pocket-borealis.jpg" type="image/jpg">
+              <img src="images/mobile/image-pocket-borealis.jpg" alt="An Aurora Borealis">
+            </picture>
             <span class="grid__item-text">Pocket <br> borealis</span>
           </a>
         </li>
         <li class="grid__item">
           <a href="">
-            <img src="images/mobile/image-curiosity.jpg" alt="Mars Curiosity Rover">
+            <picture>
+              <source media="(min-width: 1024px)" srcset="images/desktop/image-curiosity.jpg" type="image/jpg">
+              <img src="images/mobile/image-curiosity.jpg" alt="Mars Curiosity Rover">
+            </picture>
             <span class="grid__item-text">The <br> Curiosity</span>
           </a>
         </li>
         <li class="grid__item">
           <a href="">
-            <img src="images/mobile/image-fisheye.jpg" alt="A 360 degrees panoramic picture of a beach looking like a fisheye">
+            <picture>
+              <source media="(min-width: 1024px)" srcset="images/desktop/image-fisheye.jpg" type="image/jpg">
+              <img src="images/mobile/image-fisheye.jpg" alt="A 360 degrees panoramic picture of a beach looking like a fisheye">
+            </picture>
             <span class="grid__item-text">Make it <br> fisheye</span>
           </a>
         </li>
@@ -180,7 +208,7 @@
 
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    Coded by <a href="https://github.com/danielmrz-dev" target="_blank">danielmrz-dev</a>.
   </div>
 </body>
 </html>

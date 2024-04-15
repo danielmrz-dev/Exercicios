@@ -66,3 +66,26 @@
         color: variables.$Dark-Gray;
     }
 }
+
+@media screen and (min-width: 1024px) {
+    .footer {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 2.75rem 10.5rem;
+        align-items: start;
+        gap: 2rem;
+        &__links-list {
+            flex-direction: row;
+            grid-area: 2 / 1;
+            gap: 2.2rem;
+        }
+        &__social-media-links {
+            grid-area: 1 / 2;
+            justify-self: flex-end;
+            padding: 0;
+        }
+        &__loopstudios {
+            justify-self: flex-end;
+        }
+    }
+}
