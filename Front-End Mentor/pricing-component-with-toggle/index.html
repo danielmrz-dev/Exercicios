@@ -9,11 +9,13 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="src/sass/style.css">
+  <script src="src/js/script.js" defer></script>
   
   <title>Frontend Mentor | [Challenge Name Here]</title>
 </head>
 <body>
 
+  
   <header class="header">
 
     <h1 class="header__title">Our Pricing</h1>
@@ -21,7 +23,7 @@
     <div class="header__toggle-price">
       <span class="header__period">Annually</span>
       <label class="header__switch">
-        <input type="checkbox">
+        <input type="checkbox" data-toggle-btn>
         <span class="header__slider round"></span>
       </label>
       <span class="header__period">Monthly</span>
@@ -33,7 +35,7 @@
 
     <section class="card__plan">
       <h2 class="card__plan-title">Basic</h2>
-      <h3 class="card__plan-price"><span>&dollar;</span>19.99</h3>
+      <h3 class="card__plan-price"><span>&dollar;</span><span data-price>199.90</span></h3>
       <div class="card__plan-benefits-container">
         <hr>
         <p class="card__plan-benefits">500 GB Storage</p>
@@ -48,7 +50,7 @@
 
     <section class="card__plan">
       <h2 class="card__plan-title">Professional</h2>
-      <h3 class="card__plan-price"><span>&dollar;</span>24.99</h3>
+      <h3 class="card__plan-price"><span>&dollar;</span><span data-price>249.90</span></h3>
       <div class="card__plan-benefits-container">
         <hr>
         <p class="card__plan-benefits">1 TB Storage</p>
@@ -63,7 +65,7 @@
     
     <section class="card__plan">
       <h2 class="card__plan-title">Master</h2>
-      <h3 class="card__plan-price"><span>&dollar;</span>39.99</h3>
+      <h3 class="card__plan-price"><span>&dollar;</span><span data-price>399.90</span></h3>
       <div class="card__plan-benefits-container">
         <hr>
         <p class="card__plan-benefits">2 TB Storage</p>

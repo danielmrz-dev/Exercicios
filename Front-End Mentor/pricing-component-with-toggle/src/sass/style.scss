@@ -107,18 +107,24 @@ body {
         color: $Black;
         box-shadow: 5px 5px 30px $Light-Grayish-Blue-Shadow;
         &:nth-child(2) {
-            background-color: $Dark-purple;
+            background: linear-gradient(to top, $Dark-purple, $Light-purple);
             color: $White;
             .card__button {
                 background: $White;
                 color: $Dark-purple;
-                transition: border .2s ease, background-image .2s ease;
+                border: 1px solid $Dark-purple;
+                transition: color .2s ease, border .2s ease, background .2s ease;
                 &:hover {
-                    cursor: pointer;
-                    background-image: linear-gradient(to right, $Dark-purple, $Dark-purple);
                     color: $White;
                     border: 1px solid $White;
+                    background: $Dark-purple;
                 }
+                &::after {
+                    content: none;
+                }
+            }
+            hr {
+                border: 1px solid $White;
             }
         }
     }
@@ -128,12 +134,13 @@ body {
         padding-top: 0.1rem;
     }
     &__plan-price {
-        font-size: 4.5rem;
+        font-size: 2.5rem;
         font-weight: 700;
         display: flex;
         align-items: center;
-        span {
-            font-size: 2.5rem;
+        gap: .5rem;
+        span[data-price] {
+            font-size: 4.5rem;
         }
     }
     &__plan-benefits-container {
@@ -141,7 +148,7 @@ body {
         text-align: center;
         hr {
             margin: .7rem auto;
-            width: 100%;
+            width: 95%;
             border: 1px solid $Light-Grayish-Blue;
             opacity: .5;
         }
@@ -152,7 +159,6 @@ body {
         padding: .3rem 0;
     }
     &__button {
-        background: linear-gradient(to right, $Light-purple, $Dark-purple);
         padding: .9rem;
         margin: .5rem auto;
         width: 95%;
@@ -163,13 +169,74 @@ body {
         font-weight: 700;
         border-radius: 5px;
         letter-spacing: 1px;
-        border: 1px solid transparent;
-        transition: border .2s ease, background-image .2s ease;
+        cursor: pointer;
+        border: 1px solid $White;
+        transition: color .2s ease, background .2s ease, border .2s ease;
+        position: relative;
+        z-index: 1;
+        &::after {
+            position: absolute;
+            top: 0;
+            left: 0;
+            content: '';
+            background: linear-gradient(to right, $Light-purple, $Dark-purple);
+            width: 100%;
+            height: 100%;
+            border-radius: 5px;
+            transition: opacity .2s ease;
+            z-index: -1;
+        }
         &:hover {
-            cursor: pointer;
-            background-image: linear-gradient(to right, transparent, transparent);
             color: $Dark-purple;
+            background: transparent;
             border: 1px solid $Dark-purple;
+            &::after {
+                opacity: 0;
+            }
+        }
+
+    }
+}
+
+.footer {
+    display: none;
+}
+
+@media screen and (min-width: 1070px) {
+    body {
+        background: url('../../images/bg-top.svg') right top no-repeat, url('../../images/bg-bottom.svg') left bottom  no-repeat, $Very-Light-Grayish-Blue;
+        gap: 5.5rem;
+        margin: 4.5rem 0;
+        align-items: center;
+        justify-content: center;
+    }
+    .card {
+        flex-direction: row;
+        justify-content: center;
+        gap: 0;
+        max-width: 1100px;
+        &__plan {
+            justify-content: center;
+            min-width: 350px;
+            padding: 2rem 2rem 1.25rem;
+            &:nth-child(1) {
+                border-radius: 10px 0 0 10px;
+            }
+            &:nth-child(2) {
+                margin: -1.5rem 0;                
+            }
+            &:nth-child(3) {
+                border-radius: 0 10px 10px 0;
+            }
+        }
+        
+        &__plan-benefits-container {
+            hr {
+                width: 100%;
+            }
+        } 
+        &__button {
+            width: 100%;            
         }
     }
 }
