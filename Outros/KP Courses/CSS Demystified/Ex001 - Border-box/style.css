@@ -1,0 +1,14 @@
+.content {
+    box-sizing: border-box;
+    width: 100%;
+    border: 50px solid red;
+    padding: 50px;
+    margin-top: 10em;
+    background-color: white;
+    box-shadow: 0 0 3rem rgba(0, 0, 0, 0.304);
+}
+
+.example {
+    width: 500px;
+    border: 15px solid greenyellow;
+}
