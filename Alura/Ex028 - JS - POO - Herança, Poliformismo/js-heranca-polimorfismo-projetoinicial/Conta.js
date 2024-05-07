@@ -1,13 +1,17 @@
 import { Cliente } from "./Cliente.js";
 
+
+// "Conta" é uma classe abstrata que serve apenas de modelo para ser usada por outras classes. Uma classe abstrata não pode/deve ser instanciada.
 export class Conta {
     constructor(saldoInicial, cliente, agencia){
+        
+        if (this.constructor == Conta) {
+            throw new Error("Você não deveria instanciar um objeto do tipo CONTA, pois esta é uma classe abstrata.");
+        }
+
         this._saldo = saldoInicial;
         this._cliente = cliente;
         this._agencia = agencia;
-        if (this.constructor == Conta) {
-            console.log("Você não deveria instanciar um objeto do tipo CONTA.");
-        }
     }
 
     set cliente(novoValor){
