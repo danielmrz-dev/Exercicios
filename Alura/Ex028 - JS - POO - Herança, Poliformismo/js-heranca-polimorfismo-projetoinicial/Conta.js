@@ -28,9 +28,11 @@ export class Conta {
         return this._saldo;
     }
 
-    sacar(valor){
-        let taxa = 1;
-        return this._sacar(valor, taxa);
+    // Este "sacar" é um método abstrato. Ele existe para poder ser chamado por outras classes, mas elas precisam especificar os detalhes do método
+    sacar(valor){ 
+        throw new Error("O método Sacar é abstrato.")
+        // let taxa = 1;
+        // return this._sacar(valor, taxa);
     }
     
     _sacar(valor, taxa) {
