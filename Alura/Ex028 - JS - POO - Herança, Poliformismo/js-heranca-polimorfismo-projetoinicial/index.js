@@ -7,12 +7,14 @@ const diretor = new Diretor("Daniel", 15000, 1523686151)
 diretor.cadastrarSenha("1234");
 
 const gerente = new Gerente("Leo", 10000, 15285217491)
+gerente.cadastrarSenha("5678");
 
-console.log(diretor);
-console.log(gerente);
+const cliente = new Cliente("Ana", 78945612398, "555");
 
-const estaLogado = SistemaAutenticacao.login(diretor, "1234");
+const diretorEstaLogado = SistemaAutenticacao.login(diretor, "1234");
+const gerenteEstaLogado = SistemaAutenticacao.login(gerente, "5678")
 
-console.log(estaLogado);
+const clienteEstaLogado = SistemaAutenticacao.login(cliente, "555")
+console.log(gerenteEstaLogado, diretorEstaLogado, clienteEstaLogado);
 
 
