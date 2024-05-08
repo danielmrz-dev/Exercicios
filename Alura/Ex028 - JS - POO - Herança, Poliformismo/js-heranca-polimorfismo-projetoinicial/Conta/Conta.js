@@ -1,4 +1,4 @@
-import { Cliente } from "./Cliente.js";
+import { Cliente } from "../Cliente.js";
 
 
 // "Conta" é uma classe abstrata que serve apenas de modelo para ser usada por outras classes. Uma classe abstrata não pode/deve ser instanciada.
