@@ -15,6 +15,37 @@ export default class User {
         this.#ativo = ativo
     }
 
+    // GET = Permite acessar (somente leitura) propriedades privadas por fora da classe
+
+    get nome() {
+        return this.#nome
+    }
+
+    get email() {
+        return this.#email
+    }
+
+    get nascimento() {
+        return this.#nascimento
+    }
+
+    get role() {
+        return this.#role
+    }
+
+    get ativo() {
+        return this.#ativo
+    }
+
+    // SET = Permite alterar propriedades privadas por fora da classe
+
+    set nome(novoNome) {
+        if (novoNome === "") {
+            throw new Error("Formato inválido.")
+        }
+        this.#nome = novoNome
+    }
+
     #montaObjetoUser() {
         return ({
             nome: this.#nome,
@@ -26,7 +57,6 @@ export default class User {
     }
 
     exibirInfos() {
-        const objetoUser = this.#montaObjetoUser()
-        return objetoUser
+        return `${this.nome}, ${this.email}, ${this.nascimento}, ${this.role}, ${this.ativo} `
     }
 }

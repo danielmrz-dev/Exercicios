@@ -12,4 +12,8 @@ export default class Docente extends User {
             return `Estudante ${aluno} teve uma nota de ${nota} no curso de ${curso} e está reprovado(a).`
         }
     }
+
+    exibirInfos() {
+        return `O usuário ${this.nome} é um ${this.role}, porém tem acesso.`
+    }
 }
