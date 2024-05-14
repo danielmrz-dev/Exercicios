@@ -1,14 +1,15 @@
 import { log } from "./utils/promise-helpers.js";
 import './utils/array-helpers.js';
 import { notasService as service} from "./nota/service.js";
+import { debounceTime, takeUntil } from "./utils/operators.js";
 
-const ehDivisivel = (divisor, numero) => !(numero % divisor)
-const ehDivisivelPorDois = ehDivisivel.bind(null, 2)
+const action = debounceTime(500,
+    takeUntil(3, () => 
+        service
+        .sumItems('2143')
+        .then(console.log)
+        .catch(console.log)
+    )
+);
 
-// console.log(ehDivisivelPorDois(10));
-
-document.querySelector("#myButton").onclick = () => 
-    service
-    .sumItems('2143')
-    .then(console.log)
-    .catch(console.log);
+document.querySelector("#myButton").onclick = action;
