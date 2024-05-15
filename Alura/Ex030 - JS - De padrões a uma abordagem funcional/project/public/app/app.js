@@ -1,4 +1,4 @@
-import { log, timeOutPromise, retry } from "./utils/promise-helpers.js";
+import { timeOutPromise, retry } from "./utils/promise-helpers.js";
 import './utils/array-helpers.js';
 import { notasService as service} from "./nota/service.js";
 import { debounceTime, takeUntil, partialize, pipe } from "./utils/operators.js";
