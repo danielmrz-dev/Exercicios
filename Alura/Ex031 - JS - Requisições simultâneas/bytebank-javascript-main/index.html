@@ -9,6 +9,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+  <script type="module" src="script/script.js" defer></script>
 </head>
 
 <body class="container">
@@ -35,6 +37,7 @@
         <div class="grafico__titulo">
           <span class="grafico__ilustracao-dolar"></span>
           <h2>Variação da moeda desde o login</h2>
+          <canvas id="graficoDolar"></canvas>
         </div>
 
       </div>
@@ -50,6 +53,7 @@
       <p>Dashboard - Desenvolvido por Alura</p>
     </footer>
   </main>
+
 </body>
 
 </html>
