@@ -1,0 +1,34 @@
+@charset "UTF-8";
+
+:root {
+    --Light-Green: hsl(148, 38%, 91%);
+    --Green: hsl(169, 82%, 27%);
+    --Red: hsl(0, 66%, 56%);
+    --White: hsl(0, 0%, 100%);
+    --Medium-Grey: hsl(186, 15%, 59%);
+    --Dark-Grey: hsl(187, 24%, 22%);
+
+    --label-fs: 1rem;
+    --Karla: "Karla", sans-serif;
+}
+
+/* Utility Classes */
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Styling */
+
+body {
+    font-family: var(--Karla);
+    background-color: var(--Dark-Grey);
+    margin: 2rem 1rem;
+}
+
+.form {
+    border-radius: 10px;
+    background-color: var(--White);
+    gap: 1rem;
+}
