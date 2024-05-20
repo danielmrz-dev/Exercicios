@@ -1,16 +1,18 @@
 {
-  "name": "nodejs-vidflow",
-  "version": "1.0.0",
-  "description": "vidflow",
-  "main": "script.js",
+  "name": "nodejs-vidflow-vite",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "vite",
+    "build": "vite build",
+    "build-preview": "vite build -w",
+    "preview": "vite preview",
     "lint": "eslint .",
     "local-server": "npx json-server -w backend/videos.json"
   },
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
+    "vite": "^5.2.0",
     "@eslint/js": "9.3.0",
     "eslint": "9.3.0",
     "globals": "15.2.0",
