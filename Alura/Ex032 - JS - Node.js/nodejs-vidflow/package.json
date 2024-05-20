@@ -4,13 +4,20 @@
   "description": "vidflow",
   "main": "script.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint .",
+    "local-server": "npx json-server -w backend/videos.json"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@eslint/js": "^9.3.0",
-    "eslint": "^9.3.0",
-    "globals": "^15.2.0"
+    "@eslint/js": "9.3.0",
+    "eslint": "9.3.0",
+    "globals": "15.2.0",
+    "json-server": "1.0.0-beta.0",
+    "prettier": "3.2.5"
+  },
+  "dependencies": {
+    "axios": "^1.7.1"
   }
 }
