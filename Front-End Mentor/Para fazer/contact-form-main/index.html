@@ -12,7 +12,8 @@
   <link rel="stylesheet" href="style.css">
   <title>Frontend Mentor | Contact form</title>
 
-  <script src="script.js" defer></script>
+  <script type="module" src="script.js" defer></script>
+
 </head>
 <body>
 
@@ -21,29 +22,29 @@
 
       <h1 class="form__title">Contact Us</h1>
 
-      <div class="form__name">
+      <div class="form__name parent">
         <div class="form__name-input flex-col">
           <label for="name" class="label">First Name</label>
-          <input type="text" name="name" id="name" class="inputs" required>
+          <input type="text" name="name" id="name" class="inputs" required data-nome>
         </div>
         <span class="form__error-msg">This field is required</span>
       </div>
 
-      <div class="form__last-name">
+      <div class="form__last-name parent">
         <div class="form__last-name-input flex-col">
           <label for="last-name" class="label">Last Name</label>
-          <input type="text" name="last-name" id="last-name" class="inputs" required>
+          <input type="text" name="last-name" id="last-name" class="inputs" required data-sobrenome>
         </div>
         <span class="form__error-msg">This field is required</span>
       </div>
 
-      <div class="form__email">
+      <div class="form__email parent">
         <div class="form__email-input flex-col">
           <label for="email" class="label">Email Address</label>
-          <input type="text" name="email" id="email" class="inputs" required>
+          <input type="text" name="email" id="email" class="inputs" required data-email>
         </div>
         
-        <span class="form__error-msg">This field is required / Valid email</span>
+        <span class="form__error-msg">Please use a valid email address</span>
       </div>
 
       <div class="form__query-type">
@@ -60,26 +61,26 @@
           </div>
         </div>
         
-        <span class="form__error-msg">Please select a query type</span>
+        <span class="form__error-msg query-error">Please select a query type</span>
       </div>
 
-      <div class="form__message">
+      <div class="form__message parent">
         <div class="form__message-input flex-col">
           <label for="message" class="label">Message</label>
-          <textarea name="message" id="message" class="inputs" rows="15" required></textarea>
+          <textarea name="message" id="message" class="inputs" rows="5" required data-mensagem></textarea>
         </div>
         <span class="form__error-msg">This field is required</span>
       </div>
       
-      <div class="form__checkbox flex-col">
+      <div class="form__checkbox flex-col parent">
         <div class="form__checkbox-msg">
-          <input type="checkbox" name="checkbox" id="checkbox" required>
+          <input type="checkbox" name="checkbox" id="checkbox" required data-consentimento>
           <label for="checkbox" class="label">I consent to being contacted by the team</label>
         </div>
         <span class="form__error-msg">To submit this form, please consent to being contacted</span>
       </div>
 
-      <button type="submit">Submit</button>
+      <button type="submit" data-submit>Submit</button>
       
     </form>
 
