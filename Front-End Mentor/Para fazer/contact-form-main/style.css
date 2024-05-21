@@ -1,12 +1,12 @@
 @charset "UTF-8";
 
 :root {
-    --Light-Green: hsl(148, 38%, 91%);
-    --Green: hsl(169, 82%, 27%);
-    --Red: hsl(0, 66%, 56%);
-    --White: hsl(0, 0%, 100%);
-    --Medium-Grey: hsl(186, 15%, 59%);
-    --Dark-Grey: hsl(187, 24%, 22%);
+    --Light-Green: #dff1e7;
+    --Green: #0c7d69;
+    --Red: #d94545;
+    --White: #ffffff;
+    --Medium-Grey: #87a3a6;
+    --Dark-Grey: #2b4246;
 
     --label-fs: 1rem;
     --Karla: "Karla", sans-serif;
@@ -17,18 +17,114 @@
 .flex-col {
     display: flex;
     flex-direction: column;
+    gap: .75rem;
+}
+
+.label::after {
+    content: " *";
+    color: var(--Green);
+}
+
+.align-center {
+    display: flex;
+    align-items: center;
+    gap: .75rem;
 }
 
 /* Styling */
 
 body {
     font-family: var(--Karla);
-    background-color: var(--Dark-Grey);
+    background-color: var(--Light-Green);
     margin: 2rem 1rem;
 }
 
 .form {
     border-radius: 10px;
     background-color: var(--White);
+    gap: .5rem;
+    padding: 1.5rem;
+    font-weight: 500;
+    color: #2b4246;
+}
+
+.form__title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    padding: 0 0 1rem 0;
+}
+
+.inputs {
+    border: 1px solid var(--Medium-Grey);
+    border-radius: 7px;
+    padding: 1rem;
+}
+
+input[type="radio"], 
+input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    min-height: 20px;
+    min-width: 20px;
+    border: 2px solid var(--Medium-Grey);
+    opacity: .7;
+    border-radius: 50%;
+}
+
+input[type="checkbox"] {
+    border-radius: 0;
+    position: relative;
+}
+
+input[type="checkbox"]::after {
+    content: "✓"; 
+    color: var(--White);
+    font-weight: 800;
+    position: absolute;
+    left: 3px;
+    bottom: 0px;
+}
+
+input[type="radio"]:checked, 
+input[type="checkbox"]:checked {
+    background-color: var(--Green);
+    box-shadow: inset 0 0 0 3px var(--White);    
+}
+
+input[type="checkbox"]:checked {
+    box-shadow: 0 0 0 0;
+}
+
+.form__query-type-option {
+    font-size: 1.1rem;
+}
+
+.form__checkbox-msg {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     gap: 1rem;
+    
+}
+
+.form__error-msg {
+    opacity: 0;
+    padding-left: .2rem;
+    font-size: .85rem;
+    color: var(--Red);
+}
+
+.success-msg {
+    display: none;
+}
+
+button[type="submit"] {
+    background-color: var(--Green);
+    color: var(--White);
+    padding: 1.1rem;
+    font-size: 1.1rem;
+    font-family: var(--Karla);
+    font-weight: 600;
+    border-radius: 7px;
 }
