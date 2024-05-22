@@ -7,6 +7,7 @@ const consentimento = document.querySelector("[data-consentimento]");
 const radioInputs = document.querySelectorAll('input[type="radio"]');
 const submitBtn = document.querySelector('button[type="submit"]');
 const formulario = document.querySelector(".form");
+const successMsg = document.querySelector(".success-msg");
 
 camposDoFormulario.forEach((campo) => {
     campo.addEventListener("invalid", (e) => e.preventDefault());
@@ -22,6 +23,7 @@ radioInputs.forEach((input) => {
     });
 });
 
+
 submitBtn.addEventListener("click", (e) => {
     e.preventDefault();
 
@@ -31,7 +33,7 @@ submitBtn.addEventListener("click", (e) => {
     validaQueryType();
     validaInputTexto(mensagem);
     validaConsentimento();
-
+    
     if (
         validaInputTexto(nome) &&
         validaInputTexto(sobrenome) &&
@@ -40,9 +42,9 @@ submitBtn.addEventListener("click", (e) => {
         validaInputTexto(mensagem) &&
         validaConsentimento()
     ) {
-        // mostra mensagem de sucesso
-
-        formulario.submit();
+        successMsg.classList.add("active-success-msg");
+        
+        
     }
 });
 
