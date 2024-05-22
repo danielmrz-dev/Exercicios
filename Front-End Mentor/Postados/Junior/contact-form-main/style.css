@@ -144,6 +144,16 @@ textarea {
     padding-left: .2rem;
     font-size: .85rem;
     color: var(--Red);
+    transition: opacity .2s ease;
+}
+
+.form__error-msg:last-child {
+    padding: 0 0 .75rem 0;
+}
+
+.input-error {
+    border: 1px solid var(--Red);
+    transition: border .2s ease;
 }
 
 .success-msg {

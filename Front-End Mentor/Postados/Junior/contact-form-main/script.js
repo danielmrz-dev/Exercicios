@@ -9,6 +9,8 @@ const submitBtn = document.querySelector('button[type="submit"]');
 const formulario = document.querySelector(".form");
 const successMsg = document.querySelector(".success-msg");
 
+nome.focus();
+
 camposDoFormulario.forEach((campo) => {
     campo.addEventListener("invalid", (e) => e.preventDefault());
 });
@@ -43,8 +45,15 @@ submitBtn.addEventListener("click", (e) => {
         validaConsentimento()
     ) {
         successMsg.classList.add("active-success-msg");
-        
-        
+        nome.value = "";
+        sobrenome.value = "";
+        email.value = "";
+        radioInputs.forEach(radio => radio.checked = false)
+        mensagem.value = "";
+        consentimento.checked = false
+        setTimeout(() => {
+            successMsg.classList.remove("active-success-msg");            
+        }, 3500)
     }
 });
 
@@ -63,28 +72,30 @@ function validaInputTexto(input) {
     const validaInput = input.checkValidity();
 
     if (!validaInput) {
+        input.classList.add("input-error");
         mensagemDeErro.textContent = mensagem;
         mensagemDeErro.style.opacity = "1";
         return false;
     } else {
-        mensagemDeErro.textContent = "";
+        input.classList.remove("input-error");
         mensagemDeErro.style.opacity = "0";
         return true;
     }
 }
 
-function validarEmail(email) {
+function validarEmail(emailAddress) {
     var padrao =
         /^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/;
-
+        
     const mensagemDeErro = document.querySelector(".invalid-email");
 
-    if (!padrao.test(email)) {
+    if (!padrao.test(emailAddress)) {
+        email.classList.add("input-error");
         mensagemDeErro.textContent = "Please enter a valid email address";
         mensagemDeErro.style.opacity = "1";
         return false;
     } else {
-        mensagemDeErro.textContent = "";
+        email.classList.remove("input-error");
         mensagemDeErro.style.opacity = "0";
         return true;
     }
@@ -115,7 +126,6 @@ function validaConsentimento() {
         return false;
     } else {
         mensagemDeErro.style.opacity = "0";
-        mensagemDeErro.textContent = "";
         return true;
     }
 }

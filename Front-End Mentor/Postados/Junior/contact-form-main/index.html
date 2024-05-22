@@ -23,7 +23,7 @@
       <p class="success-msg__message">Thanks for completing the form. We'll be in touch soon!</p>
     </div>
   </div>
-  
+
   <main>
     <form class="form flex-col">
 
@@ -34,7 +34,7 @@
           <label for="name" class="label">First Name</label>
           <input type="text" name="nome" id="name" class="inputs" required data-nome minlength="2">
         </div>
-        <span class="form__error-msg"></span>
+        <span class="form__error-msg">This field is required</span>
       </div>
 
       <div class="form__last-name parent">
@@ -42,7 +42,7 @@
           <label for="last-name" class="label">Last Name</label>
           <input type="text" name="sobrenome" id="last-name" class="inputs" required data-sobrenome minlength="2">
         </div>
-        <span class="form__error-msg"></span>
+        <span class="form__error-msg">This field is required</span>
       </div>
 
       <div class="form__email parent">
@@ -51,7 +51,7 @@
           <input type="text" name="email" id="email" class="inputs" required data-email>
         </div>
         
-        <span class="form__error-msg invalid-email"></span>
+        <span class="form__error-msg invalid-email">This field is required</span>
       </div>
 
       <div class="form__query-type">
@@ -76,7 +76,7 @@
           <label for="message" class="label">Message</label>
           <textarea name="mensagem" id="message" class="inputs" rows="5" required data-mensagem minlength="30"></textarea>
         </div>
-        <span class="form__error-msg"></span>
+        <span class="form__error-msg">This field is required</span>
       </div>
       
       <div class="form__checkbox flex-col parent">
