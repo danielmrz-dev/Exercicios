@@ -25,17 +25,17 @@
       <div class="form__name parent">
         <div class="form__name-input flex-col">
           <label for="name" class="label">First Name</label>
-          <input type="text" name="name" id="name" class="inputs" required data-nome>
+          <input type="text" name="nome" id="name" class="inputs" required data-nome minlength="2">
         </div>
-        <span class="form__error-msg">This field is required</span>
+        <span class="form__error-msg"></span>
       </div>
 
       <div class="form__last-name parent">
         <div class="form__last-name-input flex-col">
           <label for="last-name" class="label">Last Name</label>
-          <input type="text" name="last-name" id="last-name" class="inputs" required data-sobrenome>
+          <input type="text" name="sobrenome" id="last-name" class="inputs" required data-sobrenome minlength="2">
         </div>
-        <span class="form__error-msg">This field is required</span>
+        <span class="form__error-msg"></span>
       </div>
 
       <div class="form__email parent">
@@ -44,7 +44,7 @@
           <input type="text" name="email" id="email" class="inputs" required data-email>
         </div>
         
-        <span class="form__error-msg">Please use a valid email address</span>
+        <span class="form__error-msg invalid-email"></span>
       </div>
 
       <div class="form__query-type">
@@ -52,11 +52,11 @@
           <span for="query-type" class="label">Query Type</span>
           
           <div class="form__query-type-containers inputs align-center">
-            <input type="radio" name="query-type" id="general-enquiry" required>
+            <input type="radio" name="queryType" id="general-enquiry" required>
             <label for="general-enquiry" class="form__query-type-option">General Enquiry</label>
           </div>
           <div class="form__query-type-containers inputs align-center">
-            <input type="radio" name="query-type" id="support-request" required>
+            <input type="radio" name="queryType" id="support-request" required>
             <label for="support-request" class="form__query-type-option">Support Request</label>
           </div>
         </div>
@@ -67,9 +67,9 @@
       <div class="form__message parent">
         <div class="form__message-input flex-col">
           <label for="message" class="label">Message</label>
-          <textarea name="message" id="message" class="inputs" rows="5" required data-mensagem></textarea>
+          <textarea name="mensagem" id="message" class="inputs" rows="5" required data-mensagem minlength="30"></textarea>
         </div>
-        <span class="form__error-msg">This field is required</span>
+        <span class="form__error-msg"></span>
       </div>
       
       <div class="form__checkbox flex-col parent">
