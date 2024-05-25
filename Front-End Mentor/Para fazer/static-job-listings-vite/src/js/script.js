@@ -53,14 +53,8 @@ let tagList = [];
 let allFilteredJobs = [];
 
 function showFilteredJobs() {
-    let filteredJobs = jobs.filter((job) => {
-        tagList.includes(job.role) &&
-        tagList.includes(job.level)
-    });
-
-    jobListContainer.innerHTML = "";
-    console.log(filteredJobs);
-    showJobs(allFilteredJobs[0]);
+    let filteredByRole = jobs.filter(job => tagList.includes(job.role));
+    
 }
 
 document.addEventListener("click", (e) => {
