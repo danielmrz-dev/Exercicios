@@ -1,4 +1,4 @@
-import axios, { all } from "axios";
+import axios from "axios";
 
 const filter = document.querySelector(".header__filter");
 const filterContainer = document.querySelector(".header__filter-items-container");
@@ -54,7 +54,7 @@ let filteredJobs = [];
 
 function showFilteredJobs() {
     jobListContainer.innerHTML = "";
-
+    // Here goes the filter logic to show on the screen only the jobs containing the clicked tags
 }
 
 
@@ -66,9 +66,6 @@ document.addEventListener("click", (e) => {
             tagList.push(tagName);
             addTagFilter();
             showFilteredJobs();
-
-            // Here goes the filter logic to show on the screen only the jobs containing the clicked tags
-            
         }
     }
 });
