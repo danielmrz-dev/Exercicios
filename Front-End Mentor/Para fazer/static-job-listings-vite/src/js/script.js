@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios, { all } from "axios";
 
 const filter = document.querySelector(".header__filter");
 const filterContainer = document.querySelector(".header__filter-items-container");
@@ -50,12 +50,13 @@ async function showJobs(listOfJobs) {
 }
 
 let tagList = [];
-let allFilteredJobs = [];
+let filteredJobs = [];
 
 function showFilteredJobs() {
-    let filteredByRole = jobs.filter(job => tagList.includes(job.role));
-    
+    jobListContainer.innerHTML = "";
+
 }
+
 
 document.addEventListener("click", (e) => {
     if (e.target.matches(".job-list__tag")) {
