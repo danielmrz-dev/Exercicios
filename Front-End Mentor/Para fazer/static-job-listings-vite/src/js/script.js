@@ -4,7 +4,7 @@ const filter = document.querySelector(".header__filter");
 const filterContainer = document.querySelector(".header__filter-items-container");
 const jobListContainer = document.querySelector(".job-list");
 const clearFilterBtn = document.querySelector("[data-clear]");
-// const removeTagBtn = document.querySelectorAll(".header__filter-item-X");
+const removeTagBtn = document.querySelectorAll(".header__filter-item-X");
 // const tags = document.querySelectorAll(".job-list__tag");
 
 const API = "data.json";
@@ -59,6 +59,8 @@ function showFilteredJobs() {
         return tagList.every(tag => jobTags.includes(tag));
     });
     showJobs(filteredJobs);
+
+    // ESTUDAR ESSA FUNÇÃO PRA ENTENDER MELHOR COMO ELA FILTRA OS JOBS
 }
 
 
@@ -97,3 +99,9 @@ function clearFilter() {
 }
 
 clearFilterBtn.addEventListener("click", clearFilter);
+
+removeTagBtn.forEach((btn) => {
+    btn.addEventListener("click", () => {
+        // CONTINUAR AQUI
+    })
+})
