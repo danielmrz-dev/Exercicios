@@ -54,7 +54,11 @@ let filteredJobs = [];
 
 function showFilteredJobs() {
     jobListContainer.innerHTML = "";
-    // Here goes the filter logic to show on the screen only the jobs containing the clicked tags
+    filteredJobs = jobs.filter(job => {
+        const jobTags = [job.role, job.level, ...job.languages, ...job.tools];
+        return tagList.every(tag => jobTags.includes(tag));
+    });
+    showJobs(filteredJobs);
 }
 
 
