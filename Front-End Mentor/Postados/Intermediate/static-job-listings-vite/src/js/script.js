@@ -4,14 +4,24 @@ const filter = document.querySelector(".header__filter");
 const filterContainer = document.querySelector(".header__filter-items-container");
 const jobListContainer = document.querySelector(".job-list");
 const clearFilterBtn = document.querySelector("[data-clear]");
-const removeTagBtn = document.querySelectorAll(".header__filter-item-X");
-// const tags = document.querySelectorAll(".job-list__tag");
 
 const API = "data.json";
-const data = await axios.get(API);
-const jobs = await data.data;
 
-showJobs(jobs);
+console.log(API);
+
+let jobs = [];
+
+async function getAndShowJobs() {
+    try {
+        const res = await axios.get(API);
+        jobs = await res.data;
+        showJobs(jobs);
+    } catch (error) {
+        console.error("Error fetching jobs:", error);
+    }
+}
+
+getAndShowJobs();
 
 async function showJobs(listOfJobs) {
     listOfJobs.forEach((job) => {
@@ -21,9 +31,9 @@ async function showJobs(listOfJobs) {
 
             <div class="job-list__infos">
 
-                <div class="job-list__item-company-container">
-                    <strong class="job-list__item-company">${job.company}</strong>
-                    ${job.new ? "<span class='job-list__item-new'>New!</span>" : ""}
+            <div class="job-list__item-company-container">
+            <strong class="job-list__item-company">${job.company}</strong>
+            ${job.new ? "<span class='job-list__item-new'>New!</span>" : ""}
                     ${job.featured ? "<span class='job-list__item-featured'>Featured</span>" : ""}          
                 </div>
 
@@ -44,14 +54,14 @@ async function showJobs(listOfJobs) {
                 ${job.tools.map((tool) => `<button class="job-list__tag">${tool}</button>`).join("")}
             </div>
 
-        </li>
-        `;
-    });
+            </li>
+            `;
+        });
 }
 
 let tagList = [];
 let filteredJobs = [];
-
+    
 function showFilteredJobs() {
     jobListContainer.innerHTML = "";
     filteredJobs = jobs.filter(job => {
@@ -59,8 +69,6 @@ function showFilteredJobs() {
         return tagList.every(tag => jobTags.includes(tag));
     });
     showJobs(filteredJobs);
-
-    // ESTUDAR ESSA FUNÇÃO PRA ENTENDER MELHOR COMO ELA FILTRA OS JOBS
 }
 
 
@@ -74,6 +82,16 @@ document.addEventListener("click", (e) => {
             showFilteredJobs();
         }
     }
+
+    if (e.target.matches(".header__filter-item-X")) {
+        const btnTagText = e.target.closest(".header__filter-items").querySelector(".header__filter-item").innerText;
+        const index = tagList.indexOf(btnTagText);
+        if (index !== -1) {
+            tagList.splice(index, 1)
+            addTagFilter();
+            showFilteredJobs();
+        }
+    }
 });
 
 function addTagFilter() {
@@ -82,8 +100,8 @@ function addTagFilter() {
         filterContainer.innerHTML += `
         <li class="header__filter-items">
             <span class="header__filter-item">${tag}</span>
-            <button class="header__filter-item-X">
-                <img src="images/icon-remove.svg" alt="">
+            <button class="">
+                <img src="images/icon-remove.svg" alt="" class="header__filter-item-X">
             </button>
         </li>
         `;
@@ -99,9 +117,3 @@ function clearFilter() {
 }
 
 clearFilterBtn.addEventListener("click", clearFilter);
-
-removeTagBtn.forEach((btn) => {
-    btn.addEventListener("click", () => {
-        // CONTINUAR AQUI
-    })
-})
