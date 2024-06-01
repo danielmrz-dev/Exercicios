@@ -1,12 +1,13 @@
 import { Armazenador } from "./Armazenador.js";
+import { ValidaDebito, ValidaDeposito } from "./Decorators.js";
 import { GrupoTransacao } from "./GrupoTransacao.js";
 import { TipoTransacao } from "./TipoTransacao.js";
 import { Transacao } from "./Transacao.js";
 
 export class Conta {
     protected nome: string;
-    protected saldo: number = Armazenador.obter("saldo") || 0;
-    private transacoes: Transacao[] = Armazenador.obter(("transacoes"), (key: string, value: any) => {
+    protected saldo: number = Armazenador.obter<number>("saldo") || 0;
+    private transacoes: Transacao[] = Armazenador.obter<Transacao[]>(("transacoes"), (key: string, value: any) => {
         if (key === "data") {
             return new Date(value);
         }
@@ -28,24 +29,15 @@ export class Conta {
     getDataAcesso(): Date {
         return new Date();
     }
-
-    debitar(valor: number): void {
-        if (valor <= 0) {
-            throw new Error("O valor a ser debitado deve ser maior que zero!");
-        }
-        if (valor > this.saldo) {
-            throw new Error("Saldo insuficiente!");
-        }
     
+    @ValidaDebito
+    debitar(valor: number): void {
         this.saldo -= valor;
         Armazenador.salvar("saldo", this.saldo.toString());
     }
 
+    @ValidaDeposito
     depositar(valor: number): void {
-        if (valor <= 0) {
-            throw new Error("O valor a ser depositado deve ser maior que zero!");
-        }
-    
         this.saldo += valor;
         Armazenador.salvar("saldo", this.saldo.toString());
     }
@@ -89,6 +81,18 @@ export class Conta {
     }
 };
 
+export class ContaPremium extends Conta {
+    registrarTransacao(transacao: Transacao): void {
+        if (transacao.tipoTransacao === TipoTransacao.DEPOSITO) {
+            console.log("Ganhou um bônus de R$ 0,50.");
+            transacao.valor += 0.5;
+        }
+
+        super.registrarTransacao(transacao);
+    }
+}
+
 const conta = new Conta("Joana da Silva Oliveira")
+const contaPremium = new ContaPremium("Daniel Mariz")
 
 export default conta;
