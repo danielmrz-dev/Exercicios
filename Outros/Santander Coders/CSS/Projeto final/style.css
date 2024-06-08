@@ -1,0 +1,102 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --red: #FF5678;
+    --blue: #35E6E9;
+    --Roboto: "Roboto", sans-serif;
+    font-size: 62.5%;
+}
+
+body {
+    font-family: var(--Roboto);
+    font-size: 1.4rem;
+}
+
+.content {
+    display: grid;
+    grid-template-areas: 
+        ". . . . ."
+        ". hero . form ."
+        ". hero . form ."
+        ". . . . ."
+    ;
+    gap: 8.5rem;
+}
+
+main {
+    grid-area: form;
+}
+
+aside {
+    grid-area: hero;
+}
+
+aside h1 {
+    font-family: "Roboto", sans-serif;
+    font-size: 64px;
+    font-weight: 500;
+    line-height: 75px;
+    }
+    
+aside h1 span {
+    color: var(--red);
+}
+
+main {
+    width: 60rem;
+    height: 52rem;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    padding: 4.4rem 5.7rem;
+    border-radius: 1.2rem;
+
+}
+
+main h2 {
+    max-width: 43rem;
+    font-size: 3.5rem;
+    font-weight: 500;
+}
+
+main h2 span {
+    color: var(--red);
+}
+
+main .actions {
+    display: flex;
+    flex-flow: column wrap;
+}
+
+main .actions a {
+    height: 5.5rem;
+    font-size: 2.4rem;
+    background-color: var(--blue);
+    border-radius: 1.2rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    margin-top: 5.4rem;
+}
+
+main .actions a + a {
+    background-color: var(--red);
+}
+
+main footer p {
+    font-size: 1.6rem;
+    margin-top: 8rem;
+}
+
+main footer a {
+    margin-top: 1rem;
+    font-size: 1.8rem;
+    display: block;
+    text-align: center;
+    color: #000;
+}
