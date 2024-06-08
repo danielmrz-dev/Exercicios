@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main {
+    border: 2px solid black;
+    padding: 2rem;
+    display: grid;
+    text-align: center;
+}
+
+.container {
+    display: grid;
+    gap: 1rem;
+}
+
+.plans {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    background-color: rgba(222, 184, 135, 0.488);
+    align-items: center;
+}
+
+.benefits {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    background-color: rgba(0, 255, 255, 0.323);
+    gap: 1rem;
+    align-items: center;
+}
