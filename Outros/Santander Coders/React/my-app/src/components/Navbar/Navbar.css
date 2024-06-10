@@ -20,6 +20,7 @@ header nav#navbar {
 header nav#navbar .nav-brand {
     display: flex;
     align-items: center;
+    gap: 1rem;
 }
 
 header nav#navbar .nav-brand h1 {

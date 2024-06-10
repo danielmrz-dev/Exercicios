@@ -2,7 +2,7 @@ import React from "react";
 import logoImg from "../../assets/images/logo.png";
 import "./Navbar.css";
 
-class Navbar extends React.Component {
+export class Navbar extends React.Component {
     render() {
         return (
             <header className="cabecalho">
@@ -30,5 +30,3 @@ class Navbar extends React.Component {
         );
     }
 }
-
-export default Navbar;
