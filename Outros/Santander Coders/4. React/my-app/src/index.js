@@ -8,3 +8,8 @@ root.render(
     <App />
   </React.StrictMode>
 );
+
+// ! Alerta
+// ? Dúvida
+// TODO Itens para fazer
+// * Destacado
