@@ -2,9 +2,9 @@ import React from "react";
 import "./styles/App.css"
 import { Navbar } from "./components/Navbar/Navbar";
 import { Article } from "./components/Article/Article";
-import article1Img from "./assets/images/article1.png"
-import article2Img from "./assets/images/article2.png"
-import article3Img from "./assets/images/article3.png"
+import article1Img from "./assets/images/article1.png";
+import article2Img from "./assets/images/article2.png";
+import article3Img from "./assets/images/article3.png";
 // import { Counter } from "./components/Counter/Counter";
 
 // Um componente em classe é uma classe que herda a classe Component do React e retorna HTML dentro do método render().
