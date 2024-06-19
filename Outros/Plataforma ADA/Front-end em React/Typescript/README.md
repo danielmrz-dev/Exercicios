@@ -26,7 +26,7 @@
     **noEmitOnError": true**     `Não compila os arquivos enquanto houverem erros`
     **strict": true**            `Habilita todas as regras de tipagem`
     **modeResolution: node**     `Não me lembro exatamente o que faz, mas previne alguns erros` 
-    
+
     # Dentro da opção "include":
     **include: ["app/**/*"]**     `Especifica o diretório onde estão os arquivos TypeScript que serão compilados`
     
