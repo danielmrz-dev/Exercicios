@@ -44,7 +44,7 @@ const pessoa2: Person = {
     nome: "Ana",
     idade: 30,
     altura: 1.68,
-    //! Este objeto do tipo Person não possui a propriedade "sonho", pois ela não é obrigatória.
+    //! Este objeto do tipo Person não possui a propriedade "sonho", pois ela não é obrigatória
 };
 
 //+ TYPE

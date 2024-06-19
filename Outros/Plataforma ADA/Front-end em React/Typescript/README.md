@@ -13,7 +13,7 @@
 
 3. Utilizar o TypeScript para compilar/transpilar o código, ou seja, converter o código `.ts` em código `.js`.
    O comando para fazer isso é `npx tsc (nome do arquivo .ts)`.
-   - Para que a compilação ocorra de forma automática (*watch mode*), basta utilizar o comando `npx tsc -w`.
+   - Para que a compilação ocorra de forma automática (*watch mode*), basta utilizar o comando `npx tsc -w` ou simplesmente `tsc -w`.
 
 4. Configurar as regras de compilação no arquivo `tsconfig.json`.
 
