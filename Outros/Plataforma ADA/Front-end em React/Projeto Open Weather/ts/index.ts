@@ -13,23 +13,27 @@ form?.addEventListener("submit", async (evento) => {
         alert("A localização precisa ter no mínimo 3 caracteres");
         return;
     }
+
+    try {
+        const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${localizacao}&appid=34872b73b988ec1e7923f4e267f00463&lang=pt_bt&units=metric`)
+        const dados = await response.json();
+        
+        const infos = {
+            icone: `https://openweathermap.org/img/wn/${dados.weather[0].icon}@2x.png`,    
+            temperatura: Math.round(dados.main.temp),
+            local: dados.name
+        }
     
-    const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${localizacao}&appid=34872b73b988ec1e7923f4e267f00463&lang=pt_bt&units=metric`)
-    const dados = await response.json();
+        sectionTempoInfo.innerHTML = `
+            <div class="tempo-data">
+                <h2 id="local">${infos.local}</h2>
+                <span id="temperatura">${infos.temperatura}ºC</span>
+            </div>
     
-    const infos = {
-        icone: `https://openweathermap.org/img/wn/${dados.weather[0].icon}@2x.png`,    
-        temperatura: Math.round(dados.main.temp),
-        local: dados.name
+            <img src=${infos.icone} id="icone">
+        `        
+    } catch (error) {
+        console.log("Houve um erro na obtenção dos dados da API:", error);        
     }
-
-    sectionTempoInfo.innerHTML = `
-        <div class="tempo-data">
-            <h2 id="local">${infos.local}</h2>
-            <span id="temperatura">${infos.temperatura}ºC</span>
-        </div>
-
-        <img src=${infos.icone} id="icone">
-    `
     
 })
