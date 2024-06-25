@@ -1,0 +1,6 @@
+
+API
+https://api.openweathermap.org/data/2.5/weather?q=sao%20paulo&appid=34872b73b988ec1e7923f4e267f00463&lang=pt_bt&units=metric
+
+IMG
+https://openweathermap.org/img/wn/02d@2x.png
