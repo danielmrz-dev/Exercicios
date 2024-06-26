@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="An web application simulating a comments section in a social media"
+        />
+        <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+        <link rel="stylesheet" href="src/sass/main.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet" />
+        <script src="src/js/app.js" defer></script>
+        <title>Frontend Mentor | Interactive comments section</title>
+    </head>
+    <body>
+        <main class="comments">
+
+            <section class="comment">
+
+                <div class="comment__header">
+                    <img src="images/avatars/image-amyrobson.png" alt="Profile Picture"/>
+                    <span class="comment__username">amyrobson</span>
+                    <span class="comment__date">1 month ago</span>
+                </div>
+
+                <p class="comment__content">
+                    Impressive! Though it seems the drag feature could be
+                    improved. But overall it looks incredible. You've nailed the
+                    design and the responsiveness at various breakpoints works
+                    really well.
+                </p>
+
+                <div class="comment__likes">
+                    <div class="comment__likes-box">
+                        <button>
+                            <img src="images/icon-plus.svg" />
+                        </button>
+                        <span>12</span>
+                        <button>
+                            <img src="images/icon-minus.svg" />
+                        </button>
+                    </div>
+
+                    <div class="comment__reply">
+                        <img src="images/icon-reply.svg" />
+                        <button>Reply</button>
+                    </div>
+                </div>
+
+
+            </section>
+
+            <section class="comment__replies">			
+
+				<section class="comment">
+
+					<div class="comment__header">
+						<img src="images/avatars/image-amyrobson.png" alt="Profile Picture"/>
+						<span class="comment__username">amyrobson</span>
+						<span class="comment__date">1 month ago</span>
+					</div>
+	
+					<p class="comment__content">
+						Impressive! Though it seems the drag feature could be
+						improved. But overall it looks incredible. You've nailed the
+						design and the responsiveness at various breakpoints works
+						really well.
+					</p>
+	
+					<div class="comment__likes">
+						<div class="comment__likes-box">
+							<button>
+								<img src="images/icon-plus.svg" />
+							</button>
+							<span>12</span>
+							<button>
+								<img src="images/icon-minus.svg" />
+							</button>
+						</div>
+	
+						<div class="comment__reply">
+							<img src="images/icon-reply.svg" />
+							<button>Reply</button>
+						</div>
+					</div>
+	
+	
+				</section>
+
+				<section class="comment">
+
+					<div class="comment__header">
+						<img src="images/avatars/image-amyrobson.png" alt="Profile Picture"/>
+						<span class="comment__username">amyrobson</span>
+						<span class="comment__username-you">you</span>
+						<span class="comment__date">2 months ago</span>
+					</div>
+
+					<p class="comment__content">
+						Impressive! Though it seems the drag feature could be
+						improved. But overall it looks incredible. You've nailed the
+						design and the responsiveness at various breakpoints works
+						really well.
+					</p>
+
+					<div class="comment__likes">
+						<div class="comment__likes-box">
+							<button>
+								<img src="images/icon-plus.svg" />
+							</button>
+							<span>12</span>
+							<button>
+								<img src="images/icon-minus.svg" />
+							</button>
+						</div>
+
+						<div class="comment__delete-edit">
+							<button class="comment__delete">
+								<img src="images/icon-delete.svg" />
+								<span>Delete</span>
+							</button>
+							<button class="comment__edit">
+								<img src="images/icon-edit.svg" />
+								<span>Edit</span>
+							</button>
+						</div>
+					</div>
+				</section>
+
+            </section>
+
+
+        </main>
+    </body>
+</html>
