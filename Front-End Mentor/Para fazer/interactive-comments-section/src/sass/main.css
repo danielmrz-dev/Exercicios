@@ -23,13 +23,15 @@ body .comments .comment__container {
 body .comments .comment {
   background-color: #ffffff;
   padding: 1rem;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
   border-radius: 10px;
 }
 body .comments .comment__header {
+  grid-area: 1/1/2/3;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 0.75rem;
   white-space: nowrap;
@@ -53,13 +55,31 @@ body .comments .comment__date {
   font-size: 0.95rem;
 }
 body .comments .comment__content {
+  grid-area: 2/1/3/3;
   color: #67727e;
   font-size: 1rem;
+}
+body .comments .comment__content-update {
+  font-family: "Rubik", sans-serif;
+  background-color: #5457b6;
+  border: none;
+  color: #ffffff;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  justify-self: flex-end;
+  padding: 0.75rem 1.5rem;
+  border-radius: 7px;
+  font-size: 1rem;
+  font-weight: 500;
+  align-self: flex-end;
+  display: none;
+  grid-area: 3/1/4/3;
 }
 body .comments .comment__likes {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 }
 body .comments .comment__likes-box {
   display: flex;
@@ -71,22 +91,38 @@ body .comments .comment__likes-box {
 }
 body .comments .comment__likes-box button {
   background-color: transparent;
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: #c3c4ef;
   border: none;
+  display: flex;
+  align-items: center;
+  height: 20px;
+  transition: color 0.2s ease;
 }
 body .comments .comment__likes-box button:nth-of-type(2) {
-  align-self: flex-start;
+  font-size: 1.75rem;
+  font-weight: 600;
+  transform: translateY(-3px);
 }
 body .comments .comment__likes-box span {
   font-size: 1.1rem;
   color: #5457b6;
   font-weight: 500;
 }
+body .comments .comment__likes-btn {
+  cursor: pointer;
+}
+body .comments .comment__likes-btn:hover {
+  color: #5457b6;
+}
 body .comments .comment__reply-btn {
+  justify-self: end;
   display: flex;
   align-items: center;
   gap: 0.5rem;
-}
-body .comments .comment__reply-btn button {
+  transition: opacity 0.2s ease;
+  cursor: pointer;
   color: #5457b6;
   font-weight: 600;
   font-size: 1rem;
@@ -94,10 +130,15 @@ body .comments .comment__reply-btn button {
   border: none;
   font-family: "Rubik", sans-serif;
 }
+body .comments .comment__reply-btn:hover {
+  opacity: 0.5;
+}
 body .comments .comment__delete-edit {
   display: flex;
   align-items: center;
   gap: 1rem;
+  transition: opacity 0.2s ease;
+  justify-self: end;
 }
 body .comments .comment__delete, body .comments .comment__edit {
   display: flex;
@@ -108,6 +149,10 @@ body .comments .comment__delete, body .comments .comment__edit {
   background-color: transparent;
   border: none;
   font-family: "Rubik", sans-serif;
+  cursor: pointer;
+}
+body .comments .comment__delete:hover, body .comments .comment__edit:hover {
+  opacity: 0.5;
 }
 body .comments .comment__delete {
   color: #ed6468;
@@ -126,13 +171,15 @@ body .comments .comment__replies section {
   margin-left: auto;
 }
 body .comments .comment__replies .comment__header-you {
-  justify-content: space-between;
   gap: 0;
 }
+body .comments .comment__replies .comment__header-you > *:not(:last-child) {
+  margin-right: 8px;
+}
 body .comments .comment-reply {
+  display: none;
   background-color: #ffffff;
   border-radius: 10px;
-  display: grid;
   gap: 1rem;
   grid-template-columns: repeat(2, 1fr);
   padding: 1rem;
@@ -161,6 +208,11 @@ body .comments .comment-reply button {
   border-radius: 7px;
   font-size: 1rem;
   font-weight: 500;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+body .comments .comment-reply button:hover {
+  opacity: 0.5;
 }
 body .comments .new__comment {
   background-color: #ffffff;
@@ -198,10 +250,15 @@ body .comments .new__comment form button {
   border-radius: 7px;
   font-size: 1rem;
   font-weight: 500;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+body .comments .new__comment form button:hover {
+  opacity: 0.5;
 }
 body .comments dialog {
   margin: auto;
-  width: calc(100% - 3rem);
+  width: calc(375px - 3rem);
   border: none;
   border-radius: 10px;
 }
@@ -255,4 +312,86 @@ body .comments dialog .modal__container button:nth-of-type(2) {
   border-radius: 7px;
   font-size: 1rem;
   font-weight: 500;
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    display: flex;
+    justify-content: center;
+  }
+  body .comments {
+    max-width: 730px;
+    margin: 4rem 0;
+  }
+  body .comments .comment {
+    grid-template-columns: auto 1fr auto;
+    gap: 1rem 1.5rem;
+    padding: 1.5rem;
+    border-radius: 10px;
+  }
+  body .comments .comment__header {
+    grid-area: 1/2/2/3;
+  }
+  body .comments .comment__content {
+    grid-area: 2/2/3/4;
+  }
+  body .comments .comment__content-update {
+    display: none;
+    grid-area: 3/3/4;
+  }
+  body .comments .comment__likes {
+    grid-area: 1/1/3/2;
+  }
+  body .comments .comment__likes-box {
+    flex-direction: column;
+    align-self: start;
+    gap: 0.5rem;
+    padding: 0.75rem;
+  }
+  body .comments .comment__delete-edit {
+    gap: 1.75rem;
+  }
+  body .comments .comment__replies {
+    max-width: 94%;
+    margin-left: auto;
+    gap: 1.5rem;
+  }
+  body .comments .comment__replies section {
+    max-width: 94%;
+  }
+  body .comments .comment-reply {
+    display: none;
+    grid-template-columns: auto 1fr auto;
+    padding: 1.5rem;
+  }
+  body .comments .comment-reply textarea {
+    grid-area: 1/2/3/3;
+    font-size: 1rem;
+    font-family: "Rubik", sans-serif;
+  }
+  body .comments .comment-reply button {
+    grid-area: 1/3;
+  }
+  body .comments .new__comment {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-top: 0.5rem;
+  }
+  body .comments .new__comment form {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 1rem;
+  }
+  body .comments .new__comment form img {
+    width: 40px;
+  }
+  body .comments .new__comment form textarea {
+    font-size: 1rem;
+    grid-area: 1/2/3/3;
+  }
+  body .comments .new__comment form button {
+    grid-area: 1/3;
+  }
 }/*# sourceMappingURL=main.css.map */
