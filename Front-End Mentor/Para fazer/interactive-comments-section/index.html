@@ -16,56 +16,57 @@
     <body>
         <main class="comments">
 
-            <section class="comment">
+            <div class="comment__container">
 
-                <div class="comment__header">
-                    <img src="images/avatars/image-amyrobson.png" alt="Profile Picture"/>
-                    <span class="comment__username">amyrobson</span>
-                    <span class="comment__date">1 month ago</span>
-                </div>
+				<section class="comment">
+					<div class="comment__header">
+						<img src="images/avatars/image-amyrobson.png" alt="Profile Picture"/>
+						<span class="comment__username">amyrobson</span>
+						<span class="comment__date">1 month ago</span>
+					</div>
+					<p class="comment__content">
+						Impressive! Though it seems the drag feature could be
+						improved. But overall it looks incredible. You've nailed the
+						design and the responsiveness at various breakpoints works
+						really well.
+					</p>
+					<div class="comment__likes">
+						<div class="comment__likes-box">
+							<button>
+								<img src="images/icon-plus.svg" />
+							</button>
+							<span>12</span>
+							<button>
+								<img src="images/icon-minus.svg" />
+							</button>
+						</div>
+						<div class="comment__reply-btn">
+							<img src="images/icon-reply.svg" />
+							<button>Reply</button>
+						</div>
+					</div>
+				</section>
 
-                <p class="comment__content">
-                    Impressive! Though it seems the drag feature could be
-                    improved. But overall it looks incredible. You've nailed the
-                    design and the responsiveness at various breakpoints works
-                    really well.
-                </p>
+				<div class="comment-reply">
+					<img src="images/avatars/image-juliusomo.png">
+					<textarea name="" id="" rows="4"></textarea>
+					<button>Reply</button>
+				</div>
 
-                <div class="comment__likes">
-                    <div class="comment__likes-box">
-                        <button>
-                            <img src="images/icon-plus.svg" />
-                        </button>
-                        <span>12</span>
-                        <button>
-                            <img src="images/icon-minus.svg" />
-                        </button>
-                    </div>
-
-                    <div class="comment__reply">
-                        <img src="images/icon-reply.svg" />
-                        <button>Reply</button>
-                    </div>
-                </div>
-
-
-            </section>
+			</div>
 
             <section class="comment__replies">			
 
 				<section class="comment">
 
 					<div class="comment__header">
-						<img src="images/avatars/image-amyrobson.png" alt="Profile Picture"/>
-						<span class="comment__username">amyrobson</span>
-						<span class="comment__date">1 month ago</span>
+						<img src="images/avatars/image-maxblagun.png" alt="Profile Picture"/>
+						<span class="comment__username">maxblagun</span>
+						<span class="comment__date">2 weeks ago</span>
 					</div>
 	
 					<p class="comment__content">
-						Impressive! Though it seems the drag feature could be
-						improved. But overall it looks incredible. You've nailed the
-						design and the responsiveness at various breakpoints works
-						really well.
+						Woah, your project looks awesome! How long have you been coding for? I'm still new, but think I want to dive into React as well soon. Perhaps you can give me an insight on where I can learn React? Thanks!
 					</p>
 	
 					<div class="comment__likes">
@@ -79,7 +80,7 @@
 							</button>
 						</div>
 	
-						<div class="comment__reply">
+						<div class="comment__reply-btn">
 							<img src="images/icon-reply.svg" />
 							<button>Reply</button>
 						</div>
@@ -88,9 +89,9 @@
 	
 				</section>
 
-				<section class="comment">
+				<section class="comment comment-you">
 
-					<div class="comment__header">
+					<div class="comment__header comment__header-you">
 						<img src="images/avatars/image-amyrobson.png" alt="Profile Picture"/>
 						<span class="comment__username">amyrobson</span>
 						<span class="comment__username-you">you</span>
@@ -118,7 +119,7 @@
 						<div class="comment__delete-edit">
 							<button class="comment__delete">
 								<img src="images/icon-delete.svg" />
-								<span>Delete</span>
+								<span class="delete-btn">Delete</span>
 							</button>
 							<button class="comment__edit">
 								<img src="images/icon-edit.svg" />
@@ -130,7 +131,23 @@
 
             </section>
 
-
+			<section class="new__comment">
+				<form>
+					<textarea name="" id="" placeholder="Add a comment..." rows="4"></textarea>
+					<img src="images/avatars/image-juliusomo.webp">
+					<button>SEND</button>
+				</form>
+			</section>
+			
+			<dialog>
+				<div class="modal__container">
+					<h2>Delete comment</h2>
+					<p>Are you sure you want to delete this comment? This will remove the comment and can't be undone.</p>
+					<button class="btnCancelDelete">No, Cancel</button>
+					<button class="btnConfirmDelete">Yes, delete</button>					
+				</div>
+			</dialog>			
         </main>
+
     </body>
 </html>

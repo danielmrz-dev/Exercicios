@@ -15,6 +15,11 @@ body .comments {
   gap: 1rem;
   margin: 1.5rem;
 }
+body .comments .comment__container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
 body .comments .comment {
   background-color: #ffffff;
   padding: 1rem;
@@ -76,12 +81,12 @@ body .comments .comment__likes-box span {
   color: #5457b6;
   font-weight: 500;
 }
-body .comments .comment__reply {
+body .comments .comment__reply-btn {
   display: flex;
   align-items: center;
   gap: 0.5rem;
 }
-body .comments .comment__reply button {
+body .comments .comment__reply-btn button {
   color: #5457b6;
   font-weight: 600;
   font-size: 1rem;
@@ -119,4 +124,135 @@ body .comments .comment__replies {
 body .comments .comment__replies section {
   max-width: 95%;
   margin-left: auto;
+}
+body .comments .comment__replies .comment__header-you {
+  justify-content: space-between;
+  gap: 0;
+}
+body .comments .comment-reply {
+  background-color: #ffffff;
+  border-radius: 10px;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 1rem;
+}
+body .comments .comment-reply textarea {
+  grid-area: 1/1/2/3;
+  border: 1px solid #eaecf1;
+  padding: 0.75rem 1rem;
+  border-radius: 7px;
+}
+body .comments .comment-reply textarea:focus {
+  outline: 1px solid #5457b6;
+}
+body .comments .comment-reply img {
+  width: 40px;
+}
+body .comments .comment-reply button {
+  font-family: "Rubik", sans-serif;
+  background-color: #5457b6;
+  border: none;
+  color: #ffffff;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  justify-self: flex-end;
+  padding: 0.75rem 1.75rem;
+  border-radius: 7px;
+  font-size: 1rem;
+  font-weight: 500;
+}
+body .comments .new__comment {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 1rem;
+}
+body .comments .new__comment form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  gap: 1rem;
+}
+body .comments .new__comment form textarea {
+  font-family: "Rubik", sans-serif;
+  grid-area: 1/1/2/3;
+  border: 1px solid #eaecf1;
+  padding: 0.75rem 1rem;
+  border-radius: 7px;
+}
+body .comments .new__comment form textarea:focus {
+  outline: 1px solid #5457b6;
+}
+body .comments .new__comment form img {
+  width: 32px;
+}
+body .comments .new__comment form button {
+  font-family: "Rubik", sans-serif;
+  background-color: #5457b6;
+  border: none;
+  color: #ffffff;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  justify-self: flex-end;
+  padding: 0.75rem 1.75rem;
+  border-radius: 7px;
+  font-size: 1rem;
+  font-weight: 500;
+}
+body .comments dialog {
+  margin: auto;
+  width: calc(100% - 3rem);
+  border: none;
+  border-radius: 10px;
+}
+body .comments dialog::backdrop {
+  background: rgba(0, 0, 0, 0.156);
+}
+body .comments dialog .modal__container {
+  width: 100%;
+  background-color: #ffffff;
+  padding: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+body .comments dialog .modal__container h2 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  grid-area: 1/1/2/3;
+}
+body .comments dialog .modal__container p {
+  font-size: 1rem;
+  color: #67727e;
+  grid-area: 2/1/3/3;
+}
+body .comments dialog .modal__container button {
+  text-transform: uppercase;
+  min-width: 100%;
+  grid-area: 3/1/4/2;
+  font-family: "Rubik", sans-serif;
+  background-color: #67727e;
+  border: none;
+  color: #ffffff;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  justify-self: flex-end;
+  padding: 0.75rem 1rem;
+  border-radius: 7px;
+  font-size: 1rem;
+  font-weight: 500;
+}
+body .comments dialog .modal__container button:nth-of-type(2) {
+  grid-area: 3/2/4/3;
+  font-family: "Rubik", sans-serif;
+  background-color: #ed6468;
+  border: none;
+  color: #ffffff;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  justify-self: flex-end;
+  padding: 0.75rem 1rem;
+  border-radius: 7px;
+  font-size: 1rem;
+  font-weight: 500;
 }/*# sourceMappingURL=main.css.map */
