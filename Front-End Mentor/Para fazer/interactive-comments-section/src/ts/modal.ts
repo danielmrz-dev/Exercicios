@@ -1,10 +1,10 @@
-const modal: HTMLDialogElement | null = document.querySelector("dialog");
-const openModal: HTMLButtonElement | null = document.querySelector(".delete-btn");
+// const modal: HTMLDialogElement | null = document.querySelector("dialog");
 
-export default function handleModal(): void {
-    if (!modal || !openModal) return;
-    openModal.addEventListener("click", () => {
-        modal.showModal() 
-        //= Este método faz o modal aparecer centralizado e com fundo escurecido (backdrop)
-    })
-}
+// export default function handleModal(): void {
+//     document.addEventListener("click", (event) => {
+//         const target = event.target as HTMLElement;
+//         if (target.closest(".comment__delete")) {
+//             modal!.showModal();
+//         }
+//     })
+// }
