@@ -85,6 +85,9 @@ body {
                 color: $Grayish-Blue;     
                 font-size: 1rem;   
             }
+            &__replyingTo {
+                color: $Moderate-blue;
+            }
             &__content-update {
                 @include button($Moderate-blue,$White ,0.75rem 1.5rem);
                 align-self: flex-end;
@@ -341,6 +344,10 @@ body {
                 section {
                     max-width: 94%;
                 }
+            }
+            .reply {
+                min-width: 94%;
+                margin-left: auto;
             }
             .comment-reply {
                 display: none; //= GRID when active

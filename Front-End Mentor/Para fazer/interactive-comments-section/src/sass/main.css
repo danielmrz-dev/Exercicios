@@ -59,6 +59,9 @@ body .comments .comment__content {
   color: #67727e;
   font-size: 1rem;
 }
+body .comments .comment__replyingTo {
+  color: #5457b6;
+}
 body .comments .comment__content-update {
   font-family: "Rubik", sans-serif;
   background-color: #5457b6;
@@ -358,6 +361,10 @@ body .comments dialog .modal__container button:nth-of-type(2) {
   }
   body .comments .comment__replies section {
     max-width: 94%;
+  }
+  body .comments .reply {
+    min-width: 94%;
+    margin-left: auto;
   }
   body .comments .comment-reply {
     display: none;
