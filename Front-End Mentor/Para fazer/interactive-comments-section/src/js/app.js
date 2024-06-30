@@ -47,9 +47,6 @@ function renderComments() {
     getData().then((data) => {
         const comments = data.comments;
         const currentUser = data.currentUser;
-        gerarComentarioHTML(comments);
-    });
-    function gerarComentarioHTML(comments) {
         comments.forEach((comment) => {
             const comentario = new Comentario(comment.id, comment.content, comment.createdAt, comment.score, comment.user.username, comment.user.image.png, comment.replies.map((reply) => new Comentario(reply.id, reply.content, reply.createdAt, reply.score, reply.user.username, reply.user.image.png, reply.replies || [], reply.replyingTo)));
             const respostasHTML = comentario.replies.map(resposta => `
@@ -57,6 +54,9 @@ function renderComments() {
                     <div class="comment__header">
                         <img src=${resposta.profilePicture} alt="Profile Picture"/>
                         <span class="comment__username">${resposta.username}</span>
+						${resposta.username === currentUser.username ? `
+							<span class="comment__username-you">you</span>
+							` : ""}
                         <span class="comment__date">${resposta.createdAt}</span>
                     </div>
                     <p class="comment__content">
@@ -74,15 +74,40 @@ function renderComments() {
                             </button>
                         </div>
                     </div>
-                    <button class="comment__reply-btn">
-                        <img src="images/icon-reply.svg" />
-                        Reply                          
-                    </button>
+
+					${resposta.username === currentUser.username ? `
+						<div class="comment__delete-edit">
+							<button class="comment__delete">
+								<img src="images/icon-delete.svg" />
+								<span class="delete-btn">Delete</span>
+							</button>
+							<button class="comment__edit">
+								<img src="images/icon-edit.svg" />
+								<span>Edit</span>
+							</button>
+						</div>
+						
+						` : `
+						<button class="comment__reply-btn">
+							<img src="images/icon-reply.svg" />
+							Reply							
+						</button>`}
+
                 </section>
             `).join('');
             if (!commentsContainer)
                 return;
             commentsContainer.innerHTML += `
+
+				<dialog>
+					<div class="modal__container">
+						<h2>Delete comment</h2>
+						<p>Are you sure you want to delete this comment? This will remove the comment and can't be undone.</p>
+						<button class="btnCancelDelete">No, Cancel</button>
+						<button class="btnConfirmDelete">Yes, delete</button>					
+					</div>
+				</dialog>
+
                 <div class="comment__container">
                     <section class="comment" id="${comentario.id}">
                         <div class="comment__header">
@@ -116,6 +141,23 @@ function renderComments() {
                     `}
                 </div>
             `;
+            const modal = document.querySelector("dialog");
+            document.addEventListener("click", (event) => {
+                const target = event.target;
+                if (target.closest(".comment__delete")) {
+                    modal === null || modal === void 0 ? void 0 : modal.showModal();
+                }
+            });
+            const likeBtn = document.querySelectorAll(".like");
+            likeBtn.forEach((btn) => {
+                btn.addEventListener("click", () => {
+                    var _a;
+                    const idHTML = Number((_a = btn.closest(".comment")) === null || _a === void 0 ? void 0 : _a.id);
+                    const comentarioNoObjeto = comments.filter(comentario => comentario.id === idHTML);
+                    console.log(comentarioNoObjeto);
+                    //= CONTINUAR AQUI COM A LÓGICA DOS BOTÕES DE LIKE E DISLIKE
+                });
+            });
         });
         const newCommentElement = `
 		<section class="new__comment">
@@ -127,8 +169,7 @@ function renderComments() {
 		</section>
 		`;
         commentsContainer === null || commentsContainer === void 0 ? void 0 : commentsContainer.insertAdjacentHTML("beforeend", newCommentElement);
-        //= CONTINUAR AQUI COM A LÓGICA DOS BOTÕES DE EDIT E DELETE
-    }
+    });
 }
 renderComments();
 function renderComment() {
