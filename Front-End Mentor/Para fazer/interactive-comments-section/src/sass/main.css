@@ -172,7 +172,7 @@ body .comments .comment__replies {
   gap: 1rem;
 }
 body .comments .comment__replies section {
-  max-width: 95%;
+  max-width: 94%;
   margin-left: auto;
 }
 body .comments .comment__replies .comment__header-you {
@@ -180,6 +180,9 @@ body .comments .comment__replies .comment__header-you {
 }
 body .comments .comment__replies .comment__header-you > *:not(:last-child) {
   margin-right: 8px;
+}
+body .comments .comment__replies .comment {
+  min-width: 94%;
 }
 body .comments .comment-reply {
   display: none;
@@ -360,12 +363,9 @@ body .comments dialog .modal__container button:nth-of-type(2) {
     gap: 1.75rem;
   }
   body .comments .comment__replies {
-    max-width: 94%;
+    min-width: 100%;
     margin-left: auto;
     gap: 1.5rem;
-  }
-  body .comments .comment__replies section {
-    max-width: 94%;
   }
   body .comments .reply {
     min-width: 94%;

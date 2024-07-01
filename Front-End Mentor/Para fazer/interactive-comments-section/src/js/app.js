@@ -1,26 +1,8 @@
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
 import { data } from "./data.js";
-import Comentario from "./Comentario.js";
 import { renderModal } from "./renderModal.js";
 import { like, dislike } from "./likeAndDislike.js";
 import replyComment from "./reply.js";
 export const commentsContainer = document.querySelector(".comments");
-function getData() {
-    return __awaiter(this, void 0, void 0, function* () {
-        const api = yield fetch("data.json");
-        const response = yield api.json();
-        return response;
-    });
-}
-let counter = 0;
 export default function renderComments() {
     const comments = data.comments;
     const currentUser = data.currentUser;
@@ -36,13 +18,26 @@ export default function renderComments() {
     </dialog>
     `;
     comments.forEach((comment) => {
-        const comentario = new Comentario(comment.id, comment.content, comment.createdAt, comment.score, comment.user.username, comment.user.image.png, comment.replies.map((reply) => new Comentario(reply.id, reply.content, reply.createdAt, reply.score, reply.user.username, reply.user.image.png, reply.replies || [], reply.replyingTo)));
+        const comentario = {
+            id: comment.id,
+            content: comment.content,
+            createdAt: comment.createdAt,
+            score: comment.score,
+            user: {
+                image: {
+                    png: comment.user.image.png,
+                },
+                username: comment.user.username,
+            },
+            replies: comment.replies,
+            replyingTo: comment.replyingTo,
+        };
         const respostasHTML = comentario.replies
             .map((resposta) => `
                 <section class="comment" id="${resposta.id}">
                     <div class="comment__header">
-                        <img src=${resposta.profilePicture} alt="Profile Picture"/>
-                        <span class="comment__username">${resposta.username}</span>
+                        <img src=${resposta.user.image.png} alt="Profile Picture"/>
+                        <span class="comment__username">${resposta.user.username}</span>
 						${resposta.username === currentUser.username
             ? `
 							<span class="comment__username-you">you</span>
@@ -66,7 +61,7 @@ export default function renderComments() {
                         </div>
                     </div>
 
-					${resposta.username === currentUser.username
+					${resposta.user.username === currentUser.username
             ? `
 						<div class="comment__delete-edit">
 							<button class="comment__delete">
@@ -97,8 +92,8 @@ export default function renderComments() {
                 <div class="comment__container">
                     <section class="comment" id="${comentario.id}">
                         <div class="comment__header">
-                            <img src=${comentario.profilePicture} alt="Profile Picture"/>
-                            <span class="comment__username">${comentario.username}</span>
+                            <img src=${comentario.user.image.png} alt="Profile Picture"/>
+                            <span class="comment__username">${comentario.user.username}</span>
                             <span class="comment__date">${comentario.createdAt}</span>
                         </div>
                         <p class="comment__content">

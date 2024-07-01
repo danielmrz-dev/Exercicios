@@ -1,19 +1,11 @@
 import { data } from "./data.js";
-import Comentario from "./Comentario.js";
 import { renderModal } from "./renderModal.js";
 import { like, dislike } from "./likeAndDislike.js";
 import replyComment from "./reply.js";
+import { Comentario } from "./Types/Comentario.js";
 
 export const commentsContainer: HTMLElement | null =
     document.querySelector(".comments");
-
-async function getData() {
-    const api = await fetch("data.json");
-    const response = await api.json();
-    return response;
-}
-
-let counter = 0;
 
 export default function renderComments() {
     const comments: any[] = data.comments;
@@ -32,38 +24,31 @@ export default function renderComments() {
     `;
 
     comments.forEach((comment: any) => {
-        const comentario = new Comentario(
-            comment.id,
-            comment.content,
-            comment.createdAt,
-            comment.score,
-            comment.user.username,
-            comment.user.image.png,
-            comment.replies.map(
-                (reply: any) =>
-                    new Comentario(
-                        reply.id,
-                        reply.content,
-                        reply.createdAt,
-                        reply.score,
-                        reply.user.username,
-                        reply.user.image.png,
-                        reply.replies || [],
-                        reply.replyingTo
-                    )
-            )
-        );
+        const comentario: Comentario = {
+            id: comment.id,
+            content: comment.content,
+            createdAt: comment.createdAt,
+            score: comment.score,
+            user: {
+                image: {
+                    png: comment.user.image.png,
+                },
+                username: comment.user.username,
+            },
+            replies: comment.replies,
+            replyingTo: comment.replyingTo,
+        };
 
         const respostasHTML = comentario.replies
             .map(
-                (resposta) => `
+                (resposta: any) => `
                 <section class="comment" id="${resposta.id}">
                     <div class="comment__header">
                         <img src=${
-                            resposta.profilePicture
+                            resposta.user.image.png
                         } alt="Profile Picture"/>
                         <span class="comment__username">${
-                            resposta.username
+                            resposta.user.username
                         }</span>
 						${
                             resposta.username === currentUser.username
@@ -91,7 +76,7 @@ export default function renderComments() {
                     </div>
 
 					${
-                        resposta.username === currentUser.username
+                        resposta.user.username === currentUser.username
                             ? `
 						<div class="comment__delete-edit">
 							<button class="comment__delete">
@@ -126,10 +111,10 @@ export default function renderComments() {
                     <section class="comment" id="${comentario.id}">
                         <div class="comment__header">
                             <img src=${
-                                comentario.profilePicture
+                                comentario.user.image.png
                             } alt="Profile Picture"/>
                             <span class="comment__username">${
-                                comentario.username
+                                comentario.user.username
                             }</span>
                             <span class="comment__date">${
                                 comentario.createdAt
