@@ -1,9 +1,10 @@
 import { data } from "./data.js";
 import Comentario from "./Comentario.js";
 import { renderModal } from "./renderModal.js";
-import { likeAndDislike } from "./likeAndDislike.js";
+import { like, dislike } from "./likeAndDislike.js";
+import replyComment from "./reply.js";
 
-const commentsContainer: HTMLElement | null =
+export const commentsContainer: HTMLElement | null =
     document.querySelector(".comments");
 
 async function getData() {
@@ -12,10 +13,23 @@ async function getData() {
     return response;
 }
 
+let counter = 0;
+
 export default function renderComments() {
-    // getData().then((data) => {
     const comments: any[] = data.comments;
     const currentUser: any = data.currentUser;
+
+    commentsContainer!.innerHTML = `
+
+    <dialog>
+        <div class="modal__container">
+            <h2>Delete comment</h2>
+            <p>Are you sure you want to delete this comment? This will remove the comment and can't be undone.</p>
+            <button class="btnCancelDelete">No, Cancel</button>
+            <button class="btnConfirmDelete">Yes, delete</button>					
+        </div>
+    </dialog>
+    `;
 
     comments.forEach((comment: any) => {
         const comentario = new Comentario(
@@ -99,6 +113,7 @@ export default function renderComments() {
                     }
 
                 </section>
+
             `
             )
             .join("");
@@ -106,15 +121,6 @@ export default function renderComments() {
         if (!commentsContainer) return;
 
         commentsContainer.innerHTML += `
-
-				<dialog>
-					<div class="modal__container">
-						<h2>Delete comment</h2>
-						<p>Are you sure you want to delete this comment? This will remove the comment and can't be undone.</p>
-						<button class="btnCancelDelete">No, Cancel</button>
-						<button class="btnConfirmDelete">Yes, delete</button>					
-					</div>
-				</dialog>
 
                 <div class="comment__container">
                     <section class="comment" id="${comentario.id}">
@@ -147,7 +153,15 @@ export default function renderComments() {
                             <img src="images/icon-reply.svg" />
                             Reply                          
                         </button>
+
                     </section>
+
+                    <div class="comment-reply">
+                        <img src=${currentUser.image.png}>
+                        <textarea name="" id="" rows="4" placeholder="Add a comment..."></textarea>
+                        <button class="comment__btn-confirm-reply">Reply</button>
+                    </div>
+
                     ${
                         comentario.replies.length === 0
                             ? ""
@@ -161,20 +175,20 @@ export default function renderComments() {
             `;
 
         renderModal();
-        likeAndDislike();
+        like();
+        dislike();
+        replyComment();
     });
     const newCommentElement = `
     <section class="new__comment">
-    <form>
-    <textarea name="" id="" placeholder="Add a comment..." rows="4"></textarea>
-    <img src="images/avatars/image-juliusomo.webp">
-    <button>SEND</button>
-    </form>
+        <form>
+            <textarea name="" id="" placeholder="Add a comment..." rows="4"></textarea>
+            <img src="images/avatars/image-juliusomo.webp">
+            <button>SEND</button>
+        </form>
     </section>
     `;
     commentsContainer?.insertAdjacentHTML("beforeend", newCommentElement);
-    
-    // });
 }
 
 renderComments();

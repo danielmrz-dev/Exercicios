@@ -1,7 +1,6 @@
-import renderComments from "./app.js";
+import renderComments, { commentsContainer } from "./app.js";
 import { data } from "./data.js";
 
-// Função recursiva para encontrar o comentário pelo ID
 function findCommentById(comments: any, id: number) {
     for (const comment of comments) {
         if (comment.id === id) {
@@ -17,50 +16,57 @@ function findCommentById(comments: any, id: number) {
     return null;
 }
 
-export function likeAndDislike() {
-    const likeBtn = document.querySelectorAll(".like");
+const likedComments = new Map();
+const dislikedComments = new Map();
 
+export function like(): void {
+    const likeBtn = document.querySelectorAll(".like");
     likeBtn.forEach((btn) => {
         btn.addEventListener("click", () => {
             const idHTML = Number(btn.closest(".comment")?.id);
             const commentToLike = findCommentById(data.comments, idHTML);
+
             if (commentToLike) {
-                
-                commentToLike.score += 1;  
-
-                console.log(commentToLike);
-
-                //+ CONTINUAR AQUI COM A LÓGICA DE LIKE E DISLIKE
+                if (likedComments.has(idHTML)) {
+                    commentToLike.score--;
+                    likedComments.delete(idHTML);
+                } else {
+                    if (dislikedComments.has(idHTML)) {
+                        commentToLike.score++;
+                        dislikedComments.delete(idHTML);
+                    }
+                    commentToLike.score++;
+                    likedComments.set(idHTML, true);
+                }
+                commentsContainer!.innerHTML = "";
+                renderComments();
             }
-            
         });
     });
 }
 
+export function dislike(): void {
+    const dislikeBtn = document.querySelectorAll(".dislike");
+    dislikeBtn.forEach((btn) => {
+        btn.addEventListener("click", () => {
+            const idHTML = Number(btn.closest(".comment")?.id);
+            const commentToDisLike = findCommentById(data.comments, idHTML);
 
-
-
-
-
-
-
-
-
-
-
-
-// import Comentario from "./Comentario.js";
-// import { data } from "./data.js";
-
-// export function likeAndDislike(): void {
-//     const likeBtn: NodeListOf<HTMLButtonElement> | null = document.querySelectorAll(".like");
-
-//     likeBtn.forEach((btn) => {
-//         btn.addEventListener("click", () => {
-//             const idHTML = Number(btn.closest(".comment")?.id);
-//             const commentToLike = data.comments.filter(comment => comment.id === idHTML)
-//             console.log(commentToLike);
-            
-//         });
-//     });
-// }
+            if (commentToDisLike) {
+                if (dislikedComments.has(idHTML)) {
+                    commentToDisLike.score++;
+                    dislikedComments.delete(idHTML);
+                } else {
+                    if (likedComments.has(idHTML)) {
+                        commentToDisLike.score--;
+                        likedComments.delete(idHTML);
+                    }
+                    commentToDisLike.score--;
+                    dislikedComments.set(idHTML, true);
+                }
+                commentsContainer!.innerHTML = "";
+                renderComments();
+            }
+        });
+    });
+}

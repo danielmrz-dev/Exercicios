@@ -127,6 +127,8 @@ body {
                     font-size: 1.1rem;
                     color: $Moderate-blue;
                     font-weight: 500;
+                    min-width: 25px;
+                    text-align: center;
                 }
             }
             &__likes-btn {
@@ -226,7 +228,9 @@ body {
                     opacity: .5;
                 }
             }
-
+        }
+        .replyContainer-active {
+            display: grid;
         }
         .new__comment {
             background-color: $White;
@@ -350,7 +354,7 @@ body {
                 margin-left: auto;
             }
             .comment-reply {
-                display: none; //= GRID when active
+                // display: none; //= GRID when active
                 grid-template-columns: auto 1fr auto;
                 padding: 1.5rem;
                 textarea {

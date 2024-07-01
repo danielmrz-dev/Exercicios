@@ -10,8 +10,9 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 import { data } from "./data.js";
 import Comentario from "./Comentario.js";
 import { renderModal } from "./renderModal.js";
-import { likeAndDislike } from "./likeAndDislike.js";
-const commentsContainer = document.querySelector(".comments");
+import { like, dislike } from "./likeAndDislike.js";
+import replyComment from "./reply.js";
+export const commentsContainer = document.querySelector(".comments");
 function getData() {
     return __awaiter(this, void 0, void 0, function* () {
         const api = yield fetch("data.json");
@@ -19,10 +20,21 @@ function getData() {
         return response;
     });
 }
+let counter = 0;
 export default function renderComments() {
-    // getData().then((data) => {
     const comments = data.comments;
     const currentUser = data.currentUser;
+    commentsContainer.innerHTML = `
+
+    <dialog>
+        <div class="modal__container">
+            <h2>Delete comment</h2>
+            <p>Are you sure you want to delete this comment? This will remove the comment and can't be undone.</p>
+            <button class="btnCancelDelete">No, Cancel</button>
+            <button class="btnConfirmDelete">Yes, delete</button>					
+        </div>
+    </dialog>
+    `;
     comments.forEach((comment) => {
         const comentario = new Comentario(comment.id, comment.content, comment.createdAt, comment.score, comment.user.username, comment.user.image.png, comment.replies.map((reply) => new Comentario(reply.id, reply.content, reply.createdAt, reply.score, reply.user.username, reply.user.image.png, reply.replies || [], reply.replyingTo)));
         const respostasHTML = comentario.replies
@@ -75,20 +87,12 @@ export default function renderComments() {
 						</button>`}
 
                 </section>
+
             `)
             .join("");
         if (!commentsContainer)
             return;
         commentsContainer.innerHTML += `
-
-				<dialog>
-					<div class="modal__container">
-						<h2>Delete comment</h2>
-						<p>Are you sure you want to delete this comment? This will remove the comment and can't be undone.</p>
-						<button class="btnCancelDelete">No, Cancel</button>
-						<button class="btnConfirmDelete">Yes, delete</button>					
-					</div>
-				</dialog>
 
                 <div class="comment__container">
                     <section class="comment" id="${comentario.id}">
@@ -115,7 +119,15 @@ export default function renderComments() {
                             <img src="images/icon-reply.svg" />
                             Reply                          
                         </button>
+
                     </section>
+
+                    <div class="comment-reply">
+                        <img src=${currentUser.image.png}>
+                        <textarea name="" id="" rows="4" placeholder="Add a comment..."></textarea>
+                        <button class="comment__btn-confirm-reply">Reply</button>
+                    </div>
+
                     ${comentario.replies.length === 0
             ? ""
             : `
@@ -126,18 +138,19 @@ export default function renderComments() {
                 </div>
             `;
         renderModal();
-        likeAndDislike();
+        like();
+        dislike();
+        replyComment();
     });
     const newCommentElement = `
     <section class="new__comment">
-    <form>
-    <textarea name="" id="" placeholder="Add a comment..." rows="4"></textarea>
-    <img src="images/avatars/image-juliusomo.webp">
-    <button>SEND</button>
-    </form>
+        <form>
+            <textarea name="" id="" placeholder="Add a comment..." rows="4"></textarea>
+            <img src="images/avatars/image-juliusomo.webp">
+            <button>SEND</button>
+        </form>
     </section>
     `;
     commentsContainer === null || commentsContainer === void 0 ? void 0 : commentsContainer.insertAdjacentHTML("beforeend", newCommentElement);
-    // });
 }
 renderComments();

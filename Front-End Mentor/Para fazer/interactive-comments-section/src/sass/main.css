@@ -112,6 +112,8 @@ body .comments .comment__likes-box span {
   font-size: 1.1rem;
   color: #5457b6;
   font-weight: 500;
+  min-width: 25px;
+  text-align: center;
 }
 body .comments .comment__likes-btn {
   cursor: pointer;
@@ -216,6 +218,9 @@ body .comments .comment-reply button {
 }
 body .comments .comment-reply button:hover {
   opacity: 0.5;
+}
+body .comments .replyContainer-active {
+  display: grid;
 }
 body .comments .new__comment {
   background-color: #ffffff;
@@ -367,7 +372,6 @@ body .comments dialog .modal__container button:nth-of-type(2) {
     margin-left: auto;
   }
   body .comments .comment-reply {
-    display: none;
     grid-template-columns: auto 1fr auto;
     padding: 1.5rem;
   }
