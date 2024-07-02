@@ -59,6 +59,18 @@ body .comments .comment__content {
   color: #67727e;
   font-size: 1rem;
 }
+body .comments .comment__edit-content {
+  display: none;
+  grid-area: 2/2/3/4;
+  border: 1px solid #eaecf1;
+  padding: 0.75rem 1rem;
+  border-radius: 7px;
+  font-family: "Rubik", sans-serif;
+  font-size: 1rem;
+}
+body .comments .comment__edit-content:focus {
+  outline: 1px solid #5457b6;
+}
 body .comments .comment__replyingTo {
   color: #5457b6;
 }
@@ -74,9 +86,20 @@ body .comments .comment__content-update {
   border-radius: 7px;
   font-size: 1rem;
   font-weight: 500;
+  transition: opacity 0.2s ease;
+  cursor: pointer;
   align-self: flex-end;
   display: none;
   grid-area: 3/1/4/3;
+}
+body .comments .comment__content-update:hover {
+  opacity: 0.5;
+}
+body .comments .comment .active {
+  display: block;
+}
+body .comments .comment .not-active {
+  display: none;
 }
 body .comments .comment__likes {
   display: flex;
@@ -347,7 +370,6 @@ body .comments dialog .modal__container button:nth-of-type(2) {
     grid-area: 2/2/3/4;
   }
   body .comments .comment__content-update {
-    display: none;
     grid-area: 3/3/4;
   }
   body .comments .comment__likes {

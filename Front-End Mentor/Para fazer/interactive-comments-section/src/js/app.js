@@ -38,7 +38,7 @@ export default function renderComments() {
                     <div class="comment__header">
                         <img src=${resposta.user.image.png} alt="Profile Picture"/>
                         <span class="comment__username">${resposta.user.username}</span>
-						${resposta.username === currentUser.username
+						${resposta.user.username === currentUser.username
             ? `
 							<span class="comment__username-you">you</span>
 							`
@@ -49,6 +49,15 @@ export default function renderComments() {
 					<strong class="comment__replyingTo">@${resposta.replyingTo}</strong>
                     ${resposta.content}
                     </p>
+
+                    ${resposta.user.username === currentUser.username ? `
+                        <textarea class="comment__edit-content" rows="4"></textarea>
+
+                        <button class="comment__content-update">
+                            Update
+                        </button>                        
+                        ` : ""}
+
                     <div class="comment__likes">
                         <div class="comment__likes-box">
                             <button class="comment__likes-btn like">

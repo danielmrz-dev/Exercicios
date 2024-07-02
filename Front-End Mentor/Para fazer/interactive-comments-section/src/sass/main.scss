@@ -85,14 +85,37 @@ body {
                 color: $Grayish-Blue;     
                 font-size: 1rem;   
             }
+            &__edit-content {
+                display: none; //= block quando ativo
+                grid-area: 2 / 2 / 3 / 4;
+                border: 1px solid $Gray;
+                padding: .75rem 1rem;
+                border-radius: 7px;
+                font-family: $Rubik;
+                font-size: 1rem;
+                &:focus {
+                    outline: 1px solid $Moderate-blue;
+                }
+            }
             &__replyingTo {
                 color: $Moderate-blue;
             }
             &__content-update {
                 @include button($Moderate-blue,$White ,0.75rem 1.5rem);
+                transition: opacity .2s ease;
+                cursor: pointer;
                 align-self: flex-end;
                 display: none; //= BLOCK when active
                 grid-area: 3 / 1 / 4 / 3;
+                &:hover {
+                    opacity: .5;
+                }
+            }
+            .active {
+                display: block;
+            }
+            .not-active {
+                display: none;
             }
             &__likes {
                 display: flex;
@@ -328,7 +351,7 @@ body {
                     grid-area: 2 / 2 / 3 / 4;
                 }
                 &__content-update {
-                    display: none; //= BLOCK when active
+                    // display: none; //= BLOCK when active
                     grid-area: 3 / 3 / 4 ;
                 }
                 &__likes {

@@ -4,6 +4,7 @@ import renderComments from "./app.js";
 export function renderModal() {
     const modal = document.querySelector("dialog");
     document.addEventListener("click", (event) => {
+        var _a;
         const target = event.target;
         if (target.closest(".comment__delete")) {
             modal === null || modal === void 0 ? void 0 : modal.showModal();
@@ -19,7 +20,22 @@ export function renderModal() {
                     modal === null || modal === void 0 ? void 0 : modal.close();
                 }
             });
-            //= CONTINUAR AQUI, IMPLEMENTAR A LÓGICA DE EDIÇÃO DE COMENTÁRIO
+        }
+        const textarea = document.querySelector(".comment__edit-content");
+        const updateCommentBtn = document.querySelector(".comment__content-update");
+        const currentCommentContainer = (_a = target.closest(".comment")) === null || _a === void 0 ? void 0 : _a.querySelector(".comment__content");
+        if (target.closest(".comment__edit")) {
+            if (textarea && updateCommentBtn && currentCommentContainer) {
+                let currentCommentContent = currentCommentContainer.textContent;
+                currentCommentContent = currentCommentContent.trim().replace(/\s+/g, ' ');
+                textarea.classList.add("active");
+                textarea.value = currentCommentContent || "";
+                updateCommentBtn.classList.add("active");
+                currentCommentContainer.classList.add("inactive");
+            }
+        }
+        if (target.classList.contains("comment__content-update")) {
+            //+ CONTINUAR AQUI. COLOCAR O CONTEÚDO DO TEXTAREA DENTRO DO COMENTÁRIO (OBJETO) E RENDERIZAR NOVAMENTE...
         }
     });
 }
