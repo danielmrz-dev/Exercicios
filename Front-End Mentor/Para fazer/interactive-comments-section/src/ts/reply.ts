@@ -52,7 +52,7 @@ export default function replyComment() {
     });
 }
 
-function findCommentById(comments: any, id: number) {
+export function findCommentById(comments: any, id: number) {
     for (const comment of comments) {
         if (comment.id === id) {
             return comment;

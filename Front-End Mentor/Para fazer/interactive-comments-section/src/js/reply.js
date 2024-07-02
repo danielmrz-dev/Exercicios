@@ -43,7 +43,7 @@ export default function replyComment() {
         });
     });
 }
-function findCommentById(comments, id) {
+export function findCommentById(comments, id) {
     for (const comment of comments) {
         if (comment.id === id) {
             return comment;

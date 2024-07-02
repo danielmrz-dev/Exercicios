@@ -1,2 +1,2 @@
-"use strict";
-//* CONTINUAR AQUI COM A LÓGICA DE EXCLUSÃO DE COMENTÁRIOS
+export default function deleteComment() {
+}
