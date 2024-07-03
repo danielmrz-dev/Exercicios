@@ -21,7 +21,7 @@ export default function replyComment() {
 
                 //? Reunindo as informações para a criação da resposta
 
-                const newId = Number((Math.random() * 1000000).toFixed(0));
+                const newId = Number((Math.random() * 1000).toFixed(0));
                 const profilePicture = data.currentUser.image.png;
                 const user = data.currentUser.username; //
                 const createdAt = "Just now";

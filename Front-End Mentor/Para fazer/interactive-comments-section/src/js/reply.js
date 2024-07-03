@@ -15,7 +15,7 @@ export default function replyComment() {
                 const commentId = Number((_a = btn.closest(".comment")) === null || _a === void 0 ? void 0 : _a.id);
                 const comment = findCommentById(data.comments, commentId);
                 //? Reunindo as informações para a criação da resposta
-                const newId = Number((Math.random() * 1000000).toFixed(0));
+                const newId = Number((Math.random() * 1000).toFixed(0));
                 const profilePicture = data.currentUser.image.png;
                 const user = data.currentUser.username; //
                 const createdAt = "Just now";

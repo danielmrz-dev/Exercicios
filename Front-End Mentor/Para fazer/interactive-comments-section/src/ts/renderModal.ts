@@ -12,7 +12,7 @@ export function renderModal(): void {
             const commentId = Number(target.closest(".comment")!.id);
             const commentToDelete = findCommentById(data.comments, commentId);
 
-            document.addEventListener("click", (evento) => {
+            modal?.addEventListener("click", (evento) => {
                 const target = evento.target as HTMLElement;
                 if (target.classList.contains("btnConfirmDelete")) {
                     deleteCommentOrReplyById(commentToDelete.id);                  
@@ -37,11 +37,18 @@ export function renderModal(): void {
                 currentCommentContainer.classList.add("inactive");           
             }
         }
-
-        if (target.classList.contains("comment__content-update")) {
-            //+ CONTINUAR AQUI. COLOCAR O CONTEÚDO DO TEXTAREA DENTRO DO COMENTÁRIO (OBJETO) E RENDERIZAR NOVAMENTE...
-        }
         
+        if (target.classList.contains("comment__content-update")) {
+            const commentToAnswer = target.closest(".comment__container")?.querySelector(".comment__username")?.textContent;
+            const commentId = Number(target.closest(".comment")!.id);
+            const commentToUpdate = findCommentById(data.comments, commentId);
+            commentToUpdate.content = textarea!.value;
+            textarea!.classList.remove("active");
+            updateCommentBtn!.classList.remove("active");
+            currentCommentContainer!.classList.remove("inactive");         
+            const newContentElement = target.closest(".comment")?.querySelector("p");
+            newContentElement!.innerHTML = `<strong class="comment__replyingTo">@${commentToAnswer} </strong>${textarea!.value}`
+        }
     });
 }
 

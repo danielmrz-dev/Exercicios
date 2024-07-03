@@ -87,7 +87,7 @@ body {
             }
             &__edit-content {
                 display: none; //= block quando ativo
-                grid-area: 2 / 2 / 3 / 4;
+                grid-area: 2 / 1 / 3 / 4;
                 border: 1px solid $Gray;
                 padding: .75rem 1rem;
                 border-radius: 7px;
@@ -318,13 +318,18 @@ body {
                     
                 }
                 button {
-                    text-transform: uppercase;
-                    min-width: 100%;
-                    grid-area: 3 / 1 / 4 / 2;
                     @include button($Grayish-Blue, $White, .75rem 1rem);
                     &:nth-of-type(2) {
                         grid-area: 3 / 2 / 4 / 3;
                         @include button($Soft-Red, $White, .75rem 1rem);
+                    }
+                    text-transform: uppercase;
+                    min-width: 100%;
+                    grid-area: 3 / 1 / 4 / 2;
+                    cursor: pointer;
+                    transition: opacity .2s ease;
+                    &:hover {
+                        opacity: .5;
                     }
                 }
             }
@@ -350,8 +355,10 @@ body {
                 &__content {
                     grid-area: 2 / 2 / 3 / 4;
                 }
+                &__edit-content {
+                    grid-area: 2 / 2 / 3 / 4;
+                }
                 &__content-update {
-                    // display: none; //= BLOCK when active
                     grid-area: 3 / 3 / 4 ;
                 }
                 &__likes {
@@ -371,16 +378,12 @@ body {
                 min-width: 100%;
                 margin-left: auto;
                 gap: 1.5rem;
-                // section {
-                //     min-width: 94%;
-                // }
             }
             .reply {
                 min-width: 94%;
                 margin-left: auto;
             }
             .comment-reply {
-                // display: none; //= GRID when active
                 grid-template-columns: auto 1fr auto;
                 padding: 1.5rem;
                 textarea {

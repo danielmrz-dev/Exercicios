@@ -3,6 +3,7 @@ import { renderModal } from "./renderModal.js";
 import { like, dislike } from "./likeAndDislike.js";
 import replyComment from "./reply.js";
 import { Comentario } from "./Types/Comentario.js";
+import createNewComment from "./newComment.js";
 
 export const commentsContainer: HTMLElement | null =
     document.querySelector(".comments");
@@ -125,6 +126,12 @@ export default function renderComments() {
                             <span class="comment__username">${
                                 comentario.user.username
                             }</span>
+                            ${comentario.user.username === currentUser.username
+                                ? `
+							<span class="comment__username-you">you</span>
+							`
+                                : ""
+                            }
                             <span class="comment__date">${
                                 comentario.createdAt
                             }</span>
@@ -143,10 +150,27 @@ export default function renderComments() {
                                 </button>
                             </div>
                         </div>
-                        <button class="comment__reply-btn">
-                            <img src="images/icon-reply.svg" />
-                            Reply                          
-                        </button>
+
+                        ${ comentario.user.username === currentUser.username
+                            ? `
+						<div class="comment__delete-edit">
+							<button class="comment__delete">
+								<img src="images/icon-delete.svg" />
+								<span class="delete-btn">Delete</span>
+							</button>
+							<button class="comment__edit">
+								<img src="images/icon-edit.svg" />
+								<span>Edit</span>
+							</button>
+						</div>
+						
+						`
+                            : `
+						<button class="comment__reply-btn">
+							<img src="images/icon-reply.svg" />
+							Reply							
+						</button>`
+                    }
 
                     </section>
 
@@ -175,14 +199,15 @@ export default function renderComments() {
     });
     const newCommentElement = `
     <section class="new__comment">
-        <form>
-            <textarea name="" id="" placeholder="Add a comment..." rows="4"></textarea>
+        <form class="new__comment-form">
+            <textarea name="" id="" placeholder="Add a comment..." rows="4" class="new__comment-content"></textarea>
             <img src="images/avatars/image-juliusomo.webp">
-            <button>SEND</button>
+            <button class="new__comment-submit">SEND</button>
         </form>
     </section>
     `;
     commentsContainer?.insertAdjacentHTML("beforeend", newCommentElement);
+    createNewComment();
 }
 
 renderComments();

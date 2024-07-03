@@ -4,13 +4,13 @@ import renderComments from "./app.js";
 export function renderModal() {
     const modal = document.querySelector("dialog");
     document.addEventListener("click", (event) => {
-        var _a;
+        var _a, _b, _c, _d;
         const target = event.target;
         if (target.closest(".comment__delete")) {
             modal === null || modal === void 0 ? void 0 : modal.showModal();
             const commentId = Number(target.closest(".comment").id);
             const commentToDelete = findCommentById(data.comments, commentId);
-            document.addEventListener("click", (evento) => {
+            modal === null || modal === void 0 ? void 0 : modal.addEventListener("click", (evento) => {
                 const target = evento.target;
                 if (target.classList.contains("btnConfirmDelete")) {
                     deleteCommentOrReplyById(commentToDelete.id);
@@ -35,7 +35,15 @@ export function renderModal() {
             }
         }
         if (target.classList.contains("comment__content-update")) {
-            //+ CONTINUAR AQUI. COLOCAR O CONTEÚDO DO TEXTAREA DENTRO DO COMENTÁRIO (OBJETO) E RENDERIZAR NOVAMENTE...
+            const commentToAnswer = (_c = (_b = target.closest(".comment__container")) === null || _b === void 0 ? void 0 : _b.querySelector(".comment__username")) === null || _c === void 0 ? void 0 : _c.textContent;
+            const commentId = Number(target.closest(".comment").id);
+            const commentToUpdate = findCommentById(data.comments, commentId);
+            commentToUpdate.content = textarea.value;
+            textarea.classList.remove("active");
+            updateCommentBtn.classList.remove("active");
+            currentCommentContainer.classList.remove("inactive");
+            const newContentElement = (_d = target.closest(".comment")) === null || _d === void 0 ? void 0 : _d.querySelector("p");
+            newContentElement.innerHTML = `<strong class="comment__replyingTo">@${commentToAnswer} </strong>${textarea.value}`;
         }
     });
 }
