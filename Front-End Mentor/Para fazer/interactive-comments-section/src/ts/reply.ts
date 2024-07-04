@@ -1,6 +1,5 @@
 import { data } from "./data.js";
 import renderComments, { commentsContainer } from "./app.js";
-import { Comentario } from "./Types/Comentario.js";
 
 export default function replyComment() {
     const replyBtn: NodeListOf<HTMLButtonElement> = document.querySelectorAll(
@@ -8,9 +7,7 @@ export default function replyComment() {
     );
     replyBtn.forEach((btn) => {
         btn.addEventListener("click", () => {
-            const replyContainer = btn
-                .closest(".comment__container")
-                ?.querySelector(".comment-reply");
+            const replyContainer = btn.closest(".comment__container")?.querySelector(".comment-reply");
             replyContainer?.classList.toggle("replyContainer-active");
 
             const replyBtnConfirm = replyContainer?.querySelector("button");
@@ -31,7 +28,7 @@ export default function replyComment() {
                     replyContainer!.querySelector("textarea")!.value;
                 const replies: [] = [];
 
-                const newComment: Comentario = {
+                const newComment = {
                     id: newId,
                     content: replyContent,
                     createdAt: createdAt,
@@ -45,6 +42,7 @@ export default function replyComment() {
                     replies: replies,
                     replyingTo: replyingTo,
                 };
+                
                 comment.replies.push(newComment);
                 renderComments();
             });

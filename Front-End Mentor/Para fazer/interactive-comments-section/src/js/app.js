@@ -114,6 +114,7 @@ export default function renderComments() {
                         <p class="comment__content">
                         ${comentario.content}
                         </p>
+                        
                         <div class="comment__likes">
                             <div class="comment__likes-box">
                                 <button class="comment__likes-btn like">

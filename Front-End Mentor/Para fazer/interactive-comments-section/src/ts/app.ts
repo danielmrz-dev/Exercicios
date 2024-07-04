@@ -2,7 +2,6 @@ import { data } from "./data.js";
 import { renderModal } from "./renderModal.js";
 import { like, dislike } from "./likeAndDislike.js";
 import replyComment from "./reply.js";
-import { Comentario } from "./Types/Comentario.js";
 import createNewComment from "./newComment.js";
 
 export const commentsContainer: HTMLElement | null =
@@ -25,7 +24,7 @@ export default function renderComments() {
     `;
 
     comments.forEach((comment: any) => {
-        const comentario: Comentario = {
+        const comentario = {
             id: comment.id,
             content: comment.content,
             createdAt: comment.createdAt,
@@ -139,6 +138,7 @@ export default function renderComments() {
                         <p class="comment__content">
                         ${comentario.content}
                         </p>
+                        
                         <div class="comment__likes">
                             <div class="comment__likes-box">
                                 <button class="comment__likes-btn like">

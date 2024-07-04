@@ -5,8 +5,7 @@ export default function replyComment() {
     replyBtn.forEach((btn) => {
         btn.addEventListener("click", () => {
             var _a;
-            const replyContainer = (_a = btn
-                .closest(".comment__container")) === null || _a === void 0 ? void 0 : _a.querySelector(".comment-reply");
+            const replyContainer = (_a = btn.closest(".comment__container")) === null || _a === void 0 ? void 0 : _a.querySelector(".comment-reply");
             replyContainer === null || replyContainer === void 0 ? void 0 : replyContainer.classList.toggle("replyContainer-active");
             const replyBtnConfirm = replyContainer === null || replyContainer === void 0 ? void 0 : replyContainer.querySelector("button");
             replyBtnConfirm === null || replyBtnConfirm === void 0 ? void 0 : replyBtnConfirm.addEventListener("click", () => {
