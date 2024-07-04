@@ -1,9 +1,5 @@
-import { NegociacaoController } from "./controllers/negociacao-controller.js";
+import { Negociacao } from "./models/negociacao.js";
 
-const controller = new NegociacaoController();
-const form = document.querySelector(".form") as HTMLFormElement;
+const negociacao = new Negociacao(new Date(), 10, 200)
 
-form.addEventListener("submit", evento => {
-    evento.preventDefault();
-    controller.adiciona();
-})
+console.log(negociacao.valor);

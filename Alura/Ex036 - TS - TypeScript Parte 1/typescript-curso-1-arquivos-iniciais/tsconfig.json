@@ -1,10 +1,11 @@
 {
-    "compilerOptions": {
-        "outDir": "dist/js",
-        "target": "ES6",
-        "noEmitOnError": true,
-        "moduleResolution": "node",
-        "noImplicitAny": true,
-    },
-    "include": ["app/**/*"]
+  "compilerOptions": {
+    "outDir": "dist/js",
+    "target": "ES6",
+    "module": "commonjs",
+    "noEmitOnError": true,
+    "esModuleInterop": true,
+    "strict": true,
+  },
+  "include": ["app/**/*"]
 }

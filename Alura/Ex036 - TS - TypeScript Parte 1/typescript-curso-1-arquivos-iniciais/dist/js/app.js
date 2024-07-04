@@ -1,7 +1,5 @@
-import { NegociacaoController } from "./controllers/negociacao-controller.js";
-const controller = new NegociacaoController();
-const form = document.querySelector(".form");
-form.addEventListener("submit", evento => {
-    evento.preventDefault();
-    controller.adiciona();
-});
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const negociacao_js_1 = require("./models/negociacao.js");
+const negociacao = new negociacao_js_1.Negociacao(new Date(), 10, 200);
+console.log(negociacao.valor);
