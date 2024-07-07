@@ -1,5 +1,4 @@
 export class Negociacao {
-
     constructor(
         private _data: Date, 
         public readonly quantidade: number, 
@@ -12,6 +11,6 @@ export class Negociacao {
 
     get data(): Date {
         const data = new Date(this._data.getTime());
-        return data
+        return data;
     }
 }
