@@ -6,7 +6,7 @@ if (form) {
     form.addEventListener('submit', event => {
         event.preventDefault();
         controller.adiciona();
-    });    
+    });
 } else {
-    throw Error("Não foi possível inicializar a aplicação. Verifique se o formulário realmente existe.")
+    throw Error('Não foi possível inicializar a aplicação. Verifique se o form existe.');
 }

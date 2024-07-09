@@ -5,9 +5,9 @@ import { MensagemView } from '../views/mensagem-view.js';
 import { NegociacoesView } from '../views/negociacoes-view.js';
 
 export class NegociacaoController {
-    private inputData: HTMLInputElement | null;
-    private inputQuantidade: HTMLInputElement | null;
-    private inputValor: HTMLInputElement | null;
+    private inputData: HTMLInputElement;
+    private inputQuantidade: HTMLInputElement;
+    private inputValor: HTMLInputElement;
     private negociacoes = new Negociacoes();
     private negociacoesView = new NegociacoesView('#negociacoesView', true);
     private mensagemView = new MensagemView('#mensagemView');
@@ -20,23 +20,24 @@ export class NegociacaoController {
     }
 
     public adiciona(): void {
-        if (this.inputData && this.inputQuantidade && this.inputValor) {
-            const negociacao = Negociacao.criaDe(
-                this.inputData.value,
-                this.inputQuantidade.value,
-                this.inputValor.value,
-            )
-            
-            if (!this.ehDiaUtil(negociacao.data)) {
-                this.mensagemView
-                    .update('Apenas negociações em dias úteis são aceitas');
-                return ;
-            }
-            this.negociacoes.adiciona(negociacao);
-            this.limparFormulario();
-            this.atualizaView();
+        /*
+            Zé, você já viu isso?
+        */
+        const negociacao = Negociacao.criaDe(
+            this.inputData.value, 
+            this.inputQuantidade.value,
+            this.inputValor.value
+        );
+     
+        if (!this.ehDiaUtil(negociacao.data)) {
+            this.mensagemView
+                .update('Apenas negociações em dias úteis são aceitas');
+            return ;
         }
 
+        this.negociacoes.adiciona(negociacao);
+        this.limparFormulario();
+        this.atualizaView();
     }
 
     private ehDiaUtil(data: Date) {
@@ -45,12 +46,10 @@ export class NegociacaoController {
     }
 
     private limparFormulario(): void {
-        if (this.inputData && this.inputQuantidade && this.inputValor) {
-            this.inputData.value = '';
-            this.inputQuantidade.value = '';
-            this.inputValor.value = '';
-            this.inputData.focus();
-        }
+        this.inputData.value = '';
+        this.inputQuantidade.value = '';
+        this.inputValor.value = '';
+        this.inputData.focus();
     }
 
     private atualizaView(): void {
