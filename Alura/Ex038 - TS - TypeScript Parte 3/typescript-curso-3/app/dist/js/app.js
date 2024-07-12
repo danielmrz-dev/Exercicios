@@ -19,3 +19,4 @@ if (btnImporta) {
 else {
     throw Error("Botão não encontrado.");
 }
+//# sourceMappingURL=app.js.map
