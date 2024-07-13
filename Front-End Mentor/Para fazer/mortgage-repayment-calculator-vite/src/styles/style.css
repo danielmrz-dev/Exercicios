@@ -1,5 +1,188 @@
+@font-face {
+  font-family: "Jakarta-Variable";
+  src: url(../assets/fonts/PlusJakartaSans-VariableFont_wght.ttf);
+}
+@font-face {
+  font-family: "Jakarta-Italic";
+  src: url(../assets/fonts/PlusJakartaSans-Italic-VariableFont_wght.ttf);
+}
+@font-face {
+  font-family: "Jakarta-Medium";
+  src: url(../assets/fonts/static/PlusJakartaSans-Medium.ttf);
+}
+@font-face {
+  font-family: "Jakarta-Bold";
+  src: url(../assets/fonts/static/PlusJakartaSans-Bold.ttf);
+}
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
+body {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  font-family: "Jakarta-Variable", sans-serif;
+}
+body .calculator {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+body .calculator__container {
+  margin: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+body .calculator__header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+body .calculator__title {
+  color: #122f3f;
+  font-weight: 800;
+}
+body .calculator__clear-btn {
+  font-family: "Jakarta-Medium", sans-serif;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 1rem;
+  color: #6b94a8;
+  border: none;
+  background-color: transparent;
+  border-bottom: 1px solid #6b94a8;
+  cursor: pointer;
+}
+body .calculator__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+body .calculator__form-labels {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  font-weight: 500;
+  position: relative;
+}
+body .calculator__form-labels input[type=number] {
+  width: 100%;
+  padding: 0.95rem;
+  border-radius: 5px;
+  font-family: "Jakarta-Bold", sans-serif;
+  border: 1px solid #9abed5;
+  cursor: pointer;
+}
+body .calculator__form-labels input[type=number]::-webkit-outer-spin-button,
+body .calculator__form-labels input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+body .calculator__form-labels input[type=number].padding {
+  padding: 0.95rem 3.25rem;
+}
+body .calculator__form-labels input[type=number]:focus {
+  outline: none;
+  border: 1px solid #d7da2f;
+}
+body .calculator__form-labels input[type=number]:focus ~ .calculator__aside-left,
+body .calculator__form-labels input[type=number]:focus ~ .calculator__aside-right {
+  background-color: #d7da2f;
+  color: #122f3f;
+}
+body .calculator__aside-left {
+  position: absolute;
+  padding: 0.85rem 1rem;
+  font-weight: 700;
+  bottom: 1px;
+  left: 1px;
+  right: none;
+  background-color: rgba(227, 243, 253, 0.7764705882);
+  color: #4e6e7e;
+  border-radius: 5px 0 0 5px;
+}
+body .calculator__aside-right {
+  position: absolute;
+  padding: 0.85rem 1rem;
+  font-weight: 700;
+  bottom: 1px;
+  left: none;
+  right: 1px;
+  background-color: rgba(227, 243, 253, 0.7764705882);
+  color: #4e6e7e;
+  border-radius: 0 5px 5px 0;
+}
+body .calculator__mortgage-type {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+body .calculator__mortgage-type label {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  border: 1px solid #4e6e7e;
+  padding: 0.75rem 3.5rem;
+  border-radius: 5px;
+  position: relative;
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+body .calculator__mortgage-type input[type=radio] {
+  display: none;
+}
+body .calculator__mortgage-type label::before {
+  content: "";
+  position: absolute;
+  background-color: transparent;
+  width: 18px;
+  height: 18px;
+  left: 17px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 2px solid #6b94a8;
+  border-radius: 50%;
+}
+body .calculator__mortgage-type input[type=radio]:checked + label::before {
+  background-color: #d7da2f;
+  border-color: #d7da2f;
+  box-shadow: inset 0 0 0 3px #ffffff;
+}
+body .calculator__mortgage-type input[type=radio]:checked + label {
+  background-color: rgba(215, 218, 47, 0.1764705882);
+  border-color: #d7da2f;
+}
+body .calculator__submit {
+  display: flex;
+  flex-direction: row;
+  gap: 0.75rem;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  font-family: "Jakarta-Bold", sans-serif;
+  font-size: 1.125rem;
+  background-color: #d7da2f;
+  border-radius: 40px;
+  border: none;
+  transition: opacity 0.2s ease, scale 0.2s ease;
+  cursor: pointer;
+}
+body .calculator__submit:hover {
+  opacity: 0.6;
+  scale: 1.01;
+}
+body .calculator__results {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  line-height: 1.375;
+  padding: 1.8rem 1rem;
+  align-items: center;
+  text-align: center;
+  background-color: #122f3f;
+  color: #ffffff;
+}/*# sourceMappingURL=style.css.map */

@@ -1,95 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="A web Mortgage Repayment Calculator Application">
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  <title>Frontend Mentor | Mortgage repayment calculator</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="A web Mortgage Repayment Calculator Application">
+	<link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+	<title>Frontend Mentor | Mortgage repayment calculator</title>
 
-  <link rel="stylesheet" href="src/styles/style.css">
+	<link rel="stylesheet" href="src/styles/style.css">
 
-  <script type="module" src="src/ts/main.ts"></script>
+	<script type="module" src="src/ts/main.ts"></script>
 </head>
 <body>
 
-  <main class="calculator">
+	<main class="calculator">
 
-    <section class="calculator__form">
+		<section class="calculator__container">
 
-      <header class="calculator__header">
-        <h1 class="calculator__title">Mortgage Calculator</h1>
-        <button class="calculator__clear-all-btn">Clear All</button>
-      </header>
+			<header class="calculator__header">
+				<h1 class="calculator__title">Mortgage Calculator</h1>
+				<button class="calculator__clear-btn">Clear All</button>
+			</header>
 
-      <form>
+			<form class="calculator__form">
 
-        <label for="mortgage-amount">
-          <p>Mortgage Amount</p>
-          <input type="number" name="mortgage-amount" id="mortgage-amount">
-          <span>$</span>
-        </label>
+				<label for="mortgage-amount" class="calculator__form-labels">
+					<p>Mortgage Amount</p>
+					<input type="number" name="mortgage-amount" id="mortgage-amount" class="padding">
+					<span class="calculator__aside-left">£</span>
+				</label>
 
-        <label for="mortgage-term">
-          <p>Mortgage Term</p>
-          <input type="number" name="mortgage-term" id="mortgage-term">
-          <span>$</span>
-        </label>
+				<label for="mortgage-term" class="calculator__form-labels">
+					<p>Mortgage Term</p>
+					<input type="number" name="mortgage-term" id="mortgage-term">
+					<span class="calculator__aside-right">years</span>
+				</label>
 
-        <label for="interest-rate">
-          <p>Interest Rate</p>
-          <input type="number" name="interest-rate" id="interest-rate">
-          <span>$</span>
-        </label>
+				<label for="interest-rate" class="calculator__form-labels">
+					<p>Interest Rate</p>
+					<input type="number" name="interest-rate" id="interest-rate">
+					<span class="calculator__aside-right">%</span>
+				</label>
 
-        <div>
-          <p>Mortgage Type</p>
-          <label for="mortgage-type-repayment">
-            <span>Repayment</span>
-            <input type="radio" name="mortgage-type" id="mortgage-type-repayment">
-          </label>
-          <label for="mortgage-type-interest">
-            <span>Interest Only</span>
-            <input type="radio" name="mortgage-type" id="mortgage-type-interest">
-          </label>
-        </div>
+				<div class="calculator__mortgage-type">
+					<p>Mortgage Type</p>
+					<input type="radio" name="mortgage-type" id="mortgage-type-repayment">
+					<label for="mortgage-type-repayment">
+						<span>Repayment</span>
+					</label>
+					<input type="radio" name="mortgage-type" id="mortgage-type-interest">
+					<label for="mortgage-type-interest">
+						<span>Interest Only</span>
+					</label>
+				</div>
 
-        <button class="calculator__submit" type="submit">Calculate Repayments</button>
+				<button class="calculator__submit" type="submit">
+					<img src="src/assets/images/icon-calculator.svg" alt="calculator icon">
+					Calculate Repayments
+				</button>
 
-      </form>
+			</form>
 
-    </section>
+		</section>
 
-    <section class="calculator__results">
-      
-      <img src="src/assets/images/illustration-empty.svg" 
-        alt="A report, a pen, a dollar bill, a few coins and a calculator">
+		<section class="calculator__results">
 
-      <h2 class="calculator__results-title">Results shown here</h2>
+			<img src="src/assets/images/illustration-empty.svg" 
+				alt="A report, a pen, a dollar bill, a few coins and a calculator">
 
-      <p class="calculator__results-paragraph">
-        Complete the form and click “calculate repayments” to see what
-        your monthly repayments would be.
-      </p>        
+			<h2 class="calculator__results-title">Results shown here</h2>
 
-      <div class="calculator__results-complete">
+			<p class="calculator__results-paragraph">
+				Complete the form and click “calculate repayments” to see what
+				your monthly repayments would be.
+			</p>        
 
-        <h3>Your monthly repayments</h3>
-        <span>$1500,65</span>
+			<!-- <div class="calculator__results-complete">
 
-        <hr>
+				<h3>Your monthly repayments</h3>
+				<span>$1500,65</span>
 
-        <h3>Total you'll repay over the term</h3>
-        <span>$232654</span>
+				<hr>
 
-      </div>
+				<h3>Total you'll repay over the term</h3>
+				<span>$232654</span>
 
-    </section>
-  </main>
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+			</div> -->
+
+		</section>
+	</main>
+
+	<!-- <div class="attribution">
+		Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
+		Coded by <a href="#">danielmrz-dev</a>.
+	</div> -->
 </body>
 </html>

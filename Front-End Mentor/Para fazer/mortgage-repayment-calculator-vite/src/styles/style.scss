@@ -1,0 +1,192 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: "Jakarta-Variable";
+    src: url(../assets/fonts/PlusJakartaSans-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: "Jakarta-Italic";
+    src: url(../assets/fonts/PlusJakartaSans-Italic-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: "Jakarta-Medium";
+    src: url(../assets/fonts/static/PlusJakartaSans-Medium.ttf);
+}
+
+@font-face {
+    font-family: "Jakarta-Bold";
+    src: url(../assets/fonts/static/PlusJakartaSans-Bold.ttf);
+}
+
+$Lime: #d7da2f;
+$Lime-opacity: #d7da2f2d;
+$Red: #d73328;
+$White: #ffffff;
+$Slate-100: #e3f3fd;
+$Slate-100-opacity: #e3f3fdc6;
+$Slate-300: #9abed5;
+$Slate-500: #6b94a8;
+$Slate-700: #4e6e7e;
+$Slate-900: #122f3f;
+$Jakarta-Variable: "Jakarta-Variable", sans-serif;
+$Jakarta-Italic: "Jakarta-Italic", sans-serif;
+$Jakarta-Bold: "Jakarta-Bold", sans-serif;
+$Jakarta-Medium: "Jakarta-Medium", sans-serif;
+
+@mixin flexDirection($direction, $gap) {
+    display: flex;
+    flex-direction: $direction;
+    gap: $gap;
+}
+
+@mixin spanPosition($left, $right, $radius) {
+    position: absolute;
+    padding: 0.85rem 1rem;
+    font-weight: 700;
+    bottom: 1px;
+    left: $left;
+    right: $right;
+    background-color: $Slate-100-opacity;
+    color: $Slate-700;
+    border-radius: $radius;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    @include flexDirection(column, 0);
+    font-family: $Jakarta-Variable;
+    .calculator {
+        @include flexDirection(column, 0);
+        &__container {
+            margin: 2rem 1.5rem;
+            @include flexDirection(column, 1.75rem);
+        }
+        &__header {
+            @include flexDirection(column, 0.5rem);
+        }
+        &__title {
+            color: $Slate-900;
+            font-weight: 800;
+        }
+        &__clear-btn {
+            font-family: $Jakarta-Medium;
+            width: fit-content;
+            font-size: 1rem;
+            color: $Slate-500;
+            border: none;
+            background-color: transparent;
+            border-bottom: 1px solid $Slate-500;
+            cursor: pointer;
+        }
+        &__form {
+            @include flexDirection(column, 1.6rem);
+        }
+        &__form-labels {
+            @include flexDirection(column, 0.9rem);
+            font-weight: 500;
+            input[type="number"] {
+                width: 100%;
+                padding: 0.95rem;
+                border-radius: 5px;
+                font-family: $Jakarta-Bold;
+                border: 1px solid $Slate-300;
+                cursor: pointer;
+            }
+            input[type="number"]::-webkit-outer-spin-button,
+            input[type="number"]::-webkit-inner-spin-button {
+                -webkit-appearance: none;
+                // margin: 0;
+            }
+            input[type="number"].padding {
+                padding: 0.95rem 3.25rem;
+            }
+            input[type="number"]:focus {
+                outline: none;
+                border: 1px solid $Lime;
+            }
+            input[type="number"]:focus ~.calculator__aside-left, 
+            input[type="number"]:focus ~.calculator__aside-right {
+                background-color: $Lime;
+                color: $Slate-900;
+            }
+
+            position: relative;
+        }
+        &__aside-left {
+            @include spanPosition(1px, none, 5px 0 0 5px);
+        }
+        &__aside-right {
+            @include spanPosition(none, 1px, 0 5px 5px 0);
+        }
+		&__mortgage-type {
+			@include flexDirection(column, .75rem);
+			label {
+				@include flexDirection(row, 1rem);
+				border: 1px solid $Slate-700;
+				padding: .75rem 3.5rem;
+				border-radius: 5px;
+				position: relative;
+				font-weight: 600;
+				font-size: 1.1rem;
+                cursor: pointer;
+			}
+			input[type="radio"] {
+				display: none;
+			}
+			label::before {
+				content: "";
+				position: absolute;
+				background-color: transparent;
+				width: 18px;
+				height: 18px;
+				left: 17px;
+				top: 50%;
+				transform: translateY(-50%);
+				border: 2px solid $Slate-500;
+				border-radius: 50%;
+			}
+			input[type="radio"]:checked + label::before {
+				background-color: $Lime;
+				border-color: $Lime;
+				box-shadow: inset 0 0 0 3px $White;
+			}
+			input[type="radio"]:checked + label {
+				background-color: $Lime-opacity;
+				border-color: $Lime;
+			}
+		}
+		&__submit {
+			@include flexDirection(row, .75rem);
+			justify-content: center;
+			align-items: center;
+			padding: 1rem;
+			font-family: $Jakarta-Bold;
+			font-size: 1.125rem;
+			background-color: $Lime;
+			border-radius: 40px;
+			border: none;
+            transition: opacity .2s ease, scale .2s ease;
+            cursor: pointer;
+            &:hover {
+                opacity: .6;
+                scale: 1.01;
+            }
+		}
+		&__results {
+            @include flexDirection(column, 1.1rem);
+            line-height: 1.375;
+            padding: 1.8rem 1rem;
+            align-items: center;
+            text-align: center;
+			background-color: $Slate-900;
+            color: $White;
+		}
+    }
+}
