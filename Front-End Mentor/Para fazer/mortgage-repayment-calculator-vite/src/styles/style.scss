@@ -190,12 +190,13 @@ body {
             @include flexDirection(column, 1.1rem);
             text-align: center;
             align-items: center;
-            display: none; // Nenhum ou block
+            justify-content: center;
+            // display: none; // Nenhum ou block
         }
         &__results-complete {
             @include flexDirection(column, 1.1rem);
             text-align: start;
-            // display: none;
+            display: none;
         }
         &__results-complete-title {
             font-size: 1.5rem;
@@ -283,9 +284,34 @@ body {
                 max-width: 75%;
             }
             &__results {
+                display: flex;
                 justify-content: center;
+                align-items: center;
                 width: 50%;
                 border-radius: 0 0 0 70px;
+            }
+            &__results-empty {
+                @include flexDirection(column, 1.1rem);
+                text-align: center;
+                align-items: center;
+                padding: 1rem;
+                // display: none; // Nenhum ou block
+            }
+            &__results-complete {
+                @include flexDirection(column, 1.1rem);
+                padding: .5rem 1.25rem;
+                display: none;
+            }
+            &__final-result {
+                @include flexDirection(column, .5rem);
+                margin-top: 1rem;
+                padding: 1.85rem;
+                hr {
+                    margin-block: 22px;
+                }
+            }
+            &__final-result-monthly-value {
+                font-size: 3.5rem;
             }
         }
     }

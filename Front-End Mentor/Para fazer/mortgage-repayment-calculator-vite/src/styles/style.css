@@ -187,13 +187,14 @@ body .calculator__results-empty {
   gap: 1.1rem;
   text-align: center;
   align-items: center;
-  display: none;
+  justify-content: center;
 }
 body .calculator__results-complete {
   display: flex;
   flex-direction: column;
   gap: 1.1rem;
   text-align: start;
+  display: none;
 }
 body .calculator__results-complete-title {
   font-size: 1.5rem;
@@ -291,8 +292,38 @@ body .calculator__final-result-total-value {
     max-width: 75%;
   }
   body .calculator__results {
+    display: flex;
     justify-content: center;
+    align-items: center;
     width: 50%;
     border-radius: 0 0 0 70px;
+  }
+  body .calculator__results-empty {
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+    text-align: center;
+    align-items: center;
+    padding: 1rem;
+  }
+  body .calculator__results-complete {
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+    padding: 0.5rem 1.25rem;
+    display: none;
+  }
+  body .calculator__final-result {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    padding: 1.85rem;
+  }
+  body .calculator__final-result hr {
+    margin-block: 22px;
+  }
+  body .calculator__final-result-monthly-value {
+    font-size: 3.5rem;
   }
 }/*# sourceMappingURL=style.css.map */
