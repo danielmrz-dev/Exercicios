@@ -235,6 +235,28 @@ body {
     }
 }
 
+.error-msg {
+    opacity: 0;
+    position: absolute;
+    bottom: -18px;
+    left: 3px;
+    color: $Red;
+    font-size: 0.75rem;
+}
+
+.error-msg-active {
+    opacity: 1;
+}
+
+.error-state-input {
+    border-color: $Red !important;
+}
+
+.error-state-icon {
+    background-color: $Red !important;
+    color: $White !important;
+}
+
 //= MEDIA QUERIES
 
 @media screen and (min-width: 778px) {

@@ -9,7 +9,7 @@
 
 	<link rel="stylesheet" href="src/styles/style.css">
 
-	<script type="module" src="src/ts/main.ts"></script>
+	<script type="module" src="src/ts/main.ts" defer></script>
 </head>
 <body>
 
@@ -24,25 +24,28 @@
 
 			<form class="calculator__form">
 
-				<label for="mortgage-amount" class="calculator__form-labels">
+				<label for="mortgage-amount" class="calculator__form-labels parent">
 					<p>Mortgage Amount</p>
 					<input type="number" name="mortgage-amount" id="mortgage-amount" class="padding">
-					<span class="calculator__aside-left">£</span>
+					<span class="calculator__aside-left currency-icon">£</span>
+					<p class="error-msg">This field is required</p>
 				</label>
-
-				<label for="mortgage-term" class="calculator__form-labels">
+				
+				<label for="mortgage-term" class="calculator__form-labels parent">
 					<p>Mortgage Term</p>
 					<input type="number" name="mortgage-term" id="mortgage-term">
-					<span class="calculator__aside-right">years</span>
+					<span class="calculator__aside-right years-icon">years</span>
+					<p class="error-msg">This field is required</p>
 				</label>
-
-				<label for="interest-rate" class="calculator__form-labels">
+				
+				<label for="interest-rate" class="calculator__form-labels parent">
 					<p>Interest Rate</p>
 					<input type="number" name="interest-rate" id="interest-rate">
-					<span class="calculator__aside-right">%</span>
+					<span class="calculator__aside-right percentage-icon">%</span>
+					<p class="error-msg">This field is required</p>
 				</label>
-
-				<div class="calculator__mortgage-type">
+				
+				<div class="calculator__mortgage-type parent">
 					<p>Mortgage Type</p>
 					<input type="radio" name="mortgage-type" id="mortgage-type-repayment">
 					<label for="mortgage-type-repayment">
@@ -51,14 +54,15 @@
 					<input type="radio" name="mortgage-type" id="mortgage-type-interest">
 					<label for="mortgage-type-interest">
 						<span>Interest Only</span>
+						<p class="error-msg">This field is required</p>
 					</label>
 				</div>
-
+				
 				<button class="calculator__submit" type="submit">
 					<img src="src/assets/images/icon-calculator.svg" alt="calculator icon">
 					Calculate Repayments
 				</button>
-
+				
 			</form>
 
 		</section>

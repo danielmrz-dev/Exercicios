@@ -233,6 +233,28 @@ body .calculator__final-result-total-value {
   font-weight: 700;
 }
 
+.error-msg {
+  opacity: 0;
+  position: absolute;
+  bottom: -18px;
+  left: 3px;
+  color: #d73328;
+  font-size: 0.75rem;
+}
+
+.error-msg-active {
+  opacity: 1;
+}
+
+.error-state-input {
+  border-color: #d73328 !important;
+}
+
+.error-state-icon {
+  background-color: #d73328 !important;
+  color: #ffffff !important;
+}
+
 @media screen and (min-width: 778px) {
   body {
     display: flex;
