@@ -17,3 +17,15 @@ export function validateField(fieldId: string, iconId: string) {
         }
     }
 }
+
+export function validateMortgageType() {
+    const repaymentOption: HTMLInputElement | null = document.querySelector("#mortgage-type-repayment");
+    const interestOnlyOption: HTMLInputElement | null = document.querySelector("#mortgage-type-interest");
+    const errorMsg: HTMLElement | null = repaymentOption?.closest(".parent")?.querySelector(".error-msg") as HTMLParagraphElement;
+    
+    if (!repaymentOption?.checked && !interestOnlyOption?.checked) {
+        errorMsg!.classList.add("error-msg-active");
+    } else {
+        errorMsg.classList.remove("error-msg-active");
+    }
+}

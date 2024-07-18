@@ -1,6 +1,6 @@
 // import { calculateMortgage } from "./calculateMortgage.js";
 
-import { validateField } from "./validations.js";
+import { validateField, validateMortgageType } from "./validations.js";
 
 const form: HTMLFormElement | null =
     document.querySelector(".calculator__form");
@@ -13,6 +13,7 @@ if (form) {
         validateField("#mortgage-amount", ".currency-icon");
         validateField("#mortgage-term", ".years-icon");
         validateField("#interest-rate", ".percentage-icon");
+        validateMortgageType();
         // const amount = Number(mortgageAmount?.value);
         // const term = Number(mortgageTerm?.value);
         // const interest = Number(interestRate?.value);
