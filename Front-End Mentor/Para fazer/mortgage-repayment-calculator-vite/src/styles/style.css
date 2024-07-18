@@ -69,7 +69,8 @@ body .calculator__form-labels {
   font-weight: 500;
   position: relative;
 }
-body .calculator__form-labels input[type=number] {
+body .calculator__form-labels input[type=number],
+body .calculator__form-labels input[type=text] {
   width: 100%;
   padding: 0.95rem;
   border-radius: 5px;
@@ -84,11 +85,14 @@ body .calculator__form-labels input[type=number]::-webkit-inner-spin-button {
 body .calculator__form-labels input[type=number].padding {
   padding: 0.95rem 3.25rem;
 }
-body .calculator__form-labels input[type=number]:focus {
+body .calculator__form-labels input[type=number]:focus,
+body .calculator__form-labels input[type=text]:focus {
   outline: none;
   border: 1px solid #d7da2f;
 }
 body .calculator__form-labels input[type=number]:focus ~ .calculator__aside-left,
+body .calculator__form-labels input[type=text]:focus ~ .calculator__aside-left,
+body .calculator__form-labels input[type=text]:focus ~ .calculator__aside-right,
 body .calculator__form-labels input[type=number]:focus ~ .calculator__aside-right {
   background-color: #d7da2f;
   color: #122f3f;

@@ -93,7 +93,8 @@ body {
         &__form-labels {
             @include flexDirection(column, 0.9rem);
             font-weight: 500;
-            input[type="number"] {
+            input[type="number"],
+            input[type="text"] {
                 width: 100%;
                 padding: 0.95rem;
                 border-radius: 5px;
@@ -109,11 +110,14 @@ body {
             input[type="number"].padding {
                 padding: 0.95rem 3.25rem;
             }
-            input[type="number"]:focus {
+            input[type="number"]:focus,
+            input[type="text"]:focus {
                 outline: none;
                 border: 1px solid $Lime;
             }
             input[type="number"]:focus ~ .calculator__aside-left,
+            input[type="text"]:focus ~ .calculator__aside-left,
+            input[type="text"]:focus ~ .calculator__aside-right,
             input[type="number"]:focus ~ .calculator__aside-right {
                 background-color: $Lime;
                 color: $Slate-900;
