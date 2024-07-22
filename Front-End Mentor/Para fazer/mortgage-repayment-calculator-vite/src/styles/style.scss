@@ -96,9 +96,10 @@ body {
             input[type="number"],
             input[type="text"] {
                 width: 100%;
-                padding: 0.95rem;
+                padding: 0.78rem;
                 border-radius: 5px;
                 font-family: $Jakarta-Bold;
+                font-size: 1.1rem;
                 border: 1px solid $Slate-300;
                 cursor: pointer;
             }
@@ -108,7 +109,7 @@ body {
                 // margin: 0;
             }
             input[type="number"].padding {
-                padding: 0.95rem 3.25rem;
+                padding: 0.78rem 3.25rem;
             }
             input[type="number"]:focus,
             input[type="text"]:focus {
@@ -128,7 +129,7 @@ body {
             @include spanPosition(1px, none, 5px 0 0 5px);
         }
         &__aside-right {
-            @include spanPosition(none, 1px, 0 5px 5px 0);
+            @include spanPosition(none, 0.5px, 0 5px 5px 0);
         }
         &__mortgage-type {
             @include flexDirection(column, 0.75rem);
@@ -197,6 +198,12 @@ body {
             justify-content: center;
             // display: none; // Nenhum ou block
         }
+        .hide-empty-results {
+            display: none;
+        }
+        .show-results {
+            display: flex;
+        }
         &__results-complete {
             @include flexDirection(column, 1.1rem);
             text-align: start;
@@ -260,6 +267,8 @@ body {
     background-color: $Red !important;
     color: $White !important;
 }
+
+
 
 //= MEDIA QUERIES
 

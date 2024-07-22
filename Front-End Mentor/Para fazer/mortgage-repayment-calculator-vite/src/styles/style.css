@@ -72,9 +72,10 @@ body .calculator__form-labels {
 body .calculator__form-labels input[type=number],
 body .calculator__form-labels input[type=text] {
   width: 100%;
-  padding: 0.95rem;
+  padding: 0.78rem;
   border-radius: 5px;
   font-family: "Jakarta-Bold", sans-serif;
+  font-size: 1.1rem;
   border: 1px solid #9abed5;
   cursor: pointer;
 }
@@ -83,7 +84,7 @@ body .calculator__form-labels input[type=number]::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }
 body .calculator__form-labels input[type=number].padding {
-  padding: 0.95rem 3.25rem;
+  padding: 0.78rem 3.25rem;
 }
 body .calculator__form-labels input[type=number]:focus,
 body .calculator__form-labels input[type=text]:focus {
@@ -114,7 +115,7 @@ body .calculator__aside-right {
   font-weight: 700;
   bottom: 1px;
   left: none;
-  right: 1px;
+  right: 0.5px;
   background-color: rgba(227, 243, 253, 0.7764705882);
   color: #4e6e7e;
   border-radius: 0 5px 5px 0;
@@ -192,6 +193,12 @@ body .calculator__results-empty {
   text-align: center;
   align-items: center;
   justify-content: center;
+}
+body .calculator .hide-empty-results {
+  display: none;
+}
+body .calculator .show-results {
+  display: flex;
 }
 body .calculator__results-complete {
   display: flex;

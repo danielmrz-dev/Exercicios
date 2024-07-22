@@ -19,28 +19,28 @@
 
 			<header class="calculator__header">
 				<h1 class="calculator__title">Mortgage Calculator</h1>
-				<button class="calculator__clear-btn">Clear All</button>
+				<button class="calculator__clear-btn" tabindex="1">Clear All</button>
 			</header>
 
 			<form class="calculator__form">
 
 				<label for="mortgage-amount" class="calculator__form-labels parent">
 					<p>Mortgage Amount</p>
-					<input type="number" name="mortgage-amount" id="mortgage-amount" class="padding">
+					<input type="number" name="mortgage-amount" id="mortgage-amount" class="padding" tabindex="2">
 					<span class="calculator__aside-left currency-icon">£</span>
 					<p class="error-msg">This field is required</p>
 				</label>
 				
 				<label for="mortgage-term" class="calculator__form-labels parent">
 					<p>Mortgage Term</p>
-					<input type="number" name="mortgage-term" id="mortgage-term">
+					<input type="number" min="5" max="35" name="mortgage-term" id="mortgage-term" tabindex="3">
 					<span class="calculator__aside-right years-icon">years</span>
 					<p class="error-msg">This field is required</p>
 				</label>
 				
 				<label for="interest-rate" class="calculator__form-labels parent">
 					<p>Interest Rate</p>
-					<input type="text" name="interest-rate" id="interest-rate">
+					<input type="text" name="interest-rate" id="interest-rate" tabindex="4">
 					<span class="calculator__aside-right percentage-icon">%</span>
 					<p class="error-msg">This field is required</p>
 				</label>
@@ -48,17 +48,17 @@
 				<div class="calculator__mortgage-type parent">
 					<p>Mortgage Type</p>
 					<input type="radio" name="mortgage-type" id="mortgage-type-repayment">
-					<label for="mortgage-type-repayment">
+					<label for="mortgage-type-repayment" tabindex="5">
 						<span>Repayment</span>
 					</label>
 					<input type="radio" name="mortgage-type" id="mortgage-type-interest">
-					<label for="mortgage-type-interest">
+					<label for="mortgage-type-interest" tabindex="6">
 						<span>Interest Only</span>
 						<p class="error-msg">This field is required</p>
 					</label>
 				</div>
 				
-				<button class="calculator__submit" type="submit">
+				<button class="calculator__submit" type="submit" tabindex="7">
 					<img src="src/assets/images/icon-calculator.svg" alt="calculator icon">
 					Calculate Repayments
 				</button>
@@ -87,10 +87,10 @@
 
 				<div class="calculator__final-result">
 					<h3 class="calculator__final-result-title">Your monthly repayments</h3>
-					<span class="calculator__final-result-monthly-value">£1,797.74</span>
+					<span class="calculator__final-result-monthly-value" id="monthly-value">£1,797.74</span>
 					<hr>
 					<h3 class="calculator__final-result-title">Total you'll repay over the term</h3>
-					<span class="calculator__final-result-total-value">£539,322.94</span>
+					<span class="calculator__final-result-total-value" id="total-value">£539,322.94</span>
 				</div>
 
 			</div>
