@@ -13,6 +13,7 @@ const completeResults = document.querySelector(".calculator__results-complete") 
 const monthlyValueElement = completeResults.querySelector("#monthly-value");
 const totalValueElement = completeResults.querySelector("#total-value");
 const clearAllBtn = document.querySelector(".calculator__clear-btn");
+const finalResultText = document.querySelector("#interest-text") as HTMLHeadingElement;
 
 const mortgageTypeLabels = mortgageTypeContainer.querySelectorAll("label");
 mortgageTypeLabels.forEach(label => {
@@ -74,19 +75,17 @@ if (form) {
 
             emptyResults.classList.add("hide-empty-results");
             completeResults.classList.add("show-results");
-
+            
             if (repaymentOption.checked) {
                 monthlyPayment = monthlyPayment;
                 monthlyValueElement!.innerHTML = `£ ${monthlyPaymentFormatted}`;
                 totalValueElement!.innerHTML = `£ ${totalValueFormatted}`;
-                //= inserir lógica para mudar o texto que diz "total you'll repay over the term"
-                
+                finalResultText.textContent = "Total you'll repay over the term";
             } else if (interestOnlyOption.checked) {
                 monthlyPayment = monthlyPayment;
                 monthlyValueElement!.innerHTML = `£ ${monthlyPaymentFormatted}`;
                 totalValueElement!.innerHTML = `£ ${interestOnlyValueFormatted}`;
-                //= inserir lógica para mudar o texto que diz "total you'll repay over the term"
-
+                finalResultText.textContent = "Total of interest you'll pay over the term";
             }
 
         } else {
