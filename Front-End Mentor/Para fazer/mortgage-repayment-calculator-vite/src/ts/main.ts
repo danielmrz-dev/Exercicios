@@ -4,6 +4,7 @@ import { validateField, validateMortgageType } from "./validations.js";
 const mortgageAmount = document.querySelector("#mortgage-amount") as HTMLInputElement;
 const mortgageTerm = document.querySelector("#mortgage-term") as HTMLInputElement;
 const interestRate = document.querySelector("#interest-rate") as HTMLInputElement;
+const mortgageTypeContainer = document.querySelector(".calculator__mortgage-type") as HTMLDivElement;
 const repaymentOption = document.querySelector("#mortgage-type-repayment") as HTMLInputElement;
 const interestOnlyOption = document.querySelector("#mortgage-type-interest") as HTMLInputElement;
 const form: HTMLFormElement | null = document.querySelector(".calculator__form");
@@ -13,12 +14,21 @@ const monthlyValueElement = completeResults.querySelector("#monthly-value");
 const totalValueElement = completeResults.querySelector("#total-value");
 const clearAllBtn = document.querySelector(".calculator__clear-btn");
 
+const mortgageTypeLabels = mortgageTypeContainer.querySelectorAll("label");
+mortgageTypeLabels.forEach(label => {
+    label.addEventListener("keydown", (key) => {
+        if (key.key === "Enter" || key.key === " ") {
+            const labelId = label.id;
+            const container = label.parentElement;
+            const input = container?.querySelector(`input#mortgage-type-${labelId}`) as HTMLInputElement;          
+            input.checked = true;            
+        };
+    });
+});
+
 interestRate.addEventListener("input", function() {
     this.value = this.value.replace(/[^0-9,]/g, '');
 });
-
-//+ CONTINUAR AQUI, TORNAR OS INPUTS MORTGAGE TYPE ACESSÍVEIS VIA TECLADO
-
 
 clearAllBtn?.addEventListener("click", () => {
     
@@ -69,9 +79,16 @@ if (form) {
                 monthlyPayment = monthlyPayment;
                 monthlyValueElement!.innerHTML = `£ ${monthlyPaymentFormatted}`;
                 totalValueElement!.innerHTML = `£ ${totalValueFormatted}`;
+                //= inserir lógica para mudar o texto que diz "total you'll repay over the term"
+                
             } else if (interestOnlyOption.checked) {
+                monthlyPayment = monthlyPayment;
+                monthlyValueElement!.innerHTML = `£ ${monthlyPaymentFormatted}`;
                 totalValueElement!.innerHTML = `£ ${interestOnlyValueFormatted}`;
+                //= inserir lógica para mudar o texto que diz "total you'll repay over the term"
+
             }
+
         } else {
             emptyResults.classList.remove("results-showing");
             completeResults.classList.remove("show-results");

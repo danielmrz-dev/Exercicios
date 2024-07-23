@@ -137,6 +137,10 @@ body .calculator__mortgage-type label {
   font-size: 1.1rem;
   cursor: pointer;
 }
+body .calculator__mortgage-type label:focus {
+  border-color: #d7da2f;
+  outline: none;
+}
 body .calculator__mortgage-type input[type=radio] {
   display: none;
 }

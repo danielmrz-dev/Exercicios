@@ -142,6 +142,10 @@ body {
                 font-weight: 600;
                 font-size: 1.1rem;
                 cursor: pointer;
+                &:focus {
+                    border-color: $Lime;
+                    outline: none;
+                }
             }
             input[type="radio"] {
                 display: none;
@@ -196,7 +200,6 @@ body {
             text-align: center;
             align-items: center;
             justify-content: center;
-            // display: none; // Nenhum ou block
         }
         .hide-empty-results {
             display: none;
