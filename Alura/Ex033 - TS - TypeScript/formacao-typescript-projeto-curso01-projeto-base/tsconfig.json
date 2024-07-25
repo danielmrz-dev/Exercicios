@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
-    "target": "ES6",
-    "module": "commonjs",
+    "target": "ES2022",
     "outDir": "./dist/js",
+    "module": "ES6",
     "noEmitOnError": true,
     "strict": true,
   },
