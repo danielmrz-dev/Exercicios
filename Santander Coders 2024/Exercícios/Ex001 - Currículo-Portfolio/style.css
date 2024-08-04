@@ -134,7 +134,7 @@ main {
 }
 
 table {
-    text-align: center;
+    text-align: start;
     table-layout: fixed;
     border: 3px solid black;
     box-shadow: 6px 6px 0 black;
