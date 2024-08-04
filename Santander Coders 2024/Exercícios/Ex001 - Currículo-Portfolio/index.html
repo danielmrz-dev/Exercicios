@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Um currículo feito em forma de website com navegação entre as seções">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1+Code:wght@100..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Currículo/Portfólio - Daniel Mariz</title>
+</head>
+<body>
+    <header>
+        <span class="header-icons">
+            <span class="header-icon">&lt;</span>
+            <span class="header-icon">cv-portfolio </span>
+            <span class="header-icon">/&gt;</span>
+        </span>
+        <nav class="navbar">
+            <ul class="navbar-list">
+                <li class="navbar-list-item">
+                    <a class="navbar-list-item-link" href="#sobre-mim">Sobre mim</a>
+                </li>
+                <li class="navbar-list-item">
+                    <a class="navbar-list-item-link" href="#experiencia">Experiência &amp; Projetos</a>
+                </li>
+                <li class="navbar-list-item">
+                    <a class="navbar-list-item-link" href="#idiomas">Idiomas</a>
+                </li>
+                <li class="navbar-list-item">
+                    <a class="navbar-list-item-link" href="#ranking">Ranking de empresas</a>
+                </li>
+                <li class="navbar-list-item">
+                    <a class="navbar-list-item-link" href="#contato">Contato</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="sobre-mim" id="sobre-mim">
+            <div class="foto-nome">
+                <img class="profile-picture" src="assets/daniel.jpeg" alt="Foto de perfil">
+                <div class="nome-e-cargo">
+                    <h1 class="sobre-mim-titulo">
+                        Daniel Mariz
+                    </h1>
+                    <h2 class="cargo">Desenvolvedor Frontend</h2>
+                </div>
+            </div>
+
+            <h2 class="subtitulos">Sobre mim</h2>
+            <p>
+                Meu nome é Daniel Moraes Mariz e tenho 33 anos. Atualmente estou fazendo uma transição de carreira para a área de desenvolvimento front-end. Ao longo do último ano e meio, venho estudando e aprendendo cada vez mais conceitos que vão desde os fundamentos do front-end até o uso de frameworks como React. Ao longo desse tempo de estudos e prática, me tornei um desenvolvedor front-end com uma base sólida. Como freelancer na Strategy Planning em São Paulo, Brasil, me especializo em desenvolver landing pages e sites impactantes para profissionais autônomos. Também já entreguei mais de 50 projetos na plataforma <a class="frontendmentor-link" href="https://www.frontendmentor.io/profile/danielmrz-dev/solutions" target="_blank">Frontend Mentor</a>.
+                
+                Minha intenção é usar minhas habilidades e experiências para impulsionar a inovação e entregar soluções digitais eficientes.
+            </p>                
+        </section>
+
+        <section class="experiencia" id="experiencia">
+            <h2 class="subtitulos">Experiência</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Empresa/Projeto</th>
+                        <th>Descrição</th>
+                        <th>Linguagens utilizadas</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <span class="empresa-e-logotipo">
+                                <img src="assets/icons/strategy.png" alt="" class="logo-da-empresa">
+                                Strategy
+                            </span>
+                        </td>
+                        <td>Desenvolver sites e landing pages para profissionais autônomos</td>
+                        <td class="linguagens">
+                            <img src="assets/icons/html5-original.svg" alt="">
+                            <img src="assets/icons/css3-original.svg" alt="">
+                            <img src="assets/icons/javascript-original.svg" alt="">
+                            <img src="assets/icons/sass-original.svg" alt="">
+                            <img src="assets/icons/typescript-original.svg" alt="">
+                            <img src="assets/icons/tailwindcss-original.svg" alt="">
+                            <img src="assets/icons/nodejs-original.svg" alt="">
+                            <img src="assets/icons/vitejs-original.svg" alt="">
+                            <img src="assets/icons/figma-original.svg" alt="">
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="empresa-e-logotipo">
+                                <img src="assets/icons/frontend-mentor.png" alt="" class="logo-da-empresa">
+                                Frontend Mentor
+                            </span>
+                        </td>
+                        <td>Mais de 50 projetos desenvolvidos e entregues com o intuito de aprimorar as minhas habilidades no uso das tecnologias utilizadas no desenvolvimento front-end.</td>
+                        <td class="linguagens">
+                            <img src="assets/icons/html5-original.svg" alt="">
+                            <img src="assets/icons/css3-original.svg" alt="">
+                            <img src="assets/icons/javascript-original.svg" alt="">
+                            <img src="assets/icons/sass-original.svg" alt="">
+                            <img src="assets/icons/typescript-original.svg" alt="">
+                            <img src="assets/icons/tailwindcss-original.svg" alt="">
+                            <img src="assets/icons/nodejs-original.svg" alt="">
+                            <img src="assets/icons/vitejs-original.svg" alt="">
+                            <img src="assets/icons/figma-original.svg" alt="">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="idiomas" id="idiomas">
+            <h2 class="subtitulos">Idiomas</h2>
+
+            <div class="idiomas-falados">
+                <div class="portugues">
+                    <span>
+                        <img src="assets/icons/brasil-flag.png" alt="" class="flags"> Português Brasileiro - Nível: Nativo ⭐⭐⭐⭐⭐
+                    </span>
+                </div>
+                <div class="ingles">
+                    <span>
+                        <img src="assets/icons/UK-flag.png" alt="" class="flags"> Inglês - Nível: Fluente ⭐⭐⭐⭐⭐
+                    </span>
+                </div>
+            </div>
+            
+        </section>
+
+        <section id="ranking" class="ranking-de-empresas">
+            <h2 class="subtitulos">Ranking de empresas nas quais gostaria de trabalhar</h2>
+            <ol type="1" class="lista-de-empresas">
+                <li>
+                    <img src="assets/icons/santander.png" alt="" class="logo-da-empresa teste">
+                    Santander
+                </li>
+                <li>
+                    <img src="assets/icons/ada.svg" alt="" class="logo-da-empresa teste">
+                    Ada Tech
+                </li>
+                <li>
+                    <img src="assets/icons/btg.png" alt="" class="logo-da-empresa teste">
+                    BTG Pactual
+                </li>
+                <li>
+                    <img src="assets/icons/itau.png" alt="" class="logo-da-empresa teste">
+                    Itaú
+                </li>
+                <li>
+                    <img src="assets/icons/cea.png" alt="" class="logo-da-empresa teste">
+                    C&amp;A
+                </li>
+            </ol>
+        </section>
+    </main>
+
+    <footer id="contato">
+        <div class="formulario">
+            <h3>Entre em contato</h3>
+            <form>
+                <input type="text" placeholder="Digite seu nome completo">
+                <input type="email" name="" id="" placeholder="Digite seu melhor email">
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+
+        <p>Desenvolvido por <a href="https://github.com/danielmrz-dev" target="_blank">Daniel Mariz</a>.</p>
+
+    </footer>
+</body>
+</html>
