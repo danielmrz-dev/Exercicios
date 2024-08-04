@@ -26,29 +26,29 @@ header {
     color: white;
     position: sticky;
     top: 0;
-}
-
-.header-icons {
-    display: flex;
-    align-items: center;
-    gap: .25rem;
-    font-size: 1.5rem;
+    font-size: 1rem;
 }
 
 .header-icon {
     color: #0593a2;
+    font-size: 1.5rem;
 }
 
 .navbar-list {
     display: flex;
-    gap: 2rem;
+    gap: 1rem;
     justify-content: space-between;
     list-style-type: none;
 }
 
 .navbar-list-item-link {
     text-decoration: none;
-    color: white;
+    color: white;    
+    transition: color .2s ease;
+}
+
+.navbar-list-item-link:hover {
+    color: #0593a2;
 }
 
 main {
@@ -126,7 +126,7 @@ main {
 .frontendmentor-link {
     text-decoration: none;
     font-weight: 600;
-    color: #ea759f;
+    color: #0593a2;
 }
 
 .frontendmentor-link:hover {
@@ -162,9 +162,10 @@ th, td {
 }
 
 .idiomas-falados {
-    padding: 1.75rem 2rem;
+    padding: 1.75rem 4rem;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    flex-wrap: wrap;
     border: 3px solid black;
     box-shadow: 6px 6px 0 black;
     border-radius: 50px;
@@ -207,11 +208,21 @@ th, td {
 
 footer {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
     background-color: black;
     color: white;
-    padding: 2rem 4rem 4rem ;
+}
+
+footer h3 {
+    font-size: 1.5rem;
+}
+
+.formulario-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 2.5rem;
 }
 
 .formulario {
@@ -220,11 +231,48 @@ footer {
     gap: 1rem;
 }
 
-footer p {
-    text-align: center;
-    padding: 2rem 0;
+.formulario > div {
+    display: flex;
+    gap: 1rem;
 }
 
-footer input, footer button {
+.formulario label {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+
+footer p {
+    padding: 1rem 0;
+    text-align: center;
+    background-color: white;
+    color: black;
+    width: 100%;
+}
+
+footer input, footer button, footer textarea {
+    font-family: "M PLUS 1 Code", monospace;
     padding: 1rem;
+    border-radius: 10px;
+    border: none;
+    font-size: 1.25rem;
+}
+
+footer button {
+    background-color: #0593a2;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: opacity .2s ease;
+}
+
+footer a {
+    text-decoration: none;
+    font-weight: 700;
+    color: #0593a2;
+}
+
+footer a:hover, footer button:hover {
+    opacity: .7;
 }
