@@ -12,13 +12,13 @@ export const DessertsList: React.FC = () => {
                         <img src={dessertPic} alt="Cake" className="dessert-picture" />
                         <button className="add-to-card-btn">
                             <img src={cartIcon} alt="Add to cart button" />
-                            Add to cart
+                            Add to Cart
                         </button>
                     </div>
                     <div className="description-and-price">
                         <span className="dessert-type">Waffle</span>
-                        <p className="dessert-name">Waffle with berries</p>
-                        <span className="dessert-price">$6.15</span>
+                        <p className="dessert-name">Waffle with Berries</p>
+                        <span className="dessert-price">$6.50</span>
                     </div>
                 </li>
             </ul>
