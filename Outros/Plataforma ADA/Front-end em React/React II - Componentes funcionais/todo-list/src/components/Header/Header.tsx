@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { StatsCard } from "../StatsCard/StatsCard";
 import style from "./style.module.scss";
 

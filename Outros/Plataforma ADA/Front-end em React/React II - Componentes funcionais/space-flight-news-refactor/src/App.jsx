@@ -1,10 +1,11 @@
 import React from "react";
 import "./styles/App.css";
-import { Navbar } from "./components/Navbar/Navbar";
-import { Article } from "./components/Article/Article";
-import articleImg1 from "../src/assets/images/Rectangle 30.png";
-import articleImg2 from "../src/assets/images/Rectangle 32.png";
-import articleImg3 from "../src/assets/images/Rectangle 34.png";
+// import { Navbar } from "./components/Navbar/Navbar";
+// import { Article } from "./components/Article/Article";
+// import articleImg1 from "../src/assets/images/Rectangle 30.png";
+// import articleImg2 from "../src/assets/images/Rectangle 32.png";
+// import articleImg3 from "../src/assets/images/Rectangle 34.png";
+import { Counter } from "./components/Counter/Counter";
 
 // Um componente em classe é uma classe que herda a classe Component do React e retorna HTML dentro do método render();
 
@@ -13,7 +14,8 @@ import articleImg3 from "../src/assets/images/Rectangle 34.png";
 export function App() {
         return (
             <>
-                <Navbar/>
+                <Counter/>
+                {/* <Navbar/>
                 <section id="articles">
                     <Article 
                         image={articleImg1}
@@ -33,7 +35,7 @@ export function App() {
                         provider="Spaceflight Now"
                         description="Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet."
                     />
-                </section>
+                </section> */}
             </>
         );
 }
