@@ -1,4 +1,4 @@
-import { FormEvent, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 import style from "./style.module.scss";
 
 interface Task {
@@ -18,17 +18,26 @@ export const Tasks: React.FC = () => {
         if (taskTitle.length < 3) {
             alert("Não é possível adicionar uma tarefa com menos de 3 letras.");
             return;
-        }
+        };
 
-        setTasks([
+        const newTasks = [
             ...tasks,
             {
                 id: new Date().getTime() , title: taskTitle, concluida: false
             }
-        ])
-
+        ];
+        
+        setTasks(newTasks);
+        localStorage.setItem("tasks", JSON.stringify(newTasks));
         setTaskTitle("");
     }
+
+    useEffect(() => {
+        const storagedTasks = localStorage.getItem("tasks");
+        if (storagedTasks) {
+            setTasks(JSON.parse(storagedTasks)) 
+        };
+    }, []);
 
     return (
         <section className={style.container}>
@@ -48,7 +57,7 @@ export const Tasks: React.FC = () => {
             <ul>
                 {tasks.map(task => {
                     return (
-                        <li key={task.id}>
+                        <li key={task.id}> {/* É necessário passar um identificador para o primeiro elemento renderizado */}
                             <input type="checkbox" id={`task-${task.id}`} />
                             <label htmlFor={`task-${task.id}`}>{task.title}</label>
                         </li>

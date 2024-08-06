@@ -1,41 +1,65 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./styles/App.css";
-// import { Navbar } from "./components/Navbar/Navbar";
-// import { Article } from "./components/Article/Article";
-// import articleImg1 from "../src/assets/images/Rectangle 30.png";
-// import articleImg2 from "../src/assets/images/Rectangle 32.png";
-// import articleImg3 from "../src/assets/images/Rectangle 34.png";
-import { Counter } from "./components/Counter/Counter";
+import { Navbar } from "./components/Navbar/Navbar";
+import { Article } from "./components/Article/Article";
+import axios from "axios";
+import { ThreeDots } from 'react-loader-spinner';
 
 // Um componente em classe é uma classe que herda a classe Component do React e retorna HTML dentro do método render();
 
 // Um componente funcional é um função que retorna um HTML.
 
 export function App() {
-        return (
-            <>
-                <Counter/>
-                {/* <Navbar/>
-                <section id="articles">
-                    <Article 
-                        image={articleImg1}
-                        title="Designing Dashboards"
-                        provider="NASA"
-                        description="Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet."
+
+    const [news, setNews] = useState([]);
+
+    useEffect(() => {
+        async function loadNews() {
+            const resposta = await axios.get("https://api.spaceflightnewsapi.net/v4/articles/");            
+            const noticias = resposta.data.results;
+            setNews(noticias)
+        }
+        loadNews();
+    }, [])
+
+    return (
+        <>
+            {/* <Counter/> */}
+            <Navbar />
+            
+
+
+            <section id="articles">
+            { news.length === 0 ? 
+                (
+                <div className="loader">
+                    <ThreeDots
+                        visible={true}
+                        height="80"
+                        width="80"
+                        color="#ffffff"
+                        radius="9"
+                        ariaLabel="three-dots-loading"
+                        wrapperStyle={{}}
+                        wrapperClass=""
                     />
-                    <Article 
-                        image={articleImg2}
-                        title="Vibrant Portraits of 2020"
-                        provider="Space News"
-                        description="Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet."
-                    />
-                    <Article 
-                        image={articleImg3}
-                        title="36 Days of Malayalam type"
-                        provider="Spaceflight Now"
-                        description="Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet."
-                    />
-                </section> */}
-            </>
-        );
+                </div>
+                )
+                :
+                (news.map((noticia) => {
+                    return (
+
+                            <Article
+                                key={noticia.id} //* TODO PRIMEIRO ELEMENTO DEVE TER UM ATRIBUTO KEY ÚNICO
+                                image={noticia.image_url}
+                                title={noticia.title}
+                                provider={noticia.news_site}
+                                description={noticia.summary}
+                            />
+                        )
+                    }))
+                }
+            </section>
+        </>
+    );
 }
