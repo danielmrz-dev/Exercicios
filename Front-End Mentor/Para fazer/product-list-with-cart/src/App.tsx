@@ -1,11 +1,15 @@
 import "./styles/global.scss";
-import { DessertsList } from "./components/Desserts-list";
+import { DessertsList } from "./components/Desserts-list/Desserts-list";
+import { Cart } from "./components/Cart/Cart";
+
 
 export function App() {
-
-  return (
-    <>
-      <DessertsList/>
-    </>
-  )
+    return (
+        <>
+            <main>
+                <DessertsList />
+                <Cart />
+            </main>
+        </>
+    );
 }
