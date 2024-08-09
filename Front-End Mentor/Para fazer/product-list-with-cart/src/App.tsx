@@ -1,5 +1,5 @@
 import "./styles/global.scss";
-import { DessertsList } from "./components/Desserts-list/Desserts-list";
+import { DessertsList } from "./components/DessertsList/Desserts-list";
 import { Cart } from "./components/Cart/Cart";
 
 
