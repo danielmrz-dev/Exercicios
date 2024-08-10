@@ -3,6 +3,7 @@ import plusIcon from "../../assets/images/icon-increment-quantity.svg"
 import minusIcon from "../../assets/images/icon-decrement-quantity.svg"
 
 export interface DessertItem {
+    id?: number
     category: string;
     image: {
         desktop: string;

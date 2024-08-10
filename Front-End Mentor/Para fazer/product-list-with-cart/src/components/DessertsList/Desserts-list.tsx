@@ -9,10 +9,9 @@ export const DessertsList: React.FC = () => {
     
     useEffect(() => {
         async function getData() {
-            const data = await axios.get("../public/data.json");
+            const data = await axios.get("./data.json");
             const desserts = data.data;
-            //= CONTINUAR AQUI, FAZER UM MAP E ADICIONAR UM ID UNICO PARA CADA ITEM
-            setDesserts(desserts);
+            setDesserts(desserts)
         }
         getData();
     }, []);
@@ -24,7 +23,7 @@ export const DessertsList: React.FC = () => {
                 {desserts.map((dessert) => {
                     return (
                         <DessertItem
-                            // key={dessert.id}
+                            key={dessert.category + dessert.name}
                             name={dessert.name}
                             category={dessert.category}
                             image={dessert.image}

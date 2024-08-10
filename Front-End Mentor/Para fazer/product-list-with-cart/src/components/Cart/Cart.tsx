@@ -1,12 +1,13 @@
-import emptyCartImage from "../../assets/images/illustration-empty-cart.svg";
 import "./Cart.scss";
+import { CartFull } from "./CartFull/CartFull";
+// import { CartEmpty } from "./CartEmpty/CartEmpty";
+
 
 export const Cart: React.FC = () => {
     return (
-        <section className="empty-cart">
-            <h2>Your Cart (0)</h2>
-            <img src={emptyCartImage} alt="" />
-            <p>Your added items will appear here.</p>
+        <section className="cart">
+            {/* <CartEmpty/> */}
+            <CartFull/>
         </section>
-    )
-}
+    );
+};
