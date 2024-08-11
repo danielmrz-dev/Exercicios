@@ -1,23 +1,14 @@
 import carbonNeutral from "../../../assets/images/icon-carbon-neutral.svg"
-import removeItem from "../../../assets/images/icon-remove-item.svg"
+import { CartItem } from "../CartItem.tsx/CartItem"
 import "./CartFull.scss"
 
 export const CartFull: React.FC = () => {
     return (
         <div className="full-cart">
             <h2>Your Cart (1)</h2>
-            
-            <div className="cart-item">
-                <h4>Classic Tiramisu</h4>
-                <div className="price-and-quantity">
-                    <span className="quantity">1x</span>
-                    <span className="unit-price">@ $5.50</span>
-                    <span className="total-price">@ $5.50</span>
-                </div>
-                <button>
-                    <img src={removeItem} alt="" />
-                </button>
-            </div>
+
+            <CartItem/>            
+            <CartItem/>            
 
             <div className="order-total">
                 <span>Order Total</span>
@@ -26,9 +17,9 @@ export const CartFull: React.FC = () => {
 
             <div className="carbon-neutral-delivery">
                 <img src={carbonNeutral} alt="" />
-                This is a <strong>carbon neutral</strong> delivery
+                <p>This is a <strong>carbon neutral</strong> delivery</p>
             </div>
-            <button>Confirm Order</button>
+            <button className="confirm-order-btn">Confirm Order</button>
         </div>  
     )
 }

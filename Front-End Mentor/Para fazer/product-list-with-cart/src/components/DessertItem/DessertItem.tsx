@@ -1,7 +1,8 @@
 import cartIcon from "../../assets/images/icon-add-to-cart.svg";
-import plusIcon from "../../assets/images/icon-increment-quantity.svg"
-import minusIcon from "../../assets/images/icon-decrement-quantity.svg"
-
+import plusIcon from "../../assets/images/icon-increment-quantity.svg";
+import minusIcon from "../../assets/images/icon-decrement-quantity.svg";
+import "./DessertItem.scss";
+import { useState } from "react";
 export interface DessertItem {
     id?: number
     category: string;
@@ -16,6 +17,9 @@ export interface DessertItem {
 }
 
 export const DessertItem: React.FC<DessertItem> = ({ category, image, name, price }) => {
+
+    const [addToCartBtn, setAddToCartBtn] = useState(true);
+    const [itemsNumber, setItemsNumber] = useState(0)
 
     function formatCurrency(price: number): string {
         const formattedPrice = price.toLocaleString("en-us", {
@@ -37,22 +41,42 @@ export const DessertItem: React.FC<DessertItem> = ({ category, image, name, pric
                     />
                 </picture>
                 <div className="add-to-card-btn">
-                    <button className="btn-content">
-                        <img
-                            src={cartIcon}
-                            alt="Add to cart button"
-                        />
-                        Add to Cart
-                    </button>
-                    <div className="add-or-remove-item">
-                        <button>
-                            <img src={minusIcon} alt="" />
-                        </button>
-                        <span>1</span>
-                        <button>
-                            <img src={plusIcon} alt="" />
-                        </button>
-                    </div>
+                    
+                    {
+                        addToCartBtn ?     
+                        <button className="btn-content" 
+                            onClick={() => {
+                                setItemsNumber(itemsNumber + 1)
+                                setAddToCartBtn(!addToCartBtn)
+                            }}>
+                            <img
+                                src={cartIcon}
+                                alt="Add to cart button"
+                            />
+                            Add to Cart
+                        </button> 
+                        :
+                        <div className="add-or-remove-item">
+                            <button 
+                            onClick={() => {
+                                setItemsNumber(itemsNumber - 1)
+                                if (itemsNumber <= 1) {
+                                    setAddToCartBtn(!addToCartBtn)                                    
+                                }
+                            }}>
+                                <img src={minusIcon} alt="" />
+                            </button>
+                            <span>{itemsNumber}</span>
+                            <button onClick={() => {
+                                setItemsNumber(itemsNumber + 1)
+                            }}>
+                                <img src={plusIcon} alt="" />
+                            </button>
+                        </div>
+                    }
+
+
+
                 </div>
             </div>
             <div className="description-and-price">
