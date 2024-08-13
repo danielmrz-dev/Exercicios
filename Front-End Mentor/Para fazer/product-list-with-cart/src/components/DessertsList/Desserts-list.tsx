@@ -1,20 +1,11 @@
-import { useEffect, useState } from "react";
+import { useContext } from "react";
 import { DessertItem } from "../DessertItem/DessertItem";
 import "./desserts-list.scss";
-import axios from "axios";
+import { CartContext } from "../Context/CartContext";
 
 export const DessertsList: React.FC = () => {
 
-    const [desserts, setDesserts] = useState([] as DessertItem[]);
-    
-    useEffect(() => {
-        async function getData() {
-            const data = await axios.get("./data.json");
-            const desserts = data.data;
-            setDesserts(desserts)
-        }
-        getData();
-    }, []);
+    const { desserts } = useContext(CartContext)
 
     return (
         <section>

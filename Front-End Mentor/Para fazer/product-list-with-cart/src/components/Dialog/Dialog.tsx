@@ -2,7 +2,15 @@ import "./Dialog.scss";
 import orderConfirmed from "../../assets/images/icon-order-confirmed.svg";
 import dessertImg from "../../assets/images/image-waffle-thumbnail.jpg"
 
-export const Dialog: React.FC = () => {
+interface DialogProps {
+    isOpen: boolean
+    onClose: () => void
+}
+
+export const Dialog: React.FC<DialogProps> = ({ isOpen, onClose }) => {
+
+    if (!isOpen) return null;
+
     return (
         <dialog className="dialog">
             <img src={orderConfirmed} alt="" />
@@ -38,7 +46,7 @@ export const Dialog: React.FC = () => {
                     <span>$46.50</span>
                 </div>
             </div>
-            <button className="start-new-order-btn">Start a new order</button>
+            <button className="start-new-order-btn" onClick={onClose}>Start a new order</button>
         </dialog>
     )
 }
