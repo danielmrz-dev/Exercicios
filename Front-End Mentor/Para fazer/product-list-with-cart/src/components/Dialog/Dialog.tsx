@@ -3,13 +3,9 @@ import orderConfirmed from "../../assets/images/icon-order-confirmed.svg";
 import { useContext } from "react";
 import { CartContext } from "../Context/CartContext";
 
-// interface DialogProps {
-//     isOpen: boolean
-// }
-
 export const Dialog: React.FC = () => {
 
-    const { dialogRef, selectedItems, formatCurrency } = useContext(CartContext)
+    const { dialogRef, selectedItems, setSelectedItems, formatCurrency } = useContext(CartContext)
 
     const totalCartPrice = selectedItems.reduce((acumulador, item) => {
         return acumulador + (item.price * (item.quantity!))
@@ -48,7 +44,7 @@ export const Dialog: React.FC = () => {
             </div>
             <button className="start-new-order-btn" onClick={() => {
                     dialogRef.current?.close()
-                    window.location.reload();                
+                    setSelectedItems([])
                 }}>Start a new order</button>
         </dialog>
     )

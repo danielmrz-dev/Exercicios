@@ -118,5 +118,19 @@
         max-width: 590px;
         padding: 2.5rem;
         gap: 2rem;
+        .list-and-items {
+            font-size: 1.2rem;
+            .items-selected-list {
+                .selected-item {
+                    gap: .25rem 2rem;
+                    h3 {
+                        font-size: 1rem;
+                    }
+                    img {
+                        width: 80px;
+                    }
+                }
+            }
+        }
     }
 }
