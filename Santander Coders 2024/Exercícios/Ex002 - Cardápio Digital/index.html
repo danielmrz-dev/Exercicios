@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Um catálogo de sobremesas com imagens, descrição e preço">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+</head>
+<body>
+    <header>
+
+    </header>
+    <main>
+        <section>
+            <h1 class="title">Desserts</h1>
+            <ul class="desserts-list">
+                <li class="desserts-list-item">
+                    <div class="picture-and-button">
+                        <picture>
+                            <source media="(min-width: 846px)" srcset="" type="image/jpg" />
+                            <img src="#" alt="" class="dessert-picture" />
+                        </picture>
+                        <div class="add-to-card-btn">
+
+                            <button class="btn-content">
+                                <img src="#" alt="Add to cart button" />
+                                Add to Cart
+                            </button>
+                            
+                            <div class="add-or-remove-item">
+                                <button>
+                                    <img src="#" alt="" />
+                                </button>
+                                <span></span>
+                                <button>
+                                    <img src="#" alt="" />
+                                </button>
+                            </div>                            
+                        </div>
+                        
+                    </div>
+                    <div class="description-and-price">
+                        <span class="dessert-type">{category}</span>
+                        <p class="dessert-name">{name}</p>
+                        <span class="dessert-price">{formatCurrency(price)}</span>
+                    </div>
+                </li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+
+    </footer>
+</body>
+</html>
