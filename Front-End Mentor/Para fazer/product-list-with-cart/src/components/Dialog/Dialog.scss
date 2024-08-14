@@ -3,14 +3,29 @@
 .dialog {
     padding: 2rem 1.5rem;
     width: 90%;
-    margin: 4rem auto;
+    margin: auto;
     border: none;
     display: flex;
     flex-direction: column;
     gap: 1rem;
     border-radius: 20px;
+    &::-webkit-scrollbar {
+        width: 15px;
+        background-color: transparent;
+        border-radius: 0 20px 20px 0 ;
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: variables.$Rose-300;
+        border-radius: 6px;
+        border-radius: 0 20px 20px 0 ;
+    }
+    // &::-webkit-scrollbar-track {
+    //     background-color: #f1f1f1;
+    //     border-radius: 6px;
+    // }
+
     img {
-        width: 50px;
+        width: 60px;
     }
     .order-confirmed-text {
         display: flex;
@@ -31,7 +46,7 @@
             padding: 1.5rem;
             display: flex;
             flex-direction: column;
-            gap: 1rem;
+            gap: 2rem;
             .selected-item {
                 display: grid;
                 grid-template-columns: auto 1fr auto;
@@ -82,7 +97,7 @@
     .start-new-order-btn {
         background-color: variables.$Red;
         border: none;
-        padding: 1rem;
+        padding: 1.25rem;
         border-radius: 30px;
         color: variables.$Rose-50;
         font-size: 1rem;
@@ -92,5 +107,16 @@
         &:hover {
             background-color: variables.$Rose-500;
         }
+    }
+    &:not([open]) {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .dialog {
+        max-width: 590px;
+        padding: 2.5rem;
+        gap: 2rem;
     }
 }

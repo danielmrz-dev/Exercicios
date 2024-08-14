@@ -1,18 +1,22 @@
 import "./Dialog.scss";
 import orderConfirmed from "../../assets/images/icon-order-confirmed.svg";
-import dessertImg from "../../assets/images/image-waffle-thumbnail.jpg"
+import { useContext } from "react";
+import { CartContext } from "../Context/CartContext";
 
-interface DialogProps {
-    isOpen: boolean
-    onClose: () => void
-}
+// interface DialogProps {
+//     isOpen: boolean
+// }
 
-export const Dialog: React.FC<DialogProps> = ({ isOpen, onClose }) => {
+export const Dialog: React.FC = () => {
 
-    if (!isOpen) return null;
+    const { dialogRef, selectedItems, formatCurrency } = useContext(CartContext)
+
+    const totalCartPrice = selectedItems.reduce((acumulador, item) => {
+        return acumulador + (item.price * (item.quantity!))
+    }, 0)
 
     return (
-        <dialog className="dialog">
+        <dialog className="dialog" ref={dialogRef}>
             <img src={orderConfirmed} alt="" />
             <div className="order-confirmed-text">
                 <h2>Order Confirmed</h2>
@@ -20,33 +24,32 @@ export const Dialog: React.FC<DialogProps> = ({ isOpen, onClose }) => {
             </div>
             <div className="list-and-items">
                 <ul className="items-selected-list">
-                    <li className="selected-item">
-                        <img src={dessertImg} alt="" />
-                        <h3>Classic Tiramisu</h3>
-                        <span className="item-price-container">
-                            <span className="quantity">1x</span>
-                            <span className="item-price">@ $5.50</span>
-                        </span>
-                        <span className="total-item-price">$5.50</span>
-                    <hr />
-                    </li>
-                    <li className="selected-item">
-                        <img src={dessertImg} alt="" />
-                        <h3>Classic Tiramisu</h3>
-                        <span className="item-price-container">
-                            <span className="quantity">1x</span>
-                            <span className="item-price">@ $5.50</span>
-                        </span>
-                        <span className="total-item-price">$5.50</span>
-                    <hr />
-                    </li>
+                    {
+                        selectedItems.map((item) => {
+                            return (
+                                <li className="selected-item" key={item.name + item.category}>
+                                    <img src={item.image.thumbnail} alt="" />
+                                    <h3>{item.name}</h3>
+                                    <span className="item-price-container">
+                                        <span className="quantity">{item.quantity}x</span>
+                                        <span className="item-price">@ {formatCurrency(item.price)}</span>
+                                    </span>
+                                    <span className="total-item-price">{formatCurrency(item.price * item.quantity!)}</span>
+                                <hr />
+                                </li>
+                            )
+                        })
+                    }
                 </ul>
                 <div className="order-total">
                     <span>Order total</span>
-                    <span>$46.50</span>
+                    <span>{formatCurrency(totalCartPrice)}</span>
                 </div>
             </div>
-            <button className="start-new-order-btn" onClick={onClose}>Start a new order</button>
+            <button className="start-new-order-btn" onClick={() => {
+                    dialogRef.current?.close()
+                    window.location.reload();                
+                }}>Start a new order</button>
         </dialog>
     )
 }

@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useEffect, useRef, useState } from "react";
 import { DessertItem } from "../DessertItem/DessertItem";
 import axios from "axios";
 
@@ -10,19 +10,23 @@ interface CartProviderProps {
 
 interface CartContextData {
     formatCurrency: (price: number) => string;
-    selectItem: (category: string, image: string, name: string, price: number, quantity?: number) => void;
+    addItemToCart: (category: string, image: string, name: string, price: number, quantity: number | undefined, plusOneOrMinusOne: number) => void;
     desserts: DessertItem[];
     setDesserts: React.Dispatch<React.SetStateAction<DessertItem[]>>;
     selectedItems: DessertItem[]
     setSelectedItems:  React.Dispatch<React.SetStateAction<DessertItem[]>>;
+    removeItemFromCart: (id: string) => void
+    dialogRef: React.MutableRefObject<HTMLDialogElement | null>
 }
 
 export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
 
     const [selectedItems, setSelectedItems] = useState([] as DessertItem[])
 
-    function selectItem(category: string, image: string, name: string, price: number, quantity?: number): DessertItem {
-        const teste: DessertItem = {
+    const dialogRef = useRef<HTMLDialogElement | null>(null) 
+
+    function addItemToCart(category: string, image: string, name: string, price: number, quantity: number = 1, plusOneOrMinusOne: number): void {
+        const selectedItem: DessertItem = {
             category: category,
             image: {
                 desktop: image,
@@ -34,10 +38,33 @@ export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
             price: price,
             quantity: quantity
         };
-
-        console.log(teste);
-        return teste;
+    
+        setSelectedItems(prevItems => {
+            const itemIndex = prevItems.findIndex(item =>
+                item.name === selectedItem.name &&
+                item.category === selectedItem.category &&
+                item.price === selectedItem.price
+            );
+    
+            if (itemIndex > -1) {
+                const updatedItems = [...prevItems];
+                updatedItems[itemIndex].quantity = (updatedItems[itemIndex].quantity || 0) + plusOneOrMinusOne;
+                return updatedItems;
+            } else {
+                return [...prevItems, selectedItem];
+            }
+        });
     }
+
+    function removeItemFromCart(name: string): void {
+        setSelectedItems(prevItems => {
+            const updatedItems = prevItems.map(item => 
+                item.name === name ? { ...item, quantity: 0 } : item
+            );
+            return updatedItems.filter(item => item.quantity! > 0);
+        });
+    }
+    
 
     const [desserts, setDesserts] = useState([] as DessertItem[]);
     
@@ -64,9 +91,11 @@ export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
                 formatCurrency,
                 desserts,
                 setDesserts,
-                selectItem,
+                addItemToCart,
                 selectedItems,
-                setSelectedItems
+                setSelectedItems,
+                removeItemFromCart,
+                dialogRef
             }}
         >
             {children}

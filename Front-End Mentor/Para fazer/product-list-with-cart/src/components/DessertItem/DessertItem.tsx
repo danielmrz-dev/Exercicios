@@ -2,9 +2,9 @@ import cartIcon from "../../assets/images/icon-add-to-cart.svg";
 import plusIcon from "../../assets/images/icon-increment-quantity.svg";
 import minusIcon from "../../assets/images/icon-decrement-quantity.svg";
 import "./DessertItem.scss";
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import { CartContext } from "../Context/CartContext";
-// import { CartContext } from "../Context/CartContext";
+
 export interface DessertItem {
     category: string;
     image: {
@@ -19,11 +19,29 @@ export interface DessertItem {
 }
 
 export const DessertItem: React.FC<DessertItem> = ({ category, image, name, price }) => {
+    const [itemsNumber, setItemsNumber] = useState(0);
+    const { formatCurrency, addItemToCart, removeItemFromCart, selectedItems } = useContext(CartContext);
 
-    const [addToCartBtn, setAddToCartBtn] = useState(true);
-    const [itemsNumber, setItemsNumber] = useState(0)
+    useEffect(() => {
+        const item = selectedItems.find(item => item.name === name);
+        if (item) {
+            setItemsNumber(item.quantity || 0);
+        } else {
+            setItemsNumber(0);
+        }
+    }, [selectedItems, name]);
 
-    const { formatCurrency, selectItem } = useContext(CartContext)
+    const handleAddToCart = () => {
+        addItemToCart(category, image.mobile, name, price, itemsNumber + 1, 1);
+    };
+
+    const handleRemoveFromCart = () => {
+        if (itemsNumber <= 1) {
+            removeItemFromCart(name);
+        } else {
+            addItemToCart(category, image.mobile, name, price, itemsNumber - 1, -1);
+        }
+    };
 
     return (
         <li className="desserts-list-item">
@@ -38,54 +56,29 @@ export const DessertItem: React.FC<DessertItem> = ({ category, image, name, pric
                 </picture>
                 <div className="add-to-card-btn">
                     {
-                        addToCartBtn ?     
-                        <button className="btn-content" 
-                            onClick={() => {
-                                selectItem(category, image.thumbnail, name, price, itemsNumber + 1)
-                                setItemsNumber(itemsNumber + 1)
-                                setAddToCartBtn(!addToCartBtn)
-
-                                //= CONTINUAR AQUI, CRIAR A LÓGICA DE ADICIONAR O ITEM CLICADO AO ARRAY DE ITENS ESCOLHIDOS
-
-                            }}>
-                            <img
-                                src={cartIcon}
-                                alt="Add to cart button"
-                            />
-                            Add to Cart
-                        </button> 
-                        :
-                        <div className="add-or-remove-item">
-                            <button 
-                            onClick={() => {
-                                setItemsNumber(itemsNumber - 1)
-                                if (itemsNumber <= 1) {
-                                    selectItem(category, image.thumbnail, name, price, itemsNumber - 1)
-                                    setAddToCartBtn(!addToCartBtn)                                    
-                                }
-                            }}>
-                                <img src={minusIcon} alt="" />
+                        itemsNumber === 0 ?
+                            <button className="btn-content" onClick={handleAddToCart}>
+                                <img src={cartIcon} alt="Add to cart button" />
+                                Add to Cart
                             </button>
-                            <span>{itemsNumber}</span>
-                            <button onClick={() => {
-                                selectItem(category, image.thumbnail, name, price, itemsNumber + 1)
-                                setItemsNumber(itemsNumber + 1)
-                            }}>
-                                <img src={plusIcon} alt="" />
-                            </button>
-                        </div>
+                            :
+                            <div className="add-or-remove-item">
+                                <button onClick={handleRemoveFromCart}>
+                                    <img src={minusIcon} alt="" />
+                                </button>
+                                <span>{itemsNumber}</span>
+                                <button onClick={handleAddToCart}>
+                                    <img src={plusIcon} alt="" />
+                                </button>
+                            </div>
                     }
                 </div>
             </div>
             <div className="description-and-price">
-                <span className="dessert-type">
-                    {category}
-                </span>
+                <span className="dessert-type">{category}</span>
                 <p className="dessert-name">{name}</p>
-                <span className="dessert-price">
-                    {formatCurrency(price)}
-                </span>
+                <span className="dessert-price">{formatCurrency(price)}</span>
             </div>
         </li>
-    )
+    );
 }

@@ -7,7 +7,7 @@ import { CartContext } from "../Context/CartContext";
 
 export const Cart: React.FC = () => {
 
-    const { selectedItems } = useContext(CartContext)
+    const { selectedItems } = useContext(CartContext);
 
     return (
         <section className="cart">
