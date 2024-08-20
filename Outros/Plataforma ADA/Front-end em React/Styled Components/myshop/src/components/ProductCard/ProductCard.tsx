@@ -1,25 +1,34 @@
+import { Product } from "../../data/products";
 import * as S from "./StyledProductCard";
 import { FiShoppingCart } from "react-icons/fi";
+import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 
-export const ProductCard: React.FC = () => {
+interface ProductCardProps {
+    product: Product;
+}
+
+export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
     return (
         <S.Card>
-            <S.ProductImage src="https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg" alt="" />
-            <S.ProductTitle>
-                Mens casual premium slim fit T-shirts
-            </S.ProductTitle>
+            <S.ProductImage src={product.image} alt={product.description} />
+            <S.ProductTitle>{product.title}</S.ProductTitle>
             <S.ReviewPriceContainer>
                 <S.Review>
-                    4.1
+                    ({product.rating.rate})
+                    {Array.from({ length: 5 }).map((_, index) =>
+                        index < Math.round(product.rating.rate) ? (
+                            <AiFillStar key={index} />
+                        ) : (
+                            <AiOutlineStar key={index} />
+                        )
+                    )}
                 </S.Review>
-                <S.Price>
-                    $ 22.35
-                </S.Price>
+                <S.Price>$ {product.price}</S.Price>
             </S.ReviewPriceContainer>
             <S.AddToCardButtonWrapper>
                 <S.AddToCardButton>
                     Adicionar ao Carrinho
-                    <FiShoppingCart/>
+                    <FiShoppingCart />
                 </S.AddToCardButton>
             </S.AddToCardButtonWrapper>
         </S.Card>
