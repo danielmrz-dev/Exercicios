@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import * as S from "./StyledCart";
 import { RootReducer } from "../../Redux/root-reducer";
+import { removeProduct } from "../../Redux/Cart/cart-slice";
 
 interface CartProps {
     showCart: boolean
@@ -25,7 +26,7 @@ export const Cart: React.FC<CartProps> = ({ showCart }) => {
                     cart.map((product) => (
                         <S.CartProductItem key={product.id}>
                             <strong>{product.title}</strong> - {product.price}
-                            <button onClick={() => dispatch({type: "cart/remove-product", payload: product})}>Remover</button>
+                            <button onClick={() => dispatch(removeProduct(product))}>Remover</button>
                         </S.CartProductItem>
                     ))
                 }
