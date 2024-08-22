@@ -9,7 +9,7 @@ export const Header: React.FC = () => {
 
     const { user } = useSelector((rootReducer: RootReducer) => rootReducer.userReducer)
     const [showCart, setShowCart] = useState(false)
-    const isLogged = false
+    const isLogged = user !== null;
 
     const dispatch = useDispatch()
     
@@ -27,7 +27,6 @@ export const Header: React.FC = () => {
                 type: "user/logout",
             })
         } 
-        
     }
 
     return (

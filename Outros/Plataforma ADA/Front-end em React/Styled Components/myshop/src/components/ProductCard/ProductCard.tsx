@@ -2,12 +2,38 @@ import { Product } from "../../data/products";
 import * as S from "./StyledProductCard";
 import { FiShoppingCart } from "react-icons/fi";
 import { AiFillStar, AiOutlineStar } from "react-icons/ai";
+import { useDispatch, useSelector } from "react-redux";
+import { RootReducer } from "../../Redux/root-reducer";
 
 interface ProductCardProps {
     product: Product;
 }
 
 export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
+    const { cart } = useSelector(
+        (rootReducer: RootReducer) => rootReducer.cartReducer
+    );
+
+    const isProductOnCart =
+        cart.find((productOnCart) => product.id === productOnCart.id) !==
+        undefined;
+
+    const dispatch = useDispatch();
+
+    function handleAddProductToCart() {
+        dispatch({
+            type: "cart/add-product",
+            payload: product,
+        });
+    }
+
+    function handleRemoveProductFromCart() {
+        dispatch({
+            type: "cart/remove-product",
+            payload: product
+        })
+    }
+
     return (
         <S.Card>
             <S.ProductImage src={product.image} alt={product.description} />
@@ -26,10 +52,17 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
                 <S.Price>$ {product.price}</S.Price>
             </S.ReviewPriceContainer>
             <S.AddToCardButtonWrapper>
-                <S.AddToCardButton>
-                    Adicionar ao Carrinho
-                    <FiShoppingCart />
-                </S.AddToCardButton>
+                {isProductOnCart ? (
+                    <S.RemoveFromCartButton onClick={handleRemoveProductFromCart}>
+                        Remover do Carrinho
+                        <FiShoppingCart />
+                    </S.RemoveFromCartButton>
+                ) : (
+                    <S.AddToCardButton onClick={handleAddProductToCart}>
+                        Adicionar ao Carrinho
+                        <FiShoppingCart />
+                    </S.AddToCardButton>
+                )}
             </S.AddToCardButtonWrapper>
         </S.Card>
     );

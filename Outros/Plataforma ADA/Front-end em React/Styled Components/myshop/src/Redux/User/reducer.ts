@@ -15,7 +15,7 @@ const initialState: UserState = {
 // Reducer: Guarda o estado que desejamos compartilhar na aplicação
 // Manipula, altera o estado
 
-interface UserAction {
+export interface UserAction {
     type: string
     payload?: User
 }

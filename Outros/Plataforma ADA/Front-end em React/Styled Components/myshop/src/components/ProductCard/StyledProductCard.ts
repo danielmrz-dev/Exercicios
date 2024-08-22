@@ -70,4 +70,23 @@ export const AddToCardButton = styled.button`
     svg {
         font-size: 0.7rem;
     }
-`;
+    `;
+
+export const RemoveFromCartButton = styled.button`
+    border: none;
+    border-radius: 5px;
+    height: 30px;
+    width: 100%;
+    background-color: violet;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3rem;
+    font-size: 1rem;
+    padding: 1.25rem;
+    svg {
+        font-size: 0.7rem;
+    }
+
+`
