@@ -8,8 +8,17 @@ import { RouterOutlet } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
+
 export class AppComponent {
   curso = {
     nome: "Daniel"
+  }
+
+  clickedOnLogo(): void {
+    alert("Hello World!")
+  }
+
+  onKeyUp(newValue: string) {
+    this.curso.nome = newValue
   }
 }
