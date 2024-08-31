@@ -1,0 +1,10 @@
+.card-roxo__button {
+    font-size: 16px;
+    text-align: center;
+    margin-top: 10px;
+    border-radius: 15px;
+    background-color: rgb(183, 22, 183);
+    cursor: pointer;
+    font-weight: 700;
+    padding: 10px;
+}

@@ -1,0 +1,10 @@
+.card__button {
+    font-size: 16px;
+    text-align: center;
+    margin-top: 10px;
+    border-radius: 15px;
+    background-color: #ffffff;
+    cursor: pointer;
+    font-weight: 700;
+    padding: 10px;
+}

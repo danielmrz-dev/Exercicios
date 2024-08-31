@@ -1,0 +1,26 @@
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { CardComponent } from '../card/card.component';
+import { CardRoxoComponent } from '../card-roxo/card-roxo.component';
+import { CardButtonComponent } from '../card-button/card-button.component';
+import { CardRoxoButtonComponent } from '../card-roxo-button/card-roxo-button.component';
+import { CardCancelComponent } from '../card-cancel/card-cancel.component';
+
+@NgModule({
+  declarations: [
+    CardComponent,
+    CardRoxoComponent,
+    CardButtonComponent,
+    CardRoxoButtonComponent,
+    CardCancelComponent
+  ],
+  imports: [CommonModule],
+  exports: [
+    CardComponent,
+    CardRoxoComponent,
+    CardButtonComponent,
+    CardRoxoButtonComponent,
+    CardCancelComponent
+  ]
+})
+export class CardsModule {}
