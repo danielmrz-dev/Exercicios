@@ -1,0 +1,12 @@
+
+.card-cancel__button {
+    background-color: rgb(0, 255, 85) !important;
+}
+
+.mdc-slider__track--active_fill {
+    border-color: yellowgreen !important;
+}
+
+.global {
+    background-color: #fff !important;
+}

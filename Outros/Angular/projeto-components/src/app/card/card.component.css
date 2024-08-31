@@ -22,7 +22,6 @@
     font-size: 40px;
 }
 
-
-:host ::ng-deep .card-cancel__button {
-    background-color: rgb(0, 255, 85) !important;
+.global {
+    background-color: greenyellow;
 }
