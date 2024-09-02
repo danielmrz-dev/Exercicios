@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<input 
+  id="meu-input"
+  value="Texto inicial"
+  [value]="inputText"
+  [type]="inputType"
+  [disabled]="isDisabled"
+  (blur)="handleInputKeyUp($event)"
+  (input)="handleInputEvent($event)"
+  >
+<br>
+
+<button (click)="habilitar()">Habilitar</button>
+<br>
+<button (click)="desabilitar()">Desabilitar</button>
+
+<br>
+
+<button (click)="esconder()">Esconder</button>
+<button (click)="mostrar()">Mostrar</button>
+
+<br>
+
+<button (click)="logInputText()">Log</button>
+
+<br>
+
+<button 
+  [attr.title]="inputText"
+  [attr.disabled]="isDisabled ? true : null"
+>Teste</button>
+
+<hr>
+
+<button 
+  style=
+    "width: 100px; 
+    background-color: aqua;"
+    >Botão 0</button>
+
+<button 
+  [style.width]="widthButton1"
+  [style.backgroundColor]="bgButton1"
+>Botão 1</button>
+
+<button 
+  [style.width.px]="widthButtonPx"
+  [style.backgroundColor]="bgButton1"
+>Botão 2</button>
+
+<button 
+  [style]="{
+    width: '70px',
+    backgroundColor: 'red'
+  }"
+  
+>Botão 3</button>
+
+<button [style]="stylesObj">Botão 3</button>
+
+<hr>
+
+<button [class.red-button]="isRedButton" (click)="isGreen = false">Vermelho</button>
+<button [class.green-button]="true" (click)="isGreen = true">Verde</button>
+
+<button [class]="{
+  'red-button': !isGreen,
+  'green-button': isGreen
+
+}">Terceiro</button>
+
