@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, Input, ViewEncapsulation } from '@angular/core';
 
 interface IPlano {
   infos: IInfos;
@@ -10,19 +10,14 @@ interface IInfos {
 }
 
 @Component({
-  selector: 'app-card', // NOME TA TAG A SER USADA NO HTML
-  templateUrl: './card.component.html', // ESTRUTURA HTML DO COMPONENTE
-  styleUrl: './card.component.css', // ESTILOS DO COMPONENTE
-  encapsulation: ViewEncapsulation.ShadowDom
+  selector: 'app-card',
+  templateUrl: './card.component.html',
+  styleUrl: './card.component.css',
+  // encapsulation: ViewEncapsulation.None
 })
 export class CardComponent {
   
-  // @ts-ignore
-  plano: IPlano = {
-    infos: {
-      tipo: "Simples",
-      preco: 100
-    }
-  };
+  @Input("type") planType: string = ''
+  @Input({ required: true, alias: "price" }) planPrice: number = 0
 
 }
