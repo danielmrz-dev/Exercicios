@@ -20,4 +20,8 @@ export class CardComponent {
   @Input("type") planType: string = ''
   @Input({ required: true, alias: "price" }) planPrice: number = 0
 
+  buttonClicked(valueEmmited: boolean) {
+    console.log("Botão clicado", valueEmmited);    
+  }
+
 }
