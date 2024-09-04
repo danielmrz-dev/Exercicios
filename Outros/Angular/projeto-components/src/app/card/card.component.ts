@@ -1,14 +1,8 @@
-import { Component, Input, ViewEncapsulation } from '@angular/core';
+import { Component, Input, numberAttribute, ViewEncapsulation } from '@angular/core';
 
-interface IPlano {
-  infos: IInfos;
+function handlePlanType(value: string) {
+  return value.toUpperCase();
 }
-
-interface IInfos {
-  tipo: string
-  preco: number
-}
-
 @Component({
   selector: 'app-card',
   templateUrl: './card.component.html',
@@ -17,11 +11,23 @@ interface IInfos {
 })
 export class CardComponent {
   
-  @Input("type") planType: string = ''
-  @Input({ required: true, alias: "price" }) planPrice: number = 0
+  @Input({ required: true, alias: "price"}) planPrice: number = 0
+  @Input({ alias: 'type', transform: (value: string) => handlePlanType(value) }) planType: string = ''
+
+  // private _planType: string = ''
+
+  // set planType(value: string) {
+  //   this._planType = value.toUpperCase();
+  // }
+
+  // get planType(): string {
+  //   return this._planType;
+  // }  
 
   buttonClicked(valueEmmited: boolean) {
     console.log("Botão clicado", valueEmmited);    
+    console.log(this.planType);
+    
   }
 
 }

@@ -1,2 +1,6 @@
 <!DOCTYPE html>
-<div class="card__button card__item" (click)="onButtonClick()">Adquirir</div>
+<button 
+    class="card__button card__item" 
+    (click)="onButtonClick()"
+    [disabled]="buttonDisabled"
+    >Adquirir</button>
