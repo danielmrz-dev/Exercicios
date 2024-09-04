@@ -1,0 +1,26 @@
+.button {
+    width: 100%;
+    font-size: 1rem;
+    text-align: center;
+    margin-top: 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    position: relative;
+
+    &:active {
+        bottom: -2px;
+    }
+
+
+    &--white {
+        background-color: #ffffff;
+    }
+
+    &--purple {
+        background-color: #a056d9;
+    }
+}
+

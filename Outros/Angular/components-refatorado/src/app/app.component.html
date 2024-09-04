@@ -1,0 +1,15 @@
+<div class="cards-container">
+    <app-card
+        [type]="cardsContent.simples.text"
+        [price]="cardsContent.simples.price"
+        [cardStyle]="cardsContent.simples.bg"
+        (buttonClicked)="onCardButtonClicked()"
+    ></app-card>
+    
+    <app-card
+        [type]="cardsContent.completo.text"
+        [price]="cardsContent.completo.price"
+        [cardStyle]="cardsContent.completo.bg"
+        (buttonClicked)="onCardButtonClicked()"
+    ></app-card>
+</div>
