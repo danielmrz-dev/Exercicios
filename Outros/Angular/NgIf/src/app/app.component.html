@@ -1,0 +1,28 @@
+<h1>{{ title }}</h1>
+
+<!-- <div *ngIf="mostrarDiv; else meuTemplate"
+  style="background-color: aquamarine; margin: 1rem 0;"
+  >Soy una Div!</div>
+
+  <ng-template #meuTemplate>
+    <div 
+      style="background-color: red; margin: 1rem 0;"
+      >Soy una outra Div!</div>
+  </ng-template> -->
+  
+  <ng-container *ngIf="mostrarDiv; then meuTemplate; else meuOutroTemplate"></ng-container>
+
+  <ng-template #meuTemplate>
+    <div 
+      style="background-color: red; margin: 1rem 0;"
+      >Soy una Div!</div>
+  </ng-template>
+
+  <ng-template #meuOutroTemplate>
+    <div 
+      style="background-color: yellow; margin: 1rem 0;"
+      >Soy una outra Div!</div>
+  </ng-template>
+  
+
+  <button (click)="toggleDiv()">{{textoBotao}}</button>
