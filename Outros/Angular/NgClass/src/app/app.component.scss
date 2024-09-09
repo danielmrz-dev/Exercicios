@@ -1,0 +1,16 @@
+.is-big {
+    font-size: 50px;
+    transition: font-size 1s ease;
+}
+
+.is-green {
+    background-color: green;
+    color: white;
+    transition: color .3s ease, background-color .3s ease;
+}
+
+.is-orange {
+    background-color: orange;
+    color: white;
+    transition: color .3s ease, background-color .3s ease;
+}
