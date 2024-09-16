@@ -6,7 +6,13 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class StatusPipe implements PipeTransform {
 
   transform(status: boolean): string {
-    return status ? `ativo` : `inativo`
+    const INVALID_STATUS = status === undefined || status === null
+
+    if (INVALID_STATUS) {
+      return `Status indisponível ou inválido`
+    }
+
+    return status ? `Ativo` : `Inativo`
   }
 
 }

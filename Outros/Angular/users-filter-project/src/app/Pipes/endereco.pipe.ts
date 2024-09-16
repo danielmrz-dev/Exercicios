@@ -7,7 +7,7 @@ import { IAddress } from '../interfaces/user/address.interface';
 export class EnderecoPipe implements PipeTransform {
 
   transform(endereco: IAddress): string {
-    const   INVALID_ADDRESS = 
+    const INVALID_ADDRESS = 
       !endereco || 
       !endereco.rua || 
       !endereco.cidade || 
