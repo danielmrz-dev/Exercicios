@@ -1,9 +1,5 @@
-import { Component } from '@angular/core';
-
-interface Food {
-  value: string;
-  viewValue: string;
-}
+import { Component, EventEmitter, Output } from '@angular/core';
+import { IFilterOptions } from '../../interfaces/filter-options.interface';
 
 @Component({
   selector: 'app-filter',
@@ -11,9 +7,25 @@ interface Food {
   styleUrl: './filter.component.scss',
 })
 export class FilterComponent {
-  foods: Food[] = [
-    { value: 'steak-0', viewValue: 'Steak' },
-    { value: 'pizza-1', viewValue: 'Pizza' },
-    { value: 'tacos-2', viewValue: 'Tacos' },
-  ];
+  filterOptions: IFilterOptions = {
+    name: undefined,
+    startDate: undefined,
+    endDate: undefined,
+    status: undefined
+  }
+
+  statusList = [
+    { description: "Ativo", value: true },
+    { description: "Inativo", value: false },
+  ]
+
+  dateSelected(date: Date) {
+    console.log(date.getMonth());    
+  }
+
+  @Output("onFilter") onFilterEmit = new EventEmitter<IFilterOptions>()
+
+  onFilter() {
+    this.onFilterEmit.emit(this.filterOptions)
+  }
 }

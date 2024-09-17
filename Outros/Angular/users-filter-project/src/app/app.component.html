@@ -1,13 +1,30 @@
 <div class="container">
     <div class="left-container">
         <div class="top-div">
-            <app-filter></app-filter>
+            <app-filter (onFilter)="onFilter($event)"></app-filter>
         </div>
         <div class="main-left-div">
-            <app-table></app-table>
+
+            <ng-container *ngIf="usersList.length <= 0; then spinner else table"></ng-container>
+            
+            <ng-template #spinner>
+                <mat-spinner class="spinner"></mat-spinner>
+            </ng-template>            
+            
+            <ng-template #table>
+                <app-table
+                    (userSelected)="onUserSelected($event)"
+                    [usersList]="usersListFiltered"
+                    >
+                </app-table>
+            </ng-template>            
+
         </div>
     </div>
     <div class="right-div">
-        <app-user-details></app-user-details>
+        <app-user-details
+            [user]="userSelected"
+            *ngIf="showUserDetails"
+        ></app-user-details>
     </div>
 </div>

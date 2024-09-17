@@ -1,9 +1,9 @@
 <div class="filter">
-    <form class="filter__form">
+    <div class="filter__form">
         <div class="filter__form-name">
             <mat-form-field class="example-full-width">
                 <mat-label>Nome</mat-label>
-                <input matInput placeholder="Ex. Daniel">
+                <input matInput placeholder="Ex. Daniel" [(ngModel)]="filterOptions.name" name="name">
             </mat-form-field>
         </div>
         
@@ -11,8 +11,8 @@
             <mat-form-field>
                 <mat-label>Data de cadastro</mat-label>
                 <mat-date-range-input [rangePicker]="picker">
-                    <input matStartDate placeholder="Data inicial" />
-                    <input matEndDate placeholder="Data final" />
+                    <input matStartDate placeholder="Data inicial" [(ngModel)]="filterOptions.startDate"/>
+                    <input matEndDate placeholder="Data final" [(ngModel)]="filterOptions.endDate"/>
                 </mat-date-range-input>
                 <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
                 <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
@@ -23,9 +23,9 @@
         <div class="filter__form-status">
             <mat-form-field>
                 <mat-label>Status</mat-label>
-                <mat-select>
-                    @for (food of foods; track food) {
-                        <mat-option [value]="food.value">{{ food.viewValue }}</mat-option>
+                <mat-select [(ngModel)]="filterOptions.status">
+                    @for (status of statusList; track status) {
+                        <mat-option [value]="status.value">{{ status.description }}</mat-option>
                     }
                     <!-- <mat-option *ngFor="let food of foods" [value]="food.value">{{ food.viewValue }}</mat-option> -->
                 </mat-select>
@@ -33,7 +33,7 @@
         </div>
         
         <div class="filter__form-button">
-            <button mat-flat-button class="filter__button">Filtrar</button>
+            <button mat-flat-button class="filter__button" (click)="onFilter()">Filtrar</button>
         </div>
-    </form>
+    </div>
 </div>
