@@ -1,0 +1,20 @@
+<h1>&#64;ViewChild</h1>
+
+Meu Input: <input type="text" #meuInput>
+
+<button (click)="updateInputText()">Atualizar</button>
+
+<br>
+
+<dialog #meuModal>
+  <h2>Sou um modal</h2>
+  <button (click)="fechaModal()">Fechar modal</button>
+</dialog>
+
+<button (click)="openModal()">Open Modal</button>
+
+<div #teste>
+  Conteudo inicial
+</div>
+
+<button (click)="muda()">Mudar conteudo da div</button>
