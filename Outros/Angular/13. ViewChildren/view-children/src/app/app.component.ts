@@ -8,7 +8,7 @@ import { AfterViewInit, Component, ElementRef, QueryList, ViewChildren } from '@
 export class AppComponent implements AfterViewInit {
   
   ngAfterViewInit(): void {
-    // console.log(this.buttonsEl);    
+    // console.log(this.buttonsEl);
     // console.log(this.buttonsEl.toArray());    
     this.buttonsEl.changes.subscribe((resultado) => {
       console.log(resultado);      
