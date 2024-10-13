@@ -1,0 +1,24 @@
+@use "../variables" as vars;
+
+.ca-c-card {
+    border: none;
+    overflow: hidden;
+    background-color: vars.$white;
+    border-radius: 5px;
+
+    &__header {
+        padding: 15px;
+        background-color: vars.$orange;
+    }
+
+    &__content {
+        padding: 15px;
+        overflow: hidden;
+        border-radius: 0 0 5px 5px;
+        background-color: vars.$white;
+    }
+}
+
+.ca-u-padding-15 {
+    padding: 15px;
+}
