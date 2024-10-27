@@ -1,0 +1,18 @@
+Ex3:
+
+<br>
+
+<ng-container
+    *ngIf="condition; else elseTemplate"
+    [ngTemplateOutlet]="meuTemplate"
+>
+</ng-container>
+
+<ng-template #meuTemplate>
+    Template (true):
+    <app-meu-comp></app-meu-comp>
+</ng-template>
+
+<ng-template #elseTemplate>
+    Sou o elseTemplate!
+</ng-template>
