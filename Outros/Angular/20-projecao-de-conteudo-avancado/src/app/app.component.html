@@ -1,4 +1,24 @@
-<div>
+<!-- <div>
   Div:
   <app-meu-comp></app-meu-comp>
-</div>
+</div> -->
+
+<app-card 
+  [header]="header"
+  [main]="main"
+  [footer]="footer"
+>
+
+</app-card>
+
+<ng-template #header>
+  <p>Sou o header!</p>
+</ng-template>
+
+<ng-template #main>
+  <p>Sou o main!</p>
+</ng-template>
+
+<ng-template #footer>
+  <p>Sou o footer!</p>
+</ng-template>
