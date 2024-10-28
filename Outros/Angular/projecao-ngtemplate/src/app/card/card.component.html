@@ -1,0 +1,27 @@
+<div class="card">
+
+    <!-- Ex: 1
+    <ng-container *ngIf="condition; else elseTemplate">
+        <ng-container *ngTemplateOutlet="content"></ng-container>
+    </ng-container>
+    
+    <ng-template #elseTemplate>
+        Nenhum conteúdo para ser projetado!
+    </ng-template> -->
+
+    <!-- Ex: 2
+    <ng-container *ngIf="condition; else elseTemplate" [ngTemplateOutlet]="content"></ng-container>
+    
+    <ng-template #elseTemplate>
+        Nenhum conteúdo para ser projetado!
+    </ng-template> -->
+
+    Ex: 3
+    <ng-container *ngTemplateOutlet="condition ? content : null"></ng-container>
+</div>
+
+
+
+
+
+
