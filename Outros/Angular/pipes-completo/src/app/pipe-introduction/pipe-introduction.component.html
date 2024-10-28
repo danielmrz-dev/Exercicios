@@ -1,0 +1,32 @@
+<div>
+  Pipe uppercase:
+  {{ pessoa.nome | uppercase }}
+</div>
+
+<br />
+
+<div>
+  Pipe lowercase:
+  {{ pessoa.nome | lowercase }}
+</div>
+
+<br />
+
+<div>
+  Pipe json:
+  {{ pessoa | json }}
+</div>
+
+<br />
+
+<div>
+  Pipe de status personalizado:
+  <b>{{ pessoa.status | status }}</b>
+</div>
+
+<br />
+
+<div>
+  Pipe truncate:
+  {{ pessoa.nome | truncate : 2 | uppercase }}
+</div>
