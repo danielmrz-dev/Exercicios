@@ -1,0 +1,57 @@
+<h1>
+    <!-- Data convertida para região: 
+    <br>
+    <b>{{ minhaData | date : "full" }}</b>
+
+    <br><br>
+
+    Data UTC-0: 
+    <br>
+    <b>{{ minhaData | date : "full" : "+0000" }}</b>
+
+    <br><br>
+
+    Formato Timestamp: 
+    <br>
+    <b>{{ 1730149200000 | date : "full" }}</b>
+
+    <br><br>
+
+    TimeStamp UTC-0: 
+    <br>
+    <b>{{ 1730149200000 | date : "full" : "+0000" }}</b>
+
+    <br><br>
+
+    Formato Date Obj: 
+    <br>
+    <b>{{ minhaDataObj | date : "full" : "+0000" }}</b>
+
+    <br><br> -->
+
+    <!-- Formato Short: 
+    <br>
+    <b>{{ minhaDataObj | date : "short" }}</b>
+
+    <br><br>
+
+    Formato Medium: 
+    <br>
+    <b>{{ minhaDataObj | date : "medium" }}</b>
+
+    <br><br>
+
+    Formato Long: 
+    <br>
+    <b>{{ minhaDataObj | date : "long" }}</b>
+
+    <br><br> -->
+
+    <b>Hoje é {{ minhaData | date : "EEEE, dd 'de' MMMM 'de' YYYY à's' hh:mm, zzzz" : "+0000" }}</b>
+
+    <br>
+
+    <!-- <b>Data: {{ minhaData | date : "dd/MM/YYYY - 'Hora:' HH:mm aa" }}</b> -->
+    <b>Data: {{ minhaData | date }}</b>
+
+</h1>
