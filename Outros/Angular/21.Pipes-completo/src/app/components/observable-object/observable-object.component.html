@@ -1,0 +1,23 @@
+Async Pipe com Objeto:
+<br><br>
+<h3>Subscribe manual:</h3>
+<p>Name: {{ user.name }} </p>
+<p>Username: {{ user.username }} </p>
+<p>Email: {{ user.email }} </p>
+
+<br>
+
+<h3>Subscribe com Async Pipe:</h3>
+<div *ngIf="(user$ | async) as MyUser">
+    <p>Name: {{ MyUser.name }} </p>
+    <p>Username: {{ MyUser.username }} </p>
+    <p>Email: {{ MyUser.email }} </p>
+</div>
+
+<br>
+
+<button (click)="selectUser(1)">User 1</button>
+
+<button (click)="selectUser(2)">User 2</button>
+
+<button (click)="selectUser(3)">User 3</button>
