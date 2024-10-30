@@ -1,1 +1,41 @@
-<p>currency-pipe works!</p>
+<p>teste</p>
+{{ 12.3 | currency }}
+<br>
+
+<br>
+{{ 12.3 | currency : "BRL" }}
+<br>
+<br>
+CODE: 
+{{ 12.3 | currency : "BRL" : "code" }}
+<br>
+<br>
+SYMBOL: 
+{{ 12.3 | currency : "CAD" : "symbol" }}
+<br>
+<br>
+SYMBOL NARROW: 
+{{ 12.3 | currency : "CAD" : "symbol-narrow" }}
+<br>
+
+<br>
+BOOLEAN TRUE: 
+{{ 12.3 | currency : "BRL" : true }}
+<br>
+
+<br>
+BOOLEAN FALSE: 
+{{ 12.3 | currency : "BRL" : false }}
+<br>
+
+<br>
+DIGITS INFO: 
+{{ 0.345 | currency : "BRL" : false : "1.1-1" }}
+<br>
+
+<br>
+Localização do número: 
+{{ 6500.45 | currency : "BRL" : true : "1.2-2" : "pt-BR" }}
+<br>
+Localização do número: 
+{{ 6500.45 | currency : "USD" : false : "1.2-2" : "en-US" }}

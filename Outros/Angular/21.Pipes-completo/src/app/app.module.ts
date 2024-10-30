@@ -1,4 +1,4 @@
-import { LOCALE_ID, NgModule } from '@angular/core';
+import { DEFAULT_CURRENCY_CODE, LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,11 +12,11 @@ import { SliceComponent } from './slice/slice.component';
 import { TitleCaseComponent } from './title-case/title-case.component';
 import { DatePipeComponent } from './date-pipe/date-pipe.component';
 import { DATE_PIPE_DEFAULT_OPTIONS } from '@angular/common';
+import { DecimalPipeComponent } from './decimal-pipe/decimal-pipe.component';
+import { CurrencyPipeComponent } from './currency-pipe/currency-pipe.component';
 
 import localePt from "@angular/common/locales/pt"; // 1. Importar a localização brasileira do Angular/Common
-import { registerLocaleData } from '@angular/common';
-import { DecimalPipeComponent } from './decimal-pipe/decimal-pipe.component';
-import { CurrencyPipeComponent } from './currency-pipe/currency-pipe.component'; // 2. Importar a função que registra a localização brasileira na aplicação
+import { registerLocaleData } from '@angular/common'; // 2. Importar a função que registra a localização brasileira na aplicação
 
 registerLocaleData(localePt, "pt-BR") // 3. Chamar a função que registra a localização brasileira na aplicação
 
@@ -49,7 +49,10 @@ registerLocaleData(localePt, "pt-BR") // 3. Chamar a função que registra a loc
     },
     { 
       provide: LOCALE_ID, useValue: 'pt-BR',
-    }
+    },
+    // {
+    //   provide: DEFAULT_CURRENCY_CODE, useValue: 'BRL' 
+    // }
   ],
   bootstrap: [AppComponent]
 })
