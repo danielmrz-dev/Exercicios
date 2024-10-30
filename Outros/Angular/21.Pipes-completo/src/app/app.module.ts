@@ -17,7 +17,6 @@ import { CurrencyPipeComponent } from './currency-pipe/currency-pipe.component';
 
 import localePt from "@angular/common/locales/pt"; // 1. Importar a localização brasileira do Angular/Common
 import { registerLocaleData } from '@angular/common';
-import { AsyncPipeComponent } from './async-pipe/async-pipe.component';
 import { ObservableObjectComponent } from './components/observable-object/observable-object.component'; // 2. Importar a função que registra a localização brasileira na aplicação
 import { HttpClientModule } from '@angular/common/http';
 import { ObservableArrayComponent } from './components/observable-array/observable-array.component';
@@ -38,7 +37,6 @@ registerLocaleData(localePt, "pt-BR") // 3. Chamar a função que registra a loc
     DatePipeComponent,
     DecimalPipeComponent,
     CurrencyPipeComponent,
-    AsyncPipeComponent,
     ObservableObjectComponent,
     ObservableArrayComponent
   ],
