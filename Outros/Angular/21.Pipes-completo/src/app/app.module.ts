@@ -16,7 +16,11 @@ import { DecimalPipeComponent } from './decimal-pipe/decimal-pipe.component';
 import { CurrencyPipeComponent } from './currency-pipe/currency-pipe.component';
 
 import localePt from "@angular/common/locales/pt"; // 1. Importar a localização brasileira do Angular/Common
-import { registerLocaleData } from '@angular/common'; // 2. Importar a função que registra a localização brasileira na aplicação
+import { registerLocaleData } from '@angular/common';
+import { AsyncPipeComponent } from './async-pipe/async-pipe.component';
+import { ObservableObjectComponent } from './components/observable-object/observable-object.component'; // 2. Importar a função que registra a localização brasileira na aplicação
+import { HttpClientModule } from '@angular/common/http';
+import { ObservableArrayComponent } from './components/observable-array/observable-array.component';
 
 registerLocaleData(localePt, "pt-BR") // 3. Chamar a função que registra a localização brasileira na aplicação
 
@@ -33,11 +37,15 @@ registerLocaleData(localePt, "pt-BR") // 3. Chamar a função que registra a loc
     TitleCaseComponent,
     DatePipeComponent,
     DecimalPipeComponent,
-    CurrencyPipeComponent
+    CurrencyPipeComponent,
+    AsyncPipeComponent,
+    ObservableObjectComponent,
+    ObservableArrayComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [ // 4. Importar os providers de configurações padrão do DatePipe e do LocaleID e sobrescrever os padrões com os formatos desejados
     {
@@ -50,9 +58,9 @@ registerLocaleData(localePt, "pt-BR") // 3. Chamar a função que registra a loc
     { 
       provide: LOCALE_ID, useValue: 'pt-BR',
     },
-    // {
-    //   provide: DEFAULT_CURRENCY_CODE, useValue: 'BRL' 
-    // }
+    {
+      provide: DEFAULT_CURRENCY_CODE, useValue: 'BRL' 
+    }
   ],
   bootstrap: [AppComponent]
 })

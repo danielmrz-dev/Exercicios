@@ -1,0 +1,7 @@
+<ng-container *ngFor="let user of (users$ | async)">
+    <br>
+    {{ user.name }}, 
+    {{ user.username }}, 
+    {{ user.email }}, 
+    <br>
+</ng-container> 
