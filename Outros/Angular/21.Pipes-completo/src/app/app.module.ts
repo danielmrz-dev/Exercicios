@@ -14,7 +14,9 @@ import { DatePipeComponent } from './date-pipe/date-pipe.component';
 import { DATE_PIPE_DEFAULT_OPTIONS } from '@angular/common';
 
 import localePt from "@angular/common/locales/pt"; // 1. Importar a localização brasileira do Angular/Common
-import { registerLocaleData } from '@angular/common'; // 2. Importar a função que registra a localização brasileira na aplicação
+import { registerLocaleData } from '@angular/common';
+import { DecimalPipeComponent } from './decimal-pipe/decimal-pipe.component';
+import { CurrencyPipeComponent } from './currency-pipe/currency-pipe.component'; // 2. Importar a função que registra a localização brasileira na aplicação
 
 registerLocaleData(localePt, "pt-BR") // 3. Chamar a função que registra a localização brasileira na aplicação
 
@@ -29,7 +31,9 @@ registerLocaleData(localePt, "pt-BR") // 3. Chamar a função que registra a loc
     UppercaseComponent,
     SliceComponent,
     TitleCaseComponent,
-    DatePipeComponent
+    DatePipeComponent,
+    DecimalPipeComponent,
+    CurrencyPipeComponent
   ],
   imports: [
     BrowserModule,
