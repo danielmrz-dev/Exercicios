@@ -1,0 +1,41 @@
+<!-- <label for="cars">Selecione um carro:</label>
+<select 
+    name="cars" 
+    id="cars"
+    ngModel
+    #meuSelect="ngModel"
+    required
+>
+
+    <option value="" selected>Escolha uma opção</option>
+    <option value="volvo">Volvo</option>
+    <option value="chevrolet">Chevrolet</option>
+    <option value="ford">Ford</option>
+    <option value="lamborghini">Lamborghini</option>
+</select> -->
+
+<label for="nacionalidade">Selecione uma nacionalidade:</label>
+<select 
+    name="nacionalidade" 
+    id="nacionalidade"
+    [ngModel]="nacionalidadeSelecionada"
+    (ngModelChange)="onChange($event)"
+    #meuSelect="ngModel"
+    required
+>
+
+    <option value="" selected>Escolha uma opção</option>
+    <option 
+        *ngFor="let nacionalidade of nacionalidades" 
+        [value]="nacionalidade.id">
+        {{ nacionalidade.description }}
+    </option>
+    
+</select>
+
+<p>Pais selecionado: {{ nacionalidadeSelecionada }}</p>
+
+<h3>Estado do select: </h3>
+<p>Válido: {{ meuSelect.valid }}</p>
+<p>Tocado: {{ meuSelect.touched }}</p>
+<p>Sujo: {{ meuSelect.dirty }}</p>

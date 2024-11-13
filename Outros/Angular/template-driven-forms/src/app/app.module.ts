@@ -7,6 +7,9 @@ import { FormsModule } from '@angular/forms';
 import { NgmodelEx1Component } from './ngmodel-ex1/ngmodel-ex1.component';
 import { NgmodelEx2Component } from './ngmodel-ex2/ngmodel-ex2.component';
 import { NgmodelEx3Component } from './ngmodel-ex3/ngmodel-ex3.component';
+import { NgmodelEx4TextareaComponent } from './ngmodel-ex4-textarea/ngmodel-ex4-textarea.component';
+import { NgmodelEx5SelectComponent } from './ngmodel-ex5-select/ngmodel-ex5-select.component';
+import { NgmodelEx6RadioComponent } from './ngmodel-ex6-radio/ngmodel-ex6-radio.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +17,9 @@ import { NgmodelEx3Component } from './ngmodel-ex3/ngmodel-ex3.component';
     NgmodelEx1Component,
     NgmodelEx2Component,
     NgmodelEx3Component,
+    NgmodelEx4TextareaComponent,
+    NgmodelEx5SelectComponent,
+    NgmodelEx6RadioComponent,
   ],
   imports: [
     BrowserModule,
