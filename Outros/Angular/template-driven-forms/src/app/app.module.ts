@@ -13,6 +13,11 @@ import { NgmodelEx6RadioComponent } from './ngmodel-ex6-radio/ngmodel-ex6-radio.
 import { NgmodelEx7CheckboxComponent } from './ngmodel-ex7-checkbox/ngmodel-ex7-checkbox.component';
 import { NgFormEx8Component } from './ng-form-ex-8/ng-form-ex-8.component';
 import { NgFormSubmitEx9Component } from './ng-form-submit-ex-9/ng-form-submit-ex-9.component';
+import { NgFormOptionsComponent } from './ng-form-options/ng-form-options.component';
+import { NgModelGroupEx11Component } from './ng-model-group-ex11/ng-model-group-ex11.component';
+import { FormWithChildrenComponent } from './form-with-children/form-with-children.component';
+import { ChildOneComponent } from './form-with-children/child-one/child-one.component';
+import { ChildTwoComponent } from './form-with-children/child-two/child-two.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +31,11 @@ import { NgFormSubmitEx9Component } from './ng-form-submit-ex-9/ng-form-submit-e
     NgmodelEx7CheckboxComponent,
     NgFormEx8Component,
     NgFormSubmitEx9Component,
+    NgFormOptionsComponent,
+    NgModelGroupEx11Component,
+    FormWithChildrenComponent,
+    ChildOneComponent,
+    ChildTwoComponent,
   ],
   imports: [
     BrowserModule,

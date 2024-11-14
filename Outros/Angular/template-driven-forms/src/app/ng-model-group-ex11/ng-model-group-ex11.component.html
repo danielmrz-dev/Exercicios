@@ -1,0 +1,36 @@
+<form #form="ngForm" (ngSubmit)="logarDados(form)">
+
+    <ng-container ngModelGroup="grupoUsuario" #grupoUsuario="ngModelGroup">
+        <h4>Dados do usuário:</h4>
+        <input ngModel type="text" name="nome" id="nome" placeholder="Nome" required>
+        <input ngModel type="text" name="idade" id="idade" placeholder="Idade" required>
+
+        <br>
+
+        <b>Estado do usuário:</b>
+        <span> {{ grupoUsuario.valid }} </span>
+        <b>Tocado:</b>
+        <span> {{ grupoUsuario.touched }} </span>
+        <b>Sujo:</b>
+        <span> {{ grupoUsuario.dirty }} </span>
+    </ng-container>
+    
+    
+    <ng-container ngModelGroup="grupoProsissao" #grupoProfissao="ngModelGroup">
+        <h4>Dados da profissão:</h4>
+        <input ngModel type="text" name="cargo" id="cargo" placeholder="Cargo" required>
+        <input ngModel type="text" name="setor" id="setor" placeholder="Setor" required>
+        <br>
+        
+        <b>Estado do usuário:</b>
+        <span> {{ grupoProfissao.valid }} </span>
+        <b>Tocado:</b>
+        <span> {{ grupoProfissao.touched }} </span>
+        <b>Sujo:</b>
+        <span> {{ grupoProfissao.dirty }} </span>
+    </ng-container>
+
+    <br><br>
+
+    <button type="submit" [disabled]="form.invalid">Enviar</button>
+</form>

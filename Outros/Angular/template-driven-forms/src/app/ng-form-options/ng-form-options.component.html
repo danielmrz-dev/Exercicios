@@ -1,0 +1,33 @@
+<form #f="ngForm" (ngSubmit)="onSubmit(f)" [ngFormOptions]="{ updateOn: 'change' }">
+    <input type="text" name="nome" #meuInput="ngModel" [(ngModel)]="inputText" [ngModelOptions]="{ updateOn: 'blur' }" required>
+    
+    <br><br>
+
+    <textarea name="textarea" id="textarea" [(ngModel)]="textarea" required></textarea>
+
+    <br><br>
+
+    <select name="opcoes" id="opcoes" [(ngModel)]="select" required>
+        <option value="" selected>Selecione</option>
+        <option value="opcao-1">Opção 1</option>
+        <option value="opcao-2">Opção 2</option>
+    </select>
+    <br><br>
+
+    <label for="ativo">Ativo</label>
+    <input type="radio" name="groupStatus" id="ativo" value="1" [(ngModel)]="radioButton" required>
+
+    <label for="inativo">Inativo</label>
+    <input type="radio" name="groupStatus" id="inativo" value="2" [(ngModel)]="radioButton" required>
+
+    <br><br>
+
+    <label for="condicao">Condição</label>
+    <input type="checkbox" name="condicao" id="condicao" [(ngModel)]="checkbox" required>
+
+    <br><br>
+
+    <button [disabled]="f.invalid">Enviar</button>
+    <br>
+    <button type="reset" (click)="onReset(f)">Resetar</button>
+</form>

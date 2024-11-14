@@ -1,0 +1,10 @@
+<form #form="ngForm" (ngSubmit)="onSubmit(form)">
+
+    <app-child-one></app-child-one>
+
+    <app-child-two></app-child-two>
+
+    <br>
+
+    <button type="submit"[disabled]="form.invalid">Enviar</button>
+</form>
