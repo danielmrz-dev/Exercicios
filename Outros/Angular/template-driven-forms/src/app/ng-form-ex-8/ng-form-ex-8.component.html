@@ -1,0 +1,20 @@
+<form #f="ngForm">
+
+    <label for="nome">Nome: </label>
+    <input 
+        type="text" 
+        name="nome" 
+        id="nome" 
+        ngModel="teste"
+        required
+    >
+
+    <br>
+
+    <label for="ativo">Ativo</label>
+    <input type="checkbox" name="ativo" id="ativo" ngModel required>
+
+    <p>Valido: {{ f.valid }} </p>
+    <p>Tocado: {{ f.touched}} </p>
+    <p>Sujo: {{ f.dirty }} </p>
+</form>

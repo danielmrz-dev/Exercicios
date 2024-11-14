@@ -1,0 +1,34 @@
+<!-- <input 
+    type="checkbox" 
+    id="meucheck"
+    [ngModel]="isValid"
+    (ngModelChange)="onChange($event)"
+    #meuCheck="ngModel"
+    required
+>
+<label for="meucheck">Ativo</label>
+
+<br>
+
+<h4>Usuário ativo: {{ isValid }} </h4>
+
+<p>Valido: {{ meuCheck.valid }} </p>
+<p>Tocado: {{ meuCheck.touched }} </p>
+<p>Sujo: {{ meuCheck.dirty }} </p> -->
+
+<form #f="ngForm">
+    <input
+        type="checkbox"
+        id="meucheck"
+        name="meucheck"
+        [(ngModel)]="isValid"
+        #meuCheck="ngModel"
+        required
+    >
+    <label for="meucheck">Ativo</label>
+    
+    <h4>Usuário ativo: {{ isValid }} </h4>
+    
+    <button [disabled]="f.invalid">Enviar</button>
+    
+</form>
