@@ -20,6 +20,8 @@ import { registerLocaleData } from '@angular/common';
 import { ObservableObjectComponent } from './components/observable-object/observable-object.component'; // 2. Importar a função que registra a localização brasileira na aplicação
 import { HttpClientModule } from '@angular/common/http';
 import { ObservableArrayComponent } from './components/observable-array/observable-array.component';
+import { PipeVsMethodComponent } from './pipe-vs-method/pipe-vs-method.component';
+import { ImagePipe } from './pipes/image.pipe';
 
 registerLocaleData(localePt, "pt-BR") // 3. Chamar a função que registra a localização brasileira na aplicação
 
@@ -38,7 +40,9 @@ registerLocaleData(localePt, "pt-BR") // 3. Chamar a função que registra a loc
     DecimalPipeComponent,
     CurrencyPipeComponent,
     ObservableObjectComponent,
-    ObservableArrayComponent
+    ObservableArrayComponent,
+    PipeVsMethodComponent,
+    ImagePipe
   ],
   imports: [
     BrowserModule,

@@ -9,6 +9,9 @@
     &__header {
         padding: 15px;
         background-color: vars.$orange;
+        &--bg-blue {
+            background-color: #32e9da;
+        }
     }
 
     &__content {
