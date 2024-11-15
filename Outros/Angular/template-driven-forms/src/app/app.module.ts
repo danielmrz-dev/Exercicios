@@ -18,6 +18,14 @@ import { NgModelGroupEx11Component } from './ng-model-group-ex11/ng-model-group-
 import { FormWithChildrenComponent } from './form-with-children/form-with-children.component';
 import { ChildOneComponent } from './form-with-children/child-one/child-one.component';
 import { ChildTwoComponent } from './form-with-children/child-two/child-two.component';
+import { Ex1Component } from './validators/synchronous/ex1/ex1.component';
+import { InvalidTextValidatorDirective } from './validators/synchronous/ex1/directives/invalid-text-validator.directive';
+import { Ex2Component } from './validators/synchronous/ex2/ex2.component';
+import { QuantityValidatorDirective } from './validators/synchronous/ex2/directives/quantity-validator.directive';
+import { HttpClientModule } from '@angular/common/http';
+import { UserNameValidatorDirective } from './validators/asynchronous/directives/user-name-validator.directive';
+import { Exercicio01Component } from './validators/asynchronous/exercicio01/exercicio01.component';
+import { NgModelStandaloneComponent } from './ng-model-standalone/ng-model-standalone.component';
 
 @NgModule({
   declarations: [
@@ -36,11 +44,19 @@ import { ChildTwoComponent } from './form-with-children/child-two/child-two.comp
     FormWithChildrenComponent,
     ChildOneComponent,
     ChildTwoComponent,
+    Ex1Component,
+    InvalidTextValidatorDirective,
+    Ex2Component,
+    QuantityValidatorDirective,
+    UserNameValidatorDirective,
+    Exercicio01Component,
+    NgModelStandaloneComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,15 @@
+<form #form="ngForm" appQuantityValidator>
+    <label for="departamento">Departamento:  </label>
+    <select name="departamento" id="departamento" ngModel>
+        <option value="IT">Tecnologia</option>
+        <option value="HR">Recursos Humanos</option>
+    </select>
+    <br>
+
+    <input type="text" name="quantidade" id="quantidade" ngModel placeholder="Quantidade de pessoas">
+
+    <div *ngIf="form && form.invalid && form.dirty">
+        <p *ngIf="form.hasError('invalidITQuantity')">O departamento de Tecnologia deve ter no máximo 10 pessoas</p>
+        <p *ngIf="form.hasError('invalidHRQuantity')">O departamento de Recursos Humanos deve ter no máximo 20 pessoas</p>
+    </div>
+</form>

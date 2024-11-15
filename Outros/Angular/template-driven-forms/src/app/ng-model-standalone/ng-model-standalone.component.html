@@ -1,0 +1,25 @@
+<form #f="ngForm">
+    <input type="text" name="name" ngModel placeholder="Digite o nome" required="" >
+
+    <input 
+        type="text" 
+        name="sozinho" 
+        #sozinho="ngModel"
+        ngModel
+        [ngModelOptions]="{ standalone: true }"
+        placeholder="Digite algo"
+        required
+    >
+
+    <h4>Dados do standalone</h4>
+    <p>Valido: {{ sozinho.valid }} </p>
+    <p>Tocado: {{ sozinho.touched }} </p>
+    <p>Sujo: {{ sozinho.dirty }} </p>
+
+    <h4>Dados do Formulário como um todo</h4>
+    <p>Valido: {{ f.valid }} </p>
+    <p>Tocado: {{ f.touched }} </p>
+    <p>Sujo: {{ f.dirty }} </p>
+    <p>Valor: {{ f.value | json }} </p>
+
+</form>
