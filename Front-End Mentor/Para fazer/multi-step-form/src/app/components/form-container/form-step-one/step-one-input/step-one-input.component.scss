@@ -1,23 +1,33 @@
 @use "../../../../../scss/variables" as var;
 
-.step-one {
+.step-one__container {
     display: flex;
     flex-direction: column;
-    gap: 0.35rem;
-    label {
-        font-size: .75rem;
-        font-weight: 600;
-        color: var.$Marine-blue;
-    }
-    input {
-        padding: .65rem 1rem;
-        border: 1px solid var.$Light-gray;
-        border-radius: 5px;
-        font-size: .9rem;
-        &::placeholder {
-            font-weight: bold;
-            color: var.$Cool-gray;
-            opacity: .6;
+    gap: .75rem;
+    .step-one {
+        display: flex;
+        flex-direction: column;
+        gap: 0.35rem;
+        label {
+            font-size: .75rem;
+            font-weight: 600;
+            color: var.$Marine-blue;
+            cursor: pointer;
+        }
+        input {
+            padding: .65rem 1rem;
+            border: 1px solid var.$Light-gray;
+            border-radius: 5px;
+            font-size: .9rem;
+            cursor: pointer;
+            &::placeholder {
+                font-weight: bold;
+                color: var.$Cool-gray;
+                opacity: .6;
+            }
+            &[type="number"]::-webkit-inner-spin-button {
+                display: none;
+            }
         }
     }
 }

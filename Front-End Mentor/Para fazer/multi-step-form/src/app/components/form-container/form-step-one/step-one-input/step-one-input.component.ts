@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { ControlContainer, NgForm } from '@angular/forms';
 
 @Component({
@@ -8,7 +8,5 @@ import { ControlContainer, NgForm } from '@angular/forms';
   viewProviders: [{ provide: ControlContainer, useExisting: NgForm }]
 })
 export class StepOneInputComponent {
-  @Input({ required: true }) inputName: string = ''
-  @Input({ required: true }) inputType: string = ''
-  @Input({ required: true }) inputPlaceholder: string = ''
+
 }

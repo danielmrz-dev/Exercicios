@@ -1,10 +1,37 @@
-<div class="step-one">
-    <label [for]="inputName"> {{ inputName | titlecase }} </label>
-    <input 
-        [type]="inputType" 
-        [name]="inputName" 
-        [id]="inputName" 
-        [placeholder]="inputPlaceholder"
-        ngModel
-    >
+<div class="step-one__container">
+    <div class="step-one">
+        <label for="name"> Name </label>
+        <input
+            type="text"
+            name="name"
+            id="name"
+            placeholder="e.g. Stephen King"
+            ngModel
+            required
+        >
+    </div>
+    
+    <div class="step-one">
+        <label for="email"> Email Address </label>
+        <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="e.g. stephenking@lorem.com"
+            ngModel
+            required
+        >
+    </div>
+    
+    <div class="step-one">
+        <label for="phone"> Phone Number </label>
+        <input
+            type="number"
+            name="phone"
+            id="phone"
+            placeholder="e.g. +1 234 567 890"
+            ngModel
+            required
+        >
+    </div>
 </div>

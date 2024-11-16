@@ -1,11 +1,14 @@
 <form #form="ngForm">
 
     <div class="form">
-        <app-form-step-one></app-form-step-one>
+        <!-- <app-form-step-one></app-form-step-one> -->
+         <app-form-step-two></app-form-step-two>
     </div>
+
+    <div class="form-divider"></div>
 
     <div class="container__btns">
         <button>Go back</button>
-        <button [disabled]="form.valid" >Next Step</button>
+        <button [disabled]="form.invalid" >Next Step</button>
     </div>
 </form>

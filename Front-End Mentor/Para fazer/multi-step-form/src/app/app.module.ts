@@ -9,6 +9,8 @@ import { FormStepOneComponent } from './components/form-container/form-step-one/
 import { StepOneInputComponent } from './components/form-container/form-step-one/step-one-input/step-one-input.component';
 import { StepsTitleAndDescriptionComponent } from './components/form-container/steps-title-and-description/steps-title-and-description.component';
 import { FormsModule } from '@angular/forms';
+import { FormStepTwoComponent } from './components/form-container/form-step-two/form-step-two.component';
+import { ToggleSwitchComponent } from './components/form-container/form-step-two/toggle-switch/toggle-switch.component';
 
 
 @NgModule({
@@ -19,6 +21,8 @@ import { FormsModule } from '@angular/forms';
     FormStepOneComponent,
     StepOneInputComponent,
     StepsTitleAndDescriptionComponent,
+    FormStepTwoComponent,
+    ToggleSwitchComponent,
   ],
   imports: [
     BrowserModule,
