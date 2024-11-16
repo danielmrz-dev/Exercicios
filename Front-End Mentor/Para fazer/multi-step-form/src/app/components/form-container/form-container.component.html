@@ -1,3 +1,11 @@
-<form class="form" #form="ngForm">
-    <app-form-step-one></app-form-step-one>
+<form #form="ngForm">
+
+    <div class="form">
+        <app-form-step-one></app-form-step-one>
+    </div>
+
+    <div class="container__btns">
+        <button>Go back</button>
+        <button [disabled]="form.valid" >Next Step</button>
+    </div>
 </form>

@@ -6,6 +6,4 @@ import { NgForm } from '@angular/forms';
   templateUrl: './form-container.component.html',
   styleUrl: './form-container.component.scss'
 })
-export class FormContainerComponent {
-  @ViewChild('form') form!: NgForm
-}
+export class FormContainerComponent {}
