@@ -1,0 +1,37 @@
+@use "../../../../scss/variables" as var;
+
+.step-one {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    &__title {
+        font-size: 1.6rem;
+        color: var.$Marine-blue;
+    }
+    &__description {
+        line-height: 1.5;
+        padding-bottom: 5px;
+        color: var.$Cool-gray;
+    }
+    // &__inputs-container {
+    //     display: flex;
+    //     flex-direction: column;
+    //     gap: 0.35rem;
+    //     label {
+    //         font-size: .75rem;
+    //         font-weight: 600;
+    //         color: var.$Marine-blue;
+    //     }
+    //     input {
+    //         padding: .65rem 1rem;
+    //         border: 1px solid var.$Light-gray;
+    //         border-radius: 5px;
+    //         font-size: .9rem;
+    //         &::placeholder {
+    //             font-weight: bold;
+    //             color: var.$Cool-gray;
+    //             opacity: .6;
+    //         }
+    //     }
+    // }
+}

@@ -1,0 +1,10 @@
+<div class="step-one">
+    <label [for]="inputName"> {{ inputName | titlecase }} </label>
+    <input 
+        [type]="inputType" 
+        [name]="inputName" 
+        [id]="inputName" 
+        [placeholder]="inputPlaceholder"
+        ngModel
+    >
+</div>
