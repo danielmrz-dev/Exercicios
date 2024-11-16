@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormStepsService } from '../../services/form-steps.service';
 
 @Component({
   selector: 'app-steps-btns',
@@ -7,4 +8,5 @@ import { Component } from '@angular/core';
 })
 export class StepsBtnsComponent {
   
+  constructor(public _formsStepService: FormStepsService) {}
 }

@@ -1,14 +1,30 @@
-<form #form="ngForm">
+<form #form="ngForm" (ngSubmit)="onSubmit(form)" >
 
     <div class="form">
-        <!-- <app-form-step-one></app-form-step-one> -->
-         <app-form-step-two></app-form-step-two>
+        <app-form-step-one *ngIf="formStepsService.currentStep === 1"></app-form-step-one>
+        <app-form-step-two *ngIf="formStepsService.currentStep === 2"></app-form-step-two>
     </div>
 
     <div class="form-divider"></div>
 
     <div class="container__btns">
-        <button>Go back</button>
-        <button [disabled]="form.invalid" >Next Step</button>
+        <button type="button"
+            [ngClass]="{ 'hidden': formStepsService.currentStep === 1 }"
+            (click)="goToPreviousStep()"
+        >Go back
+        </button>
+
+        <button type="button"
+            (click)="goToNextStep()"
+            [ngClass]="{ 
+                'hidden': formStepsService.currentStep === 4,
+                'ml': formStepsService.currentStep === 1
+            }"
+        >Next Step
+        </button>
+
+        <button type="submit"
+            [ngClass]="{ 'hidden': formStepsService.currentStep < 4 }"
+        >Confirm</button>
     </div>
 </form>

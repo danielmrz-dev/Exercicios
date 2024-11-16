@@ -17,10 +17,11 @@
         background-color: transparent;
         color: var.$White;
         cursor: pointer;
-        &:focus {
-            background-color: var.$Light-blue;
-            color: var.$Marine-blue;
-            border-color: var.$Light-blue;
-        }
     }
+}
+
+.focus {
+    background-color: var.$Light-blue;
+    color: var.$Marine-blue;
+    border-color: var.$Light-blue;
 }
