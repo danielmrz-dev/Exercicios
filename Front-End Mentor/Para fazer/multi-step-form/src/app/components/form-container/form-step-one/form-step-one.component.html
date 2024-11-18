@@ -4,7 +4,7 @@
         [description]="'Please provide your name, email address and phone number'"
     ></app-steps-title-and-description>
 
-    <ng-container ngModelGroup="step-one">
+    <ng-container ngModelGroup="step-one" #stepOne="ngModelGroup">
         <div class="step-one__container">
             <div class="step-one">
                 <label for="name"> Name </label>
@@ -14,8 +14,15 @@
                     id="name"
                     placeholder="e.g. Stephen King"
                     ngModel
+                    [ngModelOptions]="{ updateOn: 'blur' }"
+                    #inputName="ngModel"
                     required
+                    minlength="3"
+                    [ngClass]="{ 'required': inputName.invalid && inputName.touched }"
                 >
+                <div class="step-one__errors" *ngIf="inputName.invalid && inputName.touched">
+                    <span class="step-one__error-msg">This field is required</span>
+                </div>
             </div>
         
             <div class="step-one">
@@ -26,8 +33,13 @@
                     id="email"
                     placeholder="e.g. stephenking@lorem.com"
                     ngModel
+                    #inputEmail="ngModel"
                     required
+                    [ngClass]="{ 'required': inputEmail.invalid && inputEmail.touched }"
                 >
+                <div class="step-one__errors" *ngIf="inputEmail.invalid && inputEmail.touched">
+                    <span class="step-one__error-msg">This field is required</span>
+                </div>
             </div>
         
             <div class="step-one">
@@ -38,8 +50,13 @@
                     id="phone"
                     placeholder="e.g. +1 234 567 890"
                     ngModel
+                    #inputPhone="ngModel"
                     required
+                    [ngClass]="{ 'required': inputPhone.invalid && inputPhone.touched }"
                 >
+                <div class="step-one__errors" *ngIf="inputPhone.invalid && inputPhone.touched">
+                    <span class="step-one__error-msg">This field is required</span>
+                </div>
             </div>
         </div>
     </ng-container>

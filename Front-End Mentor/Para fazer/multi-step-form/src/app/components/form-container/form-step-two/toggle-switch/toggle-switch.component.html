@@ -1,4 +1,9 @@
 <label class="switch">
-    <input #check type="checkbox" name="paymentFrequency" [(ngModel)]="paymentFrequency">
+    <input 
+        type="checkbox" 
+        name="paymentFrequency" 
+        [(ngModel)]="paymentFrequency"
+        (change)="sendPaymentFrequency()"
+    >
     <span class="slider round"></span>
 </label>

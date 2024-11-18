@@ -1,8 +1,10 @@
 <form #form="ngForm" (ngSubmit)="onSubmit(form)" >
 
     <div class="form">
-        <app-form-step-one  [ngClass]="{ 'hidden': formStepsService.currentStep !== 1 }"></app-form-step-one>
-        <app-form-step-two [ngClass]="{ 'hidden': formStepsService.currentStep !== 2 }"></app-form-step-two>
+        <!-- <app-form-step-one [ngClass]="{ 'hidden': formStepsService.currentStep !== 1 }"></app-form-step-one> -->
+        <!-- <app-form-step-two [ngClass]="{ 'hidden': formStepsService.currentStep !== 2 }"></app-form-step-two> -->
+        <app-form-step-three [ngClass]="{ 'hidden': formStepsService.currentStep !== 1 }"></app-form-step-three>
+        <!-- <app-form-step-four [ngClass]="{ 'hidden': formStepsService.currentStep !== 4 }"></app-form-step-four> -->
     </div>
 
     <div class="form-divider"></div>
@@ -15,6 +17,8 @@
         </button>
 
         <button type="button"
+            #nextStep
+            [disabled]="verifyValidity()"
             (click)="goToNextStep()"
             [ngClass]="{ 
                 'hidden': formStepsService.currentStep === 4,

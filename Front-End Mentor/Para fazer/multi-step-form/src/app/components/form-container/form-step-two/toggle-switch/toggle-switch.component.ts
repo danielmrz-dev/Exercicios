@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { ControlContainer, NgForm } from '@angular/forms';
 
 @Component({
@@ -9,4 +9,10 @@ import { ControlContainer, NgForm } from '@angular/forms';
 })
 export class ToggleSwitchComponent {
   paymentFrequency: boolean = false
+
+  @Output() billingCycle = new EventEmitter<boolean>()
+
+  sendPaymentFrequency() {
+    this.billingCycle.emit(this.paymentFrequency)
+  }
 }

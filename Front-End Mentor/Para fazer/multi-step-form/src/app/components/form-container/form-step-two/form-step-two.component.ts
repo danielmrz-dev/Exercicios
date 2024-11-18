@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { ControlContainer, NgForm } from '@angular/forms';
+import { Component, ViewChild } from '@angular/core';
+import { ControlContainer, NgForm, NgModel } from '@angular/forms';
 
 interface IPlan {
   name: string
@@ -13,6 +13,10 @@ interface IPlan {
   viewProviders: [{ provide: ControlContainer, useExisting: NgForm }]
 })
 export class FormStepTwoComponent {
+
+  @ViewChild('radioPlan') planType!: NgModel
+  selectedPlan: string = ''
+  paymentFrequency: boolean = false
   plans: IPlan[] = [
     {
       name: "arcade",
@@ -31,5 +35,7 @@ export class FormStepTwoComponent {
     }
   ]
 
-  selectedPlan: string = ''
+  getPaymentFrequency(value: boolean) {
+    this.paymentFrequency = value
+  }
 }

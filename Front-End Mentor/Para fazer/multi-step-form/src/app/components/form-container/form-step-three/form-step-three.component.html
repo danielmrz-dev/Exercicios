@@ -1,0 +1,15 @@
+<div class="step-three">
+    <app-steps-title-and-description 
+        [title]="'Pick add-ons'"
+        [description]="'Add-ons help improve your gaming experience.'"
+    ></app-steps-title-and-description>
+
+    <ng-container ngModelGroup="step-three">
+        <label for="online-service">
+            <input type="checkbox" name="online-service" id="online-service">
+            <span>Online service</span>
+            <span>Access to multiplayer games</span>
+            <span>+$1/mo</span>
+        </label>
+    </ng-container>
+</div>

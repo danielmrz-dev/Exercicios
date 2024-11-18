@@ -21,6 +21,7 @@
             display: flex;
             flex-direction: column;
             gap: 0.35rem;
+            position: relative;
             label {
                 font-size: .75rem;
                 font-weight: 600;
@@ -41,6 +42,16 @@
                 &[type="number"]::-webkit-inner-spin-button {
                     display: none;
                 }
+            }
+            &__errors {
+                position: absolute;
+                right: 5px;
+                font-size: 0.8rem;
+                font-weight: 600;
+                color: var.$Strawberry-red;
+            }
+            .required {
+                border-color: var.$Strawberry-red;
             }
         }
     }

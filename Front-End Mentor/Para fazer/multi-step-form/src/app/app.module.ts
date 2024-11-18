@@ -11,6 +11,9 @@ import { FormsModule } from '@angular/forms';
 import { FormStepTwoComponent } from './components/form-container/form-step-two/form-step-two.component';
 import { ToggleSwitchComponent } from './components/form-container/form-step-two/toggle-switch/toggle-switch.component';
 import { PaymentFrequencyPipe } from './pipes/payment-frequency.pipe';
+import { FormStepThreeComponent } from './components/form-container/form-step-three/form-step-three.component';
+import { FormStepFourComponent } from './components/form-container/form-step-four/form-step-four.component';
+import { FormStepFiveComponent } from './components/form-container/form-step-five/form-step-five.component';
 
 
 @NgModule({
@@ -23,6 +26,9 @@ import { PaymentFrequencyPipe } from './pipes/payment-frequency.pipe';
     FormStepTwoComponent,
     ToggleSwitchComponent,
     PaymentFrequencyPipe,
+    FormStepThreeComponent,
+    FormStepFourComponent,
+    FormStepFiveComponent,
   ],
   imports: [
     BrowserModule,
