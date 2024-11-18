@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ControlContainer, NgForm } from '@angular/forms';
 
 interface IPlan {
   name: string
@@ -8,7 +9,8 @@ interface IPlan {
 @Component({
   selector: 'app-form-step-two',
   templateUrl: './form-step-two.component.html',
-  styleUrl: './form-step-two.component.scss'
+  styleUrl: './form-step-two.component.scss',
+  viewProviders: [{ provide: ControlContainer, useExisting: NgForm }]
 })
 export class FormStepTwoComponent {
   plans: IPlan[] = [
@@ -28,4 +30,6 @@ export class FormStepTwoComponent {
       image: "icon-pro.svg"
     }
   ]
+
+  selectedPlan: string = ''
 }

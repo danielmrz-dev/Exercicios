@@ -1,7 +1,6 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormStepsService } from '../../services/form-steps.service';
-import { NgForm, NgModelGroup } from '@angular/forms';
-import { FormStepOneComponent } from './form-step-one/form-step-one.component';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-form-container',

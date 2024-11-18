@@ -4,24 +4,24 @@
         [description]="'You have the option of monthly or yearly billing.'"
     ></app-steps-title-and-description>
 
-    <div class="step-two__options">
-        <div class="step-two__options-type" *ngFor="let plan of plans">
-            <input type="radio" name="plan-type" [id]="plan.name" class="step-two__options-input">
-            <label [for]="plan.name" class="step-two__options-option">
-                <img [src]="plan.image" alt="" class="step-two__options-image">
-                <h3 class="step-two__options-title">{{ plan.name | titlecase }}</h3>
-                <span class="step-two__options-price">
-                    {{ plan.price | currency : "USD" : "symbol" : "1.0-0" }}/mo
-                </span>
-                <span class="step-two__options-benefit">2 months free</span>
-            </label>
+    <ng-container ngModelGroup="step-two">
+        <div class="step-two__options">
+            <div class="step-two__options-type" *ngFor="let plan of plans">
+                <input type="radio" name="plan-type" [value]="plan.name" [id]="plan.name" class="step-two__options-input" [(ngModel)]="selectedPlan">
+                <label [for]="plan.name" class="step-two__options-option">
+                    <img [src]="plan.image" alt="" class="step-two__options-image">
+                    <h3 class="step-two__options-title">{{ plan.name | titlecase }}</h3>
+                    <span class="step-two__options-price">
+                        {{ plan.price | currency : "USD" : "symbol" : "1.0-0" }}/mo
+                    </span>
+                    <span class="step-two__options-benefit">2 months free</span>
+                </label>
+            </div>
+            <div class="step-two__options-monthly-yearly">
+                <span>Monthly</span>
+                <app-toggle-switch></app-toggle-switch>
+                <span>Yearly</span>
+            </div>
         </div>
-
-        <div class="step-two__options-monthly-yearly">            
-            <span>Monthly</span>
-            <app-toggle-switch></app-toggle-switch>
-            <span>Yearly</span>            
-        </div>
-
-    </div>
+    </ng-container>
 </div>
