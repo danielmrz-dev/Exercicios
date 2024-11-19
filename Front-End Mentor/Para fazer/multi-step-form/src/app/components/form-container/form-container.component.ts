@@ -56,6 +56,8 @@ export class FormContainerComponent implements AfterViewInit {
 
   goToNextStep(): void {
     this.formStepsService.nextStep();
+    console.log(this.formStepsService.currentStep);
+    
   }
 
   goToPreviousStep(): void {
@@ -66,10 +68,11 @@ export class FormContainerComponent implements AfterViewInit {
     this.frequency = newFrequency
   }
 
-  getFullPrice() {
+  getFullPrice(): string {
     const planPrice = this.getPlanPrice()
     const checkedAddOns = this.addOns.filter((item) => item.checked === true)
-    
+    const checkedAddOnsPrices = checkedAddOns.map((item) => item.price)
+    return `${+planPrice + checkedAddOnsPrices.reduce((a, b) => a + b, 0)}`
   }
 
   onSubmit(form: NgForm) {

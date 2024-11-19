@@ -24,8 +24,8 @@
     </div>
 
     <div class="summary__total">
-        <span class="summary__total-text">Total ({{ frequency }})</span>
-        <span class="summary__total-price"> {{ totalPrice }} </span>
+        <span class="summary__total-text">Total ({{ frequency | paymentFrequency }})</span>
+        <span class="summary__total-price"> {{ totalPrice | price : frequency }} </span>
     </div>
 
 </div>

@@ -17,15 +17,16 @@
             [frequency]="form.value.paymentFrequency"
             [planPrice]="getPlanPrice()"
             [items]="addOns"
-            [totalPrice]="'Teste'"
+            [totalPrice]="getFullPrice()"
         ></app-form-step-four>
+        <app-form-step-five [ngClass]="{ 'hidden': formStepsService.currentStep !== 5 }" ></app-form-step-five>
     </div>
 
     <div class="form-divider"></div>
 
     <div class="container__btns">
         <button type="button"
-            [ngClass]="{ 'hidden': formStepsService.currentStep === 1 }"
+            [ngClass]="{ 'hidden': formStepsService.currentStep === 1 || formStepsService.currentStep >= 4}"
             (click)="goToPreviousStep()"
         >Go back
         </button>
@@ -35,14 +36,18 @@
             [disabled]="verifyValidity()"
             (click)="goToNextStep()"
             [ngClass]="{ 
-                'hidden': formStepsService.currentStep === 4,
+                'hidden': formStepsService.currentStep >= 4,
                 'ml': formStepsService.currentStep === 1
             }"
         >Next Step
         </button>
 
         <button type="submit"
-            [ngClass]="{ 'hidden': formStepsService.currentStep < 4 }"
+            [ngClass]="{ 
+                'hidden': formStepsService.currentStep < 4 || formStepsService.currentStep > 4, 
+                'ml': formStepsService.currentStep >= 4    
+            }"
+            (click)="goToNextStep()"
         >Confirm</button>
     </div>
 </form>
