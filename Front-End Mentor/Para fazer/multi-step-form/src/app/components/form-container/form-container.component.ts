@@ -3,6 +3,7 @@ import { FormStepsService } from '../../services/form-steps.service';
 import { NgForm } from '@angular/forms';
 import { FormStepOneComponent } from './form-step-one/form-step-one.component';
 import { FormStepTwoComponent } from './form-step-two/form-step-two.component';
+import { FormStepThreeComponent } from './form-step-three/form-step-three.component';
 
 @Component({
   selector: 'app-form-container',
@@ -13,7 +14,9 @@ export class FormContainerComponent implements AfterViewInit {
 
   @ViewChild(FormStepOneComponent) stepOne!: FormStepOneComponent;
   @ViewChild(FormStepTwoComponent) stepTwo!: FormStepTwoComponent;
+  @ViewChild(FormStepThreeComponent) stepThree!: FormStepThreeComponent;
   @ViewChild('nextStep') btnNextStep!: ElementRef<HTMLButtonElement>;
+  frequency: boolean = false
 
   constructor(public formStepsService: FormStepsService, private cdr: ChangeDetectorRef) {}
   
@@ -39,6 +42,10 @@ export class FormContainerComponent implements AfterViewInit {
 
   goToPreviousStep(): void {
     this.formStepsService.previousStep();
+  }
+
+  getFrequency(newFrequency: boolean) {
+    this.frequency = newFrequency
   }
 
   onSubmit(form: NgForm) {

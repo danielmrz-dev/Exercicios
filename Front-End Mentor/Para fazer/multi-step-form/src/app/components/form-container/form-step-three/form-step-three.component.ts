@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, Input, ViewChild } from '@angular/core';
 import { ControlContainer, NgForm } from '@angular/forms';
 import { FormStepTwoComponent } from '../form-step-two/form-step-two.component';
 
@@ -11,10 +11,12 @@ import { FormStepTwoComponent } from '../form-step-two/form-step-two.component';
 export class FormStepThreeComponent {
 
   @ViewChild(FormStepTwoComponent) stepTwo?: FormStepTwoComponent;
+  @Input({ required: true }) frequency!: boolean;
 
   addOns = [
     {
       id: 1,
+      serviceId: "onlineService",
       service: "Online service",
       benefit: "Access to multiplayer games",
       checked: '',
@@ -22,6 +24,7 @@ export class FormStepThreeComponent {
     },
     {
       id: 2,
+      serviceId: "largerStorage",
       service: "Larger storage",
       benefit: "Extra 1TB of cloud save",
       checked: '',
@@ -29,6 +32,7 @@ export class FormStepThreeComponent {
     },
     {
       id: 3,
+      serviceId: "customizableProfile",
       service: "Customizable profile",
       benefit: "Custom theme on your profile",
       checked: '',

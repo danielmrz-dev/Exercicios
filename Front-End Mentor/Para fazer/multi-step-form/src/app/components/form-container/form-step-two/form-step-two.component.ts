@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, EventEmitter, Output, ViewChild } from '@angular/core';
 import { ControlContainer, NgForm, NgModel } from '@angular/forms';
 
 interface IPlan {
@@ -35,7 +35,9 @@ export class FormStepTwoComponent {
     }
   ]
 
+  @Output() frequency = new EventEmitter<boolean>()
   getPaymentFrequency(value: boolean) {
     this.paymentFrequency = value
+    this.frequency.emit(this.paymentFrequency)
   }
 }

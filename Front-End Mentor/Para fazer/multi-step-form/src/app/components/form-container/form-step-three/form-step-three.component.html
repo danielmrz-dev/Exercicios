@@ -12,8 +12,8 @@
         >
             <input
                 type="checkbox"
-                [name]="addOn.service"
-                [id]="addOn.service"
+                [name]="addOn.serviceId"
+                [id]="addOn.serviceId"
                 class="step-three__input"
                 [(ngModel)]="addOn.checked"
                 
@@ -23,7 +23,7 @@
                     <span class="step-three__add-on"> {{ addOn.service }} </span>
                     <span class="step-three__add-on-benefit"> {{ addOn.benefit }} </span>
                 </div>
-                <span class="step-three__add-on-price">+ {{ addOn.price | currency : "USD" : "symbol" : "1.0-0" }} /mo</span>
+                <span class="step-three__add-on-price">+ {{ addOn.price | price : frequency }}</span>
             </label>
         </div>
     </ng-container>
