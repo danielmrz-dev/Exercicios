@@ -5,11 +5,26 @@
     ></app-steps-title-and-description>
 
     <ng-container ngModelGroup="step-three">
-        <label for="online-service">
-            <input type="checkbox" name="online-service" id="online-service">
-            <span>Online service</span>
-            <span>Access to multiplayer games</span>
-            <span>+$1/mo</span>
-        </label>
+        <div 
+            *ngFor="let addOn of addOns;"
+            class="step-three__input-container"
+            [ngClass]=" { 'bg-checked': addOn.checked}"
+        >
+            <input
+                type="checkbox"
+                [name]="addOn.service"
+                [id]="addOn.service"
+                class="step-three__input"
+                [(ngModel)]="addOn.checked"
+                
+            >
+            <label [for]="addOn.service" class="step-three__label">
+                <div>
+                    <span class="step-three__add-on"> {{ addOn.service }} </span>
+                    <span class="step-three__add-on-benefit"> {{ addOn.benefit }} </span>
+                </div>
+                <span class="step-three__add-on-price">+ {{ addOn.price | currency : "USD" : "symbol" : "1.0-0" }} /mo</span>
+            </label>
+        </div>
     </ng-container>
 </div>

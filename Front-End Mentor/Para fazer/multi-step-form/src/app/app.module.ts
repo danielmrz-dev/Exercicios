@@ -14,6 +14,7 @@ import { PaymentFrequencyPipe } from './pipes/payment-frequency.pipe';
 import { FormStepThreeComponent } from './components/form-container/form-step-three/form-step-three.component';
 import { FormStepFourComponent } from './components/form-container/form-step-four/form-step-four.component';
 import { FormStepFiveComponent } from './components/form-container/form-step-five/form-step-five.component';
+import { PricePipe } from './pipes/price.pipe';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { FormStepFiveComponent } from './components/form-container/form-step-fiv
     FormStepThreeComponent,
     FormStepFourComponent,
     FormStepFiveComponent,
+    PricePipe,
   ],
   imports: [
     BrowserModule,
