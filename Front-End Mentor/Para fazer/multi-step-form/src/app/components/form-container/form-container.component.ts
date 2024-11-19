@@ -3,7 +3,7 @@ import { FormStepsService } from '../../services/form-steps.service';
 import { NgForm } from '@angular/forms';
 import { FormStepOneComponent } from './form-step-one/form-step-one.component';
 import { FormStepTwoComponent } from './form-step-two/form-step-two.component';
-import { FormStepThreeComponent } from './form-step-three/form-step-three.component';
+import { FormStepThreeComponent, IAddOn } from './form-step-three/form-step-three.component';
 
 @Component({
   selector: 'app-form-container',
@@ -12,16 +12,34 @@ import { FormStepThreeComponent } from './form-step-three/form-step-three.compon
 })
 export class FormContainerComponent implements AfterViewInit {
 
+  @ViewChild('form') form!: NgForm
   @ViewChild(FormStepOneComponent) stepOne!: FormStepOneComponent;
   @ViewChild(FormStepTwoComponent) stepTwo!: FormStepTwoComponent;
   @ViewChild(FormStepThreeComponent) stepThree!: FormStepThreeComponent;
   @ViewChild('nextStep') btnNextStep!: ElementRef<HTMLButtonElement>;
   frequency: boolean = false
+  addOns: IAddOn[] = []
 
   constructor(public formStepsService: FormStepsService, private cdr: ChangeDetectorRef) {}
   
   ngAfterViewInit(): void {
-    this.cdr.detectChanges(); // Força uma atualização para evitar o erro
+    this.cdr.detectChanges();
+  }
+
+  getPlanPrice(): string {
+    if (this.form?.value.stepTwo?.planType === "arcade") {
+      return "9"
+    }
+
+    if (this.form?.value.stepTwo?.planType === "advanced") {
+      return "12"
+    }
+
+    return "15"
+  }
+
+  getAddOns(newAddOns: IAddOn[]) {
+    this.addOns = newAddOns
   }
 
   verifyValidity(): boolean {
@@ -46,6 +64,12 @@ export class FormContainerComponent implements AfterViewInit {
 
   getFrequency(newFrequency: boolean) {
     this.frequency = newFrequency
+  }
+
+  getFullPrice() {
+    const planPrice = this.getPlanPrice()
+    const checkedAddOns = this.addOns.filter((item) => item.checked === true)
+    
   }
 
   onSubmit(form: NgForm) {

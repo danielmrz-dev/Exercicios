@@ -4,10 +4,10 @@
         [description]="'You have the option of monthly or yearly billing.'"
     ></app-steps-title-and-description>
 
-    <ng-container ngModelGroup="step-two">
+    <ng-container ngModelGroup="stepTwo">
         <div class="step-two__options">
             <div class="step-two__options-type" *ngFor="let plan of plans">
-                <input type="radio" name="plan-type" [value]="plan.name" [id]="plan.name" class="step-two__options-input" [(ngModel)]="selectedPlan" required #radioPlan="ngModel">
+                <input type="radio" name="planType" [value]="plan.name" [id]="plan.name" class="step-two__options-input" [(ngModel)]="selectedPlan" required #radioPlan="ngModel">
                 <label [for]="plan.name" class="step-two__options-option">
                     <img [src]="plan.image" alt="" class="step-two__options-image">
                     <h3 class="step-two__options-title">{{ plan.name | titlecase }}</h3>

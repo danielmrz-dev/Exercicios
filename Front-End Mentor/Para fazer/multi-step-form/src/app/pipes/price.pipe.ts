@@ -5,9 +5,9 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class PricePipe implements PipeTransform {
 
-  transform(value: number, paymentFrequency: boolean): string {
+  transform(value: number | string, paymentFrequency: boolean): string {
     if (paymentFrequency === true) {
-      return `$${value * 10}/y`
+      return `$${+value * 10}/yr`
     }
 
     return `$${value}/mo`

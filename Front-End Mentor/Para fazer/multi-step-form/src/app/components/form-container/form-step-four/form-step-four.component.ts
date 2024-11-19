@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { IAddOn } from '../form-step-three/form-step-three.component';
 
 @Component({
   selector: 'app-form-step-four',
@@ -7,9 +8,12 @@ import { Component, Input } from '@angular/core';
 })
 export class FormStepFourComponent {
   @Input({ required: true }) planName!: string
-  @Input({ required: true }) frequency!: string
+  @Input({ required: true }) frequency!: boolean
   @Input({ required: true }) planPrice!: string
-  @Input({ required: true }) addOnName!: string
-  @Input({ required: true }) addOnPrice!: string
   @Input({ required: true }) totalPrice!: string
+  @Input({ required: true }) items: IAddOn[] = []
+
+  getAddOns(newAddOns: IAddOn[]): IAddOn[] {
+    return this.items = newAddOns
+  }
 }

@@ -9,14 +9,14 @@
         <app-form-step-three 
             [frequency]="frequency" 
             [ngClass]="{ 'hidden': formStepsService.currentStep !== 3 }"
+            (checkedAddOns)="getAddOns($event)"
         ></app-form-step-three>
         <app-form-step-four 
             [ngClass]="{ 'hidden': formStepsService.currentStep !== 4 }"
-            [planName]="'Teste'"
-            [frequency]="'Teste'"
-            [planPrice]="'Teste'"
-            [addOnName]="'Teste'"
-            [addOnPrice]="'Teste'"
+            [planName]="form.value.stepTwo?.planType"
+            [frequency]="form.value.paymentFrequency"
+            [planPrice]="getPlanPrice()"
+            [items]="addOns"
             [totalPrice]="'Teste'"
         ></app-form-step-four>
     </div>

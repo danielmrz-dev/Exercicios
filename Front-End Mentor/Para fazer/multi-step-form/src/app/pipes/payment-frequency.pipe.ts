@@ -6,7 +6,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class PaymentFrequencyPipe implements PipeTransform {
 
   transform(value: boolean): string {
-    return value === true ? 'yearly' : 'monthly'
+    return value === true ? 'Yearly' : 'Monthly'
   }
 
 }

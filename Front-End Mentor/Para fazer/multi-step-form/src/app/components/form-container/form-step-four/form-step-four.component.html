@@ -7,23 +7,19 @@
     <div class="summary">
         <div class="summary__plan-type">
             <div class="summary__plan-type-container">
-                <span class="summary__plan-name"> {{ planName }} ({{ frequency }})</span>
+                <span class="summary__plan-name"> {{ planName | titlecase }} ({{ frequency | paymentFrequency }})</span>
                 <button class="summary__change-plan-btn">Change</button>
             </div>
-            <span class="summary__plan-price"> {{ planPrice }} </span>
+            <span class="summary__plan-price"> {{ planPrice | price : frequency }} </span>
         </div>
 
         <div class="summary__divider"></div>
 
         <div class="summary__add-ons">
-            <div class="summary__add-on">
-                <span class="summary__add-on-name"> {{ addOnName }} </span>
-                <span class="summary__add-on-price"> {{ addOnPrice }} </span>
+            <div class="summary__add-on" *ngFor="let item of items">
+                <span class="summary__add-on-name"> {{ item.service }} </span>
+                <span class="summary__add-on-price"> +{{ item.price | price : frequency }} </span>
             </div>
-            <!-- <div class="summary__add-on">
-                <span class="summary__add-on-name">Larger storage</span>
-                <span class="summary__add-on-price">+$2/mo</span>
-            </div> -->
         </div>
     </div>
 

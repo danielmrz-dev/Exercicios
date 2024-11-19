@@ -4,7 +4,7 @@
         [description]="'Add-ons help improve your gaming experience.'"
     ></app-steps-title-and-description>
 
-    <ng-container ngModelGroup="step-three">
+    <ng-container ngModelGroup="stepThree">
         <div 
             *ngFor="let addOn of addOns;"
             class="step-three__input-container"
@@ -16,9 +16,9 @@
                 [id]="addOn.serviceId"
                 class="step-three__input"
                 [(ngModel)]="addOn.checked"
-                
+                (change)="sendCheckedAddOns()"    
             >
-            <label [for]="addOn.service" class="step-three__label">
+            <label [for]="addOn.serviceId" class="step-three__label">
                 <div>
                     <span class="step-three__add-on"> {{ addOn.service }} </span>
                     <span class="step-three__add-on-benefit"> {{ addOn.benefit }} </span>
