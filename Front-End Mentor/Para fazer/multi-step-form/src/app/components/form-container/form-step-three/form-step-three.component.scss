@@ -49,3 +49,22 @@
 .bg-checked {
     background-color: var.$Magnolia;
 }
+
+@media screen and (min-width: 768px) {
+    .step-three {
+        max-width: 90%;
+        &__input-container {
+            gap: 1rem;
+            padding: 1.3rem;
+            &:first-of-type {
+                margin-top: 2rem;
+            }
+        }
+        &__label {
+            font-size: .9rem;
+        }
+        &__add-on {
+            font-size: 1rem;
+        }
+    }
+}

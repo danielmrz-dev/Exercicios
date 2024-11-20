@@ -21,3 +21,21 @@
         line-height: 1.5;
     }
 }
+
+@media screen and (min-width: 768px) {
+    .step-five {
+        max-width: 450px;
+        transform: translateY(70px);
+        gap: 2rem;
+        img {
+            width: 85px;
+        }
+        h2 {
+            margin-top: 0.25rem;
+            font-size: 2rem;
+        }
+        p {
+            font-size: 1.05rem;
+        }
+    }
+}

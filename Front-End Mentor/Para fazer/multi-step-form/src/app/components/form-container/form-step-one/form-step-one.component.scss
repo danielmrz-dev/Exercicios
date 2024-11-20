@@ -33,6 +33,11 @@
                 &[type="number"]::-webkit-inner-spin-button {
                     display: none;
                 }
+                &[type="number"] {
+                    appearance: initial;
+                    -moz-appearance: textfield;
+                }
+
             }
             &__errors {
                 position: absolute;
