@@ -34,8 +34,12 @@
     .container {
         min-height: 100vh;
         display: flex;
-        justify-content: center;
         align-items: center;
+        justify-content: center;
+        .wrapper {
+            display: flex;
+            height: 600px;
+        }
         &__btns {
             background-color: #fff;
             position: static;

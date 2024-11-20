@@ -1,10 +1,20 @@
 <div class="steps">
-    <button 
-        class="steps__btn" 
-        *ngFor="let step of [1, 2, 3, 4]"
-        [ngClass]="{
-            'focus': _formsStepService.currentStep === step
-        }"
-        
-    > {{ step }} </button>
+    <div class="steps__wrapper">
+        <div 
+            *ngFor="let step of steps"
+            class="steps__btns"
+        >
+            <button
+                class="steps__btn"
+                [ngClass]="{
+                    'focus': _formsStepService.currentStep === step.step
+                }"
+            
+            > {{ step.step }} </button>
+            <div class="steps__btns-texts-container">
+                <span class="steps__btns-text">STEP {{ step.step  }}</span>
+                <span class="steps__btns-description"> {{ step.description | uppercase }} </span>
+            </div>
+        </div>
+    </div>
 </div>

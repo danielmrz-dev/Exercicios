@@ -1,17 +1,17 @@
 <form #form="ngForm" (ngSubmit)="onSubmit(form)" >
 
     <div class="form">
-        <app-form-step-one [ngClass]="{ 'hidden': formStepsService.currentStep !== 1 }"></app-form-step-one>
+        <!-- <app-form-step-one [ngClass]="{ 'hidden': formStepsService.currentStep !== 1 }"></app-form-step-one> -->
         <app-form-step-two 
-            [ngClass]="{ 'hidden': formStepsService.currentStep !== 2 }"
+            [ngClass]="{ 'hidden': formStepsService.currentStep !== 1 }"
             (frequency)="getFrequency($event)"
         ></app-form-step-two>
-        <app-form-step-three 
+        <!-- <app-form-step-three 
             [frequency]="frequency" 
             [ngClass]="{ 'hidden': formStepsService.currentStep !== 3 }"
             (checkedAddOns)="getAddOns($event)"
-        ></app-form-step-three>
-        <app-form-step-four 
+        ></app-form-step-three> -->
+        <!-- <app-form-step-four 
             [ngClass]="{ 'hidden': formStepsService.currentStep !== 4 }"
             [planName]="form.value.stepTwo?.planType"
             [frequency]="form.value.paymentFrequency"
@@ -19,7 +19,7 @@
             [items]="addOns"
             [totalPrice]="getFullPrice()"
         ></app-form-step-four>
-        <app-form-step-five [ngClass]="{ 'hidden': formStepsService.currentStep !== 5 }" ></app-form-step-five>
+        <app-form-step-five [ngClass]="{ 'hidden': formStepsService.currentStep !== 5 }" ></app-form-step-five> -->
     </div>
 
     <div class="form-divider"></div>
@@ -28,6 +28,7 @@
         <button type="button"
             [ngClass]="{ 'hidden': formStepsService.currentStep === 1 || formStepsService.currentStep >= 4}"
             (click)="goToPreviousStep()"
+            class="go-back"
         >Go back
         </button>
 
@@ -39,6 +40,7 @@
                 'hidden': formStepsService.currentStep >= 4,
                 'ml': formStepsService.currentStep === 1
             }"
+            class="next-step"
         >Next Step
         </button>
 
@@ -47,6 +49,7 @@
                 'hidden': formStepsService.currentStep < 4 || formStepsService.currentStep > 4, 
                 'ml': formStepsService.currentStep >= 4    
             }"
+            class="next-step"
             (click)="goToNextStep()"
         >Confirm</button>
     </div>
