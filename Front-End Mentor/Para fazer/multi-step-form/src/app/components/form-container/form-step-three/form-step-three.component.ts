@@ -50,7 +50,7 @@ export class FormStepThreeComponent {
   @Output() checkedAddOns = new EventEmitter<IAddOn[]>();
 
   sendCheckedAddOns() {
-    const newAddOns = this.addOns.filter((item) => item.checked === true);
+    const newAddOns = this.addOns.filter((item) => item.checked);
     this.checkedAddOns.emit(newAddOns);
   }
 }

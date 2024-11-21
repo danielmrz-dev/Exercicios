@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { IAddOn } from '../form-step-three/form-step-three.component';
+import { FormStepsService } from '../../../services/form-steps.service';
 
 @Component({
   selector: 'app-form-step-four',
@@ -7,6 +8,9 @@ import { IAddOn } from '../form-step-three/form-step-three.component';
   styleUrl: './form-step-four.component.scss'
 })
 export class FormStepFourComponent {
+
+  constructor(public _formStepsService: FormStepsService) {}
+
   @Input({ required: true }) planName!: string
   @Input({ required: true }) frequency!: boolean
   @Input({ required: true }) planPrice!: string
@@ -15,5 +19,9 @@ export class FormStepFourComponent {
 
   getAddOns(newAddOns: IAddOn[]): IAddOn[] {
     return this.items = newAddOns
+  }
+
+  backToStepTwo() {
+    this._formStepsService.currentStep = 2
   }
 }

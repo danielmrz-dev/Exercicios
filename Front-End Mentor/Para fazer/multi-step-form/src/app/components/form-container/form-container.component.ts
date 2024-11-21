@@ -26,6 +26,12 @@ export class FormContainerComponent implements AfterViewInit {
     this.cdr.detectChanges();
   }
 
+  preventDefault(evento: Event) {
+    if (this.verifyValidity()) {
+      evento.preventDefault();      
+    }
+  }
+
   getPlanPrice(): string {
     if (this.form?.value.stepTwo?.planType === "arcade") {
       return "9"
@@ -55,9 +61,7 @@ export class FormContainerComponent implements AfterViewInit {
   }
 
   goToNextStep(): void {
-    this.formStepsService.nextStep();
-    console.log(this.formStepsService.currentStep);
-    
+      this.formStepsService.nextStep();      
   }
 
   goToPreviousStep(): void {
@@ -74,9 +78,4 @@ export class FormContainerComponent implements AfterViewInit {
     const checkedAddOnsPrices = checkedAddOns.map((item) => item.price)
     return `${+planPrice + checkedAddOnsPrices.reduce((a, b) => a + b, 0)}`
   }
-
-  onSubmit(form: NgForm) {
-    console.log(form.value);    
-  }
-  
 }

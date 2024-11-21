@@ -15,6 +15,9 @@ import { FormStepThreeComponent } from './components/form-container/form-step-th
 import { FormStepFourComponent } from './components/form-container/form-step-four/form-step-four.component';
 import { FormStepFiveComponent } from './components/form-container/form-step-five/form-step-five.component';
 import { PricePipe } from './pipes/price.pipe';
+import { NameValidatorDirective } from './validators/name-validator.directive';
+import { EmailValidatorDirective } from './validators/email-validator.directive';
+import { PhoneNumberValidatorDirective } from './validators/phone-number-validator.directive';
 
 
 @NgModule({
@@ -31,6 +34,9 @@ import { PricePipe } from './pipes/price.pipe';
     FormStepFourComponent,
     FormStepFiveComponent,
     PricePipe,
+    NameValidatorDirective,
+    EmailValidatorDirective,
+    PhoneNumberValidatorDirective,
   ],
   imports: [
     BrowserModule,

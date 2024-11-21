@@ -49,7 +49,7 @@
     margin-left: auto;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 945px) {
     .form {
         padding: 3.5rem;
         margin: 0 auto;
@@ -83,6 +83,9 @@
         }
         .go-back {
             transform: translate(40px, -20px);
+        }
+        .blue-bg {
+            background-color: var.$Purplish-blue;
         }
     }
 }

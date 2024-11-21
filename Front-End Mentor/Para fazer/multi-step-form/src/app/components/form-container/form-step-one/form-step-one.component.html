@@ -16,12 +16,15 @@
                     ngModel
                     [ngModelOptions]="{ updateOn: 'blur' }"
                     #inputName="ngModel"
+                    #nameInput
                     required
                     minlength="3"
                     [ngClass]="{ 'required': inputName.invalid && inputName.touched }"
+                    appNameValidator
                 >
                 <div class="step-one__errors" *ngIf="inputName.invalid && inputName.touched">
-                    <span class="step-one__error-msg">This field is required</span>
+                    <span class="step-one__error-msg" *ngIf="!inputName.hasError('invalidName')">This field is required</span>
+                    <span class="step-one__error-msg" *ngIf="inputName.hasError('invalidName')">Only letters allowed</span>
                 </div>
             </div>
         
@@ -33,12 +36,14 @@
                     id="email"
                     placeholder="e.g. stephenking@lorem.com"
                     ngModel
+                    [ngModelOptions]="{ updateOn: 'blur' }"
                     #inputEmail="ngModel"
                     required
                     [ngClass]="{ 'required': inputEmail.invalid && inputEmail.touched }"
+                    appEmailValidator
                 >
                 <div class="step-one__errors" *ngIf="inputEmail.invalid && inputEmail.touched">
-                    <span class="step-one__error-msg">This field is required</span>
+                    <span class="step-one__error-msg" *ngIf="inputEmail.hasError('invalidEmail')">Invalid Email Address</span>
                 </div>
             </div>
         
@@ -50,12 +55,17 @@
                     id="phone"
                     placeholder="e.g. +1 234 567 890"
                     ngModel
+                    min="10000000"
+                    max="999999999999"
                     #inputPhone="ngModel"
+                    [ngModelOptions]="{ updateOn: 'change' }"
                     required
                     [ngClass]="{ 'required': inputPhone.invalid && inputPhone.touched }"
+                    appPhoneNumberValidator
                 >
                 <div class="step-one__errors" *ngIf="inputPhone.invalid && inputPhone.touched">
-                    <span class="step-one__error-msg">This field is required</span>
+                    <span class="step-one__error-msg" *ngIf="inputPhone.touched && !inputPhone.dirty">This field is required</span>
+                    <span class="step-one__error-msg" *ngIf="inputPhone.hasError('invalidPhoneNumber') && inputPhone.touched && inputPhone.dirty">Must have 8 to 12 numbers</span>
                 </div>
             </div>
         </div>
