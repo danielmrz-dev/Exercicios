@@ -1,0 +1,37 @@
+<form #form="ngForm">
+    <mat-form-field class="example-full-width">
+        <mat-label>Email:</mat-label>
+        <input
+            type="email"
+            name="email"
+            placeholder="Ex. pat@example.com"
+            matInput
+            [ngModel]="email"
+            (ngModelChange)="recebeEmail($event)"
+            #emailControl="ngModel"
+            required
+            appEmailValidator
+        />
+
+        <mat-hint>Email será utilizado para login</mat-hint>
+        <mat-error 
+            *ngIf="emailControl.hasError('required')">Este campo é <strong>obrigatório!</strong>
+        </mat-error>
+        <mat-error 
+            *ngIf="emailControl.hasError('invalidEmail') && !emailControl.hasError('required')"
+        >Email <strong>fora do padrão!</strong>
+        </mat-error>
+
+    </mat-form-field>
+
+    <br />
+    <br />
+
+    <div>
+        <p>Válido: {{ emailControl.valid }}</p>
+        <p>Dirty: {{ emailControl.dirty }}</p>
+        <p>Tocado: {{ emailControl.touched }}</p>
+
+        <button type="button" [disabled]="form.invalid">Enviar</button>
+    </div>
+</form>
