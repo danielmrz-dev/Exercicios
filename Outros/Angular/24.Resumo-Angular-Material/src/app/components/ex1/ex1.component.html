@@ -6,6 +6,7 @@
             name="email"
             placeholder="Ex. pat@example.com"
             matInput
+            [errorStateMatcher]="matcher"
             [ngModel]="email"
             (ngModelChange)="recebeEmail($event)"
             #emailControl="ngModel"
