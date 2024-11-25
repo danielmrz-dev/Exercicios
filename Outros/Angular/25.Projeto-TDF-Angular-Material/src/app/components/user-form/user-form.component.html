@@ -2,18 +2,85 @@
     <mat-card-content>
         <form class="user-form">
             <div class="user-form__row">
-                <div class="user-form__item-100 user-form__item">
-                    <input style="width: 100%;" >
-                </div>
+                <mat-form-field 
+                    class="example-full-width user-form__item-100 user-form__item">
+                    <mat-label>Nome</mat-label>
+                    <input 
+                        type="text"
+                        name="nome"
+                        matInput 
+                        [(ngModel)]="userSelected.name"
+                        required
+                    >
+                    <mat-error>
+                        O <strong>nome</strong> é obrigatório
+                    </mat-error>
+                </mat-form-field>
             </div>
             <div class="user-form__row">
-                <div class="user-form__item-50 user-form__item">
-                    <input style="width: 100%;" >
-                </div>
-                <div class="user-form__item-50 user-form__item">
-                    <input style="width: 100%;" >
-                </div>
+                <mat-form-field 
+                    class="example-full-width user-form__item-50 user-form__item">
+                    <mat-label>Usuário</mat-label>
+                    <input 
+                        type="text"
+                        name="usuario"
+                        matInput 
+                        [(ngModel)]="userSelected.username"
+                        [ngModelOptions]="{ updateOn: 'blur' }"
+                        #usernameControl="ngModel"
+                        [appCredentialsValidator]="'username'"
+                        required
+                    >
+                    <mat-hint>O <strong>usuário</strong> será utilizado para login</mat-hint>
+                    <mat-error *ngIf="usernameControl.hasError('required')">
+                        O <strong>usuário</strong> é obrigatório
+                    </mat-error>
+                    <mat-error *ngIf="usernameControl.hasError('usernameTaken') && !usernameControl.hasError('required')">
+                        Este <strong>usuário</strong> já está sendo utilizado
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field 
+                    class="example-full-width user-form__item-50 user-form__item">
+                    <mat-label>Email</mat-label>
+                    <input 
+                        type="text"
+                        name="email"
+                        matInput 
+                        [(ngModel)]="userSelected.email"
+                        [ngModelOptions]="{ updateOn: 'blur' }"
+                        #emailControl="ngModel"
+                        required
+                        appEmailPatternValidator
+                        [appCredentialsValidator]="'email'"
+                    >
+                    <mat-error *ngIf="emailControl.hasError('required')">
+                        O <strong>email</strong> é obrigatório
+                    </mat-error>
+                    <mat-error *ngIf="emailControl.hasError('invalidEmailPattern') && !emailControl.hasError('required')">
+                        O <strong>email</strong> é inválido
+                    </mat-error>
+                    <mat-error *ngIf="emailControl.hasError('emailTaken') && !emailControl.hasError('required')">
+                        Este <strong>email</strong> já está sendo utilizado
+                    </mat-error>
+                </mat-form-field>
             </div>
+            <div class="user-form__row">
+                <mat-form-field class="user-form__item-50 user-form__item">
+                    <mat-label>Senha:</mat-label>
+                    <input 
+                        type="password"
+                        name="senha"
+                        matInput
+                        [(ngModel)]="userSelected.password"
+                        #passwordControl="ngModel"
+                        appPasswordStrengthValidator
+                        required                        
+                    >
+                    <mat-error *ngIf="passwordControl.hasError('required')">A <strong>senha</strong> é obrigatória</mat-error>
+                    <mat-error *ngIf="passwordControl.hasError('invalidPasswordStrength') && !passwordControl.hasError('required')">Digite uma <strong>senha mais forte</strong></mat-error>
+                </mat-form-field>
+            </div>
+
         </form>
     </mat-card-content>
 </mat-card>

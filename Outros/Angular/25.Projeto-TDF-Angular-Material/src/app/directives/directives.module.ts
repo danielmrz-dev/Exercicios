@@ -1,8 +1,19 @@
 import { NgModule } from "@angular/core";
+import { EmailPatternValidatorDirective } from './email-pattern-validator.directive';
+import { CredentialsValidatorDirective } from './credentials-validator.directive';
+import { PasswordStrengthValidatorDirective } from './password-strength-validator.directive';
 
 @NgModule({
-    declarations: [],
+    declarations: [
+      EmailPatternValidatorDirective,
+      CredentialsValidatorDirective,
+      PasswordStrengthValidatorDirective
+  ],
     imports: [],
-    exports: []
+    exports: [
+      EmailPatternValidatorDirective,
+      CredentialsValidatorDirective,
+      PasswordStrengthValidatorDirective
+    ]
 })
 export class DirectivesModule {}
