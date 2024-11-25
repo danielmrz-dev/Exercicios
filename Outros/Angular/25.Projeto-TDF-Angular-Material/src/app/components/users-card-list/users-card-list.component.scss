@@ -1,0 +1,10 @@
+.users {
+    display: flex;
+    justify-content: space-around;
+    max-width: 100%;
+    gap: 1rem;
+    &__card {
+        width: 100%;
+        cursor: pointer;
+    }
+}
