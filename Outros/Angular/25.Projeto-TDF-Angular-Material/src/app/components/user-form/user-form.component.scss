@@ -14,4 +14,30 @@
     &__item-100 {
         width: 100%;
     }
+    &__musics {
+        width: 100%;
+        padding: 20px;
+    }
+    &__musics-title {
+        padding: 20px;
+    }
+    &__button-container {
+        justify-content: end;
+    }
+}
+
+.strong-password {
+    ::ng-deep &.mat-mdc-progress-bar.mat-primary {
+        --mdc-linear-progress-active-indicator-color: #008000;
+    }
+}
+.medium-password {
+    ::ng-deep &.mat-mdc-progress-bar.mat-primary {
+        --mdc-linear-progress-active-indicator-color: #ffe100;
+    }
+}
+.weak-password {
+    ::ng-deep &.mat-mdc-progress-bar.mat-primary {
+        --mdc-linear-progress-active-indicator-color: #f84633;
+    }
 }
