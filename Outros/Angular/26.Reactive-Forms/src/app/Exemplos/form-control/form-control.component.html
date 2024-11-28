@@ -1,0 +1,35 @@
+<label for="name">Nome:</label>
+
+<input 
+    type="text"
+    id="name"
+    [formControl]="nome"
+    (input)="inputAlterado()"
+>
+<br>
+
+<p> Valor: {{ nome.value }} </p>
+<p> Valido: {{ nome.valid }} </p>
+
+<div style="color: red">
+    <div *ngIf="nome.hasError('required')">Campo obrigatório</div>
+    <div *ngIf="nome.hasError('minlength') && !nome.hasError('required')">Muito curto</div>
+    <div *ngIf="nome.hasError('maxlength') && !nome.hasError('required')">Muito longo</div>
+    <div *ngIf="nome.hasError('invalidText') && !nome.hasError('required')"> {{ nome.errors?.['invalidText'] }} </div>
+</div>
+
+<button (click)="mostrarStatus()">
+    Mostrar Status
+</button>
+<br>
+<button (click)="alterarValor()">Alterar valor</button>
+<br>
+<button (click)="desabilitar()">Desabilitar</button>
+<br>
+<button (click)="habilitar()">Habilitar</button>
+<br>
+<button (click)="resetar()">Resetar</button>
+<br>
+<button (click)="setValidators()">Set Validators</button>
+<br>
+<button (click)="addValidator()">Add Validators</button>
