@@ -1,0 +1,12 @@
+<label for="name">Nome: </label>
+<input type="text" id="name" [formControl]="nome">
+
+<div>
+    <p class="p1" *ngIf="nome.pending" >Validando...</p>
+    <p class="p2" *ngIf="!nome.pending && !nome.hasError('userValidator') && nome.valid && nome.dirty" >Usuário existente!</p>
+    <p class="p3" *ngIf="!nome.pending && nome.hasError('userValidator') && !nome.valid && nome.dirty" >Usuário inexistente!</p>
+</div>
+
+<p>Válido: {{ nome.valid }} </p>
+<p>Tocado: {{ nome.touched }} </p>
+<p>Sujo: {{ nome.dirty }} </p>

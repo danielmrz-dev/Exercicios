@@ -1,0 +1,22 @@
+<form [formGroup]="pessoaForm" (submit)="logarDados(pessoaForm)">
+    
+    <div>
+        <label for="nome"></label>
+        <input 
+            type="text" 
+            id="nome" 
+            formControlName="nome"
+        >
+    </div>
+
+    <div>
+        <label for="email"></label>
+        <input 
+            type="text" 
+            id="email" 
+            formControlName="email"
+        >
+    </div>
+
+    <button [disabled]="pessoaForm.invalid">Enviar</button>
+</form>
