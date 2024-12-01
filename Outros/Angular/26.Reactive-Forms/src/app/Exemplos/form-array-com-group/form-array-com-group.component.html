@@ -1,5 +1,8 @@
 <form [formGroup]="musicasForm">
     <div formArrayName="musicas">
+
+        <button (click)="adicionarMusica()">Adicionar grupo</button>
+
         <div 
             *ngFor="let musica of musicas.controls; let i = index"
             [formGroupName]="i"
@@ -17,6 +20,8 @@
                 [id]="'banda-' + i" 
                 formControlName="banda"
             >
+
+            <button (click)="removerMusica(i)">Remover música</button>
         </div>
         <p>FormArray Válido: {{ musicas.valid }} </p>
         <p>FormGroup Musicas Form Válido: {{ musicasForm.valid }} </p>
