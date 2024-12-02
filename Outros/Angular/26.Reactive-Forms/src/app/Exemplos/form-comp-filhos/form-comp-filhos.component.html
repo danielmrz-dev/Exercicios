@@ -1,0 +1,11 @@
+
+<form [formGroup]="pessoaForm" (ngSubmit)="logar()">
+    <label for="nome">Nome: </label>
+    <input type="text" id="nome" formControlName="nome">
+
+    <br>
+
+    <app-endereco [pessoaForm]="pessoaForm"></app-endereco>
+    
+    <button [disabled]="pessoaForm.invalid">Enviar</button>
+</form>

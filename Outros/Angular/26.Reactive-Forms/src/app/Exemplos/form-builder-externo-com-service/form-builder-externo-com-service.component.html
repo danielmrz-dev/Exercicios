@@ -1,8 +1,8 @@
-<form [formGroup]="pessoaForm" (ngSubmit)="logarDados()">
+<form [formGroup]="form.pessoaForm" (ngSubmit)="logarDados()">
     <div>
         <label for="nome">Nome: </label>
         <input type="text" id="nome" formControlName="nome">
-        <p *ngIf="nome.hasError('required')">Nome obrigatório</p>
+        <p *ngIf="form.nome.hasError('required')">Nome obrigatório</p>
     </div>
 
     <div>
@@ -24,10 +24,10 @@
     </div>
 
 
-    <div formArrayName="musicas" *ngFor="let musica of musicas.controls; let i = index">
+    <div formArrayName="musicas" *ngFor="let musica of form.musicas.controls; let i = index">
         <label [for]="'musica-'+i">Música {{ i }}: </label>
         <input type="text" [id]="'musica-'+i" [formControlName]="i">
     </div>
 
-    <button type="submit" [disabled]="pessoaForm.invalid">Enviar</button>
+    <button type="submit" [disabled]="form.pessoaForm.invalid">Enviar</button>
 </form>

@@ -1,0 +1,21 @@
+<form [formGroup]="pessoaForm">
+    <div>
+        <label for="senha">Senha: </label>
+        <input type="text" formControlName="senha">
+    </div>
+
+    <div>
+        <label for="confirmacaoSenha">Confirmacao de senha: </label>
+        <input type="text" formControlName="confirmacaoSenha">
+    </div>
+
+    <div *ngIf="pessoaForm.get('confirmacaoSenha')?.invalid && pessoaForm.get('confirmacaoSenha')?.touched">
+        <p *ngIf="pessoaForm.get('confirmacaoSenha')?.hasError('invalidPasswordConfirmation')">Confirmação de senha inválida</p>
+    </div>
+
+    <button (click)="mostrarForm()">Mostrar Form</button>
+</form>
+
+<p>PessoaForm válido: {{ pessoaForm.valid }} </p>
+<p>PessoaForm Senha válido: {{ pessoaForm.get('senha')?.valid }} </p>
+<p>PessoaForm Confirmação senha válido: {{ pessoaForm.get('confirmacaoSenha')?.valid }} </p>

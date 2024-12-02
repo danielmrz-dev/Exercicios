@@ -1,8 +1,13 @@
-import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Injectable } from "@angular/core";
+import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from "@angular/forms";
 
-export class PessoaFormController {
-    pessoaForm!: FormGroup;
+@Injectable({
+    providedIn: "root"
+})
+export class PessoaFormControllerService {
 
+    pessoaForm!: FormGroup
+    
     constructor(private readonly formBuilder: FormBuilder) {
         this.pessoaForm = this.formBuilder.group({
             nome: ['', [Validators.required]],
@@ -33,7 +38,7 @@ export class PessoaFormController {
         return this.pessoaForm.get('endereco')?.get('rua') as FormControl
     }
 
-    logarDados() {
-        console.log('Dados do formulário =>', this.pessoaForm);
-    }
+
+
+
 }
