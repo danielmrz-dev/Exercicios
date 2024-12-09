@@ -1,0 +1,18 @@
+<form [formGroup]="pessoaForm" (ngSubmit)="onSubmit()">
+    <label for="nome">Nome: </label>
+    <input type="text" id="nome" formControlName="nome">
+    <div *ngIf="nome.invalid && (nome.touched || nome.dirty)">
+        <p *ngIf="nome.hasError('required') && nome.touched" style="color: red; font-size: 14px">Nome obrigatório</p>
+    </div>
+    <br>
+    
+    <label for="email">Email: </label>
+    <input type="text" id="email" formControlName="email">
+    <div *ngIf="email.invalid && (email.touched || email.dirty)">
+        <p *ngIf="email.hasError('required') && email.touched" style="color: red; font-size: 14px">Email obrigatório</p>
+    </div>
+
+    <br>
+
+    <button type="submit">Enviar</button>
+</form>

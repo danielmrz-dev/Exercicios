@@ -7,6 +7,8 @@ import { UsersListResponse } from './types/users-list-response';
 import { GenresListResponse } from './types/genres-list-response';
 import { StatesListResponse } from './types/states-list-response';
 import { IUser } from './interfaces/user/user.interface';
+import { MatDialog } from '@angular/material/dialog';
+import { UserBeforeAndAfterDialogComponent } from './components/user-before-and-after-dialog/user-before-and-after-dialog.component';
 
 @Component({
   selector: 'app-root',
@@ -14,6 +16,7 @@ import { IUser } from './interfaces/user/user.interface';
   styleUrl: './app.component.scss',
 })
 export class AppComponent implements OnInit {
+
   userSelected: IUser = {} as IUser
   userSelectedIndex: number | undefined
   
@@ -24,7 +27,8 @@ export class AppComponent implements OnInit {
   constructor(
     private readonly _usersService: UsersService,
     private readonly _genresService: GenresService,
-    private readonly _brazilianStatesService: BrazilianStatesService
+    private readonly _brazilianStatesService: BrazilianStatesService,
+    private readonly _matDialog: MatDialog
   ) {}
 
   ngOnInit(): void {
@@ -42,6 +46,34 @@ export class AppComponent implements OnInit {
     }
   }
 
+  onFormSubmit() {
+    if (this.userSelectedIndex === undefined) return;
+    const originalUser = this.usersList[this.userSelectedIndex]
+    this.openBeforeAndAfterDialog(originalUser, this.userSelected, this.userSelectedIndex)  
+  }
+
+  openBeforeAndAfterDialog(originalUser: IUser, updatedUser: IUser, userSelectedIndex: number) {
+    const dialogRef = this._matDialog.open(UserBeforeAndAfterDialogComponent, {
+      minWidth: '70%',
+      data: {
+        originalUser,
+        updatedUser
+      }
+    })
+
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result) {
+        this.confirmUserUpdate(updatedUser, userSelectedIndex)
+      }
+    })
+  }
+  confirmUserUpdate(updatedUser: IUser, userSelectedIndex: number) {
+    this.usersList[userSelectedIndex] = structuredClone(updatedUser);
+
+    console.group('Atleração finalizada - Lista de usuários atualizada:')
+    console.log('Lista de usuários atual:', this.usersList);
+    console.groupEnd()
+  }
   private getStates() {
     this._brazilianStatesService.getStates().subscribe((statesListResponse) => {
       this.statesList = statesListResponse;
