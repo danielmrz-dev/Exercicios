@@ -7,10 +7,10 @@
       <div class="p-4">
         <mat-tab-group [(selectedIndex)]="currentTabIndex">
           <mat-tab label="Geral">
-            <app-general-information [user]="usersList[1]"></app-general-information>
+            <app-general-information [user]="usersList[2]"></app-general-information>
           </mat-tab>
           <mat-tab label="Contato">
-            <app-contact-information></app-contact-information>
+            <app-contact-information [user]="usersList[2]"></app-contact-information>
           </mat-tab>
           <mat-tab label="Dependente"> Content 3 </mat-tab>
         </mat-tab-group>
