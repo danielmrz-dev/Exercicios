@@ -9,3 +9,12 @@ body {
     sans-serif; 
     background-color: #8080802f;
 }
+
+.user-card-hover {
+    transition: background-color .3s ease;
+    cursor: pointer;
+}
+
+.user-card-hover:hover {
+    background-color: #ccced2;
+}

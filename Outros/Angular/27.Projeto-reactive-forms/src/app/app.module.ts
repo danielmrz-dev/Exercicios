@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 
@@ -7,6 +7,10 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { AngularMaterialModule } from './angular-material/angular-material.module';
 import { ComponentsModule } from './components/components.module';
 import { provideHttpClient } from '@angular/common/http';
+import localePt from '@angular/common/locales/pt';
+import { registerLocaleData } from '@angular/common';
+
+registerLocaleData(localePt, 'pt-BR')
 
 
 @NgModule({
@@ -21,7 +25,10 @@ import { provideHttpClient } from '@angular/common/http';
   ],
   providers: [
     provideAnimationsAsync(),
-    provideHttpClient()
+    provideHttpClient(),
+    [
+      { provide: LOCALE_ID, useValue: 'pt-BR' }
+    ]
   ],
   bootstrap: [AppComponent]
 })

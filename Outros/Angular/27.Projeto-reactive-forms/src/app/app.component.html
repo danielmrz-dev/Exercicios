@@ -1,10 +1,20 @@
-<div class="
-  bg-blue-300
-  sm:bg-orange-300
-  lg:bg-pink-300
-    lg:p-4
-    container
-    mx-auto
-    ">
-  Minha div!
+<div class="p-4 max-w-screen-xl mx-auto">
+  <mat-card>
+    <mat-card-content>
+      <div>
+        <app-users-list [usersList]="usersList"></app-users-list>
+      </div>
+      <div class="p-4">
+        <mat-tab-group [(selectedIndex)]="currentTabIndex">
+          <mat-tab label="Geral">
+            <app-general-information [user]="usersList[1]"></app-general-information>
+          </mat-tab>
+          <mat-tab label="Contato">
+            <app-contact-information></app-contact-information>
+          </mat-tab>
+          <mat-tab label="Dependente"> Content 3 </mat-tab>
+        </mat-tab-group>
+      </div>
+    </mat-card-content>
+  </mat-card>
 </div>
