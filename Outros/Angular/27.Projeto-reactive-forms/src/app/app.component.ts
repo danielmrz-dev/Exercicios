@@ -6,6 +6,7 @@ import { UsersService } from './services/users.service';
 import { UsersListResponse } from './types/users-list-response';
 import { take } from 'rxjs';
 import { MatTabChangeEvent } from '@angular/material/tabs';
+import { IUser } from './interfaces/user/user.interface';
 
 @Component({
   selector: 'app-root',
@@ -15,7 +16,10 @@ import { MatTabChangeEvent } from '@angular/material/tabs';
 export class AppComponent implements OnInit {
 
   usersList: UsersListResponse = [];
-  currentTabIndex: number = 1
+  currentTabIndex: number = 0;
+  userSelectedIndex: number | undefined
+  userSelected: IUser = {} as IUser;
+  isInEditMode: boolean = false
 
   constructor(
     private readonly _countriesService: CountriesService,
@@ -28,5 +32,22 @@ export class AppComponent implements OnInit {
     this._usersService.getUsers().pipe(take(1)).subscribe((usersResponse) => {
       this.usersList = usersResponse
     })
+  }
+
+  onUserSelect(userIndex: number): void {
+    const userFound = this.usersList[userIndex]
+    
+    if (userFound) {
+      this.userSelectedIndex = userIndex
+      this.userSelected = structuredClone(userFound)
+    }
+  }
+
+  onEditButton() {
+    this.isInEditMode = true
+  }
+
+  onCancelButton() {
+    this.isInEditMode = false
   }
 }

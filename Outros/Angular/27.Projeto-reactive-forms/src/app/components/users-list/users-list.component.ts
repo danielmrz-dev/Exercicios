@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { UsersListResponse } from '../../types/users-list-response';
 
 @Component({
@@ -8,4 +8,11 @@ import { UsersListResponse } from '../../types/users-list-response';
 })
 export class UsersListComponent {
   @Input({ required: true }) usersList: UsersListResponse = []
+  @Output('onUserSelected') onUserSelectedEmit = new EventEmitter<number>()
+
+  userSelectedIndex: number | undefined;
+  onUserSelected(userIndex: number) {
+    this.userSelectedIndex = userIndex
+    this.onUserSelectedEmit.emit(userIndex)
+  }
 }

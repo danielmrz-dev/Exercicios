@@ -15,6 +15,7 @@ body {
     cursor: pointer;
 }
 
+.user-selected,
 .user-card-hover:hover {
-    background-color: #ccced2;
+    background-color: #ccced2 !important;
 }

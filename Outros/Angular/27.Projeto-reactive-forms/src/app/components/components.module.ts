@@ -7,6 +7,10 @@ import { GeneralInformationComponent } from './general-information/general-infor
 import { UserInfoItemComponent } from './user-info-item/user-info-item.component';
 import { ContactInformationComponent } from './contact-information/contact-information.component';
 import { PhoneListComponent } from './contact-information/components/phone-list/phone-list.component';
+import { AddressListComponent } from './contact-information/components/address-list/address-list.component';
+import { DependentsListComponent } from './dependents-list/dependents-list.component';
+import { ButtonsContainerComponent } from './buttons-container/buttons-container.component';
+import { ButtonStyleDirective } from './buttons-container/button-style.directive';
 
 @NgModule({
     declarations: [
@@ -14,7 +18,11 @@ import { PhoneListComponent } from './contact-information/components/phone-list/
       GeneralInformationComponent,
       UserInfoItemComponent,
       ContactInformationComponent,
-      PhoneListComponent
+      PhoneListComponent,
+      AddressListComponent,
+      DependentsListComponent,
+      ButtonsContainerComponent,
+      ButtonStyleDirective
   ],
     imports: [
         CommonModule,
@@ -24,7 +32,9 @@ import { PhoneListComponent } from './contact-information/components/phone-list/
     exports: [
       UsersListComponent,
       GeneralInformationComponent,
-      ContactInformationComponent
+      ContactInformationComponent,
+      DependentsListComponent,
+      ButtonsContainerComponent,
     ],
 })
 export class ComponentsModule {}

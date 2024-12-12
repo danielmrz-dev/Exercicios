@@ -1,0 +1,19 @@
+<div class=" flex justify-end gap-4">
+    <button 
+        appButtonStyle 
+        class="bg-indigo-600 hover:bg-indigo-400"
+        (click)="onEditButton()"
+        *ngIf="!isInEditMode"
+    >Editar</button>
+    <button 
+        appButtonStyle
+        class="bg-red-600 hover:bg-red-400"
+        (click)="onCancelButton()"
+        *ngIf="isInEditMode"
+    >Cancelar</button>
+    <button 
+        appButtonStyle
+        class="bg-green-600 hover:bg-green-400"
+        *ngIf="isInEditMode"
+    >Confirmar</button>
+</div>
