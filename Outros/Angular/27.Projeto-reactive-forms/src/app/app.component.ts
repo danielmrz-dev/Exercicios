@@ -16,7 +16,6 @@ import { IUser } from './interfaces/user/user.interface';
 export class AppComponent implements OnInit {
 
   usersList: UsersListResponse = [];
-  currentTabIndex: number = 0;
   userSelectedIndex: number | undefined
   userSelected: IUser = {} as IUser;
   isInEditMode: boolean = false

@@ -2,18 +2,37 @@ import { NgModule } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatTabsModule } from '@angular/material/tabs';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { FormsModule } from '@angular/forms';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { provideNativeDateAdapter } from '@angular/material/core';
 
 
 @NgModule({
     imports: [
         MatButtonModule,
         MatCardModule,
-        MatTabsModule
+        MatTabsModule,
+        MatInputModule,
+        MatFormFieldModule,
+        FormsModule,
+        MatAutocompleteModule,
+        MatRadioModule,
+        MatDatepickerModule,
     ],
     exports: [
         MatButtonModule,
         MatCardModule,
-        MatTabsModule
+        MatTabsModule,
+        MatInputModule,
+        MatFormFieldModule,
+        MatAutocompleteModule,
+        MatRadioModule,
+        MatDatepickerModule,
     ],
+  providers: [provideNativeDateAdapter()]
 })
 export class AngularMaterialModule {}

@@ -11,6 +11,10 @@ import { AddressListComponent } from './contact-information/components/address-l
 import { DependentsListComponent } from './dependents-list/dependents-list.component';
 import { ButtonsContainerComponent } from './buttons-container/buttons-container.component';
 import { ButtonStyleDirective } from './buttons-container/button-style.directive';
+import { UserInformationContainerComponent } from './user-information-container/user-information-container.component';
+import { GeneralInformationEditComponent } from './general-information-edit/general-information-edit.component';
+import { ContactInformationEditComponent } from './contact-information-edit/contact-information-edit.component';
+
 
 @NgModule({
     declarations: [
@@ -22,12 +26,15 @@ import { ButtonStyleDirective } from './buttons-container/button-style.directive
       AddressListComponent,
       DependentsListComponent,
       ButtonsContainerComponent,
-      ButtonStyleDirective
+      ButtonStyleDirective,
+      UserInformationContainerComponent,
+      GeneralInformationEditComponent,
+      ContactInformationEditComponent
   ],
     imports: [
         CommonModule,
         AngularMaterialModule,
-        PipesModule
+        PipesModule,
     ],
     exports: [
       UsersListComponent,
@@ -35,6 +42,7 @@ import { ButtonStyleDirective } from './buttons-container/button-style.directive
       ContactInformationComponent,
       DependentsListComponent,
       ButtonsContainerComponent,
+      UserInformationContainerComponent
     ],
 })
 export class ComponentsModule {}
