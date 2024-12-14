@@ -14,6 +14,9 @@ import { ButtonStyleDirective } from './buttons-container/button-style.directive
 import { UserInformationContainerComponent } from './user-information-container/user-information-container.component';
 import { GeneralInformationEditComponent } from './general-information-edit/general-information-edit.component';
 import { ContactInformationEditComponent } from './contact-information-edit/contact-information-edit.component';
+import { PhoneListEditComponent } from './contact-information-edit/components/phone-list-edit/phone-list-edit.component';
+import { AddressListEditComponent } from './contact-information-edit/components/address-list-edit/address-list-edit.component';
+import { DependentsListEditComponent } from './dependents-list-edit/dependents-list-edit.component';
 
 
 @NgModule({
@@ -29,7 +32,10 @@ import { ContactInformationEditComponent } from './contact-information-edit/cont
       ButtonStyleDirective,
       UserInformationContainerComponent,
       GeneralInformationEditComponent,
-      ContactInformationEditComponent
+      ContactInformationEditComponent,
+      PhoneListEditComponent,
+      AddressListEditComponent,
+      DependentsListEditComponent
   ],
     imports: [
         CommonModule,

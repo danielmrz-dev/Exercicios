@@ -1,0 +1,30 @@
+    <div class="p-4">
+    <p class="text-xl font-semibold">
+        Dependentes:
+    </p>
+    <button 
+        appButtonStyle
+        class="bg-green-600 hover:bg-green-400"
+    >Novo Dependente</button>
+
+    <div class="my-4 grid grid-cols-2 sm:grid-cols-4 gap-4">
+        <mat-form-field class="w-full">
+            <mat-label>Nome</mat-label>
+            <input type="text" matInput placeholder="Fulano" value="Fulano">
+        </mat-form-field>
+        <mat-form-field class="w-full">
+            <mat-label>Idade</mat-label>
+            <input type="text" matInput placeholder="20" value="20">
+        </mat-form-field>
+        <mat-form-field class="w-full">
+            <mat-label>Documento</mat-label>
+            <input type="text" matInput placeholder="132.123.132-22" value="132.123.132-22">
+        </mat-form-field>
+        <div class="flex justify-center items-baseline box-border p-3">
+            <button appButtonStyle class="bg-red-600 hover:bg-red-400">Remover</button>
+        </div>
+    </div>
+
+    <hr>
+
+</div>
