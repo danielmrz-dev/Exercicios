@@ -6,5 +6,4 @@ import { Component } from '@angular/core';
   styleUrl: './phone-list-edit.component.scss'
 })
 export class PhoneListEditComponent {
-
 }

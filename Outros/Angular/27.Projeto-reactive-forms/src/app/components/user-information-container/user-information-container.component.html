@@ -1,7 +1,11 @@
 <mat-tab-group [(selectedIndex)]="currentTabIndex">
     <mat-tab label="Geral">
-        <app-general-information [user]="userSelected"></app-general-information>
+        <app-general-information 
+            *ngIf="!isInEditMode"
+            [user]="userSelected"
+        ></app-general-information>
         <app-general-information-edit 
+            *ngIf="isInEditMode"
             [userForm]="userForm"
             [countriesList]="countriesList"
             [statesList]="statesList"
@@ -9,11 +13,25 @@
         ></app-general-information-edit>
     </mat-tab>
     <mat-tab label="Contato">
-        <app-contact-information [user]="userSelected"></app-contact-information>
-        <app-contact-information-edit></app-contact-information-edit>
+        <app-contact-information 
+            *ngIf="!isInEditMode"
+            [user]="userSelected"
+        ></app-contact-information>
+        <app-contact-information-edit *ngIf="isInEditMode"></app-contact-information-edit>
     </mat-tab>
     <mat-tab label="Dependente">
-        <app-dependents-list [dependentsList]="userSelected.dependentsList"></app-dependents-list>
-        <app-dependents-list-edit></app-dependents-list-edit>
+        <app-dependents-list 
+            *ngIf="!isInEditMode"
+            [dependentsList]="userSelected.dependentsList"
+        ></app-dependents-list>
+        <app-dependents-list-edit *ngIf="isInEditMode"></app-dependents-list-edit>
     </mat-tab>
 </mat-tab-group>
+
+<h1>UserForm Válido: {{ userForm.valid }} </h1>
+<h1>GeneralInformation Group Válido: {{ userForm.get('generalInformation')?.valid }} </h1>
+
+<button 
+    (click)="mostrarUserForm()" 
+    class="rounded-md px-3 py-2 text-lg font-medium leading-5 text-white transition-all duration-200 bg-indigo-500"
+>Mostrar Form</button>

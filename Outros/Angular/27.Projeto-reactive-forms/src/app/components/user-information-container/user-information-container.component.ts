@@ -43,6 +43,9 @@ export class UserInformationContainerComponent extends UserFormController implem
     this.getStatesList(countryName)
   }
 
+  mostrarUserForm() {
+    console.log(this.userForm);    
+  }
   private getCountriesList() {
     this._countriesService.getCountries().pipe(take(1)).subscribe((countriesResponse) => {
       this.countriesList = countriesResponse

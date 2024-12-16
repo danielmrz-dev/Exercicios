@@ -5,7 +5,6 @@ import { CitiesService } from './services/cities.service';
 import { UsersService } from './services/users.service';
 import { UsersListResponse } from './types/users-list-response';
 import { take } from 'rxjs';
-import { MatTabChangeEvent } from '@angular/material/tabs';
 import { IUser } from './interfaces/user/user.interface';
 
 @Component({
