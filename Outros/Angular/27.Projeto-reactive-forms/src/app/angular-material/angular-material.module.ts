@@ -8,7 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatDatepickerModule } from '@angular/material/datepicker';
-import { provideNativeDateAdapter } from '@angular/material/core';
+import { MAT_DATE_LOCALE, provideNativeDateAdapter } from '@angular/material/core';
 
 
 @NgModule({
@@ -33,6 +33,9 @@ import { provideNativeDateAdapter } from '@angular/material/core';
         MatRadioModule,
         MatDatepickerModule,
     ],
-  providers: [provideNativeDateAdapter()]
+    providers: [
+        provideNativeDateAdapter(),
+        { provide: MAT_DATE_LOCALE, useValue: 'pt-BR' }
+    ]
 })
 export class AngularMaterialModule {}

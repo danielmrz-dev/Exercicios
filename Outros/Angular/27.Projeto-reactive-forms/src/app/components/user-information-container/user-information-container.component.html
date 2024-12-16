@@ -1,7 +1,12 @@
 <mat-tab-group [(selectedIndex)]="currentTabIndex">
     <mat-tab label="Geral">
         <app-general-information [user]="userSelected"></app-general-information>
-        <app-general-information-edit></app-general-information-edit>
+        <app-general-information-edit 
+            [userForm]="userForm"
+            [countriesList]="countriesList"
+            [statesList]="statesList"
+            (onCountrySelectedEmit)="onCountrySelected($event)"
+        ></app-general-information-edit>
     </mat-tab>
     <mat-tab label="Contato">
         <app-contact-information [user]="userSelected"></app-contact-information>

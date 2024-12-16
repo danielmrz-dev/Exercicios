@@ -1,13 +1,15 @@
 import { inject } from "@angular/core";
-import { FormArray, FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from "@angular/forms";
 import { IUser } from "../../interfaces/user/user.interface";
 import { PhoneList } from "../../types/phone-list";
 import { AddressList } from "../../types/address-list";
 import { DependentsList } from "../../types/dependent-list";
+import { convertPtBrDateToDateObj } from "../../utils/convert-pt-br-date-to-date-obj";
 
 export class UserFormController {
 
     userForm!: FormGroup
+    private emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     private _fb = inject(FormBuilder)
     constructor() {
         this.createUserForm()
@@ -83,14 +85,18 @@ export class UserFormController {
     }
 
     private fulfillGeneralInformation(user: IUser) {
-        this.generalInformation.patchValue(user);
+        const newUser = {
+            ...user,
+            birthDate: convertPtBrDateToDateObj(user.birthDate)
+        }
+        this.generalInformation.patchValue(newUser);
     }
 
     private createUserForm() {
         this.userForm = this._fb.group({
             generalInformation: this._fb.group({
                 name: ['', Validators.required],
-                email: ['', Validators.required],
+                email: ['', [Validators.required, Validators.pattern(this.emailPattern)]],
                 country: ['', Validators.required],
                 state: ['', Validators.required],
                 maritalStatus: [null, Validators.required],
