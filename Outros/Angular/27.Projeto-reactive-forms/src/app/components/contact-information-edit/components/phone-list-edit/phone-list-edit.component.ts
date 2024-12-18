@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { FormArray, FormGroup } from '@angular/forms';
+import { PhoneType } from '../../../../enums/phone-type.enum';
 
 @Component({
   selector: 'app-phone-list-edit',

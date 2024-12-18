@@ -3,8 +3,15 @@
         <ng-container formArrayName="phoneList">
             <mat-form-field class="w-full" *ngFor="let phone of phoneList.controls; let i = index" [formGroupName]="i">
                 <mat-label>{{ phone.value.typeDescription }}:</mat-label>
-                <input type="text" matInput placeholder="+55 11 1234-1232" mask="+00 (00) 0000-0000" formControlName="number">
-                <mat-error>O <strong>número</strong> é inválido</mat-error>
+                <input 
+                    type="text" 
+                    matInput 
+                    [placeholder]="phoneList.value[i].type | phonePlaceholder"  
+                    [mask]="phoneList.value[i].type | phoneMask" 
+                    formControlName="number"
+                >
+                <mat-error *ngIf="phone.get('number')?.hasError('required')">O <strong>número de telefone</strong> é obrigatório</mat-error>
+                <mat-error *ngIf="phone.get('number')?.hasError('mask') && !phone.get('number')?.hasError('required')">Este <strong>número</strong> é inválido</mat-error>
             </mat-form-field>
         </ng-container>        
     </ng-container>
