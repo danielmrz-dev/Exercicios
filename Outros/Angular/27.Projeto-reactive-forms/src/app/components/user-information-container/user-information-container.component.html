@@ -17,7 +17,7 @@
             *ngIf="!isInEditMode"
             [user]="userSelected"
         ></app-contact-information>
-        <app-contact-information-edit *ngIf="isInEditMode"></app-contact-information-edit>
+        <app-contact-information-edit *ngIf="isInEditMode" [userForm]="userForm"></app-contact-information-edit>
     </mat-tab>
     <mat-tab label="Dependente">
         <app-dependents-list 
