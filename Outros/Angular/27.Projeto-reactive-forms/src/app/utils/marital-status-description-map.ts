@@ -12,5 +12,3 @@ export const maritalStatusArray = Object.keys(maritalStatusDescriptionMap).map(N
         description: maritalStatusDescriptionMap[key as MaritalStatus]
     }
 })
-
-console.log(maritalStatusArray);

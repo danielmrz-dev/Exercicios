@@ -26,7 +26,6 @@ export class AddressListComponent implements OnChanges {
     const originalAddressList = this.userAddressList && this.userAddressList.length > 0 ? this.userAddressList : [];
 
     prepareAddressList(originalAddressList, true, (address) => {
-      console.log(address);      
       this.addressListToDisplay.push(address)
     })
   }

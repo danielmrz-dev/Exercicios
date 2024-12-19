@@ -7,6 +7,8 @@ import { DependentsList } from "../../types/dependent-list";
 import { convertPtBrDateToDateObj } from "../../utils/convert-pt-br-date-to-date-obj";
 import { preparePhoneList } from "../../utils/prepare-phone-list";
 import { PhoneType } from "../../enums/phone-type.enum";
+import { prepareAddressList } from "../../utils/prepare-address-list";
+import { requiredAddressValidator } from "../../utils/user-form-validators/required-address-validator";
 
 export class UserFormController {
 
@@ -39,7 +41,6 @@ export class UserFormController {
         this.fulfillPhoneList(user.phoneList)
         this.fulfillAddressList(user.addressList)
         this.fulfillDependentsList(user.dependentsList)
-        console.log(this.userForm);
     }
 
     private resetUserForm() {
@@ -63,14 +64,19 @@ export class UserFormController {
         })
     }
     private fulfillAddressList(userAddressList: AddressList) {
-        userAddressList.forEach((address) => {
+
+        prepareAddressList(userAddressList, false, (address) => {
             this.addressList.push(this._fb.group({
-                type: [address.type, Validators.required],
-                street: [address.street, Validators.required],
-                complement: [address.complement, Validators.required],
-                country: [address.country, Validators.required],
-                state: [address.state, Validators.required],
-                city: [address.city, Validators.required],
+                type: [address.type],
+                typeDescription: [{value: address.typeDescription, disabled: true}],
+                street: [address.street],
+                complement: [address.complement],
+                country: [address.country],
+                state: [address.state],
+                city: [address.city],
+            }, 
+            {
+                validators: requiredAddressValidator
             }))
         })
     }
@@ -84,8 +90,6 @@ export class UserFormController {
                 number: [phone.phoneNumber, phoneValidators]
             }))
         })
-
-        console.log(this.phoneList);        
     }
 
     private fulfillGeneralInformation(user: IUser) {
