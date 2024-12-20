@@ -1,7 +1,9 @@
 <div class="p-4 max-w-screen-xl mx-auto">
   <mat-card>
     <mat-card-content>
-      <app-users-list [usersList]="usersList" (onUserSelected)="onUserSelect($event)"></app-users-list>
+      <app-users-list [usersList]="usersList" (onUserSelected)="onUserSelect($event)"
+      [isInEditMode]="isInEditMode"
+      ></app-users-list>
       <app-buttons-container
         *ngIf="userSelectedIndex !== undefined"
         [isInEditMode]="isInEditMode"

@@ -4,7 +4,8 @@
         *ngFor="let user of usersList; let i = index"
         (click)="onUserSelected(i)"
         [ngClass]="{
-            'user-selected': userSelectedIndex === i
+            'user-selected': userSelectedIndex === i,
+            'user-card-disabled': userSelectedIndex !== i && isInEditMode,
         }"    
     >
         <mat-card-title> {{ user.name }} </mat-card-title>

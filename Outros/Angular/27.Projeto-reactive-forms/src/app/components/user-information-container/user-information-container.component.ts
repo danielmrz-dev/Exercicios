@@ -57,5 +57,4 @@ export class UserInformationContainerComponent extends UserFormController implem
       this.statesList = statesList
     })
   }
-
 }
