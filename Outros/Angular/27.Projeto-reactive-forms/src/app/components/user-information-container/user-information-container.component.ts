@@ -1,8 +1,8 @@
-import { Component, inject, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, inject, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { IUser } from '../../interfaces/user/user.interface';
 import { UserFormController } from './user-form-controller';
 import { CountriesService } from '../../services/countries.service';
-import { take } from 'rxjs';
+import { distinctUntilChanged, take } from 'rxjs';
 import { CountriesList } from '../../types/countries-list';
 import { StatesService } from '../../services/states.service';
 import { StatesList } from '../../types/states-list';
@@ -23,8 +23,11 @@ export class UserInformationContainerComponent extends UserFormController implem
   @Input({ required: true }) userSelected: IUser = {} as IUser
   @Input({ required: true }) isInEditMode: boolean = false
 
+  @Output() onFormStatusChangeEmit = new EventEmitter<boolean>()
+
   ngOnInit(): void {
-    this.getCountriesList()
+    this.getCountriesList();
+    this.onUserFormStatusChange();
   }
 
   
@@ -41,6 +44,12 @@ export class UserInformationContainerComponent extends UserFormController implem
 
   onCountrySelected(countryName: string) {
     this.getStatesList(countryName)
+  }
+  
+  private onUserFormStatusChange() {
+    this.userForm.statusChanges
+      .pipe(distinctUntilChanged())
+      .subscribe(() => this.onFormStatusChangeEmit.emit(this.userForm.valid))
   }
 
   mostrarUserForm() {

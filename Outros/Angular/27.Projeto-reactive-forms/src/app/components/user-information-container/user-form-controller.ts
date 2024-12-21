@@ -24,6 +24,10 @@ export class UserFormController {
         return this.userForm.get('generalInformation') as FormGroup
     }
 
+    get contactInformation(): FormGroup {
+        return this.userForm.get('contactInformation') as FormGroup
+    }
+
     get phoneList(): FormArray {
         return this.userForm.get('contactInformation.phoneList') as FormArray
     }
@@ -42,6 +46,8 @@ export class UserFormController {
         this.fulfillPhoneList(user.phoneList)
         this.fulfillAddressList(user.addressList)
         this.fulfillDependentsList(user.dependentsList)
+        this.userForm.markAllAsTouched();
+        this.userForm.updateValueAndValidity();
     }
 
     removeDependent(dependentIndex: number) {

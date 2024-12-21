@@ -14,6 +14,11 @@
     <button 
         appButtonStyle
         class="bg-green-600 hover:bg-green-400"
+        [ngClass]="{
+            'bg-green-200': !enableSaveButton,
+            'bg-green-600 hover:bg-green-400': enableSaveButton
+        }"
         *ngIf="isInEditMode"
+        [disabled]="!enableSaveButton"
     >Confirmar</button>
 </div>

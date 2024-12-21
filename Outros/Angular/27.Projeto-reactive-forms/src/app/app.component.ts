@@ -18,6 +18,7 @@ export class AppComponent implements OnInit {
   userSelectedIndex: number | undefined
   userSelected: IUser = {} as IUser;
   isInEditMode: boolean = false
+  enableSaveButton: boolean = false
 
   constructor(
     private readonly _countriesService: CountriesService,
@@ -47,5 +48,9 @@ export class AppComponent implements OnInit {
 
   onCancelButton() {
     this.isInEditMode = false
+  }
+
+  onFormStatusChange(formStatus: boolean) {
+    setTimeout(() => this.enableSaveButton = formStatus, 0);
   }
 }
