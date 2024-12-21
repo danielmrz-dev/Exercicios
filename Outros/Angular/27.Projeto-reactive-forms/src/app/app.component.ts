@@ -19,6 +19,7 @@ export class AppComponent implements OnInit {
   userSelected: IUser = {} as IUser;
   isInEditMode: boolean = false
   enableSaveButton: boolean = false
+  userFormUpdated: boolean = false;
 
   constructor(
     private readonly _countriesService: CountriesService,
@@ -52,5 +53,10 @@ export class AppComponent implements OnInit {
 
   onFormStatusChange(formStatus: boolean) {
     setTimeout(() => this.enableSaveButton = formStatus, 0);
+  }
+
+  onUserFormFirstChange() {
+    console.log('Recebendo o output');    
+    this.userFormUpdated = true
   }
 }

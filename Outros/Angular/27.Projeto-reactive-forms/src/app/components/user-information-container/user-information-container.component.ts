@@ -24,6 +24,7 @@ export class UserInformationContainerComponent extends UserFormController implem
   @Input({ required: true }) isInEditMode: boolean = false
 
   @Output() onFormStatusChangeEmit = new EventEmitter<boolean>()
+  @Output() onUserFormFirstChangeEmit = new EventEmitter<void>()
 
   ngOnInit(): void {
     this.getCountriesList();
@@ -38,23 +39,36 @@ export class UserInformationContainerComponent extends UserFormController implem
 
     if (HAS_USER_SELECTED) {
       this.fulfillUserForm(this.userSelected)
+
+      this.onUserFormFirstChange()
+
       this.getStatesList(this.userSelected.country)
     }
   }
 
+  
   onCountrySelected(countryName: string) {
     this.getStatesList(countryName)
   }
   
+  mostrarUserForm() {
+    console.log(this.userForm);    
+  }
+  
+  private onUserFormFirstChange() {
+    this.userForm.valueChanges
+      .pipe(take(1))
+      .subscribe(() => {
+        this.onUserFormFirstChangeEmit.emit()
+    });
+  }
+
   private onUserFormStatusChange() {
     this.userForm.statusChanges
       .pipe(distinctUntilChanged())
       .subscribe(() => this.onFormStatusChangeEmit.emit(this.userForm.valid))
   }
 
-  mostrarUserForm() {
-    console.log(this.userForm);    
-  }
   private getCountriesList() {
     this._countriesService.getCountries().pipe(take(1)).subscribe((countriesResponse) => {
       this.countriesList = countriesResponse

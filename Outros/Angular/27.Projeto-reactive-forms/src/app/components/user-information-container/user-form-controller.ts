@@ -51,11 +51,13 @@ export class UserFormController {
     }
 
     removeDependent(dependentIndex: number) {
-        this.dependentsList.removeAt(dependentIndex)
+        this.dependentsList.removeAt(dependentIndex);
+        this.dependentsList.markAsDirty();
     }
 
     addDependent() {
-        this.dependentsList.push(this.createDependentGroup())
+        this.dependentsList.push(this.createDependentGroup());
+        this.dependentsList.markAsDirty();
     }
 
     private createDependentGroup(dependent: IDependent | null = null) {
