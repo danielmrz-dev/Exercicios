@@ -6,43 +6,50 @@ import { IUser } from './interfaces/user/user.interface';
 import { MatDialog } from '@angular/material/dialog';
 import { ConfirmationDialogComponent } from './components/confirmation-dialog/confirmation-dialog.component';
 import { IDialogConfirmationData } from './interfaces/dialog-confirmation-data.interface';
+import { UpdateUserService } from './services/update-user.service';
+import { UserFormRawValueService } from './services/user-form-raw-value.service';
+import { convertUserFormToUser } from './utils/convert-user-form-to-user';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss',
 })
 export class AppComponent implements OnInit {
-
   usersList: UsersListResponse = [];
-  userSelectedIndex: number | undefined
+  userSelectedIndex: number | undefined;
   userSelected: IUser = {} as IUser;
-  isInEditMode: boolean = false
-  enableSaveButton: boolean = false
+  isInEditMode: boolean = false;
+  enableSaveButton: boolean = false;
   userFormUpdated: boolean = false;
 
   constructor(
     private readonly _usersService: UsersService,
-    private readonly _matDialog: MatDialog
+    private readonly _matDialog: MatDialog,
+    private readonly _updateUserService: UpdateUserService,
+    private readonly _userFormRawValueService: UserFormRawValueService,
   ) {}
 
   ngOnInit(): void {
-    this._usersService.getUsers().pipe(take(1)).subscribe((usersResponse) => {
-      this.usersList = usersResponse
-    })
+    this._usersService
+      .getUsers()
+      .pipe(take(1))
+      .subscribe((usersResponse) => {
+        this.usersList = usersResponse;
+      });
   }
 
   onUserSelect(userIndex: number): void {
-    const userFound = this.usersList[userIndex]
-    
+    const userFound = this.usersList[userIndex];
+
     if (userFound) {
-      this.userSelectedIndex = userIndex
-      this.userSelected = structuredClone(userFound)
+      this.userSelectedIndex = userIndex;
+      this.userSelected = structuredClone(userFound);
     }
   }
 
   onEditButton() {
-    this.isInEditMode = true
+    this.isInEditMode = true;
   }
 
   onCancelButton() {
@@ -50,14 +57,17 @@ export class AppComponent implements OnInit {
       this.openConfirmationDialog(
         {
           title: 'O formulário foi alterado',
-          message: 'Deseja realmente cancelar as alterações feitas no formulário?',
-        }, (value: boolean) => {
-          if (!value) return
-            this.isInEditMode = false;
-            this.userFormUpdated = false;
-        })
+          message:
+            'Deseja realmente cancelar as alterações feitas no formulário?',
+        },
+        (value: boolean) => {
+          if (!value) return;
+          this.isInEditMode = false;
+          this.userFormUpdated = false;
+        }
+      );
     } else {
-      this.isInEditMode = false
+      this.isInEditMode = false;
     }
   }
 
@@ -65,34 +75,52 @@ export class AppComponent implements OnInit {
     this.openConfirmationDialog(
       {
         title: 'Confirmar alterações de dados',
-        message: 'Deseja realmente confirmar as alterações feitas no formulário?',
-      }, (value: boolean) => {
+        message:
+          'Deseja realmente confirmar as alterações feitas no formulário?',
+      },
+      (value: boolean) => {
         if (!value) return;
-          this.saveUserInfos();
-          this.isInEditMode = false;
-          this.userFormUpdated = false;
-      })
+        this.saveUserInfos();
+        this.isInEditMode = false;
+        this.userFormUpdated = false;
+      }
+    );
   }
 
   onFormStatusChange(formStatus: boolean) {
-    setTimeout(() => this.enableSaveButton = formStatus, 0);
+    setTimeout(() => (this.enableSaveButton = formStatus), 0);
   }
 
   onUserFormFirstChange() {
-    console.log('Recebendo o output');    
-    this.userFormUpdated = true
+    console.log('Recebendo o output');
+    this.userFormUpdated = true;
   }
 
-  private openConfirmationDialog(data: IDialogConfirmationData, callback: (value: boolean) => void) {
+  private openConfirmationDialog(
+    data: IDialogConfirmationData,
+    callback: (value: boolean) => void
+  ) {
     if (this.userFormUpdated) {
-      const dialogRef = this._matDialog.open(ConfirmationDialogComponent, { data })
+      const dialogRef = this._matDialog.open(ConfirmationDialogComponent, {
+        data,
+      });
 
-      dialogRef.afterClosed().subscribe(callback)
+      dialogRef.afterClosed().subscribe(callback);
     }
   }
 
   private saveUserInfos() {
-    console.log("Valores alterados!");
+    const newUser: IUser = this.convertUserFormToUser();
+    this._updateUserService.updateUser(newUser).subscribe((newUserResponse: IUser) => {
+      if (this.userSelectedIndex === undefined) return;      
+      this.usersList[this.userSelectedIndex] = newUserResponse
+    })
   }
 
+  private convertUserFormToUser(): IUser {
+    // console.log('userFormRawValue =>', this._userFormRawValueService.userFormRawValue);
+    console.log('Convertido => ', convertUserFormToUser(this._userFormRawValueService.userFormRawValue));
+    
+    return {} as IUser;
+  }
 }
