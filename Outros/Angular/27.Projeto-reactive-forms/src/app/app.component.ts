@@ -1,13 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { CountriesService } from './services/countries.service';
-import { StatesService } from './services/states.service';
-import { CitiesService } from './services/cities.service';
 import { UsersService } from './services/users.service';
 import { UsersListResponse } from './types/users-list-response';
 import { take } from 'rxjs';
 import { IUser } from './interfaces/user/user.interface';
 import { MatDialog } from '@angular/material/dialog';
 import { ConfirmationDialogComponent } from './components/confirmation-dialog/confirmation-dialog.component';
+import { IDialogConfirmationData } from './interfaces/dialog-confirmation-data.interface';
 
 @Component({
   selector: 'app-root',
@@ -49,21 +47,31 @@ export class AppComponent implements OnInit {
 
   onCancelButton() {
     if (this.userFormUpdated) {
-      const dialogRef = this._matDialog.open(ConfirmationDialogComponent, {
-        data: {
+      this.openConfirmationDialog(
+        {
           title: 'O formulário foi alterado',
-          message: 'Deseja realmente cancelar as alterações feitas no formuário?',
-        }
-      })
-
-      dialogRef.afterClosed().subscribe((value: boolean) => {
-        if (!value) return
-        this.isInEditMode = false;
-        this.userFormUpdated = false;
-      })
+          message: 'Deseja realmente cancelar as alterações feitas no formulário?',
+        }, (value: boolean) => {
+          if (!value) return
+            this.isInEditMode = false;
+            this.userFormUpdated = false;
+        })
     } else {
       this.isInEditMode = false
     }
+  }
+
+  onSaveButton() {
+    this.openConfirmationDialog(
+      {
+        title: 'Confirmar alterações de dados',
+        message: 'Deseja realmente confirmar as alterações feitas no formulário?',
+      }, (value: boolean) => {
+        if (!value) return;
+          this.saveUserInfos();
+          this.isInEditMode = false;
+          this.userFormUpdated = false;
+      })
   }
 
   onFormStatusChange(formStatus: boolean) {
@@ -74,4 +82,17 @@ export class AppComponent implements OnInit {
     console.log('Recebendo o output');    
     this.userFormUpdated = true
   }
+
+  private openConfirmationDialog(data: IDialogConfirmationData, callback: (value: boolean) => void) {
+    if (this.userFormUpdated) {
+      const dialogRef = this._matDialog.open(ConfirmationDialogComponent, { data })
+
+      dialogRef.afterClosed().subscribe(callback)
+    }
+  }
+
+  private saveUserInfos() {
+    console.log("Valores alterados!");
+  }
+
 }

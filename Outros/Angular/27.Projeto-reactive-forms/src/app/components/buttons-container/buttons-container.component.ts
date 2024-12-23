@@ -11,6 +11,7 @@ export class ButtonsContainerComponent {
 
   @Output('onEditButton') onEditButtonEmit = new EventEmitter<void>()
   @Output('onCancelButton') onCancelButtonEmit = new EventEmitter<void>()
+  @Output('onSaveButton') onSaveButtonEmit = new EventEmitter<void>()
 
   onEditButton(): void {
     this.onEditButtonEmit.emit()
@@ -18,6 +19,10 @@ export class ButtonsContainerComponent {
   
   onCancelButton(): void {
     this.onCancelButtonEmit.emit()
+  }
+
+  onSaveButton(): void {
+    this.onSaveButtonEmit.emit()
   }
 
 }

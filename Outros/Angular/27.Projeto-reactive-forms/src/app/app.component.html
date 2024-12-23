@@ -10,6 +10,7 @@
         [enableSaveButton]="enableSaveButton"
         (onEditButton)="onEditButton()"
         (onCancelButton)="onCancelButton()"
+        (onSaveButton)="onSaveButton()"
       ></app-buttons-container>
       <app-user-information-container 
         *ngIf="userSelectedIndex !== undefined"

@@ -2,7 +2,7 @@ import { Component, EventEmitter, inject, Input, OnChanges, OnInit, Output, Simp
 import { IUser } from '../../interfaces/user/user.interface';
 import { UserFormController } from './user-form-controller';
 import { CountriesService } from '../../services/countries.service';
-import { distinctUntilChanged, take } from 'rxjs';
+import { distinctUntilChanged, Subscription, take } from 'rxjs';
 import { CountriesList } from '../../types/countries-list';
 import { StatesService } from '../../services/states.service';
 import { StatesList } from '../../types/states-list';
@@ -16,6 +16,7 @@ export class UserInformationContainerComponent extends UserFormController implem
   currentTabIndex: number = 0;
   countriesList: CountriesList = [];
   statesList: StatesList = []
+  userFormValueChangesSubs!: Subscription;
 
   private _countriesService = inject(CountriesService)
   private _statesService = inject(StatesService)
@@ -38,6 +39,9 @@ export class UserInformationContainerComponent extends UserFormController implem
     const HAS_USER_SELECTED = changes['userSelected'] && Object.keys(changes['userSelected'].currentValue).length > 0
 
     if (HAS_USER_SELECTED) {
+      if (this.userFormValueChangesSubs) {
+        this.userFormValueChangesSubs.unsubscribe();
+      }
       this.fulfillUserForm(this.userSelected)
 
       this.onUserFormFirstChange()
@@ -45,7 +49,6 @@ export class UserInformationContainerComponent extends UserFormController implem
       this.getStatesList(this.userSelected.country)
     }
   }
-
   
   onCountrySelected(countryName: string) {
     this.getStatesList(countryName)
@@ -56,7 +59,7 @@ export class UserInformationContainerComponent extends UserFormController implem
   }
   
   private onUserFormFirstChange() {
-    this.userForm.valueChanges
+    this.userFormValueChangesSubs = this.userForm.valueChanges
       .pipe(take(1))
       .subscribe(() => {
         this.onUserFormFirstChangeEmit.emit()
