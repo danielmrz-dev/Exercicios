@@ -49,6 +49,7 @@ export class AppComponent implements OnInit {
   }
 
   onEditButton() {
+    this.userSelected = structuredClone(this.userSelected)
     this.isInEditMode = true;
   }
 
@@ -92,7 +93,6 @@ export class AppComponent implements OnInit {
   }
 
   onUserFormFirstChange() {
-    console.log('Recebendo o output');
     this.userFormUpdated = true;
   }
 
@@ -110,17 +110,11 @@ export class AppComponent implements OnInit {
   }
 
   private saveUserInfos() {
-    const newUser: IUser = this.convertUserFormToUser();
+    const newUser: IUser = convertUserFormToUser(this._userFormRawValueService.userFormRawValue);
     this._updateUserService.updateUser(newUser).subscribe((newUserResponse: IUser) => {
       if (this.userSelectedIndex === undefined) return;      
-      this.usersList[this.userSelectedIndex] = newUserResponse
+      this.usersList[this.userSelectedIndex] = newUserResponse;
+      this.userSelected = structuredClone(newUser);
     })
-  }
-
-  private convertUserFormToUser(): IUser {
-    // console.log('userFormRawValue =>', this._userFormRawValueService.userFormRawValue);
-    console.log('Convertido => ', convertUserFormToUser(this._userFormRawValueService.userFormRawValue));
-    
-    return {} as IUser;
   }
 }
