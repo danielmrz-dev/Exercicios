@@ -19,6 +19,7 @@ import { AddressListEditComponent } from './contact-information-edit/components/
 import { DependentsListEditComponent } from './dependents-list-edit/dependents-list-edit.component';
 import { ReactiveFormsModule } from "@angular/forms";
 import { NgxMaskDirective, provideNgxMask } from "ngx-mask";
+import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-dialog.component';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { NgxMaskDirective, provideNgxMask } from "ngx-mask";
       ContactInformationEditComponent,
       PhoneListEditComponent,
       AddressListEditComponent,
-      DependentsListEditComponent
+      DependentsListEditComponent,
+      ConfirmationDialogComponent
   ],
     imports: [
         CommonModule,
@@ -52,7 +54,8 @@ import { NgxMaskDirective, provideNgxMask } from "ngx-mask";
       ContactInformationComponent,
       DependentsListComponent,
       ButtonsContainerComponent,
-      UserInformationContainerComponent
+      UserInformationContainerComponent,
+      ConfirmationDialogComponent
     ],
     providers: [provideNgxMask()]
 })
