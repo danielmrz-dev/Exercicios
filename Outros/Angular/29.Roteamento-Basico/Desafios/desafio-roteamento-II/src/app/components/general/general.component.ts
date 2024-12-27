@@ -2,12 +2,12 @@ import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 
 @Component({
-  selector: 'app-root',
+  selector: 'app-general',
   standalone: true,
   imports: [RouterOutlet, RouterLink, RouterLinkActive],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  templateUrl: './general.component.html',
+  styleUrl: './general.component.scss'
 })
-export class AppComponent {
-  title = 'desafio-roteamento-II';
+export class GeneralComponent {
+
 }
