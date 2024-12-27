@@ -1,9 +1,10 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-primeiro',
   standalone: true,
-  imports: [],
+  imports: [RouterOutlet, RouterLink],
   templateUrl: './primeiro.component.html',
   styleUrl: './primeiro.component.scss'
 })

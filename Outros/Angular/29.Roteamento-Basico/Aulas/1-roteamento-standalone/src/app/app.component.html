@@ -2,6 +2,13 @@
   <div 
     class="menu__item" 
     routerLinkActive="menu__item--selected"
+    [routerLinkActiveOptions]="{ exact: true }"
+  >
+    <a class="menu__link" routerLink="/">Inicial</a>
+  </div>
+  <div 
+    class="menu__item" 
+    routerLinkActive="menu__item--selected"
     #rlaBase="routerLinkActive"
     [routerLinkActiveOptions]="{ exact: true }"
   >
