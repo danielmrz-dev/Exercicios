@@ -19,3 +19,11 @@
 body {
     background-color: #dbdbdb3b;
 }
+
+@media screen and (min-width: 1024px) {
+    body {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+    }
+}
