@@ -1,0 +1,11 @@
+
+<router-outlet></router-outlet>
+<button (click)="getUserId()">User ID</button>
+@for (post of (userPostsList$ | async) ; track post) {
+    <div [routerLink]="[post.id]">
+        ID: {{ post.id }} <br>
+        Title: {{ post.title }} <br>
+        UserID: {{ post.userId }} <br>
+        Body: {{ post.body }} <br>
+    </div>
+}

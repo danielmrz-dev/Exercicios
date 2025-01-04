@@ -1,0 +1,14 @@
+<div style="display: flex;">
+    <div style="width: 50%;">
+        @for (user of (usersList$ | async); track user) {
+            <div class="">
+                ID: {{ user.id }}
+                Name: {{ user.name }}
+                <button [routerLink]="['posts', user.id]">Posts</button>
+            </div>
+        }        
+    </div>
+    <div style="width: 50%;">
+        <router-outlet></router-outlet>
+    </div>
+</div>
