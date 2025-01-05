@@ -1,0 +1,16 @@
+<div class="albums">
+    <h2>ALBUMS:</h2>
+
+    <ul class="albums__list">
+        @for (album of userAlbums; track album) {
+            <li class="albums__list-item">
+                <p>
+                    Código :  {{ album.id }}
+                </p> 
+                <p>
+                    Título : {{ album.title }}
+                </p>
+            </li>
+        }
+    </ul>
+</div>

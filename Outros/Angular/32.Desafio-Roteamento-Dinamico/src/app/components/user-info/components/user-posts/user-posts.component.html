@@ -1,0 +1,19 @@
+<div class="posts">
+    <h2>Posts:</h2>
+
+    <ul class="posts__list">
+        @for (post of userPosts; track post) {
+            <li class="posts__list-item">
+                <p>
+                    Código :  {{ post.id }}
+                </p> 
+                <p>
+                    Título : {{ post.title }}
+                </p>
+                <p>
+                    Conteúdo : {{ post.body }}
+                </p>
+            </li>
+        }
+    </ul>
+</div>

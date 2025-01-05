@@ -1,7 +1,7 @@
 <div class="user-info">
     <header class="user-info__header">
-        <p>Código: {{ 'selectedUser.id' }} </p>
-        <p>Nome: {{ 'selectedUser.name' }} </p>
+        <p>Código: {{ userSelected.id }} </p>
+        <p>Nome: {{ userSelected.name }} </p>
     </header>
 
     <ul class="user-info__menu">
@@ -12,10 +12,10 @@
             <a routerLink="todos">Todos</a>
         </li>
         <li class="user-info__menu-item">
-            <a routerLink="">Albums</a>
+            <a routerLink="albums">Albums</a>
         </li>
         <li class="user-info__menu-item">
-            <a routerLink="">Posts</a>
+            <a routerLink="posts">Posts</a>
         </li>
     </ul>
 

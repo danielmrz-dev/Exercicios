@@ -2,13 +2,15 @@
     <h2>TO-DOS:</h2>
 
     <ul class="todos__list">
-        <li class="todos__list-item">
-            <p>
-                Título : 
-            </p>
-            <p>
-                Finalizado : 
-            </p>
-        </li>
+        @for (todo of userTodos; track todo) {
+            <li class="todos__list-item">
+                <p>
+                    Título :  {{ todo.title }}
+                </p> 
+                <p>
+                    Finalizado : {{ todo.completed | todoStatus }}
+                </p>
+            </li>
+        }
     </ul>
 </div>
