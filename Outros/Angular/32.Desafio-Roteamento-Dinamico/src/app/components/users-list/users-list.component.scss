@@ -1,0 +1,18 @@
+.users-list {
+    display: grid;
+    gap: 1rem;
+    &__list {
+        display: grid;
+        gap: .5rem;
+    }
+    &__list-item {
+        cursor: pointer;
+        transition: background-color .2s ease;
+        &:nth-child(odd) {
+            background-color: #e9caca3d;
+        }
+        &:hover {
+            background-color: #ccccccab;
+        }
+    }
+}

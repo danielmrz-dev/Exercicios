@@ -1,0 +1,24 @@
+<div class="user-info">
+    <header class="user-info__header">
+        <p>Código: {{ 'selectedUser.id' }} </p>
+        <p>Nome: {{ 'selectedUser.name' }} </p>
+    </header>
+
+    <ul class="user-info__menu">
+        <li class="user-info__menu-item">
+            <a routerLink="/">Usuários</a>
+        </li>
+        <li class="user-info__menu-item">
+            <a routerLink="todos">Todos</a>
+        </li>
+        <li class="user-info__menu-item">
+            <a routerLink="">Albums</a>
+        </li>
+        <li class="user-info__menu-item">
+            <a routerLink="">Posts</a>
+        </li>
+    </ul>
+
+    <router-outlet></router-outlet>
+    
+</div>

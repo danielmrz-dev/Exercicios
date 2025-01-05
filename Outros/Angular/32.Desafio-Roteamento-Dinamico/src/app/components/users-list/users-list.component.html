@@ -1,0 +1,12 @@
+<div class="users-list">
+    <h1 class="users-list__title">Lista de usuários</h1>
+    
+    <ul class="users-list__list">
+        @for (user of usersList$ | async; track user) {
+            <li class="users-list__list-item" [routerLink]="['users', user.id]">
+                <p>Código: {{ user.id }}</p>
+                <p>Nome: {{ user.name }} </p>
+            </li>
+        }
+    </ul>
+</div>

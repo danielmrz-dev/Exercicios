@@ -1,0 +1,8 @@
+.user-info {
+    display: grid;
+    gap: 1rem;
+    &__menu {
+        display: flex;
+        justify-content: space-around;
+    }
+}
