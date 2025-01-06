@@ -1,0 +1,8 @@
+<h1>Post:</h1>
+
+@if (selectedPost$ | async; as post) {
+    <p>Conteúdo: {{ post.body }}</p>
+}
+<button style="cursor: pointer;" routerLink="comments">Ver comentários</button>
+
+<router-outlet></router-outlet>

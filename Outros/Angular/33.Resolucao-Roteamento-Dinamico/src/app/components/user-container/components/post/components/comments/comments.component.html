@@ -1,0 +1,6 @@
+<h1>Comentários</h1>
+
+@for (comment of commentsList$ | async; track comment) {
+    <h3>Nome: {{ comment.name }}</h3>
+    <p>Conteúdo: {{ comment.body }} </p>
+}
