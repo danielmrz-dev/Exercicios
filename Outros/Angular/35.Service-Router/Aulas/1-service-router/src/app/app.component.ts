@@ -22,7 +22,11 @@ export class AppComponent {
   }
 
   goToContactsPage() {
-    this.router.navigate(['contacts'])
+    this.router.navigate(['contacts'], {
+      queryParams: {
+        id: 2
+      }
+    })
   }
   goToInformationPage() {
     this.router.navigate(['information'], {
@@ -33,7 +37,13 @@ export class AppComponent {
     })
   }
   goToCardsPage() {
-    this.router.navigate(['cards'])
+    this.router.navigate(['cards'], {
+      queryParams: {
+        id: 1, 
+        nome: 'Daniel', 
+      },
+      queryParamsHandling: 'merge'
+    })
   }
   
 }

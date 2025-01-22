@@ -3,3 +3,15 @@
         Crédito
     </a>
 </div>
+
+<h2>Cartões de débito:</h2>
+
+@for (card of (userDebitCards$ | async); track card) {
+    <div style="padding: 10px; cursor: pointer;" (click)="navigateToCard(card)">
+        <p> {{ card.id }} </p>
+        <p> {{ card.numero }} </p>
+    </div>
+}
+
+<router-outlet></router-outlet>
+
