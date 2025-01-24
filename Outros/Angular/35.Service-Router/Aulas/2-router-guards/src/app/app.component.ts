@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { AuthService } from './services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -9,5 +10,24 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = '2-router-guards';
+
+  private readonly _authService = inject(AuthService)
+
+  login() {
+    this._authService.login('user', 'user').subscribe((value) => {
+      console.log("Response Login", value);
+    })
+  }
+
+  verify() {
+    this._authService.verifyToken().subscribe((value) => {
+      console.log("Verify token:", value);
+      
+    })
+  }
+
+  scopes() {
+    console.log(this._authService.getUserScopes());
+  }
+
 }

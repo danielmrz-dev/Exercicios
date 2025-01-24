@@ -37,7 +37,7 @@ app.post("/login", (req, res) => {
         return res.status(401).json({ message: "Invalid credentials" });
     }
 
-    const token = jwt.sign({ username, scopes: user.scopes }, SECRET_KEY, {
+    const token = jwt.sign({ username, scopes: user.scopes, walletStatus: user.walletStatus }, SECRET_KEY, {
         expiresIn: TOKEN_EXPIRATION,
     });
 
@@ -49,7 +49,6 @@ function authenticateToken(req, res, next) {
     const token = authHeader && authHeader.split(" ")[1];
 
     if (!token) {
-        // Erro de "Não Autorizado"
         return res.sendStatus(401);
     }
 
@@ -65,6 +64,22 @@ function authenticateToken(req, res, next) {
 
 app.get("/verify-token", authenticateToken, (req, res) => {
     res.json({ valid: true, user: req.user });
+});
+
+app.get("/incidents", authenticateToken, (req, res) => {
+    res.json({ day: 23 });
+});
+
+app.get("/pending-payments", authenticateToken, (req, res) => {
+    res.json({ pending: 7 });
+});
+
+app.get("/new-accounts", authenticateToken, (req, res) => {
+    res.json({ accounts: 325 });
+});
+
+app.get("/active-users", authenticateToken, (req, res) => {
+    res.json({ users: 12569 });
 });
 
 app.listen(PORT, () => {
