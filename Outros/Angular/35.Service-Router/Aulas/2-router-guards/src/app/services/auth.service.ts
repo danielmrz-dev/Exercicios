@@ -41,13 +41,14 @@ export class AuthService {
 
     getUserWalletStatus(): string {
         const token = localStorage.getItem('access-token');
-
         if (!token) {
             return '';
         }
-
         const decoded: any = jwtDecode(token)
-
         return decoded.walletStatus;
+    }
+
+    logout() {
+        localStorage.removeItem('access-token');
     }
 }
