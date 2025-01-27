@@ -3,6 +3,7 @@ import { Component, inject, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, FormsModule, NgForm, ReactiveFormsModule, Validators } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
+import { firstValueFrom } from 'rxjs';
 
 
 @Component({
@@ -31,18 +32,35 @@ export class LoginComponent {
   }
 
   onSubmit() {
-    this._authService.login(this.username.value, this.password.value).subscribe({
-      next: (_) => {
+
+    // Promise
+    firstValueFrom(this._authService.login(this.username.value, this.password.value))
+      .then(() => { 
         this._router.navigate(['dashboard'])
-      },
-      error: (error) => {
+      })
+      .catch((error) => {
         const UNAUTHORIZED_CREDENTIALS_ERROR = 401;
         if (error.status === UNAUTHORIZED_CREDENTIALS_ERROR) {
           this.loginForm.setErrors({ invalidCredentials: true })
         } else {
           this.loginForm.setErrors({ genericError: true })
         }
-      }
-    })
+      })
+
+
+    // Original (Observable)
+    // this._authService.login(this.username.value, this.password.value).subscribe({
+    //   next: (_) => {
+    //     this._router.navigate(['dashboard'])
+    //   },
+    //   error: (error) => {
+    //     const UNAUTHORIZED_CREDENTIALS_ERROR = 401;
+    //     if (error.status === UNAUTHORIZED_CREDENTIALS_ERROR) {
+    //       this.loginForm.setErrors({ invalidCredentials: true })
+    //     } else {
+    //       this.loginForm.setErrors({ genericError: true })
+    //     }
+    //   }
+    // })
   }
 }
