@@ -52,18 +52,16 @@ export class ObservablesService {
 
     obsOne() {
         return new Observable((observer) => {
-            setTimeout(() => {
-                observer.next('OBS1 => 1')
-            }, 1000);
-            setTimeout(() => {
-                observer.next('OBS1 => 2')
-            }, 2000);
-            setTimeout(() => {
-                observer.next('OBS1 => 3')
-            }, 3000);
-            return () => {
-                console.log("Limpeza 1");                
-            }
+            observer.next('OBS1 => 1')
+            // setTimeout(() => {
+            //     observer.next('OBS1 => 2')
+            // }, 2000);
+            // setTimeout(() => {
+            //     observer.next('OBS1 => 3')
+            // }, 3000);
+            // return () => {
+            //     console.log("Limpeza 1");                
+            // }
         })
     }
 

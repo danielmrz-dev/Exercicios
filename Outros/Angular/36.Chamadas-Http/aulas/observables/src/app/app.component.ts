@@ -1,13 +1,15 @@
 import { Component, inject } from '@angular/core';
 import { ObservablesService } from './services/observables.service';
 import { catchError, map, Subscription, switchMap, take, throwError } from 'rxjs';
+import { SubjectComponent } from './components/subject/subject.component';
+import { PromisesComponent } from "./components/promises/promises.component";
 
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [],
+  imports: [SubjectComponent, PromisesComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
@@ -19,6 +21,8 @@ export class AppComponent {
   private readonly observablesService = inject(ObservablesService)
 
   ngOnInit(): void {
+
+    // this.fluxoObs()
     // this.observablesService.getUsers().subscribe({
     //   next(value) {
     //     console.log(value);
@@ -51,15 +55,28 @@ export class AppComponent {
     //   console.group('Todo 2 => ', value);
     // })
 
-    this.subsSwitchMap = this.observablesService.obsOne().pipe(
-      switchMap((valorObs1) => {
-        console.log('Componente inscrição Obs1', valorObs1);
-        return this.observablesService.obsTwo()
-      }),
-      take(1)
-    ).subscribe((valueObs2) => {
-      console.log('Componente inscrição Obs2', valueObs2);
+    // this.subsSwitchMap = this.observablesService.obsOne().pipe(
+    //   switchMap((valorObs1) => {
+    //     console.log('Componente inscrição Obs1', valorObs1);
+    //     return this.observablesService.obsTwo()
+    //   }),
+    //   take(1)
+    // ).subscribe((valueObs2) => {
+    //   console.log('Componente inscrição Obs2', valueObs2);
+    // })
+  }
+  fluxoObs() {
+    console.log('Fluxo OBS');
+
+    this.observablesService.obsOne().subscribe((value) => {
+      console.log(value);
     })
+
+    this.observablesService.getTodoInfos(1).subscribe((value) => {
+      console.log(value);      
+    })
+
+    console.log('Final');
   }
 
   unsubscribeInterval() {
