@@ -28,10 +28,29 @@ app.post('/login', (req, res) => {
     return res.json({ token: userToken });
 })
 
-app.put('/update-user', (req, res) => {
-    const { name, email, username, password } = req;
+app.put('/update-user', authenticateToken, (req, res) => {
+    const tokenUsername = req.username;
+    const newUserInfos = req.body;
 
-    
+    const { name, email, username, password } = newUserInfos
+
+    if (!name || !email || !username || !password) {
+        return res.status(400).json({ message: "All fields (name, email, username and password) are required." })
+    }
+
+    const USER_FOUND = USERS_LIST_BD.findIndex((user) => { user.username === tokenUsername });
+
+    if (USER_FOUND === -1) {
+        return res.status(403).json({ message: "User not found." })
+    }
+
+    USERS_LIST_BD[USER_FOUND] = newUserInfos;
+    const newToken = generateTokenOnLogin(username);
+
+    return res.status(200).json({ 
+        message: "User updated successfully.",
+        token: newToken
+    })
 
 })
 
