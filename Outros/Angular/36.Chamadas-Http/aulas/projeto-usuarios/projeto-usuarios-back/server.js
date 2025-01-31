@@ -38,7 +38,7 @@ app.put('/update-user', authenticateToken, (req, res) => {
         return res.status(400).json({ message: "All fields (name, email, username and password) are required." })
     }
 
-    const USER_FOUND = USERS_LIST_BD.findIndex((user) => { user.username === tokenUsername });
+    const USER_FOUND = USERS_LIST_BD.findIndex((user) => user.username === tokenUsername);
 
     if (USER_FOUND === -1) {
         return res.status(403).json({ message: "User not found." })

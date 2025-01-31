@@ -25,6 +25,20 @@
                     <input class="poppins-regular" placeholder="Digite a sua senha" formControlName="password" />
                 </div>
             </div>
+
+            <div class="user-infos__alert-message">
+                @if (userInfosForm.invalid) {
+                    @if (userInfosForm.hasError('updateSuccess')) {
+                        <p class="poppins-semibold user-infos__alert-message--success">Informações atualizadas com sucesso!</p>
+                    }
+
+                    @if (userInfosForm.hasError('updateError')) {
+                        <p class="poppins-semibold user-infos__alert-message--error">Houve um erro ao atualizar as informações!</p>
+                    }
+                }
+
+            </div>
+
             <!-- <p class="poppins-regular">Itens:</p>
             <div class="user-infos__item">
                 <div class="user-infos__fields">
@@ -54,8 +68,15 @@
                 </div>
             </div> -->
             <div class="user-infos__buttons-container">
-                <button type="button" class="poppins-regular user-infos__send-button user-infos__send-button--create">Criar Usuário</button>
-                <button type="button" class="poppins-regular user-infos__send-button user-infos__send-button--update">Atualizar Existente</button>
+                <button 
+                    type="button" 
+                    class="poppins-regular user-infos__send-button user-infos__send-button--create"
+                >Criar Usuário</button>
+                <button 
+                    type="button" 
+                    class="poppins-regular user-infos__send-button user-infos__send-button--update"
+                    (click)="updateUser()"
+                >Atualizar Existente</button>
             </div>
         </form>
     </div>
