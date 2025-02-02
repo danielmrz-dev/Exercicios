@@ -1,6 +1,9 @@
 import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { UpdateUserService } from '../../services/update-user.service';
+import { CreateUserService } from '../../services/create-user.service';
+import { HttpErrorResponse } from '@angular/common/http';
+import { IUserRequest } from '../../interfaces/user-request.interface';
 
 @Component({
   selector: 'app-user-infos',
@@ -11,7 +14,9 @@ import { UpdateUserService } from '../../services/update-user.service';
 })
 export class UserInfosComponent {
 
+
   private readonly _updateUserService = inject(UpdateUserService)
+  private readonly _createUserService = inject(CreateUserService)
 
   userInfosForm = new FormGroup({
     name: new FormControl(''),
@@ -22,7 +27,7 @@ export class UserInfosComponent {
 
   updateUser() {
     if (this.userInfosForm.valid) {
-      this._updateUserService.updateUser(this.userInfosForm.value as any).subscribe({
+      this._updateUserService.updateUser(this.userInfosForm.value as IUserRequest).subscribe({
         next: () => {
           this.userInfosForm.setErrors({ updateSuccess: true })
         },
@@ -30,7 +35,23 @@ export class UserInfosComponent {
           this.userInfosForm.setErrors({ updateError: true })
         }
       })
-      
+    }
+  }
+
+  createUser() {
+    if (this.userInfosForm.valid) {
+      this._createUserService.createUser(this.userInfosForm.value as IUserRequest).subscribe({
+        next: () => {
+          this.userInfosForm.setErrors({ userCreatedSuccess: true })
+        },
+        error: (error: HttpErrorResponse) => {
+          const userAlreadyExists = error.status === 409;
+          if (userAlreadyExists) {
+            return this.userInfosForm.setErrors({ userAlreadyExists: true });
+          }
+          this.userInfosForm.setErrors({ createUserError: true })
+        },
+      })
     }
   }
 }
