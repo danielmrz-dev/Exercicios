@@ -7,11 +7,9 @@ export const loadingInterceptor: HttpInterceptorFn = (
   req: HttpRequest<unknown>, 
   next: HttpHandlerFn): Observable<HttpEvent<unknown>> => {
 
-  const loadingService = inject(LoadingService)
+  const loadingService = inject(LoadingService);
 
   loadingService.showLoading();
-
-
 
   return next(req).pipe(
     retry(2),
