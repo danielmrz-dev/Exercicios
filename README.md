@@ -1,2 +1,1 @@
-# Exercicios
- Exercícios de HTML5 e CSS3
+# Repositório reservado para estudos
