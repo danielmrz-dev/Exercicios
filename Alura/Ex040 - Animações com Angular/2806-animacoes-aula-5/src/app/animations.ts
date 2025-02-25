@@ -1,4 +1,4 @@
-import { animate, state, style, transition, trigger } from '@angular/animations';
+import { animate, group, keyframes, query, stagger, state, style, transition, trigger } from '@angular/animations';
 
 export const highlightedStateTrigger = trigger('highlightedState', [
   state('default', style({
@@ -39,5 +39,70 @@ export const checkButtonTrigger = trigger('checkButton', [
     animate('400ms ease-in', style({
       transform: 'scale(0.4)'
     }))
+  ])
+])
+
+export const filterTrigger = trigger("filterAnimation", [
+  transition(":enter", [
+    style({ opacity: 0, width: 0 }),
+    animate('400ms ease-out', keyframes([
+      style({ offset: 0, opacity: 0, width: 0 }),
+      style({ offset: 0.5, opacity: 0.5, width: '*', backgroundColor: "lightgreen" }),
+      style({ offset: 1, opacity: 1, width: '*', backgroundColor: "lightgreen" }),
+    ]))
+  ]),
+  transition(":leave", [
+    animate('400ms 1.2s cubic-bezier(.13, .9, .8,.1)', style({ opacity: 0, width: 0 }))
+  ])
+])
+
+export const formButtonTrigger = trigger("formButton", [
+  transition('invalid => valid', [
+    query(".botao-salvar", [
+      group([
+        animate('600ms', style({ backgroundColor: '#63b77c' })),
+        animate('100ms', style({ transform: 'scale(1.1)' })),
+      ]),
+      animate('200ms', style({ transform: 'scale(1)' })),
+    ]),
+  ]),
+  transition('valid => invalid', [
+    query(".botao-salvar", [
+      group([
+        animate('600ms', style({ backgroundColor: '#63b77c' })),
+        animate('100ms', style({ transform: 'scale(1.1)' })),
+      ]),
+      animate('200ms', style({ transform: 'scale(1)' })),
+    ])
+  ])
+])
+
+export const shakeTrigger = trigger("shakeAnimation", [
+  transition("* => *", [
+    query("input.ng-invalid:focus, select.ng-invalid:focus", [
+      animate('0.3s', keyframes([
+        style({ border: '4px solid red' }),
+        style({ transform: "translateX(-10px)" }),
+        style({ transform: "translateX(10px)" }),
+        style({ transform: "translateX(-10px)" }),
+        style({ transform: "translateX(10px)" }),
+        style({ transform: "translateX(-10px)" }),
+        style({ transform: "translateX(10px)" }),
+      ]))
+    ], { optional: true })
+  ])
+])
+
+export const listStateTrigger = trigger("listState", [
+  transition('* => *', [
+    query(":enter", [
+      style({ opacity: 0, transform: 'translateX(-100%)' }),
+      stagger('200ms', [
+        animate('500ms ease-out', keyframes([
+          style({ opacity: 1, transform: 'translateX(15%)', offset: 0.4 }),
+          style({ opacity: 1, transform: 'translateX(0)' , offset: 1 }),
+        ]))        
+      ]),
+    ], { optional: true })
   ])
 ])

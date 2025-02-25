@@ -1,3 +1,17 @@
+.busca {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-block: 40px;
+}
+
+.busca p {
+  color: #6c757d;
+  font-size: 16px;
+  font-weight: 600;
+  margin-right: 32px;
+}
+
 .lista-tarefas {
   display: flex;
   flex-direction: column;
