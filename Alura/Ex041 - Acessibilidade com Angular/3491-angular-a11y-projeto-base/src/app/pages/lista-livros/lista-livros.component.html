@@ -3,15 +3,18 @@
     <label for="campoBusca">Que livro você procura?</label>
     <div class="input-wrapper">
       <input
+        #busca
         type="search"
         id="campoBusca"
-        [formControl]="campoBusca"        >
+        [formControl]="campoBusca"
+        >
         <img class="lupa" src="assets/imagens/icone-busca.png" alt="Lupa roxa">
     </div>
   </form>
   <p>Busque por assunto, autoria, nome...</p>
   @if (mensagemErro) {
     <section
+      role="alert"
       class="resultados mensagem-erro">
         {{ mensagemErro }}
     </section>

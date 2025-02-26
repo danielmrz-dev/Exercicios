@@ -1,4 +1,6 @@
 <dialog
+  cdkTrapFocus
+  cdkTrapFocusAutoCapture="true"
   [open]="statusModal"
   class="container">
   <article class="card">
@@ -16,10 +18,10 @@
       <p class="informacoes">Editora:</p>
       <p class="resultado">{{ livro.publisher }}</p>
       <div class="botoes">
-        <button (click)="lerPrevia()" class="detalhes">Ler prévia</button>
+        <button (click)="lerPrevia()" class="detalhes" [attr.aria-label]="'Ler prévia do livro' + livro.title">Ler prévia</button>
       </div>
     </section>
-    <button (click)="fecharModal()" class="botao-fechar">
+    <button (click)="fecharModal()" class="botao-fechar" aria-label="Fechar modal">
       <span class="material-symbols-outlined">close</span>
     </button>
     <section class="sinopse">
@@ -27,5 +29,5 @@
       <p class="resultado">{{ livro.description | slice:0:1000 }}</p>
     </section>
   </article>
-  <div class="overlay"></div>
+  <div class="overlay" (click)="fecharModal()"></div>
 </dialog>
