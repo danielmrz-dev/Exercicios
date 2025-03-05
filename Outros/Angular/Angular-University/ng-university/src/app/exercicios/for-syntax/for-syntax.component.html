@@ -1,0 +1,27 @@
+
+@for (curso of cursos; track curso) {
+    <p> {{ curso }} </p>
+}
+
+@switch (cursos.length) {
+    @case (1) {
+        <p>1 curso</p>
+    }
+    @case (2) {
+        <p>2 cursos</p>
+    }
+    @case (3) {
+        <p>3 cursos</p>
+    }
+    @case (4) {
+        <p>4 cursos</p>
+    }
+}
+
+<span [ngSwitch]="cursos.length">
+    <p *ngSwitchCase="1"> 1 curso </p>
+    <p *ngSwitchCase="2"> 2 cursos </p>
+    <p *ngSwitchCase="3"> 3 cursos </p>
+    <p *ngSwitchCase="4"> 4 cursos </p>
+    <p *ngSwitchDefault>  Nenhum curso </p>
+</span>

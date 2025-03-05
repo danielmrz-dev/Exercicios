@@ -1,0 +1,13 @@
+
+<ng-container *ngIf="true">
+    <p>ng-container works!</p>
+    <p>Data Pipe: {{ date | date: 'dd/MMMM/yyyy' }}</p>
+    <p>Title Pipe: {{ 'teste' | titlecase }}</p>
+    <p>Uppercase Pipe: {{ 'teste' | uppercase }}</p>
+    <p>Lowercase Pipe: {{ 'teste' | lowercase }}</p>
+    <p>Number Pipe: {{ (3.99) | number: '3.4-4' }}</p>
+    <p>Currency Pipe: {{ 3.99 | currency: 'BRL' }}</p>
+    <p>Percentage Pipe: {{ .65 | percent }}</p>
+    <p>Slice Pipe: {{ 'Slicing' | slice: 3 }}</p>
+</ng-container>
+
