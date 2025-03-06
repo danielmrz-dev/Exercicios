@@ -11,7 +11,7 @@ export const highlightedStateTrigger = trigger("highlightedState", [
     ])
 ])
 
-export const showStateTrigger = trigger("showState", [
+export const shownStateTrigger = trigger("shownState", [
     transition(':enter', [
         style({
             opacity: 0,
