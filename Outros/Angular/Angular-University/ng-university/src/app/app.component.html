@@ -1,2 +1,17 @@
-<app-for-syntax/>
-<app-ng-container/>
+<!-- <app-for-syntax/> -->
+<!-- <app-ng-container/> -->
+<!-- <app-view-child/> -->
+<app-content-projection>
+    <p>teste projetado via tag</p>
+    <h1 class="h1" #titulo> titulo projetado via classe </h1>
+    <section class="section">
+        seção projetada via classe
+    </section>
+
+    <span>
+        projetado sem identificador nenhum
+    </span>
+    <app-view-child/>
+    <app-view-child/>
+    <app-view-child/>
+</app-content-projection>

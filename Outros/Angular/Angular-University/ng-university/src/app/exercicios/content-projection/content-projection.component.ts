@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { AfterContentInit, Component, ContentChild, ContentChildren, ElementRef, QueryList } from '@angular/core';
+import { ViewChildComponent } from '../view-child/view-child.component';
 
 @Component({
   selector: 'app-content-projection',
@@ -7,6 +8,14 @@ import { Component } from '@angular/core';
   templateUrl: './content-projection.component.html',
   styleUrl: './content-projection.component.scss'
 })
-export class ContentProjectionComponent {
+export class ContentProjectionComponent implements AfterContentInit {
+  
+  // Content Child apenas captura os elementos dentro das tags ng-content
+  @ContentChild('titulo') titulo!: ElementRef;
+  @ContentChildren(ViewChildComponent, { read: ElementRef }) component!: QueryList<ViewChildComponent>;
 
+
+  ngAfterContentInit(): void {
+      console.log(this.component);      
+  }
 }
