@@ -18,5 +18,7 @@ import { HighlightedDirective } from './exercicios/directives/highlighted.direct
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  
+
+
+
 }

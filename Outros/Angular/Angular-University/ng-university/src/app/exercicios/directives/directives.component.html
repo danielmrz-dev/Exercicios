@@ -1,1 +1,15 @@
-<p appHighlighted>directives works!</p>
+<p 
+    [highlighted]="false" 
+    (toggleHighlight)="onToggle($event)" 
+    (dblclick)="highlighter.toggle()">
+    directives works!
+</p>
+
+<button 
+    [highlighted]="true" 
+    (toggleHighlight)="onToggle($event)" 
+    #highlighter="hl">
+    Teste
+</button>
+
+<p *ngxUnless="counter > 5">NgxUnless</p>
