@@ -3,12 +3,12 @@ package br.com.alura.screenmatch.principal;
 import br.com.alura.screenmatch.model.DadosEpisodio;
 import br.com.alura.screenmatch.model.DadosSerie;
 import br.com.alura.screenmatch.model.DadosTemporada;
+import br.com.alura.screenmatch.model.Episodios;
 import br.com.alura.screenmatch.services.ConsumoApi;
 import br.com.alura.screenmatch.services.ConverteDados;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class Principal {
 
@@ -33,13 +33,38 @@ public class Principal {
 			temporadas.add(dadosTemporada);
 		}
 
-		temporadas.forEach(System.out::println);
-        temporadas.forEach(
-t -> t.episodios().forEach(
-    e -> System.out.println(e.titulo()
-                )
-            )
-        );
+//		temporadas.forEach(System.out::println);
+//        temporadas.forEach(
+//t -> t.episodios().forEach(
+//    e -> System.out.println(e.titulo()
+//                )
+//            )
+//        );
+
+//        List<String> nomes = Arrays.asList("Daniel", "Ana", "Flor", "Foggy");
+//        nomes.stream()
+//                .sorted()
+//                .limit(3)
+//                .filter(n -> n.startsWith("A"))
+//                .map(String::toLowerCase)
+//                .forEach(n -> System.out.println("Olá " + n + "!"));
+
+        List<DadosEpisodio> dadosEpisodios = temporadas.stream()
+                .flatMap(t -> t.episodios().stream())
+                .toList();
+
+        dadosEpisodios.stream()
+                .filter(e -> !e.avaliacao().equalsIgnoreCase("N/A"))
+                .sorted(Comparator.comparing(DadosEpisodio::avaliacao).reversed())
+                .limit(5)
+                .forEach(System.out::println);
+
+        List<Episodios> episodios = temporadas.stream()
+                .flatMap(t -> t.episodios().stream()
+                        .map(d -> new Episodios(t.numero(), d)))
+                .collect(Collectors.toList());
+
+        episodios.forEach(System.out::println);
     }
 
 }
