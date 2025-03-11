@@ -8,4 +8,5 @@ public interface IConverteDados {
 
     <T> List<T> obterLista(String json, Class<T> classe);
 
+
 }
