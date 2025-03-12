@@ -171,11 +171,11 @@ public class Principal {
     }
 
     private void buscarMelhoresSeriesCurtas() {
-        System.out.println("Qual o máximo de temporadas?");
-        var totalTemporadas = leitura.nextInt();
-        System.out.println("Qual a avaliação mínima?");
-        var avaliacaoMinima = leitura.nextDouble();
-        List<Serie> melhoresSeriesCurtas = repositorio.seriesPorTemporadaEAvaliacao(totalTemporadas, avaliacaoMinima);
+//        System.out.println("Qual o máximo de temporadas?");
+//        var totalTemporadas = leitura.nextInt();
+//        System.out.println("Qual a avaliação mínima?");
+//        var avaliacaoMinuma = leitura.nextDouble();
+        List<Serie> melhoresSeriesCurtas = repositorio.seriesPorTemporadaEAvaliacao();
         System.out.println("Melhores Séries: ");
         melhoresSeriesCurtas.forEach(s -> System.out.println(s.getTitulo() + " - " + s.getAvaliacao()));
     }
