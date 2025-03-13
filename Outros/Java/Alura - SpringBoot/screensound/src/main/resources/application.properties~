@@ -1,6 +1,0 @@
-spring.application.name=screensound
-spring.datasource.url=jdbc:postgresql://localhost/screensound_db
-spring.datasource.username=postgres
-spring.datasource.password=anamaria24x7
-spring.datasource.driver-class-name=org.postgresql.Driver
-hibernate.dialect=org.hibernate.dialect.HSQLDialect
