@@ -11,4 +11,9 @@ public class SerieController {
         return "Método GET funcionando!";
     }
 
+    @GetMapping("/episodios")
+    public String obterEpisodios() {
+        return "Método GET Episódios funcionando!";
+    }
+
 }
