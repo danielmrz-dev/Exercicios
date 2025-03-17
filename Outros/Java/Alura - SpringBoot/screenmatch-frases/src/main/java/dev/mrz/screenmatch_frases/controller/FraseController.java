@@ -15,7 +15,7 @@ public class FraseController {
     private FraseService servico;
 
     @GetMapping("/series/frases")
-    public List<FraseDTO> obterFrase() {
+    public FraseDTO obterFrase() {
         return servico.obterFraseAleatoria();
     }
 }

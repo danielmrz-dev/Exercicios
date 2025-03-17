@@ -13,7 +13,7 @@ public class FraseService {
     private FraseRepository repositorio;
 
     public FraseDTO obterFraseAleatoria() {
-        Frase frase = repositorio.buscaFraseAleatoria();
+        Frase frase = repositorio.findById(7L).get();
         return new FraseDTO(
                 frase.getTitulo(),
                 frase.getFrase(),
