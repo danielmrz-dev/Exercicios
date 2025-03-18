@@ -38,8 +38,8 @@ public class MedicoController {
     @DeleteMapping("/{id}")
     @Transactional
     public void excluiMedico(@PathVariable Long id) {
-//        medicoRepository.deleteById(id); Exclusão definitiva
+//        medicoRepository.deleteById(id); EXCLUI DE FATO DO BANCO DE DADOS
         var medico = medicoRepository.getReferenceById(id);
-        medico.excluir(); // Exclusão lógica
+        medico.excluir();
     }
 }
