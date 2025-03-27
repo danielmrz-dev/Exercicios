@@ -8,12 +8,14 @@ import { ContentProjectionComponent } from "./exercicios/content-projection/cont
 import { NgTemplateComponent } from "./exercicios/ng-template/ng-template.component";
 import { DirectivesComponent } from "./exercicios/directives/directives.component";
 import { HighlightedDirective } from './exercicios/directives/highlighted.directive';
+import { ViewEncapsulationComponent } from "./exercicios/view-encapsulation/view-encapsulation.component";
+import { DependencyInjectionComponent } from "./exercicios/dependency-injection/dependency-injection.component";
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, ForSyntaxComponent, CommonModule, NgContainerComponent, ViewChildComponent, ContentProjectionComponent, NgTemplateComponent, DirectivesComponent, HighlightedDirective],
+  imports: [RouterOutlet, ForSyntaxComponent, CommonModule, NgContainerComponent, ViewChildComponent, ContentProjectionComponent, NgTemplateComponent, DirectivesComponent, HighlightedDirective, ViewEncapsulationComponent, DependencyInjectionComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
