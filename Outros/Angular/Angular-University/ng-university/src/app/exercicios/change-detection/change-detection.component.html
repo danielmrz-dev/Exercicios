@@ -1,0 +1,8 @@
+<input #input type="text" (keyup)="novoTexto(input.value)">
+
+<p> {{ textoInterno }} </p>
+<p> {{ textoDoComponentePai }} </p>
+
+<p *ngFor="let pessoa of pessoas$ | async">
+    Nome: {{ pessoa.nome }}, Idade: {{ pessoa.idade }} 
+</p>

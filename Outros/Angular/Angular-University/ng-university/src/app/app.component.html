@@ -34,5 +34,9 @@
     <app-view-encapsulation></app-view-encapsulation>
 </div> -->
 
-<app-dependency-injection></app-dependency-injection>
+<!-- <app-dependency-injection></app-dependency-injection> -->
+
+<button (click)="mudarTexto()">Mudar texto</button>
+<br>
+<app-change-detection [textoDoComponentePai]="textoParaComponenteFilho"></app-change-detection>
 

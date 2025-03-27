@@ -10,17 +10,22 @@ import { DirectivesComponent } from "./exercicios/directives/directives.componen
 import { HighlightedDirective } from './exercicios/directives/highlighted.directive';
 import { ViewEncapsulationComponent } from "./exercicios/view-encapsulation/view-encapsulation.component";
 import { DependencyInjectionComponent } from "./exercicios/dependency-injection/dependency-injection.component";
+import { ChangeDetectionComponent } from "./exercicios/change-detection/change-detection.component";
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, ForSyntaxComponent, CommonModule, NgContainerComponent, ViewChildComponent, ContentProjectionComponent, NgTemplateComponent, DirectivesComponent, HighlightedDirective, ViewEncapsulationComponent, DependencyInjectionComponent],
+  imports: [RouterOutlet, ForSyntaxComponent, CommonModule, NgContainerComponent, ViewChildComponent, ContentProjectionComponent, NgTemplateComponent, DirectivesComponent, HighlightedDirective, ViewEncapsulationComponent, DependencyInjectionComponent, ChangeDetectionComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-
-
+  
+  textoParaComponenteFilho: string = 'Texto externo inicial';
+  
+  mudarTexto() {
+    this.textoParaComponenteFilho = 'Novo valor!';
+  }
 
 }
