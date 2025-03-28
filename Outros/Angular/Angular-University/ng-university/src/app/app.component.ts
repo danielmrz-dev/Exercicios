@@ -11,12 +11,13 @@ import { HighlightedDirective } from './exercicios/directives/highlighted.direct
 import { ViewEncapsulationComponent } from "./exercicios/view-encapsulation/view-encapsulation.component";
 import { DependencyInjectionComponent } from "./exercicios/dependency-injection/dependency-injection.component";
 import { ChangeDetectionComponent } from "./exercicios/change-detection/change-detection.component";
+import { LifecycleHooksComponent } from "./exercicios/lifecycle-hooks/lifecycle-hooks.component";
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, ForSyntaxComponent, CommonModule, NgContainerComponent, ViewChildComponent, ContentProjectionComponent, NgTemplateComponent, DirectivesComponent, HighlightedDirective, ViewEncapsulationComponent, DependencyInjectionComponent, ChangeDetectionComponent],
+  imports: [RouterOutlet, ForSyntaxComponent, CommonModule, NgContainerComponent, ViewChildComponent, ContentProjectionComponent, NgTemplateComponent, DirectivesComponent, HighlightedDirective, ViewEncapsulationComponent, DependencyInjectionComponent, ChangeDetectionComponent, LifecycleHooksComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
