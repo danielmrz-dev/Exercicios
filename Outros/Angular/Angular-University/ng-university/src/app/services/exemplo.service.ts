@@ -1,4 +1,5 @@
-import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { inject, Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 
 @Injectable({
@@ -6,13 +7,11 @@ import { Observable, of } from 'rxjs';
 })
 export class ExemploService {
 
-  pessoas = [
-    { nome: "Daniel", idade: 34 },
-    { nome: "Ana", idade: 31 },
-  ]
+  private readonly http = inject(HttpClient);
 
-  getPessoas(): Observable<any> {
-    return of(this.pessoas);
+  private readonly apiProjetos = "https://danielmrz-portfolio-backend-production.up.railway.app/projetos"
+
+  getProjetos(): Observable<any> {
+    return this.http.get<any>(this.apiProjetos);
   }
-
 }

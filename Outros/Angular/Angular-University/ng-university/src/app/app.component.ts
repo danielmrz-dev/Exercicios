@@ -12,12 +12,14 @@ import { ViewEncapsulationComponent } from "./exercicios/view-encapsulation/view
 import { DependencyInjectionComponent } from "./exercicios/dependency-injection/dependency-injection.component";
 import { ChangeDetectionComponent } from "./exercicios/change-detection/change-detection.component";
 import { LifecycleHooksComponent } from "./exercicios/lifecycle-hooks/lifecycle-hooks.component";
+import { InternationalizationI18nComponent } from "./exercicios/internationalization-i18n/internationalization-i18n.component";
+import { DeferSyntaxComponent } from "./exercicios/defer-syntax/defer-syntax.component";
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, ForSyntaxComponent, CommonModule, NgContainerComponent, ViewChildComponent, ContentProjectionComponent, NgTemplateComponent, DirectivesComponent, HighlightedDirective, ViewEncapsulationComponent, DependencyInjectionComponent, ChangeDetectionComponent, LifecycleHooksComponent],
+  imports: [RouterOutlet, ForSyntaxComponent, CommonModule, NgContainerComponent, ViewChildComponent, ContentProjectionComponent, NgTemplateComponent, DirectivesComponent, HighlightedDirective, ViewEncapsulationComponent, DependencyInjectionComponent, ChangeDetectionComponent, LifecycleHooksComponent, InternationalizationI18nComponent, DeferSyntaxComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

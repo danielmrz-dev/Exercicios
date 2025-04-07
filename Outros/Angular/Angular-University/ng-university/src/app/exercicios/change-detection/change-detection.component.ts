@@ -23,8 +23,5 @@ export class ChangeDetectionComponent {
   pessoas$: Observable<any> = of();
 
   constructor(private readonly exemploService: ExemploService) {}
-
-  ngOnInit(): void {
-    this.pessoas$ = this.exemploService.getPessoas();
-  }
+  
 }

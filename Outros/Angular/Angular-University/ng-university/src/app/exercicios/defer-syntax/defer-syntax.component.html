@@ -1,0 +1,29 @@
+
+<h1>Lista de usuários</h1>
+
+<!-- <div class="box"></div> -->
+
+<button #carregar>Carregar</button>
+<button #mostrar>Mostrar</button>
+
+@defer (on interaction(mostrar); prefetch on interaction(carregar)) {
+    <!-- <ul *ngFor="let projeto of (projetos$ | async)" >
+        <li> 
+            <p>Nome: {{ projeto.name }} </p>
+        </li>
+    </ul> -->
+
+    <app-content-projection></app-content-projection>
+}
+
+@placeholder {
+    <h2>This is the placeholder</h2>
+}
+
+@loading {
+    <h2>Carregando...</h2>
+}
+
+@error {
+    <h2>Deu erro!</h2>
+}
