@@ -1,4 +1,4 @@
-import { Component, computed, effect, EffectRef, Signal, signal, WritableSignal } from '@angular/core';
+import { Component, computed, effect, EffectRef, Input, input, Signal, signal, WritableSignal } from '@angular/core';
 import { count } from 'rxjs';
 import { SignalsService } from '../../services/signals.service';
 
@@ -11,10 +11,12 @@ import { SignalsService } from '../../services/signals.service';
 })
 export class SignalsComponent {
 
-  multiplicador: WritableSignal<number> = signal(0);
+
+  // multiplicador: WritableSignal<number> = signal(0);
+  multiplicador = input.required<number>();
   contadorDerivado: Signal<number> = computed(() => {
     const contadorAtual = this.signalService.counter();
-    if (this.multiplicador() >= 10) {
+    if (this.multiplicador()! >= 10) {
       return contadorAtual * 10;
     } else {
       return 0;
@@ -51,9 +53,9 @@ export class SignalsComponent {
 
   }
 
-  aumentarMultiplicador() {
-    this.multiplicador.update(valorAtual => valorAtual + 1);
-  }
+  // aumentarMultiplicador() {
+  //   this.multiplicador();
+  // }
 
   // onCleanUp() {
   //   this.effectRef.destroy();

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal, WritableSignal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { ForSyntaxComponent } from "./exercicios/for-syntax/for-syntax.component";
 import { CommonModule } from '@angular/common';
@@ -25,9 +25,9 @@ import { SignalsComponent } from "./exercicios/signals/signals.component";
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  
+
   textoParaComponenteFilho: string = 'Texto externo inicial';
-  
+
   mudarTexto() {
     this.textoParaComponenteFilho = 'Novo valor!';
   }
