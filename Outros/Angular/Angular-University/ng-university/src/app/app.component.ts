@@ -14,12 +14,13 @@ import { ChangeDetectionComponent } from "./exercicios/change-detection/change-d
 import { LifecycleHooksComponent } from "./exercicios/lifecycle-hooks/lifecycle-hooks.component";
 import { InternationalizationI18nComponent } from "./exercicios/internationalization-i18n/internationalization-i18n.component";
 import { DeferSyntaxComponent } from "./exercicios/defer-syntax/defer-syntax.component";
+import { SignalsComponent } from "./exercicios/signals/signals.component";
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, ForSyntaxComponent, CommonModule, NgContainerComponent, ViewChildComponent, ContentProjectionComponent, NgTemplateComponent, DirectivesComponent, HighlightedDirective, ViewEncapsulationComponent, DependencyInjectionComponent, ChangeDetectionComponent, LifecycleHooksComponent, InternationalizationI18nComponent, DeferSyntaxComponent],
+  imports: [RouterOutlet, ForSyntaxComponent, CommonModule, NgContainerComponent, ViewChildComponent, ContentProjectionComponent, NgTemplateComponent, DirectivesComponent, HighlightedDirective, ViewEncapsulationComponent, DependencyInjectionComponent, ChangeDetectionComponent, LifecycleHooksComponent, InternationalizationI18nComponent, DeferSyntaxComponent, SignalsComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

@@ -1,0 +1,17 @@
+
+<h3>Signals</h3>
+
+<br>
+
+<div>Contador : {{ signalService.counter() }} </div>
+<div>Multiplicador : {{ multiplicador() }} </div>
+<div>Contador Derivado : {{ contadorDerivado() }} </div>
+<button (click)="aumentarContador()" >Aumentar</button>
+<button (click)="aumentarMultiplicador()" >Aumentar Multiplicador</button>
+<!-- <button (click)="onCleanUp()" >Interromper Effect</button> -->
+
+<br>
+
+<!-- <p>Curso: {{ curso().titulo }} </p>
+<p>Cursos: {{ cursos().join(', ') }} </p> -->
+
