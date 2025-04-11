@@ -1,4 +1,4 @@
-import { Component, HostBinding, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, HostBinding, Input } from '@angular/core';
 import { toBooleanProperty } from '../../utils/type-coercion';
 import { CanDisableDirective } from '../../directives/can-disable/can-disable.directive';
 import { HasTabIndexDirective } from '../../directives/has-tab-index/has-tab-index.directive';
@@ -18,10 +18,10 @@ export type ButtonClasses = (typeof BUTTON_CLASSES)[ButtonAppearance];
   standalone: true,
   imports: [CommonModule],
   template: `
-    <span class="button-label">
+    <span data-testId="label" class="button-label">
       <ng-content></ng-content>
     </span>
-    <span *ngIf="loading" class="loader"></span>
+    <span data-testId="loader" *ngIf="loading" class="loader"></span>
   `,
   styleUrls: ['./button.component.scss'],
   hostDirectives: [
@@ -34,6 +34,7 @@ export type ButtonClasses = (typeof BUTTON_CLASSES)[ButtonAppearance];
       inputs: ['tabIndex', 'pauseFocusing: disabled'],
     },
   ],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ButtonComponent {
   @Input()
