@@ -2,9 +2,21 @@ import { Component, HostBinding, Input } from '@angular/core';
 import { toBooleanProperty } from '../../utils/type-coercion';
 import { CanDisableDirective } from '../../directives/can-disable/can-disable.directive';
 import { HasTabIndexDirective } from '../../directives/has-tab-index/has-tab-index.directive';
+import { CommonModule } from '@angular/common';
+
+export const BUTTON_CLASSES = {
+  dashed: 'dashed-button',
+  solid: 'solid-button',
+  stroked: 'stroked-button',
+} as const;
+
+export type ButtonAppearance = keyof typeof BUTTON_CLASSES;
+export type ButtonClasses = (typeof BUTTON_CLASSES)[ButtonAppearance];
 
 @Component({
   selector: 'button[dfButton],a[dfButton]',
+  standalone: true,
+  imports: [CommonModule],
   template: `
     <span class="button-label">
       <ng-content></ng-content>
@@ -25,7 +37,7 @@ import { HasTabIndexDirective } from '../../directives/has-tab-index/has-tab-ind
 })
 export class ButtonComponent {
   @Input()
-  appearance: 'solid' | 'stroked' | 'dashed' = 'solid';
+  appearance: ButtonAppearance = 'solid';
 
   @Input()
   set loading(value: any) {
@@ -37,7 +49,7 @@ export class ButtonComponent {
   #loading = false;
 
   @HostBinding('class')
-  protected get buttonTypeHostClass() {
-    return `${this.appearance}-button`;
+  protected get buttonTypeHostClass(): ButtonClasses {
+    return BUTTON_CLASSES[this.appearance];
   }
 }
