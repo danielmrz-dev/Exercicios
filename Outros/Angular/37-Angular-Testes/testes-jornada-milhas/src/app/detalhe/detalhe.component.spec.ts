@@ -28,4 +28,12 @@ describe('DetalheComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('deveria exibir o título principal corretamente', () => {
+    const elemento = fixture.nativeElement;
+    expect(elemento.querySelector('h1.main-title').textContent).toContain('Atravesse o deserto no Chile');
+  });
+
+  
+  
 });
