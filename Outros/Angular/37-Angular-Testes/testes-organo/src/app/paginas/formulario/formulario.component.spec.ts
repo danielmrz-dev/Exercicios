@@ -33,4 +33,34 @@ describe('FormulárioComponent', () => {
             classificacao: null,
         });
     });
+
+    it('deveria adicionar um livro novo e resetar o formulario', () => {
+        const novoLivro = {
+            titulo: 'Dados',
+            autoria: 'Arbitrários',
+            imagem: 'https://example.com',
+            genero: 'romance',
+            dataLeitura: '2025-04-12',
+            classificacao: 3,
+        }
+
+        const adicionarLivroSpy = jest.spyOn(livroService, 'adicionarLivro');
+        const routerSpy = jest.spyOn(component['router'], 'navigate');
+        component.formulario.setValue(novoLivro);
+        component.adicionarLivro();
+        expect(adicionarLivroSpy).toHaveBeenCalledWith({
+            ...novoLivro,
+            genero: component.generos.find(g => g.id === novoLivro.genero)
+        })
+        expect(component.formulario.value).toEqual({
+            titulo: null,
+            autoria: null,
+            imagem: null,
+            genero: null,
+            dataLeitura: null,
+            classificacao: null,
+        })
+        expect(routerSpy).toHaveBeenCalledWith(['lista-livros']);
+    });
+    
 });
