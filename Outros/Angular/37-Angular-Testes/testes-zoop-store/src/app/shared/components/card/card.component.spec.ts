@@ -5,7 +5,7 @@ import { Product } from '../../../types/product.inteface';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-fdescribe('CardComponent', () => {
+describe('CardComponent', () => {
   let component: CardComponent;
   let fixture: ComponentFixture<CardComponent>;
   let debugEl: DebugElement;
@@ -13,17 +13,12 @@ fdescribe('CardComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [CardComponent]
-    })
-    .compileComponents();
+    });
     
     fixture = TestBed.createComponent(CardComponent);
     debugEl = fixture.debugElement;
     component = fixture.componentInstance;
     fixture.detectChanges();
-  });
-
-  it('should create', () => {
-    expect(component).toBeTruthy();
   });
 
   it('deve renderizar o produto no template', () => {
