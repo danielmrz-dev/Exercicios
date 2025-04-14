@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-detalhe',
@@ -7,4 +8,11 @@ import { Component } from '@angular/core';
 })
 export class DetalheComponent {
 
+  constructor(
+    private router: Router,
+  ) {}
+
+  onReserveClick(): void {
+    this.router.navigate(['reserva']);
+  }
 }

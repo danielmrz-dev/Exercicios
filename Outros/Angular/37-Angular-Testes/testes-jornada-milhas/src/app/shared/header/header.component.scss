@@ -37,6 +37,10 @@
       align-items: baseline;
     }
 
+    button:first-of-type {
+      padding-right: 40px;
+    }
+
     button {
       margin-left: 20px;
     }
@@ -48,7 +52,7 @@
 
     img {
       height: auto;
-      width: 50px;
+      width: 30px;
     }
   }
 

@@ -1,30 +1,26 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { LoginComponent } from './autenticacao/login/login.component';
-import { CadastroComponent } from './autenticacao/cadastro/cadastro.component';
-import { PerfilComponent } from './autenticacao/perfil/perfil.component';
-import { authGuard } from './autenticacao/auth.guard';
+
 import { BuscaComponent } from './busca/busca.component';
 import { DetalheComponent } from './detalhe/detalhe.component';
+import { ReservaComponent } from './reserva/reserva.component';
+import { PagamentoComponent } from './pagamento/pagamento.component';
+import { ConclusaoReservaComponent } from './conclusao-reserva/conclusao-reserva.component';
+import { PedidosComponent } from './pedidos/pedidos.component';
 
 const routes: Routes = [
   {
+    path: 'auth',
+    loadChildren: () => import('./autenticacao/autenticacao.module').then(m => m.AutenticacaoModule)
+  },
+  {
+    path: 'busca',
+    loadChildren: () => import('./busca/busca.module').then(m => m.BuscaModule)
+  },
+  {
     path: '',
-    component: HomeComponent
-  },
-  {
-    path: 'login',
-    component: LoginComponent
-  },
-  {
-    path: 'cadastro',
-    component: CadastroComponent
-  },
-  {
-    path: 'perfil',
-    component: PerfilComponent,
-    canActivate: [authGuard]
+    redirectTo: '/home',
+    pathMatch: 'full'
   },
   {
     path: 'busca',
@@ -33,7 +29,28 @@ const routes: Routes = [
   {
     path: 'detalhe',
     component: DetalheComponent
-  }
+  },
+  {
+    path: 'reserva',
+    component: ReservaComponent
+  },
+  {
+    path: 'pagamento',
+    component: PagamentoComponent
+  },
+  {
+    path: 'conclusao-reserva',
+    component: ConclusaoReservaComponent
+  },
+  {
+    path: 'pedidos',
+    component: PedidosComponent
+  },
+  {
+    path: '**',
+    redirectTo: '/pagina-nao-encontrada',
+    pathMatch: 'full'
+  },
 ];
 
 @NgModule({

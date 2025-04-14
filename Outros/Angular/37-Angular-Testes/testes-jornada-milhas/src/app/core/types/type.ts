@@ -91,3 +91,26 @@ export interface Destaques {
     maisBarata: Passagem;
     sugerida: Passagem;
 }
+
+export interface QrCode {
+  codigo: string;
+  imagem: string;
+}
+
+export interface RadioOption {
+  id: string,
+  value: string,
+  label: string,
+  img?: { src: string, alt: string}
+}
+
+export interface Reserva {
+  id?: number;
+  destino: string;
+  dataIda: string;
+  dataVolta: string;
+  origem: string;
+  estadoOrigem: string;
+  adultos: number;
+  valorFinal: number;
+}
