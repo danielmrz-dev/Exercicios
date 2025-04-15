@@ -34,7 +34,7 @@ const productMock: Product = {
   price: '1000',
 }
 
-fdescribe('CreateProductComponent', () => {
+describe('CreateProductComponent', () => {
   let component: CreateProductComponent;
   let fixture: ComponentFixture<CreateProductComponent>;
 
