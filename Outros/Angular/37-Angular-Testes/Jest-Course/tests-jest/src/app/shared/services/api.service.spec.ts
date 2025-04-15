@@ -3,6 +3,7 @@ import { TestBed } from '@angular/core/testing';
 import { ApiService } from './api.service';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { TagInterface } from '../types/tag.interface';
+import { HttpErrorResponse } from '@angular/common/http';
 
 describe('ApiService', () => {
   let service: ApiService;
@@ -59,6 +60,32 @@ describe('ApiService', () => {
       expect(req.request.method).toEqual('POST');
       expect(req.request.body).toEqual({ name: 'foo' });
     });
+
+    it('should throw an error if request fails', () => {
+      let actualError: HttpErrorResponse | undefined;
+      service.createTag('foo').subscribe({
+        next: (response) => {
+          fail('This should not be called')
+        },
+        error: (error) => {
+          actualError = error;
+        }
+      });
+      const req = httpTestingController.expectOne('http://localhost:3004/tags');
+      req.flush('Server error', {
+        status: 422,
+        statusText: 'Unprocessible entity'
+      });
+
+      if (!actualError) {
+        throw new Error('Error needs to be defined');
+      }
+
+      expect(actualError.status).toEqual(422);
+      expect(actualError.statusText).toEqual('Unprocessible entity');
+      
+    });
+    
     
   });
   
