@@ -29,10 +29,6 @@ describe('FooterComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create the component', () => {
-    expect(component).toBeTruthy();
-  });
-
   describe('Component visibility', () => {
 
     it('should be hidden when there is no todos', () => {
@@ -86,7 +82,5 @@ describe('FooterComponent', () => {
     });
     
   });
-  
-  
   
 });

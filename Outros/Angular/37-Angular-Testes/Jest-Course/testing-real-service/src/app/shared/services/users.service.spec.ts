@@ -18,7 +18,7 @@ describe('UsersService', () => {
   });
 
   describe('addUser', () => {
-    it('should add a user', () => {
+    it('should add an user', () => {
       const user: UserInteface = {
         id: '3',
         name: 'foo',

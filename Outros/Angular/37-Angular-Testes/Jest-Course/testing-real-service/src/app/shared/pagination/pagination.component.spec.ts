@@ -35,7 +35,7 @@ describe('PaginationComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('renders correct pagination', () => {
+  it('renders correct paginations', () => {
     const pageContainers = debugEl.queryAll(By.css('[data-testid="page-container"'));
     expect(pageContainers.length).toBe(5);
     expect(pageContainers[0].nativeElement.textContent).toContain('1');
