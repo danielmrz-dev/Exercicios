@@ -37,7 +37,7 @@ describe('PaginationComponent', () => {
 
   it('renders correct pagination', () => {
     const pageContainers = debugEl.queryAll(By.css('[data-testid="page-container"'));
-    expect(pageContainers.length).toBe(1);
+    expect(pageContainers.length).toBe(5);
     expect(pageContainers[0].nativeElement.textContent).toContain('1');
   });
 
@@ -48,7 +48,7 @@ describe('PaginationComponent', () => {
       clickedPage = page;
     });
     pageContainers[0].triggerEventHandler('click');
-    expect(clickedPage).toEqual(5);
+    expect(clickedPage).toEqual(1);
   });
   
   
