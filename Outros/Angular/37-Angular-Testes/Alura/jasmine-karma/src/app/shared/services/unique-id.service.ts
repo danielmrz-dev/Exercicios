@@ -6,10 +6,11 @@ import { v4 as uuidv4 } from 'uuid';
 export class UniqueIdService {
 
   private numberOfGeneratedIds = 0;
+  private validId = /^[A-Za-z]+[\w\-\:\.]*$/;
 
   generateUniqueIdWithPrefix(prefix: string): string {
-    if (!prefix) {
-      throw new Error("Prefix needs to be provided");
+    if (!prefix || !this.validId.test(prefix)) {
+      throw new Error("Prefix provided is invalid");      
     }
     
     const uniqueId = this.generateUniqueId();
