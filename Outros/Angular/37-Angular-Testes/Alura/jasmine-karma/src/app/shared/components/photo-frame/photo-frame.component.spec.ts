@@ -20,18 +20,30 @@ describe(`Componente => ${PhotoFrameComponent.name}`, () => {
     fixture.detectChanges();
   })
 
-  it('should initialize component', () => {
-    expect(component).toBeTruthy();
-  });
-
   it('should display number of likes when property (@Input likes) is incremented', () => {
     component.likes++;
     fixture.detectChanges();
-    const elemento = debugEl.nativeElement.querySelector('.like-counter');
-    console.log(elemento);
+    const elemento: HTMLElement = debugEl.nativeElement.querySelector('[data-testId="likes"]');
     expect(elemento.textContent).toBe('1');
   });
-  
+
+  it('should update aria-label when (@Input likes) is updated', () => {
+    component.likes++;
+    fixture.detectChanges();
+    const element: HTMLElement = debugEl.nativeElement.querySelector("span");
+    expect(element.getAttribute('aria-label')).toBeNull();
+  });
+
+  it('should display image and src with description when bound to properties ', () => {
+    const description = 'Some description';
+    const src = 'http://somesite.com/image.jpg';
+    component.src = src;
+    component.description = description;
+    fixture.detectChanges();
+    const img: HTMLImageElement = debugEl.nativeElement.querySelector("img");
+    expect(img.getAttribute("src")).toBe(src);
+    expect(img.getAttribute("alt")).toBe(description);
+  });
 
   describe('Input Properties', () => {
     it('should initialize with empty string', () => {

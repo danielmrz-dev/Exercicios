@@ -1,4 +1,4 @@
-<div class="like-widget-container" (click)="like()">
-    <button>Like</button>
+<div class="like-widget-container" (click)="like()" (keyup.enter)="like()">
+    <button data-testId="like">Like</button>
     <span class="like-counter" data-testId="likes">{{ likes }}</span>
 </div>

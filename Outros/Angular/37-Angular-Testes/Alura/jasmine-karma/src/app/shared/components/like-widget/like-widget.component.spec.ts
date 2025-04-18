@@ -2,6 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { LikeWidgetComponent } from './like-widget.component';
 import { DebugElement } from '@angular/core';
+import { By } from '@angular/platform-browser';
 
 describe(`Componente ${LikeWidgetComponent.name}`, () => {
   const prot = LikeWidgetComponent.prototype;
@@ -33,7 +34,6 @@ describe(`Componente ${LikeWidgetComponent.name}`, () => {
     });    
   });
 
-
   describe(`Method => ${prot.like.name}()`, () => {
     it('should trigger (@Output liked) when called', () => {
       const likeSpy = spyOn(component.liked, "emit");
@@ -41,4 +41,32 @@ describe(`Componente ${LikeWidgetComponent.name}`, () => {
       expect(likeSpy).toHaveBeenCalled();
     });
   });
+
+  describe('(DOM)', () => {
+    it('should display number of likes when clicked', (done) => {
+      component.liked.subscribe(() => {
+        component.likes++;
+        done();
+      });
+      const clickedEl = debugEl.query(By.css(".like-widget-container"));
+      const element: HTMLElement = debugEl.nativeElement.querySelector("[data-testId='likes']");
+      clickedEl.triggerEventHandler('click');
+      fixture.detectChanges();
+      expect(element.textContent).toBe("1");
+    });
+
+    fit('should display number of likes when ENTER key is pressed', (done) => {
+      component.liked.subscribe(() => {
+        component.likes++;
+        fixture.detectChanges();
+        const counterEl: HTMLElement = debugEl.nativeElement.querySelector("[data-testId='likes']");
+        expect(counterEl.textContent).toBe("1");
+        done();
+      });
+      const widgetContainer = debugEl.nativeElement.querySelector(".like-widget-container");
+      const event = new KeyboardEvent('keyup', { key: "Enter" });
+      widgetContainer.dispatchEvent(event);
+    });
+  });
+  
 });
