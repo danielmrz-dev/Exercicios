@@ -1,10 +1,11 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { UniqueIdService } from '../../services/unique-id.service';
+import { ActionDirective } from '../../directives/action.directive';
 
 @Component({
   selector: 'app-like-widget',
   standalone: true,
-  imports: [],
+  imports: [ActionDirective],
   templateUrl: './like-widget.component.html',
   styleUrl: './like-widget.component.scss'
 })

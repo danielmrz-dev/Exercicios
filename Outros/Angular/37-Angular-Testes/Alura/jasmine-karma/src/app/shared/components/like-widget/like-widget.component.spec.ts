@@ -1,4 +1,4 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
 
 import { LikeWidgetComponent } from './like-widget.component';
 import { DebugElement } from '@angular/core';
@@ -55,13 +55,12 @@ describe(`Componente ${LikeWidgetComponent.name}`, () => {
       expect(element.textContent).toBe("1");
     });
 
-    fit('should display number of likes when ENTER key is pressed', (done) => {
+    fit('should display number of likes when ENTER key is pressed', () => {
       component.liked.subscribe(() => {
         component.likes++;
         fixture.detectChanges();
         const counterEl: HTMLElement = debugEl.nativeElement.querySelector("[data-testId='likes']");
         expect(counterEl.textContent).toBe("1");
-        done();
       });
       const widgetContainer = debugEl.nativeElement.querySelector(".like-widget-container");
       const event = new KeyboardEvent('keyup', { key: "Enter" });
