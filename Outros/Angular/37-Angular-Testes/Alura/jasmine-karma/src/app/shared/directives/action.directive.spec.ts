@@ -27,7 +27,7 @@ describe(ActionDirective.name, () => {
     expect(component.hasEvent()).toBe(true);
   });
 
-  fit('(D) (@Output appAction) should emit event with payload when clicked', () => {
+  it('(D) (@Output appAction) should emit event with payload when clicked', () => {
     const el = debugEl.query(By.css("[data-testId='dummy']"));
     el.triggerEventHandler("click", new MouseEvent("click"));
     fixture.detectChanges();

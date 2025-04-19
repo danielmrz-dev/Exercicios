@@ -55,7 +55,7 @@ describe(`Componente ${LikeWidgetComponent.name}`, () => {
       expect(element.textContent).toBe("1");
     });
 
-    fit('should display number of likes when ENTER key is pressed', () => {
+    it('should display number of likes when ENTER key is pressed', () => {
       component.liked.subscribe(() => {
         component.likes++;
         fixture.detectChanges();
