@@ -1,0 +1,11 @@
+<h1>Cursos</h1>
+
+<h3>Backend</h3>
+<ul *ngFor="let course of backEndCourses$ | async">
+    <li> {{ course.description }} </li>
+</ul>
+
+<h3>Programação</h3>
+<ul *ngFor="let course of programmingCourses$ | async">
+    <li> {{ course.description }} </li>
+</ul>
