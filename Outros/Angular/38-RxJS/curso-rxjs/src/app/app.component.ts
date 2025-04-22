@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { ObservablesComponent } from "./components/observables/observables.component";
 import { HttpObservableComponent } from "./components/http-observable/http-observable.component";
+import { ShareReplayComponent } from "./components/share-replay/share-replay.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [ObservablesComponent, HttpObservableComponent],
+  imports: [ObservablesComponent, HttpObservableComponent, ShareReplayComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

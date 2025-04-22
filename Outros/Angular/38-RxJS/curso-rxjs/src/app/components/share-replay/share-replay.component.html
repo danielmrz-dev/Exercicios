@@ -1,0 +1,24 @@
+<h3> Usuários com L: </h3>
+
+<ul *ngFor="let usuario of startsWithL$ | async">
+    <li> {{ usuario.name }} </li>
+</ul>
+
+<h3> Usuários com K: </h3>
+
+<ul *ngFor="let usuario of startsWithK$ | async">
+    <li> {{ usuario.name }} </li>
+</ul>
+
+<h3> Usuários com C: </h3>
+
+<ul *ngFor="let usuario of startsWithC$ | async">
+    <li> {{ usuario.name }} </li>
+</ul>
+
+<h3> Usuários com P: </h3>
+
+<ul *ngFor="let usuario of startsWithP$ | async">
+    <li> {{ usuario.name }} </li>
+</ul>
+

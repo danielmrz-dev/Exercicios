@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { map, Observable, of } from 'rxjs';
+import { map, Observable, of, shareReplay } from 'rxjs';
 import { createObservable } from '../../utils/create-observable';
 import { IUser } from '../../models/user.interface';
 import { CommonModule } from '@angular/common';
@@ -27,30 +27,28 @@ export class HttpObservableComponent implements OnInit {
 
     this.backEndCourses$ = courses$.pipe(
       map(
-        courses => courses.filter(course => course.category === 'backend')
+        courses => courses.filter(course => course.category === 'programação')
       )
     )
 
-    this.programmingCourses$ = courses$.pipe(
+    this.backEndCourses$ = courses$.pipe(
       map(
         courses => courses.filter(course => course.category === 'programação')
       )
     )
 
-
-
-    // http$.subscribe({
-    //   next: (response: any) => {
-    //     console.log(response);
-    //     this.users = response;
-    //   },
-    //   error: (error) => {
-    //     console.log("Deu ruim", error);
-    //   },
-    //   complete() {
-    //     console.log("Cabou!");
-    //   },
-    // })
+    http$.subscribe({
+      next: (response: any) => {
+        console.log(response);
+        this.users = response;
+      },
+      error: (error) => {
+        console.log("Deu ruim", error);
+      },
+      complete() {
+        console.log("Cabou!");
+      },
+    })
 
   }
 }
