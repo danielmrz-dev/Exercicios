@@ -14,10 +14,10 @@ import { UsersService } from '../../services/users.service';
 export class ShareReplayComponent {
 
   private readonly usersService = inject(UsersService);
-  startsWithL$: Observable<IUser[]> = of();
-  startsWithK$: Observable<IUser[]> = of();
-  startsWithC$: Observable<IUser[]> = of();
-  startsWithP$: Observable<IUser[]> = of();
+  startsWithL$: Observable<IUser[]> = of([]);
+  startsWithK$: Observable<IUser[]> = of([]);
+  startsWithC$: Observable<IUser[]> = of([]);
+  startsWithP$: Observable<IUser[]> = of([]);
 
   ngOnInit(): void {
     
