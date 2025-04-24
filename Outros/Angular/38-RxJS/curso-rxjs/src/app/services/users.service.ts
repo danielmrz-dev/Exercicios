@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { delay, Observable, of } from 'rxjs';
 import { IUser } from '../models/user.interface';
 import { orders, users } from '../utils/data';
 
@@ -17,7 +17,7 @@ export class UsersService {
   }
 
   getUsuario(id: number): Observable<any> {
-    return of(users[id]);
+    return of(users[id]).pipe(delay(Math.random() * 20));
   }
 
   getOrders(userId: number): Observable<any> {
