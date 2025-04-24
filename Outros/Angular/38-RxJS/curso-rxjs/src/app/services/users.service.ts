@@ -1,6 +1,6 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
-import { delay, Observable, of } from 'rxjs';
+import { catchError, delay, finalize, Observable, of, retry, retryWhen, startWith, throwError } from 'rxjs';
 import { IUser } from '../models/user.interface';
 import { orders, users } from '../utils/data';
 
@@ -13,7 +13,13 @@ export class UsersService {
   private readonly http = inject(HttpClient);
 
   getUsers(): Observable<IUser[]> {
-    return this.http.get<IUser[]>(this.api);
+    return this.http.get<IUser[]>(this.api).pipe(
+      catchError((error) => throwError(() => error)),
+      retry({ count: 3, delay: 2000 }),
+      finalize(() => {
+        console.log("Observable finalizado.");
+      })
+    );
   }
 
   getUsuario(id: number): Observable<any> {

@@ -6,11 +6,12 @@ import { MergeMapComponent } from "./components/merge-map/merge-map.component";
 import { ExhaustMapComponent } from "./components/exhaust-map/exhaust-map.component";
 import { SwitchMapComponent } from "./components/switch-map/switch-map.component";
 import { DebounceTimeComponent } from "./components/debounce-time/debounce-time.component";
+import { CatchErrorComponent } from "./components/catch-error/catch-error.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [HttpObservableComponent, ShareReplayComponent, ConcatMapComponent, MergeMapComponent, ExhaustMapComponent, SwitchMapComponent, DebounceTimeComponent],
+  imports: [HttpObservableComponent, ShareReplayComponent, ConcatMapComponent, MergeMapComponent, ExhaustMapComponent, SwitchMapComponent, DebounceTimeComponent, CatchErrorComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

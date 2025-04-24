@@ -1,0 +1,7 @@
+<h1>Usuários</h1>
+
+<ul *ngIf="users">
+    <li *ngFor="let user of users"> {{ user.name }} </li>
+</ul>
+
+<p> {{ errorMsg }} </p>
