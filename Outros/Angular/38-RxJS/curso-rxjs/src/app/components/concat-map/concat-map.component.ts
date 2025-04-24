@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { concat, concatMap, from, Observable, of } from 'rxjs';
+import { Component, inject, OnInit } from '@angular/core';
+import { concatMap, Observable, of, tap } from 'rxjs';
+import { UsersService } from '../../services/users.service';
 
 @Component({
   selector: 'app-concat-map',
@@ -10,16 +11,21 @@ import { concat, concatMap, from, Observable, of } from 'rxjs';
 })
 export class ConcatMapComponent implements OnInit {
 
+  pedido$: Observable<any> = of();
+  private readonly usersService = inject(UsersService);
+
   ngOnInit(): void {
-      
-    const source1$ = of(1, 2, 3);
-    const source2$ = of(4, 5, 6);
-    const source3$ = of(7, 8, 9);
 
-    from([source1$, source2$, source3$]).pipe(
-      concatMap(obs => obs)
-    ).subscribe(console.log)
-
+    this.usersService.getUsuario(7).pipe(
+      tap(() => console.log("Buscando o usuário...")),
+      concatMap((user) => {
+        console.log("Usuário encontrado => ", user.name);
+        console.log("Buscando os pedidos desse usuário...");
+        return this.usersService.getOrders(user.id)
+      })
+    ).subscribe((pedidos) => {
+      console.log("Pedidos: ", pedidos);
+    })
 
   }
 }

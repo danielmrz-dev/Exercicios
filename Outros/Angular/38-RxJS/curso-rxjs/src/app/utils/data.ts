@@ -92,3 +92,50 @@ export const courses: Course[] = [
         lessonsCount: 20,
     }
 ];
+
+
+export const users = [
+    { id: 1, name: "Daniel" },
+    { id: 2, name: "Lara" },
+    { id: 3, name: "Carlos" },
+    { id: 4, name: "Ana" },
+    { id: 5, name: "Rafael" },
+    { id: 6, name: "Julia" },
+    { id: 7, name: "Mateus" },
+    { id: 8, name: "Fernanda" },
+    { id: 9, name: "João" },
+    { id: 10, name: "Bianca" }
+];
+
+export const orders = [
+    { userId: 1, pedidos: { item: "Shawarma" } },
+    { userId: 1, pedidos: { item: "Hamburger" } },
+    { userId: 1, pedidos: { item: "Salad" } },
+    { userId: 2, pedidos: { item: "Pizza" } },
+    { userId: 2, pedidos: { item: "Sushi" } },
+    { userId: 2, pedidos: { item: "Pasta" } },
+    { userId: 3, pedidos: { item: "Tacos" } },
+    { userId: 3, pedidos: { item: "Burrito" } },
+    { userId: 3, pedidos: { item: "Nachos" } },
+    { userId: 4, pedidos: { item: "Pad Thai" } },
+    { userId: 4, pedidos: { item: "Spring Rolls" } },
+    { userId: 4, pedidos: { item: "Curry" } },
+    { userId: 5, pedidos: { item: "Steak" } },
+    { userId: 5, pedidos: { item: "Mashed Potatoes" } },
+    { userId: 5, pedidos: { item: "Green Beans" } },
+    { userId: 6, pedidos: { item: "Ramen" } },
+    { userId: 6, pedidos: { item: "Gyoza" } },
+    { userId: 6, pedidos: { item: "Miso Soup" } },
+    { userId: 7, pedidos: { item: "Fried Chicken" } },
+    { userId: 7, pedidos: { item: "Coleslaw" } },
+    { userId: 7, pedidos: { item: "Cornbread" } },
+    { userId: 8, pedidos: { item: "Pancakes" } },
+    { userId: 8, pedidos: { item: "Bacon" } },
+    { userId: 8, pedidos: { item: "Scrambled Eggs" } },
+    { userId: 9, pedidos: { item: "Lasagna" } },
+    { userId: 9, pedidos: { item: "Garlic Bread" } },
+    { userId: 9, pedidos: { item: "Tiramisu" } },
+    { userId: 10, pedidos: { item: "Falafel" } },
+    { userId: 10, pedidos: { item: "Tabbouleh" } },
+    { userId: 10, pedidos: { item: "Baklava" } }
+];
