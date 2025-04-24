@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, ElementRef, inject, ViewChild } from '@angular/core';
 import { debounceTime, fromEvent, map, Observable, of } from 'rxjs';
-import { UsersService } from '../../services/users.service';
+import { UsersService } from '../../../services/users.service';
 
 @Component({
   selector: 'app-debounce-time',
@@ -11,7 +11,7 @@ import { UsersService } from '../../services/users.service';
   styleUrl: './debounce-time.component.scss'
 })
 export class DebounceTimeComponent {
-  
+
   users$: Observable<any> = of()
   @ViewChild("input") input!: ElementRef<HTMLInputElement>
 

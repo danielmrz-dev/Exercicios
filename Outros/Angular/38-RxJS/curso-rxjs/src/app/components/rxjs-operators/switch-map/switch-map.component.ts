@@ -1,8 +1,8 @@
 import { Component, ElementRef, inject, ViewChild } from '@angular/core';
 import { debounceTime, fromEvent, map, Observable, of, switchMap } from 'rxjs';
-import { UsersService } from '../../services/users.service';
+import { UsersService } from '../../../services/users.service';
 import { CommonModule } from '@angular/common';
-import { IUser } from '../../models/user.interface';
+import { IUser } from '../../../models/user.interface';
 
 @Component({
   selector: 'app-switch-map',

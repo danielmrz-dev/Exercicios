@@ -1,8 +1,8 @@
 import { Component, inject } from '@angular/core';
 import { map, Observable, of, shareReplay, tap } from 'rxjs';
-import { IUser } from '../../models/user.interface';
+import { IUser } from '../../../models/user.interface';
 import { CommonModule } from '@angular/common';
-import { UsersService } from '../../services/users.service';
+import { UsersService } from '../../../services/users.service';
 
 @Component({
   selector: 'app-share-replay',
@@ -20,7 +20,7 @@ export class ShareReplayComponent {
   startsWithP$: Observable<IUser[]> = of([]);
 
   ngOnInit(): void {
-    
+
     const http$ = this.usersService.getUsers();
     const sharedRequest = http$.pipe(
       tap(() => console.log("Chamada realizada!")),
@@ -50,6 +50,6 @@ export class ShareReplayComponent {
         usuarios => usuarios.filter(usuario => usuario.name.startsWith("P"))
       )
     )
-    
+
   }
 }

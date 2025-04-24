@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { map, Observable, of, shareReplay } from 'rxjs';
-import { createObservable } from '../../utils/create-observable';
-import { IUser } from '../../models/user.interface';
+import { createObservable } from '../../../utils/create-observable';
+import { IUser } from '../../../models/user.interface';
 import { CommonModule } from '@angular/common';
-import { Course } from '../../models/courses.interface';
-import { courses } from '../../utils/data';
+import { Course } from '../../../models/courses.interface';
+import { courses } from '../../../utils/data';
 
 @Component({
   selector: 'app-http-observable',
@@ -14,14 +14,14 @@ import { courses } from '../../utils/data';
   styleUrl: './http-observable.component.scss'
 })
 export class HttpObservableComponent implements OnInit {
-  
+
   private readonly api = "https://jsonplaceholder.typicode.com/users";
   users: IUser[] = [];
   backEndCourses$: Observable<Course[]> = of([]);
   programmingCourses$: Observable<Course[]> = of([]);
 
   ngOnInit(): void {
-    
+
     const http$ = createObservable(this.api);
     const courses$ = of(courses);
 

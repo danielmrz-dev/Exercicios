@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
-import { UsersService } from '../../services/users.service';
-import { IUser } from '../../models/user.interface';
+import { UsersService } from '../../../services/users.service';
+import { IUser } from '../../../models/user.interface';
 import { CommonModule } from '@angular/common';
 import { HttpErrorResponse } from '@angular/common/http';
 import { startWith } from 'rxjs';
@@ -29,6 +29,6 @@ export class CatchErrorComponent {
         this.errorMsg = error.message;
       }
     })
-    
+
   }
 }

@@ -1,6 +1,6 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { concatMap, Observable, of, tap } from 'rxjs';
-import { UsersService } from '../../services/users.service';
+import { UsersService } from '../../../services/users.service';
 
 @Component({
   selector: 'app-concat-map',
