@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ObservablesComponent } from './observables.component';
+import { ExhaustMapComponent } from './exhaust-map.component';
 
-describe('ObservablesComponent', () => {
-  let component: ObservablesComponent;
-  let fixture: ComponentFixture<ObservablesComponent>;
+describe('ExhaustMapComponent', () => {
+  let component: ExhaustMapComponent;
+  let fixture: ComponentFixture<ExhaustMapComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ObservablesComponent]
+      imports: [ExhaustMapComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ObservablesComponent);
+    fixture = TestBed.createComponent(ExhaustMapComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
