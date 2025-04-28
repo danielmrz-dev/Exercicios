@@ -12,6 +12,7 @@ import { Component } from '@angular/core';
 // import { BehaviourSubjectComponent } from "./components/subjects/behaviour-subject/behaviour-subject.component";
 // import { AsyncSubjectComponent } from "./components/subjects/async-subject/async-subject.component";
 import { ReplaySubjectComponent } from "./components/subjects/replay-subject/replay-subject.component";
+import { StoreComponent } from "./components/store/store.component";
 
 @Component({
   selector: 'app-root',
@@ -29,8 +30,9 @@ import { ReplaySubjectComponent } from "./components/subjects/replay-subject/rep
     // SubjectComponent, 
     // BehaviourSubjectComponent, 
     // AsyncSubjectComponent, 
-    ReplaySubjectComponent
-  ],
+    ReplaySubjectComponent,
+    StoreComponent
+],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
