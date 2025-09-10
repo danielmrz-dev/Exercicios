@@ -14,20 +14,17 @@ import { CoursesHttpService } from '../services/courses-http.service';
 export class EditCourseDialogComponent {
 
   form: FormGroup;
-
   dialogTitle: string;
-
   course: Course;
-
   mode: 'create' | 'update';
-
   loading$: Observable<boolean>;
 
   constructor(
     private fb: FormBuilder,
     private dialogRef: MatDialogRef<EditCourseDialogComponent>,
     @Inject(MAT_DIALOG_DATA) data,
-    private coursesService: CoursesHttpService) {
+    private coursesService: CoursesHttpService
+  ) {
 
     this.dialogTitle = data.dialogTitle;
     this.course = data.course;
@@ -58,19 +55,13 @@ export class EditCourseDialogComponent {
   }
 
   onSave() {
-
     const course: Course = {
       ...this.course,
       ...this.form.value
     };
-
     this.coursesService.saveCourse(course.id, course)
       .subscribe(
         () => this.dialogRef.close()
       )
-
-
   }
-
-
 }

@@ -12,24 +12,15 @@ import { defaultDialogConfig } from '../shared/default-dialog-config';
 })
 export class CoursesCardListComponent implements OnInit {
 
-  @Input()
-  courses: Course[];
+  @Input() courses: Course[];
+  @Output() courseChanged = new EventEmitter();
 
-  @Output()
-  courseChanged = new EventEmitter();
+  constructor(private dialog: MatDialog) {}
 
-  constructor(
-    private dialog: MatDialog) {
-  }
-
-  ngOnInit() {
-
-  }
+  ngOnInit() {}
 
   editCourse(course: Course) {
-
     const dialogConfig = defaultDialogConfig();
-
     dialogConfig.data = {
       dialogTitle: "Edit Course",
       course,
@@ -39,13 +30,9 @@ export class CoursesCardListComponent implements OnInit {
     this.dialog.open(EditCourseDialogComponent, dialogConfig)
       .afterClosed()
       .subscribe(() => this.courseChanged.emit());
-
   }
 
-  onDeleteCourse(course: Course) {
-
-
-  }
+  onDeleteCourse(course: Course) {}
 
 }
 

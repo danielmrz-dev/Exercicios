@@ -16,35 +16,24 @@ import { CoursesHttpService } from '../services/courses-http.service';
 export class CourseComponent implements OnInit {
 
   course$: Observable<Course>;
-
   lessons$: Observable<Lesson[]>;
-
   displayedColumns = ['seqNo', 'description', 'duration'];
-
   nextPage = 0;
 
   constructor(
     private coursesService: CoursesHttpService,
-    private route: ActivatedRoute) {
-
-  }
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit() {
-
     const courseUrl = this.route.snapshot.paramMap.get("courseUrl");
-
     this.course$ = this.coursesService.findCourseByUrl(courseUrl);
-
     this.lessons$ = this.course$.pipe(
       concatMap(course => this.coursesService.findLessons(course.id)),
-      tap(console.log)
     );
-
   }
 
 
-  loadLessonsPage(course: Course) {
-
-  }
+  loadLessonsPage(course: Course) {}
 
 }

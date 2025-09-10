@@ -36,7 +36,6 @@ export class HomeComponent implements OnInit {
     const courses$ = this.coursesHttpService.findAllCourses()
       .pipe(
         map(courses => courses.sort(compareCourses)),
-        tap((response) => console.log(response)),
         shareReplay()
       );
 
@@ -46,7 +45,6 @@ export class HomeComponent implements OnInit {
       .pipe(
         map(courses => courses.filter(course => course.category == 'BEGINNER'))
       );
-
 
     this.advancedCourses$ = courses$
       .pipe(

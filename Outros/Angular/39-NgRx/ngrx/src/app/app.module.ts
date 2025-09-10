@@ -21,7 +21,7 @@ import { RouterState, StoreRouterConnectingModule } from '@ngrx/router-store';
 import { EffectsModule } from '@ngrx/effects';
 import { EntityDataModule } from '@ngrx/data';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-
+import { reducers } from './reducers';
 
 const routes: Routes = [
   {
@@ -34,13 +34,15 @@ const routes: Routes = [
   }
 ];
 
-
-
 @NgModule({
   declarations: [
     AppComponent
   ],
-  bootstrap: [AppComponent], imports: [BrowserModule,
+  bootstrap: [
+    AppComponent
+  ], 
+  imports: [
+    BrowserModule,
     BrowserAnimationsModule,
     RouterModule.forRoot(routes),
     MatMenuModule,
@@ -49,7 +51,12 @@ const routes: Routes = [
     MatProgressSpinnerModule,
     MatListModule,
     MatToolbarModule,
-    AuthModule.forRoot()], providers: [provideHttpClient(withInterceptorsFromDi())]
+    AuthModule.forRoot(),
+    StoreModule.forRoot(reducers),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
+  ], 
+  providers: [
+    provideHttpClient(withInterceptorsFromDi())
+  ]
 })
-export class AppModule {
-}
+export class AppModule {}
