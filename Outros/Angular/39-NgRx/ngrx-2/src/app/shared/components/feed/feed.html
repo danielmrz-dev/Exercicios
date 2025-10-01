@@ -1,10 +1,13 @@
 <ng-container *ngIf="data$ | async as data">
-    <div *ngIf="data.isLoading">
-        Loading...
-    </div>
-    <div *ngIf="data.error">
-        {{ data.error }}
-    </div>
+
+    @if (data.isLoading) {
+        <app-loading/>
+    }
+
+    @if (data.error) {
+        <app-error-message [message]="data.error"/>
+    }
+
     <div *ngIf="data.feed">
         @for (article of data.feed.articles; track $index) {
             <div class="article-preview">
@@ -30,7 +33,12 @@
                 TAG LIST
             </a>
         }
-        PAGINATION
+        <app-pagination
+            [total]="data.feed.articlesCount"
+            [limit]="20"
+            [url]="baseUrl"
+            [currentPage]="currentPage"
+        />
     </div>
 
 </ng-container>
