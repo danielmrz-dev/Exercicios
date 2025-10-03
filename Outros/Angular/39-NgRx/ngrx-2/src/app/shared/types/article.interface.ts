@@ -1,3 +1,4 @@
+import { TPopularTag } from "./popular-tag.type";
 import { IProfile } from "./profile.interface";
 
 export interface IArticle {
@@ -7,7 +8,7 @@ export interface IArticle {
     favorited: boolean,
     favoritesCount: number,
     slug: string,
-    tagList: string[],
+    tagList: TPopularTag[],
     title: string,
     updatedAt: string,
     author: IProfile

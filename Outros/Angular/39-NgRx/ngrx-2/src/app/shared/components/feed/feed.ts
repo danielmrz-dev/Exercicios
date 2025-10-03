@@ -8,6 +8,8 @@ import { ActivatedRoute, Params, Router, RouterLink } from '@angular/router';
 import { ErrorMessage } from "../error-message/error-message";
 import { Loading } from "../loading/loading";
 import { Pagination } from "../pagination/pagination";
+import queryString from 'query-string';
+import { TagList } from '../tag-list/tag-list';
 
 @Component({
   selector: 'app-feed',
@@ -16,7 +18,8 @@ import { Pagination } from "../pagination/pagination";
     RouterLink,
     ErrorMessage, 
     Loading, 
-    Pagination
+    Pagination,
+    TagList
   ],
   templateUrl: './feed.html',
   styleUrl: './feed.scss'
@@ -39,12 +42,23 @@ export class Feed implements OnInit {
   })
 
   ngOnInit(): void {
-    this.store.dispatch(
-      feedActions.getFeed({ url: this.apiUrl })
-    )
-
     this.activatedRoute.queryParams.subscribe((params: Params) => {
       this.currentPage = Number(params['page'] || '1')
     })
+    this.fetchFeed();
+  }
+
+  fetchFeed(): void {
+    const offset = this.currentPage * 20 - 20;
+    const parsedUrl = queryString.parseUrl(this.apiUrl);
+    const stringifiedParams = queryString.stringify({
+      limit: 20,
+      offset,
+      ...parsedUrl.query
+    });
+    const apiUrlWithParams = `${parsedUrl.url}?${stringifiedParams}`
+    this.store.dispatch(
+      feedActions.getFeed({ url: apiUrlWithParams })
+    )
   }
 }
