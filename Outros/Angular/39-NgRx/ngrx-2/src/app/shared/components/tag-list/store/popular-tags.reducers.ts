@@ -22,3 +22,11 @@ const popularTagsFeature = createFeature({
         on(popularTagsActions.getTagListFailure, (state) => ({ ...state, isLoading: false })),
     )
 })
+
+export const {
+    name: popularTagsFeatureKey,
+    reducer: popularTagsReducer,
+    selectIsLoading,
+    selectData: selectPopularTagsData,
+    selectError
+} = popularTagsFeature;

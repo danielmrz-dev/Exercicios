@@ -9,9 +9,11 @@ import { provideHttpClient, withInterceptors } from "@angular/common/http";
 import { provideEffects } from '@ngrx/effects';
 import * as authEffects from './auth/store/auth.effects';
 import * as feedEffects from './shared/components/feed/store/feed.effects';
+import * as popularTagsEffects from './shared/components/tag-list/store/popular-tags.effects';
 import { provideRouterStore, routerReducer } from '@ngrx/router-store';
 import { authInterceptor } from "./shared/interceptors/auth.interceptor";
 import { feedFeatureKey, feedReducer } from "./shared/components/feed/store/feed.reducers";
+import { popularTagsFeatureKey, popularTagsReducer } from "./shared/components/tag-list/store/popular-tags.reducers";
 
 export const appConfig: ApplicationConfig = {
     providers: [
@@ -26,7 +28,8 @@ export const appConfig: ApplicationConfig = {
     }),
     provideState(authFeatureKey, authReducer),
     provideState(feedFeatureKey, feedReducer),
-    provideEffects(authEffects, feedEffects),
+    provideState(popularTagsFeatureKey, popularTagsReducer),
+    provideEffects(authEffects, feedEffects, popularTagsEffects),
     provideRouterStore(),
     provideStoreDevtools({
         maxAge: 25,

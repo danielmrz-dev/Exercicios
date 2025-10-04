@@ -21,4 +21,4 @@ export const getPopularTagsEffect = createEffect((
             return of(popularTagsActions.getTagListFailure());
         })
     )
-})
+}, { functional: true })

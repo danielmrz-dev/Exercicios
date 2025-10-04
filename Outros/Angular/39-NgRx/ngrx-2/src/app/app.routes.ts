@@ -12,5 +12,21 @@ export const appRoutes: Routes = [
     {
         path: '',
         loadChildren: () => import('../app/global-feed/global-feed.routes').then((m) => m.globalFeedRoutes)
-    }
+    },
+    {
+        path: 'feed',
+        loadChildren: () => import('../app/your-feed/your-feed.routes').then((m) => m.yourFeedRoutes)
+    },
+    {
+        path: 'tags/:slug',
+        loadChildren: () => import('../app/tag-feed/tagFeed.routes').then((m) => m.tagFeedRoutes)
+    },
+    {
+        path: 'articles/new',
+        loadChildren: () => import('../app/create-article/create-article.routes').then((m) => m.createArticleRoutes)
+    },
+    {
+        path: 'articles/:slug',
+        loadChildren: () => import('../app/article/article.routes').then((m) => m.articleRoutes)
+    },
 ];
