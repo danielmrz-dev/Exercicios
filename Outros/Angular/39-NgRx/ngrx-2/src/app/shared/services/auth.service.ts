@@ -5,6 +5,7 @@ import { map, Observable } from "rxjs";
 import { ICurrentUser } from "../types/current-user.interface";
 import { IAuthResponse } from "../types/auth-response.intertace";
 import { ILoginRequest } from "../types/login-request.interface";
+import { ICurrentUserRequest } from "../types/current-user-request.interface";
 
 @Injectable({
     providedIn: 'root'
@@ -30,6 +31,13 @@ export class AuthService {
     getCurrentUser(): Observable<ICurrentUser> {
         const url = 'https://api.realworld.show/api/user'
         return this.http.get<IAuthResponse>(url).pipe(
+            map(response => response.user)
+        );
+    }
+
+    updateCurrentUser(currentUserRequest: ICurrentUserRequest): Observable<ICurrentUser> {
+        const url = 'https://api.realworld.show/api/user'
+        return this.http.put<IAuthResponse>(url, currentUserRequest).pipe(
             map(response => response.user)
         );
     }

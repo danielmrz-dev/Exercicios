@@ -13,20 +13,20 @@ const articleFeature = createFeature({
     name: 'article',
     reducer: createReducer(
         initialState,
-        on(articleActions.getArticle, (state) => ({ 
-            ...state, 
-            isLoading: true 
+        on(articleActions.getArticle, (state) => ({
+            ...state,
+            isLoading: true
         })),
-        on(articleActions.getArticleSuccess, (state, action) => ({ 
-            ...state, 
+        on(articleActions.getArticleSuccess, (state, action) => ({
+            ...state,
             isLoading: false,
             data: action.article
         })),
-        on(articleActions.getArticleFailure, (state) => ({ 
-            ...state, 
+        on(articleActions.getArticleFailure, (state) => ({
+            ...state,
             isLoading: false,
         })),
-        on(routerNavigationAction, () =>  initialState)
+        on(routerNavigationAction, () => initialState)
     )
 })
 
@@ -35,5 +35,5 @@ export const {
     reducer: articleReducer,
     selectIsLoading,
     selectError,
-    selectData: selectArticleData
+    selectData: selectArticle
 } = articleFeature;

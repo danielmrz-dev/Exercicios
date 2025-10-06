@@ -3,13 +3,14 @@ import { ActivatedRoute, RouterLink } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { articleActions } from './store/article.actions';
 import { combineLatest, filter, map } from 'rxjs';
-import { selectArticleData, selectError, selectIsLoading } from './store/article.reducers';
+import { selectArticle, selectError, selectIsLoading } from './store/article.reducers';
 import { selectCurrentUser } from '../../../auth/store/auth.reducers';
 import { ICurrentUser } from '../../../shared/types/current-user.interface';
 import { CommonModule } from '@angular/common';
 import { Loading } from "../../../shared/components/loading/loading";
 import { ErrorMessage } from '../../../shared/components/error-message/error-message';
 import { TagList } from "../../../shared/components/tag-list/tag-list";
+import { editArticleActions } from '../../../edit-article/store/edit-article.actions';
 
 @Component({
   selector: 'app-article',
@@ -23,7 +24,7 @@ export class Article implements OnInit {
   private readonly activatedRoute = inject(ActivatedRoute);
 
   isAuthor$ = combineLatest({
-    article: this.store.select(selectArticleData),
+    article: this.store.select(selectArticle),
     currentUser: this.store.select(selectCurrentUser).pipe(
       filter((currentUser): currentUser is ICurrentUser | null => {
         return currentUser !== undefined
@@ -42,7 +43,7 @@ export class Article implements OnInit {
   data$ = combineLatest({
     isLoading: this.store.select(selectIsLoading),
     error: this.store.select(selectError),
-    article: this.store.select(selectArticleData),
+    article: this.store.select(selectArticle),
     isAuthor: this.isAuthor$
   });
 

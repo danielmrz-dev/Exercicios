@@ -1,5 +1,5 @@
 import { IArticle } from "./article.interface"
 
-export type ArticleResponse = {
+export type IArticleResponse = {
     article: IArticle
 }

@@ -3,22 +3,20 @@ import { inject, Injectable } from '@angular/core';
 import { map, Observable } from 'rxjs';
 import { IArticle } from '../types/article.interface';
 import { IArticleResponse } from '../types/article-response';
+import { IArticleRequest } from '../types/article-request.interface';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ArticleService {
+export class CreateArticleService {
 
   private readonly http = inject(HttpClient);
   baseUrl = 'https://api.realworld.show/api'
 
-  getArticle(slug: string): Observable<IArticle> {
-    return this.http.get<IArticleResponse>(`${this.baseUrl}/articles/${slug}`).pipe(
+  createArticle(articleRequest: IArticleRequest): Observable<IArticle> {
+    return this.http.post<IArticleResponse>(`${this.baseUrl}/articles`, articleRequest).pipe(
       map((response) => response.article)
     )
   }
 
-  deleteArticle(slug: string): Observable<{}> {
-    return this.http.delete(`${this.baseUrl}/articles/${slug}`);
-  }
 }
