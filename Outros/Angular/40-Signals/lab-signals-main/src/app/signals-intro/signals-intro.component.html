@@ -1,3 +1,16 @@
 <div>
-<h1>Introdução</h1>
+    <h2>Elementos Químicos</h2>
+    <ul>
+        <li *ngFor="let elemento of elementoService.elementos" (click)="selecionarElemento(elemento)">
+            {{ elemento.nome }}
+        </li>
+    </ul>
+
+    <p *ngIf="elementoService.elementoSelecionado">
+        Elemento selecionado: {{ elementoService.elementoSelecionado()?.nome }}
+    </p>
+
+    <p>
+        Informações detalhadas: {{ elementoService.elementoInfo() }}
+    </p>
 </div>
