@@ -1,17 +1,9 @@
 import { Component } from '@angular/core';
-import { from, of } from 'rxjs';
-import { Ex1Component } from "./components/ex-1/ex-1.component";
-import { Ex2Component } from "./components/ex-2/ex-2.component";
-import { Ex3Component } from "./components/ex-3/ex-3.component";
-import { Ex4Component } from "./components/ex-4/ex-4.component";
-import { Ex5Component } from "./components/ex-5/ex-5.component";
-import { Ex6Component } from "./components/ex-6/ex-6.component";
+import { Ex8Component } from "./components/ex-8/ex-8.component";
 
 @Component({
   selector: 'app-root',
-  imports: [
-    Ex6Component
-],
+  imports: [Ex8Component],
   templateUrl: './app.component.html',
 })
 export class AppComponent {

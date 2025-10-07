@@ -23,6 +23,8 @@ import { EntityDataModule } from '@ngrx/data';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { metaReducers, reducers } from './reducers';
 import { AuthGuard } from './auth/auth.guard';
+import { Ex001Component } from "./ngrx-exercises/ex001/ex001.component";
+import { counter } from './ngrx-exercises/ex001/store/contador.reducers';
 
 const routes: Routes = [
   {
@@ -55,23 +57,23 @@ const routes: Routes = [
     MatToolbarModule,
     AuthModule.forRoot(),
     StoreModule.forRoot(
-      reducers,
+      { ...reducers, ...counter },
       {
-        metaReducers: metaReducers,
         runtimeChecks: {
           strictStateImmutability: true,
           strictActionImmutability: true,
           strictActionSerializability: true,
           strictStateSerializability: true
         }
-      }
-    ),
+      }),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
     EffectsModule.forRoot([]),
+    EntityDataModule.forRoot({}),
     StoreRouterConnectingModule.forRoot({
       stateKey: 'router',
       routerState: RouterState.Minimal
-    })
+    }),
+    Ex001Component
   ],
   providers: [
     provideHttpClient(withInterceptorsFromDi())

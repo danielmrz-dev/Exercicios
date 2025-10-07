@@ -1,8 +1,9 @@
-import { Component, EventEmitter, Input, OnInit, Output, ViewEncapsulation } from '@angular/core';
+import { Component, EventEmitter, inject, Input, OnInit, Output, ViewEncapsulation } from '@angular/core';
 import { Course } from "../model/course";
 import { MatDialog, MatDialogConfig } from "@angular/material/dialog";
 import { EditCourseDialogComponent } from "../edit-course-dialog/edit-course-dialog.component";
 import { defaultDialogConfig } from '../shared/default-dialog-config';
+import { CoursesEntityService } from '../services/courses-entity.service';
 
 @Component({
   selector: 'courses-card-list',
@@ -10,14 +11,13 @@ import { defaultDialogConfig } from '../shared/default-dialog-config';
   styleUrls: ['./courses-card-list.component.css'],
   standalone: false
 })
-export class CoursesCardListComponent implements OnInit {
+export class CoursesCardListComponent {
+
+  private readonly dialog = inject(MatDialog);
+  private readonly coursesService = inject(CoursesEntityService);
 
   @Input() courses: Course[];
   @Output() courseChanged = new EventEmitter();
-
-  constructor(private dialog: MatDialog) {}
-
-  ngOnInit() {}
 
   editCourse(course: Course) {
     const dialogConfig = defaultDialogConfig();
@@ -32,7 +32,9 @@ export class CoursesCardListComponent implements OnInit {
       .subscribe(() => this.courseChanged.emit());
   }
 
-  onDeleteCourse(course: Course) {}
+  onDeleteCourse(course: Course) {
+    this.coursesService.delete(course);
+  }
 
 }
 

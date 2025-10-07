@@ -1,15 +1,14 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 
-import { State, Store } from "@ngrx/store";
+import { Store } from "@ngrx/store";
 
 import { AuthService } from "../auth.service";
 import { tap } from "rxjs/operators";
-import { noop } from "rxjs";
 import { Router } from "@angular/router";
 import { HttpErrorResponse } from '@angular/common/http';
-import { AppState } from '../../reducers';
 import { login } from '../auth.actions';
+import { AppState } from '../../reducers';
 
 @Component({
     selector: 'login',

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { compareCourses, Course } from '../model/course';
 import { Observable } from "rxjs";
 import { defaultDialogConfig } from '../shared/default-dialog-config';
@@ -6,6 +6,8 @@ import { EditCourseDialogComponent } from '../edit-course-dialog/edit-course-dia
 import { MatDialog } from '@angular/material/dialog';
 import { map, shareReplay, tap } from 'rxjs/operators';
 import { CoursesHttpService } from '../services/courses-http.service';
+import { CoursesDataService } from '../services/courses-data.service';
+import { CoursesEntityService } from '../services/courses-entity.service';
 
 
 
@@ -17,41 +19,31 @@ import { CoursesHttpService } from '../services/courses-http.service';
 })
 export class HomeComponent implements OnInit {
 
+  private readonly dialog = inject(MatDialog);
+  private readonly courseEntityService = inject(CoursesEntityService);
+
   promoTotal$: Observable<number>;
   loading$: Observable<boolean>;
   beginnerCourses$: Observable<Course[]>;
   advancedCourses$: Observable<Course[]>;
-
-  constructor(
-    private dialog: MatDialog,
-    private coursesHttpService: CoursesHttpService) {
-
-  }
 
   ngOnInit() {
     this.reload();
   }
 
   reload() {
-    const courses$ = this.coursesHttpService.findAllCourses()
-      .pipe(
-        map(courses => courses.sort(compareCourses)),
-        shareReplay()
-      );
 
-    this.loading$ = courses$.pipe(map(courses => !!courses));
-
-    this.beginnerCourses$ = courses$
+    this.beginnerCourses$ = this.courseEntityService.entities$
       .pipe(
         map(courses => courses.filter(course => course.category == 'BEGINNER'))
       );
 
-    this.advancedCourses$ = courses$
+    this.advancedCourses$ = this.courseEntityService.entities$
       .pipe(
         map(courses => courses.filter(course => course.category == 'ADVANCED'))
       );
 
-    this.promoTotal$ = courses$
+    this.promoTotal$ = this.courseEntityService.entities$
       .pipe(
         map(courses => courses.filter(course => course.promo).length)
       );

@@ -1,0 +1,15 @@
+<section>
+    
+    <button (click)="adicionar()">
+        Aumentar +
+    </button>
+    <button (click)="diminuir()">
+        Diminuir -
+    </button>
+    <button (click)="resetar()">
+        Resetar
+    </button>
+    
+    <h1>Contador atual</h1>
+    <h1> {{ contador$ | async }} </h1>
+</section>
