@@ -1,0 +1,10 @@
+@use '../../../styles.scss' as v;
+
+.linha-destaque--grande {
+    width: 64px;
+    border-bottom: 4px solid v.$color-primaria;
+}
+
+section span {
+  margin-bottom: 64px;
+}

@@ -1,0 +1,17 @@
+<section class="generos" [ngClass]="genero().id">
+    <h3 class="texto-h3-prata">
+        {{ genero().value }}
+    </h3>
+    <span class="linha-destaque linha-destaque--pequena" [ngClass]="genero().id"></span>
+    <div class="livros-genero">
+        @for (livro of genero().livros; track $index) {
+            <app-livro [livro]="livro"/>
+        } @empty {
+            <div class="texto-sem-livros">
+                <img src="sem-livros.png" alt="Sem livros">
+                <h2>Não há livros nessa categoria.</h2>
+            </div>
+        }
+    </div>
+</section>
+

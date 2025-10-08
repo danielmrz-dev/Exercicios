@@ -1,0 +1,28 @@
+/* You can add global styles to this file, and also import other style files */
+
+$font-montserrat: 'Montserrat', sans-serif;
+$font-prata: 'Prata', serif;
+$color-primaria: #6278f7;
+$color-secundaria: #2e2e2e;
+$font-weight-normal: 400;
+$font-weight-bold: 700;
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.texto-titulo {
+    font-family: $font-prata;
+    font-size: 40px;
+    font-weight: $font-weight-normal;
+    line-height: 72px;
+    text-align: center;
+    color: $color-primaria;
+}
+.linha-destaque {
+    display: block;
+    margin: 0 auto;
+}
+
