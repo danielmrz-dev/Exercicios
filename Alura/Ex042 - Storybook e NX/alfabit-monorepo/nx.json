@@ -59,6 +59,12 @@
         "{projectRoot}/.storybook/**/*",
         "{projectRoot}/tsconfig.storybook.json"
       ]
+    },
+    "nx-release-publish": {
+      "dependsOn": ["build"],
+      "options": {
+        "packageRoot": "dist/libs/button"
+      }
     }
   },
   "generators": {
@@ -75,5 +81,8 @@
     "@nx/angular:component": {
       "style": "css"
     }
+  },
+  "release": {
+    "projects": ["libs/button"]
   }
 }
