@@ -15,8 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@danielmrz/button": ["libs/button/src/index.ts"],
-      "@danielmrz/ds-storybook": ["libs/storybook-host/src/index.ts"]
+      "@danielmrz-dev/button": ["libs/button/src/index.ts"],
+      "@danielmrz-dev/ds-storybook": ["libs/storybook-host/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
