@@ -1,6 +1,6 @@
 {
   "name": "@danielmrz-dev/button",
-  "version": "0.2.2",
+  "version": "1.0.1",
   "peerDependencies": {
     "@angular/common": "^17.3.0",
     "@angular/core": "^17.3.0"
