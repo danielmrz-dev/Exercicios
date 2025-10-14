@@ -38,7 +38,13 @@
         "port": 4400,
         "configDir": "libs/storybook-host/.storybook",
         "browserTarget": "storybook-host:build-storybook",
-        "compodoc": false
+        "compodoc": true,
+        "compodocArgs": [
+          "-e",
+          "json",
+          "-d",
+          "libs/storybook-host"
+        ]
       },
       "configurations": {
         "ci": {
@@ -53,7 +59,13 @@
         "outputDir": "dist/storybook/storybook-host",
         "configDir": "libs/storybook-host/.storybook",
         "browserTarget": "storybook-host:build-storybook",
-        "compodoc": false
+        "compodoc": true,
+        "compodocArgs": [
+          "-e",
+          "json",
+          "-d",
+          "libs/storybook-host"
+        ]
       },
       "configurations": {
         "ci": {
@@ -73,6 +85,10 @@
           "buildTarget": "storybook-host:build-storybook:ci"
         }
       }
+    },
+    "chromatic": {
+      "dependsOn": ["build-storybook"],
+      "command": "chromatic --storybook-build-dir=dist/storybook/storybook-host"
     }
   }
 }

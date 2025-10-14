@@ -3,17 +3,6 @@ import { ButtonComponent } from '@danielmrz-dev/button';
 
 const meta: Meta<ButtonComponent> = {
     component: ButtonComponent,
-    argTypes: {
-        variant: {
-            control: { type: 'select' },
-            options: ['primary', 'secondary', 'tertiary'],
-        },
-        theme: {
-            control: { type: 'inline-radio' },
-            options: ['blue', 'violet'],
-        },
-
-    }
 }
 
 export default meta;

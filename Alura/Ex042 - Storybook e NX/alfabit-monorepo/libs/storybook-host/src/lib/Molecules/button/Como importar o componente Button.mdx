@@ -1,0 +1,21 @@
+import { Meta, Source, Canvas } from '@storybook/blocks';
+import * as ButtonStories from './button.component.stories';
+
+<Meta of={ButtonStories} />
+
+# Importando o componente Button
+
+Importe o botão da seguinte forma na sua aplicação Angular:
+
+```ts
+import { ButtonComponent } from '@danielmrz/button';
+```
+
+Utilize o seguinte código no HTML:
+
+<Source />
+
+
+E o botão deve ser renderizado dessa forma:
+
+<Canvas of={ButtonStories.PrimaryButton} layout='centered' sourceState='none' />
