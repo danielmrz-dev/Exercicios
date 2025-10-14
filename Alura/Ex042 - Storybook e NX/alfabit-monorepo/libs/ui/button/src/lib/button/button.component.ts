@@ -23,5 +23,4 @@ export class ButtonComponent {
   getClasses(): string {
     return `${this.variant} ${this.theme}`;
   }
-
 }

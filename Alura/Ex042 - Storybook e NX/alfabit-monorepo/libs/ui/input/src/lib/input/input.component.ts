@@ -9,9 +9,11 @@ import { CommonModule } from '@angular/common';
   styleUrl: './input.component.css',
 })
 export class InputComponent {
-
   @Input() multiline = false;
   @Input() label = '';
+  /**
+   * Forneça um id unico para cada input
+   */
   @Input() id = '';
   @Input() disabled = false;
 
@@ -22,5 +24,4 @@ export class InputComponent {
     }
     return classes;
   }
-
 }

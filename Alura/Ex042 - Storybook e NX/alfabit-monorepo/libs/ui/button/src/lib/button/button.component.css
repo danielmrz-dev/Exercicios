@@ -51,36 +51,30 @@ button.primary:hover {
   color: var(--ab-white);
 }
 
-
 button.primary:active {
   background: var(--ab-click-color);
   color: var(--ab-white);
 }
-
 
 button.primary:disabled {
   background: var(--ab-disabled-bg);
   color: var(--ab-disabled-text);
 }
 
-
 button.secondary {
   background: var(--ab-quaternary-color);
   color: var(--ab-primary-color);
 }
-
 
 button.secondary:hover {
   background: var(--ab-hover-color);
   color: var(--ab-white);
 }
 
-
 button.secondary:active {
   background: var(--ab-click-color);
   color: var(--ab-white);
 }
-
 
 button.secondary:disabled {
   background: var(--ab-disabled-bg);
@@ -108,11 +102,11 @@ button.tertiary:disabled {
 }
 
 .violet {
-    --ab-primary-color: #af4bfe;
-    --ab-secondary-color: #be74f9;
-    --ab-tertiary-color: #e2bdff;
-    --ab-quaternary-color: #f5e8ff;
-    --ab-hover-color: #a530ff;
-    --ab-click-color: #8e25df;
-    --ab-focus-color: #2d5bff;
+  --ab-primary-color: #af4bfe;
+  --ab-secondary-color: #be74f9;
+  --ab-tertiary-color: #e2bdff;
+  --ab-quaternary-color: #f5e8ff;
+  --ab-hover-color: #a530ff;
+  --ab-click-color: #8e25df;
+  --ab-focus-color: #2d5bff;
 }
