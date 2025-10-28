@@ -12,6 +12,7 @@ import {MessagesService} from "../../shared/messages/messages.service";
     selector: 'course-dialog',
     templateUrl: './course-dialog.component.html',
     styleUrls: ['./course-dialog.component.css'],
+    standalone: false,
     providers: [
         LoadingService,
         MessagesService

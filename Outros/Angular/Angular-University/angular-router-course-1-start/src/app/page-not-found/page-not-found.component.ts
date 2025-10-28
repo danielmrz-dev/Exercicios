@@ -1,4 +1,4 @@
-import {Component, OnInit, ViewEncapsulation} from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from "@angular/core";
 import {
   concat,
   fromEvent,
@@ -12,37 +12,19 @@ import {
   Subject,
   BehaviorSubject,
   AsyncSubject,
-  ReplaySubject, from
-} from 'rxjs';
-import {delayWhen, filter, map, take, timeout} from 'rxjs/operators';
-
-
+  ReplaySubject,
+  from,
+} from "rxjs";
+import { delayWhen, filter, map, take, timeout } from "rxjs/operators";
 
 @Component({
-    selector: 'about',
-    templateUrl: './page-not-found.component.html',
-    styleUrls: ['./page-not-found.component.css'],
-    standalone: false
+  selector: "about",
+  templateUrl: "./page-not-found.component.html",
+  styleUrls: ["./page-not-found.component.css"],
+  standalone: false,
 })
 export class PageNotFoundComponent implements OnInit {
+  ngOnInit() {}
 
-    ngOnInit() {
-
-
-    }
-
-
-  run() {
-
-
-
-  }
-
-
+  run() {}
 }
-
-
-
-
-
-
