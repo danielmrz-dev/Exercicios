@@ -2,9 +2,12 @@
 
 .lessons-table {
   min-height: 360px;
-  margin-top: 10px;
+  margin: 10px auto 3rem;
 }
 
+h3 {
+  text-align: center;
+}
 
 .lessons-table tr {
   height: 60px;
