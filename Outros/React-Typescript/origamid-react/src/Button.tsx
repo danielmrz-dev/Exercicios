@@ -1,11 +1,15 @@
 import React from "react";
 
-type Props = React.PropsWithChildren<{
-  onClick: () => void;
-}>;
+type Props = React.ComponentProps<"button"> & {
+  texto: string;
+};
 
-function Button({ onClick, children }: Props) {
-  return <button onClick={onClick}>{children}</button>;
+function Button({ onClick, children, ...props }: Props) {
+  return (
+    <button {...props} onClick={onClick}>
+      {children}
+    </button>
+  );
 }
 
 export default Button;

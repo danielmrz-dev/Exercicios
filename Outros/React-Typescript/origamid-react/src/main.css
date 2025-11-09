@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+body {
+  font-size: 1rem;
+  padding: 12px;
+}
