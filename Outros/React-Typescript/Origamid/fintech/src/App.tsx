@@ -1,12 +1,20 @@
+import Header from "./Components/Header";
+import Sidenav from "./Components/Sidenav";
+import { DataContextProvider } from "./Contexts/DataContext";
+import Resumo from "./Pages/Resumo";
 
 function App() {
-  
-
   return (
-    <>
-      <h1>Fintech</h1>
-    </>
-  )
+    <DataContextProvider>
+      <div>
+        <Sidenav/>
+        <main>
+          <Header/>
+          <Resumo/>
+        </main>
+      </div>
+    </DataContextProvider>
+  );
 }
 
-export default App
+export default App;
