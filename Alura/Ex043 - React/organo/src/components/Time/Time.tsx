@@ -8,9 +8,10 @@ type TimeProps = {
   bgColor: string;
   cardColor: string;
   colaboradores: IEmployee[];
+  onDelete: (nome: string) => void;
 };
 
-export const Time: React.FC<TimeProps> = ({ nome, bgColor, cardColor, colaboradores }) => {
+export const Time: React.FC<TimeProps> = ({ nome, bgColor, cardColor, colaboradores, onDelete }) => {
   
   const borderStyle: React.CSSProperties = { borderBottom: `4px solid ${cardColor}`};
   const bgStyle: React.CSSProperties = { backgroundColor: bgColor };
@@ -20,10 +21,25 @@ export const Time: React.FC<TimeProps> = ({ nome, bgColor, cardColor, colaborado
     (
       <section className="time" style={bgStyle}>
         <h3 style={borderStyle}>{nome}</h3>
+        <input type="color"/>
         <div className="colaboradores">
-          {colaboradores.map((c) => (
-            <Colaborador key={c.nome} nome={c.nome} cargo={c.cargo} />
-          ))}
+          {
+            colaboradores.map((c) => {
+              return (
+                <>
+                  <Colaborador 
+                    key={c.nome} 
+                    bgColor={cardColor} 
+                    avatar={c.avatar} 
+                    nome={c.nome} 
+                    cargo={c.cargo}
+                    onDelete={(e) => onDelete(e)}
+                  />
+                </>
+
+              )
+            })
+          }
         </div>
       </section>
     ) : (

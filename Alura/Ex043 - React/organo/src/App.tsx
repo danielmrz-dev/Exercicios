@@ -5,6 +5,7 @@ import type { IEmployee } from "./types/employee.interface";
 import { Time } from "./components/Time/Time";
 import type { IEquipe } from "./types/time.interface";
 import { Rodape } from "./components/Rodape/Rodape";
+import { colaboradoresMock } from "./mocks/colaboradores.mock";
 
 const App: React.FC = () => {
   const times: IEquipe[] = [
@@ -17,11 +18,16 @@ const App: React.FC = () => {
     { nome: "Inovação e Gestão", corPrimaria: "#ffeedf", corSecundaria: "#ff8a29" },
   ];
 
-  const [employees, setEmployee] = useState<IEmployee[]>([]);
+  const [employees, setEmployees] = useState<IEmployee[]>(colaboradoresMock);
 
   const employeeAdded = (colaborador: IEmployee) => {
-    setEmployee([...employees, colaborador]);
+    setEmployees([...employees, colaborador]);
   };
+
+  const deleteEmployee = (nome: string): void => {
+    const novaLista = employees.filter((e) => e.nome !== nome);
+    setEmployees(novaLista);
+  }
 
   return (
     <>
@@ -37,6 +43,7 @@ const App: React.FC = () => {
           bgColor={time.corPrimaria} 
           cardColor={time.corSecundaria}
           colaboradores={employees.filter(colaborador => colaborador.time === time.nome)}
+          onDelete={(e) => deleteEmployee(e)}
         />
       ))}
       <Rodape/>
