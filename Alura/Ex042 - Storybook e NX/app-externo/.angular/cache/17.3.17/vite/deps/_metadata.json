@@ -1,0 +1,43 @@
+{
+  "hash": "2d5a4cf0",
+  "configHash": "56142a8d",
+  "lockfileHash": "d9567ab3",
+  "browserHash": "4d782d86",
+  "optimized": {
+    "@angular/core": {
+      "src": "../../../../../node_modules/@angular/core/fesm2022/core.mjs",
+      "file": "@angular_core.js",
+      "fileHash": "83f29902",
+      "needsInterop": false
+    },
+    "@angular/platform-browser": {
+      "src": "../../../../../node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs",
+      "file": "@angular_platform-browser.js",
+      "fileHash": "ab7dc447",
+      "needsInterop": false
+    },
+    "@angular/router": {
+      "src": "../../../../../node_modules/@angular/router/fesm2022/router.mjs",
+      "file": "@angular_router.js",
+      "fileHash": "29cb157c",
+      "needsInterop": false
+    },
+    "@danielmrz-dev/button": {
+      "src": "../../../../../node_modules/@danielmrz-dev/button/fesm2022/danielmrz-dev-button.mjs",
+      "file": "@danielmrz-dev_button.js",
+      "fileHash": "c8328b80",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-54J4AP4C": {
+      "file": "chunk-54J4AP4C.js"
+    },
+    "chunk-XYFI74FN": {
+      "file": "chunk-XYFI74FN.js"
+    },
+    "chunk-GSEU53OH": {
+      "file": "chunk-GSEU53OH.js"
+    }
+  }
+}

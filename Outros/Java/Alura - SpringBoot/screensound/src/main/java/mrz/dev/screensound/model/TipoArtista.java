@@ -1,7 +1,0 @@
-package mrz.dev.screensound.model;
-
-public enum TipoArtista {
-    SOLO,
-    DUPLA,
-    BANDA
-}
