@@ -1,15 +1,15 @@
 import React from "react";
-import Botao from "@/components/Botao";
-import Quantidade from "@/components/Quantidade";
-import ValorFormatado from "@/components/ValorFormatado";
-import InfoItemCarrinho from "./InfoItemCarrinho";
+import Quantidade from "../Quantidade";
+import ValorFormatado from "../ValorFormatado";
 
-const ItemCarrinho = ({
-  itemCarrinho,
-  removerProdutoCarrinho,
-  adicionarProduto,
-  removerProduto,
-}) => {
+import { useCarrinho } from "../../hooks/useCarrinho";
+import Botao from "../Botao";
+import { InfoItemCarrinho } from "./InfoItemCarrinho";
+
+export const ItemCarrinho = ({ itemCarrinho }) => {
+  const { adicionarProduto, removerProduto, removerProdutoCarrinho } =
+    useCarrinho();
+
   return (
     <li key={itemCarrinho.id}>
       <>
@@ -23,13 +23,13 @@ const ItemCarrinho = ({
           <ValorFormatado valor={itemCarrinho.preco} />
           <Quantidade
             itemCarrinho={itemCarrinho}
-            adicionarProduto={adicionarProduto}
-            removerProduto={removerProduto}
+            adicionarProduto={() => adicionarProduto(itemCarrinho)}
+            removerProduto={() => removerProduto(itemCarrinho.id)}
           />
           <Botao
             variant="deleteItem"
             aria-label="Excluir"
-            handleClick={() => removerProdutoCarrinho(itemCarrinho.id)}
+            removerProduto={() => removerProdutoCarrinho(itemCarrinho.id)}
           >
             delete_forever
           </Botao>
@@ -39,5 +39,3 @@ const ItemCarrinho = ({
     </li>
   );
 };
-
-export default ItemCarrinho;
