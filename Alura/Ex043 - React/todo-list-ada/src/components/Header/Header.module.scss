@@ -1,0 +1,19 @@
+.header {
+  background-color: green;
+  color: #fff;
+}
+.container {
+  max-width: 1240px;
+  padding: 0 2rem;
+  margin: 0 auto;
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+  }
+  &:last-child {
+    display: flex;
+    gap: 2rem;
+  }
+
+}
