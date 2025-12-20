@@ -45,7 +45,3 @@ const aluno = new Aluno('Daniel', 'Mariz', 35, '123456789', 125);
 const cliente = new Cliente('Daniel', 'Mariz', 35, '123456789');
 console.log(aluno.getNomeCompleto);
 console.log(cliente.getNomeCompleto);
-
-
-
-
