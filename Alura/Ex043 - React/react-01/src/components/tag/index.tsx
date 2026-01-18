@@ -19,7 +19,8 @@ const tagClasses: Record<Categoria | Censura, CSSModuleClasses[string]> = {
 
 export const Tag = ({value}: TagProps) => {
   const classByValue = tagClasses[value];
+  
   return (
-    <span className={classByValue}>{value}</span>
+    <span className={`${s.tag} ${classByValue}`}>{value}</span>
   );
 }
