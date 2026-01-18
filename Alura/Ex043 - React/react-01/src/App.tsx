@@ -1,14 +1,12 @@
 import { Banner } from "./components/banner";
 import bannerImg from "./assets/Banner Desktop.png";
 import "./index.css";
-import { Link } from "./components/link";
+import { Header } from "./components/header";
 
 function App() {
   return (
     <>
-      <Link href="/" target="_blank">
-        Link
-      </Link>
+      <Header/>
       <Banner src={bannerImg} altText="Banner" />
     </>
   );
