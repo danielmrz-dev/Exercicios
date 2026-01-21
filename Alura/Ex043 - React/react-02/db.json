@@ -1,9 +1,10 @@
 {
   "usuarios": [
     {
-      "id": "b88d",
+      "id": "b2b4",
       "nome": "Daniel Moraes Mariz",
-      "renda": "25000"
+      "renda": "25200",
+      "orcamentoDiario": 840
     }
   ],
   "transacoes": []

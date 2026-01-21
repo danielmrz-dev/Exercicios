@@ -14,10 +14,13 @@ import CampoTexto from "../../componentes/CampoTexto/index.js";
 import Fieldset from "../../componentes/Fieldset/index.js";
 import Label from "../../componentes/Label/index.js";
 import { IUsuario } from "../../types/usuario.interface.js";
-import { criarUsuario } from "../../api/index.js";
+import { useAppContext } from "../../context/app-context.js";
 
 const Cadastro = () => {
-  const [form, setForm] = useState<Omit<IUsuario, "id">>({
+
+  const { criaNovoUsuario } = useAppContext();
+
+  const [form, setForm] = useState<Omit<IUsuario, "id" | "orcamentoDiario">>({
     nome: "",
     renda: 0,
   });
@@ -33,12 +36,7 @@ const Cadastro = () => {
 
   const aoSubmeterFormulario = async (evento: React.FormEvent) => {
     evento.preventDefault();
-    try {
-      const novoUsuario = await criarUsuario(form);
-      console.log(novoUsuario);
-    } catch (error) {
-      console.warn(error);
-    }
+    criaNovoUsuario(form)
     navigate("/home");
   };
 
