@@ -1,64 +1,58 @@
-![PoupApp](thumb.png)
+![](thumbnail.png)
 
-# 💰 PoupApp
+# App de Checklist de Estudos
 
-O PoupApp é uma plataforma de gerenciamento financeiro voltada para ajudar usuários a organizar suas finanças. Focado na simplicidade, o PoupApp permite que os usuários acompanhem seus gastos, definam metas financeiras e visualizem seu progresso através de gráficos dinâmicos. 
-
-Com funcionalidades que incentivam o controle de despesas e a organização do orçamento diário, o PoupApp se torna o parceiro ideal para quem busca saúde financeira e realização de objetivos pessoais.
-
-<p align="center">
-  <img src="./poupapp-home.png" alt="Página Inicial" width="30%" style="vertical-align: top; margin-right: 20px;" />
-</p>
+Um projeto prático desenvolvido passo a passo para quem já tem o básico de ReactJS e quer evoluir para construir aplicações mais organizadas, escaláveis e com experiência moderna. Ao longo do curso, criamos um app de checklist para organizar estudos, tarefas e o que mais precisar.
 
 ## 🔨 Funcionalidades do projeto
 
-O PoupApp oferece as seguintes funcionalidades:
+* Adição, edição e exclusão de tarefas
+* Organização das tarefas em "Para estudar" e "Concluído"
+* Marcação de tarefas como concluídas
+* Feedback visual para lista vazia (empty state)
+* Modal para adicionar/editar tarefas
+* Lista animada de tarefas
 
-- Acompanhar o orçamento diário e manter o controle das suas despesas.
-- Realizar transações de maneira prática, adicionando despesas e receitas.
-- Analisar seus gastos por meio de gráficos dinâmicos, categorizando as despesas para melhor entendimento.
+![](screen-capture.png)
 
 ## ✔️ Técnicas e tecnologias utilizadas
 
-O projeto foi desenvolvido utilizando as seguintes tecnologias:
+O desenvolvimento do projeto aborda as seguintes técnicas e tecnologias:
 
-- `Typescript` - Linguagem que adiciona tipagem estática ao JavaScript.
-- `React.js` - Biblioteca para construção de interfaces dinâmicas.
-- `Vite` - Ferramenta de construção rápida para desenvolvimento com JavaScript moderno.
-- `Styled-components` - Para estilização de componentes com CSS-in-JS.
-- `Context API` - Gerenciamento de estado de forma reativa.
-- `React Router` - Para navegação entre páginas da aplicação.
-- `Recharts` - Para criação e visualização de gráficos.
-- `Figma` - Para prototipagem e design visual do projeto.
+* **useState e useEffect**: Gerenciamento de estado e persistência no localStorage
+* **useContext**: Contexto global para compartilhar estado das tarefas
+* **Componentização**: Componentes reutilizáveis como Button, FabButton, Dialog, TodoForm, TodoItem e TodoGroup
+* **Estilização com CSS Modules**: Organização dos estilos por componente
+* **Manipulação de formulários controlados**
+* **Persistência local com localStorage**: Salva as tarefas mesmo fechando o app
+* **Ícones SVG personalizados**
+* **Boas práticas de organização de código**
 
-E outras dependências e ferramentas auxiliares.
+## 🛠️ Como rodar o projeto
 
-## 🛠️ Abrir e rodar o projeto
+Após baixar o projeto, siga os passos abaixo para executar localmente:
 
-Para rodar o projeto em sua máquina local, siga estes passos:
+1. Certifique-se de que você já tem Node.js instalado ([guia oficial](https://nodejs.org/en/download/)).
+2. No terminal, navegue até a pasta do projeto e instale as dependências:
 
-1. Baixe o repositório do projeto para o seu computador.
+```bash
+npm install
+```
 
-2. Navegue até a pasta do projeto, extraia os arquivos e abra no seu editor de código favorito. 
+3. Execute o projeto:
 
-3. Instale as dependências executando:
+```bash
+npm run dev
+```
 
-    ```bash
-    npm install
-    ```
-
-4. Para iniciar o servidor de desenvolvimento, utilize o comando:
-
-    ```bash
-    npm run dev
-    ```
-
-5. O projeto estará disponível em http://localhost:5173.
+4. Acesse no navegador: [http://localhost:5173](http://localhost:5173) (Vite).
 
 ## 📚 Mais informações do curso
 
-Gostou do projeto e quer conhecer mais?
+Curtiu o projeto e quer aprender na prática? O passo a passo completo faz parte do segundo ccurso da carreira React da Alura, com foco em experiência real de desenvolvimento, boas práticas e refatoração progressiva.
 
-O design e protótipo deste projeto podem ser encontrados [aqui](https://www.figma.com/community/file/1468989433664551328). Este projeto é fictício e sem fins lucrativos. 
+Se quiser experimentar, explore o código e customize o checklist do seu jeito!
 
-Aproveite o desenvolvimento e aprimoramento do PoupApp!
+---
+
+Vida longa e próspera 🚀
