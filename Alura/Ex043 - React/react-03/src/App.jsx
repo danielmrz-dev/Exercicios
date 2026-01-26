@@ -8,7 +8,9 @@ import { IconPlus, IconSchool } from "./components/icons";
 import { SubHeading } from "./components/SubHeading";
 import { ToDoItem } from "./components/ToDoItem";
 import { ToDoList } from "./components/ToDoList";
-import { Dialog } from "./components/Dialog"
+import { Dialog } from "./components/Dialog";
+import { useState } from "react";
+import { TodoForm } from "./components/TodoForm/todo-form";
 
 const todos = [
   {
@@ -52,6 +54,15 @@ const completed = [
 ];
 
 function App() {
+  const [showDialog, setShowDialog] = useState(false);
+  const toggleDialog = () => setShowDialog(!showDialog);
+  const addTodo = () => {
+    
+
+
+    toggleDialog();
+  }
+
   return (
     <main>
       <Container>
@@ -61,7 +72,9 @@ function App() {
           </Heading>
         </Header>
 
-        <Dialog />
+        <Dialog isOpen={showDialog} onClose={toggleDialog}>
+          <TodoForm onSubmit={addTodo}/>
+        </Dialog>
 
         <ChecklistsWrapper>
           <SubHeading>Para estudar</SubHeading>
@@ -77,7 +90,7 @@ function App() {
             })}
           </ToDoList>
           <Footer>
-            <FabButton>
+            <FabButton onClick={toggleDialog}>
               <IconPlus />
             </FabButton>
           </Footer>
