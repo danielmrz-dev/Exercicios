@@ -68,9 +68,22 @@ function App() {
       };
       return [...prev, todo];
     });
-
     toggleDialog();
   };
+
+  const toggleCompleted = (todo) => {
+    setTodos((prev) => {
+      return prev.map((t) => {
+        if (t.id === todo.id) {
+          return {
+            ...t,
+            completed: !t.completed
+          }
+        }
+        return t;
+      })
+    })
+  }
 
   return (
     <main>
@@ -91,7 +104,7 @@ function App() {
             {todos
               .filter((t) => !t.completed)
               .map(function (t) {
-                return <ToDoItem key={t.id} item={t} />;
+                return <ToDoItem key={t.id} item={t} onToggle={toggleCompleted} />;
               })}
           </ToDoList>
           <SubHeading>Concluído</SubHeading>
@@ -99,7 +112,7 @@ function App() {
             {todos
               .filter((t) => t.completed)
               .map(function (t) {
-                return <ToDoItem key={t.id} item={t} />;
+                return <ToDoItem onToggle={toggleCompleted} key={t.id} item={t} />;
               })}
           </ToDoList>
           <Footer>

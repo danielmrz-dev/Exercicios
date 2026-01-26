@@ -1,7 +1,7 @@
 import "./todo-item.style.css";
 import { IconPencil, IconTrash } from "../icons";
 
-export function ToDoItem({ item }) {
+export function ToDoItem({ item, onToggle }) {
   const styles = ["todo-item"];
 
   if (item.completed) {
@@ -18,6 +18,7 @@ export function ToDoItem({ item }) {
           type="checkbox"
           className="checkbox"
           defaultChecked={item.completed}
+          onClick={() => onToggle(item)}
         />
         <p className="description">{item.description}</p>
         <div className="actions">
