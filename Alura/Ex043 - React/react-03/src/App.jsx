@@ -77,13 +77,33 @@ function App() {
         if (t.id === todo.id) {
           return {
             ...t,
-            completed: !t.completed
+            completed: !t.completed,
+          };
+        }
+        return t;
+      });
+    });
+  };
+
+  const removoTodo = (todo) => {
+    setTodos((prev) => {
+      return prev.filter((t) => t.id !== todo.id);
+    });
+  };
+
+  const editTodo = (todo) => {
+    setTodos((prev) => {
+      return prev.map((t) => {
+        if (t.id === todo.id) {
+          return {
+            ...t,
+            description: t.description
           }
         }
         return t;
-      })
-    })
-  }
+      });
+    });
+  };
 
   return (
     <main>
@@ -104,7 +124,15 @@ function App() {
             {todos
               .filter((t) => !t.completed)
               .map(function (t) {
-                return <ToDoItem key={t.id} item={t} onToggle={toggleCompleted} />;
+                return (
+                  <ToDoItem
+                    onDelete={removoTodo}
+                    key={t.id}
+                    item={t}
+                    onToggle={toggleCompleted}
+                    onEditTodo={editTodo}
+                  />
+                );
               })}
           </ToDoList>
           <SubHeading>Concluído</SubHeading>
@@ -112,7 +140,15 @@ function App() {
             {todos
               .filter((t) => t.completed)
               .map(function (t) {
-                return <ToDoItem onToggle={toggleCompleted} key={t.id} item={t} />;
+                return (
+                  <ToDoItem
+                    onDelete={removoTodo}
+                    onToggle={toggleCompleted}
+                    key={t.id}
+                    item={t}
+                    onEditTodo={editTodo}
+                  />
+                );
               })}
           </ToDoList>
           <Footer>
