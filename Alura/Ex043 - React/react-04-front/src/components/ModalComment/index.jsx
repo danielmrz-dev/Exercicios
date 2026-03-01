@@ -7,7 +7,7 @@ import { Modal } from "../Modal";
 import { Spinner } from "../Spinner";
 import { Subheading } from "../Subheading";
 import { Textarea } from "../Textarea";
-import styles from "./commentmodal.module.css";
+import styles from "./modalComment.module.css";
 
 export const ModalComment = ({ isEditing }) => {
   const modalRef = useRef(null);
