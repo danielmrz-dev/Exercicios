@@ -31,9 +31,7 @@ export const CardPost = ({ post }) => {
                         </p>
                     </div>
                     <div className={styles.action}>
-                        <IconButton>
-                            <IconChat />
-                        </IconButton>
+                        <ModalComment/>
                         <p>
                             {post.comments.length}
                         </p>
