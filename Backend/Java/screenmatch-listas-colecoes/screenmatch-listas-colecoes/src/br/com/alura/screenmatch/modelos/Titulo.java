@@ -1,12 +1,17 @@
 package br.com.alura.screenmatch.modelos;
 
 public class Titulo {
-    private String nome;
-    private int anoDeLancamento;
+    String nome;
+    int anoDeLancamento;
     private boolean incluidoNoPlano;
     private double somaDasAvaliacoes;
     private int totalDeAvaliacoes;
     private int duracaoEmMinutos;
+
+    public Titulo(String nome, int anoDeLancamento) {
+      this.nome = nome;
+      this.anoDeLancamento = anoDeLancamento;
+    }
 
     public String getNome() {
         return nome;
@@ -26,10 +31,6 @@ public class Titulo {
 
     public int getTotalDeAvaliacoes() {
         return totalDeAvaliacoes;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
     }
 
     public void setAnoDeLancamento(int anoDeLancamento) {
@@ -56,5 +57,10 @@ public class Titulo {
 
     public double pegaMedia(){
         return somaDasAvaliacoes / totalDeAvaliacoes;
+    }
+
+    @Override
+    public String toString() {
+      return "Título: " + this.getNome() + " (" + this.getAnoDeLancamento() + ")";
     }
 }
