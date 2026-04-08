@@ -16,6 +16,7 @@ public class CalculadoraDeTempo {
 //    }
 //
 //    public void inclui(Serie s) {
+  // Testando
 //        this.tempoTotal += s.getDuracaoEmMinutos();
 //    }
 
