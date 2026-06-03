@@ -25,7 +25,7 @@ public class PrincipalComBusca {
     Scanner leitura = new Scanner(System.in);
     String busca = "";
     List<Titulo> titulos = new ArrayList<>();
-    Gson gson = new GsonBuilder().setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE).create();
+    Gson gson = new GsonBuilder().setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE).setPrettyPrinting().create();
     while (!busca.equalsIgnoreCase("sair")) {
 
       System.out.println("Digite um nome de filme para buscar informações:");
