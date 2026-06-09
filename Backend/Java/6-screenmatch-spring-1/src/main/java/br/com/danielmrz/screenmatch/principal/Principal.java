@@ -3,12 +3,12 @@ package br.com.danielmrz.screenmatch.principal;
 import br.com.danielmrz.screenmatch.model.DadosEpisodio;
 import br.com.danielmrz.screenmatch.model.DadosSerie;
 import br.com.danielmrz.screenmatch.model.DadosTemporada;
+import br.com.danielmrz.screenmatch.model.Episodio;
 import br.com.danielmrz.screenmatch.services.ConsumoApi;
 import br.com.danielmrz.screenmatch.services.ConverteDados;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class Principal {
   Scanner leitura = new Scanner(System.in);
@@ -31,7 +31,7 @@ public class Principal {
       temporadas.add(dadosTemporada);
     }
 
-    temporadas.forEach(System.out::println);
+//    temporadas.forEach(System.out::println);
 
 //    for (int i = 0; i < dados.totalTemporadas(); i++) {
 //      List<DadosEpisodio> episodiosTemporada = temporadas.get(i).episodios();
@@ -40,6 +40,22 @@ public class Principal {
 //      }
 //    }
 
-    temporadas.forEach(t -> t.episodios().forEach(e -> System.out.println(e.titulo())));
+//    temporadas.forEach(t -> t.episodios().forEach(e -> System.out.println(e.titulo())));
+
+    List<DadosEpisodio> dadosEpisodios = temporadas.stream()
+      .flatMap(dadosTemporada -> dadosTemporada.episodios().stream())
+      .toList();
+
+    dadosEpisodios.stream()
+      .filter(episodio -> !episodio.avaliacao().equalsIgnoreCase("N/A"))
+      .sorted(Comparator.comparing(DadosEpisodio::avaliacao).reversed())
+      .limit(5)
+      .forEach(System.out::println);
+
+    List<Episodio> episodios = temporadas.stream()
+      .flatMap(temporada -> temporada.episodios().stream()
+        .map(episodio -> new Episodio(temporada.numero(), episodio))).collect(Collectors.toList());
+
+    episodios.forEach(System.out::println);
   }
 }
