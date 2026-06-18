@@ -2,9 +2,6 @@ package br.com.alura.screenmatch.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-import java.util.Arrays;
-import java.util.List;
-
 @JsonIgnoreProperties(ignoreUnknown = true)
 public enum Categoria {
   ACAO("Action"),
