@@ -12,13 +12,13 @@ import java.util.List;
 @Service
 public class TutorService {
 
-    @Autowired
-    private TutorRepository repository;
+  @Autowired
+  private TutorRepository repository;
 
-    public List<TutorDTO> listarTodos(){
-        return repository.findAll().stream().map(TutorDTO::new).toList();
-    }
-    public void cadastrar(CadastroTutorDTO dados){
-        repository.save(new Tutor(dados));
-    }
+  public List<TutorDTO> listarTodos(){
+    return repository.findAll().stream().map(TutorDTO::new).toList();
+  }
+  public void cadastrar(CadastroTutorDTO dados){
+    repository.save(new Tutor(dados));
+  }
 }

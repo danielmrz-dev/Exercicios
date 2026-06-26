@@ -19,21 +19,21 @@ import java.util.List;
 @Getter
 public class Tutor {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    @NotBlank
-    private String nome;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long id;
+  @NotBlank
+  private String nome;
 
-    @NotBlank
-    private String email;
+  @NotBlank
+  private String email;
 
-    @OneToMany(mappedBy = "tutor")
-    private List<Adocao> adocoes = new ArrayList<>();
+  @OneToMany(mappedBy = "tutor")
+  private List<Adocao> adocoes = new ArrayList<>();
 
-    public Tutor(CadastroTutorDTO dados){
-        this.nome = dados.nome();
-        this.email = dados.email();
-    }
+  public Tutor(CadastroTutorDTO dados){
+    this.nome = dados.nome();
+    this.email = dados.email();
+  }
 
 }

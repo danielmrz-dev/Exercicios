@@ -16,21 +16,21 @@ import java.util.List;
 @RequestMapping("/tutor")
 public class TutorController {
 
-    @Autowired
-    private TutorService service;
+  @Autowired
+  private TutorService service;
 
-    @GetMapping
-    public ResponseEntity<List<TutorDTO>> buscarTodos(){
-        List<TutorDTO> tutores = service.listarTodos();
-        return ResponseEntity.ok(tutores);
-    }
+  @GetMapping
+  public ResponseEntity<List<TutorDTO>> buscarTodos(){
+    List<TutorDTO> tutores = service.listarTodos();
+    return ResponseEntity.ok(tutores);
+  }
 
-    @PostMapping
-    @Transactional
-    public void cadastrar(@RequestBody @Valid CadastroTutorDTO dados){
+  @PostMapping
+  @Transactional
+  public void cadastrar(@RequestBody @Valid CadastroTutorDTO dados){
 
-        this.service.cadastrar(dados);
-    }
+    this.service.cadastrar(dados);
+  }
 
 
 }

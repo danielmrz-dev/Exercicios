@@ -15,31 +15,31 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @EqualsAndHashCode(of = "id")
 public class Pet {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private String nome;
-    private Integer idade;
+  @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long id;
+  private String nome;
+  private Integer idade;
 
-    @Enumerated(EnumType.STRING)
-    private TipoPet tipo;
+  @Enumerated(EnumType.STRING)
+  private TipoPet tipo;
 
-    private Boolean adotado;
+  private Boolean adotado;
 
-    private String imagem;
+  private String imagem;
 
-    @OneToOne(mappedBy = "pet", fetch = FetchType.LAZY)
-    private Adocao adocao;
+  @OneToOne(mappedBy = "pet", fetch = FetchType.LAZY)
+  private Adocao adocao;
 
-    public Pet(CadastroPetDTO dados, String nomeDaImagem)
-    {
-        this.nome = dados.nome();
-        this.idade = dados.idade();
-        this.tipo = dados.tipo();
-        this.imagem = nomeDaImagem;
-        this.adotado = false;
-    }
+  public Pet(CadastroPetDTO dados, String nomeDaImagem)
+  {
+    this.nome = dados.nome();
+    this.idade = dados.idade();
+    this.tipo = dados.tipo();
+    this.imagem = nomeDaImagem;
+    this.adotado = false;
+  }
 
-    public void marcarComoAdotado(){
-        this.adotado = true;
-    }
+  public void marcarComoAdotado(){
+    this.adotado = true;
+  }
 }
