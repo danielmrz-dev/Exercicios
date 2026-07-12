@@ -1,9 +1,9 @@
 package med.voll.api.service;
 
 import jakarta.persistence.EntityNotFoundException;
-import med.voll.api.medico.DadosDetalhesMedico;
-import med.voll.api.medico.Medico;
-import med.voll.api.medico.MedicoRepository;
+import med.voll.api.domain.medico.DadosDetalhesMedico;
+import med.voll.api.domain.medico.Medico;
+import med.voll.api.domain.medico.MedicoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
