@@ -35,7 +35,7 @@ public class GlobalExceptionHandler {
   }
 
   @ExceptionHandler(EntityNotFoundException.class)
-  public ResponseEntity<DefaultErrorResponse> medicoNotFoundException(EntityNotFoundException e) {
+  public ResponseEntity<DefaultErrorResponse> entityNotFoundException(EntityNotFoundException e) {
     return buildResponse(e.getMessage(), HttpStatus.NOT_FOUND);
   }
 
