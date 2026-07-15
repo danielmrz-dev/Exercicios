@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Objects;
+
 @RestController
 @RequestMapping("/login")
 public class AutenticacaoController {
@@ -29,7 +31,7 @@ public class AutenticacaoController {
     var authToken = new UsernamePasswordAuthenticationToken(autenticacaoDTO.login(), autenticacaoDTO.senha());
     var authentication = authenticationManager.authenticate(authToken);
 
-    var jwtToken = tokenService.generateToken((Usuario) authentication.getPrincipal());
+    var jwtToken = tokenService.generateToken((Usuario) Objects.requireNonNull(authentication.getPrincipal()));
 
     return ResponseEntity.ok().body(new DadosTokenDTO(jwtToken));
   }
