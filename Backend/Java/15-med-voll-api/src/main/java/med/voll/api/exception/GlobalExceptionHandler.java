@@ -49,6 +49,26 @@ public class GlobalExceptionHandler {
     return buildResponse("Usuário ou senha inválidos", HttpStatus.UNAUTHORIZED);
   }
 
+  @ExceptionHandler(PacienteJaPossuiConsultaException.class)
+  public ResponseEntity<DefaultErrorResponse> pacienteJaPossuiConsultaException(PacienteJaPossuiConsultaException e) {
+    return buildResponse(e.getMessage(), HttpStatus.BAD_REQUEST);
+  }
+
+  @ExceptionHandler(PacienteNaoEncontradoException.class)
+  public ResponseEntity<DefaultErrorResponse> pacienteNaoEncontradoException(PacienteNaoEncontradoException e) {
+    return buildResponse(e.getMessage(), HttpStatus.NOT_FOUND);
+  }
+
+  @ExceptionHandler(MedicoNaoEncontradoException.class)
+  public ResponseEntity<DefaultErrorResponse> medicoNaoEncontradoException(MedicoNaoEncontradoException e) {
+    return buildResponse(e.getMessage(), HttpStatus.NOT_FOUND);
+  }
+
+  @ExceptionHandler(NenhumMedicoDisponivelException.class)
+  public ResponseEntity<DefaultErrorResponse> nenhumMedicoDisponivelException(NenhumMedicoDisponivelException e) {
+    return buildResponse(e.getMessage(), HttpStatus.BAD_REQUEST);
+  }
+
   @ExceptionHandler(MethodArgumentNotValidException.class)
   public ResponseEntity<FieldValidationErrorResponse> fieldsValidationException(MethodArgumentNotValidException e) {
     return buildValidationResponse(

@@ -1,11 +1,13 @@
 package med.voll.api.domain.consulta.validacoes;
 
 import med.voll.api.domain.consulta.DadosAgendamentoConsulta;
+import org.springframework.stereotype.Component;
 
 import java.time.Duration;
 import java.time.LocalDateTime;
 
-public class ValidaHorarioDaConsulta {
+@Component
+public class ValidaHorarioDaConsulta implements ValidadorAgendamentoConsulta {
 
   public void validar(DadosAgendamentoConsulta dados) {
     LocalDateTime dataConsulta = dados.data();
