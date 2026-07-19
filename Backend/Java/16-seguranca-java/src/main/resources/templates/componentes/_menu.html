@@ -1,7 +1,7 @@
-<header class="header" xmlns:th="http://thymeleaf.org" th:fragment="menu">
+<header class="header" th:fragment="menu" xmlns:th="http://thymeleaf.org">
     <div class="container header-container">
-        <a href="../index.html" th:href="@{/}" class="logo">
-            <img src="../../static/assets/logo.png" th:src="@{/assets/logo.png}" alt="Logo Voll">
+        <a class="logo" href="../index.html" th:href="@{/}">
+            <img alt="Logo Voll" src="../../static/assets/logo.png" th:src="@{/assets/logo.png}">
         </a>
 
         <nav class="main-nav">
@@ -14,11 +14,15 @@
                         </li>
 
                         <li>
-                            <a href="../consulta/listagem-consultas.html" th:href="@{/consultas}">Consultas</a>
+                            <a href="../consulta/listagem-consultas.html"
+                               th:href="@{/consultas}">Consultas</a>
                         </li>
                     </ul>
                 </li>
             </ul>
+            <form class="navbar-form" method="post" th:action="@{/logout}">
+                <button class="btn-link">SAIR</button>
+            </form>
         </nav>
     </div>
 </header>
