@@ -1,8 +1,6 @@
 package med.voll.web_application.domain.paciente;
 
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
@@ -10,44 +8,46 @@ import jakarta.persistence.Table;
 @Table(name = "pacientes")
 public class Paciente {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private String nome;
-    private String email;
-    private String telefone;
-    private String cpf;
+	@Id
+	private Long id;
+	private String nome;
+	private String email;
+	private String telefone;
+	private String cpf;
 
-    @Deprecated
-    public Paciente(){}
+	@Deprecated
+	public Paciente() {
+	}
 
-    public Paciente(DadosCadastroPaciente dados) {
-        modificarDados(dados);
-    }
+	public Paciente(Long id, DadosCadastroPaciente dados) {
+		this.id = id;
+		modificarDados(dados);
+	}
 
-    public void modificarDados(DadosCadastroPaciente dados) {
-        this.nome = dados.nome();
-        this.email = dados.email();
-        this.telefone = dados.telefone();
-        this.cpf = dados.cpf();
-    }
-    public Long getId() {
-        return id;
-    }
+	public void modificarDados(DadosCadastroPaciente dados) {
+		this.nome = dados.nome();
+		this.email = dados.email();
+		this.telefone = dados.telefone();
+		this.cpf = dados.cpf();
+	}
 
-    public String getNome() {
-        return nome;
-    }
+	public Long getId() {
+		return id;
+	}
 
-    public String getEmail() {
-        return email;
-    }
+	public String getNome() {
+		return nome;
+	}
 
-    public String getTelefone() {
-        return telefone;
-    }
+	public String getEmail() {
+		return email;
+	}
 
-    public String getCpf() {
-        return cpf;
-    }
+	public String getTelefone() {
+		return telefone;
+	}
+
+	public String getCpf() {
+		return cpf;
+	}
 }

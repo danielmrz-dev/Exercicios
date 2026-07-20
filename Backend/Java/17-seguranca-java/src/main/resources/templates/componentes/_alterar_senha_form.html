@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt"
+      layout:decorate="~{template.html}"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Voll.med - Alterar senha</title>
+</head>
+
+<body>
+<div layout:fragment="conteudo">
+    <main class="container">
+        <section class="card form-card">
+            <h2 class="title">Alterar senha</h2>
+
+            <form method="post" th:action="@{/alterar-senha}" th:object="${dados}">
+
+                <div class="alert alert-danger text-center text-uppercase" th:if="${param.error != null}">
+                    <p>
+                        <strong>Dados inválidos!</strong>
+                    </p>
+                </div>
+
+                <div class="form-group">
+                    <label class="required" for="senhaAtual">Senha atual:</label>
+                    <input class="form-control" id="senhaAtual" name="senhaAtual" placeholder="Senha atual"
+                           required="required" type="password">
+                </div>
+
+                <div class="form-group">
+                    <label class="required" for="novaSenha">Nova senha:</label>
+                    <input class="form-control" id="novaSenha" name="novaSenha" placeholder="Nova senha" required="required"
+                           type="password">
+                </div>
+
+                <div class="form-group">
+                    <label class="required" for="novaSenhaConfirmacao">Confirme a nova senha:</label>
+                    <input class="form-control" id="novaSenhaConfirmacao" name="novaSenhaConfirmacao" placeholder="Confirme a nova senha"
+                           required="required" type="password">
+                </div>
+
+                <button class="btn btn-primary" title="Entrar">
+                    Salvar
+                </button>
+            </form>
+        </section>
+    </main>
+</div>
+</body>
+</html>

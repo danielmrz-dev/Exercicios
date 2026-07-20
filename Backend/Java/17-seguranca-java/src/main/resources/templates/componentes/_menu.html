@@ -1,20 +1,20 @@
-<header class="header" xmlns:th="http://thymeleaf.org" th:fragment="menu"
-        xmlns:sec="http://www.thymeleaf.org/extras/spring-security" >
+<header class="header" th:fragment="menu" xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+        xmlns:th="http://thymeleaf.org">
     <div class="container header-container">
-        <a href="../index.html" th:href="@{/}" class="logo">
-            <img src="../../static/assets/logo.png" th:src="@{/assets/logo.png}" alt="Logo Voll">
+        <a class="logo" href="../index.html" th:href="@{/}">
+            <img alt="Logo Voll" src="../../static/assets/logo.png" th:src="@{/assets/logo.png}">
         </a>
 
         <nav class="main-nav">
-            <ul sec:authorize="isAuthenticated()" class="nav-left">
+            <ul class="nav-left" sec:authorize="isAuthenticated()">
                 <li class="dropdown">
                     <a href="#">CADASTROS <i class="arrow-down"></i></a>
                     <ul class="dropdown-menu">
-                        <li>
+                        <li sec:authorize="!hasRole('MEDICO')">
                             <a href="../medico/listagem-medicos.html" th:href="@{/medicos}">Médicos</a>
                         </li>
 
-                        <li>
+                        <li sec:authorize="hasRole('ATENDENTE')">
                             <a href="../paciente/listagem-pacientes.html" th:href="@{/pacientes}">Pacientes</a>
                         </li>
 
@@ -24,12 +24,15 @@
                     </ul>
                 </li>
             </ul>
-            <ul sec:authorize="isAuthenticated()" class="nav-right">
+            <ul class="nav-right" sec:authorize="isAuthenticated()">
                 <li class="dropdown">
                     <a href="#">Olá, <span sec:authentication="principal.nome"></span> <i class="arrow-down"></i></a>
                     <ul class="dropdown-menu">
                         <li>
-                            <form class="navbar-form" th:action="@{/logout}" method="post">
+                            <div class="navbar-form">
+                                <a class="btn-link" href="#" th:href="@{/alterar-senha}">Alterar senha</a>
+                            </div>
+                            <form class="navbar-form" method="post" th:action="@{/logout}">
                                 <button class="btn-link">SAIR</button>
                             </form>
                         </li>
