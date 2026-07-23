@@ -2,116 +2,113 @@ package br.com.forum_hub.domain.topico;
 
 import br.com.forum_hub.domain.curso.Categoria;
 import br.com.forum_hub.domain.curso.Curso;
-import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
+import br.com.forum_hub.domain.usuario.Usuario;
+import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "topicos")
 public class Topico {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private String titulo;
-    private String mensagem;
-    private String autor;
-    private LocalDateTime dataCriacao;
-    @Enumerated(EnumType.STRING)
-    private Status status;
-    private Boolean aberto;
-    private Integer quantidadeRespostas;
-    @Enumerated(EnumType.STRING)
-    private Categoria categoria;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+	private String titulo;
+	private String mensagem;
 
-    @ManyToOne
-    @JoinColumn(name = "curso_id")
-    private Curso curso;
+	@ManyToOne
+	@JoinColumn(name = "autor_id")
+	private Usuario autor;
+	private LocalDateTime dataCriacao;
+	@Enumerated(EnumType.STRING)
+	private Status status;
+	private Boolean aberto;
+	private Integer quantidadeRespostas;
+	@Enumerated(EnumType.STRING)
+	private Categoria categoria;
 
-    @Deprecated
-    public Topico(){}
+	@ManyToOne
+	@JoinColumn(name = "curso_id")
+	private Curso curso;
 
-    public Topico(DadosCadastroTopico dados, Curso curso) {
-        this.titulo = dados.titulo();
-        this.mensagem = dados.mensagem();
-        this.autor = dados.autor();
-        this.dataCriacao = LocalDateTime.now();
-        this.status = Status.NAO_RESPONDIDO;
-        this.aberto = true;
-        this.quantidadeRespostas = 0;
-        this.categoria = curso.getCategoria();
-        this.curso = curso;
-    }
+	@Deprecated
+	public Topico() {
+	}
 
-    public Long getId() {
-        return id;
-    }
+	public Topico(DadosCadastroTopico dados, Curso curso, Usuario autor) {
+		this.titulo = dados.titulo();
+		this.mensagem = dados.mensagem();
+		this.autor = autor;
+		this.dataCriacao = LocalDateTime.now();
+		this.status = Status.NAO_RESPONDIDO;
+		this.aberto = true;
+		this.quantidadeRespostas = 0;
+		this.categoria = curso.getCategoria();
+		this.curso = curso;
+	}
 
-    public String getTitulo() {
-        return titulo;
-    }
+	public Long getId() {
+		return id;
+	}
 
-    public String getMensagem() {
-        return mensagem;
-    }
+	public String getTitulo() {
+		return titulo;
+	}
 
-    public String getAutor() {
-        return autor;
-    }
+	public String getMensagem() {
+		return mensagem;
+	}
 
-    public LocalDateTime getDataCriacao() {
-        return dataCriacao;
-    }
+	public Usuario getAutor() {
+		return autor;
+	}
 
-    public Status getStatus() {
-        return status;
-    }
+	public LocalDateTime getDataCriacao() {
+		return dataCriacao;
+	}
 
-    public Curso getCurso() {
-        return curso;
-    }
+	public Status getStatus() {
+		return status;
+	}
 
-    public Integer getQuantidadeRespostas() {
-        return quantidadeRespostas;
-    }
+	public Curso getCurso() {
+		return curso;
+	}
 
-    public Topico atualizarInformacoes(DadosAtualizacaoTopico dados, Curso curso) {
-        if(dados.titulo() != null){
-            this.titulo = dados.titulo();
-        }
-        if(dados.mensagem() != null){
-            this.mensagem = dados.mensagem();
-        }
-        if(curso != null){
-            this.curso = curso;
-        }
-        return this;
-    }
+	public Integer getQuantidadeRespostas() {
+		return quantidadeRespostas;
+	}
 
-    public void alterarStatus(Status status) {
-        this.status = status;
-    }
+	public Topico atualizarInformacoes(DadosAtualizacaoTopico dados, Curso curso) {
+		if (dados.titulo() != null) {
+			this.titulo = dados.titulo();
+		}
+		if (dados.mensagem() != null) {
+			this.mensagem = dados.mensagem();
+		}
+		if (curso != null) {
+			this.curso = curso;
+		}
+		return this;
+	}
 
-    public void incrementarRespostas() {
-        this.quantidadeRespostas++;
-    }
+	public void alterarStatus(Status status) {
+		this.status = status;
+	}
 
-    public void decrementarRespostas() {
-        this.quantidadeRespostas--;
-    }
+	public void incrementarRespostas() {
+		this.quantidadeRespostas++;
+	}
 
-    public void fechar() {
-        this.aberto = false;
-    }
+	public void decrementarRespostas() {
+		this.quantidadeRespostas--;
+	}
 
-    public boolean estaAberto() {
-        return this.aberto;
-    }
+	public void fechar() {
+		this.aberto = false;
+	}
+
+	public boolean estaAberto() {
+		return this.aberto;
+	}
 }
