@@ -33,7 +33,7 @@ public class AuthTokenFilter extends OncePerRequestFilter {
 		if (token != null) {
 			String username = tokenService.verifyToken(token);
 
-			Usuario usuario = usuarioRepository.findByEmailIgnoreCase(username)
+			Usuario usuario = usuarioRepository.findByEmailIgnoreCaseAndVerificadoTrue(username)
 				.orElseThrow(() -> new UsernameNotFoundException("Username não encontrado: " + username));
 
 			Authentication authentication = new UsernamePasswordAuthenticationToken(
