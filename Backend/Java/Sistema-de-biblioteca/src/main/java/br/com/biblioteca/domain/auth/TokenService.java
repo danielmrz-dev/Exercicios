@@ -27,6 +27,7 @@ public class TokenService {
 			return JWT.create()
 				.withIssuer("biblioteca")
 				.withSubject(usuario.getUsername())
+				.withClaim("type", "token")
 				.withExpiresAt(expiration(30))
 				.sign(algorithm);
 		} catch (JWTCreationException exception) {
@@ -40,6 +41,7 @@ public class TokenService {
 			return JWT.create()
 				.withIssuer("biblioteca")
 				.withSubject(usuario.getId().toString())
+				.withClaim("type", "refresh-token")
 				.withExpiresAt(expiration(120))
 				.sign(algorithm);
 		} catch (JWTCreationException exception) {
@@ -49,15 +51,32 @@ public class TokenService {
 
 
 	public String verifyToken(String token) {
-		DecodedJWT decodedJWT;
+		DecodedJWT decodedJWT = decode(token);
+		validateType(decodedJWT, "token");
+		return decodedJWT.getSubject();
+	}
+
+	public String verifyRefreshToken(String token) {
+		DecodedJWT decodedJWT = decode(token);
+		validateType(decodedJWT, "refresh-token");
+		return decodedJWT.getSubject();
+	}
+
+	private DecodedJWT decode(String token) {
 		try {
 			Algorithm algorithm = Algorithm.HMAC256(secret);
 			JWTVerifier verifier = JWT.require(algorithm)
 				.withIssuer("biblioteca")
 				.build();
-			decodedJWT = verifier.verify(token);
-			return decodedJWT.getSubject();
+			return verifier.verify(token);
 		} catch (JWTVerificationException exception) {
+			throw new TokenGenerationException("Token JWT inválido.");
+		}
+	}
+
+	private void validateType(DecodedJWT decodedJWT, String expectedType) {
+		String type = decodedJWT.getClaim("type").asString();
+		if (!expectedType.equals(type)) {
 			throw new TokenGenerationException("Token JWT inválido.");
 		}
 	}

@@ -35,19 +35,16 @@ public class LoginController {
 		return ResponseEntity.status(HttpStatus.OK).body(tokens);
 	}
 
+	@PostMapping("/refresh-token")
+	public ResponseEntity<TokenData> atualizarToken(@RequestBody @Valid RefreshTokenData data) {
+		var tokens = authService.refreshToken(data);
+		return ResponseEntity.status(HttpStatus.OK).body(tokens);
+	}
+
 	@PostMapping("/register")
 	public ResponseEntity<NovoUsuarioDTO> register(@RequestBody @Valid LoginRequestData data) {
 		NovoUsuarioDTO novoUsuario = usuarioService.register(data);
 		return ResponseEntity.status(HttpStatus.CREATED).body(novoUsuario);
 	}
 
-	@PostMapping("/atualizar-token")
-	public ResponseEntity<TokenData> atualizarToken(@RequestBody @Valid RefreshTokenData data) {
-		var refreshToken = data.refreshToken();
-		var id = UUID.fromString(tokenService.verifyToken(refreshToken));
-		Usuario usuario = usuarioRepository.findById(id).orElseThrow();
-		String tokenJwt = tokenService.generateToken(usuario);
-		String newRefreshToken = tokenService.generateRefreshToken(usuario);
-		return ResponseEntity.ok(new TokenData(tokenJwt, newRefreshToken));
-	}
 }

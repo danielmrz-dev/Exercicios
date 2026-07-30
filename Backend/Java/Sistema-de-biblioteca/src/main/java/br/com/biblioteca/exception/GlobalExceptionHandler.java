@@ -25,4 +25,9 @@ public class GlobalExceptionHandler {
 	public ResponseEntity<DefaultErrorResponse> handleUserAlreadyExistsException(UserAlreadyExistsException ex) {
 		return buildErrorResponse(ex.getMessage(), HttpStatus.CONFLICT);
 	}
+
+	@ExceptionHandler(TokenGenerationException.class)
+	public ResponseEntity<DefaultErrorResponse> handleTokenGenerationException(TokenGenerationException ex) {
+		return buildErrorResponse(ex.getMessage(), HttpStatus.UNAUTHORIZED);
+	}
 }

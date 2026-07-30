@@ -2,6 +2,7 @@ package br.com.biblioteca.domain.auth;
 
 import br.com.biblioteca.domain.usuario.Usuario;
 import br.com.biblioteca.domain.usuario.UsuarioRepository;
+import br.com.biblioteca.exception.TokenGenerationException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -30,8 +31,8 @@ public class AuthService {
 
 	public TokenData refreshToken(RefreshTokenData data) {
 		var refreshToken = data.refreshToken();
-		var id = UUID.fromString(tokenService.verifyToken(refreshToken));
-		Usuario usuario = usuarioRepository.findById(id).orElseThrow();
+		var id = UUID.fromString(tokenService.verifyRefreshToken(refreshToken));
+		Usuario usuario = usuarioRepository.findById(id).orElseThrow(() -> new TokenGenerationException("Token JWT inválido."));
 		String tokenJwt = tokenService.generateToken(usuario);
 		String newRefreshToken = tokenService.generateRefreshToken(usuario);
 		return new TokenData(tokenJwt, newRefreshToken);
