@@ -2,8 +2,6 @@ package br.com.biblioteca.controller;
 
 import br.com.biblioteca.domain.auth.*;
 import br.com.biblioteca.domain.usuario.NovoUsuarioDTO;
-import br.com.biblioteca.domain.usuario.Usuario;
-import br.com.biblioteca.domain.usuario.UsuarioRepository;
 import br.com.biblioteca.domain.usuario.UsuarioService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,20 +12,15 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.UUID;
-
 @RestController
 @RequestMapping("/auth")
 public class LoginController {
 
 	@Autowired
 	private AuthService authService;
+
 	@Autowired
 	private UsuarioService usuarioService;
-	@Autowired
-	private TokenService tokenService;
-	@Autowired
-	private UsuarioRepository usuarioRepository;
 
 	@PostMapping("/login")
 	public ResponseEntity<TokenData> login(@RequestBody @Valid LoginRequestData data) {
@@ -42,7 +35,7 @@ public class LoginController {
 	}
 
 	@PostMapping("/register")
-	public ResponseEntity<NovoUsuarioDTO> register(@RequestBody @Valid LoginRequestData data) {
+	public ResponseEntity<NovoUsuarioDTO> register(@RequestBody @Valid RegisterRequestData data) {
 		NovoUsuarioDTO novoUsuario = usuarioService.register(data);
 		return ResponseEntity.status(HttpStatus.CREATED).body(novoUsuario);
 	}

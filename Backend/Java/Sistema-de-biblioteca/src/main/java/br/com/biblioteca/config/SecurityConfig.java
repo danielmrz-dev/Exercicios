@@ -21,7 +21,7 @@ public class SecurityConfig {
 	public SecurityFilterChain securityFilters(HttpSecurity http, AccessTokenFilter accessTokenFilter) {
 		return http
 			.authorizeHttpRequests(req -> {
-				req.requestMatchers("/auth/**").permitAll();
+				req.requestMatchers("/auth/login", "/auth/register").permitAll();
 				req.anyRequest().authenticated();
 			})
 			.csrf(AbstractHttpConfigurer::disable)

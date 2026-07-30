@@ -30,4 +30,19 @@ public class GlobalExceptionHandler {
 	public ResponseEntity<DefaultErrorResponse> handleTokenGenerationException(TokenGenerationException ex) {
 		return buildErrorResponse(ex.getMessage(), HttpStatus.UNAUTHORIZED);
 	}
+
+	@ExceptionHandler(UserNotFoundException.class)
+	public ResponseEntity<DefaultErrorResponse> handleUserNotFoundException(UserNotFoundException ex) {
+		return buildErrorResponse(ex.getMessage(), HttpStatus.NOT_FOUND);
+	}
+
+	@ExceptionHandler(LivroNotFoundException.class)
+	public ResponseEntity<DefaultErrorResponse> handleLivroNotFoundException(LivroNotFoundException ex) {
+		return buildErrorResponse(ex.getMessage(), HttpStatus.NOT_FOUND);
+	}
+
+	@ExceptionHandler(UserAlreadyHasBookException.class)
+	public ResponseEntity<DefaultErrorResponse> handleUserAlreadyHasBookException(UserAlreadyHasBookException ex) {
+		return buildErrorResponse(ex.getMessage(), HttpStatus.CONFLICT);
+	}
 }

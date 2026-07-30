@@ -42,7 +42,7 @@ public class TokenService {
 				.withIssuer("biblioteca")
 				.withSubject(usuario.getId().toString())
 				.withClaim("type", "refresh-token")
-				.withExpiresAt(expiration(120))
+				.withExpiresAt(expiration(10080))
 				.sign(algorithm);
 		} catch (JWTCreationException exception) {
 			throw new TokenGenerationException("Erro ao gerar o token.");
