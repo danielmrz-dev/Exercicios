@@ -51,13 +51,14 @@ public class EmprestimoService {
 	}
 
 	public EmprestimoInfoDTO fazerNovoEmprestimo(@Valid EmprestimoRequestDTO novoEmprestimo) {
+		validadores.forEach(v -> v.validar(novoEmprestimo));
+
 		Usuario usuario = usuarioRepository.findById(novoEmprestimo.usuarioId())
 			.orElseThrow(() -> new UserNotFoundException("Usuário não encontrado."));
 
 		Livro livro = livroRepository.findById(novoEmprestimo.livroId())
 			.orElseThrow(() -> new LivroNotFoundException("Usuário não encontrado."));
 
-		validadores.forEach(v -> v.validar(novoEmprestimo));
 
 		Emprestimo emprestimo = emprestimoRepository.save(new Emprestimo(usuario, livro, LocalDateTime.now(), LocalDateTime.now().plusDays(7)));
 

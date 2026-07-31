@@ -1,10 +1,8 @@
 package br.com.biblioteca.controller;
 
-import br.com.biblioteca.domain.emprestimo.Emprestimo;
 import br.com.biblioteca.domain.emprestimo.EmprestimoInfoDTO;
 import br.com.biblioteca.domain.emprestimo.EmprestimoRequestDTO;
 import br.com.biblioteca.domain.emprestimo.EmprestimoService;
-import br.com.biblioteca.domain.usuario.UsuarioService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -19,7 +17,7 @@ import java.util.UUID;
 public class EmprestimoController {
 
 	@Autowired
-	EmprestimoService emprestimoService;
+	private EmprestimoService emprestimoService;
 
 	@GetMapping("/{id}")
 	public ResponseEntity<List<EmprestimoInfoDTO>> listUserEmprestimos(@PathVariable UUID id) {

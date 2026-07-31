@@ -36,7 +36,7 @@ public class LoginController {
 
 	@PostMapping("/register")
 	public ResponseEntity<NovoUsuarioDTO> register(@RequestBody @Valid RegisterRequestData data) {
-		NovoUsuarioDTO novoUsuario = usuarioService.register(data);
+		NovoUsuarioDTO novoUsuario = authService.register(data);
 		return ResponseEntity.status(HttpStatus.CREATED).body(novoUsuario);
 	}
 

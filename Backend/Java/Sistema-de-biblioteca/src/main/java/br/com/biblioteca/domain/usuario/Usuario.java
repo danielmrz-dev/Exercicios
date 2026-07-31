@@ -4,6 +4,7 @@ import br.com.biblioteca.domain.emprestimo.Emprestimo;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Getter;
+import lombok.Setter;
 import org.jspecify.annotations.Nullable;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -23,10 +24,12 @@ public class Usuario implements UserDetails {
 	private UUID id;
 
 	@Getter
+	@Setter
 	@Column(nullable = false, length = 100)
 	private String name;
 
 	@Column(nullable = false, length = 100, unique = true)
+	@Setter
 	private String email;
 
 	@Column(nullable = false, length = 100)
@@ -35,10 +38,16 @@ public class Usuario implements UserDetails {
 	@OneToMany(mappedBy = "usuario") // usuario na entidade emprestimo
 	private List<Emprestimo> emprestimos = new ArrayList<>();
 
-	public Usuario(@NotBlank String name, @NotBlank String email, @NotBlank String password) {
+	@Column(nullable = false)
+	@Getter
+	@Setter
+	private boolean ativo;
+
+	public Usuario(@NotBlank String name, @NotBlank String email, @NotBlank String password, boolean ativo) {
 		this.name = name;
 		this.email = email;
 		this.password = password;
+		this.ativo = ativo;
 	}
 
 	public Usuario() {

@@ -5,6 +5,7 @@ import java.util.UUID;
 public record UsuarioDTO(
 	UUID id,
 	String name,
-	String email
+	String email,
+	Boolean isAtivo
 ) {
 }

@@ -33,7 +33,11 @@ public class AccessTokenFilter extends OncePerRequestFilter {
 	private UsuarioRepository usuarioRepository;
 
 	@Override
-	protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
+	protected void doFilterInternal(
+		HttpServletRequest request,
+		HttpServletResponse response,
+		FilterChain filterChain
+	) throws ServletException, IOException {
 		var token = retrieveTokenFromRequest(request);
 
 		if (token != null) {
