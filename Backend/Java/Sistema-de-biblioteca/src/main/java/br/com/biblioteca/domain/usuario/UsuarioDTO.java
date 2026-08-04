@@ -8,4 +8,7 @@ public record UsuarioDTO(
 	String email,
 	Boolean isAtivo
 ) {
+	public UsuarioDTO(Usuario usuario) {
+		this(usuario.getId(), usuario.getName(), usuario.getUsername(), usuario.isAtivo());
+	}
 }

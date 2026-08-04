@@ -71,6 +71,11 @@ public class GlobalExceptionHandler {
 		return buildErrorResponse("Internal server error", HttpStatus.INTERNAL_SERVER_ERROR);
 	}
 
+	@ExceptionHandler(GoogleAuthenticationException.class)
+	public ResponseEntity<DefaultErrorResponse> handleGoogleAuthException(GoogleAuthenticationException ex) {
+		return buildErrorResponse(ex.getMessage(), HttpStatus.UNAUTHORIZED);
+	}
+
 	@ExceptionHandler(MethodArgumentNotValidException.class)
 	public ResponseEntity<FieldValidationErrorResponse> handleMethodArgumentNotValidException(MethodArgumentNotValidException e) {
 		return buildValidationResponse(

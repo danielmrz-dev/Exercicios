@@ -1,5 +1,6 @@
 package br.com.biblioteca.domain.usuario;
 
+import br.com.biblioteca.domain.auth.UserAuthProvider;
 import br.com.biblioteca.domain.emprestimo.Emprestimo;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
@@ -32,8 +33,14 @@ public class Usuario implements UserDetails {
 	@Setter
 	private String email;
 
-	@Column(nullable = false, length = 100)
+	@Column(nullable = true, length = 100)
 	private String password;
+
+	@Getter
+	@Setter
+	@Enumerated(EnumType.STRING)
+	@Column(nullable = false, length = 20)
+	private UserAuthProvider provider = UserAuthProvider.LOCAL;
 
 	@OneToMany(mappedBy = "usuario") // usuario na entidade emprestimo
 	private List<Emprestimo> emprestimos = new ArrayList<>();
@@ -51,6 +58,12 @@ public class Usuario implements UserDetails {
 	}
 
 	public Usuario() {
+	}
+
+	public Usuario(String name, String email, boolean ativo) {
+		this.name = name;
+		this.email = email;
+		this.ativo = ativo;
 	}
 
 	@Override

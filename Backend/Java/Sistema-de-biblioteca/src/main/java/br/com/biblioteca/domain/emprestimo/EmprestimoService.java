@@ -4,6 +4,7 @@ import br.com.biblioteca.domain.emprestimo.validators.ValidaEmprestimo;
 import br.com.biblioteca.domain.livro.Livro;
 import br.com.biblioteca.domain.livro.LivroRepository;
 import br.com.biblioteca.domain.usuario.Usuario;
+import br.com.biblioteca.domain.usuario.UsuarioDTO;
 import br.com.biblioteca.domain.usuario.UsuarioRepository;
 import br.com.biblioteca.exception.LivroNotFoundException;
 import br.com.biblioteca.exception.UserNotFoundException;
@@ -41,7 +42,7 @@ public class EmprestimoService {
 			.map(emprestimo -> {
 				return new EmprestimoInfoDTO(
 					emprestimo.getId(),
-					emprestimo.getUsuario().getName(),
+					new UsuarioDTO(emprestimo.getUsuario()),
 					emprestimo.getLivro().getTitulo(),
 					emprestimo.getDataEmprestimo()
 				);
@@ -64,7 +65,7 @@ public class EmprestimoService {
 
 		return new EmprestimoInfoDTO(
 			emprestimo.getId(),
-			emprestimo.getUsuario().getName(),
+			new UsuarioDTO(emprestimo.getUsuario()),
 			emprestimo.getLivro().getTitulo(),
 			emprestimo.getDataEmprestimo()
 		);

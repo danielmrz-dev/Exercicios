@@ -3,7 +3,7 @@ USUÁRIO
 [✅] Buscar por ID
 [✅] Listar
 [✅] Atualizar
-[] Excluir
+[✅] Excluir
 [✅] E-mail único
 [✅] Campos obrigatórios
 [✅] Senha não aparece nas respostas

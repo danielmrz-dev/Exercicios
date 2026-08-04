@@ -28,6 +28,12 @@ public class LoginController {
 		return ResponseEntity.status(HttpStatus.OK).body(tokens);
 	}
 
+	@PostMapping("/google")
+	public ResponseEntity<TokenData> loginWithGoogle(@RequestBody @Valid GoogleLoginRequestData data) {
+		var tokens = authService.loginWithGoogle(data);
+		return ResponseEntity.status(HttpStatus.OK).body(tokens);
+	}
+
 	@PostMapping("/refresh-token")
 	public ResponseEntity<TokenData> atualizarToken(@RequestBody @Valid RefreshTokenData data) {
 		var tokens = authService.refreshToken(data);
