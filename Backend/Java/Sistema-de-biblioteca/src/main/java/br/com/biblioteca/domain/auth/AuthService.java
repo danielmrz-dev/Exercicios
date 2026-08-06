@@ -53,13 +53,16 @@ public class AuthService {
 	public TokenData loginWithGoogle(GoogleLoginRequestData loginRequestData) {
 		GoogleIdToken.Payload payload = verifyGoogleIdToken(loginRequestData.idToken());
 
+
 		String email = payload.getEmail();
 		String name = (String) payload.get("name");
+		String givenName = (String) payload.get("given_name");
+		System.out.println(givenName);
 
 		Usuario usuario = usuarioRepository.findByEmailIgnoreCase(email)
 			.orElseGet(() -> {
-				Usuario novoUsuario = new Usuario(name, email, true);
-				usuarioRepository.save(novoUsuario);
+				Usuario novoUsuario = new Usuario(name, email, true, UserAuthProvider.GOOGLE);
+				return usuarioRepository.save(novoUsuario);
 			});
 
 		String tokenJwt = tokenService.generateToken(usuario);

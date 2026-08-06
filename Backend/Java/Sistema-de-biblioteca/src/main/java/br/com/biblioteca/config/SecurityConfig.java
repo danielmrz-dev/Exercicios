@@ -28,7 +28,7 @@ public class SecurityConfig {
 		return http
 			.cors(cors -> cors.configurationSource(corsConfigurationSource()))
 			.authorizeHttpRequests(req -> {
-				req.requestMatchers("/auth/login", "/auth/register", "/auth/google").permitAll();
+				req.requestMatchers("/auth/login", "/auth/register", "/auth/google", "/auth/refresh-token").permitAll();
 				req.anyRequest().authenticated();
 			})
 			.csrf(AbstractHttpConfigurer::disable)

@@ -24,7 +24,8 @@ import java.time.LocalDateTime;
 @Component
 public class AccessTokenFilter extends OncePerRequestFilter {
 
-	private static final ObjectMapper OBJECT_MAPPER = new ObjectMapper().findAndRegisterModules();
+	@Autowired
+	private ObjectMapper objectMapper;
 
 	@Autowired
 	private TokenService tokenService;
@@ -69,7 +70,7 @@ public class AccessTokenFilter extends OncePerRequestFilter {
 			message,
 			LocalDateTime.now()
 		);
-		response.getWriter().write(OBJECT_MAPPER.writeValueAsString(errorResponse));
+		response.getWriter().write(objectMapper.writeValueAsString(errorResponse));
 	}
 
 	private String retrieveTokenFromRequest(HttpServletRequest request) {

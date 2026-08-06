@@ -60,10 +60,11 @@ public class Usuario implements UserDetails {
 	public Usuario() {
 	}
 
-	public Usuario(String name, String email, boolean ativo) {
+	public Usuario(String name, String email, boolean ativo, UserAuthProvider provider) {
 		this.name = name;
 		this.email = email;
 		this.ativo = ativo;
+		this.provider = provider;
 	}
 
 	@Override
